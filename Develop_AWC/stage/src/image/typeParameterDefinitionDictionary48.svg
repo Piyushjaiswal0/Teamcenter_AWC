@@ -1,0 +1,50 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="10.161" y1="6.034" x2="18.482" y2="14.355" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_3" data-name="New Gradient Swatch 3" x1="-6.581" y1="18.623" x2="15.371" y2="40.575" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.159" stop-color="#a4d0dc"/>
+      <stop offset="0.706" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="20.5" y1="20.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad_2" data-name="Light Blue Grad 2" x1="42.25" y1="18.75" x2="49.25" y2="25.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="27.276" y1="30.352" x2="40.738" y2="43.813" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="32.939" y1="35.939" x2="35.061" y2="38.061" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="38.75" y1="22.25" x2="45.75" y2="29.25" xlink:href="#paper_gradient"/>
+  <polyline points="2.092 14.103 21.5 3.256 26.551 6.286 7.302 16.348" fill="url(#paper_gradient)"/>
+  <polygon points="21.5 0.495 21.5 3.256 2.092 14.103 0.5 11.542 21.5 0.495" fill="#969696"/>
+  <polygon points="29.5 4.75 29.5 36.25 8.5 47.446 8.5 15.685 29.5 4.75" fill="#3c91af"/>
+  <line x1="21.5" y1="3.256" x2="2.808" y2="13.7" fill="#969696" stroke="#6e6e6e" stroke-linejoin="round"/>
+  <path d="M8.5,47.446A10.432,10.432,0,0,1,3.212,46.1,4.841,4.841,0,0,1,.5,41.922V11.542a16.7,16.7,0,0,0,3.3,2.844,11.569,11.569,0,0,0,4.705,1.3Z" fill="url(#New_Gradient_Swatch_3)"/>
+  <line x1="8.5" y1="15.685" x2="26.551" y2="6.286" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <path d="M.5,11.542a16.7,16.7,0,0,0,3.3,2.844,11.569,11.569,0,0,0,4.705,1.3V47.446" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <path d="M26.541,6.291l.01-.005L21.5,3.256V.5L.5,11.542v30.38A4.841,4.841,0,0,0,3.212,46.1,10.432,10.432,0,0,0,8.5,47.446l21-11.2V4.75Z" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <rect x="20.5" y="20.5" width="27" height="27" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="47.5 27.5 47.5 20.5 40.5 20.5 47.5 27.5" fill="url(#Light_Blue_Grad_2)"/>
+  <path d="M28.283,44.717,30.5,42.5h7l2.217,2.217A9.848,9.848,0,0,0,43.5,37.006a9.5,9.5,0,1,0-19,.067A9.713,9.713,0,0,0,28.283,44.717Z" stroke="#6e6e6e" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <line x1="33" y1="36" x2="30" y2="33" fill="none" stroke="#147391"/>
+  <circle cx="34" cy="37" r="1.5" stroke="#147391" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)"/>
+  <polygon points="40.5 27.5 47.5 27.5 40.5 20.5 40.5 27.5" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <rect x="20.5" y="20.5" width="27" height="27" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

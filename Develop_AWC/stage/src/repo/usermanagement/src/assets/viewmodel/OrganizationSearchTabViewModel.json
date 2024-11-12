@@ -1,0 +1,193 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/visible-when.directive",
+        "js/aw-search-box.directive",
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive"
+    ],
+
+    "actions":
+    {
+        "search":
+        {
+            "actionType": "JSFunction",
+            "method": "doSearch",
+            "inputData":
+            {
+                "searchString":  "{{data.searchString.dbValue}}",
+                "isGroupRadioButtonSelected":  true
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+
+
+        "performSearch":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData":
+            {
+                "columnConfigInput":
+                {
+                    "clientName": "AWClient",
+                    "clientScopeURI":"Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "searchInput":
+                {
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "um0AdminDataProvider",
+                    "searchCriteria":
+                    {
+                        "resourceProviderContentType": "{{ctx.icsContentTypeString}}",
+                        "searchString": "{{data.searchString.dbValue}}"
+                    },
+                    "searchFilterFieldSortType": "Priority",
+                    "startIndex": "{{data.dataProviders.doSearchForGroupsTab.startIndex}}"
+                }
+            },
+            "outputData":
+            {
+                "searchResults": "searchResults",
+                "totalFound": "totalFound"
+            },
+
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+
+        "doSearchForGroupsTab":
+        {
+            "actionType": "dataProvider",
+            "method": "doSearchForGroupsTab"
+        },
+        "add":
+        {
+            "actionType": "JSFunction",
+            "method": "addAdminObjects",
+            "inputData":
+            {
+                "selectedPanelId": "OrganizationSearchTab",
+                "isGroupRadioButtonSelected":  true,
+                "searchResults":  "{{data.dataProviders.doSearchForGroupsTab.selectedObjects}}"
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+         "addChildGroups":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2017-05-GroupManagement",
+            "method": "addChildGroups",
+            "inputData":
+            {
+                "childGroupsToGroupStructs":
+                [{
+                    "clientId": "{{data.modelProperty.props.name.uiValue}}",
+                    "groupsToAdd":"{{data.dataProviders.doSearchForGroupsTab.selectedObjects}}",
+                    "parentGroup":"{{ctx.lastSelectedObject}}"
+                }]
+            },
+             "outputData":
+            {
+                "clientId": "{{ctx.lastSelectedObject.uid}}"
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "OrgTree.reloadOrgTree",
+                        "eventData":
+                        {
+                            "multipleNodeAdded": "{{data.dataProviders.doSearchForGroupsTab.selectedObjects}}"
+                        }
+                    }
+                ]
+
+            }
+        }
+    },
+
+    "data":
+    {
+        "searchString":
+        {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+
+        "isGroupRadioButtonSelected":
+        {
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "propertyRadioTrueText": "{{i18n.GroupName}}",
+            "propertyRadioFalseText": "{{i18n.RoleName}}",
+            "dbValue": false
+        }
+    },
+
+     "dataProviders":
+    {
+        "doSearchForGroupsTab":
+        {
+            "action": "performSearch",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "ics.doSearch",
+            "action": "doSearchForGroupsTab"
+        },
+        {
+           "eventId": "ics.addChildGroups",
+           "action": "addChildGroups"
+        }
+
+    ],
+
+    "messages":
+    {
+
+    },
+
+    "conditions":
+    {
+        "isValidToAddAdminObjects":
+        {
+            "expression": "data.dataProviders.doSearchForGroupsTab.selectedObjects.length>0"
+        },
+
+        "isAllowedShowTabSet":
+        {
+            "expression": "ctx.showSearchOnPanel==true && ctx.lastSelectedObject.type!=\"User\""
+        }
+    },
+
+    "i18n":
+    {
+        "GroupName": [ "UsermanagementCommandPanelMessages" ],
+        "RoleName": [ "UsermanagementCommandPanelMessages" ],
+        "UserName": [ "UsermanagementCommandPanelMessages" ],
+        "AddButton": [ "UsermanagementCommandPanelMessages" ]
+    }
+}

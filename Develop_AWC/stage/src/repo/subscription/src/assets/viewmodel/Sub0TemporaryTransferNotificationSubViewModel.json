@@ -1,0 +1,239 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [ ],
+    "actions": 
+    {
+        "isValidtoTranserNotification":
+        {
+            "actionType": "JSFunction",
+            "method": "validateInputDates",
+            "deps": "js/Sub0TempTransferNotificationService",
+            "inputData": {
+                "data" : "{{data}}"
+            },
+            "outputData": {
+                "isValidInputDates": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "transferNotify.performTransferNotification",
+                    "condition":"data.isValidInputDates"
+                },
+                {
+                    "name": "transferNotify.showInvalidDateMessage",
+                    "condition":"!data.isValidInputDates"
+                } ]
+            }
+        },
+        "transferNotification":
+        {
+            "actionType": "TcSoaService",
+             "serviceName": "Internal-Notification-2015-03-SubscriptionManagement",
+             "method": "transferNotifications",
+             "deps":"js/Sub0TempTransferNotificationService",         
+             "inputData": {
+              "input": {
+                "subscriptions": "{{ctx.mselected}}",
+                 "notifier":
+                    {
+                        "type":"{{data.dataProviders.followers_provider.viewModelCollection.loadedVMObjects[0].type}}",
+                        "uid":"{{data.dataProviders.followers_provider.viewModelCollection.loadedVMObjects[0].uid}}"
+                    },
+                "notificationDateRange": {
+                    "fromDate": "{{function:getStartDate}}",
+                    "toDate": "{{function:getEndDate}}"
+                    }
+                }
+             },
+             "outputData":
+             {
+                "transferNotificationPartialErrors":"ServiceData.partialErrors"
+             },
+             "events":
+            {
+              "success":
+              [
+                {
+                    "name": "primaryWorkarea.reset"
+                },
+                {
+                    "name": "complete",
+                    "eventData": 
+                    {
+                        "source": "toolAndInfoPanel"
+                    }
+                }
+              ],
+              "failure":
+              [
+                {
+                    "name": "primaryWorkarea.reset"
+                },
+                {
+                    "name": "complete",
+                    "eventData": 
+                    {
+                        "source": "toolAndInfoPanel"
+                    }
+                }
+              ]
+            },
+            "actionMessages":
+            {
+                "failure": 
+                 [
+                    {
+                        "message": "failureTemporaryTransferNotification",
+                        "condition": "(ctx.mselected && ctx.mselected.length === 1)"
+                        
+                    }
+                ],
+                "success": 
+                [   
+                    {
+                        "message": "successfulTemporaryTransferNotification",
+                        "condition": "(ctx.mselected && ctx.mselected.length === 1)"                        
+                    }
+                ]
+            }
+        },
+        "updateFollowersProvider": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "navigateToTransferNotificationPage",
+                    "condition": "conditions.isSelectedUsersPresent"
+                },
+                {
+                    "action": "replaceFollowersToDataProvider",
+                    "condition": "conditions.isSelectedUsersPresent"
+                }
+            ]
+        },
+        "navigateToTransferNotificationPage": {
+            "actionType": "JSFunction",
+            "method": "setActiveView",
+            "deps": "js/addObjectUtils",
+            "inputData": {
+                "activeViewState": "{{props.subPanelContext.activeState}}",
+                "destPanelId": "Sub0TemporaryTransferNotificationSub"
+            }
+        },
+        "replaceFollowersToDataProvider": {
+            "actionType": "JSFunction",
+            "method": "relaceObject",
+            "inputData": {
+                "selectedUsers": "{{props.subPanelContext.addUserPanelState.selectedUsers}}",
+                "dataProvider": "{{data.dataProviders.followers_provider}}"
+            },
+           
+            "deps": "js/Sub0TempTransferNotificationService"
+
+        }
+    },
+    "messages": 
+    {
+        "successfulTemporaryTransferNotification":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.successfulTransferNotification}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{data.dataProviders.followers_provider.viewModelCollection.loadedVMObjects[0].props.object_string.uiValues[0]}}"
+            ]
+        },
+        "failureTemporaryTransferNotification":
+        {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.errorTransferNotification}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{data.dataProviders.followers_provider.viewModelCollection.loadedVMObjects[0].props.object_string.uiValues[0]}}"
+            ]
+        },
+        "showInvalidDateMessage":
+        {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.invalidDateRange}}"
+        }
+    },
+    "data": 
+    {
+        "sub0startDate": 
+        {
+            "displayName": "{{i18n.startDateText}}",
+            "type": "DATE",
+            "isRequired": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "sub0endDate": 
+        {
+            "displayName": "{{i18n.endDateText}}",
+            "type": "DATE",
+            "isRequired": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+         "addFollowersCommand":"sub0_addFollowerCommands"
+    },
+    "dataProviders": {
+     "followers_provider":
+      {
+         "response": "{{data.addedObject.dbValues[0]}}",
+         "totalFound": "{{data.addedObject.dbValues[0].length}}",
+         "selectionModelMode": "single"
+      }
+   },
+    "functions": {
+        "getStartDate":
+        {
+              "functionName": "getStartDate",
+            "parameters": [ "{{data}}" ]
+        },
+        "getEndDate":
+        {
+            "functionName": "getEndDate",
+            "parameters": [ "{{data}}" ]
+        }
+    },
+    "conditions": 
+    {
+        "isSelectedUsersPresent": {
+            "expression": "props.subPanelContext.addUserPanelState.selectedUsers && props.subPanelContext.addUserPanelState.selectedUsers.length > 0"
+        },
+        "isValidToDoTransfer":
+        {
+            "expression":"data.sub0startDate.uiValue.length > 0 && data.sub0endDate.uiValue.length > 0 && data.dataProviders.followers_provider.viewModelCollection.totalFound > 0"
+        }
+    },
+    "onEvent": [
+        {
+             "eventId":"transferNotify.performTransferNotification",
+             "action":"transferNotification"
+        },
+        {
+             "eventId":"transferNotify.showInvalidDateMessage",
+             "message":"showInvalidDateMessage"
+        }
+    ],
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "updateFollowersProvider",
+                "observers": [ "props.addUserPanelState.selectedUsers" ]
+            }
+        ]
+    },
+    "i18n": 
+    {
+        "startDateText": ["SubscriptionMessages"], 
+        "endDateText": ["SubscriptionMessages"],
+        "transferButtonTitle": ["SubscriptionMessages"],
+        "temporaryNotifier": ["SubscriptionMessages"],
+        "transferNotification":["SubscriptionMessages"],
+         "EmailAddress": [ "SubscriptionMessages" ],
+         "PhoneNumber": [ "SubscriptionMessages" ],
+         "successfulTransferNotification": [ "SubscriptionMessages" ],
+         "errorTransferNotification": [ "SubscriptionMessages" ],
+         "invalidDateRange":["SubscriptionMessages"]
+    }
+}

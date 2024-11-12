@@ -1,0 +1,11 @@
+<div class="aw-base-scrollPanel" exist-when="data.totalFound === 0">
+   <aw-empty-workarea
+       title="i18n.noSavedReport"
+       hint="i18n.noSavedReportHint">
+   </aw-empty-workarea>
+</div>
+<aw-scrollpanel exist-when="data.totalFound > 0">
+   <aw-list dataprovider="data.dataProviders.imageDataProvider">
+      <aw-image-cell vmo="item"></aw-image-cell>
+   </aw-list>
+</aw-scrollpanel>

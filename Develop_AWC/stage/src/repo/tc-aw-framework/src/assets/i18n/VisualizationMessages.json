@@ -1,0 +1,4 @@
+{
+    "openVVICommandTitle": "Open in Visualization",
+    "Awp0OpenVVIDesc": "Open the current assembly in the Teamcenter Lifecycle Visualization desktop application. Parts are sent to the standalone viewer based on their state of selection and visibility."
+}

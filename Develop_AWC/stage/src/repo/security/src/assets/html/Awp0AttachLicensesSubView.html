@@ -1,0 +1,11 @@
+ <aw-form name="AttachedLicenseForm">
+     <aw-panel-body>
+         <div class="aw-tcWidgets-modelObjectList">
+             <aw-command-panel-section caption="{{i18n.Attached}}" anchor="data.awp0_attachLicensesCommandAnchor" context="{...subPanelContext, license:subPanelContext.license, licenses:data.licenses}">
+                 <aw-list dataprovider="data.dataProviders.getAttachedLicense">
+                     <aw-default-cell vmo="item"></aw-default-cell>
+                 </aw-list>
+             </aw-command-panel-section>
+         </div>
+     </aw-panel-body>
+ </aw-form>

@@ -1,0 +1,254 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-04-DataManagement",
+            "method": "findDisplayableSubBusinessObjectsWithDisplayNames",
+            "inputData": {
+                "input": [
+                    {
+                        "boTypeName": "Fnd0NameValue",
+                        "exclusionBOTypeNames": []
+                    }
+                ]
+            },
+            "outputData": {
+                "templates": "{{function:loadTypes}}",
+                "templatesIn": "output[0].displayableBOTypeNames"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "property.generateList"
+                    }
+                ]
+            },
+            "deps": "js/Awp0NameValueCreate"
+        },
+        "convertToList": {
+            "actionType": "JSFunction",
+            "method": "createListModelObjects",
+            "inputData": {
+                "input": "{{data.templatesIn}}",
+                "propName": "boDisplayName"
+            },
+            "outputData": {
+                "lovListArray": ""
+            },
+            "deps": "js/listBoxService"
+        },
+        "submit": {
+            "actionType": "JSFunction",
+            "method": "createInitialRowData",
+            "inputData": {
+                "output": {
+                    "tableRows": [
+                        {
+                            "tableRowTypeName": "{{data.nameValueTypes.dbValue.boName}}",
+                            "tableRowData": [
+                                {
+                                    "name": "fnd0Name",
+                                    "dbValues": [
+                                        "{{data.modelProperty.props.fnd0Name.dbValue}}"
+                                    ],
+                                    "uiValues": [
+                                        "{{data.modelProperty.props.fnd0Name.uiValue}}"
+                                    ]
+                                },
+                                {
+                                    "name": "fnd0Value",
+                                    "dbValues": [
+                                        "{{function:getRowValue}}"
+                                    ],
+                                    "uiValues": [
+                                        "{{function:getRowValue}}"
+                                    ]
+                                },
+                                {
+                                    "name": "is_modifiable",
+                                    "dbValues": [
+                                        ""
+                                    ],
+                                    "uiValues": [
+                                        ""
+                                    ]
+                                },
+                                {
+                                    "name": "lsd",
+                                    "dbValues": [
+                                        ""
+                                    ],
+                                    "uiValues": [
+                                        ""
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "deps": "js/Awp0NameValueCreate",
+            "outputData": {
+                "tableRowData": "tableRows"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "initialTableRowData.createSuccessful",
+                        "eventData": {
+                            "tableRowData": "{{data.tableRowData}}"
+                        }
+                    },
+                    {
+                        "name": "NameValueInitialRowData.createSuccessful",
+                        "eventData": {
+                            "tableRowData": "{{data.tableRowData}}"
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "initialTableRowData.createFailed"
+                    },
+                    {
+                        "name": "NameValueInitialRowData.createFailed"
+                    }
+                ]
+            }
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        },
+        "getStyleSheet": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "input": [
+                    {
+                        "businessObjectType": "{{data.nameValueTypes.dbValue.boName}}",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": ""
+                        },
+                        "styleSheetLastModDate": "",
+                        "styleSheetType": "CREATE",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.clientfx.tcui.xrt.showObjectLocation",
+                            "ActiveWorkspace:SubLocation": "com.siemens.splm.clientfx.tcui.xrt.objectNavigationSubLocation"
+                        }
+                    }
+                ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "CreateInput",
+                        "modifiers": [
+                            {
+                                "name": "includeIsModifiable",
+                                "Value": "true"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "modelProperty": "{{dataParseDefinitions:convertNvObject}}"
+            },
+            "deps": "js/Awp0NameValueCreate"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "property.generateList",
+            "action": "convertToList"
+        },
+        {
+            "eventId": "closeDialog",
+            "action": "closePanelDialog"
+        }
+    ],
+    "dataParseDefinitions": {
+        "convertNvObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "ServiceData.plain[0]",
+            "operationType": "CREATE"
+        }
+    },
+    "data": {
+        "nameValueTypes": {
+            "displayName": "{{i18n.objectType}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "name": "nameValueTypes",
+            "dataProvider": "nameValueDP",
+            "uiValue": "",
+            "dbValue": ""
+        }
+    },
+    "dataProviders": {
+        "nameValueDP": {
+            "response": "{{data.lovListArray}}",
+            "moreValuesExist": false
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    },
+    "functions": {
+        "processTypes": {
+            "functionName": "processTypes",
+            "parameters": []
+        },
+        "getRowValue": {
+            "functionName": "getRowValue",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "conditions": {
+        "isValidToShowCreateButton": {
+            "expression": "data.nameValueTypes !== '' && data.modelProperty && data.modelProperty.props.fnd0Name.dbValue && data.modelProperty.props.fnd0Name.dbValue !== ''"
+        }
+    },
+    "i18n": {
+        "NameValue_Value": [
+            "NameValuePanelsMessages"
+        ],
+        "NameValue_Create": [
+            "NameValuePanelsMessages"
+        ],
+        "Properties": [
+            "NameValuePanelsMessages"
+        ],
+        "objectType": [
+            "awAddDirectiveMessages"
+        ],
+        "datasetName": [
+            "awAddDirectiveMessages"
+        ],
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ]
+    }
+}

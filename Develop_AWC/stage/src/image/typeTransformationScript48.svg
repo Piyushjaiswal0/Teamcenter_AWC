@@ -1,0 +1,57 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="16.8859" y1="0.5" x2="16.8859" y2="37.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0031" stop-color="#999"/>
+      <stop offset="0.287" stop-color="#f2f2f2"/>
+      <stop offset="0.5495" stop-color="#f2f2f2"/>
+      <stop offset="0.6449" stop-color="#eee"/>
+      <stop offset="0.744" stop-color="#e1e1e1"/>
+      <stop offset="0.8447" stop-color="#cdcdcd"/>
+      <stop offset="0.8472" stop-color="#ccc"/>
+      <stop offset="0.885" stop-color="#c7c7c7"/>
+      <stop offset="0.9286" stop-color="#b9b9b9"/>
+      <stop offset="0.9749" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="8.0386" y1="-3.5386" x2="23.1158" y2="11.5386" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="19.5" y1="20.5" x2="38.5" y2="39.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset="0.1774" stop-color="#6badc2"/>
+      <stop offset="0.4638" stop-color="#539db4"/>
+      <stop offset="0.8215" stop-color="#2d839d"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="30.4289" y1="30.4289" x2="44.571" y2="44.5711" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="37.372" y1="40.628" x2="24.3871" y2="27.6431" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45" data-name="front -45" x1="1.6414" y1="31.0189" x2="6.6925" y2="36.07" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.6296" stop-color="#c7c7c7"/>
+      <stop offset="0.7792" stop-color="#b9b9b9"/>
+      <stop offset="0.9383" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+  <path d="M33.272,34.0747A3.4253,3.4253,0,0,1,29.8467,37.5H3.8576a3.4471,3.4471,0,0,0,3.4253-3.4253C7.2829,30.5644.5,6.8708.5,3.9252A3.4174,3.4174,0,0,1,3.9251.5L9.0925.5073,26.5318,7.3505Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path d="M25.7734.5H4A3.4521,3.4521,0,0,1,7.4021,4,3.4522,3.4522,0,0,1,4,7.5H25.7734A3.4521,3.4521,0,0,0,29.1755,4,3.452,3.452,0,0,0,25.7734.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <line x1="15" y1="10" x2="17" y2="25" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="11 13.5 8 18.5 14 21.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="18 13.5 24 16.5 21 21.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="19.5" y="20.5" width="19" height="19" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+  <circle cx="37.5" cy="37.5" r="10" stroke="#464646" stroke-linejoin="round" fill="url(#Light_Blue_Grad)"/>
+  <path d="M41,37l-6.5-6.5v3.4762c-.3218.0673-.6149.1281-.9448.1738-5.1682.717-7.9726-.9-11.1038-4.5712C24.2161,35.9826,27.887,39.927,34.5,39.9087V43.5Z" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <path d="M4.5636,37.4241a3.4535,3.4535,0,0,0,2.7193-3.3494,22.66,22.66,0,0,0-.5734-3.582H2.2232A4.3766,4.3766,0,0,0,.5,33.9927a3.4521,3.4521,0,0,0,3.4021,3.5A3.3252,3.3252,0,0,0,4.5636,37.4241Z" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45)"/>
+</svg>

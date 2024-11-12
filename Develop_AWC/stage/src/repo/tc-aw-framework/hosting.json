@@ -1,0 +1,630 @@
+{
+  "postHandshakeModules": [
+    {
+      "module": "js/adobeHostingService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostBaseRefService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostBaseSelService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostConfigService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostObjectRefService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostOpenService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostPageNavigationService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostQueryService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostQueryFactoryService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostRouterService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/hostSelectionService",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostObjectRef_2014_02",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostObjectRef_2014_02",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostObjectRef_2014_07",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostObjectRef_2014_10",
+      "condition": true
+    },
+    {
+      "module": "js/hosting/inf/services/hostClientInfo_2014_07",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_GET_CLIENT_INFO_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostClientInfo_2019_05",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_GET_CLIENT_INFO_SVC",
+          "symbolicVersion": "VERSION_2019_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostRefresh_2014_07",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_REFRESH_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_REFRESH_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostSelection_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SELECTION_LISTENER_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_SELECTION_PROVIDER_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostSelection_2014_07",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SELECTION_LISTENER_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_SELECTION_PROVIDER_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostSelection_2014_10",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SELECTION_LISTENER_SVC",
+          "symbolicVersion": "VERSION_2014_10"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_SELECTION_PROVIDER_SVC",
+          "symbolicVersion": "VERSION_2014_10"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostSelection_2019_05",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SELECTION_LISTENER_SVC",
+          "symbolicVersion": "VERSION_2019_05"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_SELECTION_PROVIDER_SVC",
+          "symbolicVersion": "VERSION_2019_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostSession_2014_07",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SESSION_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        },
+        {
+          "symbolicName": "HS_SESSION_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostTheme_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_GET_AVAILABLE_THEMES_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        },
+        {
+          "symbolicName": "CS_SET_THEME_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/inf/services/hostTheme_2019_05",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_GET_AVAILABLE_THEMES_SVC",
+          "symbolicVersion": "VERSION_2019_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostAppContext_2017_11",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SET_APP_CONTEXT_SVC",
+          "symbolicVersion": "VERSION_2017_11"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostCheckinCheckout_2016_03",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_CHECKIN_CHECKOUT",
+          "symbolicVersion": "VERSION_2016_03"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostComponent_2014_07",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_COMPONENTCONFIG_SERVICE",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostDragAndDrop_2017_05",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_DRAG_AND_DROP_SVC",
+          "symbolicVersion": "VERSION_2017_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostFeedback_2015_03",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_FEEDBACK",
+          "symbolicVersion": "VERSION_2015_03"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostFileTicket_2014_10",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_GET_FILE_TICKET",
+          "symbolicVersion": "VERSION_2014_10"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_GET_TICKET_RESPONSE",
+          "symbolicVersion": "VERSION_2014_10"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostFireCommand_2018_07",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "splm.browserinterop.solutions.services.preferences.CommandFired.host",
+          "symbolicVersion": "VERSION_2017_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostFMSUpload_2015_03",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_FMS_UPLOAD",
+          "symbolicVersion": "VERSION_2015_03"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostFileUpload_2022_03",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "CS_FILE_UPLOAD_SVC",
+          "symbolicVersion": "VERSION_2022_03"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostObjectInfoComponent_2014_07",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_OBJECTINFO_COMPONENT_INPUT_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpen_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SHOW_SUMMARY",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_ADD_COMPONENT",
+          "symbolicVersion": "VERSION_2014_02"
+        },
+        {
+          "symbolicName": "HS_HOST_OPEN",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpen_2015_03",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_OPEN_WITH",
+          "symbolicVersion": "VERSION_2015_03"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpen_2015_10",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_OPEN",
+          "symbolicVersion": "VERSION_2015_10"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpenLocation_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_OPEN_LOCATION_SERVICE",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpenPanel_2019_12",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_OPEN_PANEL_SVC",
+          "symbolicVersion": "VERSION_2019_12"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpenNewView_2016_04",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_OPEN_NEW_VIEW_SVC",
+          "symbolicVersion": "VERSION_2016_04"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostOpenURL_2014_10",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_OPEN_URL",
+          "symbolicVersion": "VERSION_2014_10"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostPreferences_2017_05",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_GET_PREFERENCES_SVC",
+          "symbolicVersion": "VERSION_2017_05"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_GET_PREFERENCES_RESPONSE_SVC",
+          "symbolicVersion": "VERSION_2017_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostQuery_2015_10",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_INTEROPQUERY_SVC",
+          "symbolicVersion": "VERSION_2015_10"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_INTEROPQUERY_SVC",
+          "symbolicVersion": "VERSION_2015_10"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostQuery_2019_05",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_INTEROPQUERY_SVC",
+          "symbolicVersion": "VERSION_2019_05"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_INTEROPQUERY_SVC",
+          "symbolicVersion": "VERSION_2019_05"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostRemoteClipboard_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_REMOTE_CLIPBOARD_SERVICE",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_REMOTE_CLIPBOARD_SERVICE",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostUserMessaging_2017_11",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_USER_MESSAGING_SVC",
+          "symbolicVersion": "VERSION_2017_11"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostUserMessaging_2019_12",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_USER_MESSAGING_SVC",
+          "symbolicVersion": "VERSION_2019_12"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostSearch_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_INITIATE_SEARCH",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostUserMessaging_2017_11",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_USER_MESSAGING_SVC",
+          "symbolicVersion": "VERSION_2017_11"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostUserMessaging_2019_12",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_USER_MESSAGING_SVC",
+          "symbolicVersion": "VERSION_2019_12"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostWorkflowComponent_2015_03",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_WORKFLOW_COMPONENT_INPUT_SVC",
+          "symbolicVersion": "VERSION_2015_03"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostDiscussionComponent_2015_10",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_DISCUSSION_COMPONENT_INPUT_SVC",
+          "symbolicVersion": "VERSION_2015_10"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/sol/services/hostAdvancedFilterComponent_2022_12",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_ADVANCED_FILTER_COMPONENT_INPUT_SVC",
+          "symbolicVersion": "VERSION_2022_12"
+        }
+      ]
+    }
+  ],
+  "initialModules": [
+    {
+      "module": "js/hosting/bootstrap/services/hostCore_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "HS_CS_STARTUP_NOTIFICATION_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_CONFIGURATION_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostCore_2014_07",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_CLIENT_STATUS_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        },
+        {
+          "symbolicName": "HS_HOST_CONFIGURATION_SVC",
+          "symbolicVersion": "VERSION_2014_07"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostLogging_2014_02",
+      "condition": true,
+      "proxies": [
+        {
+          "symbolicName": "HS_LOGGER_FORWARD_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    },
+    {
+      "module": "js/hosting/bootstrap/services/hostSoa_2014_02",
+      "condition": true,
+      "services": [
+        {
+          "symbolicName": "CS_SOA_JSON_REQUEST_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        },
+        {
+          "symbolicName": "CS_REQUEST_HOST_AUTH_REPLY_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ],
+      "proxies": [
+        {
+          "symbolicName": "HS_HOST_SESSION_INFO_SVC",
+          "symbolicVersion": "VERSION_2014_02"
+        }
+      ]
+    }
+  ],
+  "hostedComponents": {
+    "com.siemens.splm.clientfx.tcui.xrt.published.ObjectInfo": {
+      "componentLocation": "hostedObjectInfoLocation"
+    },
+    "com.siemens.splm.clientfx.tcui.xrt.published.Discussion": {
+      "componentLocation": "hostedDiscussionLocation"
+    },
+    "mockComponentCommand_ShowObject": {
+      "commandId": "Awp0ShowObject"
+    },
+    "mockComponentCommand_Awp0ShowCreateObject": {
+      "commandId": "Awp0ShowCreateObject"
+    },
+    "mockComponentLocation_ShowHome": {
+      "componentLocation": "showHome"
+    },
+    "mockComponentLocation_Search": {
+      "componentLocation": "teamcenter.search.search"
+    },
+    "mockComponentLocation_ShowObject": {
+      "componentLocation": "com.siemens.splm.clientfx.tcui.xrt.showObject"
+    },
+    "mockComponentLocation": {
+      "componentLocation": "mockComponentLocation"
+    },
+    "mockPresenterLocation": {
+      "componentLocation": "com.siemens.splm.clientfx.ui.components.ComponentsPresenter"
+    }
+  },
+  "queries": {
+    "com.siemens.splm.client.hosted.IsQueryHandlerAvailable": {
+      "module": "js/hosting/hostQueryService",
+      "service": "hostQueryService",
+      "constructor": "createIsQuerySupportedQueryHandler"
+    }
+  }
+}

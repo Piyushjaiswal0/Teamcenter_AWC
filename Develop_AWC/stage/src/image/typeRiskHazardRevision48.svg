@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-1.25" y1="2.25" x2="38.25" y2="41.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.3045" stop-color="#fbfbfb"/>
+      <stop offset="0.5835" stop-color="#f0f0f0"/>
+      <stop offset="0.8518" stop-color="#dedede"/>
+      <stop offset="1" stop-color="#d0d0d0"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="22.6626" y1="29.4492" x2="43.3374" y2="50.1241" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+    <rect x="0.5" y="0.5" width="36" height="43" stroke="#464646" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+    <rect x="5.5" y="5.5" width="9" height="9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+      <polyline points="12.5 7.5 9.5 12.5 7.5 10.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <rect x="5.5" y="17.5" width="9" height="9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+      <polyline points="12.5 19.5 9.5 24.5 7.5 22.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+      <polyline points="12.5 31.5 9.5 36.5 7.5 34.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <rect x="5.5" y="29.5" width="9" height="9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <line x1="18" y1="9.5" x2="31" y2="9.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <line x1="18" y1="21.5" x2="31" y2="21.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <line x1="18" y1="33.5" x2="24" y2="33.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <path d="M30.69,21.5831l-11.873,22.05a2.6235,2.6235,0,0,0,2.31,3.8672H44.8729a2.6235,2.6235,0,0,0,2.31-3.8672L35.31,21.5831A2.6234,2.6234,0,0,0,30.69,21.5831Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M34.5,26.5h-3v12h3Z" fill="#fff" stroke="#147391" stroke-linejoin="round"/>
+  <circle cx="33" cy="43" r="2" fill="#fff" stroke="#147391" stroke-linejoin="round"/>
+</svg>

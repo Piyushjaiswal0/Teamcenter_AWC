@@ -1,0 +1,44 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "initializeSecurityEditableCellClickListener": {
+            "actionType": "JSFunction",
+            "method": "initializeSecurityEditableCellClickListener",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "deps": "js/Awp0SecurityEditableCellService"
+        },
+        "bindProperties": {
+            "actionType": "JSFunction",
+            "method": "bindProperties",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "deps": "js/Awp0SecurityEditableCellService"
+        }
+    },
+    "data": {
+        "authPara": {
+            "type": "STRING",
+            "renderingHint": "textarea",
+            "requiredText": "Type to add a value"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeSecurityEditableCellClickListener",
+        "onUpdate": {
+            "action": "bindProperties",
+            "observers": [
+                "viewModel.data.authPara"
+            ]
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,126 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-base-sublocation.directive",
+        "js/aw-tile-canvas.directive"
+    ],
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2022-12-DataManagement",
+            "method": "getCurrentUserGateway3",
+            "inputData":
+            {
+            },
+            "outputData":
+            {
+                "tileGroups": "tileGroups"
+            },
+            "actionMessages":
+            {
+                "failure":
+                [
+                    {
+                        "message": "accessingGatewayFailed"
+                    }
+                ]
+            }
+        },
+        "updateTile":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2018-05-DataManagement",
+            "method": "updateTiles",
+            "inputData":
+            {
+                "tiles": "{{data.eventData.tiles}}",
+                "groupNames": "{{data.eventData.groupNames}}"
+            },
+            "outputData":
+            {
+                "tileGroups": "tileGroups"
+            },
+            "actionMessages":
+            {
+                "failure":
+                [
+                    {
+                        "message": "updateTileFailed"
+                    }
+                ]
+            }
+        },
+        "unpinTile":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2018-05-DataManagement",
+            "method": "unpinObjects",
+            "inputData":
+            {
+                "uidsToUnpin":
+                [
+                    "{{data.eventData.relUID}}"
+                ],
+                "returnGateway": true
+            },
+            "outputData":
+            {
+                "tileGroups": "tileGroups"
+            },
+            "actionMessages":
+            {
+                "failure":
+                [
+                    {
+                        "message": "unPinFailed"
+                    }
+                ]
+            }
+        }
+    },
+
+    "messages":
+    {
+        "accessingGatewayFailed":
+        {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.pinObjectFailedNoGateway}}"
+        },
+        "unPinFailed":
+        {
+            "messageType": "ERROR",
+            "messageText":"{{i18n.unpinTileFailed}}"
+        },
+        "updateTileFailed":
+        {
+            "messageType": "ERROR",
+            "messageText":"{{i18n.tileUpdateFailedMsg}}"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "gateway.updateTile",
+            "action": "updateTile",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "gateway.unpinTile",
+            "action": "unpinTile",
+            "cacheEventData": true
+        }
+    ],
+    "i18n":
+    {
+        "pinObjectFailedNoGateway": [ "GatewayMessages" ],
+        "unpinTileFailed": [ "GatewayMessages" ],
+        "tileUpdateFailedMsg": [ "GatewayMessages" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    }
+}

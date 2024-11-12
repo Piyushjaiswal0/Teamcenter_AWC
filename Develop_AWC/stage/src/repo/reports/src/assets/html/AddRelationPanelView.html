@@ -1,0 +1,17 @@
+<aw-panel-body>
+    <aw-command-panel-section caption="i18n.relations" anchor="data.rb0RemoveSegmentCommands" context="{ ...subPanelContext }" exist-when="props.subPanelContext.reportsState.segments.length" collapsed="disabled">
+        <aw-tree name="segmentree" tree="props.subPanelContext.reportsState.segmentTree">
+            {{node.label}}
+        </aw-tree>
+    </aw-command-panel-section>
+    <aw-command-panel-section caption="i18n.chooseRelation" context="{ ...subPanelContext }" exist-when="props.subPanelContext.reportsState.segments.length>0" collapsed="disabled">
+        <aw-guidance-message exist-when="props.subPanelContext.reportsState.showWarnMsg" message="infoMessage" closable="false" banner-style="true" show-icon="true" show-type="false"> </aw-guidance-message>
+            <aw-segment-section sub-panel-context="subPanelContext" traverse-segment="props.subPanelContext.reportsState.segments[props.subPanelContext.reportsState.segments.length -1]" >
+            </aw-segment-section>
+    </aw-command-panel-section>
+    <div class='sw-button-group justify-right'>
+        <aw-button action="addSegmentActions" button-type="base" size="auto" enable-when="conditions.canAddNewSegment">
+            <aw-i18n>i18n.addChartCommand</aw-i18n>
+        </aw-button>
+    </div>
+</aw-panel-body>

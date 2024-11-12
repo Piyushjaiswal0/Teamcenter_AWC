@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Organizar",
+    "arrangeButtonTitle": "Organizar",
+    "arrangeAdminTitle": "Admin",
+    "arrangeNoColumnConfigs": "Nenhuma disposição salva",
+    "arrangeConfigNameTitle": "Disposição",
+    "arrangeNewConfigNameTitle": "Nome",
+    "arrangeNewConfigNameTitleRequired": "Nomear sua disposição",
+    "arrangeNewConfigTitle": "Salvar como nova disposição",
+    "arrangeAndSaveButtonTitle": "Salvar e organizar",
+    "arrangeAndCreateButtonTitle": "Salvar e organizar",
+    "defaultNewColumnConfigName": "Nova disposição de coluna",
+    "availableColumnsTitle": "Colunas disponíveis",
+    "tableColumnsTitle": "Colunas exibidas",
+    "box1Title": "Exemplo de comando do Active Workspace com balão popup",
+    "seeMorePropertiesTitle": "Visualizar o banco de dados completo..."
+}

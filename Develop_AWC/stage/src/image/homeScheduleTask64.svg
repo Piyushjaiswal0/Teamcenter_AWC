@@ -1,0 +1,7 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M58,32H7c-1.654,0-3-1.346-3-3V16c0-1.654,1.346-3,3-3h51c1.654,0,3,1.346,3,3v13C61,30.654,59.654,32,58,32
+	z M7,15c-0.551,0-1,0.448-1,1v13c0,0.552,0.449,1,1,1h51c0.552,0,1-0.448,1-1V16c0-0.552-0.448-1-1-1H7z"/>
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M0,0v64h64V0H0z M2,62V2h60v35H44c-1.654,0-3,1.346-3,3v13c0,1.654,1.346,3,3,3h18v6H2z M62,39v15H44
+	c-0.552,0-1-0.448-1-1V40c0-0.552,0.448-1,1-1H62z"/>
+</svg>

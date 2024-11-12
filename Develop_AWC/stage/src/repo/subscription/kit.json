@@ -1,0 +1,14 @@
+{
+  "name": "subscription",
+  "description": "",
+  "modules": [
+    "subscription"
+  ],
+  "version": "6.3.1",
+  "OOTB": true,
+  "soaDeps": [
+    "Fnd0.Soa.Notification",
+    "Sub0.Soa",
+    "Teamcenter.Soa.Query"
+  ]
+}

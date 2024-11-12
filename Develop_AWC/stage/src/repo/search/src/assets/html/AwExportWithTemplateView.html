@@ -1,0 +1,12 @@
+<aw-command-panel caption="i18n.Awp0ExportWithTemplateTitle" context="subPanelContext">
+    <aw-tab-set tabs="ctx.tabModelsClass[0]" sub-panel-context="subPanelContext">
+    </aw-tab-set>
+    <aw-panel-body exist-when="data.selectedTab.pageId === 'searchExport'">
+        <aw-radiobutton prop="data.exportType"></aw-radiobutton>
+    </aw-panel-body>
+    <aw-panel-footer exist-when="data.selectedTab.pageId === 'searchExport'">
+        <aw-button size='auto' action="exportSearchResultsBatchJob">
+            <aw-i18n>i18n.Awp0ExportWithTemplateTitle</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

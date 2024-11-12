@@ -1,0 +1,262 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "revealPanel":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "generateReportDefintionId"
+            }, {
+                "action": "getSaveAsReportName"
+            } ]
+        },
+        "generateReportDefintionId": {
+            "actionType": "TcSoaService",
+            "serviceName": "Reports-2007-01-CrfReports",
+            "method": "generateReportDefintionIds",
+            "inputData": {
+                "inputCriteria": [ {
+                    "category": "SummaryReport",
+                    "clientId": "",
+                    "source": "",
+                    "status": ""
+                } ]
+            },
+            "outputData": {
+                "reportId": "{{function:getNewReportId}}"
+            },
+            "deps": "js/addNewReportService"
+        },
+        "addNewReportAction":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "addReportAction"
+            }, {
+                "action": "createRelationsForNone"
+            } ]
+        },
+        "addReportAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2008-06-DataManagement",
+            "method": "createObjects",
+            "inputData": {
+                "input": [ {
+                    "clientId": "1",
+                    "data": {
+                        "boName": "ReportDefinition",
+                        "stringProps": {
+                            "rd_name": "{{data.reportName.uiValue}}",
+                            "rd_source": "Active Workspace",
+                            "rd_folder_name": "CrfHome",
+                            "rd_class": "{{ctx.selected.props.rd_class.dbValues[0]}}",
+                            "rd_id": "{{data.reportId.uiValue}}",
+                            "rd_description": "{{data.reportDesc.uiValue}}"
+                        },
+                        "intProps": {
+                            "rd_state": 0,
+                            "rd_type": "{{function:getReportType}}"
+                        },
+                        "stringArrayProps": {
+                            "rd_param_values": "{{ctx.selected.props.rd_param_values.dbValue}}",
+                            "rd_parameters": "{{ctx.selected.props.rd_parameters.dbValue}}"
+                        },
+                        "boolProps": {
+                            "fnd0IsAsync": "{{ctx.selected.props.fnd0IsAsync.dbValue}}"
+                        }
+                    }
+                } ]
+            },
+            "outputData": {
+                "createdReportDefObject": "output[0].objects[0]"
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "showReportCreateErrorMessage",
+                    "condition": "errorCode.code === 515106"
+                } ]
+            },
+            "deps": "js/addNewReportService"
+        },
+        "updateSearchStateWithUID": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateWithUID",
+            "inputData": {
+                "searchData": "{{props.subPanelContext.searchState}}",
+                "UID": "{{data.createdReportDefObject.uid}}"
+            },
+            "deps": "js/addNewReportService"
+        },
+        "createRelationsForNone": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "createRelations",
+            "inputData": {
+                "input": [
+                    {
+                        "primaryObject": {
+                            "type": "ReportDefinition",
+                            "uid": "{{data.createdReportDefObject.uid}}"
+                        },
+                        "secondaryObject": {
+                            "type": "GroupMember",
+                            "uid": "{{ctx.userSession.props.fnd0groupmember.dbValue}}"
+                        },
+                        "relationType": "Fnd0Applicable_Assignment",
+                        "clientId": ""
+                    }
+                ]
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [
+                        {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        },
+                        {
+                            "name":"rd_description"
+                        }
+                    ]
+                } ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSearchState.saveAsReportUID"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        },
+                        "condition": "!subPanelContext.panelPinned"
+                    }
+                ]
+            },
+            "outputData":{
+                "output": ""
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "getSaveAsReportName": {
+            "actionType": "JSFunction",
+            "method": "getSaveAsReportName",
+            "inputData": {
+                "copyMsg": "{{i18n.copyMsg}}",
+                "replaceText":"{{ctx.selected.props.rd_name.dbValues[0]}}",
+                "reportName": "{{data.reportName}}"
+            },
+            "outputData": {
+                "reportName": ""
+            },
+            "deps": "js/addNewReportService"
+        }
+    },
+    "data": {
+        "reportId": {
+            "displayName": "{{i18n.reportId}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "reportName": {
+            "displayName": "{{i18n.reportName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "reportDesc": {
+            "displayName": "{{i18n.reportDesc}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.selected.props.rd_description.dbValues[0]}}",
+            "uiValue": "{{ctx.selected.props.rd_description.dbValues[0]}}"
+        },
+        "reportType": "{{ctx.selected.props.rd_type.dbValues[0]}}"
+    },
+    "onEvent": [
+        {
+            "eventId": "updateSearchState.saveAsReportUID",
+            "action": "updateSearchStateWithUID"
+        }
+    ],
+    "functions": {
+        "getReportType": {
+            "functionName": "getReportType",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getNewReportId":{
+            "functionName": "getNewReportId",
+            "parameters": ["{{data.reportId}}"]
+        }
+    },
+    "messages": {
+        "showReportCreateErrorMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.reportCreateErrorMessageTest}}",
+            "messageTextParams": [
+                "{{data.reportName.uiValue}}",
+                "{{data.reportId.uiValue}}"
+            ]
+        }
+    },
+    "i18n": {
+        "saveReport": [ "ReportChartMessages" ],
+        "reportId": [
+            "ReportChartMessages"
+        ],
+        "reportName": [
+            "ReportChartMessages"
+        ],
+        "reportDesc": [
+            "ReportChartMessages"
+        ],
+        "reportCreateErrorMessageTest":[
+            "ReportChartMessages"
+        ],
+        "copyMsg": [
+            "ReportChartMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "revealPanel"
+    },
+    "conditions": { }
+}

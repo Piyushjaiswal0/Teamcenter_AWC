@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "File Attachments",
+    "dropHere": "Drop here",
+    "chooseFile": "Choose file",
+    "removeFileBtnTooltip": "Remove File",
+    "failureToAttachFiles": "\"{0}\" was not added because that file type is not allowed as an attachment."
+}

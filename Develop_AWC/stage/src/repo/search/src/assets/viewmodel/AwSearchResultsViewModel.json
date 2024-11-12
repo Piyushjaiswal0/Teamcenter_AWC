@@ -1,0 +1,130 @@
+{
+    "schemaVersion" : "1.0.0",
+    "lifecycleHooks": {
+        "onMount": "activateSearchFilterActionBatchJob",
+        "onUnmount": "resetHighlight",
+        "onUpdate": {
+            "action": "openCloseFilterPanelAction",
+            "observers": [
+                "viewModel.searchState.categories"
+            ]
+        }
+    },
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "search",
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "clientScopeURI": "Awp0SearchResults",
+            "nameToken": "com.siemens.splm.client.search:SearchResultsSubLocation",
+            "context": {
+                "search": {
+                    "loadDataAction": "loadSearchData",
+                    "provider": "Awp0FullTextSearchProvider",
+                    "sortType": "Priority",
+                    "chartTitle": {
+                        "source": "/i18n/SearchMessages",
+                        "key": "SearchResultsChartTitle"
+                    },
+                    "criteria": {
+                        "forceThreshold": "true",
+                        "searchFromLocation": "global",
+                        "dcpSortByDataProvider": "true",
+                        "getGroupedCategories": "true"
+                    },
+                    "showLoadingText": true,
+                    "showChartColorBars": true,
+                    "selectFirstObjectPreference": "AWC_select_firstobject_inSearchLocation",
+                    "showNoCriteriaMessage": true,
+                    "numberOfCategoriesShownInGroupPreference": "AWC_Search_Filter_Panel_Number_Of_Categories_Shown_Inside_Each_Group",
+                    "numberOfMaxGroupsShownPreference": "AWC_Search_Filter_Panel_Number_Of_Groups_Shown"
+                }
+            },
+            "viewBase": "AwSearchResults"
+        },
+        "searchState": {
+            "initialValues": {
+                "filterString": "",
+                "selectedFiltersString": ""
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        }
+    },
+    "actions":
+    {
+        "activateSearchFilterActionBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "validateCriteriaAndFilterString"
+                },
+                {
+                    "action": "readAutoOpenFilterPanelPrefValue",
+                    "condition": "data.openFilterPanel"
+                },
+                {
+                    "action": "activateSearchFilterAction",
+                    "condition": "data.openFilterPanel && data.autoOpenFilterPanel"
+                },
+                {
+                    "action": "initHighlight"
+                }
+            ]
+        },
+        "initHighlight": {
+            "actionType": "JSFunction",
+            "method": "initHighlight",
+            "inputData": {},
+            "deps": "js/Awp0SearchHighlightingService"
+        },
+        "resetHighlight": {
+            "actionType": "JSFunction",
+            "method": "resetHighlight",
+            "inputData": {},
+            "deps": "js/Awp0SearchHighlightingService"
+        },
+        "validateCriteriaAndFilterString": {
+            "actionType": "JSFunction",
+            "method": "validateCriteriaAndFilterString",
+            "inputData": {},
+            "outputData": {
+                "openFilterPanel": ""
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "openCloseFilterPanelAction": {
+            "actionType": "JSFunction",
+            "method": "openCloseFilterPanelAction",
+            "inputData": {
+                "searchState": "{{data.searchState}}"
+            },
+            "deps": "js/awSearchLocationFilterPanelService"
+        },
+        "readAutoOpenFilterPanelPrefValue": {
+            "actionType": "JSFunction",
+            "method": "readAutoOpenFilterPanelPrefValue",
+            "inputData": {},
+            "outputData": {
+                "autoOpenFilterPanel": ""
+            },
+            "deps": "js/awSearchLocationFilterPanelService"
+        },
+        "activateSearchFilterAction": {
+            "actionType": "activateCommandPanel",
+            "inputData": {
+                "commandId": "Awp0SearchFilter",
+                "location": "aw_navigation"
+            }
+        }
+    }
+}

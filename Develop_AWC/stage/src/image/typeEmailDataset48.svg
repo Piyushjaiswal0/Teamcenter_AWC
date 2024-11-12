@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.5" y1="41.5" x2="41" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="25.25" y1="44.25" x2="38.25" y2="31.25" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="16.0312" y1="-0.2027" x2="38.1029" y2="21.869" gradientTransform="translate(-3.567 19.6668)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+  </defs>
+  <polygon points="28.5 0.5 5.5 0.5 5.5 47.5 41.5 47.5 41.5 13.5 28.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="28.5 0.5 28.5 13.5 41.5 13.5 28.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+    <rect x="10.257" y="21.6714" width="26.4859" height="17.6573" transform="translate(-9.2145 10.1958) rotate(-20.5603)" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+    <path d="M10.183,27.8908l10.9543,3.4979a3.9681,3.9681,0,0,0,4.66-1.8136l5.4915-9.6006" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <line x1="21.2002" y1="31.4317" x2="14.984" y2="40.6905" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <line x1="36.0895" y1="32.7742" x2="25.7578" y2="29.7395" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

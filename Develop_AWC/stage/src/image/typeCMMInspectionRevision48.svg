@@ -1,0 +1,30 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="21.5" y1="15.193" x2="26.5" y2="15.193" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-607.098" y1="-369.507" x2="-589.278" y2="-375.991" gradientTransform="matrix(-0.005, 1, -1.023, -0.005, -360.171, 633.291)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="18.389" y1="33.445" x2="22.389" y2="33.445" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.227" stop-color="#70b2c6"/>
+      <stop offset="0.426" stop-color="#65aac0"/>
+      <stop offset="0.616" stop-color="#539eb5"/>
+      <stop offset="0.799" stop-color="#398da7"/>
+      <stop offset="0.976" stop-color="#197694"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <rect x="21.5" y="1.427" width="5" height="27.531" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <path d="M23.965,46.5A9.5,9.5,0,1,1,33.5,37.053,9.5,9.5,0,0,1,23.965,46.5Z" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M22.389,33.444a2,2,0,1,1-2-2A2,2,0,0,1,22.389,33.444Z" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#linear-gradient)"/>
+</svg>

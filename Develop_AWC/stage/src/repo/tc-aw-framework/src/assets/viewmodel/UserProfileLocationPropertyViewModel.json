@@ -1,0 +1,55 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-panel-section.directive",
+        "js/aw-label.directive",
+        "js/aw-widget.directive"
+    ],
+    "actions":{
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData": {
+                "objects": ["{{subPanelContext.selected}}"],
+                "attributes": [
+                    "geography",
+                    "fnd0UserDeclaredGeography"
+                ]
+            }
+        },
+        "loadGroupObject": {
+            "actionType": "JSFunction",
+            "method": "getObject",
+            "inputData": {
+                "data": "{{ctx.userSession.props.group.dbValues[0]}}"
+            },
+            "outputData": {
+                "isPrivilege": "props.privilege"
+            },
+
+            "deps": "soa/kernel/clientDataModel"
+        }
+    },
+    "conditions": {
+        "isPrivilegedUser": {
+            "expression": "data.isPrivilege.dbValues[0] === '1'|| ctx.user.uid===subPanelContext.selected.uid"
+        }
+    },
+    "onEvent":
+    [
+        {
+            "eventId": "UserProfileLocationProperty.contentLoaded",
+            "action": "reveal"
+        },
+        {
+            "eventId":"UserProfileLocationProperty.contentLoaded",
+            "action":"loadGroupObject"
+        }
+    ],
+    "i18n" :
+    {
+        "locationTitle":["ZeroCompileCommandMessages"]
+    }
+}

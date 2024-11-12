@@ -1,0 +1,93 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+    },
+    "actions": {
+        "render": {
+            "method": "awGroupedFilterPanelRenderFunction",
+            "deps": "js/AwGroupedFilterPanelService"
+        }
+    },
+    "i18n": {
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "groupedCategories": {
+            "type": "object"
+        },
+        "facetAction": {
+            "type": "object"
+        },
+        "numericRangeAction": {
+            "type": "object"
+        },
+        "dateRangeAction": {
+            "type": "object"
+        },
+        "numericRangeFacetAction": {
+            "type": "object"
+        },
+        "dateRangeFacetAction": {
+            "type": "object"
+        },
+        "radioAction": {
+            "type": "object"
+        },
+        "bulkModeStringAction": {
+            "type": "object"
+        },
+        "selectFilterAction": {
+            "type": "object"
+        },
+        "moreLinkProp": {
+            "type": "object"
+        },
+        "lessLinkProp": {
+            "type": "object"
+        },
+        "noResultsFoundLabel": {
+            "type": "object"
+        },
+        "hideBulkModeActionCommand": {
+            "type": "object"
+        },
+        "isBulkMode": {
+            "type": "object"
+        },
+        "context": {
+            "type": "object"
+        },
+        "excludeCategoryCallBackAction": {
+            "type": "object"
+        },
+        "customFacetSearchDelay": {
+            "type": "object"
+        },
+        "categoriesToShowInEachGroup": {
+            "type": "integer"
+        },
+        "groupsToShow": {
+            "type": "integer"
+        },
+        "showAllCategoriesInsideEachGroup": {
+            "type": "object"
+        },
+        "showAllCategoriesInsideEachGroupProp": {
+            "type": "object"
+        },
+        "groupExpandAction": {
+            "type": "object"
+        },
+        "showAllGroupsCallBackAction": {
+            "type": "object"
+        },
+        "showAllGroupsProp": {
+            "type": "object"
+        }
+    },
+    "onEvent": [],
+    "messages": {},
+    "conditions": {}
+}

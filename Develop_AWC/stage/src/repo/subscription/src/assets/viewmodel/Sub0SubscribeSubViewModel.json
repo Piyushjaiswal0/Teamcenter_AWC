@@ -1,0 +1,63 @@
+{
+   "schemaVersion" : "1.0.0",
+   "imports":[],
+   "actions":
+    {
+        "updateObject": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "resetObjectAction",
+                    "condition": "subPanelContext.sharedData.prePanelId== 'Sub0SubscribeType'"
+                },
+                {
+                    "action": "addObjectAction"
+                }
+            ]
+
+        },
+        "resetObjectAction": {
+            "actionType": "JSFunction",
+            "method": "clearDataProviderContent",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.list_subscription}}"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "addObjectAction":{
+            "actionType": "JSFunction",
+            "method": "addObject",
+            "inputData":{
+                "data":"{{data}}",
+                "newObject":"{{props.subPanelContext.sharedData.subscriptions}}",
+                "dataProvider":"{{data.dataProviders.list_subscription}}"
+             },
+             "deps":"js/Sub0SubscribeCommandPanelService"
+         }
+    },
+    "data":
+    {
+        "addSubscriptionCommands":"sub0_addSubscriptionCommands"
+    },
+
+    "dataProviders": {
+        "list_subscription": {
+            "commandsAnchor":"aw_subscriptionShowObjectCellCommandAction"
+        }
+    },
+    "i18n" :
+    {
+        "mySybscriptionsTitle":["SubscriptionMessages"]
+    },
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "updateObject",
+                "observers": [
+                    "props.subPanelContext.sharedData.subscriptions"
+                ]
+            }
+        ]
+    }
+
+}

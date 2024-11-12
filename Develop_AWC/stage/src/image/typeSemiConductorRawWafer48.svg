@@ -1,0 +1,7 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="7.237" y1="7.237" x2="39.763" y2="39.763" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+  <circle cx="23.5" cy="23.5" r="23" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+</svg>

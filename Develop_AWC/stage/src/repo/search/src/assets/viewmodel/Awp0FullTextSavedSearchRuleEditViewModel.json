@@ -1,0 +1,239 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "actions": {
+        "createChartProvider":{
+            "actionType": "JSFunction",
+            "method": "createChartProvider",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.searchState}}",
+                "chartListboxPropData": "{{data.chartListboxPropData}}"
+            },
+            "deps": "js/awChartDataProviderService"
+        },
+        "triggerSelectCategoryHeaderEvent": {
+            "actionType": "JSFunction",
+            "method": "triggerSearchFilterTargetCategoryEvent",
+            "inputData": {
+                "internalPropertyNameToGroupOn": "{{data.chartListboxPropData.dbValue}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/awChartDataProviderService"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initFulltextState"
+                },
+                {
+                    "action": "updateAtomicData"
+                },
+                {
+                    "action": "updateChartListboxPropData"
+                }
+            ]
+        },
+        "updateChartListboxPropData": {
+            "actionType": "JSFunction",
+            "method": "updateChartListboxPropData",
+            "inputData": {
+                "chartListboxPropData": "{{data.chartListboxPropData}}",
+                "searchState": "{{props.subPanelContext.searchState}}"
+            },
+            "outputData": {
+                "chartListboxPropData": ""
+            },
+            "deps": "js/awChartDataProviderService"
+        },
+        "updateAtomicData": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.searchState}}",
+                "value" : {
+                    "recreateChartProvider": "true"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "initFulltextState": {
+            "actionType": "JSFunction",
+            "method": "initFulltextState",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/savedSearchService"
+        },
+        "updateSearchStateAfterFilterAction": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateAfterFilterAction",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "doFulltextSearch":
+        {
+            "actionType": "JSFunction",
+            "method": "doFulltextSearch",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "searchFolder": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/searchFolderService"
+        },
+        "save":
+        {
+            "actionType": "JSFunction",
+            "method": "editActiveFolder",
+            "inputData": {
+                "parentFolderUID": "",
+                "searchFolderUID": "{{subPanelContext.searchState.searchFolder.uid}}",
+                "reportDefinitionUID": "{{function:getReportDefinitionUID}}",
+                "searchCriteria":"{{function:getReportDefinitionCriteriaForSave}}"
+            },
+            "deps": "js/searchFolderService"
+        },
+        "updateSearchFolder":
+        {
+            "actionType": "JSFunction",
+            "method": "setNonEditMode",
+            "inputData":
+            {
+                "data":"{{data}}",
+                "searchFolderCtx":"{{subPanelContext.searchState.searchFolder}}"
+            },
+            "deps": "js/searchFolderService"
+        },
+        "constructBreadCrumbTitle": {
+            "actionType": "JSFunctionAsync",
+            "method": "buildTitle",
+            "inputData": {
+                "searchObject": "{{subPanelContext.searchState}}"
+            },
+            "outputData": {
+                "crumbTitle": ""
+            },
+            "deps": "js/AwSearchBreadcrumbUtils"
+        }
+    },
+    "data": {
+        "chartListboxPropData": {
+            "displayName": "{{i18n.SearchResultsChartSelectorTitle}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "hasLov": "true",
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "chartTitleValue": {
+            "titleValue": "{{i18n.SearchResultsChartTitle}} {{subPanelContext.searchState.chartProvider.chartListboxPropData.dispValue}}"
+        },
+        "searchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "requiredText": "{{i18n.searchBtn}}",
+            "dbValue": "{{subPanelContext.searchState.criteria.searchString}}"
+        },
+        "searchBoxPlaceHolder": {
+            "dbValue": "{{i18n.Awp0SearchTitle}}"
+        },
+        "searchFolderCriteria": {
+            "displayName": "{{i18n.searchCriteria}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false"
+        }
+    },
+
+    "functions": {
+        "getReportDefinitionCriteriaForSave":
+        {
+            "functionName": "getReportDefinitionCriteriaForSave",
+            "parameters":
+            [
+                "{{ctx.searchFolder}}",
+                 "{{data}}"
+            ]
+        },
+        "getReportDefinitionUID": {
+            "functionName": "getReportDefinitionUID",
+            "parameters":
+            [
+                "{{ctx.searchFolder.props.awp0SearchDefinition.dbValue}}"
+            ]
+        }
+    },
+    "messages": {
+        "unsavedChanges": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.unsavedChanges}}",
+            "messageTextParams": [
+                "{{ctx.mselected[0].props.object_name.uiValues[0]}}"
+            ],
+            "navigationOptions": [
+                {
+                    "option": "Discard",
+                    "text": "{{i18n.discard}}",
+                    "action": ""
+                },
+                {
+                    "option": "Save",
+                    "text": "{{i18n.Save}}",
+                    "action": "save"
+                }
+            ]
+        }
+    },
+    "conditions": {
+        "showFilters": {
+            "expression": "subPanelContext.searchState.searchFolder.searchFilterMap"
+        },
+        "populatedSearchString": {
+            "expression": "subPanelContext.searchState.criteria && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.criteria.searchString.length > 0"
+        },
+        "showChartByDropDown": {
+            "expression": "subPanelContext.searchState.chartProvider && subPanelContext.searchState.totalLoaded > 0 && subPanelContext.searchState.searchFilterCategories.length > 0 && subPanelContext.searchState.chartProvider.chartListboxListData.dbValue.length > 0"
+        }
+    },
+    "i18n": {
+        "SearchResultsChartTitle": [ "SearchMessages" ],
+        "SearchResultsChartSelectorTitle": [ "SearchMessages" ],
+        "searchBtn": [ "SearchMessages" ],
+        "Awp0SearchTitle": ["SearchMessages"],
+        "searchFiltersTitle": [ "SearchMessages" ],
+        "refine": [ "SearchMessages" ],
+        "savedSearch": [ "SearchMessages" ],
+        "searchCriteria": [ "SearchMessages" ],
+        "unsavedChanges": [ "SearchMessages" ],
+        "discard": [ "SearchMessages" ],
+        "Save": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUpdate": [
+            {
+                "action": "updateSearchStateAfterFilterAction",
+                "observers": [ "props.subPanelContext.searchState" ]
+            },
+            {
+                "action": "constructBreadCrumbTitle",
+                "observers": [ "props.subPanelContext.searchState" ]
+            },
+            {
+                "action": "createChartProvider",
+                "observers": [
+                    "props.subPanelContext.searchState"
+                ]
+            }
+        ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

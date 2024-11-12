@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="linear-gradient" x1="44.9998" y1="58.0003" x2="120.0004" y2="133.0009" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edf6f8"/>
+      <stop offset="1" stop-color="#cfe2e8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="42.0858" y1="61.0858" x2="44.9142" y2="63.9142" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="83.0858" y1="86.0858" x2="85.9142" y2="88.9142" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="124.0858" y1="25.0858" x2="126.9142" y2="27.9142" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="1.0858" y1="99.0867" x2="3.9142" y2="101.9151" xlink:href="#linear-gradient"/>
+  </defs>
+  <polyline points="2.5006 0 2.5006 127.5 128.0005 127.5005" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <polygon points="2.5 100.5 43.5003 62.5 84.5001 87.5 125.5 26.5 125.5 127.5013 2.5 127.5011 2.5 100.5" fill="url(#linear-gradient)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  <circle cx="43.5" cy="62.5" r="2" fill="url(#linear-gradient-2)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  <circle cx="84.5" cy="87.5" r="2" fill="url(#linear-gradient-3)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  <circle cx="125.5" cy="26.5" r="2" fill="url(#linear-gradient-4)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  <circle cx="2.5" cy="100.5009" r="2" fill="url(#linear-gradient-5)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  <g>
+    <circle cx="10.5" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="40.5019" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="100.5057" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="110.5063" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="120.5069" cy="6.5" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="40.5019" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="100.5057" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="110.5063" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="120.5069" cy="16.5006" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="40.5019" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="100.5057" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="110.5063" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="120.5069" cy="26.5013" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="40.5019" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="100.5057" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="110.5063" cy="36.5019" r=".5" fill="#bfd8e2"/>
+    <circle cx="110.5063" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="40.5019" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="100.5057" cy="46.5025" r=".5" fill="#bfd8e2"/>
+    <circle cx="100.5057" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="30.5013" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="40.5019" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="50.5025" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="56.5031" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="20.5006" cy="76.5044" r=".5" fill="#bfd8e2"/>
+    <circle cx="60.5031" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="66.5038" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="76.5044" r=".5" fill="#bfd8e2"/>
+    <circle cx="10.5" cy="86.505" r=".5" fill="#bfd8e2"/>
+    <circle cx="70.5038" cy="76.5044" r=".5" fill="#bfd8e2"/>
+    <circle cx="80.5044" cy="76.5044" r=".5" fill="#bfd8e2"/>
+    <circle cx="90.505" cy="76.5044" r=".5" fill="#bfd8e2"/>
+  </g>
+</svg>

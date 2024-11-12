@@ -1,0 +1,25 @@
+<aw-empty-workarea class="aw-base-scrollPanel"
+    exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded && subPanelContext.pwaSelectionModel
+    && !(subPanelContext.searchState.thresholdExceeded==='true') && !subPanelContext.searchState.criteria.searchString"
+    image="graEmptySearchList"
+    title="i18n.nothingFound"
+    hint="i18n.noCriteriaKeywordHint">
+</aw-empty-workarea>
+<aw-empty-workarea class="aw-base-scrollPanel"
+    exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded && subPanelContext.pwaSelectionModel
+    && !(subPanelContext.searchState.thresholdExceeded==='true') && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.totalFound === 0"
+    image="graNoSearchResult"
+    title="i18n.noResultsFound"
+    hint="i18n.noResultsSearchAreaKeywordHint">
+</aw-empty-workarea>
+<span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+    exist-when="subPanelContext.searchState.totalFound===0 && !(subPanelContext.searchState.thresholdExceeded === 'true') && !subPanelContext.pwaSelectionModel">{{i18n.noFiltersFound}}</span>
+<span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+    exist-when="subPanelContext.searchState.totalFound===0 && subPanelContext.searchState.thresholdExceeded==='true'">{{data.thresholdExceededMessage}}</span>
+<aw-list dataprovider="data.dataProviders.imageDataProvider" show-decorators="true"
+    exist-when="conditions.populatedSearchString && conditions.checkTotalLoadStatus"
+    show-context-menu="true" show-check-box="subPanelContext.showCheckBox">
+    <div class='w-12'>
+        <aw-image-cell vmo="item"></aw-image-cell>
+    </div>
+</aw-list>

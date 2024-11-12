@@ -1,0 +1,129 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "data": {
+        "sharedTableSearchBox": {
+            "displayName": "{{i18n.filterPanelCategoryFilterPlaceholderText}}",
+            "type": "STRING",
+            "dbValue": "",
+            "requiredText": "{{i18n.filterPanelCategoryFilterPlaceholderText}}"
+        }
+    },
+    "actions": {
+        "getSearchFolderAccessors": {
+            "actionType": "JSFunction",
+            "method": "getSearchFolderAccessors",
+            "inputData": {
+                "selectedSearchFolderUID": "{{ctx.xrtSummaryContextObject.uid}}",
+                "searchString": "{{data.sharedTableSearchBox.dbValue}}"
+            },
+            "outputData": {
+                "accessors": ""
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "disableAddButton": {
+            "actionType": "JSFunction",
+            "method": "disableButton",
+            "inputData": {
+                "buttonName": "add",
+                "dataProvider": "{{data.dataProviders.getSearchFolderAccessorsProvider}}",
+                "currentSearchFolderAccessors": "{{data.accessors}}",
+                "searchFolderShareRuleState": "{{props.searchFolderShareRuleState}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "getSearchFolderAccessorsProvider"
+        },
+        "removeSelection": {
+            "actionType": "JSFunction",
+            "method": "removeSelectionsFromSearchFolderShareRule",
+            "inputData": {
+                "searchFolderShareRuleState": "{{props.searchFolderShareRuleState}}",
+                "dataProvider": "{{data.dataProviders.getSearchFolderAccessorsProvider}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "doGridDataProviderBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "doGridDataProvider"
+                }
+            ]
+        }
+    },
+    "dataProviders": {
+        "getSearchFolderAccessorsProvider": {
+            "action": "getSearchFolderAccessors",
+            "response": "{{data.accessors}}",
+            "totalFound": "{{data.accessors.length}}",
+            "selectionModelMode": "single"
+        }
+    },
+    "columnProviders": {
+        "accessorsTableColumnProvider": {
+            "frozenColumnIndex": 0,
+            "columns": [
+                {
+                    "name": "icon",
+                    "displayName": "",
+                    "maxWidth": 70,
+                    "minWidth": 70,
+                    "width": 70,
+                    "enableColumnMenu": false,
+                    "pinnedLeft": true,
+                    "enableColumnResizing": false
+                },
+                {
+                    "name": "object_string",
+                    "displayName": "",
+                    "maxWidth": 375,
+                    "minWidth": 250,
+                    "width": 300,
+                    "enableColumnMenu": false,
+                    "pinnedLeft": false,
+                    "enableColumnResizing": false,
+                    "enableColumnMoving": false
+                }
+            ],
+            "sortCriteria": []
+        }
+    },
+    "grids": {
+        "accessorsView": {
+            "dataProvider": "getSearchFolderAccessorsProvider",
+            "columnProvider": "accessorsTableColumnProvider",
+            "addIconColumn": true,
+            "gridOptions": {
+                "enableSorting": false,
+                "isFilteringEnabled": false
+            }
+        }
+    },
+    "props": {
+        "search-folder-share-rule-state": {
+            "type": "object"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "getSearchFolderAccessorsProvider.selectionChangeEvent",
+            "action": "disableAddButton"
+        }
+    ],
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "doGridDataProviderBatchJob",
+                "observers": [ "props.searchFolderShareRuleState.accessorsString" ]
+            }
+        ]
+    },
+    "i18n": {
+        "filterPanelCategoryFilterPlaceholderText": [ "SearchMessages" ]
+    }
+}

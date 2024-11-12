@@ -1,0 +1,4 @@
+<aw-include name="{{data.showObjContext.activeTab.view?data.showObjContext.activeTab.view:'AwXrtSublocation'}}"  key="{{data.viewModelObject.uid}}"
+    sub-panel-context="{provider:props.subPanelContext, openedObject:data.viewModelObject, showObjectContext:data.showObjContext, headerData: fields.viewModelObject, pageContext:{ primarySublocTabState: fields.primaryActiveTabId, primaryActiveTabId: data.showObjContext.activeTab.id} }"
+    exist-when="data.viewModelObject && !data.showObjContext.errorMsg"></aw-include>
+<aw-show-object-page-for-error exist-when="data.viewModelObject && data.showObjContext.errorMsg" error-msg="{{data.showObjContext.errorMsg}}" display-name="{{data.showObjContext.displayName}}"></aw-show-object-page-for-error>

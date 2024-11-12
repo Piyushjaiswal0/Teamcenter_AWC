@@ -1,0 +1,623 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-splm-table.directive",
+        "js/aw-toolbar.directive",
+        "js/aw-row.directive"
+    ],
+    "actions": {
+        "reloadAndSelectProjectTeamTreeNode":{
+            "actionType": "JSFunction",
+            "method": "reloadAndSelectProjectTeamTreeNode",
+            "inputData": {
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/showProjectTeamTableTree"
+        },
+        "selectNodeAction": {
+            "actionType": "JSFunction",
+            "method": "markNodeSelectedInProvider",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.exampleDataProvider}}"
+            },
+            "deps": "js/showProjectTeamTableTree"
+        },
+        "showEditabilty": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2020-01-ProjectLevelSecurity",
+            "method": "getPrivilegeInProjects",
+            "inputData": {
+                    "projects": [{
+                        "type": "{{subPanelContext.selected.type}}",
+                        "uid": "{{subPanelContext.selected.uid}}"
+                    }]
+            },
+            "outputData": {
+                "projectPrivilege": ""
+            }
+        },
+        "refreshplTable": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "ProjectTeamTreeGrid.plTable.clientRefresh"
+                    }
+                ]
+            }
+        },
+        "loadProjectTeamTree": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Security-2022-06-AwProjectLevelSecurity",
+            "method": "getProjectTeam2",
+            "inputData": {
+                "input": {
+                    "project": {
+                        "type": "{{subPanelContext.selected.type}}",
+                        "uid": "{{subPanelContext.selected.uid}}"
+                    },
+                    "parent": "{{function:inputNodeForChild}}",
+                    "filterCriteria": "{{function:getFilterCriteria}}",
+                    "sortCriteria": [ {
+                        "fieldName": "{{data.columnProviders.exampleColumnProvider.sortCriteria[0].fieldName}}",
+                        "direction": "{{data.columnProviders.exampleColumnProvider.sortCriteria[0].sortDirection}}"
+                    } ],
+                    "startIndex": "{{function:getStartIndex}}",
+                    "maxToReturn": 1000
+                }
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "POM_member",
+                        "properties": [{
+                            "modifiers": [{
+                                "Value": "true",
+                                "name": "withProperties"
+                            }],
+                            "name": "user"
+                        }]
+                    },
+                    {
+                        "name": "GroupMember",
+                        "properties": [
+                            {
+                                "name": "status"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "User",
+                        "properties": [
+                            {
+                                "name": "status"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "treeLoadResult": "{{function:loadRootNode}}",
+                "totalLoaded":"endIndex"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "showEditableProjects"
+                    },
+                    {
+                        "name": "selectNodesInProvider"
+                    },
+                    {
+                        "name": "refreshplTable"
+                    }
+                ],
+                "failure":[
+                    {
+                        "name": "selectNodesInProvider"
+                    }
+                ]
+            },
+            "deps": "js/showProjectTeamTableTree"
+        },
+        "updateMembers" :{
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2020-01-ProjectLevelSecurity",
+            "method": "addOrRemoveProjectMembers",
+            "deps": "js/updateProjectMembersDetails",
+            "inputData":
+            {
+                "inputs": "{{function:removeSelectedMembers}}"
+
+            },
+            "outputData":{
+                "updateMemberResponse":""
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.nodes}}"
+                        }
+                    }
+                ],
+                "failure":[
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.nodes}}"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure":[
+                    {
+                        "condition":"data.updateMemberResponse.partialErrors[0].errorValues",
+                        "message":"addUpdateProjectTeamMemberFailureMessage"
+                    }
+                ]
+            }
+        },
+        "setPrivilegeStatus" : {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2020-01-ProjectLevelSecurity",
+            "method": "setUserPrivilege",
+            "deps": "js/updateProjectMembersDetails",
+            "inputData":
+            {
+                "inputs": "{{function:setPrivilegeStatus}}"
+            },
+            "outputData":{
+                "updatePrivilegeResponse":""
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.dataProviders.exampleDataProvider.selectedObjects}}",
+                            "isStatusChange":true
+                        }
+                    }
+                ],
+                "failure":[
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.dataProviders.exampleDataProvider.selectedObjects}}",
+                            "isStatusChange":true
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure":[
+                    {
+                        "condition":"data.updatePrivilegeResponse.partialErrors[0].errorValues",
+                        "message":"updateTeamMemberPrivilegeFailureMessage"
+                    }
+                ]
+            }
+        },
+        "setNonPrivilegeStatus":{
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2020-01-ProjectLevelSecurity",
+            "method": "setUserPrivilege",
+            "deps": "js/updateProjectMembersDetails",
+            "inputData":
+            {
+                "inputs": "{{function:setNonPrivilegeStatus}}"
+            },
+            "outputData":{
+                "updatePrivilegeResponse":""
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.dataProviders.exampleDataProvider.selectedObjects}}",
+                            "isStatusChange":true
+                        }
+                    }
+                ],
+                "failure":[
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.dataProviders.exampleDataProvider.selectedObjects}}",
+                            "isStatusChange":true
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure":[
+                    {
+                        "condition":"data.updatePrivilegeResponse.partialErrors[0].errorValues",
+                        "message":"updateTeamMemberPrivilegeFailureMessage"
+                    }
+                ]
+            }
+        },
+        "setProjectTeamAdmin": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2020-01-ProjectLevelSecurity",
+            "method": "setUserPrivilege",
+            "deps": "js/updateProjectMembersDetails",
+            "inputData":
+            {
+                "inputs": "{{function:setProjectTeamAdmin}}"
+            },
+            "outputData":{
+                "updatePrivilegeResponse":""
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.dataProviders.exampleDataProvider.selectedObjects}}",
+                            "isStatusChange":true
+                        }
+                    }
+                ],
+                "failure":[
+                    {
+
+                        "name":"ProjectTeamTreeReloadAndSelectNode",
+                        "excludeLocalDataCtx": true,
+                        "eventData": {
+                            "nodes": "{{data.dataProviders.exampleDataProvider.selectedObjects}}",
+                            "isStatusChange":true
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure":[
+                    {
+                        "condition":"data.updatePrivilegeResponse.partialErrors[0].errorValues",
+                        "message":"updateTeamMemberPrivilegeFailureMessage"
+                    }
+                ]
+            }
+        },
+        "updateExpandRequestedNodes":{
+            "actionType": "JSFunction",
+            "method": "updateExpandRequestedNodes",
+            "inputData": {
+                "eventData": "{{data.eventData}}",
+                "data":"{{data}}"
+            },
+            "outputData":{
+                "nodeExpansionRequested":""
+            },
+            "deps": "js/showProjectTeamTableTree"
+        },
+        "getFilterFacets": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-Finder",
+            "method": "getFilterValues",
+            "inputData": {
+                "filterFacetInput": {
+                    "columnFilters": "{{filterFacetInput.columnFilters}}",
+                    "columnName": "{{filterFacetInput.column.field}}",
+                    "maxToReturn": "{{filterFacetInput.maxToReturn}}",
+                    "providerName": "Aut0ProjectTeamProvider",
+                    "searchCriteria":
+                    {
+                        "parentUid": "{{subPanelContext.selected.uid}}",
+                        "columnName": "{{filterFacetInput.column.field}}"
+                    },
+                    "searchFilterMap":  "{{subPanelContext.context.searchState.activeFilterMap}}",
+                    "startIndex": "{{filterFacetInput.startIndex}}"
+                }
+            },
+            "outputData": {
+                "filterFacetResults": "{{json:facetValues}}"
+            }
+        },
+        "selectNodeForDefaultProject": {
+            "actionType": "JSFunction",
+            "method": "loadDefaultProject",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.exampleDataProvider}}"
+            },
+            "outputData" : {
+                "projectMembers"      : "users",
+                "isOnlyUsersSelected" : "isOnlyUsersSelected"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "setDefaultProject",
+                        "eventData": {
+                            "projectMembers": "{{data.projectMembers}}",
+                            "isOnlyUsersSelected" : "{{data.isOnlyUsersSelected}}"
+                        }
+                    }
+                ],
+                "failure":[
+                    {
+                        "name":"defaultProjectForGrouporRoleFailed"
+                    }
+                ]
+            },
+            "deps": "js/updateProjectMembersDetails"
+        },
+        "setDefaultProject" : {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Core-2008-06-DataManagement",
+            "method": "setDefaultProjectForProjectMembers",
+            "deps": "js/updateProjectMembersDetails",
+            "inputData":
+            {
+                "project" : "{{ctx.pselected}}",
+                "projectMembers": "{{data.eventData.projectMembers}}"
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "defaultProjectMsgForAllUsers",
+                        "condition" : "data.eventData.isOnlyUsersSelected"
+                    },
+                    {
+                        "message": "defaultProjectMsgForMultiple",
+                        "condition" : "!data.eventData.isOnlyUsersSelected"
+                    }
+                ],
+                "failure":[
+                    {
+                        "message":"defaultProjectFailed"
+                    }
+                ]
+            }
+        }
+    },
+    "messages": {
+        "addUpdateProjectTeamMemberFailureMessage":{
+            "messageType": "ERROR",
+            "messageText": "{{data.updateMemberResponse.partialErrors[0].errorValues[0].message}}"
+        },
+        "updateTeamMemberPrivilegeFailureMessage":{
+            "messageType": "ERROR",
+            "messageText": "{{data.updatePrivilegeResponse.partialErrors[0].errorValues[0].message}}"
+        },
+        "defaultProjectMsgForAllUsers": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.defaultProjectMsgForAllUsers}}"
+        },
+        "defaultProjectMsgForMultiple": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.defaultProjectMsgForMultiple}}"
+        },
+        "defaultProjectFailed": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.defaultProjectFailed}}"
+        },
+        "defaultProjectForGrouporRoleFailed": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.defaultProjectForGrouporRoleFailed}}"
+        }
+    },
+    "dataProviders": {
+        "exampleDataProvider": {
+            "action": "loadProjectTeamTree",
+            "initializeAction": "loadProjectTeamTree",
+            "nextAction": "loadProjectTeamTree",
+            "treeLoadResult": "{{data.treeLoadResult}}",
+            "inputData": {
+                "accessMode": "tree",
+                "topNodeUid" : "top",
+                "selectionData": "{{subPanelContext.selectionData}}"
+            },
+            "selectionModelMode": "multiple",
+            "filterFacetAction": "getFilterFacets",
+            "filterFacetResults": "{{data.filterFacetResults}}"
+        }
+    },
+    "columnProviders": {
+        "exampleColumnProvider": {
+            "columns": [
+                {
+                    "name": "object_name",
+                    "displayName": "{{i18n.ProjectMemberName}}",
+                    "minWidth": 250,
+                    "width": 350,
+                    "isTreeNavigation": true,
+                    "enableColumnHiding": false
+                },
+                {
+                    "name": "type",
+                    "displayName": "{{i18n.ProjectMemberType}}",
+                    "minWidth": 150,
+                    "width": 150,
+                    "isTreeNavigation": false,
+                    "enableColumnHiding": false
+                },
+                {
+                    "name": "status",
+                    "displayName": "{{i18n.ProjectMemberStatus}}",
+                    "minWidth": 150,
+                    "width": 150,
+                    "isTreeNavigation": false,
+                    "enableColumnHiding": false
+                }
+            ],
+            "frozenColumnIndex": -1
+        }
+    },
+    "grids": {
+        "ProjectTeamTreeGrid": {
+            "dataProvider": "exampleDataProvider",
+            "columnProvider": "exampleColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enableGridMenu": true,
+                "enablePinning": false,
+                "enableSorting": true,
+                "isFilteringEnabled": true
+            }
+        }
+    },
+    "i18n": {
+        "NonPrivilegedKey": [
+            "ProjmgmtConstants"
+        ],
+        "PrivilegedKey": [
+            "ProjmgmtConstants"
+        ],
+        "TeamAdminKey": [
+            "ProjmgmtConstants"
+        ],
+        "ProjectAdminKey": [
+            "ProjmgmtConstants"
+        ],
+        "ProjectMemberStatus":[
+            "ProjmgmtConstants"
+        ],
+        "ProjectMemberType" :[
+            "ProjmgmtConstants"
+        ],
+        "ProjectMemberName":[
+            "ProjmgmtConstants"
+        ],
+        "defaultProjectMsgForAllUsers": [
+            "ProjmgmtConstants"
+        ],
+        "defaultProjectMsgForMultiple": [
+            "ProjmgmtConstants"
+        ],
+        "defaultProjectFailed": [
+            "ProjmgmtConstants"
+        ],
+        "defaultProjectForGrouporRoleFailed": [
+            "ProjmgmtConstants"
+        ]
+    },
+    "onEvent": [
+        {
+            "eventId": "ProjectTeamTreeGrid.plTable.toggleTreeNode",
+            "cacheEventData": true,
+            "action": "updateExpandRequestedNodes"
+        },
+        {
+            "eventId": "refreshplTable",
+            "action": "refreshplTable"
+        },
+        {
+            "eventId": "removeGroupAndGroupMembers",
+            "action": "updateMembers"
+        },
+        {
+            "eventId": "proj.setNonPrivilegeStatus",
+            "action": "setNonPrivilegeStatus"
+        },
+        {
+            "eventId": "proj.setPrivilegeStatus",
+            "action": "setPrivilegeStatus"
+        },
+        {
+            "eventId": "proj.setProjectTeamAdmin",
+            "action": "setProjectTeamAdmin"
+        },
+        {
+            "eventId": "showEditableProjects",
+            "action": "showEditabilty"
+        },
+        {
+            "eventId": "ProjectTeamTreeReloadAndSelectNode",
+            "action": "reloadAndSelectProjectTeamTreeNode",
+            "cacheEventData": true
+        },
+        {
+            "eventId":"selectNodesInProvider",
+            "action":"selectNodeAction"
+        },
+        {
+            "eventId": "proj.selectNodeForDefaultProject",
+            "action": "selectNodeForDefaultProject"
+        },
+        {
+            "eventId": "setDefaultProject",
+            "action": "setDefaultProject",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "defaultProjectForGrouporRoleFailed",
+            "message": "defaultProjectForGrouporRoleFailed"
+        }
+    ],
+    "functions": {
+        "loadRootNode": {
+            "functionName": "loadRootNode",
+            "parameters": [
+                "{{data.treeLoadInput}}","{{data}}","{{subPanelContext}}"
+            ]
+        },
+        "inputNodeForChild": {
+            "functionName": "getInputParentNode",
+            "parameters": [
+                "{{data.treeLoadInput}}","{{data}}"
+            ]
+        },
+        "getStartIndex": {
+            "functionName": "getStartIndex",
+            "parameters": [
+                "{{data.treeLoadInput}}","{{data}}"
+            ]
+        },
+        "setPrivilegeStatus": {
+          "functionName": "setPrivilegeStatus",
+           "parameters": [  "{{data.dataProviders.exampleDataProvider}}","{{subPanelContext}}" ]
+        },
+        "setNonPrivilegeStatus": {
+            "functionName": "setNonPrivilegeStatus",
+            "parameters": [  "{{data.dataProviders.exampleDataProvider}}","{{subPanelContext}}" ]
+        },
+        "setProjectTeamAdmin": {
+            "functionName": "setProjectTeamAdmin",
+            "parameters": [  "{{data.dataProviders.exampleDataProvider}}","{{subPanelContext}}" ]
+        },
+        "removeSelectedMembers": {
+            "functionName": "removeSelectedMembers",
+            "parameters": [  "{{data.dataProviders.exampleDataProvider}}","{{subPanelContext}}",
+                "{{data}}"]
+        },
+        "getFilterCriteria":{
+            "functionName":"getInputFilterCriteria",
+            "parameters": [
+                "{{data.treeLoadInput}}","{{data.columnProviders.exampleColumnProvider}}","{{data}}"
+            ]
+        }
+    }
+}

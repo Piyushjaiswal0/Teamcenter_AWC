@@ -1,0 +1,42 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="13.5" y1="23.8" x2="17.5" y2="27.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="-4.45" y1="12.05" x2="20.45" y2="36.95" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="6" y1="1.6" x2="17" y2="12.6" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="linear-gradient-2" x1="17" y1="30" x2="47" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <polygon points="11.5 13.7 11.5 25.8 16.5 22.8 16.5 18.5 22.5 18.5 22.5 7.1 11.5 13.7" fill="#3c91af"/>
+    <polygon points="16.5 28.8 11.5 25.8 16.5 22.8 16.5 28.8" fill="url(#New_Gradient_Swatch_1)"/>
+    <polygon points="11.5 25.8 11.5 13.7 0.5 7.1 0.5 31.3 16.5 40.9 16.5 28.8 11.5 25.8" fill="url(#linear-gradient)"/>
+    <line x1="11.5" y1="25.8" x2="0.5" y2="19.2" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <line x1="11.5" y1="37.9" x2="11.5" y2="13.7" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <polygon points="0.5 7.1 11.5 0.5 22.5 7.1 11.5 13.7 0.5 7.1" fill="url(#New_Gradient_Swatch_1-2)"/>
+    <polyline points="22.5 7.1 11.5 13.7 0.5 7.1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="16.5 28.8 11.5 25.8 16.5 22.8" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <path d="M22.5,18.5V7.1L11.5.5.5,7.1V31.3l16,9.6" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  </g>
+  <rect x="16.5" y="18.5" width="31" height="29" stroke="#464646" stroke-linejoin="round" fill="url(#linear-gradient-2)"/>
+  <polyline points="39 31.5 37 31.5 35.5 37.5 33.5 25.5 30.5 41.5 27.5 21.5 24.5 37.5 22.5 25.5 21 31.5 19 31.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <rect x="35.5" y="35.5" width="9" height="9" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="Production">
+    <polyline points="42.5 37.5 39 42.5 37.5 40.5" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

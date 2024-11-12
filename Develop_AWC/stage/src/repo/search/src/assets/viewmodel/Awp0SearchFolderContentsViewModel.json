@@ -1,0 +1,56 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "showCheckBox": false,
+        "currentDisplayField": {
+            "initialValues": {
+                "activeDisplay": "tableDisplay"
+            },
+            "meta": {}
+        },
+        "displayModesCount": 4,
+        "displayModes": {
+            "tableDisplay": true,
+            "listDisplay": true,
+            "thumbnailDisplay": true,
+            "compareDisplay": true
+        },
+        "currentDisplay": "tableDisplay",
+        "searchFolder": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "contentsText": "{{i18n.Contents}}"
+    },
+    "actions": {
+        "updateResultsCaption": {
+            "actionType": "JSFunction",
+            "method": "updateResultsCaption",
+            "inputData": {
+                "resultsText": "{{i18n.Contents}}",
+                "searchState": "{{data.searchFolder}}",
+                "customResultsCount": "{{data.searchFolder.WSOMFindSetSearchLimit}}"
+            },
+            "outputData": {
+                "contentsText": "resultsText"
+            },
+            "deps": "js/advancedSearchService"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n": {
+        "Contents": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "updateResultsCaption",
+                "observers": [ "viewModel.searchFolder.cursorInfoString" ]
+            }
+        ]
+    }
+}

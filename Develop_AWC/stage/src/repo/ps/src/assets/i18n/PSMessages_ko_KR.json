@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0}\/{1}개가 추가되었습니다.<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0}\/{1}개가 제거되었습니다.<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "내부 오류로 인해 검색 결과가 필터링되지 않았습니다.",
+    "invalidDateRangeError": "시작 날짜는 종료 날짜 이전이어야 합니다.",
+    "invalidUnitRange": "잘못된 단위 범위",
+    "notificationForBaselineCreation": "\"{0}\"을(를) 저장 중입니다. 완료되면 사용자에게 알려줍니다.",
+    "notificationForBaselineCreationSync": "\"{0}\"은(는) 홈 폴더에 저장되어 사용할 수 있습니다."
+}

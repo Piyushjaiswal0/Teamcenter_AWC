@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Ajouter à {0}",
+    "revRuleNotAvailable": "La règle de révision sélectionnée n'est pas disponible dans les règles de révision chargées",
+    "revRuleChangeFailed": "Echec de modification de la règle de révision",
+    "revRuleChangeSucess": "Règle de révision modifiée",
+    "sendToCommandTitle": "Ouvrir dans {0}",
+    "sendToNewViewCommandTitle": "Ouvrir dans la nouvelle vue {0}",
+    "Awp0AddComponentHostedDesc": "Ajouter le composant sélectionné à la pièce de travail active.",
+    "Awp0OpenHostedDesc": "Ouvrir la sélection.",
+    "HostingSetRevisionRule": "Hébergement de la définition de règle de révision",
+    "HostingTimeoutAuthRequestSuccessful": "La page du navigateur est en cours d'actualisation pour rétablir la session.",
+    "HostingTimeoutAuthRequestFailure": "La session ne peut pas être rétablie en raison d'un échec d'authentification de l'application hôte. \nFermez et rouvrez l'application hôte.",
+    "HostingFileUploadSvcUploadError": "Enregistrer le fichier {0} a échoué avec l'erreur {1}."
+}

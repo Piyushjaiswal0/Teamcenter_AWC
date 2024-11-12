@@ -1,0 +1,41 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="10.7548" y1="7.2811" x2="20.2452" y2="23.7189" gradientTransform="translate(15.5 -6.4203) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="27.7548" y1="24.2811" x2="37.2452" y2="40.7189" gradientTransform="translate(32.5 -13.4619) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-12.947" y1="17.777" x2="1.5487" y2="32.2727" gradientTransform="translate(43.9751 8.5846) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <rect x="-0.0563" y="9.8431" width="31.1127" height="11.3137" transform="translate(-6.4203 15.5) rotate(-45)" fill="url(#linear-gradient)"/>
+    <line x1="15.5" y1="7.5" x2="18.5" y2="10.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+    <line x1="18.5" y1="4.5" x2="23.5" y2="9.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+    <line x1="12.5" y1="10.5" x2="17.5" y2="15.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+    <line x1="9.5" y1="13.5" x2="12.5" y2="16.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+    <line x1="6.5" y1="16.5" x2="11.5" y2="21.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+    <line x1="3.5" y1="19.5" x2="6.5" y2="22.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+  <rect x="-0.0563" y="9.8431" width="31.1127" height="11.3137" transform="translate(-6.4203 15.5) rotate(-45)" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <rect x="16.9437" y="26.8431" width="31.1127" height="11.3137" transform="translate(-13.4619 32.5) rotate(-45)" fill="url(#New_Gradient_Swatch_4)"/>
+    <line x1="32.5" y1="24.5" x2="35.5" y2="27.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <line x1="35.5" y1="21.5" x2="40.5" y2="26.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <line x1="29.5" y1="27.5" x2="34.5" y2="32.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <line x1="26.5" y1="30.5" x2="29.5" y2="33.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <line x1="23.5" y1="33.5" x2="28.5" y2="38.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <line x1="20.5" y1="36.5" x2="23.5" y2="39.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <rect x="16.9437" y="26.8431" width="31.1127" height="11.3137" transform="translate(-13.4619 32.5) rotate(-45)" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <polygon points="32.5 32.5 32.5 15.5 27.5 20.5 19 12 12 19 20.5 27.5 15.5 32.5 32.5 32.5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#linear-gradient-2)"/>
+</svg>

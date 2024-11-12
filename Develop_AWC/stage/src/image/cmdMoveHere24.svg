@@ -1,0 +1,38 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+	<g>
+		<path class="aw-theme-iconOutline" fill="#464646" d="M17,5H8V0h9V5z M9,4h7V1H9V4z"/>
+	</g>
+	<g>
+		<path class="aw-theme-iconOutline" fill="#464646" d="M21,11h-9V6h9V11z M13,10h7V7h-7V10z"/>
+	</g>
+	<g>
+		<path class="aw-theme-iconOutline" fill="#464646" d="M21,17h-9v-5h9V17z M13,16h7v-3h-7V16z"/>
+	</g>
+	<g>
+		<path class="aw-theme-iconOutline" fill="#464646" d="M21,23h-9v-5h9V23z M13,22h7v-3h-7V22z"/>
+	</g>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M10.889,19.483l-2.786-2.916l-0.676,0.707l1.969,2.061L9.329,19.34
+		c-2.348,0.165-4.776,0.336-5.802-0.669c-0.384-0.376-0.571-0.918-0.571-1.656H2c0,1.017,0.294,1.819,0.874,2.387
+		c0.864,0.846,2.229,1.066,3.81,1.066c0.81,0,1.679-0.059,2.564-0.12l-1.859,1.946L8.064,23l2.825-2.956
+		C11.037,19.889,11.037,19.638,10.889,19.483z"/>
+	<g>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="19.5" cy="19.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="17.5" cy="19.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="15.5" cy="19.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="13.5" cy="19.5" r="0.5"/>
+	</g>
+	<g>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="19.5" cy="21.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="17.5" cy="21.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="15.5" cy="21.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="13.5" cy="21.5" r="0.5"/>
+	</g>
+	<g>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="20.5" cy="20.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="18.5" cy="20.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="16.5" cy="20.5" r="0.5"/>
+		<circle class="aw-theme-iconOutline" fill="#464646" cx="14.5" cy="20.5" r="0.5"/>
+	</g>
+
+</svg>

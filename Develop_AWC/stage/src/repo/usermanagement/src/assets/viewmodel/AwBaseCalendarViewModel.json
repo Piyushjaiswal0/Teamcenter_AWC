@@ -1,0 +1,8 @@
+{
+    "schemaVersion": "1.0.0",
+    "conditions": {
+        "allowEdit": {
+            "expression": "(ctx.userSession.props.group_name.dbValue === 'dba')"
+        }
+    }
+}

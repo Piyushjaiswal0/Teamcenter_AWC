@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Agregar a {0}",
+    "revRuleNotAvailable": "No se encuentra disponible la regla de revisión seleccionada en las reglas de revisión cargadas.",
+    "revRuleChangeFailed": "Fallo al modificar la regla de revisión",
+    "revRuleChangeSucess": "Se ha modificado la regla de revisión",
+    "sendToCommandTitle": "Abrir en {0}",
+    "sendToNewViewCommandTitle": "Abrir en una vista nueva {0}",
+    "Awp0AddComponentHostedDesc": "Agrega el componente seleccionado a la pieza de trabajo activa.",
+    "Awp0OpenHostedDesc": "Abre la selección.",
+    "HostingSetRevisionRule": "Alojando Fijar la regla de revisión",
+    "HostingTimeoutAuthRequestSuccessful": "Se actualiza la página del explorador para restablecer la sesión.",
+    "HostingTimeoutAuthRequestFailure": "No se puede restablecer la sesión debido a un fallo en la autenticación de la aplicación anfitriona. \nCierre y vuelva a abrir la aplicación anfitriona.",
+    "HostingFileUploadSvcUploadError": "Fallo al guardar el archivo {0} con error {1}."
+}

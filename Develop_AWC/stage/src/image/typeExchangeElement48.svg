@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="1.5" y1="1.5" x2="22.5" y2="22.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset="0.177" stop-color="#6badc2"/>
+      <stop offset="0.464" stop-color="#539db4"/>
+      <stop offset="0.822" stop-color="#2d839d"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_2-2" x1="25.5" y1="25.5" x2="46.5" y2="46.5" xlink:href="#Dark_Blue_Grad_2"/>
+  <path d="M42,23V16a8,8,0,0,0-8-8H26" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="1.5" y="1.5" width="21" height="21" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+  <rect x="25.5" y="25.5" width="21" height="21" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2-2)"/>
+  <polyline points="32 14 26 8 32 2" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M6,25v7a8,8,0,0,0,8,8h8" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="16 34 22 40 16 46" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+</svg>

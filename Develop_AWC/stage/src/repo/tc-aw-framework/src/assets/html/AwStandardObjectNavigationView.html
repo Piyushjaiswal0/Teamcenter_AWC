@@ -1,0 +1,16 @@
+<aw-show-object-page header-title="subPanelContext.showObjectContext.displayName"
+    browser-sub-title="subPanelContext.showObjectContext.displayName">
+    <aw-show-object-header headerVMO="subPanelContext.openedObject" header-data="subPanelContext.headerData"
+        header-props="subPanelContext.showObjectContext.xrtViewModel.data._headers">
+        <object-nav-breadcrumb
+            sub-panel-context="{baseSelection:data._sublocation && data._sublocation.baseSelection ? data._sublocation.baseSelection : subPanelContext.openedObject}"
+            vmo="data.objNavState.pwaSelection[0]" selections="data.objNavState.pwaSelection" obj-nav-state="data.objNavState">
+        </object-nav-breadcrumb>
+        <aw-global-search exist-when="subPanelContext.provider.headerPreference.hideGlobalSearch !== true" showsearchbox="{{subPanelContext.showsearchbox}}"></aw-global-search>
+        <aw-logo exist-when="subPanelContext.provider.headerPreference.hideLogo !== true"></aw-logo>
+    </aw-show-object-header>
+    <aw-tab-container tab-container-model="subPanelContext.showObjectContext.subLocationTabs"
+        callback="subPanelContext.showObjectContext.api" tab-set-id="primary" sub-panel-context="data.selectionData">
+    </aw-tab-container>
+    <aw-standard-sublocation exist-when="data._sublocation.searchContext" provider="data._sublocation" sub-panel-context="props.subPanelContext" search-state="data.objNavState" base-selection="data.objNavState.baseSelection" selection-model="selectionModels.objNavSelectionModel" selection-data="data.selectionData"></aw-standard-sublocation>
+</aw-show-object-page>

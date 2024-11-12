@@ -1,0 +1,586 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+        [
+            "js/aw-command-panel.directive",
+            "js/aw-panel-body.directive",
+            "js/aw-panel-section.directive",
+            "js/aw-panel-footer.directive",
+            "js/aw-button.directive",
+            "js/aw-widget.directive",
+            "js/aw-listbox.directive",
+            "js/aw-i18n.directive",
+            "js/aw-textbox.directive",
+            "js/aw-radiobutton.directive",
+            "js/visible-when.directive",
+            "js/exist-when.directive"
+        ],
+    "actions":
+    {
+
+        "createPrint":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "DocumentManagement-2013-12-PrintOrRender",
+            "method": "printSubmitRequest",
+            "inputData":
+            {
+                "input":
+                [
+                    {
+                        "clientId": "",
+                        "bannerPage": "{{data.modProp.segments.props.dma1BannerPage.dbValue}}",
+                        "collate": "{{data.modProp.segments.props.dma1Collate.dbValue}}",
+                        "colorMode": "{{data.modProp.segments.props.dma1Color.dbValue}}",
+                        "extraInfo":{},
+                        "numberCopies":"{{function:parseInputString}}",
+                        "orientation":"{{data.modProp.segments.props.dma1Orientation.dbValue}}",
+                        "pageRange": "{{data.modProp.segments.props.dma1Range.dbValue}}",
+                        "paperSize": "{{data.modProp.segments.props.dma1PaperSizes.dbValue}}",
+                        "printObjs":"{{function:getDatafromAppCtx}}",
+                        "printStamp": "{{data.modProp.segments.props.dma1SystemStamp.dbValue}}",
+                        "printToScale": "{{function:parseScaleString}}",
+                        "printerConfigurationName": "{{data.modProp.segments.props.dma1PrintConfigName.dbValue}}",
+                        "printerName": "{{data.modProp.segments.props.dma1PrinterName.dbValue}}",
+                        "userStamp": "{{data.modProp.segments.props.dma1UserStamp.dbValue}}"
+                    }
+                ]
+
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+
+                ]
+
+            },
+
+            "deps": "js/Awp0PrintService"
+        },
+
+        "reveal":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Reports-2015-03-CrfReports",
+            "method": "getPrintTemplates",
+            "inputData":
+            {
+                "contextObjects":"{{function:getDatafromAppCtx}}"
+            },
+
+            "outputData":
+            {
+                 "printTemplateList": "{{function:getPrintTemplates}}",
+                 "isStamp": true
+            },
+
+            "policy":
+            {
+                "types":
+                    [{
+                         "name": "ReportDefinition",
+                         "properties":
+                             [{
+                                  "name": "rd_name"
+                              }]
+                     }]
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "print.generateList"
+                    },
+
+                    {
+                        "name": "print.batchPrint",
+                        "condition": "ctx.preferences.DM_IsBatchPrintingEnabled[0] == 'true'"
+                    },
+                    {
+                        "name": "print.refreshFMSTickets",
+                        "condition": "ctx.selected.modelType.typeHierarchyArray.indexOf( 'ChangeItemRevision' ) > -1"
+                    }
+                ]
+            } ,
+            "deps": "js/Awp0PrintService"
+        },
+        "refreshFMSTickets":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Requirementsmanagement-2007-01-RequirementsManagement",
+            "method": "setRichContent",
+            "inputData":
+            {
+                "inputs": [{
+                    "objectToProcess": {
+                                    "uid":"{{ctx.selected.uid}}"
+                                },
+                    "transientFileWriteTicket": ""
+                }]
+           }
+        },
+        "normalPrintAction":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Reports-2015-03-CrfReports",
+            "method": "generatePrintReports",
+            "inputData":
+            {
+                "inputs": "{{function:createSOAInput}}",
+                 "reportDefObj":
+
+                          {
+                              "uid": "{{data.printTemplates.dbValue.uid}}",
+                              "type": "ReportDefinition"
+                          }
+
+
+           },
+
+           "outputData": {
+               "fmsTicket": "outputs[0].transientFileTicketInfos[0].ticket",
+               "isAsync": "executedAsynchronously"
+           },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "print.processAsyncPrint",
+                        "condition": "data.isAsync === true"
+                    },
+                    {
+                       "name": "print.datasetTicketsCreated",
+                       "condition": "data.isAsync === false"
+                    }
+                ]
+            },
+            "deps": "js/Awp0PrintService"
+        },
+
+        "convertToList":
+        {
+            "actionType": "JSFunction",
+            "method": "createListModelObjects",
+            "inputData":
+            {
+                "input": "{{data.printTemplateList}}",
+                "propName": "props.object_string"
+            },
+
+            "outputData":
+            {
+                "printTemplateVmList": ""
+            },
+
+            "deps": "js/listBoxService"
+        },
+
+        "validatePrintInputs":
+        {
+            "actionType": "JSFunction",
+            "method": "validatePrintInputs",
+            "inputData":
+            {
+                "input": "{{data.modProp.segments.props.dma1Range}}"
+
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "print.createBatchPrint"
+                    }
+                ]
+            },
+
+            "actionMessages":
+            {
+                "failure":
+                [
+                    {
+                        "message": "notificationForInvalidInput"
+                    }
+                ]
+            },
+            "deps": "js/Awp0PrintService"
+        },
+
+
+        "openPrintReportLink":
+        {
+            "actionType": "JSFunction",
+            "method": "openFile",
+            "inputData":
+            {
+                "data": "{{data.fmsTicket}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "deps": "js/fmsUtils"
+        },
+
+        "showStamp":
+        {
+            "actionType": "JSFunction",
+            "method": "showStampVis",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+
+            "deps": "js/Awp0PrintService"
+        },
+
+        "getSupportStamp":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData":
+            {
+                "attributes":
+                [
+                    "support_stamp"
+                ],
+                "objects":
+                [{
+                 "uid": "{{data.modProp.segments.props.dma1PrintConfigName.selectedLovEntries[0].lovRowValue.uid}}",
+                 "type": "PrintConfiguration"
+                }]
+            },
+
+            "events":
+            {
+                "success":
+                [
+
+                    {
+                        "name": "print.showStamp"
+                    }
+                ]
+            } ,
+
+            "outputData": {
+                "supportStampValue":""
+            }
+        },
+
+        "getPrintDefinition": {
+            "actionType": "TcSoaService",
+            "serviceName": "DocMgmtAw-2017-06-DocMgmt",
+            "method": "getPrinterDefinitions",
+            "inputData": {
+
+            },
+
+             "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Dma1PrintConfigRuntime",
+                        "properties": [{
+                            "name": "dma1PrintConfigName"
+
+                        }, {
+                            "name": "dma1PrinterName"
+
+                        },{
+                            "name": "dma1Copies"
+
+                        },{
+                            "name": "dma1Collate"
+
+                        },{
+                            "name": "dma1UserStamp"
+
+                        },{
+                            "name": "dma1PaperSizes"
+
+                        },{
+                            "name": "dma1Range"
+
+                        },{
+                            "name": "dma1Color"
+
+                        },{
+                            "name": "dma1Scale"
+
+                        },{
+                            "name": "dma1SystemStamp"
+
+                        },{
+                            "name": "dma1Orientation"
+
+                        },{
+                            "name": "dma1BannerPage"
+
+                        }]
+                     }
+                ]
+            },
+
+            "outputData":
+            {
+                "modelInProperty": "{{dataParseDefinitions:convertNvObject}}"
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "print.changeModelProperty"
+                    }
+               ]
+            },
+            "deps": "js/Awp0PrintService"
+        },
+        "setEditProperties":
+        {
+            "actionType": "JSFunction",
+            "method": "setEditProperties",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "modProp": ""
+            },
+            "deps": "js/Awp0PrintService"
+        },
+        "processAsyncPrint":
+        {
+            "actionType": "JSFunction",
+            "method": "processAsyncPrint",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "deps": "js/Awp0PrintService"
+        }
+    },
+
+    "onEvent":
+        [
+            {
+                "eventId": "print.batchPrint",
+                "action": "getPrintDefinition"
+            },
+
+            {
+                "eventId": "print.changeModelProperty",
+                "action": "setEditProperties"
+            },
+
+            {
+                "eventId": "print.datasetTicketsCreated",
+                "action": "openPrintReportLink"
+            },
+
+            {
+                "eventId": "print.showStamp",
+                "action": "showStamp"
+            },
+
+            {
+                "eventId": "print.generateList",
+                "action": "convertToList"
+            },
+
+            {
+                "eventId": "dma1PrintConfigName.lovValueChanged",
+                "action": "getSupportStamp"
+            },
+
+            {
+                "eventId": "print.createBatchPrint",
+                "action": "createPrint"
+            },
+            {
+                "eventId": "print.processAsyncPrint",
+                "action": "processAsyncPrint"
+            },
+            {
+                "eventId":"print.refreshFMSTickets",
+                "action" :"refreshFMSTickets"
+            }
+        ],
+
+
+    "dataParseDefinitions":
+    {
+        "convertNvObject":{
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "printConfigurations[0].uid",
+            "operationType":"EDIT"
+        }
+    },
+
+    "conditions":
+    {
+        "toCreateNormalPrint":
+        {
+            "expression": "data.printTemplates.uiValue.length>0 && !data.printOption.dbValue"
+        },
+
+        "toCreateBatchPrinting":
+        {
+            "expression": "data.printOption.dbValue && data.modProp.segments.props.dma1PrintConfigName.uiValue.length>0"
+        },
+
+        "toshowStamp":
+        {
+            "expression": "data.supportStampValue && data.supportStampValue.modelObjects && data.supportStampValue.modelObjects[data.selectedUID].props.support_stamp.dbValues[0]==='1'"
+        },
+
+        "toVisibleRadio":
+        {
+            "expression": "ctx.preferences.DM_IsBatchPrintingEnabled[0] == 'true'"
+        }
+    },
+
+    "dataProviders": {},
+
+    "data":
+    {
+        "printTemplates":
+        {
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+
+        "tempPref":
+        {
+            "type": "BOOLEAN",
+            "dbValue": true
+        },
+        "printOption":
+        {
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "propertyRadioFalseText": "{{i18n.normalPrint}}",
+            "propertyRadioTrueText": "{{i18n.batchPrint}}",
+            "dbValue": false
+        },
+        "modProp":{
+            "initialValues": {
+                "segments": {}
+            },
+            "meta": {
+                "segments":{
+                    "type": "viewModelObject",
+                    "field": "true"
+                }
+            }
+        }
+    },
+
+    "functions":
+    {
+        "getDatafromAppCtx":
+        {
+            "functionName": "getDatafromAppCtx",
+            "parameters":
+            [
+            ]
+        },
+        "parseInputString": {
+
+            "functionName": "parseString",
+            "parameters":
+            [
+                "{{data.modProp.segments.props.dma1Copies.dbValue}}"
+            ]
+        },
+        "parseScaleString": {
+
+            "functionName": "parseString",
+            "parameters":
+            [
+                "{{data.modProp.segments.props.dma1Scale.dbValue}}"
+            ]
+        },
+        "createSOAInput":
+        {
+            "functionName": "createSOAInput",
+            "parameters":
+            [
+            ]
+        }
+    },
+
+    "messages":
+    {
+        "notificationForInvalidInput":
+        {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.notificationForInputFail}}",
+            "messageTextParams":
+            [
+                "{{data.modProp.segments.props.dma1Range.dbValue}}"
+            ]
+        },
+        "showAsyncPrintMessage":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.showAsyncPrintMessage}}",
+            "messageTextParams":
+            [
+                "{{data.printTemplates.uiValue}}"
+            ]
+        }
+    },
+
+    "i18n":
+    {
+        "Print": ["DocMgmtMessages"],
+        "PrintPanel" : ["DocMgmtMessages"],
+        "PrintPreview":["DocMgmtMessages"],
+        "normalPrint": ["DocMgmtMessages"],
+        "notificationForInputFail": ["DocMgmtMessages"],
+        "batchPrint": ["DocMgmtMessages"],
+        "showAsyncPrintMessage": ["DocMgmtMessages"]
+    }
+}

@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="12.914" y1="11.049" x2="37.683" y2="35.817" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.313" stop-color="#82bcce"/>
+      <stop offset="0.398" stop-color="#71b1c5"/>
+      <stop offset="0.674" stop-color="#3f8fa9"/>
+      <stop offset="0.883" stop-color="#207b98"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="3.616" y1="20.152" x2="14.273" y2="30.809" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="6.553" y1="23.251" x2="11.397" y2="28.095" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#147391"/>
+      <stop offset="0.172" stop-color="#1b7895"/>
+      <stop offset="0.418" stop-color="#2e85a0"/>
+      <stop offset="0.709" stop-color="#4d9ab2"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+  <polygon points="14.5 28.614 43.5 11.5 43.5 30 14.5 47 14.5 28.614" fill="none" stroke="#000" stroke-linejoin="round"/>
+  <path d="M43.5,30l-.006-18.5a11.987,11.987,0,0,0-5.428-9.257,3.838,3.838,0,0,0-3.872-.377L5.189,18.774c.971-.477,2.3-.334,3.823.533A11.858,11.858,0,0,1,14.5,28.657V47Z" stroke="#464646" stroke-linejoin="round" fill="url(#linear-gradient)"/>
+  <path d="M9.011,19.308a11.858,11.858,0,0,1,5.488,9.35h0a4.756,4.756,0,0,1-.783,2.612h0a2.6,2.6,0,0,1-1.365,1.1,4.324,4.324,0,0,1-3.375-.612A11.88,11.88,0,0,1,3.5,22.42C3.5,18.806,5.833,17.5,9.011,19.308Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M9.005,22.867a5.39,5.39,0,0,1,2.495,4.25h0a2.162,2.162,0,0,1-.356,1.187h0a1.184,1.184,0,0,1-.621.5,1.966,1.966,0,0,1-1.534-.278A5.4,5.4,0,0,1,6.5,24.282C6.5,22.639,7.56,22.046,9.005,22.867Z" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+</svg>

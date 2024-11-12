@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "Uživatelské jméno",
+    "PASSWORD_PLACEHOLDER": "Heslo",
+    "SIGN_IN_TEXT": "Přihlásit",
+    "LOGIN_TEXT": "Přihlášení",
+    "LOGGING_IN_TEXT": "Přihlašování do",
+    "UNABLE_TO_CONNECT": "Nebyly jste přihlášeni kvůli interní chybě.",
+    "VERSION_TEXT": "Verze",
+    "COPYRIGHT_DATE_TEXT": "Nepublikovaná práce.",
+    "COPYRIGHT_MESSAGE": "Tento materiál obsahuje obchodní tajemství nebo jiné důvěrné informace vlastněné společností Siemens Industry Software Inc. nebo jejími přidruženými společnostmi (souhrnně \"Siemens\"), případně jejími poskytovateli licencí. Přístup k těmto informacím a jejich používání jsou přísně omezené, jak je stanoveno v příslušných dohodách mezi zákazníkem a společností Siemens."
+}

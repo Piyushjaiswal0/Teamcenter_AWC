@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M10,16c-.1436,0-.2808-.0615-.3765-.1709l-3.5-4.0002c-.1816-.2075-.1606-.5235,.0474-.7056,.207-.1826,.5229-.1616,.7056,.0474l3.0298,3.4625L15.0619,5.2588c.1333-.2417,.438-.3296,.6787-.1973,.2422,.1328,.3306,.437,.1973,.6787l-5.4999,10.0004c-.0786,.1431-.2217,.2388-.3843,.2564-.0181,.002-.0356,.0029-.0537,.0029Z"  class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M4,4H0V0H4V4ZM1,3H3V1H1V3Z"  class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M4,9H0V5H4v4Zm-3-1H3v-2H1v2Z"  class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M4,14H0v-4H4v4Zm-3-1H3v-2H1v2Z"  class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

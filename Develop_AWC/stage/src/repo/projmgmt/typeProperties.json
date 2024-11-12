@@ -1,0 +1,24 @@
+{
+  "typeProperties": {
+    "WorkspaceObject": {
+      "additionalProperties": [
+        {
+          "name": "owning_project"
+        }
+      ]
+    },
+    "TC_Project": {
+      "additionalProperties": [
+        {
+          "name": "fnd0Parent"
+        },
+        {
+          "name": "fnd0Children"
+        },
+        {
+          "name": "use_program_security"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Inicio",
+    "pinObjectCommandTitle": "Fijar en Inicio",
+    "unPinObjectCommandTitle": "Desfijar de Inicio",
+    "pinObjectFailed": "Fallo al fijar.",
+    "unPinObjectFailed": "Fallo al desfijar.",
+    "tileUpdateFailedMsg": "Fallo al actualizar el mosaico.",
+    "pinObjectFailedNoGateway": "Hay un problema en el acceso a la página de inicio.",
+    "pinObjectMultipleObjectError": "Se puede fijar solamente un objeto por vez. Se pasarán por alto los objetos adicionales.",
+    "unpinTileFailed": "Fallo al desfijar.",
+    "homeFolderTitle": "Carpetas",
+    "Awp0ShowHomeFolderDesc": "Abre la carpeta Inicio.",
+    "Awp0PinObjectDesc": "Agrega la selección a su página Inicio como un mosaico."
+}

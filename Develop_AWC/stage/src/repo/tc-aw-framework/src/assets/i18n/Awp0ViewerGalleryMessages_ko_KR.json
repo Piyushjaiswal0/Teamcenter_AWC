@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "체크아웃",
+    "uvCheckinTitle": "체크인",
+    "uvCancelCheckoutTitle": "체크아웃 취소",
+    "previousButtonTitle": "이전",
+    "nextButtonTitle": "다음",
+    "noObjectSelectionMessage": "확인할 항목을 선택하십시오.",
+    "fullViewModeTitle": "전체 화면",
+    "uvWordWrapTitle": "자동 단어 넘김",
+    "exitFullViewModeTitle": "전체 화면 종료",
+    "aw_viewerRightSide": "뷰어 오른쪽",
+    "aw_universalViewerLink": "범용 뷰어 링크",
+    "uvCheckoutDesc": "다른 사용자가 변경하지 못하도록 선택 항목을 예약합니다.",
+    "fullViewModeDesc": "전체 화면 보기로 전환합니다.",
+    "uvWordWrapDesc": "긴 텍스트를 여러 행으로 줄바꿈합니다.",
+    "Awp0ShowObjectForUVpDesc": "현재 창에서 이 파일을 엽니다.",
+    "Awp0ViewFileForUVDesc": "파일을 다운로드합니다."
+}

@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <rect x="14.5" y="7.5" width="4" height="4" rx="0.8" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <rect x="0.5" y="0.5" width="4" height="4" rx="0.8" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="9.5" cy="9.5" r="3" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="16.5" cy="2.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="9.5" cy="2.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="2.5" cy="9.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="2.5" cy="16.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="9.5" cy="16.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="16.5" cy="16.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="4.5" y1="9.5" x2="6.5" y2="9.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="12.5" y1="9.5" x2="14.5" y2="9.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="9.5" y1="6.5" x2="9.5" y2="4.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="12" y1="7.5" x2="15.5" y2="4" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="11.5" y1="11.5" x2="15" y2="15" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="4.5" y1="4.5" x2="7.5" y2="7.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="4" y1="15.5" x2="7.5" y2="12" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="9.5" y1="14.5" x2="9.5" y2="12.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <rect x="12" y="12" width="11.5" height="11.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+      <path d="M17.7067,16.5011H16.22v5.0013H15.0014V16.5011H13.54V15.4892h4.1671Z" fill="#464646"/>
+      <path d="M19.5942,20.6142q.508,0,.5164-.6606H21.209a1.64,1.64,0,0,1-.45,1.1812,1.5282,1.5282,0,0,1-1.14.45,1.6285,1.6285,0,0,1-1.3175-.5374,2.42,2.42,0,0,1-.4625-1.5818v-.355a2.5019,2.5019,0,0,1,.448-1.6064,1.6026,1.6026,0,0,1,1.3236-.5536,1.5137,1.5137,0,0,1,1.1645.4564,1.8536,1.8536,0,0,1,.4336,1.2947H20.1106a1.1761,1.1761,0,0,0-.1238-.5783.4245.4245,0,0,0-.3963-.2024.4723.4723,0,0,0-.4378.2168,1.84,1.84,0,0,0-.14.8407v.4541a3.6453,3.6453,0,0,0,.0535.762.5734.5734,0,0,0,.1777.3183A.5408.5408,0,0,0,19.5942,20.6142Z" fill="#464646"/>
+</svg>

@@ -1,0 +1,6 @@
+{
+    "PanelBuilderCommandTitle": "面板建構器",
+    "commandBuilderCommandTitle": "指令建構器",
+    "GoToCommandBuilderDesc": "建立和修改 Active Workspace 指令。",
+    "GoToPanelBuilderDesc": "建立和修改 Active Workspace 面板。"
+}

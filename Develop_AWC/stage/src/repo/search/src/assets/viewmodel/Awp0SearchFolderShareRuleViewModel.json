@@ -1,0 +1,73 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "performWriteAccessPrivilegeCheck": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-FullTextSearch",
+            "method": "getSearchSettings",
+            "inputData": {
+                "searchSettingInput": {
+                    "inputSettings": {
+                        "performAccessCheckOnActiveFolder": [
+                            "{{ctx.xrtSummaryContextObject.uid}}"
+                        ]
+                    }
+                }
+            },
+            "outputData": {
+                "showAddRemoveButtons": "{{function:hasWriteAccessPrivilege}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        }
+    },
+    "onEvent": [],
+    "data": {
+        "searchFolderShareRuleOption": {
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": true,
+            "propertyRadioTrueText": "{{i18n.organization}}",
+            "propertyRadioFalseText": "{{i18n.projects}}",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "searchFolderShareRuleState": {
+            "initialValues": {
+                "disableAddButton": true,
+                "disableRemoveButton": true
+            },
+            "meta": {
+            }
+        }
+    },
+    "functions": {
+        "hasWriteAccessPrivilege": {
+            "functionName": "hasWriteAccessPrivilege",
+            "parameters": []
+        }
+    },
+    "dataProviders": {},
+    "columnProviders": {},
+    "grids": {},
+    "dataParseDefinitions": {},
+    "lifecycleHooks": {
+        "onMount": "performWriteAccessPrivilegeCheck"
+    },
+    "messages": {},
+    "conditions": {},
+    "i18n": {
+        "organization": [
+            "SearchMessages"
+        ],
+        "projects": [
+            "SearchMessages"
+        ],
+        "availableTable": [
+            "SearchMessages"
+        ],
+        "sharedWithTable": [
+            "SearchMessages"
+        ]
+    }
+}

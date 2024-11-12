@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "サインアウト",
+    "CONTINUE_TEXT": "継続",
+    "GEOGRAPHY_SECTION_TITLE" : "地理",
+    "GEOGRAPHY_SECTION_PROMPT" : "現在の作業ロケーションを入力",
+    "CONFIDENTIAL_SECTION_TITLE" : "機密保持契約",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "同意します",
+    "GDPR_CHECKBOX_LABEL" : "同意します",
+    "INITIAL_LIST_VALUE" : "必須..."
+}

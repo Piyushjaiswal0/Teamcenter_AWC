@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="7.5" y1="-1641.3898" x2="44.5" y2="-1678.3898" gradientTransform="matrix(1, 0, 0, -1, 0, -1635.8898)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edfbff"/>
+      <stop offset="1" stop-color="#b3fbff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="2" y1="-1645.8898" x2="12" y2="-1655.8898" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="2" y1="-1655.8898" x2="12" y2="-1665.8898" xlink:href="#linear-gradient"/>
+    <rect x="4.5" y="8.5" width="43" height="31" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <rect x="0.5" y="11.5" width="13" height="7" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+    <rect x="0.5" y="21.5" width="13" height="7" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <path d="M30.61,27.718l-1.471,4.449H27.25l4.808-14.151h2.2l4.834,14.151H37.139l-1.512-4.451Zm4.639-1.428-1.385-4.073c-.315-.924-.526-1.764-.735-2.583h-.043c-.209.84-.44,1.7-.713,2.562L30.987,26.29Z" fill="#464646" stroke="#464646" stroke-miterlimit="10" stroke-width="0.913"/>
+  <path d="M17.5682,18.017h1.827V30.636h6.047v1.53h-7.874Z" fill="#464646" stroke="#464646" stroke-miterlimit="10" stroke-width="0.913"/>
+</svg>

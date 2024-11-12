@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "Sair",
+    "CONTINUE_TEXT": "Continuar",
+    "GEOGRAPHY_SECTION_TITLE" : "Geografia",
+    "GEOGRAPHY_SECTION_PROMPT" : "Digite seu local de trabalho correto",
+    "CONFIDENTIAL_SECTION_TITLE" : "Acordo de confidencialidade",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "Concordo",
+    "GDPR_CHECKBOX_LABEL" : "Concordo",
+    "INITIAL_LIST_VALUE" : "Exigido..."
+}

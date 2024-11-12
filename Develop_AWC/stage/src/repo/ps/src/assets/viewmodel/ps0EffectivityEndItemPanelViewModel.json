@@ -1,0 +1,74 @@
+{
+    "schemaVersion": "1.0.0",
+
+    "actions": {
+        "updateEndItemAndNavigateToMainPanel": {
+            "actionType": "JSFunction",
+            "method": "updateEndItemAndNavigateToMainPanel",
+            "inputData": {
+                "eventData":"{{data.eventData}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "data":"{{data}}"
+            },
+            "deps": "js/expressionEffectivityEndItemPanelService"
+        },
+        "navigatePs0AddEffectivityPanelAction":{
+            "actionType": "JSFunction",
+            "method": "updateValueOnCtxOrState",
+            "inputData": {
+                "path": "",
+                "value": {
+                    "previousView": "{{props.subPanelContext.expEffPanelState.activeView}}",
+                    "activeView": "{{props.subPanelContext.expEffPanelState.previousView}}"
+                },
+                "target": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/occmgmtUtils"
+        }
+    },
+
+
+    "onEvent": [ {
+            "eventId": "getClipboardProvider.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "updateEndItemAndNavigateToMainPanel"
+        },
+        {
+            "eventId": "getFavoriteProvider.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "updateEndItemAndNavigateToMainPanel"
+        },
+        {
+            "eventId": "getRecentObjsProvider.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "updateEndItemAndNavigateToMainPanel"
+        },
+        {
+            "eventId": "navigatePs0AddEffectivityPanel",
+            "action": "navigatePs0AddEffectivityPanelAction"
+        }
+
+    ],
+
+    "data": {
+        "endItemTabsModel": {
+            "isArray": "true",
+            "dbValue": [ {
+                "tabKey": "Search",
+                "name": "{{i18n.searchEndItemBtn}}",
+                "selectedTab": true
+            },
+            {
+                "tabKey": "Palette",
+                "name": "{{i18n.paletteEndItemBtn}}"
+            }
+        ]
+        }
+    },
+
+    "i18n": {
+        "paletteEndItemBtn": [ "PSConstants" ],
+        "searchEndItemBtn": [ "PSConstants" ],
+        "endItemMessage": [ "PSConstants" ]
+    }
+}

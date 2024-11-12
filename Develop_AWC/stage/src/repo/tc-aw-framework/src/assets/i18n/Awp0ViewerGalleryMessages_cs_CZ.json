@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Rezervovat",
+    "uvCheckinTitle": "Uvolnit",
+    "uvCancelCheckoutTitle": "Zrušit rezervaci",
+    "previousButtonTitle": "Předchozí",
+    "nextButtonTitle": "Další",
+    "noObjectSelectionMessage": "Vyberte něco k zobrazení.",
+    "fullViewModeTitle": "Celá obrazovka",
+    "uvWordWrapTitle": "Zalamování",
+    "exitFullViewModeTitle": "Ukončit celou obrazovku",
+    "aw_viewerRightSide": "Pravá strana prohlížeče",
+    "aw_universalViewerLink": "Univerzální propojení prohlížeče",
+    "uvCheckoutDesc": "Rezervujte výběr, abyste zabránili ostatním uživatelům v provádění změn.",
+    "fullViewModeDesc": "Přepněte do pohledu přes celou obrazovku.",
+    "uvWordWrapDesc": "Rozdělte dlouhý text do více řádků.",
+    "Awp0ShowObjectForUVpDesc": "Otevřete tento soubor v aktuálním okně.",
+    "Awp0ViewFileForUVDesc": "Stáhněte soubor."
+}

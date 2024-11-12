@@ -1,0 +1,201 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-row.directive",
+        "js/aw-link.directive",
+        "js/aw-splm-table.directive",
+        "js/aw-cell-command-bar.directive"
+    ],
+    "actions": {
+        "tileRevealed": {
+            "actionType": "JSFunctionAsync",
+            "method": "dashboardTileRevealed",
+            "inputData": {
+                "subPanelContext": "{{subPanelContext}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "displayTable": "displayTable",
+                "displayChart": "displayChart",
+                "myChartProvider_chartPoints": "chartPoints",
+                "totalObjectFound": "totalObjectFound",
+                "ChartConfiguration": "ChartConfiguration",
+                "searchAndChartInfo": "searchAndChartInfo",
+                "isActiveItem": "isActiveItem",
+                "chartProviders.myChartProvider.title": "chartTitle",
+                "chartProviders.myChartProvider.chartType": "chartType"
+            },
+            "deps": "js/myDashboardTileService"
+        },
+        "getChartDataAction": {
+            "actionType": "JSFunction",
+            "method": "getChartDataAction",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "chartProviders.myChartProvider.chartPoints": ""
+            },
+            "deps": "js/myDashboardTileService"
+        },
+        "goToReport": {
+            "actionType": "Navigate",
+            "navigateTo": "showReport",
+            "navigationParams": {
+                "uid": "{{subPanelContext.selectedReport.uid}}",
+                "reportId": "{{subPanelContext.selectedReport.props.rd_id.dbValues[0]}}",
+                "title": "{{subPanelContext.selectedReport.props.rd_name.uiValues[0]}}",
+                "configure": "false",
+                "referenceId": "{{subPanelContext.selectedReport.props.rd_sourceObject.dbValue}}",
+                "reportType": "{{subPanelContext.selectedReport.props.rd_type.dbValues[0]}}"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "goToSource": {
+            "actionType": "Navigate",
+            "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+            "navigationParams": {
+                "uid": "{{subPanelContext.selectedReport.props.rd_sourceObject.dbValue}}"
+            }
+        },
+        "getSourceObject":{
+            "actionType": "JSFunctionAsync",
+            "method": "getSourceObject",
+            "inputData": {
+                "sourceUid": "{{subPanelContext.selectedReport.props.rd_sourceObject.dbValue}}",
+                "data":"{{data}}"
+            },
+            "outputData":{
+                "startShowSourceLink": ""
+            },
+            "deps": "js/myDashboardTileService"
+        },
+        "loadData": {
+            "actionType": "JSFunction",
+            "method": "loadData",
+            "inputData": {
+                "subPanelContext": "{{subPanelContext}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "totalObjectFound": "totalObjectFound",
+                "totalFound": "totalFound",
+                "searchResults": "searchResults"
+            },
+            "deps": "js/myDashboardTileService"
+        },
+        "loadColumns": {
+            "actionType": "JSFunction",
+            "method": "loadColumns",
+            "inputData": {
+                "dataProvider": "{{subPanelContext}}",
+                "reportTable": "{{data.searchAndChartInfo.ChartConfiguration}}",
+                "width":150
+            },
+            "outputData": {
+                "dataProviders.dashboardReportTableDataProvider.columnConfig.columns": ""
+            },
+            "deps": "js/showReportService"
+        }
+    },
+
+    "dataProviders": {
+        "dashboardReportTableDataProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionData": "{{props.subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "columnProviders": {
+        "dashboardReportTableColumnProvider": {
+            "loadColumnAction": "loadColumns",
+            "columns": "{{data.tableColumns}}",
+            "sortCriteria": []
+        }
+    },
+
+    "data": {
+        "chartProviders": {
+            "myChartProvider": {
+                "title": "",
+                "chartType": "line",
+                "chartConfig": {
+                    "isChartZoomable": true,
+                    "isYAxisLinearOrLogarithmic": "logarithmic",
+                    "xAxisLabel": "",
+                    "yAxisLabel": "{{i18n.objectCount}}",
+                    "isDataLabelOnChartEnabled": true
+                }
+            }
+        },
+        "reusable": true,
+        "chartConfig": {},
+        "displayChart": false,
+        "displayTable": false,
+        "startShowSourceLink": false,
+        "reportlink": {
+            "displayName": "{{subPanelContext.selectedReport.props.rd_name.uiValues[0]}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "reportSource":{
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false"
+        }
+    },
+    "grids": {
+        "dashboardReportTable": {
+            "columnProvider": "dashboardReportTableColumnProvider",
+            "dataProvider": "dashboardReportTableDataProvider",
+            "enableArrangeMenu": false,
+            "gridOptions": {
+                "enableGridMenu": false,
+                "isFilteringEnabled": "{{conditions.isFullTextSearchProvider}}"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "tileRevealed"
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        }
+    },
+    "conditions": {
+        "showtheChart": {
+            "expression": "data.displayChart"
+        },
+        "showtheTable": {
+            "expression": "data.displayTable"
+        },
+        "showSourceLink":{
+            "expression": "data.startShowSourceLink"
+        },
+        "isFullTextSearchProvider":{
+            "expression": "data.searchAndChartInfo.dataProviderName !== 'Awp0FullTextSearchProvider'"
+        }
+    },
+    "onEvent":[{
+        "eventId": "reportDashboard.getSourceObject",
+        "action": "getSourceObject"
+    }],
+    "i18n": {
+        "viewReport": [ "ReportChartMessages" ],
+        "totalObjectFound":["ReportChartMessages"],
+        "objectCount":["ReportChartMessages"]
+    }
+}

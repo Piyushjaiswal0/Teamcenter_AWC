@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <polygon points="12 5 12 0 0 0 0 11 4 11 4 16 16 16 16 5 12 5" fill="#464646"/>
+  <rect x="3" y="7" width="1" height="1" fill="#fff"/>
+  <rect x="3" y="3" width="1" height="1" fill="#fff"/>
+  <path d="M5,6v9H15V6Zm4,8H6V11H9Zm0-4H6V7H9Zm5,3H10V12h4Zm0-4H10V8h4Z" fill="#ffcd50"/>
+  <rect x="7" y="8" width="1" height="1" fill="#fff"/>
+  <rect x="7" y="12" width="1" height="1" fill="#fff"/>
+  <path d="M1,1v9l3-.006V9H2V6H4V5H2V2H5V5H5l6,0V1Zm9,3H6V3h4Z" fill="#ffcd50"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <path d="M45.75,40.995a12.9259,12.9259,0,0,0,0-12.99L34.5,34.5Z" fill="#b1d1da"/>
+  <path d="M45.75,40.995,34.5,34.5v13A12.9844,12.9844,0,0,0,45.75,40.995Z" fill="#8ab9c8"/>
+  <path d="M23.25,40.995A12.9844,12.9844,0,0,0,34.5,47.5v-13Z" fill="#63a2b6"/>
+  <path d="M23.25,28.005a12.9259,12.9259,0,0,0,0,12.99L34.5,34.5Z" fill="#3c8ba4"/>
+  <path d="M23.25,28.005,34.5,34.5v-13A12.9844,12.9844,0,0,0,23.25,28.005Z" fill="#147391"/>
+  <path d="M45.75,28.005A12.9844,12.9844,0,0,0,34.5,21.5v13Z" fill="#d8e8ed"/>
+  <path d="M13.5,7.9591v.0495L.5,15.4678V45.4824l13-7.5172c.0087-.0287-.0065-14.9693,0-14.9974v.0085l13-7.517V.5Z" fill="#888"/>
+  <line x1="13.5" y1="22.9764" x2="13.5" y2="7.9592" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="13.5" y1="23.006" x2="0.5" y2="30.4652" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <path d="M.5,15.4678V45.4824l13-7.5172c.0087-.0287-.0065-14.9693,0-14.9974l13-7.5085V.5Z" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <line x1="34.5" y1="21.5" x2="34.5" y2="47.5" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="23.2417" y1="28" x2="45.7583" y2="41" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="23.2417" y1="41" x2="45.7583" y2="28" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="34.5" cy="34.5" r="13" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

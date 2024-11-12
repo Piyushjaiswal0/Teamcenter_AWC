@@ -1,0 +1,14 @@
+{
+    "replace": "Zamień",
+    "upload": "Wgranie",
+    "chooseFromSystem": "Wybierz plik z systemu",
+    "replaceFileError": "Zaktualizuj plik z zastosowaniem takiego samego rozszerzenia, jak w poprzednim pliku należącym do obiektu",
+    "replaceSuccessWithFileName": "Zamieniono \"{0}\".",
+    "replaceFailureWithFileName": "Nie można dodać importowanego pliku do zestawu danych jako przypisanego odwołania z powodu nieprawidłowego rozszerzenia nazwy pliku",
+    "replaceNoValidTarget": "\"{0}\" nie zawiera prawidłowego pliku do zastąpienia.",
+    "replaceFileCommandTitle": "Zamień plik",
+    "InvalidSelectedObject": "Podano nieprawidłowy obiekt zestawu danych lub pliku wolumenu w celu utworzenia pliku PLMD. Spróbuj ponownie, używając prawidłowego obiektu zestawu danych lub pliku wolumenu.",
+    "AsynUploadInProgress": "Trwa wgrywanie asynchroniczne pliku do wolumenu Teamcenter.",
+    "PlatformNotSupported": "Asynchroniczna operacja zamiany nie jest obsługiwana na tej platformie: przełączanie na zamianę synchroniczną",
+    "Awp0ReplaceDatasetDesc": "Zastąp wybrany plik nowym plikiem z urządzenia."
+}

@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="12.1974" y1="5.875" x2="34.9242" y2="28.6018" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="18.1464" y1="33.8536" x2="28.8536" y2="44.5607" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <path d="M28.8348,34.6913c0-3.7171,4.041-9.1,4.041-9.1A18.3493,18.3493,0,0,0,37.5,14.0126,13.7511,13.7511,0,0,0,23.5.525a13.7508,13.7508,0,0,0-14,13.4876,18.36,18.36,0,0,0,4.6392,11.5965l-.0085.0092s4.086,5.164,4.086,8.8811" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <path d="M29.5,34.5h-12v9a1,1,0,0,0,1,1h1.3812l1.7731,2.5681a1,1,0,0,0,.8229.4319h2.1493a1,1,0,0,0,.8228-.4317L27.223,44.5H28.5a1,1,0,0,0,1-1Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <line x1="20" y1="44.5" x2="28" y2="44.5" fill="none" stroke="#464646" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,84 @@
+[
+  {
+    "conditions": {
+      "$and": [
+        {
+          "$or": [
+            {
+              "occDataProvider._editing": {
+                "$eq": "true"
+              }
+            },
+            {
+              "occDataProvider2._editing": {
+                "$eq": "true"
+              }
+            },
+            {
+              "INFO_PANEL_CONTEXT._editing": {
+                "$eq": "true"
+              }
+            },
+            {
+              "NONE._editing": {
+                "$eq": "true"
+              }
+            },
+            {
+              "VARIANT_TREE_CONTEXT._editing": {
+                "$eq": "true"
+              }
+            },
+            {
+              "editInProgress": {
+                "$eq": "true"
+              }
+            }
+          ]
+        },
+        {
+          "userSession.props.cm0GlobalChangeContext.dbValue": {
+            "$notNull": "true"
+          }
+        },
+        {
+          "occmgmtContext.currentState.incontext_uid": {
+            "$isNull": "true"
+          }
+        },
+        {
+          "sublocation.clientScopeURI": {
+            "$eq": "Awb0OccurrenceManagement"
+          }
+        },
+        {
+          "$or": [
+            {
+              "tcSessionData.tcMajorVersion": {
+                "$gt": "13"
+              }
+            },
+            {
+              "$and": [
+                {
+                  "tcSessionData.tcMajorVersion": {
+                    "$eq": "13"
+                  }
+                },
+                {
+                  "tcSessionData.tcMinorVersion": {
+                    "$gt": "2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "target": {
+      "method": "getSaveHandler",
+      "deps": "js/psEditSaveHandler"
+    }
+  }
+]

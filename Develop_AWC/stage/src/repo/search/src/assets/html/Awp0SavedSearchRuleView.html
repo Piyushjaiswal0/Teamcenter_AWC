@@ -1,0 +1,25 @@
+
+<div class="aw-layout-declarativePanelRoot aw-layout-panel aw-search-folder"  exist-when="conditions.isSavedQueryProvider">
+    <div class="aw-layout-flexRow aw-layout-flexRowContainer aw-search-rulesTabHeader">
+        <div class="aw-layout-flexColumn aw-search-rulesTabHeaderBox">
+            <div class="aw-layout-panelSectionTitle aw-layout-flexRow aw-layout-flexRowContainer">
+                <div><label title="{{i18n.searchFolderSearch}}">{{i18n.searchFolderSearch}}</label></div>
+                <div class="aw-search-searchFolderButtons">
+                    <aw-server-visibility-toolbar first-anchor="" second-anchor="aw_SavedSearchRule" context="{'savedSearch':subPanelContext.selected,'pinToHome':data.pinToHome,...data.searchState}"></aw-server-visibility-toolbar>
+                </div>
+            </div>
+        </div>
+        <div class="aw-search-ruleSection aw-search-folderSectionSpace"></div>
+        <div class="aw-layout-flexColumn aw-search-rulesTabHeaderBox">
+            <aw-panel-section collapsed="disabled" caption="{{data.resultsText}}" class="aw-results-section" include-component-name="AwSearchBreadcrumbUnreadableCount" context="{{data.searchState.additionalSearchInfoMap.unReadableCount[0]}}"></aw-panel-section>
+        </div>
+    </div>
+    <div class="aw-layout-flexRow aw-layout-flexRowContainer aw-search-rulesTabContent">
+        <awp0-saved-search-rule-non-edit sub-panel-context="{'savedSearch':subPanelContext.selected, 'searchState':data.searchState}" exist-when="!(data.searchState.isEditMode === true)"></awp0-saved-search-rule-non-edit>
+        <awp0-saved-search-rule-edit sub-panel-context="{'savedSearch':subPanelContext.selected, 'searchState':data.searchState}" exist-when="data.searchState.isEditMode === true"></awp0-saved-search-rule-edit>
+        <div class="aw-search-ruleSection aw-search-folderSectionSpace"></div>
+        <div class="aw-layout-flexColumn aw-search-folderColumn">
+            <aw-advanced-search-list sub-panel-context="{'searchState': {...data.searchState, 'provider':'Awp0SavedQuerySearchProvider'}}"></aw-advanced-search-list>
+        </div>
+    </div>
+</div>

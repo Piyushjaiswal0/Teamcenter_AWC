@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "추가 대상 {0}",
+    "revRuleNotAvailable": "로드된 리비전 규칙에서 선택한 리비전 규칙을 사용할 수 없습니다.",
+    "revRuleChangeFailed": "리비전 규칙 변경 실패",
+    "revRuleChangeSucess": "리비전 규칙 변경됨",
+    "sendToCommandTitle": "연결 프로그램 {0}",
+    "sendToNewViewCommandTitle": "새 {0} 보기에서 열기",
+    "Awp0AddComponentHostedDesc": "선택한 컴포넌트를 활성 작업 파트에 추가합니다.",
+    "Awp0OpenHostedDesc": "선택 항목을 엽니다.",
+    "HostingSetRevisionRule": "리비전 규칙 설정 호스팅",
+    "HostingTimeoutAuthRequestSuccessful": "세션을 다시 설정하기 위해 브라우저 페이지가 새로 고쳐집니다.",
+    "HostingTimeoutAuthRequestFailure": "호스트 응용 프로그램의 인증 실패로 인해 세션을 다시 설정할 수 없습니다. \n호스트 응용 프로그램을 닫았다가 다시 여십시오.",
+    "HostingFileUploadSvcUploadError": "{1} 오류로 인해 파일 {0}을(를) 저장하지 못했습니다."
+}

@@ -1,0 +1,23 @@
+<div class="aw-reports-defaultView" exist-when="data.showDefaultMessage">
+    <aw-empty-workarea
+        image="graEmptyReportSummary128"
+        hint="i18n.generateReportHint"
+        action="actions.openGenerateReport"
+        link-visibility="true"
+        link-text="i18n.generateAdvCommandName">
+    </aw-empty-workarea>
+</div>
+<aw-panel exist-when="!data.showDefaultMessage">
+    <aw-panel-body class="aw-report-view-container">
+        <aw-flex-column justify="center">
+            <aw-flex-row align-content="center" height="63f" exist-when="!data.showAwReport">
+                <iframe title="{{i18n.reportsPage}}" class="aw-reports-frameSize"></iframe>
+            </aw-flex-row>
+            <aw-flex-row align-content="center" height="63f" exist-when="data.showAwReport">
+                <!-- <aw-include name="showReportImage" class="aw-reports-frameSize" sub-panel-context="data.selectedReport"></aw-include> -->
+                <!-- <aw-report-viewer class="aw-reports-frameSize" sub-panel-context="{...data.selectedReport, selectionData:subPanelContext.selectionData}"></aw-report-viewer> -->
+                <aw-active-report-viewer report-template="data.selectedReport" sub-panel-context="{ ...subPanelContext}"></aw-active-report-viewer>
+            </aw-flex-row>
+        </aw-flex-column>
+    </aw-panel-body>
+</aw-panel>

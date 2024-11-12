@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" 不是对象集“{1}”的有效文件。新建对象将不会显示在对象集中。",
+    "addedObjectIsNotUnique": "对象“{1}-{0}”未保存，因为 \"ID = {1}\" 不唯一。",
+    "fileSizeException": "“{0}”未添加。文件大小超出最大限制。",
+    "userNotAuthorized": "“{0}”未添加。当前用户未经授权。",
+    "addACopy": "添加副本",
+    "cancel": "取消",
+    "sourceObject": "源",
+    "chooseFromSystem": "从系统选择文件",
+    "chooseFromDrive": "从驱动器选择",
+    "fileNameExceedsLengthLimit": "\"{0}\" 未添加。文件名长度超出最大限制。"
+}

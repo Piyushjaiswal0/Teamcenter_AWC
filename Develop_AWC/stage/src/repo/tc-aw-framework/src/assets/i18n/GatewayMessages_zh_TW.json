@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "首頁",
+    "pinObjectCommandTitle": "固定到首頁",
+    "unPinObjectCommandTitle": "從首頁取消固定",
+    "pinObjectFailed": "固定失敗。",
+    "unPinObjectFailed": "取消固定失敗。",
+    "tileUpdateFailedMsg": "圖塊更新失敗。",
+    "pinObjectFailedNoGateway": "存取首頁時出現問題。",
+    "pinObjectMultipleObjectError": "一次只能固定一個物件。其他物件將被忽略。",
+    "unpinTileFailed": "取消固定失敗。",
+    "homeFolderTitle": "資料夾",
+    "Awp0ShowHomeFolderDesc": "開啟 Home 資料夾。",
+    "Awp0PinObjectDesc": "將選取作為圖塊新增到首頁。"
+}

@@ -1,0 +1,441 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-form.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-widget.directive",
+        "js/aw-command-panel-section.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-command-bar.directive"
+    ],
+
+    "data": {
+        "masterProp": {},
+        "languageProps": {},
+        "targetProperty": {
+            "displayName": "{{i18n.property}}",
+            "type": "STRING",
+            "isEditable": false,
+            "dispValue": "{{subPanelContext.propertyDisplayName}}",
+            "dbValue": "{{subPanelContext.propertyName}}"
+        },
+        "addorRemoveLocaleAnchor": "aw_addRemoveLocales",
+        "editLocalizationPanelState": {
+            "intialValues": {},
+            "meta": {}
+        }
+    },
+
+    "actions": {
+        "loadLocalizedProperties": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getSelectedObjects"
+                },
+                {
+                    "action": "getLocalizedProperties"
+                },
+                {
+                    "action": "processLocaleProps"
+                },
+                {
+                    "action": "loadLanguageProperties"
+                },
+                {
+                    "action": "registerLeaveHandler"
+                }
+            ]
+        },
+        "registerLeaveHandler": {
+            "actionType": "JSFunction",
+            "method": "registerLeaveHandler",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "unRegisterLeaveHandler": {
+            "actionType": "JSFunction",
+            "method": "unRegisterLeaveHandler",
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "processLocaleProps": {
+            "actionType": "JSFunction",
+            "method": "processLocaleProps",
+            "inputData": {
+                "response": "{{data.localePropsResponse}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "masterTranslationStatus": "masterTranslationStatus",
+                "translationStatuses": "translationStatuses",
+                "languageCodes": "languageCodes",
+                "languageNames": "languageNames",
+                "languages": "languages",
+                "masterProp": "masterProp",
+                "statusProps": "statusProps",
+                "localizedProps": "localizedProps"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "getSelectedObjects": {
+            "actionType": "JSFunctionAsync",
+            "method": "getAdaptedObjects",
+            "inputData": {
+                "sourceObjects": "{{props.viewModel.ctx.mselected}}"
+            },
+            "outputData": {
+                "adaptedObject": ""
+            },
+            "deps": "js/adapterService"
+        },
+        "getLocalizedProperties": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-12-DataManagement",
+            "method": "getLocalizedProperties",
+            "inputData": {
+                "input": {
+                    "info": [ {
+                        "inputObject": {
+                            "uid": "{{data.adaptedObject[0].uid}}",
+                            "type": "{{data.adaptedObject[0].type}}"
+                        },
+                        "propertyNames": [
+                            "{{subPanelContext.propertyName}}"
+                        ]
+                    } ],
+                    "locales": []
+                }
+            },
+            "deps": "js/multiLanguagePropertyService",
+            "outputData": {
+                "localePropsResponse": "{{function:setLocaleProps}}",
+                "getPartialErrors": "partialErrors"
+            }
+        },
+        "setLocalizedProperties": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-12-DataManagement",
+            "method": "setLocalizedProperties",
+            "inputData": {
+                "input": [ {
+                    "inputObject": {
+                        "uid": "{{data.adaptedObject[0].uid}}",
+                        "type": "{{data.adaptedObject[0].type}}"
+                    },
+                    "propertyNameValues": "{{function:setLocalePropertyValues}}"
+                } ]
+            },
+            "deps": "js/multiLanguagePropertyService",
+            "outputData": {
+                "partialErorrs": "partialErrors"
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "setLocalizedPropertiesErrorMessage"
+                } ]
+            },
+            "events": {
+                "success": [ {
+                    "name": "editLocalizationSingleProperty.closeDialog"
+                } ]
+            }
+        },
+        "closeDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        },
+        "discardChanges": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "editLocalizationSingle.confirmUnsavedChanges",
+                        "eventData": {
+                            "action": "discard"
+                        }
+                    }
+                ]
+            }
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        },
+        "loadLanguageProperties": {
+            "actionType": "JSFunction",
+            "method": "loadLanguageProperties",
+            "inputData": {
+                "data": "{{data}}",
+                "allLanguages": "{{data.languages}}"
+            },
+            "outputData": {
+                "languageProps": "languageProps",
+                "languagePropObj": "languagePropObj"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "refreshLanguageProperties": {
+            "actionType": "JSFunction",
+            "method": "refreshLanguageProperties",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "allLanguages": "{{data.languages}}",
+                "selectedValue": "{{data.eventData.lovValue.propInternalValue}}"
+            },
+            "outputData": {
+                "languagePropObj": "languagePropObj"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "loadStatuses": {
+            "actionType": "JSFunction",
+            "method": "convertToLovEntries",
+            "inputData": {
+                "statuses": "{{data.translationStatuses}}"
+            },
+            "outputData": {
+                "statusesInfo": ""
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "loadArrayPropertyValues": {
+            "actionType": "JSFunction",
+            "method": "convertToLovEntries",
+            "inputData": {
+                "propValues": "{{subPanelContext.dbValue}}"
+            },
+            "outputData": {
+                "arrayPropertyValues": ""
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "removeLocale": {
+            "actionType": "JSFunction",
+            "method": "removeLocale",
+            "inputData": {
+                "data": "{{data}}",
+                "evtData": "{{data.eventData.propName}}",
+                "dispatch": "{{data.dispatch}}",
+                "editLocalizationPanelState": "{{data.editLocalizationPanelState}}",
+                "localizedProps": "{{data.localizedProps}}",
+                "statusProps": "{{data.statusProps}}"
+            },
+            "outputData": {
+                "languagePropObj": "languagePropObj",
+                "isLocaleNew": "isLocaleNew",
+                "isPanelDirty": "isPanelDirty",
+                "editLocalizationPanelState": "editLocalizationPanelState",
+                "localizedProps": "localizedProps",
+                "statusProps": "statusProps"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "confirmUnsavedChangesAction": {
+            "actionType": "JSFunction",
+            "method": "unsavedChangesAction",
+            "inputData": {
+                "data": "{{data.eventMap['editLocalizationSingle.confirmUnsavedChanges']}}"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "refreshTranslationValues": {
+            "actionType": "JSFunction",
+            "method": "updateTranslationValues",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "selectedValue": "{{data.eventData.lovValue.propInternalValue}}"
+            },
+            "outputData": {
+                "masterProp": ""
+            },
+            "deps": "js/multiLanguagePropertyService"
+        },
+        "updateTranslationValues": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "refreshLanguageProperties"
+                },
+                {
+                    "action": "refreshTranslationValues"
+                }
+            ]
+        },
+        "updateLanguagePropObj": {
+            "actionType": "JSFunction",
+            "method": "updateLanguagePropObj",
+            "inputData": {
+                "editLocalizationPanelState": "{{data.editLocalizationPanelState}}",
+                "languagePropObj": "{{data.languagePropObj}}",
+                "dispatch": "{{data.dispatch}}",
+                "localizedProps": "{{data.localizedProps}}",
+                "statusProps": "{{data.statusProps}}",
+                "masterProp": "{{data.masterProp}}",
+                "arrayPropertyValues": "{{data.arrayPropertyValues))"
+            },
+            "outputData": {
+                "localizedProps": "localizedProps",
+                "statusProps": "statusProps",
+                "isPanelDirty": "isPanelDirty"
+            },
+            "deps": "js/multiLanguagePropertyService"
+        }
+    },
+
+    "functions": {
+        "processLocaleProps": {
+            "functionName": "processLocaleProps",
+            "parameters": [
+                "{{data.localePropsResponse}}",
+                "{{data}}"
+            ]
+        },
+        "setLocalePropertyValues": {
+            "functionName": "setLocalePropertyValues",
+            "parameters": [
+                "{{subPanelContext}}",
+                "{{data}}"
+            ]
+        },
+        "setLocaleProps": {
+            "functionName": "setLocaleProps",
+            "parameters": []
+        }
+    },
+
+    "dataProviders": {
+        "statusesDataProvider": {
+            "dataProviderType": "TcLOV",
+            "action": "loadStatuses",
+            "response": "{{data.statusesInfo}}",
+            "totalFound": "{{data.statusesInfo.length}}"
+        },
+        "arrayPropDataProvider": {
+            "dataProviderType": "TcLOV",
+            "action": "loadArrayPropertyValues",
+            "response": "{{data.arrayPropertyValues}}",
+            "totalFound": "{{data.arrayPropertyValues.length}}"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onMount": "loadLocalizedProperties",
+        "onUpdate": [ {
+            "action": "updateLanguagePropObj",
+            "observers": [ "viewModel.atomicData.editLocalizationPanelState" ]
+        } ],
+        "onUnmount": "unRegisterLeaveHandler"
+    },
+
+    "onEvent": [ {
+            "eventId": "editLocalizationSingle.removeLocale",
+            "action": "removeLocale",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "editLocalizationSingle.confirmLeave",
+            "message": "confirmLeave"
+        },
+        {
+            "eventId": "editLocalizationSingle.confirmUnsavedChanges",
+            "cacheEventData": true,
+            "action": "confirmUnsavedChangesAction"
+        },
+        {
+            "eventId": "editLocalizationSingle.closePanel",
+            "action": "closePanel"
+        },
+        {
+            "eventId": "editLocalizationSingle.updateTranslations",
+            "cacheEventData": true,
+            "action": "updateTranslationValues"
+        },
+        {
+            "eventId": "editLocalizationSingleProperty.closeDialog",
+            "action": "closeDialog"
+        }
+    ],
+
+    "messages": {
+        "setLocalizedPropertiesErrorMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.saveTranslationsError}}",
+            "messageTextParams": [
+                "{{data.partialErorrs[0].errorValues[0].message}}"
+            ]
+        },
+        "confirmLeave": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.navigationConfirmationSingle}}",
+            "messageTextParams": [
+                "{{data.adaptedObject[0].uid}}"
+            ],
+            "navigationOptions": [ {
+                    "option": "Discard",
+                    "text": "{{i18n.discard}}",
+                    "action": "discardChanges"
+                },
+                {
+                    "option": "Save",
+                    "text": "{{i18n.save}}",
+                    "action": "setLocalizedProperties"
+                }
+            ]
+        }
+    },
+
+    "i18n": {
+        "saveEditsGroupPWATitle": [
+            "ZeroCompileCommandMessages"
+        ],
+        "editLocalizationSingle": [
+            "MultiLanguagePropertyMessages"
+        ],
+        "masterValue": [
+            "MultiLanguagePropertyMessages"
+        ],
+        "translationLanguages": [
+            "MultiLanguagePropertyMessages"
+        ],
+        "property": [
+            "MultiLanguagePropertyMessages"
+        ],
+        "navigationConfirmationSingle": [
+            "MultiLanguagePropertyMessages"
+        ],
+        "save": [
+            "XRTMessages"
+        ],
+        "discard": [
+            "XRTMessages"
+        ],
+        "saveTranslationsError": [
+            "MultiLanguagePropertyMessages"
+        ]
+    }
+}

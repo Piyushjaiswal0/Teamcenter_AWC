@@ -1,0 +1,162 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "EditValue": {
+            "actionType": "batchJob",
+            "steps": [ 
+                {
+                    "action": "ButtonClicked"
+                },
+                {
+                    "action": "EditProperty"
+                },
+                {
+                    "action": "showExample"
+                }
+            ]
+        },
+        "ButtonClicked": {
+            "actionType": "JSFunction",
+            "method": "alert",
+            "deps": "js/DevelopCommandService",
+            "inputData": {
+                "propName" : "{{data.propertyName.dbValue}}",
+                "propValue": "{{data.propertyValue.dbValue}}"
+            }
+        },
+        "EditProperty": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+            "method": "setProperties",
+            "inputData": {
+                "info": [{
+                    "object": "{{ctx.selected}}",
+                    "vecNameVal": [{
+                        "name": "{{data.propertyName.dbValue}}",
+                        "values": ["{{data.propertyValue.dbValue}}"]
+                    }]
+                }
+                ]
+            },
+            "actionMessages":{
+                "success": [
+                    {
+                        "message": "ChangedSuccessfully"
+                    }
+                ],
+                "failure": [
+                    {
+                        "message": "CantChange"
+                    }
+                ]
+            }
+        },
+        "showExample": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        }
+    },
+    "data": {
+        "propertyName": {
+            "displayName": "Enter Property Name",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "dbValue": "{{data.propertyList}}"
+        },
+        "propertyValue": {
+            "displayName": "Enter Property Value",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": ""
+        },
+        "propertyList": {
+            "type": "STRING",
+            "dbValue": [
+                {
+                    "propDisplayValue": "Current Date",
+                    "propInternalValue": "creation_date"
+                },
+                {
+                    "propDisplayValue": "Current Description",
+                    "propInternalValue": "current_desc"
+                },
+                {
+                    "propDisplayValue": "Current Id",
+                    "propInternalValue": "current_id"
+                },
+                {
+                    "propDisplayValue": "Current Id Context",
+                    "propInternalValue": "current_id_context"
+                },
+                {
+                    "propDisplayValue": "Current Name",
+                    "propInternalValue": "current_name"
+                },
+                {
+                    "propDisplayValue": "Item ID",
+                    "propInternalValue": "item_id"
+                },
+                {
+                    "propDisplayValue": "Object Description",
+                    "propInternalValue": "object_desc"
+                },
+                {
+                    "propDisplayValue": "Name",
+                    "propInternalValue": "object_name"
+                },
+                {
+                    "propDisplayValue": "Object",
+                    "propInternalValue": "object_string"
+                },
+                {
+                    "propDisplayValue": "Object Type",
+                    "propInternalValue": "object_type"
+                },
+                {
+                    "propDisplayValue": "Revision Number",
+                    "propInternalValue": "revision_number"
+                }
+            ]
+        }
+    },
+    "conditions": {
+        "Validate": {
+            "expression": "(!(data.propertyName.dbValue.length === 0)) && (!(data.propertyValue.dbValue.length === 0))"
+        }
+    },
+    "messages": {
+        "ChangedSuccessfully": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.PropertySuccessMessage}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{data.propertyName.dbValue}}",
+                "{{data.propertyValue.dbValue}}"
+            ]
+        },
+        "CantChange": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "i18n": {
+        "EditPropertyPanelTitle": [ "Develop_ModuleMessages" ],
+        "header": [ "Develop_ModuleMessages" ],
+        "body": [ "Develop_ModuleMessages" ],
+        "footer": [ "Develop_ModuleMessages" ],
+        "save": [ "Develop_ModuleMessages" ],
+        "checkBoxName": [ "Develop_ModuleMessages" ],
+        "textValue": [ "Develop_ModuleMessages" ],
+        "PropertySuccessMessage": ["Develop_ModuleMessages"]
+    }
+}

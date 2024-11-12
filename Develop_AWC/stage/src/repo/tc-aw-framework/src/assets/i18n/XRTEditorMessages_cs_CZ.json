@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "Rozsah:",
+    "objectTypeLabel": "Typ objektu:",
+    "xrtTypeLabel": "Typ XRT:",
+    "locationLabel": "Umístění:",
+    "sublocationLabel": "Dílčí umístění:",
+    "loadButtonText": "Načíst",
+    "editLabel": "Upravit: ",
+    "readOnlyLabel": "(Pouze pro čtení)",
+    "overrideMsg": "\"{0}\" bude předefinováno v uživatelském rozsahu.",
+    "cancel": "Storno",
+    "override": "Předefinovat"
+}

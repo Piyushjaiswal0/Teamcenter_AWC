@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "Przeglądarka plików PDF",
+    "ShowStreamErrorMessage": "Strumień musi zawierać dane",
+    "LoadingPDFfile": "Trwa wczytywanie pliku...",
+    "LoadingFileSuccess": "Wczytywanie pliku zakończyło się powodzeniem...",
+    "LoadingFileFailed": "Wczytywanie pliku zakończyło się niepowodzeniem!"
+}

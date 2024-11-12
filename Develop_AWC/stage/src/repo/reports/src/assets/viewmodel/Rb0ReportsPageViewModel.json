@@ -1,0 +1,187 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-flex-row.directive",
+        "js/aw-flex-column.directive",
+        "js/aw-include.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-row.directive"
+    ],
+
+    "actions":
+    {
+        "revealReport":
+        {
+            "actionType": "JSFunction",
+            "method": "validateReveal",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "vmo": "{{ctx.selected}}"
+            },
+            "outputData":{
+                "showAwReport": "isAwReport",
+                "showDefaultMessage": "showMsg",
+                "selectedReport": "selected"
+            },
+
+            "deps": "js/Rb0ReportsPage"
+        },
+
+        "refreshPanelData":
+        {
+            "actionType": "JSFunction",
+            "method": "refreshPanelData",
+            "inputData":
+            {
+                "vmo": "{{selected}}",
+                "ticketURL": "{{urlPath}}",
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "showDefaultMessage": "showDefaultMessage"
+            },
+
+            "deps": "js/Rb0ReportsPage"
+        },
+
+        "updateAWSourceReportAction":{
+            "actionType": "JSFunction",
+            "method": "updateAWSourceReportAction",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "showAwReport": "showAwReport",
+                "selectedReport": "selected"
+            },
+            "deps": "js/Rb0ReportsPage"
+        },
+
+        "updateTCSourceReportAction":{
+            "actionType": "JSFunction",
+            "method": "updateTCSourceReportAction",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "showAwReport": "showAwReport"
+            },
+            "deps": "js/Rb0ReportsPage"
+        },
+        "openGenerateReport":{
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "activateSummaryCommandPanel",
+                    "condition": "conditions.isTemplatesLocation"
+                },
+                {
+                    "action": "activateItemCommandPanel",
+                    "condition": "!conditions.isTemplatesLocation"
+                }
+            ]
+        },
+        "activateSummaryCommandPanel":{
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Awp0ReportsSummary",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateItemCommandPanel":{
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Awp0InContextReports",
+                "location": "aw_toolsAndInfo"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate":[
+            {
+                "action": "revealReport",
+                "observers": ["props.subPanelContext.selected"]
+            }
+        ]
+    },
+    "data":
+    {
+        "url":
+        {
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "showAwReport": false
+    },
+
+    "i18n":
+    {
+        "doLiveIntegration":
+        [
+            "ReportMessages"
+        ],
+        "reportsPage":
+        [
+            "ReportMessages"
+        ],
+        "showNoDataFoundMessage":
+        [
+            "ReportMessages"
+        ],
+        "reportsTabDefaultMessage":
+        [
+            "ReportMessages"
+        ],
+        "addDashboardReportWithPanel":[
+            "ReportChartMessages"
+        ],
+        "generateReportHint":[
+            "ReportChartMessages"
+        ],
+        "generateAdvCommandName":[
+            "ReportChartMessages"
+        ]
+    },
+
+       "messages":
+    {
+        "showNoDataFoundMessage":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.showNoDataFoundMessage}}"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "updateHTMLReport",
+            "action": "refreshPanelData",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "updateAWSourceReport",
+            "action": "updateAWSourceReportAction"
+        },
+        {
+            "eventId": "updateTCSourceReport",
+            "action": "updateTCSourceReportAction"
+        }
+    ],
+    "conditions":{
+        "isTemplatesLocation": {
+            "expression": " ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReportBuilderReports'"
+        }
+    }
+}

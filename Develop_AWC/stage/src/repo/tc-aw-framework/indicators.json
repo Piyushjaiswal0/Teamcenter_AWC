@@ -1,0 +1,800 @@
+{
+  "fx_release_status_list_approved": {
+    "iconName": "ReleasedApproved",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Approved"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_pending": {
+    "iconName": "ReleasedPending",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Pending"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_approval_pending": {
+    "iconName": "ReleasedPending",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Approval Pending"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_created": {
+    "iconName": "FlagWhite",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Created"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_Vm0Created": {
+    "iconName": "FlagWhite",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Vm0Created"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_Vm0ApprovalPending": {
+    "iconName": "ReleasedPending",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Vm0ApprovalPending"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_obsolete": {
+    "iconName": "ReleasedObsolete",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Obsolete"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_rejected": {
+    "iconName": "ReleasedRejected",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Rejected"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_planning_sync_state": {
+    "iconName": "ReleasedPlanningSyncState",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "PlanningSyncState"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_tc_base_lined": {
+    "iconName": "ReleasedTCBaselined",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "TC Baselined"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_tcm_released": {
+    "iconName": "ReleasedTCMReleased",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "TCM Released"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_validation": {
+    "iconName": "ReleasedValidation",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "Validation"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_zero": {
+    "iconName": "Status0Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "0"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_ten": {
+    "iconName": "Status10Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "10"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_twenty": {
+    "iconName": "Status20Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "20"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_thirty": {
+    "iconName": "Status30Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "30"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_forty": {
+    "iconName": "Status40Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "40"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_fifty": {
+    "iconName": "Status50Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "50"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_sixty": {
+    "iconName": "Status60Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "60"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_seventy": {
+    "iconName": "Status70Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "70"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_eighty": {
+    "iconName": "Status80Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "80"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_ninety": {
+    "iconName": "Status90Flag",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "type": {
+        "names": [
+          "ReleaseStatus"
+        ],
+        "prop": {
+          "names": [
+            "object_name"
+          ],
+          "conditions": {
+            "object_name": {
+              "$eq": "90"
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_release_status_list_default": {
+    "iconName": "Released",
+    "tooltip": {
+      "showPropDisplayName": false,
+      "propNames": [
+        "object_name",
+        "date_released"
+      ]
+    },
+    "prop": {
+      "names": [
+        "release_status_list"
+      ],
+      "conditions": {}
+    },
+    "modelTypes": [
+      "WorkspaceObject"
+    ]
+  },
+  "fx_checked_out": {
+    "iconName": "CheckedOut",
+    "tooltip": {
+      "showPropDisplayName": true,
+      "propNames": [
+        "checked_out_user",
+        "checked_out_date"
+      ]
+    },
+    "prop": {
+      "names": [
+        "checked_out_user"
+      ],
+      "type": {
+        "names": [
+          "User"
+        ],
+        "prop": {
+          "names": [
+            "userid"
+          ],
+          "conditions": {
+            "userid": {
+              "$notNull": true
+            }
+          }
+        }
+      }
+    },
+    "modelTypes": [
+      "ItemRevision",
+      "Dataset",
+      "Item",
+      "Form"
+    ]
+  },
+  "fx_checked_out_revision_superseded": {
+    "iconName": "Warning",
+    "tooltip": {
+      "showPropDisplayName": true,
+      "propNames": [
+        "awp0ConfiguredRevision"
+      ]
+    },
+    "modelTypes": [
+      "ItemRevision"
+    ],
+    "conditions": {
+      "awp0ConfiguredRevision": {
+        "$notNull": true
+      }
+    }
+  }
+}

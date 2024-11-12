@@ -1,0 +1,84 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "data": {
+        "chartTitle": {
+            "displayName": "{{i18n.chartTitle}}",
+            "type": "STRING",
+            "isEnabled": true,
+            "dbValue": "{{props.subPanelContext.chartConfig.ChartTitle}}"
+        },
+        "chartByProperty": {
+            "displayName": "{{i18n.chartByProperty}}",
+            "type": "STRING",
+            "isEditable": true,
+            "hasLov": true,
+            "isRequired": true,
+            "dbValue": "{{props.subPanelContext.chartConfig.ChartPropInternalName}}",
+            "dispValue": "{{props.subPanelContext.chartConfig.ChartPropName}}"
+        }
+    },
+    "actions": {
+        "closePanel": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupId": "{{props.subPanelContext.chartConfig.popUpId}}",
+                "targetEvent": "{{$event}}"
+            },
+            "deps": "js/popupService"
+        },
+        "getChartProps": {
+            "actionType": "JSFunction",
+            "method": "getChartPropList",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}"
+            },
+            "deps": "js/AwConfigureChartService"
+        },
+        "saveChartAndClose": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "saveChartProperties"
+            }, {
+                "action": "closePanel"
+            } ]
+        },
+        "saveChartProperties": {
+            "actionType": "JSFunction",
+            "method": "saveChartProperties",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}",
+                "chartTitle": "{{data.chartTitle}}",
+                "chartByProperty": "{{data.chartByProperty}}",
+                "id": "{{props.subPanelContext.id}}"
+            },
+            "deps": "js/AwConfigureChartService"
+        },
+        "populatePropertyToTitle": {
+            "actionType": "JSFunction",
+            "method": "changeTitle",
+            "inputData": {
+                "chartTitle": "{{data.chartTitle}}",
+                "chartByProperty": "{{data.chartByProperty}}"
+            },
+            "outputData":{
+                "chartTitle":""
+            },
+            "deps": "js/AwConfigureChartService"
+        }
+    },
+    "i18n": {
+        "CancelButtonLabel":["FileVersionsMessages"],
+        "saveReport": [ "ReportChartMessages" ],
+        "chartByProperty": [ "ReportChartMessages" ],
+        "chartTitle": [ "ReportChartMessages" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "getChartProps"
+    }
+}

@@ -1,0 +1,389 @@
+{
+  "com_siemens_splm_client_favorites_favoritesLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/FavoritesMessages",
+        "key": "favoritesAppDisplayName"
+      },
+      "headerTitle": {
+        "source": "/i18n/FavoritesMessages",
+        "key": "favoritesAppDisplayName"
+      },
+      "propertyPolicy": "/policies/favoritesLocationPropertyPolicy.json"
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "myFavorites": {
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "/i18n/FavoritesMessages",
+        "key": "myFavorites"
+      }
+    },
+    "parent": "com_siemens_splm_client_favorites_favoritesLocation",
+    "view": "MyFavoritesPage",
+    "url": "/myFavorites"
+  },
+  "myRecentViewedObjects": {
+    "data": {
+      "priority": 1,
+      "label": {
+        "source": "/i18n/FavoritesMessages",
+        "key": "myRecentViewedObjects"
+      }
+    },
+    "parent": "com_siemens_splm_client_favorites_favoritesLocation",
+    "view": "MyRecentViewedObjects",
+    "url": "/myRecentViewedObjects"
+  },
+  "com_siemens_splm_clientfx_ui_components_ComponentsPresenter": {
+    "params": {
+      "componentId": null,
+      "embeddedLocationView": null,
+      "uid": null,
+      "isEmbeddedView": "true"
+    },
+    "url": "/com.siemens.splm.clientfx.ui.components.ComponentsPresenter",
+    "resolveActions": {
+      "getData": {
+        "actionType": "JSFunction",
+        "method": "navigateToComponentLocation",
+        "deps": "js/hosting/hostPageNavigationService",
+        "inputData": {
+          "params": "{{ctx.state.params}}"
+        }
+      }
+    }
+  },
+  "hostedObjectInfoLocation": {
+    "params": {
+      "embeddedLocationView": null,
+      "enableEditing": null,
+      "uid": null
+    },
+    "url": "/hostedObjectInfoLocation",
+    "view": "Awp0HostedObjectInfo"
+  },
+  "mockComponentLocation": {
+    "url": "/mockComponentLocation",
+    "view": "MockComponentLocation"
+  },
+  "com_siemens_splm_clientfx_tcui_xrt_showObject": {
+    "abstract": false,
+    "params": {
+      "cmdArg": {
+        "array": true
+      },
+      "cmdId": null,
+      "d_uids": null,
+      "filter": null,
+      "page": null,
+      "p_uid": null,
+      "pageId": null,
+      "s_uid": null,
+      "uid": null,
+      "edit": null
+    },
+    "reloadOnSearch": false,
+    "view": "AwShowObjectLocation",
+    "type": "location",
+    "url": "/com.siemens.splm.clientfx.tcui.xrt.showObject"
+  },
+  "com_siemens_splm_client_file_download_Location": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/HeaderMessages",
+        "key": "fileDownload"
+      },
+      "headerTitle": {
+        "source": "/i18n/HeaderMessages",
+        "key": "fileDownload"
+      }
+    },
+    "params": {
+      "userId": null,
+      "uid": null
+    },
+    "type": "location"
+  },
+  "downloadFile": {
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "",
+        "key": ""
+      },
+      "clientScopeURI": "",
+      "nameToken": "com_siemens_splm_client_file_download_Location:fileDownloadDataSummary",
+      "viewModes": []
+    },
+    "parent": "com_siemens_splm_client_file_download_Location",
+    "reloadOnSearch": true,
+    "type": "subLocation",
+    "url": "/downloadFile",
+    "view": "Awp0FileDownload"
+  },
+  "com_siemens_splm_clientfx_tcui_idDisplayRuleLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/IdDisplayRulesMessages",
+        "key": "idDisplayRule"
+      },
+      "headerTitle": {
+        "source": "/i18n/IdDisplayRulesMessages",
+        "key": "idDisplayRule"
+      }
+    },
+    "type": "location"
+  },
+  "myIdDisplayRules": {
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "/i18n/IdDisplayRulesMessages",
+        "key": "idDisplayRule"
+      },
+      "clientScopeURI": "Awp0MyIdDisplayRules",
+      "nameToken": "com.siemens.splm.clientfx.tcui:idDisplayRulesSubLocation",
+      "defaultDisplayMode": "SummaryView",
+      "viewModes": {
+        "SummaryView": {
+          "primaryWorkArea": "list",
+          "secondaryWorkArea": true
+        },
+        "ListView": {
+          "primaryWorkArea": "list",
+          "secondaryWorkArea": false
+        }
+      },
+      "viewBase": "myIdDisplayRules"
+    },
+    "parent": "com_siemens_splm_clientfx_tcui_idDisplayRuleLocation",
+    "type": "subLocation",
+    "url": "/myIdDisplayRules"
+  },
+  "com_siemens_splm_client_administration_workspaceadminLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/WorkspaceAdministrationMessages",
+        "key": "appDisplayName"
+      },
+      "headerTitle": {
+        "source": "/i18n/WorkspaceAdministrationMessages",
+        "key": "appDisplayName"
+      }
+    },
+    "type": "location"
+  },
+  "workspaces": {
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "/i18n/WorkspaceAdministrationMessages",
+        "key": "workspaceTitle"
+      },
+      "clientScopeURI": "Awp0ObjectNavigation",
+      "nameToken": "com.siemens.splm.client.workspaceAdministration.workspaceSublocation",
+      "viewBase": "workspace",
+      "defaultDisplayMode": "ListView",
+      "viewModes": {
+        "ListView": {
+          "primaryWorkArea": "list",
+          "secondaryWorkArea": false
+        },
+        "TableView": {
+          "primaryWorkArea": "table",
+          "secondaryWorkArea": false
+        },
+        "ImageView": {
+          "primaryWorkArea": "image",
+          "secondaryWorkArea": false
+        }
+      }
+    },
+    "parent": "com_siemens_splm_client_administration_workspaceadminLocation",
+    "type": "subLocation",
+    "url": "/workspaces"
+  },
+  "pages": {
+    "data": {
+      "priority": 1,
+      "label": {
+        "source": "/i18n/WorkspaceAdministrationMessages",
+        "key": "pagesTitle"
+      },
+      "clientScopeURI": "Awp0ObjectNavigation",
+      "nameToken": "com.siemens.splm.client.workspaceAdministration.pagesSublocation",
+      "viewBase": "page",
+      "viewModes": {
+        "ListView": {
+          "primaryWorkArea": "list",
+          "secondaryWorkArea": false
+        },
+        "TableView": {
+          "primaryWorkArea": "table",
+          "secondaryWorkArea": false
+        },
+        "ImageView": {
+          "primaryWorkArea": "image",
+          "secondaryWorkArea": false
+        }
+      }
+    },
+    "parent": "com_siemens_splm_client_administration_workspaceadminLocation",
+    "type": "subLocation",
+    "url": "/pages"
+  },
+  "xrtEditorLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/XRTEditorMessages",
+        "key": "xrtEditorTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/XRTEditorMessages",
+        "key": "xrtEditorTitle"
+      }
+    },
+    "type": "location"
+  },
+  "xrtEditor": {
+    "data": {
+      "priority": 0,
+      "label": "xrtEditor"
+    },
+    "parent": "xrtEditorLocation",
+    "type": "subLocation",
+    "url": "/xrteditor?prefLocation&client&objectType&xrtType&location&subLocation",
+    "view": "AwXrtEditor"
+  },
+  "com_siemens_splm_clientfx_pdfjs_showPdfFileLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/PdfJsConstants",
+        "key": "ShowPdfFileTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/PdfJsConstants",
+        "key": "ShowPdfFileTitle"
+      }
+    },
+    "type": "location"
+  },
+  "showPdfFileLocationDev": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/PdfJsConstants",
+        "key": "ShowPdfFileTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/PdfJsConstants",
+        "key": "ShowPdfFileTitle"
+      }
+    },
+    "type": "location",
+    "url": "/pdf"
+  },
+  "com_siemens_splm_clientfx_pdfjs_showPdfFileSubLocationDev": {
+    "data": {
+      "priority": 0,
+      "label": "",
+      "clientScopeURI": "Awp0PdfPane",
+      "nameToken": "com.siemens.splm.clientfx.pdfjs.showPdfFileSubLocation"
+    },
+    "parent": "showPdfFileLocationDev",
+    "view": "AwPDFFileSublocation",
+    "type": "subLocation",
+    "url": "/com.siemens.splm.clientfx.pdfjs.showPdfFileSubLocation"
+  },
+  "showGatewayLocation": {
+    "abstract": true,
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/UIMessages",
+        "key": "homeCommandTitle"
+      }
+    },
+    "view": "AwGatewayLocation",
+    "type": "location"
+  },
+  "showGateway": {
+    "params": {
+      "validateDefaultRoutePath": null
+    },
+    "url": "/showGateway",
+    "resolveActions": {
+      "navigate": {
+        "actionType": "JSFunction",
+        "method": "go",
+        "inputData": {
+          "to": "showHome",
+          "toParams": {},
+          "options": {
+            "location": "replace"
+          }
+        },
+        "deps": "js/locationNavigation.service"
+      }
+    }
+  },
+  "showHome": {
+    "data": {
+      "priority": 0,
+      "label": "",
+      "clientScopeURI": "Awp0ShowTcGateway",
+      "nameToken": "showGateway",
+      "awSubLocationPref": {
+        "isHomePage": true,
+        "hideRightWall": true
+      }
+    },
+    "params": {
+      "validateDefaultRoutePath": null,
+      "test": null
+    },
+    "url": "/showHome",
+    "view": "Gateway",
+    "parent": "showGatewayLocation"
+  },
+  "showUICompLocation": {
+    "abstract": true,
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/uiCompMessages",
+        "key": "uiCompCommandTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/uiCompMessages",
+        "key": "uiCompCommandTitle"
+      }
+    },
+    "type": "location",
+    "parent": "root"
+  },
+  "showUIComp": {
+    "data": {},
+    "url": "/uicomp",
+    "view": "uicomp",
+    "type": "subLocation",
+    "parent": "showUICompLocation"
+  },
+  "Form": {
+    "data": {
+      "browserSubTitle": "Form"
+    },
+    "url": "/form",
+    "view": "FormExample",
+    "parent": "showUIComp"
+  },
+  "Checkbox": {
+    "data": {
+      "browserSubTitle": "Checkbox"
+    },
+    "url": "/checkbox",
+    "view": "CheckboxExample",
+    "parent": "showUIComp"
+  }
+}

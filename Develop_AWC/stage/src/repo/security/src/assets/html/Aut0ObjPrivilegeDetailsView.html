@@ -1,0 +1,34 @@
+<aw-panel-body>
+    <aw-panel-section>
+        <aw-flex-row height="fill">
+            <aw-flex-column width="fill">
+                <aw-widget prop="data.modelPropUser.props.fnd0OAREvalCtxtUsr"></aw-widget>
+                <aw-button action="getGroupMemeberData" enable-when="conditions.allInputsPresent">
+                    <aw-i18n>i18n.autShowAccessBtn</aw-i18n>
+                </aw-button>
+            </aw-flex-column>
+            <aw-flex-column width="1f"></aw-flex-column>
+            <aw-flex-column width="fill">
+                <aw-widget prop="data.modelPropUser.props.fnd0OAREvalCtxtGrp"></aw-widget>
+            </aw-flex-column>
+            <aw-flex-column width="1f"></aw-flex-column>
+            <aw-flex-column width="fill">
+                <aw-widget prop="data.modelPropUser.props.fnd0OAREvalCtxtRole"></aw-widget>
+            </aw-flex-column>
+            <aw-flex-column width="1f"></aw-flex-column>
+            <aw-flex-column width="fill">
+                <aw-widget prop="data.modelPropUser.props.fnd0OAREvalCtxtProj" visible-when="false"></aw-widget>
+            </aw-flex-column>
+        </aw-flex-row>
+    </aw-panel-section>
+    <aw-panel-section caption="i18n.grantingOperationsSectionHdr">
+        <aw-row height="17f">
+            <aw-splm-table gridid="masterOpInfoGrid"></aw-splm-table>
+        </aw-row>
+    </aw-panel-section>
+    <aw-panel-section caption="i18n.associatedRulesSectionHdr" visible-when="conditions.showRuleSection">
+        <aw-row height="13f">
+            <aw-splm-table gridid="detailRuleInfoGrid"></aw-splm-table>
+        </aw-row>
+    </aw-panel-section>
+</aw-panel-body>

@@ -1,0 +1,50 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_3" data-name="New Gradient Swatch 3" x1="0.293" y1="1.293" x2="22" y2="23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_3-2" x1="4.293" y1="4.293" x2="26" y2="26" xlink:href="#New_Gradient_Swatch_3"/>
+    <linearGradient id="New_Gradient_Swatch_3-3" x1="8.293" y1="7.293" x2="46.707" y2="45.707" xlink:href="#New_Gradient_Swatch_3"/>
+    <linearGradient id="linear-gradient" x1="14.5" y1="13.5" x2="40.5" y2="39.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.302" stop-color="#f8f8f8"/>
+      <stop offset="0.737" stop-color="#e5e5e5"/>
+      <stop offset="1" stop-color="#d6d6d6"/>
+    </linearGradient>
+  <path d="M4.5,4.5a1,1,0,0,1,1-1h33v-2a1,1,0,0,0-1-1H1.5a1,1,0,0,0-1,1v38a1,1,0,0,0,1,1h3Z" fill="url(#New_Gradient_Swatch_3)"/>
+  <path d="M38.5,3.5v-2a1,1,0,0,0-1-1H1.5a1,1,0,0,0-1,1v38a1,1,0,0,0,1,1h3" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M8.5,7.5a1,1,0,0,1,1-1h33v-2a1,1,0,0,0-1-1H5.5a1,1,0,0,0-1,1v38a1,1,0,0,0,1,1h3Z" fill="url(#New_Gradient_Swatch_3-2)"/>
+  <path d="M42.5,6.5v-2a1,1,0,0,0-1-1H5.5a1,1,0,0,0-1,1v38a1,1,0,0,0,1,1h3" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <rect x="8.5" y="6.5" width="38" height="40" rx="1" fill="url(#New_Gradient_Swatch_3-3)"/>
+    <rect x="15.5" y="12.5" width="24" height="28" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <polyline points="8.5 9.5 11.5 9.5 11.5 14.5 8.5 14.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.959"/>
+    <polyline points="8.5 38.5 11.5 38.5 11.5 43.5 8.5 43.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.959"/>
+    <line x1="10.5" y1="35" x2="10.5" y2="22" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.978"/>
+    <polyline points="46.5 14.5 43.5 14.5 43.5 9.5 46.5 9.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.959"/>
+    <polyline points="46.5 43.5 43.5 43.5 43.5 38.5 46.5 38.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.959"/>
+    <line x1="44.5" y1="22" x2="44.5" y2="35" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.978"/>
+    <polyline points="16 8.5 13.5 8.5 13.5 44.5 16 44.5" fill="none" stroke="#8b8b8b" stroke-miterlimit="10"/>
+    <polyline points="39 8.5 41.5 8.5 41.5 44.5 39 44.5" fill="none" stroke="#8b8b8b" stroke-miterlimit="10"/>
+    <line x1="39.5" y1="19.5" x2="15.5" y2="19.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="19.5 12.5 19.5 14.5 21.5 14.5 21.5 16.5 26.5 16.5 26.5 19.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="27.5 12.5 27.5 14.5 29.5 14.5 29.5 16.5 34.5 16.5 34.5 19.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="35.5 12.5 35.5 14.5 37.5 14.5 37.5 16.5 39.5 16.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="15.5 23.5 18.5 23.5 18.5 26.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="19.5 19.5 19.5 21.5 21.5 21.5 21.5 23.5 26.5 23.5 26.5 26.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="27.5 19.5 27.5 21.5 29.5 21.5 29.5 23.5 34.5 23.5 34.5 26.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="35.5 19.5 35.5 21.5 37.5 21.5 37.5 23.5 39.5 23.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="15.5 30.5 18.5 30.5 18.5 33.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="19.5 26.5 19.5 28.5 21.5 28.5 21.5 30.5 26.5 30.5 26.5 33.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="27.5 26.5 27.5 28.5 29.5 28.5 29.5 30.5 34.5 30.5 34.5 33.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="35.5 26.5 35.5 28.5 37.5 28.5 37.5 30.5 39.5 30.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="15.5 37.5 18.5 37.5 18.5 40.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="19.5 33.5 19.5 35.5 21.5 35.5 21.5 37.5 26.5 37.5 26.5 40.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="27.5 33.5 27.5 35.5 29.5 35.5 29.5 37.5 34.5 37.5 34.5 40.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <polyline points="35.5 33.5 35.5 35.5 37.5 35.5 37.5 37.5 39.5 37.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <rect x="8.5" y="6.5" width="38" height="40" rx="1" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <polyline points="15.5 16.5 18.5 16.5 18.5 19.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="23.5" y1="12.5" x2="23.5" y2="40.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="31.5" y1="12.5" x2="31.5" y2="40.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="39.5" y1="33.5" x2="15.5" y2="33.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="15.5" y1="26.5" x2="39.5" y2="26.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

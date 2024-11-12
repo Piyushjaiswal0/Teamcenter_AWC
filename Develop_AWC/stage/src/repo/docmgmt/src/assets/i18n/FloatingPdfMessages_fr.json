@@ -1,0 +1,7 @@
+{
+    "add": "Ajouter",
+    "cancel": "Annuler",
+    "confirmAddPdf": "\"{0}\" sera ajouté à \"{1}\"",
+    "addPdfError": "\"{0}\" n'a pas été ajouté en raison d'une erreur du système",
+    "deletePdfError": "\"{0}\" n'a pas été détruit en raison d'une erreur du système"
+}

@@ -1,0 +1,5 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M15,15H0V0H15Z" fill="#464646"/>
+  <rect x="1" y="1" width="13" height="13" fill="#af463c"/>
+  <polygon points="10.646 7.646 8 10.293 8 3 7 3 7 10.293 4.354 7.646 3.646 8.354 7.5 12.207 11.354 8.354 10.646 7.646" fill="#fff"/>
+</svg>

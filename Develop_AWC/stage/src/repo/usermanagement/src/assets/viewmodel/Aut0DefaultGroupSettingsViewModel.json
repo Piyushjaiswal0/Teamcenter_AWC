@@ -1,0 +1,230 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "onEvent": [
+        {
+            "eventId": "editHandlerStateChange",
+            "cacheEventData": true,
+            "condition": "subPanelContext.session.current_user.uid === subPanelContext.openedObject.uid && dataSource.panelId === 'AwShowObjectXrt' && (state === 'starting' || state === 'canceling')",
+            "action": "updateFields"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "cacheEventData": true,
+            "condition": "state === 'saved'" ,
+            "action": "updateDefaultGroup"
+        },
+        {
+            "eventId": "Aut0DefaultGroupSettings.callUpdateDefaultGroup",
+            "action": "callUpdateDefaultGroup"
+        },
+        {
+            "eventId": "condition.expressionValueChanged",
+            "action": "setSelectedDefaultGroup",
+            "criteria": {
+                "condition": "conditions.watchCurrentGroup"
+            }
+        }
+    ],
+    "actions": {
+        "reveal":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData": {
+                "objects":
+                [
+                    "{{ctx.selected}}"
+                ],
+                "attributes": [
+                    "default_group",
+                    "volume"
+                ]
+            },
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "currentDefaultGroup": "{{function:getCurrentDefaultGroup}}",
+                "currentGroup.dbValue": "{{function:getCurrentDefaultGroup}}",
+                "currentGroup.uiValue": "{{function:getCurrentDefaultGroup}}"
+            },
+            "deps": "js/aw.UserSettings.Service"
+        },
+        "groupAction":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-Session",
+            "method": "getGroupMembership",
+            "inputData":
+            {
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Group",
+                        "properties":
+                        [
+                            {
+                                "name": "object_full_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "Role",
+                        "properties":
+                        [
+                            {
+                                "name": "role_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "GroupMember",
+                        "properties":
+                        [
+                            {
+                                "name": "status"
+                            },
+
+                            {
+                                "name": "group"
+                            },
+
+                            {
+                                "name": "role"
+                            },
+
+                            {
+                                "name": "default_role"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "uniqueGroups": "{{function:getGroups}}",
+                "groupFound": "uniqueGroups.length"
+            },
+
+            "deps":"js/aw.UserSettings.Service"
+        } ,
+        "updateFields" :{
+            "actionType":"JSFunction",
+            "method":"modifyUserDefaultGroup",
+            "inputData":{
+                "input":"{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "outputData":{
+                "currentGroup":"currentGroup"
+            },
+            "deps":"js/aw.UserSettings.Service"
+        },
+
+        "setSelectedDefaultGroup": {
+            "actionType": "JSFunction",
+             "method": "setSelectedDefaultGroup",
+             "inputData":
+             {
+                 "data": "{{data}}"
+             },
+             "outputData": {
+                "selectedDafaultGroup": ""
+            },
+             "deps": "js/aw.UserSettings.Service"
+         },
+        "updateDefaultGroup":{
+            "actionType":"JSFunction",
+            "method":"updateDefaultGroup",
+            "inputData":{
+                "currentGroup":"{{data.currentGroup}}",
+                "currentUser":"{{props.subPanelContext.session.current_user}}"
+            },
+            "outputData":{
+                "currentGroup":"currentGroup",
+                "defaultGroupData":"defaultGroupData"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "Aut0DefaultGroupSettings.callUpdateDefaultGroup",
+                        "condition":"data.currentGroup.valueUpdated"
+                    }
+                ]
+            },
+            "deps":"js/aw.UserSettings.Service"
+        },
+        "callUpdateDefaultGroup":{
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2015-07-UserManagement",
+            "method": "createOrUpdateUser",
+            "inputData": {
+                "userInputs": "{{data.defaultGroupData}}"
+            },
+            "outputData": {
+                "resp": "response"
+            },
+            "deps": "js/aw.UserSettings.Service"
+        }
+    },
+
+    "i18n":
+    {
+         "DefaultGroup": ["UsermanagementMessages"]
+
+    },
+    "lifecycleHooks": {
+
+        "onMount": "reveal"
+    },
+    "props":{
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "dataProviders": {
+        "groupProvider": {
+            "dataProviderType": "Action",
+            "action": "groupAction",
+            "response": "{{data.uniqueGroups}}",
+            "totalFound": "{{data.groupFound}}"
+
+
+
+
+        }
+    },
+
+    "data": {
+        "currentGroup":
+            {
+                "displayName": "{{i18n.DefaultGroup}}",
+                "type": "STRING",                
+                "hasLov": true,
+                "isRequired": false,
+                "isEditable": false,
+                "dataProvider": "groupProvider",
+                "emptyLOVEntry": false
+            },
+        "currentDefaultGroup":"",
+        "defaultGroupData":""
+    },
+
+    "conditions": {
+        "watchCurrentGroup": {
+            "expression": "data.currentGroup.dbValue",
+            "trackValues": true
+        }
+    }
+}

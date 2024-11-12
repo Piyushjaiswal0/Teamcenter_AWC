@@ -1,0 +1,14 @@
+<aw-panel-header>
+    <aw-command-panel-section caption="i18n.selectedcolumns" anchor="data.selectedColumnsSubCommands">
+    </aw-command-panel-section>
+</aw-panel-header>
+<aw-panel-body class="aw-layout-flexColumnContainer">
+    <aw-list dataprovider="data.dataProviders.exportColumnList">
+        <div class="aw-widgets-cellListWidget aw-widgets-cellListItemCell">{{item.propertyDisplayName}}</div>
+    </aw-list>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="exportToFile" aw-class="{'disabled': !data.exportColumns.dbValue.length}">
+        <aw-i18n>i18n.export</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

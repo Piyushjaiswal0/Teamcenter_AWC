@@ -1,0 +1,12 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "error-msg": {
+            "type": "STRING"
+        },
+        "display-name": {
+            "type": "STRING"
+        }
+    }
+}

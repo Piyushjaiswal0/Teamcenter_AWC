@@ -1,0 +1,33 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [],
+    "actions":{
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "getObject",
+            "inputData": {
+                "data": "{{subPanelContext.session.current_group.uid}}"
+            },
+            "outputData": {
+                "isPrivilege": "props.privilege"
+            },
+
+            "deps": "soa/kernel/clientDataModel"
+        }
+    },
+    "conditions": {
+        "isPrivilegedUser": {
+            "expression": "data.isPrivilege.dbValues[0] === '1' || subPanelContext.session.current_user.uid===subPanelContext.selected.uid"
+        }
+    },
+    "lifecycleHooks": {
+
+        "onMount": "reveal"
+    },
+
+    "i18n" :
+    {
+        "userMembershipTitle":["UsermanagementMessages"]
+    }
+}

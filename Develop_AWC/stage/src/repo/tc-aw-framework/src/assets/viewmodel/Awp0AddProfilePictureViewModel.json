@@ -1,0 +1,316 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-file-upload.directive",
+        "js/visible-when.directive"
+    ],
+    "actions": {
+        "fileChangeAction": {
+            "actionType": "JSFunction",
+            "method": "setFileParameters",
+            "inputData": {
+                "fileName": "{{parameters.fileName}}",
+                "validFile": "{{parameters.validFile}}",
+                "fileNameNoExt": "{{parameters.fileNameNoExt}}",
+                "fileExt": "{{parameters.fileExt}}",
+                "formData": "{{parameters.formData}}"
+            },
+            "outputData": {
+                "fileName": "fileName",
+                "validFile": "validFile",
+                "fileNameNoExt": "fileNameNoExt",
+                "fileExt": "fileExt",
+                "formData": "formData"
+            },
+            "deps": "js/fileUploadUtils"
+        },
+        "updatePicture": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-04-DataManagement",
+            "method": "createDatasets",
+            "inputData": {
+                "input": [ {
+                    "clientId": "{{ctx.selected.props.user_name.dbValues[0]}}",
+                    "name": "{{ctx.selected.props.user_name.dbValues[0]}}",
+                    "container": "{{ctx.selected}}",
+                    "relationType": "{{data.datasetType.dbValue}}",
+                    "description": "",
+                    "type": "{{data.datasetType.dbValue}}",
+                    "datasetFileInfos": [ {
+                        "fileName": "{{data.fileName}}",
+                        "namedReferenceName": "{{data.datasetType.dbValue}}",
+                        "isText": false
+                    } ]
+                } ]
+            },
+            "outputData": {
+                "fmsTicket": "datasetOutput[0].commitInfo[0].datasetFileTicketInfos[0].ticket",
+                "commitInfos": "datasetOutput[0].commitInfo[0]",
+                "relatedModified": "datasetOutput[0].dataset"
+            },
+            "policy": {
+                "override": true
+            },
+            "events": {
+                "success": [ {
+                    "name": "fmsTicket.update"
+                } ]
+            }
+        },
+        "updateFormData": {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "deps": "js/fileUploadUtils",
+            "inputData": {
+                "formData": "{{data.formData}}",
+                "key": "fmsTicket",
+                "value": "{{data.fmsTicket}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "addProfilePicture.dataSetsCreated"
+                } ]
+            }
+        },
+        "updateUserOnCtx": {
+            "actionType": "createViewModelObject",
+            "inputData": {
+                "source": "{{ctx.user}}"
+            },
+            "outputData": {
+                "ctx.user": "",
+                "ctx.xrtSummaryContextObject": ""
+            }
+        },
+        "uploadFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+                    "data": "{{data.formData}}"
+                }
+            },
+            "events": {
+                "success": [ {
+                    "name": "addProfilePicture.fileUploaded"
+                } ],
+                "failure": [ {
+                    "name": "addProfilePicture.comittFailed"
+                } ]
+            }
+        },
+        "commitDatasetFiles": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-FileManagement",
+            "method": "commitDatasetFiles",
+            "inputData": {
+                "commitInput": [ {
+                    "dataset": "{{data.commitInfos.dataset}}",
+                    "createNewVersion": true,
+                    "datasetFileTicketInfos": [ {
+                        "datasetFileInfo": {
+                            "clientId": "{{data.commitInfos.datasetFileTicketInfos[0].datasetFileInfo.clientId}}",
+                            "fileName": "{{data.commitInfos.datasetFileTicketInfos[0].datasetFileInfo.fileName}}",
+                            "namedReferencedName": "{{data.commitInfos.datasetFileTicketInfos[0].datasetFileInfo.namedReferenceName}}",
+                            "isText": "{{data.commitInfos.datasetFileTicketInfos[0].datasetFileInfo.isText}}",
+                            "allowReplace": "{{data.commitInfos.datasetFileTicketInfos[0].datasetFileInfo.allowReplace}}"
+                        },
+                        "ticket": "{{data.commitInfos.datasetFileTicketInfos[0].ticket}}"
+                    } ]
+                } ]
+            },
+            "outputData": {
+                "fmsTicket": "commitInfo[0].datasetFileTicketInfos[0].ticket"
+            },
+            "policy": {
+                "override": true
+            },
+            "events": {
+                "success": [ {
+                    "name": "addProfilePicture.commitSuccessful"
+                } ],
+                "failure": [ {
+                    "name": "addProfilePicture.comittFailed"
+                } ]
+            }
+        },
+        "getProperties": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData": {
+                "attributes": [
+                    "awp0ThumbnailImageTicket"
+                ],
+                "objects": [ {
+                    "type": "User",
+                    "uid": "{{ctx.user.uid}}"
+                } ]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "User",
+                        "properties": [
+                            {
+                                "name": "awp0ThumbnailImageTicket"
+                            }
+                        ]
+                    }
+                ],
+                "override": true
+            },
+            "events": {
+                "success": [ {
+                        "name": "addProfilePicture.submissionSuccessful",
+                        "eventData": {
+                            "userUid": "{{ctx.user.uid}}"
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            }
+        },
+        "deleteDataset": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "deleteObjects",
+            "inputData": {
+                "objects": [
+                    "{{data.relatedModified}}"
+                ]
+            }
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "onEvent": [ {
+            "eventId": "fmsTicket.update",
+            "action": "updateFormData"
+        },
+        {
+            "eventId": "addProfilePicture.fileUploaded",
+            "action": "commitDatasetFiles"
+        },
+        {
+            "eventId": "addProfilePicture.dataSetsCreated",
+            "action": "uploadFile"
+        },
+        {
+            "eventId": "addProfilePicture.comittFailed",
+            "action": "deleteDataset"
+        },
+        {
+            "eventId": "invalidFileSelected",
+            "message": "invalidFileError"
+        },
+        {
+            "eventId": "addProfilePicture.commitSuccessful",
+            "action": "getProperties"
+        },
+        {
+            "eventId": "addProfilePicture.submissionSuccessful",
+            "action": "updateUserOnCtx"
+        },
+        {
+            "eventId": "closeDialog",
+            "action": "closePanelDialog"
+        }
+    ],
+    "data": {
+        "datasetName": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "{{ctx.selected.props.user_name.dbValues[0]}}",
+            "dispValue": "{{ctx.profilepicture.datasetName}}"
+        },
+        "datasetDescription": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "datasetType": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "Image",
+            "dispValue": ""
+        },
+        "namedReferenceName": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "Image",
+            "dispValue": ""
+        },
+        "relationType": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "Image",
+            "dispValue": ""
+        }
+    },
+    "conditions": {
+        "validFile": {
+            "expression": "data.validFile == true"
+        }
+    },
+    "messages": {
+        "invalidFileError": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.invalidFileError}}",
+            "navigationOptions": [ {
+                "option": "Cancel",
+                "text": "{{i18n.COMMON_USER_SETTING_BAR_CLOSE}}"
+            } ]
+        }
+    },
+    "i18n": {
+        "updateProfilePicture": [
+            "TCUICommandPanelsMessages"
+        ],
+        "invalidFileError": [
+            "TCUICommandPanelsMessages"
+        ],
+        "upload": [
+            "TCUICommandPanelsMessages"
+        ],
+        "AddProfilePicture": [
+            "AddProfilePictureMessages"
+        ],
+        "COMMON_USER_SETTING_BAR_CLOSE": [
+            "commonFrameMessages"
+        ]
+    }
+}

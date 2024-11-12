@@ -1,0 +1,134 @@
+{
+    "schemaVersion": "1.0.0",
+    "props":{
+        "search-pre-filters":{
+            "type":"object"
+        },
+        "options": {
+            "type": "object"
+        }
+    },
+    "dataProviders":{
+        "prefilterList1DP": {
+            "response": "{{data.prefilterList1}}"
+        },
+        "prefilterList2DP": {
+            "response": "{{data.prefilterList2}}"
+        },
+        "prefilterList31DP": {
+            "response": "{{data.prefilterList3}}"
+        }
+    },
+    "data": {
+        "selectPrefilter1": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "hasLov": true,
+            "dataProvider": "prefilterList1DP",
+            "uiValue": "{{ctx.searchPreFilters.ownPrefilters.propDisplayName}}",
+            "dbValue": "{{ctx.searchPreFilters.ownPrefilters.selectedOwner}}",
+            "emptyLOVEntry": false
+        },
+        "selectPrefilter2": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "hasLov": true,
+            "dataProvider": "prefilterList2DP",
+            "uiValue": "{{ctx.searchPreFilters.catPrefilters.propDisplayName}}",
+            "dbValue": "{{ctx.searchPreFilters.catPrefilters.selectedCategory}}",
+            "emptyLOVEntry": false
+        },
+        "selectPrefilter3": {
+            "displayName": "",
+            "type": "CHECKBOX",
+            "isRequired": false,
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "dataProvider": "prefilterList31DP",
+            "emptyLOVEntry": false,
+            "isArray": true,
+            "renderingHint": "checkboxoptionlov",
+            "placeholder": "",
+            "requiredText": ""
+        },
+        "anyDataSource": {
+            "propDisplayValue": "{{i18n.anySource}}",
+            "propInternalValue": "{{i18n.anySource}}"
+        }
+    },
+    "actions": {
+        "updatePrefilter2": {
+            "actionType": "JSFunction",
+            "method": "updatePrefilter2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+        "updatePrefilter3": {
+            "actionType": "JSFunction",
+            "method": "updatePrefilter3",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "selectPrefilter3": "newVMP",
+                "selectPrefilter1": "newPrefilter1"
+            },
+            "deps": "js/globalSearchService"
+        },
+
+
+        "render": {
+            "method": "awSearchPreFilterRender",
+            "deps": "js/AwSearchPreFilterService"
+        },
+        "initialize2": {
+            "actionType": "JSFunction",
+            "method": "initialize2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initialize2"
+                }
+            ]
+        }
+    },
+    "conditions": {
+        "isPrefilter2Dirty":
+        {
+            "expression":"!data.selectPrefilter2.dbValue || data.selectPrefilter2.dbValue === 'ANY'"
+        },
+        "isPrefilter3Dirty":
+        {
+            "expression":"data.selectPrefilter3.dbValues.includes('Any Source')"
+        }
+    },
+    "onEvent": [ {
+        "eventId": "prefilterList31DP.selectionChangeEvent",
+        "action":"updatePrefilter3",
+        "cacheEventData": true
+    } ],
+
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount":"initialize"
+    },"i18n": {
+        "advancedSearch": [ "SearchMessages" ],
+        "Awp0SearchTitle": [ "SearchMessages" ],
+        "advancedText": [ "SearchMessages" ],
+        "searchBtn": [ "SearchMessages" ],
+        "anySource": [ "SearchMessages" ],
+        "Teamcenter": [ "SearchMessages" ]
+    }
+}

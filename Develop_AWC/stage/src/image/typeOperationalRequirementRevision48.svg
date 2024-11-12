@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.5" y1="10.5" x2="33.5" y2="43.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="32.5556" y1="20.5332" x2="42.442" y2="30.4196" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="20.0448" y1="31.6741" x2="25.6866" y2="44.1558" gradientTransform="matrix(0.9356, -0.3531, 0.3531, 0.9356, -9.289, 8.0793)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="35.5558" y1="35.5341" x2="45.4422" y2="45.4205" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="paper_gradient-2" x1="36.0859" y1="24.0855" x2="38.9129" y2="26.9126" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="39.0861" y1="39.0865" x2="41.9131" y2="41.9136" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-4" x1="22.0423" y1="36.1158" x2="23.6897" y2="39.7606" gradientTransform="matrix(0.9356, -0.3531, 0.3531, 0.9356, -9.289, 8.0793)" xlink:href="#paper_gradient"/>
+  <path d="M21.2735,10.5a5.23,5.23,0,0,0,1.82-4.094A5.9455,5.9455,0,0,0,17,.5a5.8981,5.8981,0,0,0-6.079,5.8639,5.3188,5.3188,0,0,0,1.82,4.1361H.5V23.129a6.0746,6.0746,0,1,1,0,8.48V43.5h33v-33Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <path d="M42.1606,27.18l2.3388-.83V24.6021l-2.3388-.83a.2777.2777,0,0,1-.1638-.3839L43.06,21.1512l-1.2357-1.2354L39.5874,20.98a.28.28,0,0,1-.3842-.1539l-.83-2.3272H36.6256l-.83,2.3271a.2836.2836,0,0,1-.3843.1522L33.174,19.9149l-1.236,1.2358,1.0629,2.2373a.2806.2806,0,0,1-.1627.3839l-2.3388.83V26.35l2.3388.83a.278.278,0,0,1,.1638.3843l-1.0634,2.2377,1.2357,1.2367,2.2371-1.0613a.2813.2813,0,0,1,.3842.1713l.83,2.3506h1.7476l.83-2.35a.2734.2734,0,0,1,.3843-.1756l2.2374,1.0634,1.236-1.2357-1.0629-2.2374A.28.28,0,0,1,42.1606,27.18Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M30.4542,35.4264l1.895-1.6025-.617-1.6348-2.4812.0491a.2777.2777,0,0,1-.2889-.3013l.2051-2.4683-1.5923-.7195-1.7172,1.7858a.28.28,0,0,1-.4137-.0083l-1.5983-1.8843-1.635.6171.0452,2.47a.2837.2837,0,0,1-.3058.2782l-2.4688-.205-.72,1.5926,1.7844,1.7178a.2807.2807,0,0,1-.0167.4167l-1.895,1.6025.617,1.6348,2.4813-.049a.2781.2781,0,0,1,.289.3017l-.2048,2.4692,1.5928.7207,1.7182-1.7829a.2813.2813,0,0,1,.42.0246l1.6065,1.9061,1.635-.617-.0535-2.4921a.2734.2734,0,0,1,.2976-.3l2.4688.2049.72-1.5925-1.7845-1.718A.28.28,0,0,1,30.4542,35.4264Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <path d="M45.1608,42.1806,47.5,41.35V39.603l-2.3388-.83a.2777.2777,0,0,1-.1638-.3839L46.06,36.1521l-1.2357-1.2354-2.2371,1.0644a.28.28,0,0,1-.3842-.1539l-.83-2.3272H39.6258l-.83,2.3271a.2836.2836,0,0,1-.3843.1523l-2.2374-1.0635-1.236,1.2358,1.0629,2.2372a.2806.2806,0,0,1-.1627.3839l-2.3388.83V41.35l2.3388.83a.278.278,0,0,1,.1638.3843l-1.0634,2.2378L36.1745,46.04l2.2371-1.0614a.2813.2813,0,0,1,.3842.1714l.83,2.35h1.7476l.83-2.35a.2734.2734,0,0,1,.3843-.1756l2.2374,1.0634,1.236-1.2356-1.063-2.2375A.28.28,0,0,1,45.1608,42.1806Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+  <circle cx="37.4994" cy="25.4991" r="2" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <circle cx="40.4996" cy="40.5" r="2" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+  <circle cx="25.4998" cy="35.5" r="2" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" fill="url(#paper_gradient-4)"/>
+</svg>

@@ -1,0 +1,211 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-command-sub-panel.directive"
+    ],
+    "actions": {
+        "revealPanel": {
+            "actionType": "JSFunction",
+            "method": "populateReportsContext",
+            "inputData": {
+                "data": "{{data}}",
+                "i18nData": "{{i18n}}",
+                "reportsContext": "{{data.reportsContext}}"
+            },
+            "outputData":{
+                "reportsContext": ""
+            },
+            "deps": "js/configureReportService"
+        },
+        "updateActiveView":{
+            "actionType": "JSFunction",
+            "method": "setConfigurePanel",
+            "inputData": {
+                "reportsContext": "{{data.reportsContext}}",
+                "destPanelId": "ConfigureItemReportPanel"
+            },
+            "outputData": {
+                "reportsContext": ""
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "clearSetLayoutTabPageReachedCtx": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "setLayoutTabPageReached"
+            }
+        }
+    },
+    "data": {
+        "colorInternalNameList": [
+            "#000000",
+            "#1E1E1E",
+            "#787878",
+            "#BEBEBE",
+            "#005F87",
+            "#50BED7",
+            "#EB780A",
+            "#FFB900"
+        ],
+        "fontInternalNameList": [
+            "Segoe UI",
+            "Arial",
+            "Arial Black",
+            "Courier New",
+            "Helvetica",
+            "Helvetica Neue",
+            "Georgia",
+            "Lucida Sans Unicode",
+            "Tahoma",
+            "Times New Roman",
+            "Trebuchet MS",
+            "Verdana"
+        ],
+        "reportsContext": {
+            "initialValues": {
+                "activeView": "ConfigureItemReportPanel",
+                "rootClassObject": [],
+                "rootClassSampleObject": [],
+                "segments": [],
+                "chartVisibility": {
+                    "chart1Visible": false,
+                    "chart2Visible": false,
+                    "chart3Visible": false
+                },
+                "segmentTree": []
+            },
+            "meta": {
+                "segments":[{
+                    "type": "viewModelObject",
+                    "field": true
+                }]
+            }
+        },
+        "searchState": {
+            "initialValues": {
+                "autoApplyFilters": true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ],
+                "searchFilterCategories": [{"internalName":{"field": true,"type": "STRING"}}],
+                "searchFilterMap": ""
+            }
+        }
+    },
+    "onEvent": [
+    ],
+    "preferences": [
+        "WORKSPACEOBJECT_object_columns_shown",
+        "WORKSPACEOBJECT_object_columns_hidden",
+        "REPORT_AW_ObjectType_Properties"
+    ],
+    "i18n": {
+        "layout": [
+            "ReportChartMessages"
+        ],
+        "segments":[
+            "ReportChartMessages"
+        ],
+        "selectClass":[
+            "ReportChartMessages"
+        ],
+        "selectSample":[
+            "ReportChartMessages"
+        ],
+        "objectStrColumnName": [
+            "ReportChartMessages"
+        ],
+        "SegoeUI": [
+            "ReportChartMessages"
+        ],
+        "Arial": [
+            "ReportChartMessages"
+        ],
+        "ArialBlack": [
+            "ReportChartMessages"
+        ],
+        "CourierNew": [
+            "ReportChartMessages"
+        ],
+        "Helvetica": [
+            "ReportChartMessages"
+        ],
+        "HelveticaNeue": [
+            "ReportChartMessages"
+        ],
+        "Georgia": [
+            "ReportChartMessages"
+        ],
+        "LucidaSansUnicode": [
+            "ReportChartMessages"
+        ],
+        "Tahoma": [
+            "ReportChartMessages"
+        ],
+        "TimesNewRoman": [
+            "ReportChartMessages"
+        ],
+        "TrebuchetMS": [
+            "ReportChartMessages"
+        ],
+        "Verdana": [
+            "ReportChartMessages"
+        ],
+        "Column": [
+            "ReportChartMessages"
+        ],
+        "Line": [
+            "ReportChartMessages"
+        ],
+        "Pie": [
+            "ReportChartMessages"
+        ],
+        "configurePanelTitle": [
+            "ReportChartMessages"
+        ],
+        "configureReport": [
+            "ReportChartMessages"
+        ],
+        "Black": [
+            "ReportChartMessages"
+        ],
+        "DarkGray": [
+            "ReportChartMessages"
+        ],
+        "Gray": [
+            "ReportChartMessages"
+        ],
+        "LightGray": [
+            "ReportChartMessages"
+        ],
+        "Blue": [
+            "ReportChartMessages"
+        ],
+        "LightBlue": [
+            "ReportChartMessages"
+        ],
+        "Orange": [
+            "ReportChartMessages"
+        ],
+        "Yellow": [
+            "ReportChartMessages"
+        ],
+        "editReportTitle": [
+            "ReportChartMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "revealPanel",
+        "onUnmount": "clearSetLayoutTabPageReachedCtx"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/exist-when.directive",
+        "js/aw-include.directive",
+        "js/aw-flex-column.directive",
+        "js/aw-flex-row.directive"
+    ],
+    "actions":{
+        "setupDashboardReportViewer":{
+            "actionType": "JSFunction",
+            "method": "setupDashboardReportViewer",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/showMyDashboardService"
+        }
+    },
+    "onEvent":[
+        {
+            "eventId": "aw.windowResize",
+            "action": "setupDashboardReportViewer"
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "setupDashboardReportViewer"
+    }
+}

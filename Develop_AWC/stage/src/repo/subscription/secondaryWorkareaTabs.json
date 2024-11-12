@@ -1,0 +1,8 @@
+[
+  {
+    "name": "",
+    "priority": 10,
+    "view": "AwSecondaryWorkareaNoSkeleton",
+    "visibleWhen": "selection.length === 0 && (context.clientScopeURI === 'fnd0MySubscriptionMessages' || context.clientScopeURI === 'fnd0MySubscriptions' || context.clientScopeURI === 'Sub0FollowedSubscriptions')"
+  }
+]

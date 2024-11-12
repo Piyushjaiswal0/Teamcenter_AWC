@@ -1,0 +1,23 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "clicked": true,
+        "image": "homeSearch"
+    },
+    "conditions": {
+        "checkIfOnlySWAIsEmpty": {
+            "expression": "props.subPanelContext.selection.length === 0 && subPanelContext.context.searchState.totalFound > 0"
+        },
+        "checkIfPWAIsEmpty": {
+            "expression": "props.subPanelContext.selection.length === 0 && !subPanelContext.context.searchState.totalFound && !subPanelContext.context.searchState.totalLoaded"
+        }
+    },
+    "i18n": {
+        "nothingSelected": [
+            "FavoritesMessages"
+        ],
+        "nothingSelectedSWAHint": [
+            "FavoritesMessages"
+        ]
+    }
+}

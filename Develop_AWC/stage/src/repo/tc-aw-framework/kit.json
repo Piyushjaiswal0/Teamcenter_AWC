@@ -1,0 +1,51 @@
+{
+  "name": "tc-aw-framework",
+  "description": "",
+  "modules": [
+    "tc-aw-framework"
+  ],
+  "version": "6.3.1",
+  "OOTB": true,
+  "configuration": {
+    "hosting": {
+      "output": "javascript",
+      "definition": "module",
+      "depsPath": [
+        "initialModules.module",
+        "postHandshakeModules.module",
+        "queries.module"
+      ]
+    },
+    "saveAsRevise": {
+      "output": "json",
+      "definition": "module",
+      "uniqueDepth": 1
+    }
+  },
+  "soaDeps": [
+    "Awp0.Soa.AWS2",
+    "Awp0.Soa.ReqMgmt",
+    "Awp0.Soa.OrgMgmt",
+    "Awv0.Soa.ActiveWorkspaceVis",
+    "Fnd0.Soa.UiConfig",
+    "Teamcenter.Soa.Administration",
+    "Teamcenter.Soa.Cad",
+    "Teamcenter.Soa.Classification",
+    "Teamcenter.Soa.Common",
+    "Teamcenter.Soa.Core",
+    "Teamcenter.Soa.ImportExport",
+    "Teamcenter.Soa.Query",
+    "Teamcenter.Soa.Reports",
+    "Teamcenter.Soa.Visualization",
+    "Teamcenter.Soa.Workflow"
+  ],
+  "extraDeps": [
+    "js/xrtUtilities",
+    "js/layouthostinterface",
+    "js/incUpdateLayoutService",
+    "js/sortedLayoutService",
+    "js/branchLayoutService",
+    "js/columnLayoutService",
+    "js/ishikawaLayoutService"
+  ]
+}

@@ -1,0 +1,178 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "sharedTableSearchBox": {
+            "displayName": "{{i18n.filterPanelCategoryFilterPlaceholderText}}",
+            "type": "STRING",
+            "dbValue": "",
+            "requiredText": "{{i18n.filterPanelCategoryFilterPlaceholderText}}"
+        },
+        "defaultNotSharedTitle": {
+            "dbValue": "",
+            "type": "STRING",
+            "dispValue": "{{i18n.defaultNotSharedTitle}}",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "defaultNotSharedDesc": {
+            "dbValue": "",
+            "type": "STRING",
+            "dispValue": "{{i18n.defaultNotSharedDesc}}",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        }
+    },
+    "actions": {
+        "onChangeOfSharedWith":{
+            "actionType": "JSFunction",
+            "method": "onChangeOfSharedWith",
+            "deps": "js/ShareTemplateService",
+            "inputData": {
+                "sharedWith":"{{props.sharedWith}}",
+                "reportsState":"{{props.reportsState}}",
+                "shareReportState":"{{props.shareReportState}}",
+                "dataProvider":"{{data.dataProviders.getSharedWithListProvider}}"
+            }
+        },
+        "getSharedWithList": {
+            "actionType": "JSFunction",
+            "method": "getSharedWithList",
+            "inputData": {
+                "shareReportState": "{{props.shareReportState}}",
+                "searchString": "{{data.sharedTableSearchBox.dbValue}}",
+                "reportsState":"{{props.reportsState}}",
+                "dataProvider":"{{data.dataProviders.getSharedWithListProvider}}"
+            },
+            "outputData": {
+                "accessors": ""
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "disableAddButton": {
+            "actionType": "JSFunction",
+            "method": "disableButtonForSharedWith",
+            "inputData": {
+                "buttonName": "add",
+                "dataProvider": "{{data.dataProviders.getSharedWithListProvider}}",
+                "currentSharedWithList": "{{data.accessors}}",
+                "shareReportState": "{{props.shareReportState}}",
+                "reportsState": "{{props.reportsState}}"
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "getSharedWithListProvider"
+        },
+        "removeSelection": {
+            "actionType": "JSFunction",
+            "method": "removeSelectionsFromSearchFolderShareRule",
+            "inputData": {
+                "shareReportState": "{{props.shareReportState}}",
+                "dataProvider": "{{data.dataProviders.getSharedWithListProvider}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "doGridDataProviderBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "doGridDataProvider"
+                }
+            ]
+        }
+    },
+    "dataProviders": {
+        "getSharedWithListProvider": {
+            "action": "getSharedWithList",
+            "response": "{{data.accessors}}",
+            "totalFound": "{{data.accessors.length}}",
+            "selectionModelMode": "multiple"
+        }
+    },
+    "columnProviders": {
+        "accessorsTableColumnProvider": {
+            "frozenColumnIndex": 0,
+            "columns": [
+                {
+                    "name": "icon",
+                    "displayName": "",
+                    "maxWidth": 70,
+                    "minWidth": 70,
+                    "width": 70,
+                    "enableColumnMenu": false,
+                    "pinnedLeft": true,
+                    "enableColumnResizing": false
+                },
+                {
+                    "name": "object_string",
+                    "displayName": "",
+                    "maxWidth": 375,
+                    "minWidth": 250,
+                    "width": 300,
+                    "enableColumnMenu": false,
+                    "pinnedLeft": false,
+                    "enableColumnResizing": false,
+                    "enableColumnMoving": false
+                }
+            ],
+            "sortCriteria": []
+        }
+    },
+    "grids": {
+        "accessorsView": {
+            "dataProvider": "getSharedWithListProvider",
+            "columnProvider": "accessorsTableColumnProvider",
+            "addIconColumn": true,
+            "gridOptions": {
+                "enableSorting": false,
+                "isFilteringEnabled": false,
+                "maxRowsToShow": 4
+            }
+        }
+    },
+    "props": {
+        "share-report-state": {
+            "type": "object"
+        },
+        "shared-with":{
+            "type":"STRING"
+        },
+        "reports-state":{
+            "type":"object"
+        },
+        "sub-panel-context": {
+            "type":"object"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "getSharedWithListProvider.selectionChangeEvent",
+            "action": "disableAddButton"
+        }
+    ],
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "doGridDataProviderBatchJob",
+                "observers": [
+                    "props.shareReportState.accessorsString"
+                ]
+            },
+            {
+                "action": "onChangeOfSharedWith",
+                "observers": [
+                    "props.sharedWith"
+                ]
+            }
+        ]
+    },
+    "i18n": {
+        "filterPanelCategoryFilterPlaceholderText": [ "SearchMessages" ],
+        "defaultNotSharedTitle": ["ReportChartMessages"],
+        "defaultNotSharedDesc": ["ReportChartMessages"]
+    },
+    "conditions": {
+        "isMobileMode": {
+            "expression": "!subPanelContext.sidenavMode || subPanelContext.sidenavMode === 'mobile'"
+        }
+    }
+}

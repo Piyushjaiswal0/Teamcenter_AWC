@@ -1,0 +1,11 @@
+{
+    "Organization": "組織",
+    "orgTreeFilterText": "篩選",
+    "resultsText": "結果",
+    "noFiltersFound": "未找到結果",
+    "noOrgTreeResultsFound": "未找到篩選器字串 \"{0}\"的任何結果。",
+    "orgFilterUsage": "<br>例如，{0}:\"Ed Engineer\" 將返回 Ed Engineer 的所有使用者。<br>有效欄位為{1}和{2}。",
+    "usageMessage": "\"{0}\" 不是有效的篩選器字串。{1}",
+    "orgEscapeChars": "<br>包含引號的篩選器字串必須新增反斜線字首 (\\\")。{0}",
+    "advancedSearchMessage": "<br>包含冒號的篩選器字串必須用引號 (\"\") 引起，除非用於搜尋特定的欄位值。{0}"
+}

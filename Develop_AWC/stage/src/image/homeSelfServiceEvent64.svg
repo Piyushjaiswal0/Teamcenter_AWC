@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path d="M54.5,43A2.5,2.5,0,1,1,57,40.5,2.5,2.5,0,0,1,54.5,43Zm0-3a.5.5,0,1,0,.5.5A.5.5,0,0,0,54.5,40Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <path d="M41.5,43A2.5,2.5,0,1,1,44,40.5,2.5,2.5,0,0,1,41.5,43Zm0-3a.5.5,0,1,0,.5.5A.5.5,0,0,0,41.5,40Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <rect x="12" y="32" width="16" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <rect x="12" y="26" width="16" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <rect x="12" y="50" width="16" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <rect x="12" y="44" width="16" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <rect x="12" y="38" width="16" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+  <path d="M60,35H36V1A1,1,0,0,0,34.445.168L4,20.465V64H61.425A2.578,2.578,0,0,0,64,61.425V39A4,4,0,0,0,60,35Zm0,2a2,2,0,0,1,2,2v5H34V39a2,2,0,0,1,2-2ZM44,56V52h8v4Zm8,2v4H44V58Zm0-12v4H44V46ZM34,46h8v4H34Zm0,6h8v4H34Zm20,0h8v4H54Zm0-2V46h8v4ZM6,21.535,34,2.869V35.556A3.987,3.987,0,0,0,32,39V61.425a2.558,2.558,0,0,0,.07.575H24V56H16v6H6ZM22,62H18V58h4Zm12-.575V58h8v4H34.575A.576.576,0,0,1,34,61.425ZM61.425,62H54V58h8v3.425A.576.576,0,0,1,61.425,62Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+</svg>

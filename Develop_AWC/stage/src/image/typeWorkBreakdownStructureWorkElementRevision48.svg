@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="8" y1="8.001" x2="40" y2="40.001" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.305" stop-color="#fbfbfb"/>
+      <stop offset="0.584" stop-color="#f0f0f0"/>
+      <stop offset="0.852" stop-color="#dedede"/>
+      <stop offset="1" stop-color="#d0d0d0"/>
+    </linearGradient>
+  <rect x="9.5" y="6.501" width="29" height="35" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="12.5" y="8.501" width="9" height="9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="19.5 10.501 16.5 15.501 14.5 13.501" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <rect x="12.5" y="19.501" width="9" height="9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="19.5 21.501 16.5 26.501 14.5 24.501" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <rect x="12.5" y="30.501" width="9" height="9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="19.5 32.501 16.5 37.501 14.5 35.501" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="24" y1="12.501" x2="35" y2="12.501" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="24" y1="23.501" x2="35" y2="23.501" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="24" y1="34.501" x2="35" y2="34.501" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

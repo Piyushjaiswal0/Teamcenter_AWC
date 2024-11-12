@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Отчеты",
+    "allSubLocation": "Все",
+    "reportBuilderSubLocation": "Шаблоны",
+    "runReportTitle": "Создать отчет",
+    "runReportOperationName": "Выполнить отчет",
+    "doWorkOperationName": "Выполнить",
+    "execution": "Выполнение",
+    "criteria": "Условия",
+    "stylesheet": "Таблица стилей",
+    "dataset": "Сохранить в файл с именем",
+    "myreportsSubLocation": "Saved Files",
+    "loadingMsg": "Загрузка…",
+    "zeroSearchResults": "Ничего не найдено",
+    "reportResultsChartTitle": "Фильтр результатов по:",
+    "AddSnapshot": "Снимки",
+    "AddNew": "Создать",
+    "doQueueOperation": "Добавить в очередь",
+    "runTcraReport": "Выполнить",
+    "dosnapShotViewOperation": "Просмотр",
+    "myDashboard": "Моя информационная панель",
+    "inOpenRptCommand": "Открыть"
+}

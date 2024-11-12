@@ -1,0 +1,14 @@
+[
+  {
+    "name": "VisServerTime",
+    "value": "0",
+    "type": "string",
+    "appid": "vis"
+  },
+  {
+    "name": "EMMRequests",
+    "value": "0",
+    "type": "number",
+    "appid": "vis"
+  }
+]

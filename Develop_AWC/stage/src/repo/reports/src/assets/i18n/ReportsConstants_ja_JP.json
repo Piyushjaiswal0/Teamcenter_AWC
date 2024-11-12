@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "レポート",
+    "allSubLocation": "すべて",
+    "reportBuilderSubLocation": "テンプレート",
+    "runReportTitle": "レポートの生成",
+    "runReportOperationName": "レポートを実行",
+    "doWorkOperationName": "実行",
+    "execution": "実行",
+    "criteria": "基準",
+    "stylesheet": "スタイルシート",
+    "dataset": "ファイル名に保存",
+    "myreportsSubLocation": "保存済みファイル",
+    "loadingMsg": "ロードしています...",
+    "zeroSearchResults": "結果が見つかりませんでした",
+    "reportResultsChartTitle": "結果をフィルタする基準:",
+    "AddSnapshot": "スナップショット",
+    "AddNew": "新規",
+    "doQueueOperation": "キューに追加",
+    "runTcraReport": "実行",
+    "dosnapShotViewOperation": "表示",
+    "myDashboard": "マイダッシュボード",
+    "inOpenRptCommand": "開く"
+}

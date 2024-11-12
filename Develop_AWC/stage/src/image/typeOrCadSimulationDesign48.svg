@@ -1,0 +1,69 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="3.75" y1="-432.25" x2="45.25" y2="-473.75" gradientTransform="matrix(1, 0, 0, -1, 0, -426)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="23.5" y1="11.356" x2="31.5" y2="19.356" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="18.006" y1="16.85" x2="28.078" y2="26.922" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.159" stop-color="#a4d0dc"/>
+      <stop offset="0.706" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="30.5" y1="-429.5" x2="42.5" y2="-441.5" gradientTransform="matrix(1, 0, 0, -1, 0, -426)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <polygon points="33.5 0.5 9.5 0.5 9.5 47.5 45.5 47.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="35.5 15.356 27.5 10.689 19.5 15.356 27.5 20 35.5 15.356" fill="url(#linear-gradient-2)"/>
+  <polygon points="19.5 15.356 19.5 24.689 24.319 27.5 27.5 27.5 27.5 20 19.5 15.356" fill="url(#linear-gradient-3)"/>
+  <polygon points="27.5 20 27.5 27.5 30.681 27.5 35.5 24.689 35.5 15.356 27.5 20" fill="#3c91af"/>
+  <polyline points="19.5 15.356 27.5 20 35.5 15.356" fill="none" stroke="#147391"/>
+  <polyline points="19.75 20.022 27.555 24.575 35.36 20.022" fill="none" stroke="#147391"/>
+  <line x1="27.5" y1="20" x2="27.5" y2="27.5" fill="#3c91af" stroke="#147391" stroke-linejoin="round"/>
+  <path d="M27.5,10.689l-8,4.667v9.333L24.319,27.5h6.362L35.5,24.689V15.356Z" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="23.5 27 23.5 17.75 31.305 13.195" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="23.695 13.193 31.5 17.746 31.5 27" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <circle cx="27.5" cy="20" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="27.5" cy="24.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="19.5" cy="15.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="13.017" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="27.5" cy="15.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="27.5" cy="10.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="13" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="35.5" cy="24.668" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="17.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="22" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="19.5" cy="20" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="27" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="27" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="22.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="17.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="19.5" cy="24.668" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="35.5" cy="20" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="35.5" cy="15.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <polyline points="25.5 5.5 27.5 7.5 29.5 5.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="27.5" y1="2.5" x2="27.5" y2="7.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17.5 10.5 19.5 12.5 21.5 10.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="35 12.5 35.5 13 36 12.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="19.5" y1="7.5" x2="19.5" y2="12.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="33.5 0.5 33.5 12.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <rect x="0.5" y="27.5" width="47" height="16" fill="#db0022" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M10.842,35.053a4.748,4.748,0,0,1-.459,2.135A3.327,3.327,0,0,1,9.066,38.61a3.8,3.8,0,0,1-1.962.5,3.707,3.707,0,0,1-1.9-.486A3.318,3.318,0,0,1,3.91,37.255a4.342,4.342,0,0,1-.459-2.026,4.777,4.777,0,0,1,.459-2.142,3.341,3.341,0,0,1,1.319-1.435,3.888,3.888,0,0,1,2-.505,3.632,3.632,0,0,1,1.875.484,3.3,3.3,0,0,1,1.278,1.375A4.433,4.433,0,0,1,10.842,35.053Zm-1.354.118a3.3,3.3,0,0,0-.615-2.136,2.066,2.066,0,0,0-1.694-.754,2.117,2.117,0,0,0-1.73.792,3.158,3.158,0,0,0-.644,2.055,3.6,3.6,0,0,0,.293,1.5,2.277,2.277,0,0,0,.824,1,2.132,2.132,0,0,0,1.2.351,2.166,2.166,0,0,0,1.727-.735A3.074,3.074,0,0,0,9.488,35.171Z" fill="#fff"/>
+    <path d="M15.08,34.688a1,1,0,0,0-.317-.129,1.55,1.55,0,0,0-.4-.06,1.032,1.032,0,0,0-.876.462,2.012,2.012,0,0,0-.333,1.2v2.815h-1.24v-5.5h1.24v1.069h.022a1.822,1.822,0,0,1,.553-.86,1.3,1.3,0,0,1,.854-.306,1.328,1.328,0,0,1,.5.075Z" fill="#fff"/>
+    <path d="M21.251,38.651a3.559,3.559,0,0,1-.985.338,5.863,5.863,0,0,1-1.206.124,3.931,3.931,0,0,1-1.96-.475,3.173,3.173,0,0,1-1.289-1.349,4.336,4.336,0,0,1-.446-2.006,4.441,4.441,0,0,1,.515-2.148,3.632,3.632,0,0,1,1.443-1.469,4.128,4.128,0,0,1,2.054-.519,6.538,6.538,0,0,1,1,.082,3.355,3.355,0,0,1,.87.236v1.3a3.545,3.545,0,0,0-1.836-.484,2.761,2.761,0,0,0-1.411.36,2.43,2.43,0,0,0-.958,1.023,3.348,3.348,0,0,0-.338,1.544,2.843,2.843,0,0,0,.7,2.025,2.432,2.432,0,0,0,1.864.746,3.6,3.6,0,0,0,1.981-.541Z" fill="#fff"/>
+    <path d="M25.285,38.979v-.757h-.021a1.831,1.831,0,0,1-1.628.891,1.791,1.791,0,0,1-1.278-.44,1.561,1.561,0,0,1-.467-1.193,1.7,1.7,0,0,1,.456-1.241,2.205,2.205,0,0,1,1.343-.58l1.606-.22q0-1.123-1.042-1.123a2.952,2.952,0,0,0-.981.167,3.106,3.106,0,0,0-.845.446v-1.1a3.164,3.164,0,0,1,.888-.338,4.408,4.408,0,0,1,1.067-.15,2.126,2.126,0,0,1,1.593.55,2.205,2.205,0,0,1,.534,1.6v3.486ZM23.11,37.352a.7.7,0,0,0,.258.566.993.993,0,0,0,.655.212,1.2,1.2,0,0,0,.913-.379,1.326,1.326,0,0,0,.36-.953V36.3l-1.187.156a1.5,1.5,0,0,0-.782.279A.793.793,0,0,0,23.11,37.352Z" fill="#fff"/>
+    <path d="M31.4,38.979v-.86h-.021a1.957,1.957,0,0,1-1.8.994,2.048,2.048,0,0,1-1.659-.741,3.04,3.04,0,0,1-.618-2.009,3.327,3.327,0,0,1,.684-2.194,2.263,2.263,0,0,1,1.834-.824,1.963,1.963,0,0,1,.924.209,1.565,1.565,0,0,1,.64.607H31.4V30.836h1.242v8.143Zm.011-3.212a1.4,1.4,0,0,0-.39-.994,1.368,1.368,0,0,0-2.051.1,2.388,2.388,0,0,0-.384,1.45,2.02,2.02,0,0,0,.379,1.3A1.249,1.249,0,0,0,30,38.1a1.281,1.281,0,0,0,1.01-.476,1.83,1.83,0,0,0,.408-1.237Z" fill="#fff"/>
+</svg>

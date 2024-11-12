@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "Scope:",
+    "objectTypeLabel": "Object Type:",
+    "xrtTypeLabel": "XRT Type:",
+    "locationLabel": "Location:",
+    "sublocationLabel": "Sublocation:",
+    "loadButtonText": "Load",
+    "editLabel": "Edit: ",
+    "readOnlyLabel": "(Read Only)",
+    "overrideMsg": "\"{0}\" will be overridden at the user scope.",
+    "cancel": "Cancel",
+    "override": "Override"
+}

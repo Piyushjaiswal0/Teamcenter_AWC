@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "Versions",
+    "FileVersionsPanelHeader": "Versions de jeu de données",
+    "DownloadVersionButton": "Télécharger version",
+    "RestoreVersionButton": "Rétablir version",
+    "RestoreFailureMessage": "Echec de rétablissement de la version précédente du jeu de données.",
+    "UnsavedEditWarning": "{0} a des modifications non sauvegardées. Le rétablissement d'une version précédente du jeu de données supprimera les modifications en cours.",
+    "ConfirmButtonLabel": "Continuer",
+    "CancelButtonLabel": "Annuler"
+}

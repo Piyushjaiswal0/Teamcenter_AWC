@@ -1,0 +1,11 @@
+{
+    "types": [{
+       "name": "ITAR_License",
+       "properties": 
+         [
+           {
+              "name": "ead_paragraph"
+           }
+         ]
+     }]
+}

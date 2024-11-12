@@ -1,0 +1,254 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-listbox.directive",
+        "js/aw-i18n.directive",
+        "js/aw-button.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-list.directive",
+        "js/aw-command-panel-section.directive",
+        "js/aw-panel-header.directive",
+        "js/aw-class.directive"
+    ],
+    "actions": {
+        "doExportDocumentAndClose": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "doExportDocument"
+                },
+                {
+                    "action": "closeDialog"
+                }
+            ]
+        },
+        "closeDialog": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupId": "{{props.popupOptions.popupId}}"
+            },
+            "deps": "js/popupService"
+        },
+        "exportToFile": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-Finder",
+            "method": "exportObjectsToFile",
+            "inputData": {
+                "searchInput": {
+                    "providerName": "{{props.providerName}}",
+                    "searchCriteria": "{{props.searchCriteria}}",
+                    "searchFilterMap": "{{props.searchFilterMap}}",
+                    "columnFilters": "{{function:getColumnFilters}}",
+                    "searchSortCriteria": "{{function:getSortCriteria}}"
+                },
+                "objectsToExport": [],
+                "exportOptions": {},
+                "attributesToExport": "{{function:getSelectedProperties}}",
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "operationType": "{{props.operationType}}",
+                    "clientScopeURI": "{{function:getClientScopeURI}}"
+                }
+            },
+            "outputData": {
+                "fileTicket": "fileTickets[0]"
+            },
+            "events": {
+                "success": [ {
+                        "name": "exportToOfficeUtil.doExportDocumentEvent"
+                    },
+                    {
+                        "name": "exportExcel.unRegisterExportContext"
+                    }
+                ],
+                "failure": [ {
+                        "condition": "errorCode.code==223201",
+                        "name": "layout.showToolInfo",
+                        "eventData": {
+                            "visible": false
+                        }
+                    },
+                    {
+                        "name": "exportToOfficeUtil.doExportDocumentEvent"
+                    }
+                ]
+            },
+            "deps": "js/exportToFile"
+        },
+        "refreshProvider": {
+            "actionType": "dataProvider",
+            "method": "exportColumnList"
+        },
+        "removeColumn": {
+            "actionType": "JSFunction",
+            "method": "removeColumn",
+            "inputData": {
+                "exportColumns": "{{data.exportColumns}}",
+                "column": "{{data.eventData}}"
+            },
+            "outputData": {
+                "exportColumns" : "result.exportColumns"
+            },
+            "events": {
+                "success": [ {
+                    "name": "exportExcel.refreshColumnList"
+                } ]
+            },
+            "deps": "js/exportToFile"
+        },
+        "doExportDocument": {
+            "actionType": "openFile",
+            "inputData": {
+                "fileTicket": "{{data.fileTicket}}",
+                "openFileName": "{{data.exportToExcelFileName}}"
+            }
+        },
+        "moveUp": {
+            "actionType": "JSFunction",
+            "method": "moveUpDown",
+            "inputData": {
+                "data": "{{data.dataProviders}}",
+                "moveTo": "Up"
+            },
+            "deps": "js/exportToFile"
+        },
+        "moveDown": {
+            "actionType": "JSFunction",
+            "method": "moveUpDown",
+            "inputData": {
+                "data": "{{data.dataProviders}}",
+                "moveTo": "Down"
+            },
+            "deps": "js/exportToFile"
+        },
+        "columnSelectionChanged": {
+            "actionType": "JSFunction",
+            "method": "columnSelectionChanged",
+            "inputData": {
+                "data": "{{data.dataProviders}}"
+            },
+            "deps": "js/exportToFile"
+        },
+        "prepareColumnList": {
+            "actionType": "JSFunction",
+            "method": "prepareColumnList",
+            "inputData": {
+                "data": "{{data}}",
+                "ctx": "{{ctx}}",
+                "props": "{{props}}"
+            },
+            "outputData": {
+                 "exportColumns" : "result.exportColumns",
+                 "exportToExcelFileName" : "result.exportToExcelFileName"
+            },
+            "events": {
+                "success": [ {
+                    "name": "exportExcel.refreshColumnList"
+                } ]
+            },
+            "deps": "js/exportToFile"
+        },
+        "unRegisterExportContext": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "exportContext"
+            }
+        }
+    },
+    "onEvent": [ {
+            "eventId": "exportExcel.refreshColumnList",
+            "action": "refreshProvider"
+        },
+        {
+            "eventId": "exportToOfficeUtil.doExportDocumentEvent",
+            "action": "doExportDocumentAndClose"
+        },
+        {
+            "eventId": "Awp0ExportMoveDown",
+            "action": "moveDown"
+        },
+        {
+            "eventId": "Awp0ExportMoveUp",
+            "action": "moveUp"
+        },
+        {
+            "eventId": "exportColumnList.selectionChangeEvent",
+            "action": "columnSelectionChanged"
+        },
+        {
+            "eventId": "awPanel.reveal",
+            "action": "prepareColumnList"
+        },
+        {
+            "eventId": "exportExcel.removeColumn",
+            "action": "removeColumn",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "exportExcel.exportToFile",
+            "action": "exportToFile"
+        },
+        {
+            "eventId": "exportExcel.unRegisterExportContext",
+            "action": "unRegisterExportContext"
+        }
+    ],
+    "dataProviders": {
+        "exportColumnList": {
+            "commandsAnchor": "awp0_exportToExcelDelete",
+            "response": "{{data.exportColumns.dbValue}}",
+            "selectionModelMode": "single"
+        }
+    },
+    "data": {
+        "selectedColumnsSubCommands": "exportSelectedColumnsCommands",
+        "exportColumns": {
+            "isArray": "true",
+            "dbValue": []
+        }
+    },
+    "functions": {
+        "getSelectedProperties": {
+            "functionName": "getSelectedProperties",
+            "parameters": []
+        },
+        "getColumnFilters": {
+            "functionName": "getColumnFilters",
+            "parameters": [
+                "{{props.columnProvider}}"
+            ]
+        },
+        "getSortCriteria": {
+            "functionName": "getSortCriteria",
+            "parameters": [
+                "{{props.columnProvider}}"
+            ]
+        },
+        "getClientScopeURI": {
+            "functionName": "getClientScopeURI",
+            "parameters": [
+                "{{props.objectSetUri}}"
+            ]
+        }
+    },
+    "conditions": {},
+    "messages": {},
+    "i18n": {
+        "exportPanelTitle": [
+            "Awp0ExportToExcelMessages"
+        ],
+        "export": [
+            "Awp0ExportToExcelMessages"
+        ],
+        "selectedcolumns": [
+            "Awp0ExportToExcelMessages"
+        ],
+        "exportProperties": [
+            "Awp0ExportToExcelMessages"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+<aw-show-object-page header-title="{{props.displayName}}"
+    browser-sub-title="{{props.displayName}}">
+    <aw-show-object-header>
+        <h1 data-locator='aw-layout-locationTitle' class='aw-layout-locationTitle aw-layout-flexRow'>
+            {{props.displayName}}</h1>
+        <aw-global-search exist-when="props.subPanelContext.provider.headerPreference.hideGlobalSearch !== true" showsearchbox="{{props.subPanelContext.showsearchbox}}"></aw-global-search>
+        <aw-logo exist-when="props.subPanelContext.provider.headerPreference.hideLogo !== true"></aw-logo>
+    </aw-show-object-header>
+    <div></div>
+    <div class="sw-column justify-center align-center flex-auto aw-show-objectError">{{props.errorMsg}}</div>
+</aw-show-object-page>

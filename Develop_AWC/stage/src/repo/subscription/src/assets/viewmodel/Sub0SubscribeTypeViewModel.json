@@ -1,0 +1,251 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "methods": ["getRecentTypesProvider","SubscribableTypeProvider"]
+        },
+        "getRecentUsedTypes": {
+            "actionType": "JSFunction",
+            "method": "getRecentUsedTypes",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {},
+            "deps": "js/subscriptionRecentTypesService"
+        },
+        "listExistingSubscription": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value": {
+                    "activeView": "Sub0SubscribeSub",
+                    "subscriptions":"{{data.subscriptions}}",
+                    "subscriptionCtx":"{{data.subscriptionCtx}}",
+                    "prePanelId": "Sub0SubscribeType"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "getSubscribableTypes":{
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method":"performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "searchInput":
+                {
+                    "attributesToInflate": [ "parent_types", "type_name" ],
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Sub0SubscribleTypesProvider",
+                    "searchCriteria": {
+                        "childTypeOption": "subtypes",
+                        "matchPattern": "{{data.filterType.dbValue}}"
+                    },
+                    "startIndex": "{{data.dataProviders.SubscribableTypeProvider.startIndex}}"
+                }
+            },
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults"
+            }
+        },
+        "loadCreatePanel": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value": {
+                    "activeView": "Sub0CreateSubscriptionSub",
+                    "prePanelId": "Sub0SubscribeType",
+                    "subscriptionCtx":"{{data.subscriptionCtx}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "loadDataForTypes": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value" : {
+                    "selectedFollowType":"{{data.dataProviders.SubscribableTypeProvider.selectedObjects[0]}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "findTypeSubscriptions",
+                        "condition": "subPanelContext.sharedData.selectedFollowType"
+                    },
+                    {
+                        "name": "Sub0CreateSubscriptionSub.updateTitleLinkForSubscribeType"
+                    }
+                ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "loadDataForRecentTypes": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value" : {
+                    "selectedFollowType":"{{data.dataProviders.getRecentTypesProvider.selectedObjects[0]}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "findTypeSubscriptions",
+                        "condition": "subPanelContext.sharedData.selectedFollowType"
+                    },
+                    {
+                        "name": "Sub0CreateSubscriptionSub.updateTitleLinkForSubscribeType"
+                    }
+                ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "findSubscriptionsForTypes": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Notification-2015-03-SubscriptionManagement",
+            "method": "findSubscriptions",
+            "deps": "js/Sub0SubscribeCommandPanelService",
+            "inputData": {
+                "input": {
+                    "subscriber": "{{ctx.user}}",
+                    "target": "{{subPanelContext.sharedData.selectedFollowType}}"
+                }
+            },
+            "outputData": {
+                "subscriptions": "subscriptions",
+                "subscriptionCtx": "{{function:loadSubscriptionCtx}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "listSubscriptions",
+                        "condition": "data.subscriptions.length>0"
+                    },
+                    {
+                        "name": "activateCreatePanel",
+                        "condition": "!data.subscriptions"
+                    }
+                ]
+            }
+        }
+    },
+    "data": {
+        "addSubscriptionCommands": "sub0_addSubscriptionCommands",
+        "Sub0PinCommands": "Sub0_oneStepPinCommands",
+        "filterType": {
+            "type": "STRING",
+            "requiredText": "{{i18n.FILTER_TEXT}}"
+        },
+
+        "moreLink": {
+            "displayName": "{{i18n.MORE_LINK_TEXT}}"
+        },
+
+        "loadingText": {
+            "displayName": "{{i18n.LOADING_TEXT}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "false",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+    "dataProviders": {
+        "getRecentTypesProvider": {
+            "action": "getRecentUsedTypes",
+            "response": "{{data.recentUsedTypes}}",
+            "totalFound": "{{data.recentUsedTypes.length}}",
+            "selectionModelMode": "single"
+        },
+        "SubscribableTypeProvider": {
+            "action": "getSubscribableTypes",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "single"
+        }
+    },
+    "onEvent": [
+
+        {
+            "eventId": "SubscribableTypeProvider.selectionChangeEvent",
+            "action": "loadDataForTypes"
+        },
+        {
+            "eventId": "findTypeSubscriptions",
+            "action": "findSubscriptionsForTypes"
+        },
+        {
+            "eventId": "getRecentTypesProvider.selectionChangeEvent",
+            "action": "loadDataForRecentTypes"
+        },
+        {
+            "eventId": "listSubscriptions",
+            "action": "listExistingSubscription"
+        },
+        {
+            "eventId": "activateCreatePanel",
+            "action": "loadCreatePanel"
+        },
+        {
+            "eventId": "updateSelectedFollowType",
+            "action": "updateSelectedFollowType"
+        }
+    ],
+
+    "conditions": {
+        "moreLinkShown": {
+            "expression": "ctx.addObject.moreLinkShown && data.isMoreLinkShown && data.maxRecentTypeCount<=0"
+        }
+    },
+
+    "i18n": {
+
+        "followTypeCommandTitle": [
+            "SubscriptionMessages"
+        ],
+        "LOADING_TEXT": [
+            "BaseMessages"
+        ],
+        "recentSectionTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "otherSectionTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "MORE_LINK_TEXT": [
+            "BaseMessages"
+        ],
+        "FILTER_TEXT": [
+            "BaseMessages"
+        ]
+
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    },
+    "functions": {
+        "loadSubscriptionCtx": {
+            "functionName": "loadSubscriptionCtx",
+            "parameters": [
+                "{{subPanelContext.sharedData}}"
+            ]
+        }
+    }
+}

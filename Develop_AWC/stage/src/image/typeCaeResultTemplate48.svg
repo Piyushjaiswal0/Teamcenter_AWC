@@ -1,0 +1,55 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="-5.5" y1="-90.5" x2="35" y2="-131" gradientTransform="matrix(1, 0, 0, -1, 0, -84)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="19.25" y1="3.751" x2="32.25" y2="16.751" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="25.75" y1="-2.749" x2="38.75" y2="10.251" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="22.5" y1="-84.5" x2="35.5" y2="-97.5" gradientTransform="matrix(1, 0, 0, -1, 0, -84)" xlink:href="#paper_gradient"/>
+    <linearGradient id="linear-gradient-2" x1="30.5" y1="22.707" x2="40.5" y2="32.707" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="23.625" y1="29.582" x2="37.375" y2="43.332" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.159" stop-color="#a4d0dc"/>
+      <stop offset="0.706" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+  <polygon points="22.5 0.5 0.5 0.5 0.5 46.5 35.5 46.5 35.5 13.5 22.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="22.5 13.501 35.5 13.501 22.5 0.501 22.5 13.501" fill="url(#paper_gradient)"/>
+  <polygon points="35.5 13.501 35.5 0.501 22.5 0.501 35.5 13.501" fill="url(#Light_Blue_Grad)"/>
+  <line x1="35.5" y1="13.5" x2="22.5" y2="0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <rect x="22.5" y="0.501" width="13" height="13" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <polyline points="4.5 16 4.5 42.5 31 42.5" fill="none" stroke="#147391"/>
+    <polyline points="7 27 13 20 20 26 31 17" fill="none" stroke="#147391"/>
+    <polyline points="7 35 15 31 23 34 31 22" fill="none" stroke="#147391"/>
+    <polygon points="45.5 27.707 35.5 21.873 25.5 27.707 35.5 33.54 45.5 27.707" fill="url(#linear-gradient-2)"/>
+    <polygon points="25.5 27.707 25.5 39.373 35.5 45.207 35.5 33.54 25.5 27.707" fill="url(#linear-gradient-3)"/>
+    <polygon points="35.5 33.54 35.5 45.207 45.5 39.373 45.5 27.707 35.5 33.54" fill="#3c91af"/>
+    <polyline points="25.5 27.707 35.5 33.54 45.5 27.707" fill="none" stroke="#147391"/>
+    <line x1="35.5" y1="33.54" x2="35.5" y2="45.207" fill="#3c91af" stroke="#147391" stroke-linejoin="round"/>
+    <path d="M35.5,21.873l-10,5.834V39.373l10,5.834,10-5.834V27.707Z" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="45.5" cy="39.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+    <circle cx="45.5" cy="27.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+    <circle cx="25.5" cy="39.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+    <circle cx="25.5" cy="27.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+    <circle cx="35.5" cy="45.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+    <circle cx="35.5" cy="33.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+    <circle cx="35.5" cy="21.5" r="2" fill="#f0f0f0" stroke="#464646"/>
+</svg>

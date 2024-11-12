@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="8.8358" y1="-2.6642" x2="36.75" y2="25.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2323" stop-color="#fafafa"/>
+      <stop offset=".4964" stop-color="#ececec"/>
+      <stop offset=".775" stop-color="#d5d5d5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="6" y1="11" x2="42" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <path d="m19.5,9.5l-3.4063-5.1094c-.3709-.5564-.9954-.8906-1.6641-.8906H3.5c-1.1046,0-2,.8954-2,2v10h45v-6h-27Z" fill="url(#linear-gradient)" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="1.5" y="15.5" width="45" height="27" fill="url(#Dark_Blue_Grad)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <polyline points="12 26 22.5 26 22.5 22 34 22" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="4"/>
+  <polyline points="31.5 19 34.5 22 31.5 25" fill="none" stroke="#147391" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+  <polyline points="31.5 32.0001 34.5 35.0001 31.5 38.0001" fill="none" stroke="#147391" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+  <polyline points="12 31.0001 22.5 31.0001 22.5 35.0001 34 35.0001" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="4"/>
+  <polyline points="13 26 22.5 26 22.5 22 34 22" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="31.5 19 34.5 22 31.5 25" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="31.5 32.0001 34.5 35.0001 31.5 38.0001" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="13 31.0001 22.5 31.0001 22.5 35.0001 34 35.0001" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+</svg>

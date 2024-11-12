@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Ostrzeżenia",
+    "subManAppLabel": "Kanał wiadomości",
+    "clear": "Wyczyść",
+    "noNotificationMsg": "Brak nowych powiadomień",
+    "multipleObjectsMsg": "\"{0}\" i jeszcze \"{1}\"",
+    "aw_globalToolbar": "Globalny pasek narzędzi",
+    "Awp0ShowAlertWithBubbleDesc": "Wyświetl nowe alarmy."
+}

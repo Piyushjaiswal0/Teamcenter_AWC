@@ -1,0 +1,16 @@
+{
+  "name": "tc-aw-solution",
+  "description": "",
+  "pathOffset": ".",
+  "skipAudit": true,
+  "version": "6.3.1",
+  "author": "Siemens Product Lifecycle Management Software Inc.",
+  "copyAssets": [
+    {
+      "baseDir": "src",
+      "fileRegex": "Active_Workspace_Favicon_16px.png",
+      "destPath": ".",
+      "copyDirectory": false
+    }
+  ]
+}

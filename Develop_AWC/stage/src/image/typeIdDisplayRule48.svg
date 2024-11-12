@@ -1,0 +1,44 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="front_-45" data-name="front -45" x1="4.6166" y1="39.1267" x2="11.1438" y2="45.6539" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.6296" stop-color="#c7c7c7"/>
+      <stop offset="0.7792" stop-color="#b9b9b9"/>
+      <stop offset="0.9383" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="23.8449" y1="0.5" x2="23.8449" y2="47.4959" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0031" stop-color="#999"/>
+      <stop offset="0.287" stop-color="#f2f2f2"/>
+      <stop offset="0.5495" stop-color="#f2f2f2"/>
+      <stop offset="0.6449" stop-color="#eee"/>
+      <stop offset="0.744" stop-color="#e1e1e1"/>
+      <stop offset="0.8447" stop-color="#cdcdcd"/>
+      <stop offset="0.8472" stop-color="#ccc"/>
+      <stop offset="0.885" stop-color="#c7c7c7"/>
+      <stop offset="0.9286" stop-color="#b9b9b9"/>
+      <stop offset="0.9749" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="12.6656" y1="-4.6656" x2="31.9938" y2="14.6626" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="26.5" y1="22.5" x2="36.5" y2="32.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+  <path d="M11.3194,38.5H5.3148A5.6243,5.6243,0,0,0,3.1,42.998a4.37,4.37,0,0,0,4.3722,4.4979,4.8263,4.8263,0,0,0,4.63-4.4A44.4151,44.4151,0,0,0,11.3194,38.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45)"/>
+  <path d="M35.4537,9.5161l1.5992,6.3213,4.1528,13.332L44.59,42.5271c.6256,3.18-1.7987,4.9688-4.2083,4.9688H7.2771c2.41,0,4.8516-2.0893,4.8516-4.4493C12.1287,38.573,3,8.592,3,4.8506A4.3469,4.3469,0,0,1,7.3631.5l6.5821.0093" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path d="M35.3919.5H7.5A4.54,4.54,0,0,1,11.9869,5,4.5346,4.5346,0,0,1,7.506,9.5H35.3919A4.4308,4.4308,0,0,0,39.75,5,4.4307,4.4307,0,0,0,35.3919.5Z" stroke="#464646" stroke-linejoin="round" fill="url(#linear-gradient-2)"/>
+  <path d="M17.5,31.5l18-18,10,10-18,18ZM37,20.5A1.5,1.5,0,1,0,38.5,22,1.5,1.5,0,0,0,37,20.5Z" stroke="#464646" stroke-linejoin="round" fill="url(#Light_Blue_Grad)"/>
+  <path d="M45.5,17.1364a8.3241,8.3241,0,0,0-8,4.3636" fill="none" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <line x1="22.5" y1="30.5" x2="28.5" y2="36.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="25.5" y1="27.5" x2="31.5" y2="33.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="27.5" y1="25.5" x2="33.5" y2="31.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="28.999" y1="24" x2="34.934" y2="29.935" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="30.5" y1="22.5" x2="36.435" y2="28.435" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

@@ -1,0 +1,29 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {},
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "i18n":
+    {
+        "BACK_BUTTON_TITLE": [ "BaseMessages" ],
+        "addProjectButtonTitle": [ "awAddDirectiveMessages" ]
+    },
+    "lifecycleHooks": {},
+    "props": {
+        "prop": {
+            "type": "field"
+        },
+        "project-state": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        },
+        "action": {
+            "type": "object"
+        }
+
+    }
+}

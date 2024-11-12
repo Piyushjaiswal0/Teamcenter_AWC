@@ -1,0 +1,27 @@
+<aw-command-panel caption="{{ subPanelContext.upload === true ? i18n.upload : i18n.replace }}" context="subPanelContext">
+
+    <aw-panel-header visible-when="conditions.isMultipleFilesSynchronous" aw-class="{'aw-create-fillAvailable': !data.uploadFileSelectionData.modelInfo.propertyViewId}">
+        <aw-panel-section caption="{{data.datasetName.dbValue}}" collapsed="disabled">
+            <aw-listbox prop="data.datasetFileName" action="selectionChange" visible-when="conditions.isMultipleFiles" list="data.selectedDatasetFileNames" ></aw-listbox>
+            <aw-file-upload file-change-action="fileChangeAction" type-filter="{{ctx.selectedDataset.fileNameExt}}"  is-required="true" choose-file-name="Select File" upload-model="data.uploadFileProvider" selection-data="data.uploadFileSelectionData"></aw-file-upload></aw-file-upload>
+        </aw-panel-section>
+
+    </aw-panel-header>
+
+    <aw-include name="{{data.uploadFileSelectionData.modelInfo.propertyViewId}}" sub-panel-context="{...subPanelContext, filePickerInfo:data.filePickerInfoData, datasetState:props.datasetState, uploadFileSelectionData:data.uploadFileSelectionData, pageData:data }" exist-when="data.uploadFileSelectionData.modelInfo.propertyViewId "></aw-include>
+
+    <aw-panel-body visible-when="conditions.isMultipleFileDSMSupport">
+        <aw-panel-section caption="{{data.datasetName.dbValue}}">
+            <aw-listbox prop="data.datasetFileName" visible-when="conditions.isMultipleFiles" list="data.selectedDatasetFileNames" ></aw-listbox>
+        </aw-panel-section>
+    </aw-panel-body>
+
+    <aw-panel-footer exist-when="conditions.isMultipleFileDSMSupport">
+        <aw-button visible-when="awPanelBody.$valid" action="replaceFile"><aw-i18n>{{( subPanelContext.upload === true )?i18n.upload:i18n.replace}}</aw-i18n></aw-button>
+    </aw-panel-footer>
+
+    <aw-panel-footer visible-when="conditions.isMultipleFilesSynchronous && !data.uploadFileSelectionData.modelInfo.propertyViewId">
+        <aw-button visible-when="awPanelBody.$valid" enable-when="false" action="replaceFile"><aw-i18n>{{( subPanelContext.upload === true )?i18n.upload:i18n.replace}}</aw-i18n></aw-button>
+    </aw-panel-footer>
+
+</aw-command-panel>

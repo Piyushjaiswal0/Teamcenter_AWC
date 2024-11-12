@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+  <g id="Layer_2" data-name="Layer 2">
+    <path d="M20,19H4a1,1,0,0,1,0-2H20a1,1,0,0,1,0,2Z" fill="#464646"/>
+    <path d="M20,13H4a1,1,0,0,1,0-2H20a1,1,0,0,1,0,2Z" fill="#464646"/>
+    <path d="M20,7H4A1,1,0,0,1,4,5H20a1,1,0,0,1,0,2Z" class="aw-theme-iconOutline" fill="#464646"/>
+  </g>
+</svg>

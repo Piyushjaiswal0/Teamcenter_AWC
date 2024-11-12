@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M21.75,6.567l-9.507-5.5a.5.5,0,0,0-.5,0L9,2.646V0H8V3.223l-.6.35.5.865L8,4.38V19.968l-.444-.245-.484.875.875.484.053-.1V24H9V21.612l2.783,1.339A.517.517,0,0,0,12,23a.493.493,0,0,0,.233-.058l9.5-5A.5.5,0,0,0,22,17.5V7A.5.5,0,0,0,21.75,6.567Zm-9.758-4.49,8.481,4.907L12,11.919,9,10.13V3.8Zm0,19.863L9,20.5V11.294l2.744,1.636A.5.5,0,0,0,12,13v8.935ZM13,21.409V12.5l8-4.661V17.2Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="2" y="11" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M3,7.288l.579-.337-.5-.864-.827.481A.5.5,0,0,0,2.022,7H2V8H3Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="2" y="13" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="2" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="2" y="15" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="5.501" y="18.935" width="1" height="1" transform="translate(-13.911 15.281) rotate(-61.057)" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3.751" y="17.967" width="1" height="1" transform="translate(-13.969 13.258) rotate(-61.081)" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M3,17H2v.5a.5.5,0,0,0,.258.438l.438.241.483-.875L3,17.2Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6.817" y="9.242" width="1" height="1" transform="translate(-4.768 11.288) rotate(-60.38)" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="5.853" y="4.259" width="1" height="1" transform="matrix(0.864, -0.503, 0.503, 0.864, -1.532, 3.841)" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="5.079" y="8.253" width="1" height="1" transform="translate(-4.787 9.277) rotate(-60.38)" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3.341" y="7.263" width="1" height="1" transform="translate(-4.806 7.266) rotate(-60.38)" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="4.124" y="5.265" width="1" height="0.999" transform="translate(-2.27 3.102) rotate(-30.148)" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

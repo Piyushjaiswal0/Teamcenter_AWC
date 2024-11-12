@@ -1,0 +1,138 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awObjectSetListRenderFunction",
+            "deps": "js/AwObjectSetListService"
+        },
+        "loadObjectSetData": {
+            "actionType": "JSFunction",
+            "method": "loadObjectSetData",
+            "inputData": {
+                "firstPageUids": "{{props.firstPageUids}}",
+                "objectSetInfo": "{{props.objectSetInfo}}",
+                "firstPageResults": "{{data._ObjectSet_Provider_searchResults}}",
+                "objectSetUri": "",
+                "columns": "",
+                "operationType": "{{props.operationType}}",
+                "updatedOperationType": "",
+                "columnFilters": "",
+                "xrtContext": "{{props.xrtContext}}",
+                "objectSetData": "{{props.objectSetData}}",
+                "vmo": "{{props.vmo}}",
+                "sortCriteria": "",
+                "startIndex": "{{data.dataProviders.ObjectSet_Provider.startIndex}}",
+                "colsToInflate": "",
+                "reload": "{{props.reload}}",
+                "objectSetState": "{{props.objectSetState}}",
+                "totalFound": "{{props.totalFound}}",
+                "parentUid": "{{props.parentUid}}"
+            },
+            "outputData": {
+                "_ObjectSet_Provider_searchResults": "firstPageObjs",
+                "_ObjectSet_Provider_totalFound": "totalFound"
+            },
+            "deps": "js/xrtUtilities"
+        },
+        "initializeDataProvider": {
+            "actionType": "dataProvider",
+            "method": "ObjectSet_Provider"
+        },
+        "refreshDataProvider": {
+            "actionType": "JSFunction",
+            "method": "refreshDataProvider",
+            "inputData": {
+                "dataProvider": "{{dataProviders.ObjectSet_Provider}}",
+                "eventData": "{{data.eventData}}",
+                "objectSetSource": "{{props.objectSetData.source}}",
+                "vmo": "{{props.vmo}}",
+                "isRefreshAllObjectSets": "{{props.isRefreshAllObjectSets}}"
+            },
+            "deps": "js/xrtUtilities"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": {
+            "action": "initializeDataProvider",
+            "observers": [ "props.objectSetInfo" ]
+        }
+    },
+    "dataProviders": {
+        "ObjectSet_Provider": {
+            "action": "loadObjectSetData",
+            "commandsAnchor": "com.siemens.splm.clientfx.ui.modelObjectDataGridActionCommands",
+            "isObjectSetSourceDCP": "{{props.isObjectSetSourceDCP}}",
+            "selectionModelMode": "multiple",
+            "response": "{{data._ObjectSet_Provider_searchResults}}",
+            "totalFound": "{{data._ObjectSet_Provider_totalFound}}",
+            "inputData": {
+                "selectionData": "{{props.selectionData}}",
+                "selectionModel": "{{props.selectionModel}}",
+                "validSourceTypes": "{{props.objectSetData.source}}"
+            }
+        }
+    },
+    "onEvent": [ {
+            "eventId": "cdm.relatedModified",
+            "action": "refreshDataProvider",
+            "cacheEventData": true
+        }
+    ],
+    "messages": {
+        "partialErrors": {
+            "messageText": "{{i18n.error}}",
+            "messageTextParams": [
+                "{{data._partialErrors[0].errorValues[0].message}}"
+            ],
+            "messageType": "ERROR"
+        }
+    },
+    "i18n": {
+        "error": [
+            "XRTMessages"
+        ]
+    },
+    "props": {
+        "object-set-data": {
+            "type": "object"
+        },
+        "first-page-uids": {
+            "type": "array"
+        },
+        "selection-model": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "operation-type": {
+            "type": "string"
+        },
+        "show-checkbox": {
+            "type": "string"
+        },
+        "select-all": {
+            "type": "string"
+        },
+        "object-set-info": {
+            "type": "object"
+        },
+        "is-refresh-all-object-sets": {
+            "type": "boolean"
+        },
+        "is-image": {
+            "type": "boolean"
+        },
+        "xrt-context": {
+            "type": "object"
+        },
+        "totalFound": {
+            "type": "integer"
+        },
+        "parentUid": {
+            "type": "string"
+        }
+    }
+}

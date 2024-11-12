@@ -1,0 +1,62 @@
+// Copyright 2020 Siemens Product Lifecycle Management Software Inc.
+
+.aw-ckeditor-panel {
+
+    .ck.ck-content h1,
+    .ck.ck-content h2,
+    .ck.ck-content h3,
+    .ck.ck-content h4,
+    .ck.ck-content h5,
+    .ck.ck-content h6 {
+        font-weight: bold;
+    }
+
+    .ck.ck-content i,
+    .ck.ck-content cite,
+    .ck.ck-content em,
+    .ck.ck-content var,
+    .ck.ck-content address,
+    .ck.ck-content dfn {
+        font-style: italic;
+    }
+
+    .ck.ck-content b,
+    strong {
+        font-weight: bold;
+    }
+
+    .ck.ck-content ol,
+    .ck.ck-content ul {
+        padding: 0 40px;
+    }
+
+    .ck.ck-content ul {
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+
+    .ck.ck-content ol {
+        list-style-type: decimal;
+        list-style-position: inside;
+    }
+
+    .ck.ck-content sub {
+        vertical-align: sub;
+        font-size: 0.625rem;
+    }
+
+    .ck.ck-content sup {
+        vertical-align: super;
+        font-size: 0.625rem;
+    }
+
+    .ck.ck-dropdown__panel .ck.ck-list{
+        max-height: 250px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .ck-content .image > img {
+        min-width: unset;
+    }
+}

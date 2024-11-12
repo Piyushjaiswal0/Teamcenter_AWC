@@ -1,0 +1,92 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [],
+    "actions":
+    {
+        "save": {
+            "actionType": "JSFunction",
+            "method": "addActiveFolder",
+            "inputData": {
+                "parentFolderUID": "{{ctx.mselected[0].uid}}",
+                "searchFolderName": ["{{data.searchFolderName.dbValue}}"],
+                "searchFolderDescription": "{{data.searchFolderDesp.dbValue}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            },
+            "deps": "js/searchFolderService"
+        },
+        "closeDialogPanel": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "data":
+    {
+        "searchFolderName":
+        {
+            "displayName": "{{i18n.Name}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true",
+            "maxLength": 128,
+            "autofocus": true
+        },
+
+        "searchFolderDesp":
+        {
+            "displayName": "{{i18n.Description}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "maxLength": 128
+        }
+    },
+
+    "functions":
+    {
+    },
+
+    "messages":
+    {
+    },
+    "conditions":
+    {
+        "isValidToSave":
+        {
+            "expression": "data.searchFolderName.dbValue && data.searchFolderName.dbValue!=''"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "closeDialog",
+            "action": "closeDialogPanel"
+        }
+    ],
+    "i18n":
+    {
+        "Name":[ "SearchMessages"],
+        "Description":[ "SearchMessages"],
+        "addActiveFolder": ["SearchMessages"],
+        "ADD_BUTTON_TITLE":["SearchMessages","BaseMessages"],
+        "properties": ["SearchMessages"]
+    }
+
+}

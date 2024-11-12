@@ -1,0 +1,53 @@
+<div class='signin-form aw-layout-mainView' >
+    <div class='aw-login-loginViewPanel'>
+        <div class='aw-login-tcLoginView'>
+            <div class='aw-login-companyLogoParent'>
+                <div class='aw-login-companyLogo'></div>
+            </div>
+            <div class='aw-login-signInParent'>
+                <div class='aw-login-signIn'>
+                    <div class="aw-login-brandPanel">
+                        <div class="aw-login-brandLogo"></div>
+                        <div class='aw-login-brandText'>
+                            <h3 class='aw-login-companyName'>{ data.companyName }</h3>
+                            <h2 class='aw-login-productName'>{ data.productName }</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="aw-login-username"><aw-textbox prop="data.username" action='loginAction'></aw-textbox></div>
+                        <div><aw-password prop="data.password" action='loginAction'></aw-password></div>
+                        <div>
+                            <div class='aw-login-signInContainer'>
+                                <div class='aw-login-locale aw-layout-flexColumnContainer'>
+                                    <aw-link-with-popup prop="data.localeTextLink" dataprovider='dataProviders.localeList'></aw-link-with-popup>
+                                </div>
+                                <div class='aw-login-signInButton'>
+                                    <aw-button type='submit' button-type='sole' action='loginAction' aw-class="{'disabled': !conditions.isLoginButtonEnabled}">
+                                        <div class="loading" visible-when="data.spinnerStatus === 'Active' || (data.buttonClicked && !data.loginError)">
+                                            {i18n.LOGGING_IN_TEXT}<span class="dot dot1">.</span><span class="dot dot2">.</span><span class="dot dot3">.</span>
+                                        </div>
+                                        <div visible-when="!(data.spinnerStatus === 'Active' || (data.buttonClicked && !data.loginError))">
+                                            {data.loginText.propertyDisplayName}
+                                        </div>
+                                    </aw-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class='aw-login-progressContainer'>
+                        <div class='aw-login-errorMessage' exist-when="data.loginError">
+                            <aw-guidance-message message="loginError" closable="false" banner-style="true" show-icon="false" show-type="false"></aw-guidance-message>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aw-login-copyright">
+                <p class="aw-login-copyrightTitle">{i18n.VERSION_TEXT} {data.productVersion}</p>
+                <p class="aw-login-copyrightMessage">{i18n.COPYRIGHT_MESSAGE}</p>
+                <p class="aw-login-copyrightBase">{i18n.COPYRIGHT_DATE_TEXT} { data.copyright }.</p>
+            </div>
+        </div>
+    </div>
+</div>

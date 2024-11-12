@@ -1,0 +1,26 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-panel.directive",
+        "js/aw-image.directive",
+        "js/aw-row.directive"
+    ],
+    "actions": {},
+    "data": {
+        "thumbnailURL": "{{ctx.user.typeIconURL}}",
+        "isIcon": true,
+        "addProfilePictureCommands": "awp0_addProfilePictureCommands"
+    },
+    "lifecycleHooks": {},
+    "ctx": {
+        "user.hasThumbnail": null,
+        "user.thumbnailURL": null,
+        "user.typeIconURL": null
+    },
+    "onEvent": [],
+    "i18n" :
+    {
+        "ProfilePicture": [ "AddProfilePictureMessages" ]
+    }
+}

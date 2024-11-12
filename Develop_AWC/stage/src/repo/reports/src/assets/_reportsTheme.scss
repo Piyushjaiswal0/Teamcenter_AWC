@@ -1,0 +1,65 @@
+// Copyright 2020 Siemens Product Lifecycle Management Software Inc.
+/* reports theme */
+$border_width_thin:thin;
+$border_style_solid:solid;
+
+.aw-reports-widgets-cellListItemSelected {
+    background-color: $brand_primary_content_background;
+    fill: $Natural_Blue_8;
+}
+.aw-reports-dashboardTileContent .aw-widgets-cellListWidget .aw-widgets-cellListItem {
+    -moz-box-shadow: $drop_shadow_small;
+    -webkit-box-shadow: $drop_shadow_small;
+    box-shadow: $drop_shadow_small;
+    background-color: $brand_primary_content_background;
+    &:hover {
+        background-color: $brand_primary_content_background;
+        -moz-box-shadow: $drop_shadow_2x_large;
+        -webkit-box-shadow: $drop_shadow_2x_large;
+        box-shadow: $drop_shadow_2x_large;
+    }
+    &.aw-widgets-cellListItemSelected {
+        background-color: $cell_list_item_selected;
+        fill: $aw_secondary_text;
+        color: $brand_selection_text_selected;
+
+        &:hover {
+            background-color: $cell_list_item_selected_hover;
+            color: $brand_selection_text_selected_hover;
+        }
+    }
+}
+.aw-reports-defaultChart{
+    background:
+        linear-gradient(to right, $brand_tertiary_border 75%, $brand_scroll_track 0%),
+        linear-gradient(to bottom,$brand_tertiary_border 75%, $brand_scroll_track 0%),
+        linear-gradient(to right, $brand_tertiary_border 75%, $brand_scroll_track 0%),
+        linear-gradient(to bottom,$brand_tertiary_border 75%, $brand_scroll_track 0%);
+    background-position: top, right, bottom, left;
+    background-repeat: repeat-x, repeat-y;
+    background-size: 25px 1.2px, 1.2px 25px;
+    background-color: $brand_primary_content_background;
+}
+.aw-reports-defaultChart .aw-reports-verticalCenterAlign{
+    color:$brand_secondary_disabled_text;
+}
+.aw-reports-chartView{
+    background-color: $brand_primary_content_background;
+    border: $border_style_solid $brand_tertiary_border;
+    border-width: $border_width_thin;
+}
+.aw-reports-defaultNotSharedDesc{
+    color: $brand_secondary_disabled_text;
+}
+.aw-reports-reportTypeContainer .aw-reports-typeSelectorWidget{
+    input.sw-property-val{
+        background-color: $Siemens_Blue_1;
+        border-color: $Siemens_Blue_1;
+        color: $Siemens_Snow;
+
+        &:hover {
+            cursor: pointer;
+            border-color: $Siemens_Blue_1;
+        }
+    }
+}

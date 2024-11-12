@@ -1,0 +1,337 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-panel-body.directive",
+        "js/aw-command-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-panel.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-list.directive",
+        "js/aw-list-filter.directive",
+        "js/aw-row.directive",
+        "js/aw-scrollpanel.directive"
+    ],
+
+    "actions":
+    {
+        "revealPanelSub0UserEventsConfig":
+        {
+            "actionType": "dataProvider",
+            "methods": ["configuredEventTypesProvider","availableEventTypesProvider"]
+        },
+        "getConfiguredEventTypes":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Subscription-2018-12-SubscriptionManagement",
+            "method": "getApplicableConfiguredEvents",
+            "inputData":
+            {
+            },
+             "outputData":{
+                "userConfiguredEventList" : "{{function:processResponsePlainObjects}}"
+             },
+             "events":
+             {
+             },
+
+             "deps":"js/Sub0SubscribeCommandPanelService"
+         },
+         "searchAllSubscribableEventTypes": {
+             "actionType": "TcSoaService",
+             "serviceName": "Internal-AWS2-2016-03-Finder",
+             "method": "performSearch",
+             "inputData": {
+                 "columnConfigInput": {
+                     "clientName": "AWClient",
+                     "clientScopeURI": "Awp0SearchResults",
+                     "columnsToExclude": [],
+                     "hostingClientName": "",
+                     "operationType": "intersection"
+                 },
+                 "searchInput": {
+                     "attributesToInflate": [ "parent_types", "type_name", "eventtype_id" ],
+                     "internalPropertyName": "",
+                     "maxToLoad": 50,
+                     "maxToReturn": 50,
+                     "providerName": "Sub0SubscribleTypesProvider",
+                     "searchCriteria": {
+                         "searchType": "ActiveImanEventType",
+                         "matchPattern": "{{data.filterBox.dbValue}}"
+                     },
+                     "startIndex": "{{data.dataProviders.availableEventTypesProvider.startIndex}}"
+                 }
+             },
+             "outputData": {
+                "searchResults": "{{function:getSearchResults}}",
+                 "totalFound": "totalFound",
+                 "totalLoaded": "totalLoaded"
+             },
+             "policy":{
+                 "types": [{
+                     "name": "ImanEventType",
+                     "properties": [
+                         {
+                         "name": "eventtype_id"
+                         }
+                     ]}]
+             },
+             "events": {},
+             "deps": "js/Sub0SubscribeCommandPanelService"
+         },
+        "getMaxLimitForConfiguredEvents":{
+            "actionType": "Event",
+            "method": "Event",
+            "inputData":
+            {
+                    "events":
+                    [
+                        {
+                            "name": "getMaxLimitFromPreference",
+                            "condition":"data.maxForNumberOfConfiguredEvents === ''"
+                        },
+                        {
+                            "name": "validateAddEvent",
+                            "condition":"data.maxForNumberOfConfiguredEvents !== ''"
+                        }
+                    ]
+            }
+        },
+        "getMaxLimitFromPreference":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-PreferenceManagement",
+            "method": "getPreferences",
+            "inputData":
+            {
+                "preferenceNames": [ "AWC_followMultiEventConfig_max" ],
+                "includePreferenceDescriptions": false
+            },
+            "outputData":
+            {
+                "maxForNumberOfConfiguredEvents":"{{function:parseResponse}}"
+            },
+            "events":
+            {
+                "success": [
+                    {
+                        "name": "validateAddEvent"
+                    }
+                ]
+            },
+            "deps": "js/Sub0UserEventsConfigService"
+        },
+        "validateAddEvent":
+        {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData":
+            {
+                "events":
+                [
+                    {
+                        "name": "addEvent",
+                        "condition":"data.maxForNumberOfConfiguredEvents < (data.dataProviders.availableEventTypesProvider.selectedObjects.length + data.dataProviders.configuredEventTypesProvider.viewModelCollection.loadedVMObjects.length) === false"
+                    },
+                    {
+                        "name": "multiEventConfiguredEventLimitExceedMessage",
+                        "condition":"data.maxForNumberOfConfiguredEvents < (data.dataProviders.availableEventTypesProvider.selectedObjects.length + data.dataProviders.configuredEventTypesProvider.viewModelCollection.loadedVMObjects.length) === true"
+                    }
+                ]
+            }
+
+        },
+        "addEvent":
+        {
+            "actionType": "JSFunction",
+            "method": "addEventToUserConfig",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "availableEventTypesProvider.reset",
+                        "condition": "data.dataProviders.availableEventTypesProvider.selectedObjects.length > 0"
+                    },
+                    {
+                        "name": "configuredEventTypesProvider.reset",
+                        "condition": "data.dataProviders.availableEventTypesProvider.selectedObjects.length > 0"
+                    }
+                ]
+            },
+            "actionMessages": {
+               "success":
+               [
+                   {
+                      "condition": "data.dataProviders.availableEventTypesProvider.selectedObjects.length < 1",
+                      "message": "availableEventsNotSelectedMessage"
+                   }
+               ]
+           },
+            "deps": "js/Sub0UserEventsConfigService"
+        },
+        "removeEvent":
+        {
+            "actionType": "JSFunction",
+            "method": "removeEventFromUserConfig",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "availableEventTypesProvider.reset",
+                        "condition": "data.dataProviders.configuredEventTypesProvider.selectedObjects.length > 0"
+                    },
+                    {
+                        "name": "configuredEventTypesProvider.reset",
+                        "condition": "data.dataProviders.configuredEventTypesProvider.selectedObjects.length > 0"
+                    }
+                ]
+            },
+            "actionMessages": {
+               "success":
+               [
+                   {
+                      "condition": "data.dataProviders.configuredEventTypesProvider.selectedObjects.length < 1",
+                      "message": "configuredEventsNotSelectedMessage"
+                   }
+               ]
+           },
+            "deps": "js/Sub0UserEventsConfigService"
+        },
+        "doavailableEventTypesProvider":
+        {
+            "actionType": "dataProvider",
+            "method": "availableEventTypesProvider"
+        },
+        "doconfiguredEventTypesProvider":
+        {
+            "actionType": "dataProvider",
+            "method": "configuredEventTypesProvider"
+        }
+    },
+
+    "messages":
+    {
+        "availableEventsNotSelectedMessage": {
+             "messageType": "INFO",
+             "messageText": "{{i18n.availableEventsNotSelectedMessage}}"
+         },
+         "configuredEventsNotSelectedMessage": {
+              "messageType": "INFO",
+              "messageText": "{{i18n.configuredEventsNotSelectedMessage}}"
+         },
+         "configuredEventLimitExceedMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.configuredEventLimitExceedMessage}}",
+            "messageTextParams":
+            [
+               "{{data.maxForNumberOfConfiguredEvents}}"
+            ],
+            "navigationOptions":
+            [
+                {
+                    "option": "Ok",
+                    "text": "{{i18n.ok}}"
+                }
+            ]
+        }
+
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "availableEventTypesProvider.reset",
+            "action": "doavailableEventTypesProvider"
+        },
+        {
+            "eventId": "configuredEventTypesProvider.reset",
+            "action": "doconfiguredEventTypesProvider"
+        },
+        {
+            "eventId": "awPanel.reveal",
+            "criteria":
+            {
+                "panelId": "Sub0UserEventsConfig"
+            },
+
+            "action": "revealPanelSub0UserEventsConfig"
+        },
+        {
+            "eventId": "Sub0UserEventsConfig.addEvent",
+            "action": "getMaxLimitForConfiguredEvents"
+        },
+        {
+            "eventId": "addEvent",
+            "action" : "addEvent"
+        },
+        {
+            "eventId": "getMaxLimitFromPreference",
+            "action": "getMaxLimitFromPreference"
+        },
+        {
+            "eventId": "Sub0UserEventsConfig.removeEvent",
+            "action": "removeEvent"
+        },
+        {
+            "eventId": "multiEventConfiguredEventLimitExceedMessage",
+            "message": "configuredEventLimitExceedMessage"
+        },
+        {
+            "eventId": "validateAddEvent",
+            "action":"validateAddEvent"
+        }
+    ],
+
+    "data":
+    {
+        "filterBox":
+        {
+            "displayName": "",
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "sectionCommandsSelectedEvents": "aw_eventRemoveCellCommandAction",
+        "sectionCommandsAvailableEvents": "aw_eventAddCellCommandAction",
+        "maxForNumberOfConfiguredEvents": ""
+    },
+
+    "i18n":
+    {
+        "saveUserConfigEventsButtonText": [ "SubscriptionMessages" ],
+        "selectedSectionTitle": [ "SubscriptionMessages" ],
+        "availableSectionTitle": [ "SubscriptionMessages" ],
+        "availableEventsNotSelectedMessage": [ "SubscriptionMessages" ],
+        "configuredEventsNotSelectedMessage": [ "SubscriptionMessages" ],
+        "configuredEventLimitExceedMessage": [ "SubscriptionMessages" ],
+        "ok":["SubscriptionMessages"]
+    },
+
+    "conditions":
+    {
+    },
+
+    "dataProviders":
+    {
+        "availableEventTypesProvider":
+        {
+            "action": "searchAllSubscribableEventTypes",
+            "response": "{{data.searchResults}}",
+            "totalLoaded": "{{data.totalLoaded}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple"
+        },
+        "configuredEventTypesProvider":
+        {
+            "action": "getConfiguredEventTypes",
+            "response": "{{data.userConfiguredEventList}}",
+            "totalFound": "{{data.userConfiguredEventList.length}}",
+            "selectionModelMode": "multiple"
+        }
+    }
+}

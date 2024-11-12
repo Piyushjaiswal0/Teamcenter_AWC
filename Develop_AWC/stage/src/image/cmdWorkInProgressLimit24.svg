@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <rect x="15" width="9" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="19" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="19" y="13" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M15.146,5.146a.5.5,0,0,0,.708.708L19,2.707V9h1V2.707l3.146,3.147a.5.5,0,0,0,.708-.708l-4-4a.5.5,0,0,0-.708,0Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="23" width="9" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M23.854,18.854a.5.5,0,0,0-.708-.708L20,21.293V15H19v6.293l-3.146-3.147a.5.5,0,0,0-.708.708l4,4a.5.5,0,0,0,.708,0Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M1.5,5A1.5,1.5,0,1,0,3,6.5,1.5,1.5,0,0,0,1.5,5Zm0,2A.5.5,0,1,1,2,6.5.5.5,0,0,1,1.5,7Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="4" y="6" width="8" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M1.5,10A1.5,1.5,0,1,0,3,11.5,1.5,1.5,0,0,0,1.5,10Zm0,2a.5.5,0,1,1,.5-.5A.5.5,0,0,1,1.5,12Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="4" y="11" width="8" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M1.5,15A1.5,1.5,0,1,0,3,16.5,1.5,1.5,0,0,0,1.5,15Zm0,2a.5.5,0,1,1,.5-.5A.5.5,0,0,1,1.5,17Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="4" y="16" width="8" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

@@ -1,0 +1,224 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "getreports": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "attributesToInflate": [ "rd_name", "rd_type" ],
+                    "maxToLoad": -1,
+                    "maxToReturn": -1,
+                    "providerName": "Rb0ReportsDataProvider",
+                    "searchCriteria": "{{function:getReportDefSearchCriteria}}",
+                    "searchFilterFieldSortType": "",
+                    "startIndex": "",
+                    "searchFilterMap6": "",
+                    "searchSortCriteria": ""
+                },
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0ReportBuilder"
+                }
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "ReportDefinition",
+                        "properties": [
+                            {
+                                "name": "rd_style_sheets",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "rd_source"
+                            },
+                            {
+                                "name": "rd_name"
+                            },
+                            {
+                                "name": "rd_type"
+                            },
+                            {
+                                "name": "rd_id"
+                            },
+                            {
+                                "name": "rd_parameters"
+                            },
+                            {
+                                "name": "rd_param_values"
+                            },
+                            {
+                                "name": "fnd0IsAsync"
+                            },
+                            {
+                                "name": "owning_user"
+                            },
+                            {
+                                "name": "creation_date"
+                            },
+                            {
+                                "name": "rd_class"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "reportdef": "{{function:processResponseToStoreReportDefs}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateListViewModelStatus"
+                    },
+                    {
+                        "name": "callGetLanguageList",
+                        "condition": "data.languageList === undefined"
+                    }
+                ]
+            },
+            "deps": "js/Awp0InContextReportsService"
+        },
+        "loadListViewModel": {
+            "actionType": "JSFunction",
+            "method": "loadListViewModel",
+            "inputData": {
+                "tcReportsAvailable":"{{data.tcReportsAvailable}}",
+                "tcraReportsAvailable":"{{data.tcraReportsAvailable}}",
+                "showList": "{{data.showList}}"
+            },
+            "outputData": {
+                "tcReportsAvailable": "tcReportsAvailable",
+                "tcraReportsAvailable": "tcraReportsAvailable",
+                "showList": "showList"
+            },
+            "deps": "js/Awp0InContextReportsService"
+        },
+        "cleanctxonpanelclose": {
+            "actionType": "JSFunction",
+            "method": "cleanctxonpanelclose",
+            "inputData": {},
+            "outputData": {},
+            "deps": "js/Awp0InContextReportsService"
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        },
+        "updateActiveViewAndNavigate":{
+            "actionType": "JSFunction",
+            "method": "updateActiveViewAndNavigate",
+            "inputData": {
+                "eventData": "{{data.eventData}}"
+            },
+            "outputData": {
+                "activeView": "activeView",
+                "selectedReport": "selectedReport"
+            },
+            "deps": "js/Awp0InContextReportsService"
+        },
+        "getLanguageList": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-04-LanguageInformation",
+            "method": "getLanguagesList",
+            "inputData": {
+                "scenario": "supportedLanguages"
+            },
+
+            "outputData": {
+                "languageList": "{{function:prepareLanguageList}}"
+            },
+
+            "deps": "js/Awp0InContextReportsService"
+        }
+    },
+    "data": {
+        "showList":{
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "tcReportsAvailable": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "tcraReportsAvailable": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "activeView": "Awp0InContextReportsList"
+    },
+    "functions": {
+        "getReportDefSearchCriteria": {
+            "functionName": "getReportDefSearchCriteria",
+            "parameters": [
+                "{{data}}",
+                "{{ctx.mselected}}"
+            ]
+        },
+        "processResponseToStoreReportDefs": {
+            "functionName": "processResponseToStoreReportDefs",
+            "parameters": ["{{data}}"]
+        },
+        "prepareLanguageList": {
+            "functionName": "prepareLanguageList",
+            "parameters": [
+
+            ]
+        }
+    },
+    "messages": {},
+    "onEvent": [
+        {
+            "eventId": "primaryWorkArea.selectionChangeEvent",
+            "action": "closePanel"
+        },
+        {
+            "eventId": "gwt.SubLocationContentSelectionChangeEvent",
+            "action": "closePanel"
+        },
+        {
+            "eventId": "updateListViewModelStatus",
+            "action": "loadListViewModel"
+        },
+        {
+            "eventId": "Awp0InContextReports.contentUnloaded",
+            "action": "cleanctxonpanelclose"
+        },
+        {
+            "eventId": "performNavigateAction",
+            "action": "updateActiveViewAndNavigate",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "callGetLanguageList",
+            "action": "getLanguageList"
+        }
+    ],
+    "i18n": {
+        "inContextReportPanelTitle": [
+            "ReportMessages"
+        ],
+        "backButton":["ReportMessages"]
+    },
+    "lifecycleHooks": {
+        "onMount": "getreports"
+    }
+}

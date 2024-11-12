@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Přidat k {0}",
+    "revRuleNotAvailable": "Vybrané pravidlo revize není v načtených pravidlech revize dostupné.",
+    "revRuleChangeFailed": "Změna pravidla revize se nezdařila",
+    "revRuleChangeSucess": "Pravidlo revize změněno",
+    "sendToCommandTitle": "Otevřít v {0}",
+    "sendToNewViewCommandTitle": "Otevřít v novém pohledu {0}",
+    "Awp0AddComponentHostedDesc": "Přidejte vybranou komponentu do aktivní pracovní součásti.",
+    "Awp0OpenHostedDesc": "Otevřete výběr.",
+    "HostingSetRevisionRule": "Nastavit pravidlo revize pro hosting",
+    "HostingTimeoutAuthRequestSuccessful": "Stránka prohlížeče se obnovuje, aby bylo možné znovu vytvořit relaci.",
+    "HostingTimeoutAuthRequestFailure": "Není možné znovu vytvořit relaci kvůli selhání ověření z hostitelské aplikace. \nZavřete a znovu otevřete hostitelskou aplikaci.",
+    "HostingFileUploadSvcUploadError": "Uložení souboru {0} se nezdařilo s chybou {1}."
+}

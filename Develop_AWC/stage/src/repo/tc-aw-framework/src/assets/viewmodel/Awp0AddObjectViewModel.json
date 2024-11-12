@@ -1,0 +1,285 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "activeView": "AddObjectPrimarySub",
+        "creationRelation": {
+            "displayName": "{{i18n.relation}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dataProvider": "getRelationListProvider"
+        },
+        "triggerCreate": {
+            "dbValue": false,
+            "type": "BOOLEAN"
+        },
+        "triggerAddACopy": {
+            "dbValue": false,
+            "type": "BOOLEAN"
+        },
+        "xrtState": {
+            "initialValues": {
+                "context": {}
+            },
+            "meta": {
+                "xrtVMO": {
+                    "field": "true",
+                    "type": "viewModelObject"
+                }
+            }
+        },
+        "activeState": {
+            "initialValues": {
+                "activeView": "AddObjectPrimarySub"
+            },
+            "meta": {}
+        },
+        "addPanelState": {
+            "initialValues": {
+                "creationType": "",
+                "createdObject": "",
+                "sourceObjects": "",
+                "selectedTab": "",
+                "isDatasetCreate": "",
+                "isAddACopy": ""
+            },
+            "meta": {}
+        },
+        "projectState": {
+            "initialValues": {
+                "selectedProjects": [],
+                "triggerAssign": false
+            },
+            "meta": {}
+        }
+    },
+    "editHandlers": {
+        "addPanelEditHandler": {
+            "context": "CREATE_PANEL_CONTEXT",
+            "dataSource": {
+                "xrtVMO": "{{data.xrtState}}"
+            }
+        }
+    },
+    "actions": {
+        "cleanup": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "removeEditHandler"
+                },
+                {
+                    "action": "clearAddContext"
+                }
+            ]
+        },
+        "clearAddContext": {
+            "actionType": "JSFunction",
+            "deps": "js/appCtxService",
+            "method": "unRegisterCtx",
+            "inputData": {
+                "0": "addObject"
+            },
+            "events": {
+                "success": [ {
+                    "name": "complete",
+                    "condition": "!data.isDestroyed()",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        },
+        "removeEditHandler": {
+            "actionType": "JSFunction",
+            "method": "removeEditHandler",
+            "inputData": {
+                "type": "CREATE_PANEL_CONTEXT"
+            },
+            "deps": "js/editHandlerService"
+        },
+        "clearAddEventProgContext": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "inputData": {
+                "0": "addItemEventProgressing"
+            },
+            "deps": "js/appCtxService"
+        },
+        "createObject": {
+            "actionType": "JSFunction",
+            "method": "updateCreateTrigger",
+            "inputData": {
+                "triggerCreate": "{{data.triggerCreate}}",
+                "value": true
+            },
+            "outputData": {
+                "triggerCreate": "triggerCreate"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "addACopyObject": {
+            "actionType": "JSFunction",
+            "method": "updateAddACopyTrigger",
+            "inputData": {
+                "triggerAddACopy": "{{data.triggerAddACopy}}",
+                "value": true
+            },
+            "outputData": {
+                "triggerAddACopy": "triggerAddACopy"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "toggleAddACopy": {
+            "actionType": "JSFunction",
+            "method": "toggleAddACopyState",
+            "inputData": {
+                "addPanelState": "{{data.addPanelState}}"
+            },
+            "outputData": {
+                "addPanelState": "addPanelState"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "createRelationForPaletteOrSearch": {
+            "actionType": "JSFunction",
+            "method": "updateCreateTrigger",
+            "inputData": {
+                "triggerCreate": "{{data.triggerCreate}}",
+                "value": true
+            },
+            "outputData": {
+                "triggerCreate": "triggerCreate"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "setActiveView": {
+            "actionType": "JSFunction",
+            "method": "resetActiveView",
+            "inputData": {
+                "stateName": "{{data.activeState}}",
+                "destPanelId": "AddObjectPrimarySub"
+            },
+            "outputData": {
+                "activeState": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "closePanelOnSelectionChange": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "cacheInitialSelection",
+                    "condition": "!data.initialSelection"
+                },
+                {
+                    "action": "closePanel"
+                }
+            ]
+        },
+        "cacheInitialSelection": {
+            "actionType": "JSFunction",
+            "method": "cacheSelection",
+            "inputData": {
+                "selectedUid": "{{props.subPanelContext.selectionData}}"
+            },
+            "outputData": {
+                "initialSelection": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "closePanel": {
+            "actionType": "JSFunction",
+            "method": "closePanel",
+            "inputData": {
+                "selectedUid": "{{props.subPanelContext.selectionData}}",
+                "initialSelection": "{{data.initialSelection}}"
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "Awp0AddObject.contentUnloaded",
+            "action": "clearAddEventProgContext",
+            "condition": "subPanelContext.panelPinned"
+        },
+        {
+            "eventId": "pasteItem.commitFailed",
+            "action": "clearAddEventProgContext"
+        }
+    ],
+    "messages": {},
+    "functions": {},
+    "conditions": {
+        "isNewTabAddButtonVisible": {
+            "expression": "addPanelState.creationType && addPanelState.selectedTab.view==='NewTabPageSub' && !addPanelState.isDatasetCreate"
+        },
+        "isPaletteSearchTabAddButtonVisible": {
+            "expression": "addPanelState.sourceObjects && addPanelState.sourceObjects.length > 0 && !addPanelState.isAddACopy"
+        },
+        "isPaletteSearchTabAddACopyButtonVisible": {
+            "expression": "addPanelState.sourceObjects && addPanelState.sourceObjects.length === 1 && ( addPanelState.selectedTab.view==='SearchTabPageSub' || addPanelState.selectedTab.view==='PaletteTabPageSub' ) && !addPanelState.isAddACopy"
+        },
+        "isPaletteSearchTabAddACopyButtonEnable": {
+            "expression": {
+                "$source": "addPanelState.sourceObjects[0].modelType.typeHierarchyArray",
+                "$query": {
+                    "$notin": "{{ctx.preferences.AWC_AddACopyExclusionTypeList}}"
+                }
+            }
+        },
+        "isPaletteSearchTabAddACopyCancelButtonVisible": {
+            "expression": "addPanelState.sourceObjects && addPanelState.sourceObjects.length === 1 && addPanelState.isAddACopy"
+        },
+        "isAddPanelXRTLoaded": {
+            "expression": "data.activeView==='AddObjectPrimarySub'"
+        }
+    },
+    "i18n": {
+        "submitButtonTitle": [
+            "TCUICommandPanelsMessages"
+        ],
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ],
+        "addACopy": [
+            "addObjectMessages"
+        ],
+        "cancel": [
+            "addObjectMessages"
+        ],
+        "relation": [
+            "XRTMessages"
+        ],
+        "LOADING_TEXT": [
+            "BaseMessages"
+        ],
+        "MORE_LINK_TEXT": [
+            "BaseMessages"
+        ],
+        "objectType": [
+            "awAddDirectiveMessages"
+        ],
+        "FILTER_TEXT": [
+            "BaseMessages"
+        ],
+        "BACK_BUTTON_TITLE": [
+            "BaseMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onUnmount": "cleanup",
+        "onUpdate": [ {
+            "action": "closePanelOnSelectionChange",
+            "observers": [ "props.subPanelContext.selectionData.selected[0].uid" ]
+        }, {
+            "action": "closePanel",
+            "observers": [ "props.subPanelContext.selectionData.selected.length" ]
+        } ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

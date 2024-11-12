@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Elementi digitali",
+    "imagePanelTitle": "Immagini e colori",
+    "updatesSectionTitle": "Aggiornamenti in Teamcenter",
+    "digitalAssetsInUseSectionTitle": "Elementi digitali in \"{0}\"",
+    "imageInUseSectionTitle": "Immagini e colori in \"{0}\"",
+    "adobeFile": "File Adobe",
+    "typeLabel": "Tipo",
+    "revisionLabel": "Revisione",
+    "quantityLabel": "Quantità",
+    "expectedLabel": "Previsto",
+    "cmdReplaceDigitalAsset": "Sostituisci",
+    "showObjectCell": "Apri",
+    "cmdDeleteDigitalAsset": "Elimina",
+    "adobe_cell_commands_updatesList": "Elenco di aggiornamenti dei comandi cella",
+    "adobe_cell_commands_inUseList": "Elenco dei comandi cella in uso",
+    "DigitalAssetsPanelDesc": "Visualizzare gli elementi digitali associati all'artwork.",
+    "ImagePanelDesc": "Visualizzare le immagini e i colori associati al CAD 2D.",
+    "cmdReplaceDigitalAssetDesc": "Sostituire l'elemento digitale aperto nell'applicazione Adobe con quello aggiornato in Teamcenter.",
+    "cmdDeleteDigitalAssetDesc": "Rimuovere gli elementi digitali selezionati dall'artwork.",
+    "showObjectCellDesc": "Aprire la selezione."
+}

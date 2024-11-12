@@ -1,0 +1,10 @@
+<div exist-when="data.searchState.callDataProvider" class="aw-xrt-objectSetContent aw-layout-flexColumn">
+    <div class="aw-xrt-objectSetToolbar">
+        <aw-toolbar first-anchor="aw_objectSet,aw_searchFolderContentsSelectionSet" second-anchor="aw_searchFolderContentsExportSet" reverse-second="true" orientation="HORIZONTAL" context="{...subPanelContext.searchFolder.exportPanelContext, ...subPanelContext }">
+        </aw-toolbar>
+    </div>
+    <aw-scrollpanel>
+        <aw-splm-table gridid="gridView" class="aw-search-activefolderContents" show-context-menu="true" show-check-box="data.dataProviders.gridDataProvider.selectionModel.multiSelectEnabled">
+        </aw-splm-table>
+    </aw-scrollpanel>
+</div>

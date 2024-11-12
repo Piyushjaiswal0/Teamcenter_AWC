@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "Dodano {0} z {1}.<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "Usunięto {0} z {1}.<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "Wyniki wyszukiwania nie zostały przefiltrowane z powodu błędu wewnętrznego.",
+    "invalidDateRangeError": "Data rozpoczęcia musi być wcześniejsza niż data zakończenia.",
+    "invalidUnitRange": "Nieprawidłowy zakres jednostek",
+    "notificationForBaselineCreation": "Trwa zapisywanie \"{0}\". Otrzymasz powiadomienie, gdy czynność zostanie zakończona.",
+    "notificationForBaselineCreationSync": "\"{0}\" został zapisany i będzie dostępny w folderze osobistym."
+}

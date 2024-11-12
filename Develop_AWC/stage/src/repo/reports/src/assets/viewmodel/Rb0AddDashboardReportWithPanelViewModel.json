@@ -1,0 +1,90 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-command-sub-panel.directive",
+        "js/visible-when.directive"
+    ],
+    "actions": {
+        "addItemSelected": {
+            "actionType": "JSFunction",
+            "deps": "js/showMyDashboardService",
+            "method": "addItemSelected",
+            "inputData": {
+                "reportsContext": "{{data.reportsContext}}",
+                "destPanelId": "AddReportsTabPage",
+                "selected": "{{props.subPanelContext.selectionData.selected}}"
+            },
+            "outputData": {
+                "reportsContext": ""
+            }
+        },
+        "updateActiveView":{
+            "actionType": "JSFunction",
+            "method": "setConfigurePanel",
+            "inputData": {
+                "reportsContext": "{{data.reportsContext}}",
+                "destPanelId": "AddReportsTabPage"
+            },
+            "outputData": {
+                "reportsContext": ""
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "clearSelectedCtx": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "selected"
+            }
+        }
+    },
+    "data": {
+        "reportsContext": {
+            "initialValues": {
+                "activeView": "AddReportsTabPage",
+                "itemSource": []
+            },
+            "meta": {
+            }
+        },
+        "searchState": {
+            "initialValues": {
+                "autoApplyFilters": true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ],
+                "searchFilterCategories": [{"internalName":{"field": true,"type": "STRING"}}],
+                "searchFilterMap": ""
+            }
+        }
+    },
+    "conditions": {
+        "isSelected": {
+            "expression": "data.searchState.criteria.searchString.length > 0 && ctx.selected"
+        }
+    },
+    "onEvent": [],
+    "i18n": {
+        "addDashboardReportWithPanel": [
+            "ReportChartMessages"
+        ],
+        "addItem":[
+            "ReportChartMessages"
+        ],
+        "addDashboardReportWithPanelTitle":[
+            "ReportChartMessages"
+        ] 
+    },
+    "lifecycleHooks": {
+        "onUnmount": "clearSelectedCtx"
+    }
+}

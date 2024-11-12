@@ -1,0 +1,30 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "render": "render",
+        "onUnmount": "cleanup"
+    },
+    "actions": {
+        "initialize": {
+            "actionType": "JSFunctionAsync",
+            "method": "initializePage",
+            "inputData": {},
+            "outputData": {
+                "headerTitle": "headerTitle"
+            },
+            "deps": "js/uicompService"
+        },
+        "render": {
+            "method": "uicompRenderFunction",
+            "deps": "js/uicompService"
+        },
+        "cleanup": {
+            "actionType": "JSFunction",
+            "method": "cleanupPage",
+            "inputData": {},
+            "deps": "js/uicompService"
+        }
+    }
+}

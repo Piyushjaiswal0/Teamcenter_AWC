@@ -1,0 +1,47 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="7.75" y1="10.25" x2="40.25" y2="42.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="10.75" y1="13.25" x2="37.25" y2="39.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.3355" stop-color="#f8f8f8"/>
+      <stop offset="0.8196" stop-color="#e5e5e5"/>
+      <stop offset="1" stop-color="#dcdcdc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="24" y1="12.5" x2="24" y2="4.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bebebe"/>
+      <stop offset="0.0454" stop-color="#c4c4c4"/>
+      <stop offset="0.2676" stop-color="#dedede"/>
+      <stop offset="0.497" stop-color="#f0f0f0"/>
+      <stop offset="0.7361" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="34.5" y1="0.5" x2="47.5" y2="13.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="38" y1="-2" x2="50" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-3" x1="35" y1="1" x2="47" y2="13" xlink:href="#paper_gradient"/>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="9.5" y="8.5" width="29" height="36" stroke="#6e6e6e" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <rect x="12.5" y="11.5" width="23" height="30" stroke="#bebebe" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <path d="M29.5,7.5h-2a3,3,0,0,0-3-3h-1a3,3,0,0,0-3,3h-2a2,2,0,0,0-2,2v3h15v-3A2,2,0,0,0,29.5,7.5Z" stroke="#6e6e6e" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <circle cx="24" cy="7" r="1" fill="#6e6e6e"/>
+  <rect x="34.5" y="0.5" width="13" height="13" fill="url(#paper_gradient-2)"/>
+  <polygon points="47 13 47 1 35 1 47 13" fill="url(#Light_Blue_Grad)"/>
+  <line x1="35" y1="1" x2="47" y2="13" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+  <rect x="34.5" y="0.5" width="13" height="13" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M24,37.2241a.5.5,0,0,1-.49-.4018l-1.0611-5.3067L19.8613,32.81a.5.5,0,0,1-.6709-.6709l1.294-2.5874L15.1777,28.49a.5.5,0,0,1,0-.98l5.3067-1.0611L19.19,23.8613a.5.5,0,0,1,.6709-.6709l2.5874,1.294L23.51,19.1777a.5.5,0,0,1,.98,0l1.0611,5.3067,2.5874-1.294a.5.5,0,0,1,.6709.6709l-1.294,2.5874L32.8223,27.51a.5.5,0,0,1,0,.98l-5.3067,1.0611,1.294,2.5874a.5.5,0,0,1-.6709.6709l-2.5874-1.294L24.49,36.8223A.5.5,0,0,1,24,37.2241Z" fill="#3c91af"/>
+    <path d="M24,19.2759l1.19,5.9482,3.1725-1.5862L26.7759,26.81,32.7241,28l-5.9482,1.19,1.5862,3.1725L25.19,30.7759,24,36.7241l-1.19-5.9482-3.1725,1.5862L21.2241,29.19,15.2759,28l5.9482-1.19-1.5862-3.1725L22.81,25.2241,24,19.2759m0-1a1,1,0,0,0-.9806.8038l-.9329,4.6645-2.0014-1.0007a1,1,0,0,0-1.3416,1.3416l1.0007,2.0014-4.6645.9329a1,1,0,0,0,0,1.9612l4.6645.9329-1.0007,2.0014a1,1,0,0,0,1.3416,1.3416l2.0014-1.0007.9329,4.6645a1,1,0,0,0,1.9612,0l.9329-4.6645,2.0014,1.0007a1,1,0,0,0,1.3416-1.3416l-1.0007-2.0014,4.6645-.9329a1,1,0,0,0,0-1.9612l-4.6645-.9329,1.0007-2.0014a1,1,0,0,0-1.3416-1.3416l-2.0014,1.0007L24.9806,19.08A1,1,0,0,0,24,18.2759Z" fill="#147391"/>
+</svg>

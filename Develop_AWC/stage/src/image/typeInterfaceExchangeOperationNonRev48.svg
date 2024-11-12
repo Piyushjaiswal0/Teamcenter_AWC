@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="-12.0842" y1="35.7501" x2="19.2442" y2="4.4217" gradientTransform="translate(39.3104 19.6896) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="11.75" y1="16.25" x2="26.25" y2="30.75" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c8c8"/>
+      <stop offset=".1747" stop-color="#c2c2c2"/>
+      <stop offset=".4567" stop-color="#b5b5b5"/>
+      <stop offset=".8089" stop-color="#9e9e9e"/>
+      <stop offset="1" stop-color="#919191"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" data-name="Dark Blue Grad" x1="36.4093" y1="36.3888" x2="45.5896" y2="45.569" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" data-name="Dark Blue Grad" x1="34.4093" y1="22.3888" x2="43.5896" y2="31.569" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="paper_gradient-2" data-name="paper gradient" x1="37.6748" y1="25.6748" x2="40.3252" y2="28.3252" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" data-name="paper gradient" x1="39.6748" y1="39.6748" x2="42.3252" y2="42.3252" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#paper_gradient"/>
+    <linearGradient id="Dark_Blue_Grad-4" data-name="Dark Blue Grad" x1="22.4092" y1="33.4596" x2="27.6617" y2="45.0801" gradientTransform="translate(-9.289 8.0793) rotate(-20.6766)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="paper_gradient-4" data-name="paper gradient" x1="24.2563" y1="37.5804" x2="25.8008" y2="40.9972" gradientTransform="translate(-9.289 8.0793) rotate(-20.6766)" xlink:href="#paper_gradient"/>
+  </defs>
+  <path d="M7.0537,46.3841l10.6141-5.7041c.0896-.0505,.0537-.1871-.0492-.1871l-4.1686,.0012,1.55-3h20.5c1.1046,0,2-.8954,2-2V11.4941c0-1.1046-.8954-2-2-2h-3.5l1.5-3,3.7539-.0013c.0896,0,.1339-.1088,.0699-.1714L32.0001,.6163l-10.1844,5.6903c-.0879,.0516-.0512,.1862,.0507,.1862h3.6337l-1.5,3.0013H2.5c-1.1046,0-2,.8954-2,2v24c0,1.1046,.8954,2,2,2H7l-1.5,3-4.2396-.0012c-.0917,0-.1351,.1131-.0669,.1744l5.8602,5.7169Z" fill="url(#paper_gradient)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <g>
+    <path d="M17.5,32.5v-2h.5c3.8599,0,7-3.1401,7-7s-3.1401-7-7-7h-.5v-2h.5c4.5957,0,8.4326,3.4771,8.9341,8h5.5659v2h-5.5659c-.5015,4.5229-4.3384,8-8.9341,8h-.5Zm0-5c-1.8198,0-3.4082-1.2627-3.8584-3H5.5v-2H13.6416c.4502-1.7373,2.0386-3,3.8584-3,2.2056,0,4,1.7944,4,4s-1.7944,4-4,4Z" fill="url(#Dark_Blue_Grad)"/>
+    <path d="M18,15c4.5182,0,8.2136,3.5461,8.4747,8h5.5253v1h-5.5253c-.2611,4.4539-3.9564,8-8.4747,8v-1c4.1357,0,7.5-3.3643,7.5-7.5s-3.3643-7.5-7.5-7.5v-1m-.5,5c1.933,0,3.5,1.567,3.5,3.5s-1.567,3.5-3.5,3.5c-1.7617,0-3.2051-1.306-3.4496-3H6v-1H14.0504c.2445-1.694,1.6879-3,3.4496-3m.5-6h-1v3h1c3.5841,0,6.5,2.9159,6.5,6.5s-2.9159,6.5-6.5,6.5h-1v3h1c4.6992,0,8.6469-3.4447,9.3709-8h5.6291v-3h-5.6291c-.724-4.5553-4.6717-8-9.3709-8h0Zm-.5,5c-1.915,0-3.6018,1.2413-4.2273,3H5v3H13.2727c.6256,1.7587,2.3123,3,4.2273,3,2.4813,0,4.5-2.0187,4.5-4.5s-2.0187-4.5-4.5-4.5h0Z" fill="#919191"/>
+  </g>
+  <path d="M45.3283,42.5605l2.1717-.7709v-1.6226l-2.1717-.7708c-.1548-.0548-.217-.2202-.1522-.3565l.9875-2.0771-1.1474-1.1471-2.0773,.9884c-.1447,.0686-.3078-.0057-.3567-.1429l-.7707-2.161h-1.6227l-.7706,2.1609c-.0487,.136-.2178,.2076-.3568,.1414l-2.0776-.9876-1.1477,1.1475,.987,2.0775c.0632,.1331,.0015,.3024-.1512,.3565l-2.1717,.7709v1.6226l2.1717,.771c.1558,.0552,.2166,.2215,.1522,.3568l-.9875,2.078,1.1474,1.1483,2.0773-.9855c.1307-.0621,.2993-.002,.3567,.1591l.7707,2.1827h1.6227l.7706-2.1825c.0615-.1719,.2201-.2278,.3568-.1631l2.0776,.9875,1.1477-1.1474-.987-2.0776c-.0638-.1343-.0008-.3026,.1511-.3564Z" fill="url(#Dark_Blue_Grad-2)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <g>
+    <path d="M43.3283,28.5605l2.1717-.7709v-1.6226l-2.1717-.7708c-.1548-.0548-.217-.2202-.1522-.3565l.9875-2.0771-1.1474-1.1471-2.0773,.9884c-.1447,.0686-.3078-.0057-.3567-.1429l-.7707-2.161h-1.6227l-.7706,2.1609c-.0487,.136-.2178,.2076-.3568,.1414l-2.0776-.9876-1.1477,1.1475,.987,2.0775c.0632,.1331,.0015,.3024-.1512,.3565l-2.1717,.7709v1.6226l2.1717,.771c.1558,.0552,.2166,.2215,.1522,.3568l-.9875,2.078,1.1474,1.1483,2.0773-.9855c.1307-.0621,.2993-.002,.3567,.1591l.7707,2.1827h1.6227l.7706-2.1825c.0615-.1719,.2201-.2278,.3568-.1631l2.0776,.9875,1.1477-1.1474-.987-2.0776c-.0638-.1343-.0008-.3026,.1511-.3564Z" fill="url(#Dark_Blue_Grad-3)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="39" cy="27" r="1.875" fill="url(#paper_gradient-2)" stroke="#919191" stroke-linecap="round" stroke-miterlimit="10"/>
+  </g>
+  <circle cx="41" cy="41" r="1.875" fill="url(#paper_gradient-3)" stroke="#919191" stroke-linecap="round" stroke-miterlimit="10"/>
+  <g>
+    <path d="M32.6202,35.9315l1.7643-1.4919-.5744-1.5221-2.31,.0458c-.1646,.0034-.2815-.1298-.2689-.2805l.1909-2.298-1.4824-.6698-1.5987,1.6625c-.1114,.1155-.2908,.1036-.3852-.0078l-1.488-1.7542-1.5222,.5745,.0421,2.2998c.0025,.1448-.1308,.2718-.2847,.259l-2.2985-.1909-.6703,1.4827,1.6613,1.5993c.1064,.1024,.1085,.2831-.0156,.3879l-1.7642,1.4919,.5744,1.5221,2.3101-.0456c.1657-.0034,.2816,.1311,.2691,.2809l-.1906,2.2988,1.4829,.671,1.5997-1.6599c.1006-.1045,.2801-.1078,.391,.023l1.4957,1.7746,1.5222-.5745-.0498-2.3201c-.0032-.183,.1258-.2916,.277-.2793l2.2985,.1908,.6704-1.4826-1.6614-1.5994c-.1074-.1034-.1078-.2836,.0156-.3878Z" fill="url(#Dark_Blue_Grad-4)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="28" cy="36" r="1.8749" fill="url(#paper_gradient-4)" stroke="#919191" stroke-linecap="round" stroke-miterlimit="10"/>
+  </g>
+</svg>

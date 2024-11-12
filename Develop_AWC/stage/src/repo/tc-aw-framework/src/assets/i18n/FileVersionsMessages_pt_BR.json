@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "Versões",
+    "FileVersionsPanelHeader": "Versões de Dataset",
+    "DownloadVersionButton": "Versão do download",
+    "RestoreVersionButton": "Restaurar versão",
+    "RestoreFailureMessage": "Falha ao restaurar versão do dataset anterior.",
+    "UnsavedEditWarning": "{0} tem mudanças não salvas. Restaurar uma versão anterior do dataset vai remover suas alterações em andamento.",
+    "ConfirmButtonLabel": "Continuar",
+    "CancelButtonLabel": "Cancelar"
+}

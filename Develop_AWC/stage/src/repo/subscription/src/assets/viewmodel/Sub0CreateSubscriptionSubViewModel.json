@@ -1,0 +1,1281 @@
+{
+     "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "initAction": {
+            "actionType": "dataProvider",
+            "method": "getSubscribableEvents"
+        },
+        "updateInit": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initAction",
+                    "condition": "conditions.shouldUpdateInit"
+                }
+            ]
+
+        },
+        "getEventTypesForSingleSelection": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "getEventTypeEvent",
+                        "condition": "(ctx.mselected.length===1 && ctx.myEventCheckboxDefaultSelection === false )  ||( data.subscribedObjectType.propertyDisplayName!=='' && ctx.myEventCheckboxDefaultSelection === false)"
+                    },
+                    {
+                        "name": "myEventDefaultSelection",
+                            "condition":"conditions.ismyEventDefaultSelection"
+                    }
+                ]
+            }
+        },
+        "updateFollowersProvider": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "navigateToCreateSubscriptionPage",
+                    "condition": "conditions.isAddFollower"
+                },
+                {
+                    "action": "updateProvider",
+                    "condition": "conditions.isAddFollower"
+                }
+            ]
+        },
+        "navigateToCreateSubscriptionPage": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value": {
+                    "activeView": "Sub0CreateSubscriptionSub",
+                    "prePanelId":"AwPeoplePicker"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateProvider": {
+            "actionType": "JSFunction",
+            "method": "addObject",
+            "inputData": {
+                "data": "{{data}}",
+                "newObject": "{{props.subPanelContext.addUserPanelState.selectedUsers}}",
+                "dataProvider": "{{data.dataProviders.followers_provider}}"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "getEventTypes": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Subscription-2018-12-SubscriptionManagement",
+            "method": "getApplicableCommonEventTypes",
+            "inputData": {
+                "objectsOrTypes": "{{props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids}}"
+            },
+            "outputData": {
+                "subscriptionCtx.eventTypeList": "{{function:processEventTypes}}",
+                "eventPartialErrors": "ServiceData.partialErrors"
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "ImanEventType",
+                        "properties": [
+                            {
+                                "name": "eventtype_id"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSubscriptionCtxEventTypeList"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "data.subscriptionCtx.eventTypeList.length < 1 && subPanelContext.panelPinned===false",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "addEventTypeToListEvent",
+                        "condition": "data.subscriptionCtx.eventTypeList.length > 0"
+                    },
+
+                    {
+                        "name": "renderSingleEventView",
+                        "condition": "data.subscriptionCtx.eventTypeList.length > 0 && eventType.isEnabled === false"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "updateSubscriptionCtxEventTypeList"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "data.subscriptionCtx.eventTypeList.length < 1 && subPanelContext.panelPinned===false",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "noMoreEventsToFollowMessage",
+                        "condition": "data.subscriptionCtx.eventTypeList.length < 1"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "removeFollowers": {
+            "actionType": "JSFunction",
+            "method": "removeObject",
+            "inputData": {
+                "color": "{{data.dataProviders.followers_provider.selectedObjects}}",
+                "dataProvider": "{{data.dataProviders.followers_provider}}"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "renderView": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Subscription-2018-12-SubscriptionManagement",
+            "method": "getSubscriptionViewAndViewModel",
+            "inputData": {
+                "objectsOrTypes": "{{props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids}}",
+                "eventTypes": "{{data.applicableEventList}}"
+            },
+            "outputData": {
+                "view": "view",
+                "viewModel": "viewModel",
+                "viewModelJSON": "{{json:viewModel}}",
+                "response": "response"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "getSubscriptionViewAndViewModelResponseEvent"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "processGetSubscriptionViewAndViewModelResponse": {
+            "actionType": "JSFunction",
+            "method": "processGetSubscriptionViewAndViewModelResponse",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "actionHandler.dbValue": "data.actionHandler.dbValue",
+                "name.dbValue": "data.name.dbValue",
+                "name.uiValue": "data.name.uiValue",
+                "frequency.dbValue": "data.frequency.dbValue",
+                "frequency.uiValue": "data.frequency.uiValue",
+                "frequencies": "data.frequencies",
+                "priority.dbValue": "data.priority.dbValue",
+                "priority.uiValue": "data.priority.uiValue",
+                "priorities": "data.priorities",
+                "operator.dbValue": "data.operator.dbValue",
+                "operator.uiValue": "data.operator.uiValue",
+                "operators": "data.operators",
+                "releaseStatus.dbValue": "data.releaseStatus.dbValue",
+                "releaseStatus.uiValue": "data.releaseStatus.uiValue",
+                "releaseStatuses": "data.releaseStatuses",
+                "relationType.dbValue": "data.relationType.dbValue",
+                "relationType.uiValue": "data.relationType.uiValue",
+                "relationTypes": "data.relationTypes",
+                "attachmentType.dbValue": "data.attachmentType.dbValue",
+                "attachmentType.uiValue": "data.attachmentType.uiValue",
+                "allAttachmentTypes": "data.attachmentTypes",
+                "isItemRevisions.dbValue": "data.isItemRevisions.dbValue",
+                "isBaselineRevisions.dbValue": "data.isBaselineRevisions.dbValue"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "getAttachmentTypesPaginated": {
+            "actionType": "JSFunction",
+            "method": "getAttachmentTypesPaginated",
+            "inputData": {
+                "allAttachmentTypes": "{{data.allAttachmentTypes}}",
+                "startIndex": "request.listLoadInput.startChildNdx",
+                "filter": "{{data.attachmentType.filterString}}"
+            },
+            "outputData": {
+                "attachmentTypes": "attachmentTypes",
+                "moreValuesExist": "moreValuesExist"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "updateSubscriptionList": {
+            "actionType": "JSFunction",
+            "method": "updateSubscriptionList",
+            "inputData": {
+                "response": "{{data.createSubscriptionResponse}}",
+                "sharedData":"{{subPanelContext.sharedData}}"
+            },
+            "outputData": {
+                "subscriptions":"updatedSubList"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "createNewSubscription": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Notification-2015-03-SubscriptionManagement",
+            "method": "createSubscriptions",
+            "deps": "js/Sub0SubscribeCommandPanelService",
+            "inputData": {
+                "inputs": "{{data.createSubscriptionsInput}}"
+            },
+            "outputData": {
+                "createSubscriptionResponse": "",
+                "errors": "{{function:processCreateSubscriptionPartialErrors}}",
+                "createPartialErrors": "ServiceData.partialErrors"
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "ImanSubscription",
+                        "properties": [
+                            {
+                                "name": "event_type"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSubscriptionListEvent",
+                        "condition": "subPanelContext.panelPinned===true"
+                    },
+                    {
+                        "name": "addObject.objectcreated",
+                        "condition": "data.subscribedObjectType.dbValue!==''"
+                    },
+                    {
+                        "name": "resetMyEventAndReloadPinnedPanel",
+                        "condition": "subPanelContext.panelPinned===true  && (ctx.mselected.length===1 || (data.multiEventCheckbox.dbValue == true && data.subscribedObjectType.dbValue!==''))"
+                    },
+                    {
+                        "name": "primaryWorkarea.reset",
+                        "condition": "data.subscribedObjectType.dbValue!=='' && ( subPanelContext.panelPinned===true || props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true )"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "subPanelContext.panelPinned===false && ( data.subscribedObjectType.dbValue ==='' || ( data.subscribedObjectType.dbValue !=='' && props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true ))",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "openSubscriptionObject",
+                        "condition": "data.subscribedObjectType.dbValue!=='' && subPanelContext.panelPinned===false && props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === false"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "complete",
+                        "condition": "subPanelContext.panelPinned===false && ( props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true || createSubscriptionResponse.ServiceData.partialErrors[0].errorValues[0].code!==78002)",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "primaryWorkarea.reset",
+                        "condition": "data.subscribedObjectType.dbValue!=='' && props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true && createSubscriptionResponse.subscriptions.length>0"
+                    },
+                    {
+                        "name": "resetPropertyIsCreateActionEvent",
+                        "condition": "data.isCreateAction.dbValue===true && data.subscribedObjectType.dbValue!==''"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length===1 && props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === false",
+                        "message": "createSubscriptionSuccessfulMessage"
+                    },
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length>1",
+                        "message": "createMultiSubscriptionSuccessMessage"
+                    },
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true && data.subscribedObjectType.dbValue===''",
+                        "message": "createMultiEventSubscriptionSuccessMessage"
+                    },
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true && data.subscribedObjectType.dbValue!==''",
+                        "message": "createMultiEventForTypeSubscriptionSuccessMessage"
+                    }
+                ],
+                "failure": [
+                    {
+                        "condition": "createSubscriptionResponse.ServiceData.partialErrors[0].errorValues[0].code!==78002 && props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length===1 && props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === false",
+                        "message": "createSubscriptionFailureMessage"
+                    },
+                    {
+                        "condition": "createSubscriptionResponse.ServiceData.partialErrors[0].errorValues[0].code===78002 && props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length===1 && props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === false",
+                        "message": "confirmDuplicateSubscriptionFailureMessage"
+                    },
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length>1",
+                        "message": "createMultiSubscriptionFailureMessage"
+                    },
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true && data.subscribedObjectType.dbValue===''",
+                        "message": "createMultiEventSubscriptionFailureMessage"
+                    },
+                    {
+                        "condition": "props.subPanelContext.sharedData.subscriptionCtx.isMultiEvent === true && data.subscribedObjectType.dbValue!==''",
+                        "message": "createMultiEventForTypeSubscriptionFailureMessage"
+                    }
+                ]
+            }
+        },
+        "createSubscriptions": {
+            "actionType": "JSFunction",
+            "method": "loadTypes",
+            "inputData": {
+                "data": "{{data}}",
+                "vmoList":""
+            },
+            "outputData":{
+                "isCreateAction" : ""
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "createSubscriptionInput"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "createSubscriptionInput": {
+            "actionType": "JSFunction",
+            "method": "createSubscriptionInputs",
+            "inputData": {
+                 "data": "{{data}}",
+                 "sharedData":"{{props.subPanelContext.sharedData}}"
+            },
+            "outputData": {
+                "createSubscriptionsInput": "inputs",
+                "existingSub": "subscription"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "createSubscriptionEvent",
+                        "condition": "data.createSubscriptionsInput || data.createSubscriptionsInput.length >=0"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "goToTypeSelection": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value" : {
+                    "activeView":"Sub0SubscribeType",
+                    "prePanelId":"Sub0CreateSubscriptionSub",
+                    "subscriptions": [],
+                    "selectedFollowType":""
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+         "goToListSubscriptions": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value" : {
+                    "activeView":"Sub0SubscribeSub"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "openSubscription": {
+            "actionType": "JSFunction",
+            "method": "openObject",
+            "inputData": {
+                "data": "{{data.existingSub}}"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "openCreatedSubscription": {
+            "actionType": "JSFunction",
+            "method": "openObject",
+            "inputData": {
+                "data": "{{data.createSubscriptionResponse.subscriptions[0]}}"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "updateRecentUsedTypes": {
+            "actionType": "JSFunction",
+            "method": "updateRecentModelTypes",
+            "inputData": {
+                "recentTypeName": "{{data.subscribedObjectType.dbValue}}"
+            },
+            "outputData": {},
+            "deps": "js/subscriptionRecentTypesService"
+        },
+        "openUserEventsConfigPanel": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value": {
+                    "activeView": "Sub0UserEventsConfig",
+                    "prePanelId": "Sub0CreateSubscriptionSub"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "multiEventDisplay": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "checkMultiEventBoxEvent",
+                        "condition": "data.multiEventCheckbox.dbValue == true"
+                    },
+                    {
+                        "name": "uncheckMultiEventBoxEvent",
+                        "condition": "data.multiEventCheckbox.dbValue == false"
+                    }
+                ]
+            }
+        },
+        "getApplicableEvent": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Subscription-2018-12-SubscriptionManagement",
+            "method": "getApplicableConfiguredEvents",
+            "inputData": {
+                "inObject": "{{props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids[0]}}"
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "ImanEventType",
+                        "properties": [
+                            {
+                                "name": "eventtype_id"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "applicableEventList": "{{function:processResponsePlainObjects}}",
+                "ctx.myEventCheckboxDefaultSelection": true
+            },
+            "events": {
+                "success": [
+                    {
+                        "name":"updatemyEventCheckboxDefaultSelection"
+                    },
+                    {
+                        "name": "updateEventTypeToFollowMultiEvent"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "updatemyEventCheckboxDefaultSelection": {
+            "actionType": "JSFunction",
+            "method": "updateCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "myEventCheckboxDefaultSelection",
+                "value": true
+            }
+        },
+        "updateEventTypeToFollowMultiEvent": {
+            "actionType": "JSFunction",
+            "method": "updateEventTypeToFollowMultiEvent",
+            "inputData": {
+                "applicableEventList": "{{data.applicableEventList}}"
+            },
+            "outputData": {
+                "eventType.uiValue": "obj.applicableEventsValue",
+                "eventType.dbValue": "obj",
+                "eventType.isEnabled": "isEnabled",
+                "subscriptionCtx.isMultiEvent":"isMultiEvent"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSubscriptionCtxMultiEvent"
+                    },
+                    {
+                        "name": "renderViewEvent",
+                        "condition": "data.eventType.uiValue != ''"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "updateSubscriptionCtxMultiEvent"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "noApplicableEventExistForSelectedObjectMessage",
+                        "condition": "data.eventType.uiValue == ''"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "renderSingleEventView": {
+            "actionType": "JSFunction",
+            "method": "updateEventTypeToFollowSingleEvent",
+            "inputData": {
+                "eventType" : "{{data}}",
+                "sharedData":"{{props.subPanelContext.sharedData}}"
+            },
+            "outputData":{
+                "eventType":"eventType",
+                "autoResetMyEventCheckbox":"autoResetMyEventCheckbox",
+                "subscriptionCtx.isMultiEvent":"isMultiEvent"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSubscriptionCtxMultiEvent"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "updateSubscriptionCtxMultiEvent"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "resetMultiEventCheckBox": {
+            "actionType": "JSFunction",
+            "method": "resetMultiEventCheckBox",
+            "inputData": {
+                "multiEventCheckbox" : "{{fields.multiEventCheckbox}}"
+            },
+            "outputData":{
+                "autoResetMyEventCheckbox": ""
+            },
+            "events": {
+                "success" : [
+                    {
+                        "name": "multiEventDisplayEvent"
+                    }
+               ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "addEventTypeToList": {
+            "actionType": "JSFunction",
+            "method": "addEventTypeToList",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData" :{
+                "applicableEventList":""
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "renderViewEvent"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "myEventDefaultSelection": {
+            "actionType": "JSFunction",
+            "method": "myEventDefaultSelection",
+            "inputData": {
+                "multiEventCheckbox" : "{{fields.multiEventCheckbox}}"
+            },
+            "events": {
+                "success" : [
+                    {
+                        "condition":"ctx.myEventCheckboxDefaultSelection !== true",
+                        "name": "getPreferencesEvent"
+                    },
+                    {
+                        "condition":"ctx.myEventCheckboxDefaultSelection === true",
+                        "name": "multiEventDisplayEvent"
+                    }
+               ]
+            },
+            "deps":"js/Sub0SubscribeCommandPanelService"
+        },
+        "updateTitleLink": {
+            "actionType": "JSFunction",
+            "method": "updateTitleLink",
+            "inputData": {
+                "subscribedObject":"{{data.subscribedObject}}",
+                "selectedSubscribedObject":"{{props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.objects[0].props.object_name}}"
+            },
+            "outputData":{
+                "subscribedObject": ""
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "updateTitleLinkForSubscribeType": {
+            "actionType": "JSFunction",
+            "method": "updateTitleLink",
+            "inputData": {
+                "subscribedObjectType":"{{data.subscribedObjectType}}",
+                "selectedFollowType":"{{props.subPanelContext.sharedData.selectedFollowType.props.type_name}}"
+            },
+            "outputData":{
+                "subscribedObjectType": ""
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "getPreferences" : {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-PreferenceManagement",
+            "method": "getPreferences",
+            "inputData":
+             {
+                "preferenceNames" : [ "AWC_followMultiEventConfiguredEventTypes" ],
+                "includePreferenceDescriptions" : false
+             },
+             "outputData":
+             {
+                "response": "response"
+             },
+             "events": {
+                "success" : [
+                    {
+                        "name": "updatemyEventCheckboxDefaultSelectiontrueEvent",
+                        "condition": "response.length > 0 && response[ 0 ].values && response[ 0 ].values.values && response[ 0 ].values.values.length > 0 && response[ 0 ].values.values[ 0 ] !== ''"
+                    },
+                    {
+                        "name": "updatemyEventCheckboxDefaultSelectionfalseEvent",
+                        "condition": "!response || !(response.length > 0 && response[ 0 ].values && response[ 0 ].values.values && response[ 0 ].values.values.length > 0 && response[ 0 ].values.values[ 0 ] !== '')"
+                    }
+               ]
+            }
+        },
+        "updatemyEventCheckboxDefaultSelectiontrue":{
+            "actionType": "JSFunction",
+            "method": "updatemyEventCheckboxDefaultSelectiontrue",
+            "inputData":
+            {
+                "multiEventCheckbox" : "{{fields.multiEventCheckbox}}"
+            },
+            "events": {
+                "success" : [
+                    {
+                        "name": "multiEventDisplayEvent"
+                    }
+               ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "updatemyEventCheckboxDefaultSelectionfalse":{
+            "actionType": "JSFunction",
+            "method": "updatemyEventCheckboxDefaultSelectionfalse",
+            "events": {
+                "success" : [
+                    {
+                        "name": "multiEventDisplayEvent"
+                    }
+               ]
+            },
+            "deps":"js/Sub0SubscribeCommandPanelService"
+        },
+        "updateSubscriptionCtxMultiEvent": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value" : {
+                    "subscriptionCtx.isMultiEvent":"{{data.subscriptionCtx.isMultiEvent}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateSubscriptionCtxEventTypeList": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.sharedData}}",
+                "value" : {
+                    "subscriptionCtx.eventTypeList":"{{data.subscriptionCtx.eventTypeList}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "resetAndReload": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "resetMultiEventCheckBoxEvent"
+                    },
+                    {
+                        "name": "getEventTypeEvent",
+                        "condition": "data.subscribedObjectType.dbValue===''"
+                    }
+                ]
+            }
+        },
+        "resetPropertyIsCreateAction": {
+            "actionType": "JSFunction",
+            "method": "resetUpdates",
+            "inputData": {
+                "vmProp": "{{data.isCreateAction}}"
+            },
+            "deps": "js/uwPropertyService"
+        }
+    },
+    "functions": {
+        "processCreateSubscriptionPartialErrors": {
+            "functionName": "processCreateSubscriptionPartialErrors",
+            "parameters": [
+                "{{data}}",
+                "{{props.subPanelContext.sharedData}}"
+            ]
+        },
+        "processEventTypes": {
+            "functionName": "processEventTypes",
+            "parameters": [
+                "{{fields.eventType}}"
+            ]
+        }
+    },
+     "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+        },
+     "data":
+     {
+
+         "addFollowersCommand":"sub0_addFollowerCommands",
+         "eventType":
+         {
+             "displayName": "{{i18n.eventtype}}",
+             "type": "STRING",
+             "hasLov": true
+         },
+         "subscribedObjectType": {
+             "type": "STRING",
+             "isRequired": "false",
+             "dbValue": ""
+         },
+         "subscribedObject": {
+            "type": "STRING",
+            "isRequired": "false",
+            "dbValue": ""
+        },
+        "multiEventCheckbox": {
+            "displayName": "{{i18n.myEvents}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "isCreateAction": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "editEventConfigurationCommand": {
+            "action": "openUserEventsConfigPanel",
+            "iconName": "Edit",
+            "tooltip": "{{i18n.EditMyEvents}}"
+        },
+        "actionHandler": {
+            "type": "ImanActionHandler"
+        },
+        "name": {
+            "displayName": "{{i18n.name}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "frequency": {
+            "displayName": "{{i18n.frequency}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "frequencies": "",
+        "priority": {
+            "displayName": "{{i18n.priority}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "priorities": "",
+        "operator": {
+            "displayName": "{{i18n.operatorLabel}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "hasLov": true
+        },
+        "operators": "",
+        "releaseStatus": {
+            "displayName": "{{i18n.releaseStatusLabel}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "releaseStatuses": "",
+        "relationType": {
+            "displayName": "{{i18n.relationTypeLabel}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "relationTypes": "",
+        "attachmentType": {
+            "displayName": "{{i18n.attachmentTypeLabel}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "dataProvider": "attachmentTypeProvider"
+        },
+        "attachmentTypes": "",
+        "isItemRevisions": {
+            "displayName": "{{i18n.itemRevsLabel}}",
+            "type": "BOOLEAN",
+            "isEditable": "true",
+            "propertyLabelDisplay": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "isBaselineRevisions": {
+            "displayName": "{{i18n.baselineRevsLabel}}",
+            "type": "BOOLEAN",
+            "isEditable": "true",
+            "propertyLabelDisplay": "PROPERTY_LABEL_AT_RIGHT"
+        }
+    },
+    "lifecycleHooks": {
+
+        "onUpdate": [
+            {
+                "action": "updateInit",
+                "observers": [ "props.subPanelContext.sharedData.prePanelId" ]
+            },
+            {
+                "action": "updateFollowersProvider",
+                "observers": [ "props.subPanelContext.addUserPanelState.selectedUsers" ]
+            }
+        ]
+    },
+     "onEvent":
+     [
+        {
+            "eventId": "updateSubscriptionCtxMultiEvent",
+            "action": "updateSubscriptionCtxMultiEvent"
+        },
+        {
+            "eventId": "updateSubscriptionCtxEventTypeList",
+            "action": "updateSubscriptionCtxEventTypeList"
+        },
+         {
+            "eventId":"getSubscriptionViewAndViewModelResponseEvent",
+            "action":"processGetSubscriptionViewAndViewModelResponse"
+         },
+         {
+            "eventId": "resetMyEventAndReloadPinnedPanel",
+            "action": "resetAndReload"
+        },
+        {
+            "eventId": "resetMultiEventCheckBoxEvent",
+            "action": "resetMultiEventCheckBox"
+        },
+        {
+            "eventId": "updateSubscriptionListEvent",
+            "action": "updateSubscriptionList"
+        },
+        {
+            "eventId": "sub0RemoveFollowerCmdActionEvent",
+            "action": "removeFollowers"
+        },
+        {
+            "eventId": "createSubscriptionEvent",
+            "action": "createNewSubscription"
+        },
+        {
+            "eventId": "openSubscriptionObject",
+            "action": "openCreatedSubscription"
+        },
+        {
+            "eventId": "resetPropertyIsCreateActionEvent",
+            "action": "resetPropertyIsCreateAction"
+        },
+        {
+            "eventId": "addObject.objectcreated",
+            "action": "updateRecentUsedTypes"
+        },
+        {
+            "eventId": "createSubscriptionInput",
+            "action": "createSubscriptionInput"
+        },
+        {
+            "eventId": "getEventTypeEvent",
+            "action": "getEventTypes"
+        },
+        {
+            "eventId": "checkMultiEventBoxEvent",
+            "action": "getApplicableEvent"
+        },
+        {
+            "eventId": "uncheckMultiEventBoxEvent",
+            "action": "getEventTypes"
+        },
+        {
+            "eventId": "updateEventTypeToFollowMultiEvent",
+            "action": "updateEventTypeToFollowMultiEvent"
+        },
+        {
+            "eventId": "renderViewEvent",
+            "action": "renderView"
+        },
+        {
+            "eventId": "renderSingleEventView",
+            "action": "renderSingleEventView"
+        },
+        {
+            "eventId": "myEventDefaultSelection",
+            "action": "myEventDefaultSelection"
+        },
+        {
+            "eventId": "getPreferencesEvent",
+            "action": "getPreferences"
+        },
+        {
+            "eventId": "updatemyEventCheckboxDefaultSelection",
+            "action": "updatemyEventCheckboxDefaultSelection"
+        },
+        {
+            "eventId": "updatemyEventCheckboxDefaultSelectiontrueEvent",
+            "action": "updatemyEventCheckboxDefaultSelectiontrue"
+        },
+        {
+            "eventId": "updatemyEventCheckboxDefaultSelectionfalseEvent",
+            "action": "updatemyEventCheckboxDefaultSelectionfalse"
+        },
+        {
+            "eventId": "multiEventDisplayEvent",
+            "action": "multiEventDisplay"
+        },
+        {
+            "eventId": "addEventTypeToListEvent",
+            "action": "addEventTypeToList"
+        },
+        {
+            "eventId": "Sub0CreateSubscriptionSub.updateTitleLink",
+            "condition": "ctx.locationContext['ActiveWorkspace:SubLocation'] !== 'com.siemens.splm.client.subscription.follow.Subscriptions'",
+            "action": "updateTitleLink"
+        },
+        {
+            "eventId": "Sub0CreateSubscriptionSub.updateTitleLinkForSubscribeType",
+            "action": "updateTitleLinkForSubscribeType"
+        }
+
+    ],
+    "dataProviders": {
+        "getSubscribableEvents": {
+            "action": "getEventTypesForSingleSelection",
+            "response": "{{data.subscriptions}}"
+        },
+        "followers_provider": {
+            "response": "{{data.addedObject.dbValues[0]}}",
+            "totalFound": "{{data.addedObject.dbValues[0].length}}",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        },
+        "attachmentTypeProvider": {
+            "action": "getAttachmentTypesPaginated",
+            "response": "{{data.attachmentTypes}}",
+            "totalFound": "{{data.attachmentTypes.length}}",
+            "moreValuesExist": "{{data.moreValuesExist}}"
+        }
+    },
+     "ctx": {
+        "mselected":{
+            "type":"object"
+        },
+        "myEventCheckboxDefaultSelection": {
+            "type":"boolean"
+        }
+    },
+    "messages":{
+        "createSubscriptionSuccessfulMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.successfulSubscription}}",
+            "messageTextParams": [
+                "{{data.name.dbValue}}"
+            ]
+        },
+        "createSubscriptionFailureMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.generalError}}",
+            "messageTextParams": [
+                "{{data.name.dbValue}}"
+            ]
+        },
+        "confirmDuplicateSubscriptionFailureMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.duplicateSubscription}}",
+            "messageTextParams": [
+                "{{data.name.dbValue}}",
+                "{{data.existingSub.props.object_string.dbValues[0]}}"
+            ],
+            "navigationOptions": [
+                {
+                    "option": "Cancel",
+                    "text": "{{i18n.cancel}}",
+                    "action": ""
+                },
+                {
+                    "option": "Ok",
+                    "text": "{{i18n.ok}}",
+                    "action": "openSubscription"
+                }
+            ]
+        },
+        "createMultiSubscriptionFailureMessage": {
+            "expression": {
+                "successCount": "props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length - data.createPartialErrors.length"
+            },
+            "messageType": "ERROR",
+            "messageText": "{{i18n.createMultiSubscriptionFailureWithReason}}",
+            "messageTextParams": [
+                "{{expression.successCount}}",
+                "{{props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length}}",
+                "{{data.errors}}"
+            ]
+        },
+        "createMultiSubscriptionSuccessMessage": {
+            "expression": {
+                "successCount": "props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length - data.createPartialErrors.length"
+            },
+            "messageType": "INFO",
+            "messageText": "{{i18n.createMultiSubscriptionSuccess}}",
+            "messageTextParams": [
+                "{{expression.successCount}}",
+                "{{props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.uids.length}}"
+            ]
+        },
+        "createMultiEventSubscriptionSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.createMultiEventSubscriptionSuccess}}",
+            "messageTextParams": [
+                "{{data.subscribedObject.propertyDisplayName}}"
+            ]
+        },
+        "createMultiEventForTypeSubscriptionSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.createMultiEventSubscriptionSuccess}}",
+            "messageTextParams": [
+                "{{data.subscribedObjectType.propertyDisplayName}}"
+            ]
+        },
+        "createMultiEventSubscriptionFailureMessage": {
+            "expression": {
+                "successCount": "data.applicableEventList.length - data.createPartialErrors.length"
+            },
+            "messageType": "ERROR",
+            "messageText": "{{i18n.createMultiSubscriptionFailureWithReason}}",
+            "messageTextParams": [
+                "{{expression.successCount}}",
+                "{{data.applicableEventList.length}}",
+                "{{data.errors}}"
+            ]
+        },
+        "createMultiEventForTypeSubscriptionFailureMessage": {
+            "expression": {
+                "successCount": "data.applicableEventList.length - data.createPartialErrors.length"
+            },
+            "messageType": "ERROR",
+            "messageText": "{{i18n.createMultiEventForTypeSubscriptionFailureWithReason}}",
+            "messageTextParams": [
+                "{{data.subscribedObjectType.propertyDisplayName}}",
+                "{{expression.successCount}}",
+                "{{data.applicableEventList.length}}",
+                "{{data.errors}}"
+            ]
+        },
+        "noApplicableEventExistForSelectedObjectMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.noApplicableEvent}}",
+            "messageTextParams": [],
+            "navigationOptions": [
+                {
+                    "option": "Ok",
+                    "text": "{{i18n.ok}}",
+                    "action": "resetMultiEventCheckBox"
+                }
+            ]
+        },
+        "noMoreEventsToFollowMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.noMoreEvents}}"
+        }
+    },
+    "conditions": {
+        "ismyEventDefaultSelection":{
+            "expression": "(ctx.mselected.length===1 || subPanelContext.sharedData.selectedFollowType) && ctx.myEventCheckboxDefaultSelection !== false"
+        },
+
+        "isPropertyDisplayName":{
+            "expression":"data.subscribedObjectType.propertyDisplayName!=''"
+        },
+        "isItemRevisionCheckBoxVisible":{
+            "expression":"data.isItemRevisions.dbValue!==undefined"
+        },
+        "isBaseRevisionCheckBoxVisible": {
+            "expression":"data.isBaselineRevisions.dbValue!==undefined"
+        },
+        "isAssignStatusFollow": {
+            "expression": "data.applicableEventList.length ===1 && data.applicableEventList[0].props.eventtype_id.dbValues[0]==='__Attained_Release_Status'"
+        },
+        "isAttachFollow": {
+            "expression": "data.applicableEventList.length ===1 && data.applicableEventList[0].props.eventtype_id.dbValues[0]==='__Attach'"
+        },
+
+       "isAddFollower": {
+            "expression": "props.subPanelContext.addUserPanelState.selectedUsers && props.subPanelContext.addUserPanelState.selectedUsers.length > 0"
+        },
+        "isSubscribedObjectTitleVisible":{
+            "expression":"data.subscribedObjectType.propertyDisplayName=='' && props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.objects.length<=1"
+        },
+        "isCheckboxandEditbtnVisible":{
+            "expression":"props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.objects.length<=1"
+        },
+        "isMultiObjectSelected":{
+            "expression":"props.subPanelContext.sharedData.subscriptionCtx.subscribableObjects.objects.length>1"
+        },
+        "shouldUpdateInit":{
+            "expression":"subPanelContext.sharedData.activeView =='Sub0CreateSubscriptionSub' && subPanelContext.sharedData.prePanelId !=='AwPeoplePicker' && subPanelContext.sharedData.prePanelId !==''"
+        }
+    },
+    "i18n": {
+
+        "followersXRTTitle": [
+            "SubscriptionMessages"
+        ],
+        "followCommandTitle": [
+            "SubscriptionMessages"
+        ],
+        "name": [
+            "SubscriptionMessages"
+        ],
+        "eventtype": [
+            "SubscriptionMessages"
+        ],
+        "selectEventType": [
+            "SubscriptionMessages"
+        ],
+        "frequency": [
+            "SubscriptionMessages"
+        ],
+        "priority": [
+            "SubscriptionMessages"
+        ],
+        "successfulSubscription": [
+            "SubscriptionMessages"
+        ],
+        "duplicateSubscription": [
+            "SubscriptionMessages"
+        ],
+        "generalError": [
+            "SubscriptionMessages"
+        ],
+        "cancel": [
+            "SubscriptionMessages"
+        ],
+        "ok": [
+            "SubscriptionMessages"
+        ],
+        "createMultiSubscriptionFailure": [
+            "SubscriptionMessages"
+        ],
+        "createMultiSubscriptionSuccess": [
+            "SubscriptionMessages"
+        ],
+        "createMultiSubscriptionFailureWithReason": [
+            "SubscriptionMessages"
+        ],
+        "myEvents": [
+            "SubscriptionMessages"
+        ],
+        "multiObjectSelected": [
+            "SubscriptionMessages"
+        ],
+        "userEventsConfigTitle": [
+            "SubscriptionMessages"
+        ],
+        "noApplicableEvent": [
+            "SubscriptionMessages"
+        ],
+        "noMoreEvents": [
+            "SubscriptionMessages"
+        ],
+        "createMultiEventSubscriptionSuccess": [
+            "SubscriptionMessages"
+        ],
+        "createMultiEventForTypeSubscriptionFailureWithReason": [
+            "SubscriptionMessages"
+        ],
+        "EditMyEvents": [
+            "SubscriptionMessages"
+        ],
+        "operatorLabel": [
+            "SubscriptionMessages"
+        ],
+        "attachmentTypeLabel": [
+            "SubscriptionMessages"
+        ],
+        "relationTypeLabel": [
+            "SubscriptionMessages"
+        ],
+        "itemRevsLabel": [
+            "SubscriptionMessages"
+        ],
+        "baselineRevsLabel": [
+            "SubscriptionMessages"
+        ],
+        "releaseStatusLabel": [
+            "SubscriptionMessages"
+        ],
+        "allLabel": [
+            "SubscriptionMessages"
+        ]
+
+
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "imageDataProvider"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.provider.context.search.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "startIndex": "{{data.dataProviders.imageDataProvider.startIndex}}",
+                    "searchFilterMap6": "{{subPanelContext.provider.context.search.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.provider.searchContext.criteria}}"
+                },
+                "1": null,
+                "2": null,
+                "3": false
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "handleCdmRelatedModifiedEvent": {
+            "actionType": "JSFunction",
+            "method": "handleCdmRelatedModifiedEvent",
+            "inputData": {
+                "eventdata": "{{parameters.eventData}}",
+                "baseSelection": "{{subPanelContext.provider.baseSelection}}",
+                "dataProvider": "{{data.dataProviders.imageDataProvider}}"
+            },
+            "deps": "js/objectNavigationService"
+        }
+    },
+    "dataProviders": {
+        "imageDataProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectObjectNavigationCellListActionCommands"
+        }
+    },
+    "data": {
+        "uid": "{{subPanelContext.provider.baseSelection.uid}}"
+    },
+    "functions": {
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}",
+                "{{subPanelContext}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    },
+    "onEvent": [ {
+        "eventId": "cdm.relatedModified",
+        "action": "handleCdmRelatedModifiedEvent",
+        "inputArgs": {
+            "eventData": "{{eventData}}"
+        }
+    } ]
+}

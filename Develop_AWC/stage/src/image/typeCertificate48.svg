@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="4.5" y1="41.5" x2="43.5" y2="2.5" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="13.179" y1="14.538" x2="19.821" y2="21.179" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a5cfdc"/>
+      <stop offset="0.128" stop-color="#9cc9d7"/>
+      <stop offset="0.335" stop-color="#84bacb"/>
+      <stop offset="0.596" stop-color="#5ea2b7"/>
+      <stop offset="0.896" stop-color="#28809b"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="25.199" y1="-3.307" x2="30.534" y2="10.452" gradientTransform="translate(-5.333 25.181) rotate(-46.306)" xlink:href="#linear-gradient-2"/>
+  <rect x="6.5" y="4.5" width="35" height="43" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="12" y1="41.5" x2="36" y2="41.5" fill="none" stroke="#5a5a5a"/>
+  <polyline points="19.5 14.217 19.5 21.5 16.5 18.5 13.5 21.5 13.5 14.217" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#linear-gradient-2)"/>
+  <path d="M23.306,4.684a2.45,2.45,0,0,0-2.5-1.487A2.428,2.428,0,0,0,16.5,1.411a2.427,2.427,0,0,0-4.3,1.78A2.429,2.429,0,0,0,10.411,7.5a2.428,2.428,0,0,0,1.78,4.3A2.429,2.429,0,0,0,16.5,13.59a2.428,2.428,0,0,0,4.3-1.78A2.429,2.429,0,0,0,22.59,7.5,2.45,2.45,0,0,0,23.306,4.684ZM17.4,9.67A2.348,2.348,0,1,1,18.67,6.6,2.348,2.348,0,0,1,17.4,9.67Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.006" fill="url(#linear-gradient-3)"/>
+  <line x1="12" y1="26.5" x2="36" y2="26.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="12" y1="31.5" x2="36" y2="31.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="12" y1="36.5" x2="36" y2="36.5" fill="none" stroke="#5a5a5a"/>
+</svg>

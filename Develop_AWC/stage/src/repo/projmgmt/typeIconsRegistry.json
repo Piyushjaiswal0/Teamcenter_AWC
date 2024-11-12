@@ -1,0 +1,20 @@
+[
+  {
+    "type": {
+      "names": [
+        "TC_Project"
+      ],
+      "prop": {
+        "names": [
+          "use_program_security"
+        ],
+        "iconFileName": "typeAuthorizationProgram48",
+        "conditions": {
+          "use_program_security": {
+            "$eq": "true"
+          }
+        }
+      }
+    }
+  }
+]

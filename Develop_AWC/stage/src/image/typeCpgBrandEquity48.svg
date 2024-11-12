@@ -1,0 +1,52 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="8" y1="19" x2="29" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="11.11" y1="68.359" x2="16.06" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="12.524" y1="68.359" x2="17.474" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="13.938" y1="68.359" x2="18.888" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-5" x1="16.767" y1="68.359" x2="21.717" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-6" x1="18.181" y1="68.359" x2="23.131" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-7" x1="21.009" y1="68.359" x2="25.959" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-8" x1="22.424" y1="68.359" x2="27.373" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-9" x1="23.838" y1="68.359" x2="28.788" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-10" x1="25.252" y1="68.359" x2="30.202" y2="73.308" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-11" x1="19" y1="11" x2="40" y2="32" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-12" x1="13.231" y1="54.924" x2="18.181" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-13" x1="14.645" y1="54.924" x2="19.595" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-14" x1="16.06" y1="54.924" x2="21.009" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-15" x1="18.888" y1="54.924" x2="23.838" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-16" x1="20.302" y1="54.924" x2="25.252" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-17" x1="23.131" y1="54.924" x2="28.081" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-18" x1="24.545" y1="54.924" x2="29.495" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-19" x1="25.959" y1="54.924" x2="30.909" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-20" x1="27.373" y1="54.924" x2="32.323" y2="59.873" gradientTransform="translate(55.481 -33.693) rotate(45)" xlink:href="#Dark_Blue_Grad"/>
+  <path d="M35.5,33.5l-13,13-21-21,13-13ZM9.439,20.439a1.5,1.5,0,1,0,2.121,0A1.5,1.5,0,0,0,9.439,20.439Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M10.5,21.5s-3.248-7.7,1-13" fill="none" stroke="#969696" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="13.636" y="21.101" width="12.728" height="19.799" transform="translate(-16.062 23.222) rotate(-45)" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="18.5" y1="22.5" x2="11.5" y2="29.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <line x1="19.5" y1="23.5" x2="12.5" y2="30.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-3)"/>
+  <line x1="20.5" y1="24.5" x2="13.5" y2="31.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-4)"/>
+  <line x1="22.5" y1="26.5" x2="15.5" y2="33.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-5)"/>
+  <line x1="23.5" y1="27.5" x2="16.5" y2="34.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-6)"/>
+  <line x1="25.5" y1="29.5" x2="18.5" y2="36.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-7)"/>
+  <line x1="26.5" y1="30.5" x2="19.5" y2="37.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-8)"/>
+  <line x1="27.5" y1="31.5" x2="20.5" y2="38.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-9)"/>
+  <line x1="28.5" y1="32.5" x2="21.5" y2="39.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-10)"/>
+  <path d="M46.5,25.5l-13,13-21-21,13-13ZM20.439,12.439a1.5,1.5,0,1,0,2.121,0A1.5,1.5,0,0,0,20.439,12.439Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-11)"/>
+  <path d="M21.5,13.5s-3.248-7.7,1-13" fill="none" stroke="#969696" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24.636" y="13.101" width="12.728" height="19.799" transform="translate(-7.184 28.657) rotate(-45)" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="29.5" y1="14.5" x2="22.5" y2="21.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-12)"/>
+  <line x1="30.5" y1="15.5" x2="23.5" y2="22.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-13)"/>
+  <line x1="31.5" y1="16.5" x2="24.5" y2="23.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-14)"/>
+  <line x1="33.5" y1="18.5" x2="26.5" y2="25.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-15)"/>
+  <line x1="34.5" y1="19.5" x2="27.5" y2="26.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-16)"/>
+  <line x1="36.5" y1="21.5" x2="29.5" y2="28.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-17)"/>
+  <line x1="37.5" y1="22.5" x2="30.5" y2="29.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-18)"/>
+  <line x1="38.5" y1="23.5" x2="31.5" y2="30.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-19)"/>
+  <line x1="39.5" y1="24.5" x2="32.5" y2="31.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-20)"/>
+</svg>

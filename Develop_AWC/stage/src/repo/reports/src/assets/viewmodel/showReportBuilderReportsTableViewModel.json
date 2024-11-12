@@ -1,0 +1,247 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+
+    "actions": {
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "gridDataProvider"
+        },
+        "updateDataProvider": {
+            "actionType": "JSFunction",
+            "method": "updateDataProvider",
+            "inputData": {
+                "searchData": "{{props.subPanelContext.searchState}}",
+                "searchResults": "{{data.searchResults}}",
+                "data": "{{data.dataProviders.gridDataProvider}}"
+            },
+            "deps": "js/showReportBuilderReportsService"
+        },
+        "getreportdefinitionlist":{
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "deps": "js/showReportBuilderReportsService",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "attributesToInflate": [ "rd_name", "rd_type" ],
+                    "maxToLoad": -1,
+                    "maxToReturn": -1,
+                    "providerName": "Rb0ReportsDataProvider",
+                    "searchCriteria": "{{function:getReportDefSearchCriteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "startIndex": "{{data.dataProviders.listDataProvider.startIndex}}",
+                    "searchFilterMap6": "",
+                    "searchSortCriteria": ""
+                },
+
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0ReportBuilder"
+                }
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [ {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "{{function:getReportDefinitionValList}}"
+            }
+        },
+        "loadColumns": {
+            "actionType": "JSFunction",
+            "method": "loadColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.gridDataProvider}}"
+            },
+            "deps": "js/showReportBuilderReportsService"
+        },
+        "performSelectionAndRunReport": {
+            "actionType": "JSFunction",
+            "method": "performSelectionAndRunReport",
+            "deps": "js/showReportBuilderReportsService",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.gridDataProvider.selectionModel}}",
+                "selectedReport": "{{data.eventData.selectedReport}}",
+                "ctx": "{{ctx}}"
+            }
+        },
+        "resetDataProviderAndSelectFirstItem": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "resetDataProvider"
+            }, {
+                "action": "selectFirstItem"
+            }]
+        },
+        "resetDataProvider": {
+            "actionType": "dataProvider",
+            "method": "gridDataProvider"
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.gridDataProvider.selectionModel}}",
+                "newSelection": "{{props.subPanelContext.searchState.saveAsReportUID}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "updateSelection":{
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.gridDataProvider.selectionModel}}",
+                "newSelection": "{{props.subPanelContext.searchState.previousSelectedReport}}"
+            },
+            "deps": "js/selectionModelFactory"
+        }
+    },
+
+    "messages": {
+        "invalidFileError": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.invalidFileError}}",
+            "navigationOptions": [ {
+                    "option": "Discard",
+                    "text": "{{i18n.Discard}}"
+                },
+
+                {
+                    "option": "Save",
+                    "text": "{{i18n.Save}}"
+                }
+            ]
+        }
+    },
+
+    "i18n": {
+        "sharedWith":["ReportChartMessages"],
+        "noReportTemplates": ["ReportChartMessages"],
+        "emptyReportAreaHint": ["ReportChartMessages"],
+        "createReport": ["ReportChartMessages"]
+    },
+
+    "columnProviders": {
+        "staticColumnProvider": {
+            "loadColumnAction": "loadColumns",
+            "columns": "{{data.columns}}",
+            "sortCriteria": [
+
+            ]
+        }
+    },
+
+    "dataProviders": {
+        "gridDataProvider": {
+            "action": "getreportdefinitionlist",
+            "editContext": "TABLE_CONTEXT",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{selectionModels.tableSelectionModel}}",
+                "selectionData": "{{props.subPanelContext.selectionData}}"
+            },
+            "commandsAnchor": "reportdefinition_cell_commands"
+        }
+    },
+
+    "selectionModels": {
+        "tableSelectionModel": {
+            "selectionMode": "single"
+        }
+    },
+
+    "grids": {
+        "reportGridView": {
+            "dataProvider": "gridDataProvider",
+            "columnProvider": "staticColumnProvider",
+            "gridOptions": {
+                "enablePinning": true,
+                "enableSorting": false
+            }
+        }
+    },
+
+    "functions": {
+        "getReportDefinitionValList": {
+            "functionName": "getReportDefinitionValList",
+            "parameters": [
+                "{{subPanelContext.searchState}}",
+                "{{data.preferenceName}}",
+                "{{i18n}}"
+            ]
+        },
+        "getReportDefSearchCriteria":{
+            "functionName": "getReportDefSearchCriteria",
+            "parameters":[]
+        }
+    },
+
+    "onEvent": [ {
+            "eventId": "reportGridView.initialized",
+            "action": "doGridDataProvider"
+        },
+        {
+            "eventId": "dataProvider.reset",
+            "action": "doGridDataProvider"
+        },
+        {
+            "eventId": "selectReportAndDisplayGenerateReportPanel",
+            "action": "performSelectionAndRunReport",
+            "cacheEventData": true
+        }
+    ],
+    "lifecycleHooks": {
+        "onUpdate": [{
+            "action": "updateDataProvider",
+            "observers": [
+                "props.subPanelContext.searchState.criteria.searchString",
+                "props.subPanelContext.searchState.filterString"
+            ]
+        },{
+            "action": "resetDataProviderAndSelectFirstItem",
+            "observers": ["props.subPanelContext.searchState.saveAsReportUID"]
+        },{
+            "action": "updateSelection",
+            "observers": ["props.subPanelContext.searchState.previousSelectedReport"]
+        }]
+    }
+}

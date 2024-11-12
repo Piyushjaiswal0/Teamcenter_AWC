@@ -1,0 +1,41 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="4.6277" y1="30.7076" x2="9.3723" y2="35.4522" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="1.923" y1="38.7689" x2="12.077" y2="48.923" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="21.6277" y1="1.7076" x2="26.3723" y2="6.4522" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="18.923" y1="9.7689" x2="29.077" y2="19.923" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ccc"/>
+      <stop offset="0.5556" stop-color="#adadad"/>
+      <stop offset="0.8788" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="21.6277" y1="30.7076" x2="26.3723" y2="35.4522" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad-2" x1="18.923" y1="38.7689" x2="29.077" y2="48.923" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="linear-gradient-5" x1="38.6276" y1="30.7076" x2="43.3723" y2="35.4522" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="35.9229" y1="38.7689" x2="46.077" y2="48.923" xlink:href="#Dark_Blue_Grad"/>
+  <path d="M10,32.7813C10,34.5934,8.6569,37,7,37s-3-2.4066-3-4.2187A3.15,3.15,0,0,1,7,29.5,3.15,3.15,0,0,1,10,32.7813Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path d="M13.5,47.5V41.7777A4.2915,4.2915,0,0,0,10.8969,38a6.6471,6.6471,0,0,1-7.7938,0A4.2915,4.2915,0,0,0,.5,41.7777V47.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <line x1="3.5" y1="47" x2="3.5" y2="43" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="10.5" y1="47" x2="10.5" y2="43" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <path d="M27,3.7813C27,5.5934,25.6569,8,24,8s-3-2.4066-3-4.2187A3.15,3.15,0,0,1,24,.5,3.15,3.15,0,0,1,27,3.7813Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <path d="M30.5,18.5V12.7777A4.2915,4.2915,0,0,0,27.8969,9a6.6471,6.6471,0,0,1-7.7938,0A4.2915,4.2915,0,0,0,17.5,12.7777V18.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <line x1="20.5" y1="18" x2="20.5" y2="14" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <line x1="27.5" y1="18" x2="27.5" y2="14" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <path d="M41,28V26.1243A2.1243,2.1243,0,0,0,38.8757,24H9.1243A2.1243,2.1243,0,0,0,7,26.1243V28" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="24" y1="20" x2="24" y2="28" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M27,32.7813C27,34.5934,25.6569,37,24,37s-3-2.4066-3-4.2187A3.15,3.15,0,0,1,24,29.5,3.15,3.15,0,0,1,27,32.7813Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+  <path d="M30.5,47.5V41.7777A4.2915,4.2915,0,0,0,27.8969,38a6.6471,6.6471,0,0,1-7.7938,0A4.2915,4.2915,0,0,0,17.5,41.7777V47.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <line x1="20.5" y1="47" x2="20.5" y2="43" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="27.5" y1="47" x2="27.5" y2="43" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <path d="M44,32.7813C44,34.5934,42.6568,37,41,37s-3-2.4066-3-4.2187a3.0121,3.0121,0,1,1,6,0Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-5)"/>
+  <path d="M47.5,47.5V41.7777A4.2915,4.2915,0,0,0,44.8969,38a6.6473,6.6473,0,0,1-7.7939,0A4.2913,4.2913,0,0,0,34.5,41.7777V47.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-3)"/>
+  <line x1="37.5" y1="47" x2="37.5" y2="43" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="44.5" y1="47" x2="44.5" y2="43" fill="none" stroke="#147391" stroke-linejoin="round"/>
+</svg>

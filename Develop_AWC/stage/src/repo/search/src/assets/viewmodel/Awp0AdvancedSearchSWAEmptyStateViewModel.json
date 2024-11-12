@@ -1,0 +1,46 @@
+{
+    "schemaVersion" : "1.0.0",
+    "actions": {
+        "advancedSearchLinkCommand": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/command.service",
+            "method": "executeCommand",
+            "inputData": {
+                "0": "Awp0AdvancedSearch",
+                "1": "",
+                "2": "",
+                "3": "",
+                "4": "{{parameters.commandActionExecutor.runActionWithViewModel}}"
+            }
+        }
+    },
+    "data":{
+        "clicked": true,
+        "image": "homeSearch"
+    },
+    "conditions": {
+        "checkIfOnlySWAIsEmpty": {
+            "expression": "props.subPanelContext.selection.length === 0 && subPanelContext.context.searchState.totalFound > 0"
+        },
+        "checkIfPWAIsEmpty": {
+            "expression": "props.subPanelContext.selection.length === 0 && !subPanelContext.context.searchState.totalFound && !subPanelContext.context.searchState.totalLoaded"
+        }
+    },
+    "i18n": {
+        "advancedSearch": [
+            "SearchMessages"
+        ],
+        "nothingFound": [
+            "SearchMessages"
+        ],
+        "emptySearchAreaHint": [
+            "SearchMessages"
+        ],
+        "nothingSelected": [
+            "SearchMessages"
+        ],
+        "nothingSelectedSearchAreaHint": [
+            "SearchMessages"
+        ]
+    }
+}

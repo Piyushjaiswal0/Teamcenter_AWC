@@ -1,0 +1,68 @@
+{
+    "types": [{
+        "name": "BusinessObject",
+        "properties": [{
+            "name": "awp0CellProperties"
+        }]
+    },
+    {
+        "name": "BOMLine",
+        "properties": [{
+            "name": "bl_revision"
+        }]
+    },
+    {
+        "name": "Awp0XRTObjectSetRow",
+        "properties": [{
+            "name": "awp0Target"
+        },
+        {
+            "name": "awp0IsCutAllowed"
+        },
+        {
+            "name": "awp0Primary"
+        },
+        {
+            "name": "awp0Relation"
+        },
+        {
+            "name": "awp0Secondary"
+        },
+        {
+            "name": "awp0RelationTypeName"
+        },
+        {
+            "name": "awp0RelationTypeDisplayName"
+        },
+        {
+            "name": "awp0RefPropertyName"
+        },
+        {
+            "name": "object_string"
+        },
+        {
+            "name": "object_type"
+        }]
+    },
+    {
+        "name": "TC_Project",
+        "properties": [
+            {
+                "name": "project_id"
+            },
+
+            {
+                "name": "project_name"
+            }]
+        },
+    {
+        "name": "CreateInput",
+        "modifiers": [
+            {
+                "name": "includeIsModifiable",
+                "Value": "true"
+            }
+        ]
+    }]
+}
+

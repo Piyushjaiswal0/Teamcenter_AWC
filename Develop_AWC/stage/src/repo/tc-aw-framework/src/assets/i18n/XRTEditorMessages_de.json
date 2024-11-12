@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "Umfang:",
+    "objectTypeLabel": "Objekttyp:",
+    "xrtTypeLabel": "XRT-Typ:",
+    "locationLabel": "Speicherort:",
+    "sublocationLabel": "Unterposition:",
+    "loadButtonText": "Laden",
+    "editLabel": "Bearbeiten: ",
+    "readOnlyLabel": "(Schreibgeschützt)",
+    "overrideMsg": "\"{0}\" wird im Benutzerumfang überschrieben.",
+    "cancel": "Abbrechen",
+    "override": "Überschreiben"
+}

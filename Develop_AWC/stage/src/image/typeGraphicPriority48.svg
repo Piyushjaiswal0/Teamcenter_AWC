@@ -1,0 +1,46 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="2.75" y1="-1.75" x2="36.25" y2="31.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4e9"/>
+      <stop offset="0.2032" stop-color="#badae2"/>
+      <stop offset="0.7554" stop-color="#8bc1cf"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2" data-name="front -45 2" x1="15.1922" y1="18.2623" x2="32.465" y2="35.535" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="0.5" stop-color="#cacac9"/>
+      <stop offset="0.6282" stop-color="#c5c5c4"/>
+      <stop offset="0.7762" stop-color="#b7b7b7"/>
+      <stop offset="0.9335" stop-color="#a0a0a0"/>
+      <stop offset="0.99" stop-color="#969696"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_3" data-name="New Gradient Swatch 3" x1="11.7896" y1="33.8539" x2="17.5018" y2="39.5662" gradientTransform="translate(3.827 -6.8624) rotate(5.0648)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0b0b0"/>
+      <stop offset="1" stop-color="#7e7e7e"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2-2" x1="20.6118" y1="22.8194" x2="23.834" y2="26.0417" gradientTransform="translate(23.784 -8.5584) rotate(45)" xlink:href="#front_-45_2"/>
+    <linearGradient id="Dark_Blue_Grad_3" data-name="Dark Blue Grad 3" x1="30.9408" y1="12.4905" x2="34.163" y2="15.7127" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b3c6"/>
+      <stop offset="0.1774" stop-color="#6aadc1"/>
+      <stop offset="0.4638" stop-color="#529db3"/>
+      <stop offset="0.8215" stop-color="#2c839c"/>
+      <stop offset="1" stop-color="#16748f"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_3-2" x1="31" y1="22" x2="44" y2="35" xlink:href="#Dark_Blue_Grad_3"/>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="31" y1="30" x2="44" y2="43" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce5ea"/>
+      <stop offset="0.2214" stop-color="#c5e1e7"/>
+      <stop offset="0.5419" stop-color="#b2d7e0"/>
+      <stop offset="0.9212" stop-color="#92c6d4"/>
+      <stop offset="1" stop-color="#8bc2d1"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="38" height="29" fill="url(#linear-gradient)"/>
+    <path d="M9.5006,14.5A5,5,0,1,0,4.5,9.4988,5,5,0,0,0,9.5006,14.5Z" fill="#fff" stroke="#16748f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <polygon points="3.955 29.5 18.636 14.818 22.091 18.273 29.864 10.5 38.5 19.095 38.5 29.5 3.955 29.5" stroke="#6f6e6f" stroke-linecap="round" stroke-miterlimit="10" fill="url(#front_-45_2)"/>
+  <rect x="0.5" y="0.5" width="38" height="29" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M18.6361,24.766A6.0619,6.0619,0,0,0,12.9116,28.68,7.2059,7.2059,0,0,1,8,33.4246S20.0107,38.0859,21.872,28" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_3)"/>
+    <rect x="19.3749" y="22.1521" width="5.6961" height="4.5569" transform="translate(-10.7661 22.8695) rotate(-45)" stroke="#464646" stroke-linejoin="round" fill="url(#front_-45_2-2)"/>
+    <path d="M22.6257,20.8056,39.5237,5.7484a.9783.9783,0,0,1,1.3432.0382h0A.9782.9782,0,0,1,40.9048,7.13L25.8479,24.0278Z" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad_3)"/>
+  <rect x="27.5" y="25.5" width="20" height="6" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_3-2)"/>
+  <rect x="27.5" y="33.5" width="20" height="6" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+  <rect x="27.5" y="41.5" width="20" height="6" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <polygon points="35.5 37.5 32.5 37.5 37.5 44.5 42.5 37.5 39.5 37.5 39.5 28.5 35.5 28.5 35.5 37.5" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

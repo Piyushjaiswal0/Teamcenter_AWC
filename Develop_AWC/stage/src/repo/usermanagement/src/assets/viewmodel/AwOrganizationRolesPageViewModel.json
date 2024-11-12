@@ -1,0 +1,31 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "label": {
+                "source": "/i18n/UsermanagementMessages",
+                "key": "roleTitle"
+            },
+            "clientScopeURI": "Um0ShowRole",
+            "nameToken": "com.siemens.splm.client.usermanagement:rolesublocation",
+            "context": {
+                "search": {
+                    "provider": "um0AdminDataProvider",
+                    "criteria": {
+                        "resourceProviderContentType": "Role"
+                    },
+                    "sortType": "Alphabetical",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "showLoadingText": true
+                }
+            },
+            "selectionMode": "single",
+            "policy": "/policies/adminObjectPropertyPolicy.json",
+            "viewBase": "people"
+        }
+    }
+}

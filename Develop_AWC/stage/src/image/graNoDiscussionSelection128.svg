@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_8" data-name="New Gradient Swatch 8" x1="52.8443" y1="-1.967" x2="110.2524" y2="55.4411" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef6f8"/>
+      <stop offset="1" stop-color="#d1e6ec"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_10" data-name="New Gradient Swatch 10" x1="4.4125" y1="41.4648" x2="58.0352" y2="95.0875" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4eb"/>
+      <stop offset=".6517" stop-color="#87b8c8"/>
+      <stop offset="1" stop-color="#68a4b8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_8-2" data-name="New Gradient Swatch 8" x1="78.8475" y1="78.8475" x2="119.1525" y2="119.1525" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="85.331" y1="87.9689" x2="110.4198" y2="113.0576" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset=".1774" stop-color="#6badc1"/>
+      <stop offset=".4638" stop-color="#539cb3"/>
+      <stop offset=".8215" stop-color="#2c829c"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+  </defs>
+  <path d="m68,53.5h5.3401s19.1599,19.6935,19.1599,19.6935v-19.6935h7.2596c6.484,0,11.7404-5.2563,11.7404-11.7404V12.2404c0-6.484-5.2563-11.7404-11.7404-11.7404h-44.5192c-6.484,0-11.7404,5.2563-11.7404,11.7404v25.7596" fill="url(#New_Gradient_Swatch_8)" stroke="#16748f" stroke-linejoin="round"/>
+  <path d="m56.7596,91.5h-22.0324s-20.2272,20.2272-20.2272,20.2272v-20.2272s-2.2596,0-2.2596,0c-6.484,0-11.7404-5.2563-11.7404-11.7404v-29.5192c0-6.484,5.2563-11.7404,11.7404-11.7404h44.5192c6.484,0,11.7404,5.2563,11.7404,11.7404v29.5192c0,6.484-5.2563,11.7404-11.7404,11.7404Z" fill="url(#New_Gradient_Swatch_10)" stroke="#16748f" stroke-linejoin="round"/>
+  <circle cx="99" cy="99" r="28.5" fill="url(#New_Gradient_Swatch_8-2)" stroke="#16748f" stroke-linejoin="round"/>
+  <path d="m111.545,100.7989l-18.7451-20.2989-2.3449,27.5306,7.3403-5.6866,5.2052,15.156,4.4646-1.4876-5.2204-15.1992,9.3003-.0143Z" fill="url(#Dark_Blue_Grad_2)" stroke="#16748f" stroke-miterlimit="10"/>
+</svg>

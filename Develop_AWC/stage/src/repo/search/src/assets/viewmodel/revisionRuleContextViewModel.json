@@ -1,0 +1,20 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [],
+    "data":
+    {
+        "revisionRule":
+        {
+            "isNull": false,
+            "propertyDisplayName": "{{i18n.revisionRule}}",
+            "uiValue": "{{i18n.revisionRule}}"
+        }
+    },
+    "i18n":
+    {
+        "revisionRule": [ "SearchMessages" ]
+    },
+    "ctxFields": [
+        "userSession.props.awp0RevRule"
+    ]
+}

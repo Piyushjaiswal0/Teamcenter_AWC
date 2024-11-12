@@ -1,0 +1,33 @@
+<aw-panel-body>
+    <aw-panel-section caption="i18n.SelectedSectionTitle">
+        <aw-list dataprovider="data.dataProviders.selectedLicenses" has-floating-cell-commands="false">
+            <div class="sw-column">
+                <aw-default-cell vmo="item"></aw-default-cell>
+                <awp0-security-editable-cell sub-panel-context="item" ></awp0-security-editable-cell>
+            </div>
+        </aw-list>
+    </aw-panel-section>
+    <aw-panel-section caption="i18n.AvailableSectionTitle">
+        <aw-listbox prop="data.licenseType" list="data.availableLicenseTypes" action="callDataProvider"></aw-listbox>
+        <aw-flex-row height="30f">
+            <aw-panel-body scrollable="false">
+                <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.availableLicenses">
+                    <aw-default-cell vmo="item"></aw-default-cell>
+                </aw-list-filter>
+            </aw-panel-body>
+        </aw-flex-row>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-break></aw-break>
+    <aw-panel-section visible-when="conditions.is4GObject">
+        <aw-radiobutton prop="data.applyToAttach"></aw-radiobutton>
+    </aw-panel-section>
+    <aw-panel-section visible-when="conditions.isACEContext">
+        <aw-radiobutton prop="data.structure" visible-when="conditions.isValidToShowBOMStructure"></aw-radiobutton>
+        <aw-numeric prop="data.level" visible-when="conditions.isValidToShowLevel && conditions.isValidToShowBOMStructure"></aw-numeric>
+    </aw-panel-section>
+    <aw-button action="attach" visible-when="data.selectedLicensesUid.length>0">
+        <aw-i18n>i18n.AttachLicenseButtonText</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

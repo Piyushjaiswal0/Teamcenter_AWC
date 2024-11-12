@@ -1,0 +1,76 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/popupService"
+    ],
+    "actions": {
+        "render": {
+            "method": "alertPopupRenderFunction",
+            "deps": "js/AlertPopupView",
+            "options": {
+                "useMemo": false
+            }
+        },
+        "redirectToNewsFeed": {
+            "actionType": "Navigate",
+            "navigateTo": "com_siemens_splm_client_subscription_follow_NewsFeedSubscriptions",
+            "navigationParams": {},
+            "events": {
+                "success": [
+                    {
+                        "name": "closeAlertPopup"
+                    }
+                ]
+            }
+        },
+        "closePopup": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupEl": "{{ctx.alertPopupId}}"
+            },
+            "deps": "js/popupService"
+        },
+        "markNotificationMessageRead": {
+            "actionType": "JSFunction",
+            "method": "markSubscriptionMessagesRead",
+            "inputData": {
+                "messageObjs": [
+                    "{{commandContext}}"
+                ]
+            },
+            "deps": "js/aw.notification.service"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "NotificationMessage.markRead",
+            "action": "markNotificationMessageRead"
+        },
+        {
+            "eventId": "closeAlertPopup",
+            "action": "closePopup"
+        }
+    ],
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "ctx":{
+        "unreadMessageCount":{
+            "type":"INTEGER"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "i18n": {
+        "clear": [
+            "NotificationMessages"
+        ],
+        "noNotificationMsg": [
+            "NotificationMessages"
+        ]
+    }
+}

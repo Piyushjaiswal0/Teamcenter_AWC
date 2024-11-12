@@ -1,0 +1,239 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "onEvent": [
+        {
+            "eventId": "editHandlerStateChange",
+            "cacheEventData": true,
+            "action": "startEditGroupRoleTable",
+            "condition": "subPanelContext.session.current_user.uid === subPanelContext.openedObject.uid && state === 'starting' && dataSource.panelId === 'AwShowObjectXrt'"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "cacheEventData": true,
+            "action": "saveEditGroupRoleTable",
+            "condition": "state === 'saved' && dataSource.panelId === 'AwShowObjectXrt'"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "cacheEventData": true,
+            "action": "cancelEditGroupRoleTable",
+            "condition": "state === 'canceling' && dataSource.panelId === 'AwShowObjectXrt'"
+        },
+        {
+            "eventId": "Aut0UserSettings.setGroupMemberProperties",
+            "condition": "conditions.shouldSaveRecords",
+            "action": "setGroupMemberProperties"
+        }
+
+    ],
+
+    "props":{
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "actions": {
+        "startEditGroupRoleTable":{
+            "actionType": "dataProvider",
+            "method": "groupRoleTableDataProvider",
+            "inputData": {
+                "action": "startEdit"
+            }
+        },
+        "saveEditGroupRoleTable": {
+            "actionType": "dataProvider",
+            "method": "groupRoleTableDataProvider",
+            "inputData": {
+                "action": "saveEdits"
+            }
+        },
+        "cancelEditGroupRoleTable": {
+            "actionType": "dataProvider",
+            "method": "groupRoleTableDataProvider",
+            "inputData": {
+                "action": "cancelEdits"
+            }
+        },
+        "revealGroupRoleSettings": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Administration-2019-06-UserManagement",
+            "method": "getGroupRoleViewModelRows",
+            "inputData": {
+                "input": {
+                    "userObject": "{{ctx.selected}}",
+                    "startIndex": 0,
+                    "pageSize": 50
+                }
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "GroupMember",
+                        "properties": [
+                            {
+                                "name": "user"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "response":"",
+                "searchResults": "{{function:getGroupRoleViewModelRows}}"
+            },
+
+            "deps": "js/aw.UserSettings.Service"
+        },
+        "groupRoleTableStartEditDummyAction":{
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": []
+            }
+        },
+        "groupRoleTableSaveEdit": {
+            "actionType": "JSFunction",
+            "method": "findModifiedGroupMemberObjects",
+            "inputData": {
+                "input": "{{data.dataProviders.groupRoleTableDataProvider}}"
+
+            },
+            "outputData":{
+                "inputObjects":"inputObjects"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "Aut0UserSettings.setGroupMemberProperties"
+
+
+
+
+                    }
+                ]
+            },
+            "deps": "js/aw.UserSettings.Service"
+        },
+        "setGroupMemberProperties":{
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-UserManagement",
+            "method": "setGroupMemberProperties",
+            "inputData":
+            {
+                "inputObjects" :   "{{data.inputObjects}}"
+            },
+            "outputData": {
+                "resp": "response"
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            "deps":"js/aw.UserSettings.Service"
+        }
+    },
+    "functions": {
+        "getGroupRoleViewModelRows":{
+            "functionName": "getGroupRoleViewModelRows",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "conditions":
+    {
+
+
+
+        "shouldSaveRecords": {
+            "expression": "data.eventData.state === 'saved' && data.inputObjects.length !== 0"
+        },
+        "shouldUpdateRecords": {
+            "expression": "data.eventData.state === 'saved' && data.inputObjects.length === 0"
+        }
+    },
+    "i18n": {
+        "Group": [
+            "UsermanagementMessages"
+        ],
+        "DefaultRole": [
+            "UsermanagementMessages"
+        ]
+    },
+    "data":{
+        "inputObjects":""
+    },
+    "dataProviders": {
+        "groupRoleTableDataProvider": {
+            "action": "revealGroupRoleSettings",
+            "enablePropEdit": false,
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "editConfig": {
+                "startEditAction": "groupRoleTableStartEditDummyAction",
+                "saveEditAction": "groupRoleTableSaveEdit",
+                "identifier": "uid"
+            }
+        }
+    },
+    "columnProviders": {
+        "groupRoleTableColProvider": {
+            "frozenColumnIndex": -1,
+
+            "columns": [
+                {
+                    "name": "group",
+                    "displayName": "{{i18n.Group}}",
+                    "minWidth": 100,
+                    "width": 300,
+                    "enableColumnMenu": false,
+                    "enableColumnMoving": false,
+                    "pinnedLeft": false,
+                    "enableColumnResizing": false
+                },
+                {
+                    "name": "defaultRole",
+                    "displayName": "{{i18n.DefaultRole}}",
+                    "minWidth": 100,
+                    "width": 320,
+                    "enableColumnMenu": false,
+                    "enableColumnMoving": false,
+                    "pinnedLeft": false,
+                    "enableColumnResizing": false,
+                    "enableColumnHiding": false,
+                    "renderingHint": "AutUserSettingsRoleLOVComponent"
+                }
+            ]
+        }
+    },
+    "grids": {
+        "groupRoleEditTable": {
+            "dataProvider": "groupRoleTableDataProvider",
+            "columnProvider": "groupRoleTableColProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enableGridMenu": false,
+                "enablePinning": false,
+                "enableSorting": false
+            }
+        }
+    }
+}

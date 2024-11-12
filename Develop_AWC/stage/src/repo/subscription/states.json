@@ -1,0 +1,58 @@
+{
+  "com_siemens_splm_client_subscription_follow_internal_MySubscriptionLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/SubscriptionMessages",
+        "key": "mySybscriptionsTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/SubscriptionMessages",
+        "key": "mySybscriptionsTitle"
+      },
+      "propertyPolicy": "/policies/subscriptionObjectPropertyPolicy.json"
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "com_siemens_splm_client_subscription_follow_NewsFeedSubscriptions": {
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "/i18n/SubscriptionMessages",
+        "key": "inboxNewsFeedTitle"
+      }
+    },
+    "params": {
+      "userId": null,
+      "searchCriteria": null,
+      "filter": null
+    },
+    "parent": "com_siemens_splm_client_subscription_follow_internal_MySubscriptionLocation",
+    "view": "NewsFeedSubscriptionsPage",
+    "url": "/com.siemens.splm.client.subscription.follow.NewsFeedSubscriptions"
+  },
+  "com_siemens_splm_client_subscription_follow_Subscriptions": {
+    "data": {
+      "priority": 1,
+      "label": {
+        "source": "/i18n/SubscriptionMessages",
+        "key": "mySubscriptionFollowingSubLocationTitle"
+      }
+    },
+    "parent": "com_siemens_splm_client_subscription_follow_internal_MySubscriptionLocation",
+    "view": "FollowSubscriptionsPage",
+    "url": "/com.siemens.splm.client.subscription.follow.Subscriptions"
+  },
+  "com_siemens_splm_client_subscription_follow_FollowedSubscriptions": {
+    "data": {
+      "priority": 2,
+      "label": {
+        "source": "/i18n/SubscriptionMessages",
+        "key": "mySubscriptionAddedAsFollowersSubLocationTitle"
+      }
+    },
+    "parent": "com_siemens_splm_client_subscription_follow_internal_MySubscriptionLocation",
+    "view": "FollowedSubscriptionsPage",
+    "url": "/com.siemens.splm.client.subscription.follow.FollowedSubscriptions"
+  }
+}

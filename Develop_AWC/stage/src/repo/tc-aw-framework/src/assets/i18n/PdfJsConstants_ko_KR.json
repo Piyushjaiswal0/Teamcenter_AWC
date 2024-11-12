@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "PDF 파일 뷰어",
+    "ShowStreamErrorMessage": "스트림에는 데이터가 있어야 합니다.",
+    "LoadingPDFfile": "파일 로드 중...",
+    "LoadingFileSuccess": "파일 로드 성공...",
+    "LoadingFileFailed": "파일 로드 실패!"
+}

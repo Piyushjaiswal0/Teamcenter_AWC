@@ -1,0 +1,9 @@
+<aw-command-panel caption="i18n.followersXRTTitle">
+    <aw-panel-body>
+        <aw-people-picker sub-panel-context="{ ...subPanelContext, addUserPanelState : data.addUserPanelState }"></aw-people-picker>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="addFollowers" visible-when="data.addUserPanelState.selectedUsers.length > 0"><aw-i18n>i18n.addFollower</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>     
+</aw-command-panel>

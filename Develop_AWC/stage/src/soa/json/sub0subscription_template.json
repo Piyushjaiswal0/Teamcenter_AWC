@@ -1,0 +1,750 @@
+{
+  "BusinessObjectInterface": [
+    {
+      "createRelease": "Awp04.2.0",
+      "description": "Interface Name for Business Object Sub0NotificationProvider",
+      "libraryName": "sub0subscription",
+      "name": "Sub0NotificationProvider",
+      "namespace": "sub0subscription",
+      "primaryInterface": "true",
+      "typeName": "Sub0NotificationProvider"
+    },
+    {
+      "createRelease": "Awp04.0.0",
+      "description": "Interface Name for Business Object Sub0SubscribleTypesProvider",
+      "libraryName": "sub0subscription",
+      "name": "Sub0SubscribleTypesProvider",
+      "namespace": "sub0subscription",
+      "primaryInterface": "true",
+      "typeName": "Sub0SubscribleTypesProvider"
+    },
+    {
+      "createRelease": "Awp04.3.0",
+      "description": "Interface Name for Business Object Sub0SubscriptionProvider",
+      "libraryName": "sub0subscription",
+      "name": "Sub0SubscriptionProvider",
+      "namespace": "sub0subscription",
+      "primaryInterface": "true",
+      "typeName": "Sub0SubscriptionProvider"
+    }
+  ],
+  "Date": "Wed Jul 03 12:28:31 PM 2019",
+  "Library": [
+    {
+      "createRelease": "Awp04.0.0",
+      "description": "SOA service library for Subscription Template in Active Workspace.",
+      "isThirdParty": "false",
+      "name": "Sub0SoaNotificationAw",
+      "namespace": "Sub0::Soa::Subscription",
+      "serviceLibrary": "true"
+    },
+    {
+      "DependentOn": [
+        {
+          "name": "metaframework"
+        },
+        {
+          "name": "tccore"
+        },
+        {
+          "name": "tc"
+        },
+        {
+          "name": "cxpom"
+        }
+      ],
+      "createRelease": "Awp04.0.0",
+      "description": "Library for Subscription and Notification in Active Workspace.",
+      "isThirdParty": "false",
+      "name": "sub0subscription",
+      "namespace": "",
+      "serviceLibrary": "false"
+    }
+  ],
+  "Operation": [
+    {
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.1.0",
+      "dependencies": "",
+      "description": "This operation returns all the subscribable event types in the system.<br />Event type and its mapping is configured through BMIDE from the Extensions section, by navigating to &ldquo;Audit Manager&rdquo; and &ldquo;Event Type Mappings&rdquo;.<br />Each event type, of business object type <b>ImanEventType</b>, represents the possible event on the business objects e.g. Checkout, Delete, Cancel Checkout etc.<br /><br />The event type is mapped to a business object type by defining the event type mapping. The event type mapping are of business object type <b>EventTypeMapping</b> in the Teamcenter database.<br /><br />Subscribable flag is a property on the <b>EventTypeMapping</b>, can be configured through BMIDE. Which defines whether user can create a subscription for this <b>EventTypeMapping</b> (business object type and event type combination).",
+      "exceptionCondition": "",
+      "id": "getAllSubscribableEventTypes#",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getAllSubscribableEventTypes",
+      "opTemplate": "Teamcenter::Soa::Server::ServiceData#Sub0::Soa::Subscription::SubscriptionManagement::getAllSubscribableEventTypes",
+      "returnDescription": "ServiceData with <b>ImanEventType</b> business objects added to the plain list.<br /><br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">730001 EventTypeMapping class internal error.</li></ul></ul>",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Input business objects of type POM_object for which common event types are to be fetched.",
+          "parameterName": "objectsOrTypes"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.1.0",
+      "dependencies": "",
+      "description": "This operation returns common event types for the input business objects or the business object types. The event type and its mapping to the business object type is defined through BMIDE.<br /><br />Each event type, of business object type ImanEventType, represents the possible event on the business objects e.g. Checkout, Delete, Cancel Checkout etc.<br /><br />The event type is mapped to a business object type by defining the event type mapping. The event type mapping are of business object type EventTypeMapping in the Teamcenter database.<br /><br />The event type is used to define the subscriptions for a business object or type and system notifies the followers when the subscribed event occurs.<br /><br />This operation filters the already subscribed event types. This filtering of event types is only applicable,<br /><ul><ul><li type=\"disc\">To business objects, not to types.</li><li type=\"disc\">When there is only single object input for objectsOrTypes.</li></ul></ul>",
+      "exceptionCondition": "",
+      "id": "getApplicableCommonEventTypes#const,std::vector<Teamcenter::POM_object>,&",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getApplicableCommonEventTypes",
+      "opTemplate": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::GetApplCommonEventTypesResponse#Sub0::Soa::Subscription::SubscriptionManagement::getApplicableCommonEventTypes#const,std::vector<Teamcenter::POM_object>,&",
+      "returnDescription": "ServiceData with applicable common ImanEventType business objects added to the plain list.<br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">78003 You are trying to subscribe to an invalid target.</li><li type=\"disc\">78011 Invalid parameters.</li></ul></ul>",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Input business object of type <b>POM_object</b> for which to filter subscribable event types.",
+          "parameterName": "inObject"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.1.0",
+      "dependencies": "",
+      "description": "This operation returns list of event types which is subset of,<br />&bull;&nbsp;&nbsp;&nbsp;&nbsp;User configured list of event types applicable for a given input object type.<br />&bull;&nbsp;&nbsp;&nbsp;&nbsp;Filters out already subscribed event types for the input object.<br />&bull;&nbsp;&nbsp;&nbsp;&nbsp;If the input object is null, it would return all the event types configured by the logged in user.<br /><br />This filtered list of event types is used for subscribing object to multiple events in Active Workspace.<br /><br />Each user can configure his/her favorite list of event types which internally is stored in a user preference, AWC_followMultiEventConfiguredEventTypes.<br /><br />Event type and its mapping is configured through BMIDE. Subscribable flag is defined on event type mapping in BMIDE.",
+      "exceptionCondition": "",
+      "id": "getApplicableConfiguredEvents#const,Teamcenter::POM_object,&",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getApplicableConfiguredEvents",
+      "opTemplate": "Teamcenter::Soa::Server::ServiceData#Sub0::Soa::Subscription::SubscriptionManagement::getApplicableConfiguredEvents#const,Teamcenter::POM_object,&",
+      "returnDescription": "ServiceData with <b>ImanEventType</b> business objects added to the plain list.<br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">78011 Invalid parameters.</li><li type=\"disc\">76007 The input object type is invalid.</li></ul></ul>",
+      "useCase": ""
+    },
+    {
+      "DeprecationInfo": [
+        {
+          "deprecatedDescription": "Use getApplicableCommonEventTypes as a replacement.\nWhich supports multiple input objects or types and returns common applicable event types.",
+          "deprecatedRelease": "Awp04.1.0"
+        }
+      ],
+      "ParameterInfo": [
+        {
+          "description": "Input business object of type <b>POM_object </b>for which event types are to be fetched.",
+          "parameterName": "objectOrType"
+        },
+        {
+          "description": "A list of subscription business objects of type <b>ImanSubscription</b> used to filter the output event types.",
+          "parameterName": "subscriptionsToFilter"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.0.0",
+      "dependencies": "",
+      "description": "This operation returns all the mapped event types for the input business object or the business object type. The event type and its mapping to the business object type is defined through BMIDE.<br /><br />Each event type, of business object type <b>ImanEventType</b>, represents the possible event on the business objects e.g. Checkout, Delete, Cancel Checkout etc.<br /><br />The event type is mapped to a business object type by defining the event type mapping. The event type mapping are of business object type <b>EventTypeMapping</b> in the Teamcenter database.<br /><br />The event type is used to define the subscriptions for a business object or type and system notifies the followers when the subscribed event occurs.<br /><br />This operation optionally takes existing subscription business objects of type ImanSubscription to find which event types are already subscribed and client is requesting to filter the already subscribed event types.",
+      "exceptionCondition": "",
+      "id": "getApplicableEventTypes#const,Teamcenter::POM_object,&$const,std::vector<Teamcenter::ImanSubscription>,&",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getApplicableEventTypes",
+      "opTemplate": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement::GetApplicableEventTypesResponse#Sub0::Soa::Subscription::SubscriptionManagement::getApplicableEventTypes#const,Teamcenter::POM_object,&$const,std::vector<Teamcenter::ImanSubscription>,&",
+      "returnDescription": "ServiceData with applicable ImanEventType business objects added to the plain list.<br /><br />The following partial error may be returned for action which failed to execute:<br /><br /><ul><ul><li type=\"disc\">76007       The input object type is invalid.</li></ul></ul>",
+      "useCase": ""
+    },
+    {
+      "DeprecationInfo": [
+        {
+          "deprecatedDescription": "Use getSubscriptionViewAndViewModel as a replacement. Which supports multiple input objects or types and event types. Returns view and viewmodel as string based on input parameters.",
+          "deprecatedRelease": "Awp04.1.0"
+        }
+      ],
+      "ParameterInfo": [
+        {
+          "description": "Input business object of type <b>POM_object</b> for which event types are to be retrieved.",
+          "parameterName": "objectOrType"
+        },
+        {
+          "description": "Input business object of type <b>ImanEventType</b>, which is main driver for the view and view model of the subscription business object create panel.",
+          "parameterName": "eventType"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.0.0",
+      "dependencies": "",
+      "description": "This operation returns the declarative view and view model, as string, to render the create panel of the subscription business object. The declarative view is custom HTML tag based, underlying framework agnostic, Active Worksapce format whereas declarative view model is JSON format based configuration to support the rendering, actions and localization for the view.<br /><br />The input attributes on the create panel of the subscription business object is governed by the the business object or business object type and the selected event type.<br /><br />While creating the subscription business object, the selected event type of business object type <b>ImanEventType</b> is the major driver for the create panel. Event type could be standard event type e.g. Delete, Cancel Checkout or assigning status to the business object or relating some other business object or when new revisions are created for the <b>Item</b> object types.<br /><br />This operation is invoked from the Active Worksapce client after user makes a selection of the object or a business object type, called follow type and the event type.",
+      "exceptionCondition": "",
+      "id": "getSubscriptionCreationView#const,Teamcenter::POM_object,&$const,Teamcenter::ImanEventType,&",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getSubscriptionCreationView",
+      "opTemplate": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement::GetSubscriptionViewResponse#Sub0::Soa::Subscription::SubscriptionManagement::getSubscriptionCreationView#const,Teamcenter::POM_object,&$const,Teamcenter::ImanEventType,&",
+      "returnDescription": "The declarative view and view model as string with the ServiceData.<br /><br />The following partial error may be returned for action which failed to execute:<br /><br /><ul><ul><li type=\"disc\">76007     The input object type is invalid.</li></ul></ul>",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Input list of business objects or business object types for which view and viewmodel needs to be returned.",
+          "parameterName": "objectsOrTypes"
+        },
+        {
+          "description": "Input list of event types which is main driver for the view and view model of the subscription business object create panel.",
+          "parameterName": "eventTypes"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.1.0",
+      "dependencies": "",
+      "description": "This operation returns the declarative view and view model, as string, to render the create panel of the subscription business object. The declarative view is custom tag based, underlying framework agnostic, Active Worksapce html format whereas declarative view model is JSON format based configuration to support the rendering, actions and localization for the view.<br /><br />The input attributes on the create panel of the subscription business object is governed by the the business object or business object type and the selected event type.<br /><br />In case of multiple objects or events types are passed as an input paramater it renders the view and view model accrodingly.<br /><br />While creating the subscription business object, the selected event type of business object type ImanEventType is the major driver for the create panel. Event type could be standard event type e.g. Delete, Cancel Checkout or assigning status to the business object or relating some other business object or when new revisions are created for the Item business object types.<br /><br />This operation is invoked from the Active Worksapce client after user makes a selection of the object or a business object type, called follow type and the event type.",
+      "exceptionCondition": "",
+      "id": "getSubscriptionViewAndViewModel#const,std::vector<Teamcenter::POM_object>,&$const,std::vector<Teamcenter::ImanEventType>,&",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getSubscriptionViewAndViewModel",
+      "opTemplate": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::GetSubscriptionViewAndModelResponse#Sub0::Soa::Subscription::SubscriptionManagement::getSubscriptionViewAndViewModel#const,std::vector<Teamcenter::POM_object>,&$const,std::vector<Teamcenter::ImanEventType>,&",
+      "returnDescription": "The declarative view and view model as string with the ServiceData.<br />The following partial error may be returned for action which failed to execute:<br />76007 The input object type is invalid.",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Input business objects of type POM_object to classify it as subscribable and non subscribable object.",
+          "parameterName": "objectsOrTypes"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Fnd0SubscriptionManagement",
+      "createRelease": "Awp04.1.0",
+      "dependencies": "",
+      "description": "This operation identifies the list of input objects which can be subscribed for event notification. A filtered list of subscribable and non subscribable objects are returned.<br /><br />Subscribable flag is defined on event type mapping in BMIDE.",
+      "exceptionCondition": "",
+      "id": "validateSubscribableTypes#const,std::vector<Teamcenter::POM_object>,&",
+      "interface": "Sub0::Soa::Subscription::SubscriptionManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "validateSubscribableTypes",
+      "opTemplate": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::ValidateSubscribableTypesResponse#Sub0::Soa::Subscription::SubscriptionManagement::validateSubscribableTypes#const,std::vector<Teamcenter::POM_object>,&",
+      "returnDescription": "ServiceData with the list of subscribable and non subscribable business objects added to the plain list.<br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">78003 You are trying to subscribe to an invalid target.</li><li type=\"disc\">78011 Invalid parameters.</li></ul></ul>",
+      "useCase": ""
+    }
+  ],
+  "OperationTemplate": [
+    {
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Teamcenter::Soa::Server::ServiceData",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.1.0",
+      "description": "This operation returns all the subscribable event types in the system.<br />Event type and its mapping is configured through BMIDE from the Extensions section, by navigating to &ldquo;Audit Manager&rdquo; and &ldquo;Event Type Mappings&rdquo;.<br />Each event type, of business object type <b>ImanEventType</b>, represents the possible event on the business objects e.g. Checkout, Delete, Cancel Checkout etc.<br /><br />The event type is mapped to a business object type by defining the event type mapping. The event type mapping are of business object type <b>EventTypeMapping</b> in the Teamcenter database.<br /><br />Subscribable flag is a property on the <b>EventTypeMapping</b>, can be configured through BMIDE. Which defines whether user can create a subscription for this <b>EventTypeMapping</b> (business object type and event type combination).",
+      "id": "Teamcenter::Soa::Server::ServiceData#Sub0::Soa::Subscription::SubscriptionManagement::getAllSubscribableEventTypes",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::getAllSubscribableEventTypes",
+      "returnConst": "false",
+      "returnDescription": "ServiceData with <b>ImanEventType</b> business objects added to the plain list.<br /><br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">730001 EventTypeMapping class internal error.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::POM_object",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input business objects of type POM_object for which common event types are to be fetched.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "objectsOrTypes"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::GetApplCommonEventTypesResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.1.0",
+      "description": "This operation returns common event types for the input business objects or the business object types. The event type and its mapping to the business object type is defined through BMIDE.<br /><br />Each event type, of business object type ImanEventType, represents the possible event on the business objects e.g. Checkout, Delete, Cancel Checkout etc.<br /><br />The event type is mapped to a business object type by defining the event type mapping. The event type mapping are of business object type EventTypeMapping in the Teamcenter database.<br /><br />The event type is used to define the subscriptions for a business object or type and system notifies the followers when the subscribed event occurs.<br /><br />This operation filters the already subscribed event types. This filtering of event types is only applicable,<br /><ul><ul><li type=\"disc\">To business objects, not to types.</li><li type=\"disc\">When there is only single object input for objectsOrTypes.</li></ul></ul>",
+      "id": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::GetApplCommonEventTypesResponse#Sub0::Soa::Subscription::SubscriptionManagement::getApplicableCommonEventTypes#const,std::vector<Teamcenter::POM_object>,&",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::getApplicableCommonEventTypes",
+      "returnConst": "false",
+      "returnDescription": "ServiceData with applicable common ImanEventType business objects added to the plain list.<br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">78003 You are trying to subscribe to an invalid target.</li><li type=\"disc\">78011 Invalid parameters.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Teamcenter::POM_object",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input business object of type <b>POM_object</b> for which to filter subscribable event types.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "inObject"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Teamcenter::Soa::Server::ServiceData",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.1.0",
+      "description": "This operation returns list of event types which is subset of,<br />&bull;&nbsp;&nbsp;&nbsp;&nbsp;User configured list of event types applicable for a given input object type.<br />&bull;&nbsp;&nbsp;&nbsp;&nbsp;Filters out already subscribed event types for the input object.<br />&bull;&nbsp;&nbsp;&nbsp;&nbsp;If the input object is null, it would return all the event types configured by the logged in user.<br /><br />This filtered list of event types is used for subscribing object to multiple events in Active Workspace.<br /><br />Each user can configure his/her favorite list of event types which internally is stored in a user preference, AWC_followMultiEventConfiguredEventTypes.<br /><br />Event type and its mapping is configured through BMIDE. Subscribable flag is defined on event type mapping in BMIDE.",
+      "id": "Teamcenter::Soa::Server::ServiceData#Sub0::Soa::Subscription::SubscriptionManagement::getApplicableConfiguredEvents#const,Teamcenter::POM_object,&",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::getApplicableConfiguredEvents",
+      "returnConst": "false",
+      "returnDescription": "ServiceData with <b>ImanEventType</b> business objects added to the plain list.<br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">78011 Invalid parameters.</li><li type=\"disc\">76007 The input object type is invalid.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Teamcenter::POM_object",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input business object of type <b>POM_object </b>for which event types are to be fetched.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "objectOrType"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::ImanSubscription",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of subscription business objects of type <b>ImanSubscription</b> used to filter the output event types.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "subscriptionsToFilter"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement::GetApplicableEventTypesResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.0.0",
+      "description": "This operation returns all the mapped event types for the input business object or the business object type. The event type and its mapping to the business object type is defined through BMIDE.<br /><br />Each event type, of business object type <b>ImanEventType</b>, represents the possible event on the business objects e.g. Checkout, Delete, Cancel Checkout etc.<br /><br />The event type is mapped to a business object type by defining the event type mapping. The event type mapping are of business object type <b>EventTypeMapping</b> in the Teamcenter database.<br /><br />The event type is used to define the subscriptions for a business object or type and system notifies the followers when the subscribed event occurs.<br /><br />This operation optionally takes existing subscription business objects of type ImanSubscription to find which event types are already subscribed and client is requesting to filter the already subscribed event types.",
+      "id": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement::GetApplicableEventTypesResponse#Sub0::Soa::Subscription::SubscriptionManagement::getApplicableEventTypes#const,Teamcenter::POM_object,&$const,std::vector<Teamcenter::ImanSubscription>,&",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::getApplicableEventTypes",
+      "returnConst": "false",
+      "returnDescription": "ServiceData with applicable ImanEventType business objects added to the plain list.<br /><br />The following partial error may be returned for action which failed to execute:<br /><br /><ul><ul><li type=\"disc\">76007       The input object type is invalid.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Teamcenter::POM_object",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input business object of type <b>POM_object</b> for which event types are to be retrieved.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "objectOrType"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Teamcenter::ImanEventType",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input business object of type <b>ImanEventType</b>, which is main driver for the view and view model of the subscription business object create panel.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "eventType"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement::GetSubscriptionViewResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.0.0",
+      "description": "This operation returns the declarative view and view model, as string, to render the create panel of the subscription business object. The declarative view is custom HTML tag based, underlying framework agnostic, Active Worksapce format whereas declarative view model is JSON format based configuration to support the rendering, actions and localization for the view.<br /><br />The input attributes on the create panel of the subscription business object is governed by the the business object or business object type and the selected event type.<br /><br />While creating the subscription business object, the selected event type of business object type <b>ImanEventType</b> is the major driver for the create panel. Event type could be standard event type e.g. Delete, Cancel Checkout or assigning status to the business object or relating some other business object or when new revisions are created for the <b>Item</b> object types.<br /><br />This operation is invoked from the Active Worksapce client after user makes a selection of the object or a business object type, called follow type and the event type.",
+      "id": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement::GetSubscriptionViewResponse#Sub0::Soa::Subscription::SubscriptionManagement::getSubscriptionCreationView#const,Teamcenter::POM_object,&$const,Teamcenter::ImanEventType,&",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::getSubscriptionCreationView",
+      "returnConst": "false",
+      "returnDescription": "The declarative view and view model as string with the ServiceData.<br /><br />The following partial error may be returned for action which failed to execute:<br /><br /><ul><ul><li type=\"disc\">76007     The input object type is invalid.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::POM_object",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input list of business objects or business object types for which view and viewmodel needs to be returned.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "objectsOrTypes"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::ImanEventType",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input list of event types which is main driver for the view and view model of the subscription business object create panel.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "eventTypes"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::GetSubscriptionViewAndModelResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.1.0",
+      "description": "This operation returns the declarative view and view model, as string, to render the create panel of the subscription business object. The declarative view is custom tag based, underlying framework agnostic, Active Worksapce html format whereas declarative view model is JSON format based configuration to support the rendering, actions and localization for the view.<br /><br />The input attributes on the create panel of the subscription business object is governed by the the business object or business object type and the selected event type.<br /><br />In case of multiple objects or events types are passed as an input paramater it renders the view and view model accrodingly.<br /><br />While creating the subscription business object, the selected event type of business object type ImanEventType is the major driver for the create panel. Event type could be standard event type e.g. Delete, Cancel Checkout or assigning status to the business object or relating some other business object or when new revisions are created for the Item business object types.<br /><br />This operation is invoked from the Active Worksapce client after user makes a selection of the object or a business object type, called follow type and the event type.",
+      "id": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::GetSubscriptionViewAndModelResponse#Sub0::Soa::Subscription::SubscriptionManagement::getSubscriptionViewAndViewModel#const,std::vector<Teamcenter::POM_object>,&$const,std::vector<Teamcenter::ImanEventType>,&",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::getSubscriptionViewAndViewModel",
+      "returnConst": "false",
+      "returnDescription": "The declarative view and view model as string with the ServiceData.<br />The following partial error may be returned for action which failed to execute:<br />76007 The input object type is invalid.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::POM_object",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Input business objects of type POM_object to classify it as subscribable and non subscribable object.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "objectsOrTypes"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::ValidateSubscribableTypesResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp04.1.0",
+      "description": "This operation identifies the list of input objects which can be subscribed for event notification. A filtered list of subscribable and non subscribable objects are returned.<br /><br />Subscribable flag is defined on event type mapping in BMIDE.",
+      "id": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement::ValidateSubscribableTypesResponse#Sub0::Soa::Subscription::SubscriptionManagement::validateSubscribableTypes#const,std::vector<Teamcenter::POM_object>,&",
+      "name": "Sub0::Soa::Subscription::SubscriptionManagement::validateSubscribableTypes",
+      "returnConst": "false",
+      "returnDescription": "ServiceData with the list of subscribable and non subscribable business objects added to the plain list.<br />The following partial error may be returned for action which failed to execute:<br /><ul><ul><li type=\"disc\">78003 You are trying to subscribe to an invalid target.</li><li type=\"disc\">78011 Invalid parameters.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    }
+  ],
+  "ServiceInterface": [
+    {
+      "createRelease": "Awp04.0.0",
+      "dependencies": "",
+      "description": "The Subscription service exposes operations that are used to accomplish subscription and notification specific functionalities in Active Workspace.",
+      "libraryName": "Sub0SoaNotificationAw",
+      "name": "SubscriptionManagement",
+      "namespace": "Sub0::Soa::Subscription",
+      "serviceLibraryRef": ""
+    }
+  ],
+  "Struct": [
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::ImanEventType"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of common event types applicable for the given input business objects or types.",
+          "name": "commonEventTypes"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData object associated with the operation, contains business objects of ImanEventType in plain list with inflated properties.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.1.0",
+      "description": "The GetApplCommonEventTypesResponse structure is to hold a list of applicable common ImanEventType business objects.",
+      "isPublished": "false",
+      "name": "GetApplCommonEventTypesResponse",
+      "namespace": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement",
+      "scope": "Sub0::Soa::Subscription::SubscriptionManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::ImanEventType"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of event types applicable for the given input business object or type.",
+          "name": "eventTypes"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData object associated with the operation, contains business objects of <b>ImanEventType</b> in plain list with inflated properties.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.0.0",
+      "description": "The <b>GetApplicableEventTypesResponse</b> structure is used to hold a list of applicable <b>ImanEventType</b> business objects.",
+      "isPublished": "false",
+      "name": "GetApplicableEventTypesResponse",
+      "namespace": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement",
+      "scope": "Sub0::Soa::Subscription::SubscriptionManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Declarative view as string to render create panel for the subscription business object.",
+          "name": "view"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Declarative view model as string to support rendering of the create panel for the subscription business object.",
+          "name": "viewModel"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData object associated with the operation, contains partial errors, if any.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.1.0",
+      "description": "The GetSubscriptionViewAndModelResponse structure is used to hold declarative view and view model as string with the ServiceData object.",
+      "isPublished": "false",
+      "name": "GetSubscriptionViewAndModelResponse",
+      "namespace": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement",
+      "scope": "Sub0::Soa::Subscription::SubscriptionManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Declarative view as HTML string to render create panel for the subscription business object.",
+          "name": "view"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Declarative view model as JSON string to support rendering of the create panel for the subscription business object.",
+          "name": "viewModel"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData object associated with the operation, contains partial errors, if any.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.0.0",
+      "description": "The <b>GetSubscriptionViewResponse</b> structure is used to hold declarative view and view model as string with the ServiceData object.",
+      "isPublished": "false",
+      "name": "GetSubscriptionViewResponse",
+      "namespace": "Sub0::Soa::Internal::Subscription::_2018_05::SubscriptionManagement",
+      "scope": "Sub0::Soa::Subscription::SubscriptionManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::POM_object"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of subscribable objects or Types.",
+          "name": "subscribableObjects"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::POM_object"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of non subscribable objects or types.",
+          "name": "nonSubscribableObjects"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData object associated with the operation, contains business objects in plain list with inflated properties.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.1.0",
+      "description": "The ValidateSubscribableTypesResponse structure is used to hold two separate list of subscribable and non subscribable objects or types.",
+      "isPublished": "false",
+      "name": "ValidateSubscribableTypesResponse",
+      "namespace": "Sub0::Soa::Internal::Subscription::_2018_12::SubscriptionManagement",
+      "scope": "Sub0::Soa::Subscription::SubscriptionManagement"
+    }
+  ],
+  "TcVersion": "tc12000.0.0",
+  "xmlns": "http://teamcenter.com/BusinessModel/TcBusinessData"
+}

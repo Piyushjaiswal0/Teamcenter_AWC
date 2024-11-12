@@ -1,0 +1,15 @@
+{
+    "schemaVersion": "1.0.0",
+    "i18n": {
+        "startDate": [ "PSConstants" ],
+        "endDate": [ "PSConstants" ],
+        "endItemMessage": [ "PSConstants" ],
+        "unitEffectivity": [ "PSConstants" ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+
+}

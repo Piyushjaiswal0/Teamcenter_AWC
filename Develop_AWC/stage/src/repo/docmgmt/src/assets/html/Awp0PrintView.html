@@ -1,0 +1,34 @@
+<aw-command-panel caption="i18n.PrintPanel">
+    <aw-panel-body>
+        <aw-panel-section visible-when="conditions.toVisibleRadio">
+            <aw-radiobutton prop="data.printOption"></aw-radiobutton>
+        </aw-panel-section>
+        <aw-panel-section visible-when="!data.printOption.dbValue">
+            <aw-listbox  prop="data.printTemplates" list="data.printTemplateVmList"></aw-listbox>
+        </aw-panel-section>
+        <aw-panel-section  visible-when="data.printOption.dbValue">
+            <aw-panel-section>
+                <aw-widget prop="fields.modProp.segments.props.dma1PrintConfigName"></aw-widget>
+                <aw-textbox prop="fields.modProp.segments.props.dma1PrinterName"></aw-textbox>
+                <aw-widget prop="fields.modProp.segments.props.dma1Copies"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1Collate"></aw-widget>
+                <aw-textbox prop="fields.modProp.segments.props.dma1UserStamp" visible-when="data.isStamp"></aw-textbox>
+                <aw-widget prop="fields.modProp.segments.props.dma1PaperSizes"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1Range"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1Color"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1Scale"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1SystemStamp" visible-when="data.isStamp"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1Orientation"></aw-widget>
+                <aw-widget prop="fields.modProp.segments.props.dma1BannerPage"></aw-widget>
+            </aw-panel-section>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="normalPrintAction" visible-when="conditions.toCreateNormalPrint">
+            <aw-i18n>i18n.PrintPreview</aw-i18n>
+        </aw-button>
+        <aw-button action="validatePrintInputs" visible-when="conditions.toCreateBatchPrinting">
+            <aw-i18n>i18n.PrintPreview</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

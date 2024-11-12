@@ -1,0 +1,47 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "_provider": {
+            "breadcrumbConfig": {
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "priority": 1,
+            "label": {
+                "source": "/i18n/SubscriptionMessages",
+                "key": "mySubscriptionFollowingSubLocationTitle"
+            },
+            "clientScopeURI": "fnd0MySubscriptions",
+            "nameToken": "com.siemens.splm.client.subscription.follow.internal.xrt:mySubscriptionsSubLocation",
+            "context": {
+                "search": {
+                    "hideInContentSearchBox": true,
+                    "provider": "Sub0SubscriptionProvider",
+                    "criteria": {
+                        "ImanSubscription": "MySubscriptions",
+                        "searchFromLocation": "global"
+                    },
+                    "sortType": "Alphabetical",
+                    "sortCriteria": [ {
+                        "fieldName": "fnd0Name",
+                        "sortDirection": "ASC"
+                    } ],
+                    "maxToLoad": 50,
+                    "maxToReturn": 200,
+                    "tableViewProperties": [ "fnd0Name", "target", "event_type", "expiration_date", "fnd0Frequency", "fnd0Priority", "fnd0IsActive" ],
+                    "showLoadingText": true
+                }
+            },
+            "viewBase": "subscription",
+            "viewModes": {
+                "SummaryView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": true
+                },
+                "TableSummaryView": {
+                    "primaryWorkArea": "table",
+                    "secondaryWorkArea": true
+                }
+            }
+        }
+    }
+}

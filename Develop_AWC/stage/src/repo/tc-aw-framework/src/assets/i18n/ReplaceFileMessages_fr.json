@@ -1,0 +1,14 @@
+{
+    "replace": "Remplacer",
+    "upload": "Importer",
+    "chooseFromSystem": "Choisir le fichier dans le système",
+    "replaceFileError": "Mettez à jour le fichier avec la même extension que le précédent fichier présent sur l'article",
+    "replaceSuccessWithFileName": "\"{0}\" a été remplacé.",
+    "replaceFailureWithFileName": "Impossible d'ajouter au jeu de données le fichier importé comme référence nommée car extension de fichier non valable",
+    "replaceNoValidTarget": "\"{0}\" n'a pas de fichier valable à remplacer.",
+    "replaceFileCommandTitle": "Remplacer le fichier",
+    "InvalidSelectedObject": "Un objet Jeu de données ou Volume de fichiers non valable a été fourni pour générer un fichier PLMD. Réessayez avec un objet Jeu de données ou Volume de fichiers valable.",
+    "AsynUploadInProgress": "Le téléchargement asynchrone du fichier vers le volume Teamcenter est en cours.",
+    "PlatformNotSupported": "L'opération de remplacement asynchrone n'est pas prise en charge sur cette plateforme : basculement vers le remplacement synchrone ",
+    "Awp0ReplaceDatasetDesc": "Remplacer le fichier sélectionné par un nouveau depuis votre dispositif."
+}

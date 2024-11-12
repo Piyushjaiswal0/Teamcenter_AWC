@@ -1,0 +1,186 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "actions": {
+        "showData": {
+            "actionType": "dataProvider",
+            "method": "imageDataProvider"
+        },
+        "groupObjectsByProperties": {
+            "actionType": "JSFunction",
+            "method": "groupObjectsByProperties",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "provider": "{{data.dataProviders.imageDataProvider}}"
+            },
+            "deps": "js/searchColorDecoratorService"
+        },
+        "toggleColors": {
+            "actionType": "JSFunction",
+            "method": "groupObjectsByProperties",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "provider": "{{data.dataProviders.imageDataProvider}}",
+                "toggleColors": true
+            },
+            "deps": "js/searchColorDecoratorService"
+        },
+        "loadSearchData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "attributesToInflate": [ "object_name", "checked_out_user", "object_desc", "release_status_list", "fnd0InProcess" ],
+                    "internalPropertyName": "{{function:getInternalPropertyName}}",
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "startIndex": "{{data.dataProviders.imageDataProvider.startIndex}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{function:getSearchSortCriteria}}"
+                },
+                "inflateProperties": false,
+                "noServiceData": false
+            },
+
+            "outputData": {
+                "totalFound": "{{function:getActualTotalFound}}",
+                "totalLoaded": "totalLoaded",
+                "searchResults":  "{{function:getVMOsWithColoring}}",
+                "highlighter": "{{function:getHighlightKeywords}}",
+                "thresholdExceededMessage": "{{function:getThresholdDisplayMessage}}",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/awSearchService"
+        },
+        "searchImageViewLoadBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "loadSearchData",
+                    "condition": "conditions.populatedSearchString"
+                }
+            ]
+        }
+    },
+    "functions": {
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getHighlightKeywords": {
+            "functionName": "getHighlightKeywords",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getSearchSortCriteria": {
+            "functionName": "getSearchSortCriteria",
+            "parameters": [
+                "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getInternalPropertyName": {
+            "functionName": "getInternalPropertyName",
+            "parameters": [
+                "{{subPanelContext.searchState.provider}}"
+            ]
+        },
+        "getVMOsWithColoring": {
+            "functionName": "getVMOsWithColoring",
+            "parameters": [
+                "{{subPanelContext.searchState.showChartColorBars}}"
+            ]
+        },
+        "getThresholdDisplayMessage": {
+            "functionName": "getThresholdDisplayMessage",
+            "parameters": [
+                "{{subPanelContext.searchState.criteria.searchString}}"
+            ]
+        },
+        "getActualTotalFound": {
+            "functionName": "getActualTotalFound",
+            "parameters": [
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "dataProviders": {
+        "imageDataProvider": {
+            "action": "searchImageViewLoadBatchJob",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "onEvent": [],
+    "conditions": {
+        "populatedSearchString": {
+            "expression": "subPanelContext.searchState.criteria && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.criteria.searchString.length > 0"
+        },
+        "checkTotalLoadStatus": {
+            "expression": "subPanelContext.searchState.totalFound !== 0 || subPanelContext.searchState.totalFound === undefined"
+        }
+    },
+    "i18n": {
+        "noCriteriaKeywordHint": [
+            "SearchMessages"
+        ],
+        "nothingFound": [
+            "SearchMessages"
+        ],
+        "noFiltersFound": [
+            "SearchMessages"
+        ],
+        "noResultsFound": [
+            "SearchMessages"
+        ],
+        "noResultsSearchAreaKeywordHint": [
+            "SearchMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onUpdate": [{
+            "action": "showData",
+            "observers": [
+                "props.subPanelContext.searchState.criteria.searchString",
+                "props.subPanelContext.searchState.filterString"
+            ]
+        },
+        {
+            "action": "groupObjectsByProperties",
+            "observers": [
+                "props.subPanelContext.searchState.chartProvider"
+            ]
+        },
+        {
+            "action": "toggleColors",
+            "observers": [
+                "props.subPanelContext.searchState.colorToggle"
+            ]
+        }
+    ]
+    }
+}

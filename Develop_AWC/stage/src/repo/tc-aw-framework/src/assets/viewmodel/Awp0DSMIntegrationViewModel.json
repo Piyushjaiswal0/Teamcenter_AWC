@@ -1,0 +1,71 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/visible-when.directive",
+        "js/aw-checkbox.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel.directive"
+    ],
+
+    "actions": {
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "onDSMReveal",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "useDSM": "useDSM",
+                "dsmInstalled": "dsmInstalled"
+            },
+            "deps": "js/Awp0DSMIntegrationService"
+        },
+        "dsmInstalledClick": {
+            "actionType": "JSFunction",
+            "method": "dsmInstalledClick",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "dsmInstalled": "dsmInstalled",
+                "useDSM": "useDSM"
+            },
+            "deps": "js/Awp0DSMIntegrationService"
+        },
+        "useDSMClick": {
+            "actionType": "JSFunction",
+            "method": "useDSMClick",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "useDSM": "useDSM",
+                "dsmInstalled": "dsmInstalled"
+            },
+            "deps": "js/Awp0DSMIntegrationService"
+        }
+    },
+
+    "data": {
+        "dsmInstalled": {
+            "displayName": "{{i18n.dsmInstalledTitle}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "useDSM": {
+            "displayName": "{{i18n.dsmUseTitle}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        }
+    },
+    "i18n": {
+        "dsmSectionTitle": [ "DSMMessages" ],
+        "dsmInstalledTitle": [ "DSMMessages" ],
+        "dsmUseTitle": [ "DSMMessages" ]
+    }
+}

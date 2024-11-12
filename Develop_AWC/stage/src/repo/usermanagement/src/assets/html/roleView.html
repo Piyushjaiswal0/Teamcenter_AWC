@@ -1,0 +1,5 @@
+<!-- Role link -->
+<aw-column visible-when="ctx.userSession.props.role.uiValues[0]!=''">
+    <aw-property-label prop="data.role"></aw-property-label>
+    <aw-link-with-popup-menu prop="ctx.userSession.props.role" dataprovider="data.dataProviders.roleLink" link-popup-menu-id="aw-state-userRole" display-property="props.role" disable="ctx.groupRoleChangeDisabled"></aw-link-with-popup-menu>
+</aw-column>

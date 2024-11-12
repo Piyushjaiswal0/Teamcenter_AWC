@@ -1,0 +1,64 @@
+<!-- it will show filter panel along with the organization tree in the panel -->
+<div class="sw-column aw-create-fillAvailable" exist-when="!props.searchState.hideFilters">
+    <aw-panel-header>
+        <div aw-class="[{ 'sw-row': conditions.nonMobileMode }]" class="aw-search-inContentSearchBox aw-organization-searchBox">
+            <div aw-class="[{ 'w-12': conditions.nonMobileMode }]">
+                <aw-search-box prop="data.orgTreeSearchBox" action="orgTreeDoSearchBatchAction"></aw-search-box>
+            </div>
+        </div>
+    </aw-panel-header>
+    <!-- Organization tree view with filter panel in 1x mode  -->
+    <div class="sw-column aw-search-results-filters-tab aw-create-fillAvailable" exist-when="conditions.isMobileMode">
+        <aw-flex-column width="3f">
+            <aw-icon-button exist-when="!props.searchState.hideFilters" command="data.filterCommand" aw-class="[{ 'aw-state-selected': data.activeSection === 'filter' }]"></aw-icon-button>
+        </aw-flex-column>
+        <!-- Breadcrumbs and title  -->
+        <aw-search-breadcrumb-title crumb-title="data.crumbTitle" exist-when="data.activeSection === 'filter' && conditions.populatedSearchString">
+        </aw-search-breadcrumb-title>
+        <aw-search-breadcrumb-chips search-object="props.searchState" exist-when="conditions.searchFilterApplied">
+        </aw-search-breadcrumb-chips>
+        <div class="sw-row aw-create-fillAvailable">
+            <div class="sw-column h-12 flex-auto aw-results-section aw-create-fillAvailable" show-when="data.activeSection === 'result'">
+                <aw-panel-section class="aw-create-fillAvailable" collapsed="disabled" caption="{{data.resultsText}}" show-when="data.activeSection === 'result' && !props.searchState.hideSectionHeaders">
+                </aw-panel-section>
+                <span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+                        exist-when="props.searchState.totalFound===0">{{i18n.noFiltersFound}}</span>
+                <aw-splm-table class="h-12" gridid="orgTreeTable12" use-tree="true" show-when="data.dataProviders.orgTreeTableDataProvider.viewModelCollection.loadedVMObjects.length > 0"></aw-splm-table>
+
+            </div>
+            <div class="sw-column h-12 flex-auto aw-filters-section aw-search-left-panel-view aw-create-fillAvailable" show-when="data.activeSection === 'filter'">
+                <aw-panel-section class="aw-create-fillAvailable" collapsed="disabled" caption="i18n.orgTreeFilterText" show-when="data.activeSection === 'filter' && !props.searchState.hideSectionHeaders">
+                </aw-panel-section>
+                <aw-filter-panel sub-panel-context="{searchState: props.searchState}"></aw-filter-panel>
+            </div>
+        </div>
+    </div>
+    <!-- Organization tree view with filter panel in 2x mode  -->
+    <div class="sw-column aw-search-results-filters-tab aw-create-fillAvailable" exist-when="conditions.nonMobileMode">
+        <!-- Breadcrumbs  -->
+        <aw-search-breadcrumb-chips search-object="props.searchState" exist-when="conditions.searchFilterApplied">
+        </aw-search-breadcrumb-chips>
+        <div class="sw-row aw-create-fillAvailable">
+            <div class="sw-column w-6 flex-auto aw-filters-section aw-search-left-panel-view aw-create-fillAvailable">
+                <aw-panel-section class="aw-create-fillAvailable" collapsed="disabled" caption="i18n.orgTreeFilterText">
+                    <aw-filter-panel sub-panel-context="{searchState: props.searchState}"></aw-filter-panel>
+                </aw-panel-section>
+            </div>
+            <aw-splitter></aw-splitter>
+            <div class="sw-column w-6 flex-auto aw-results-section aw-create-fillAvailable">
+                <aw-panel-section class="aw-create-fillAvailable" collapsed="disabled" caption="{{data.resultsText}}">
+                    <span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+                        exist-when="props.searchState.totalFound===0">{{i18n.noFiltersFound}}</span>
+                    <aw-splm-table class="h-12" gridid="orgTreeTable12" use-tree="true" show-when="data.dataProviders.orgTreeTableDataProvider.viewModelCollection.loadedVMObjects.length > 0"></aw-splm-table>
+                </aw-panel-section>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- if hideFilters is true, it will not show filter panel along with the organization tree in the primary area in people picker -->
+<div class="sw-column" exist-when="props.searchState.hideFilters">
+    <div class="aw-search-inContentSearchBox aw-organization-searchBox">
+        <aw-search-box prop="data.orgTreeSearchBox" action="orgTreeDoSearch"></aw-search-box>
+    </div>
+    <aw-splm-table gridid="orgTreeTable12" use-tree="true"></aw-splm-table>
+</div>

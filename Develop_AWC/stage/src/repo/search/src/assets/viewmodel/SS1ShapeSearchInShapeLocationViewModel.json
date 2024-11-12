@@ -1,0 +1,223 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "performShapeSearch": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "shapeSearchFromPalette",
+                    "condition": "conditions.isPaletteTabAddButtonVisible"
+                },
+                {
+                    "action": "shapeSearchFromSearchTab",
+                    "condition": "conditions.isSearchTabAddButtonVisible"
+                }
+            ]
+        },
+        "shapeSearchFromPalette": {
+            "actionType": "JSFunction",
+            "method": "doShapeSearch",
+            "inputData": {
+                "targetState": "",
+                "shapeCandidate": "{{data.addPanelState.sourceObjects[0].uid}}"
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "shapeSearchFromSearchTab": {
+            "actionType": "JSFunction",
+            "method": "doShapeSearch",
+            "inputData": {
+                "targetState": "",
+                "shapeCandidate": "{{selectionData.selected[0].uid}}"
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "checkShapeVisibilityForPalette": {
+            "actionType": "JSFunction",
+            "method": "checkShapeVisibilityForPalette",
+            "inputData": {
+                "data":"{{data}}",
+                "addPanelState": "{{data.addPanelState}}"
+            },
+            "outputData": {
+                "isValidShapeInPalette": ""
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "initShapesPanel":{
+            "actionType": "JSFunction",
+            "method": "initShapesPanel",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "searchFilterTabModels": ""
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "updateSearchCriteriaForObjectsReported":{
+            "actionType": "JSFunction",
+            "method": "updateSearchCriteriaForObjectsReported",
+            "inputData": {
+                "searchState": "{{data.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "updateSearchCriteriaSearchString":{
+            "actionType": "JSFunction",
+            "method": "updateSearchCriteriaSearchString",
+            "inputData": {
+                "searchState": "{{data.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        }
+    },
+    "data": {
+        "activeSearch": {
+            "initialValues": {
+                "name": "keyword"
+            },
+            "meta": {}
+        },
+        "typeContext":{
+            "typeFilter": "ItemRevision"
+        },
+        "showSubFilter": false,
+        "searchState": {
+            "initialValues": {
+                "provider": "SS1ShapeSearchDataProvider",
+                "criteria": {
+                    "searchFromLocation": "shapeSearch",
+                    "totalObjectsFoundReportedToClient": "0",
+                    "limitedFilterCategoriesEnabled": "true"
+                },
+                "hideResultsCount": true,
+                "hideFilters": true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "tabModels": [ {
+                "name": "Palette",
+                "tabKey": "palettePage"
+            },
+            {
+                "name": "Search",
+                "tabKey": "searchPage",
+                "recreatePanel": true
+            }
+        ],
+        "searchFilterTabModels1": {
+            "isArray": "true",
+            "dbValue": [ {
+                    "tabKey": "results",
+                    "pageId": "results",
+                    "name": "Results",
+                    "selectedTab": true,
+                    "priority": 0,
+                    "recreatePanel": true
+                },
+                {
+                    "tabKey": "filters",
+                    "pageId": "filters",
+                    "name": "Filters",
+                    "priority": 1,
+                    "recreatePanel": true
+                }
+            ]
+        },
+        "searchString": {
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "additionalSearchCriteria": {
+            "group": ""
+        },
+        "filterBox": {
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "typeFilter": "ItemRevision",
+        "relationType": "",
+        "triggerCreate": {
+            "dbValue": false,
+            "type": "BOOLEAN"
+        },
+        "addPanelState": {
+            "initialValues": {
+                "sourceObjects": "",
+                "selectedTab": ""
+            },
+            "meta": {
+                "sourceObjects": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                },
+                "selectedTab": {
+                    "field": "true",
+                    "type": "OBJECT"
+                }
+            }
+        },
+        "searchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+        "searchTip": {
+            "dbValue": "shape search candidates"
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "conditions": {
+        "isSearchCandidateSelected": {
+            "expression": "conditions.isSearchTabAddButtonVisible || conditions.isPaletteTabAddButtonVisible"
+        },
+        "isPaletteTabAddButtonVisible": {
+            "expression": "data.selectedTab.tabKey === 'palettePage' && addPanelState.sourceObjects && addPanelState.sourceObjects.length > 0 && data.isValidShapeInPalette"
+        },
+        "isSearchTabAddButtonVisible": {
+            "expression": "data.selectedTab.tabKey === 'searchPage' && selectionData.selected[0]"
+        }
+    },
+    "selectionModels": {
+        "resultTabModel": {
+            "selectionMode": "single"
+        }
+    },
+    "i18n": {
+        "SS1Shapes": [ "SearchMessages" ],
+        "SS1ShapeSearchTitleAction": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "initShapesPanel",
+        "onUpdate": [
+            {
+                "action": "checkShapeVisibilityForPalette",
+                "observers": [ "viewModel.atomicData.addPanelState.sourceObjects" ]
+            },
+            {
+                "action": "updateSearchCriteriaForObjectsReported",
+                "observers": [ "viewModel.atomicData.searchState.endIndex" ]
+            },
+            {
+                "action": "updateSearchCriteriaSearchString",
+                "observers": [ "viewModel.atomicData.searchState.criteria.searchString" ]
+            }
+        ]
+    }
+}

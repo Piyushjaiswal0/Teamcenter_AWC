@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "用户名",
+    "PASSWORD_PLACEHOLDER": "密码",
+    "SIGN_IN_TEXT": "登录",
+    "LOGIN_TEXT": "登录",
+    "LOGGING_IN_TEXT": "正在登录",
+    "UNABLE_TO_CONNECT": "由于内部错误，您未能登录。",
+    "VERSION_TEXT": "版本",
+    "COPYRIGHT_DATE_TEXT": "工作已取消发布。",
+    "COPYRIGHT_MESSAGE": "此材料包含 Siemens Industry Software Inc. 或其附属公司（以下统称 \"Siemens\"）或其许可方拥有的商业机密或其他机密信息。对此信息的访问和使用受到客户与 Siemens 的适用协议的严格限制。"
+}

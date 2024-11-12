@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "파일 첨부물",
+    "dropHere": "여기 놓기",
+    "chooseFile": "파일 선택",
+    "removeFileBtnTooltip": "파일 제거",
+    "failureToAttachFiles": "첨부 파일로 허용되는 파일 유형이 아니므로 \"{0}\"을(를) 추가할 수 없습니다."
+}

@@ -1,0 +1,12 @@
+<aw-command-panel caption="i18n.objectInfoLabel" context="subPanelContext" hide-title="ctx.selected && ctx.selected.IsEmbeddedComponent">
+    <div class="aw-layout-flexColumn" show-when="data.activeState.value.activeView==='ObjectInfoPrimarySub' && ctx.showFileUploadPanel===undefined">
+        <object-info-primary-sub xrt-state="data.xrtState" active-state="data.activeState" exist-when="ctx.selected"
+            edit-handler="editHandlers.awp0ObjectInfoEditHandler" editing="{{editHandlers.awp0ObjectInfoEditHandler._editing}}"></object-info-primary-sub>
+    </div>
+    <div class="aw-layout-flexColumn" exist-when="data.activeState.value.activeView!=='ObjectInfoPrimarySub' && ctx.showFileUploadPanel===undefined">
+        <aw-navigate-panel title="i18n.BACK_BUTTON_TITLE" pre-panel-id="ObjectInfoPrimarySub" panel-id="AddReferenceSub" action="setActiveView" sub-panel-context="fields.activeState.value.context" active-state="data.activeState"></aw-navigate-panel>
+    </div>
+    <div class="aw-layout-flexColumn" exist-when="ctx.showFileUploadPanel===true">
+        <aw-navigate-panel title="i18n.BACK_BUTTON_TITLE" pre-panel-id="ObjectInfoPrimarySub" panel-id="Awp0ReplaceDataset" action="resetFileUploadState" sub-panel-context="{upload:true}" active-state="data.activeState"></aw-navigate-panel>
+    </div>
+</aw-command-panel>

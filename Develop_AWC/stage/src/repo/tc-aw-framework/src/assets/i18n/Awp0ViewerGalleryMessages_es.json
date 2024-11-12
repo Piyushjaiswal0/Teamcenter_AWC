@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Desprotección",
+    "uvCheckinTitle": "Proteger",
+    "uvCancelCheckoutTitle": "Cancelar la desprotección",
+    "previousButtonTitle": "Anterior",
+    "nextButtonTitle": "Siguiente",
+    "noObjectSelectionMessage": "Seleccione algo para ver.",
+    "fullViewModeTitle": "Pantalla completa",
+    "uvWordWrapTitle": "Ajuste automático de línea",
+    "exitFullViewModeTitle": "Salir de pantalla completa",
+    "aw_viewerRightSide": "Lado derecho del visualizador",
+    "aw_universalViewerLink": "Enlace con visualizador universal",
+    "uvCheckoutDesc": "Reserva la selección para evitar que otros usuarios hagan cambios.",
+    "fullViewModeDesc": "Cambia a la vista de pantalla completa.",
+    "uvWordWrapDesc": "Continúa el texto largo en múltiples líneas.",
+    "Awp0ShowObjectForUVpDesc": "Abre este archivo en la ventana actual.",
+    "Awp0ViewFileForUVDesc": "Descarga el archivo."
+}

@@ -1,0 +1,53 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="5.5" y1="11.5" x2="41.5" y2="47.5">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path id="XMLID_124_" fill="url(#XMLID_2_)" stroke="#464646" stroke-miterlimit="10" d="M28.2,11.5c1.2-1,2-2.7,2-4.5
+	c0-3.7-3-6.5-6.6-6.5s-6.6,2.7-6.6,6.4c0,1.9,0.8,3.6,2,4.6H5.5v13.7c1.2-1.2,2.9-2,4.7-2c3.7,0,6.6,3,6.6,6.6s-3,6.6-6.6,6.6
+	c-1.9,0-3.5-0.8-4.7-2v13h36v-36H28.2z"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="18" y1="20" x2="37" y2="39">
+		<stop  offset="0" style="stop-color:#AFD7E1"/>
+		<stop  offset="1" style="stop-color:#73B4C8"/>
+	</linearGradient>
+	<polygon fill="url(#SVGID_1_)" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		20,18 39,37 35,41 16,22 	"/>
+		<line fill="none" stroke="#147391" stroke-linejoin="round" x1="18" y1="24" x2="20.5" y2="21.5"/>
+		<line fill="none" stroke="#147391" stroke-linejoin="round" x1="20" y1="26" x2="21.5" y2="24.5"/>
+		<line fill="none" stroke="#147391" stroke-linejoin="round" x1="22" y1="28" x2="24.5" y2="25.5"/>
+		<line fill="none" stroke="#147391" stroke-linejoin="round" x1="29" y1="35" x2="31.5" y2="32.5"/>
+		<line fill="none" stroke="#147391" stroke-linejoin="round" x1="31" y1="37" x2="32.5" y2="35.5"/>
+		<line fill="none" stroke="#147391" stroke-linejoin="round" x1="33" y1="39" x2="35.5" y2="36.5"/>
+					<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="28.8554" y1="26.473" x2="32.8554" y2="30.473" gradientTransform="matrix(1 0 0 1 -1.8535 -0.4748)">
+					<stop  offset="0" style="stop-color:#73B4C8"/>
+					<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+					<stop  offset="0.4567" style="stop-color:#529EB5"/>
+					<stop  offset="0.8089" style="stop-color:#2C839F"/>
+					<stop  offset="1" style="stop-color:#147391"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_2_)" points="23,38 19,34 35,18 39,22"/>
+				
+					<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="35.3554" y1="19.973" x2="39.3554" y2="23.973" gradientTransform="matrix(1 0 0 1 -1.8535 -0.4748)">
+					<stop  offset="0" style="stop-color:#CDE6EB"/>
+					<stop  offset="1" style="stop-color:#8CC3D2"/>
+				</linearGradient>
+				<polyline fill="url(#SVGID_3_)" points="32,21 35,18 39,22 36,25"/>
+				
+					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="33.8535" y1="21.4748" x2="37.8535" y2="25.4748" gradientTransform="matrix(1 0 0 1 -1.8535 -0.4748)">
+					<stop  offset="0" style="stop-color:#AFD7E1"/>
+					<stop  offset="1" style="stop-color:#73B4C8"/>
+				</linearGradient>
+				<line fill="url(#SVGID_4_)" stroke="#147391" stroke-linejoin="round" x1="36" y1="25" x2="32" y2="21"/>
+				
+					<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="17.8535" y1="37.9748" x2="24.8535" y2="37.9748" gradientTransform="matrix(1 0 0 1 -1.8535 -0.4748)">
+					<stop  offset="0" style="stop-color:#FFFFFF"/>
+					<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+					<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+					<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+					<stop  offset="1" style="stop-color:#BEBEBE"/>
+				</linearGradient>
+				<polygon fill="url(#SVGID_5_)" points="16,41 19,34 23,38"/>
+				<polygon fill="#147391" points="16.5,40.5 17.5,37.5 19.5,39.5"/>
+			<polygon fill="none" stroke="#147391" stroke-linejoin="round" points="35,18 19,34 16,41 23,38 39,22"/>
+</svg>

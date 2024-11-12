@@ -1,0 +1,37 @@
+[
+  {
+    "type": {
+      "names": [
+        "Awp0Workspace"
+      ],
+      "iconFileName": "typeWorkspace48",
+      "isClientViewModelObject": true
+    }
+  },
+  {
+    "type": {
+      "names": [
+        "pages"
+      ],
+      "iconFileName": "typeForm48",
+      "isClientViewModelObject": true
+    }
+  },
+  {
+    "type": {
+      "names": [
+        "Awp0XRTObjectSetRow"
+      ],
+      "prop": {
+        "names": [
+          "awp0Target"
+        ],
+        "type": {
+          "names": [
+            "BusinessObject"
+          ]
+        }
+      }
+    }
+  }
+]

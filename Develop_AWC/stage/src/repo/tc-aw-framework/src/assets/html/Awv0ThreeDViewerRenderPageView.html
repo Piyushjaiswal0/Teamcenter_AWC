@@ -1,0 +1,23 @@
+<aw-server-visibility-toolbar exist-when="conditions.showToolbar" first-anchor="aw_3dViewer,aw_2dViewer" second-anchor="aw_viewerRightSide,aw_fullScreen" orientation="HORIZONTAL" context="{viewerContextData : data.threeDInstance.viewerCtxData, viewerAtomicData:props.viewerStateProp.value, fullScreenState:subPanelContext.fullScreenState, occmgmtContext: props.subPanelContext.context.occContext}"></aw-server-visibility-toolbar>
+<div class="aw-threeDViewer-viewer3DParentContainer sw-column w-12">
+    <div exist-when="conditions.displaySubCommandToolbar" class="aw-viewer-viewer3DContainer sw-row">
+        <aw-toolbar class="aw-viewer-viewer3DSubCommandToolbar" first-anchor="aw_3dViewerSubCommandsFirstAnchor" second-anchor="aw_3dViewerSubCommandsSecondAnchor" orientation="HORIZONTAL" context="{viewerContextData : data.threeDInstance.viewerCtxData, viewerAtomicData:props.viewerStateProp.value}"></aw-toolbar>
+    </div>
+    <div exist-when="conditions.loadingViewer" class="aw-threeDViewer-viewer3DChildContainer sw-row">
+        <aw-i18n class="aw-threeDViewer-topMessage">i18n.LoadingViewer</aw-i18n>
+    </div>
+    <div exist-when="conditions.loadingViewer" class="aw-threeDViewer-viewer3DChildContainer sw-row">
+        <aw-image source="data.thumbnailImage"></aw-image>
+    </div>
+    <div id="imageCaptureContainer" exist-when="conditions.displayImageCapture" class="aw-threeDViewer-viewer3DChildContainer aw-threeDViewer-imageCaptureContainer sw-row">
+    </div>
+    <div id="awthreeDViewer" class="aw-threeDViewer-viewer3DChildContainer sw-row">
+        <awv0-three-d-viewer-component sub-panel-context="data.viewContainerProp"></awv0-three-d-viewer-component>
+    </div>
+    <div exist-when="conditions.showViewerProgress" class="aw-threeDViewer-loadProgressContainer sw-row">
+        <div class="aw-viewer-loadProgress aw-threeDViewer-loadProgress"></div>
+    </div>
+    <div exist-when="conditions.showViewerEmmProgress" class="aw-threeDViewer-emmLoadProgressContainer sw-row">
+        <div class="aw-viewer-emmLoadProgress aw-threeDViewer-emmLoadProgress"></div>
+    </div>
+</div>

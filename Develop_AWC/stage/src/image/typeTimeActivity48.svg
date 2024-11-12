@@ -1,0 +1,27 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="7.3831" y1="7.3517" x2="40.6171" y2="40.5858">
+		<stop  offset="0" style="stop-color:#73B4C8"/>
+		<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+		<stop  offset="0.4567" style="stop-color:#529EB5"/>
+		<stop  offset="0.8089" style="stop-color:#2C839F"/>
+		<stop  offset="1" style="stop-color:#147391"/>
+	</linearGradient>
+	<circle fill="url(#SVGID_1_)" cx="24" cy="23.969" r="23.5"/>
+	<path fill="#464646" d="M24,47.969c-13.233,0-24-10.767-24-24s10.767-24,24-24s24,10.767,24,24S37.234,47.969,24,47.969z
+		 M24,0.969c-12.682,0-23,10.317-23,23s10.318,23,23,23s23-10.317,23-23S36.682,0.969,24,0.969z"/>
+</g>
+<g>
+	<g>
+		<path fill="#ffffff" d="M24,41.344c-9.598,0-17.406-7.809-17.406-17.406C6.594,14.34,14.402,6.531,24,6.531
+			c4.21,0,8.146,1.48,11.305,4.211V7.898h3.367v8.836h-8.836v-3.367h3.402C30.67,11.141,27.406,9.898,24,9.898
+			c-7.741,0-14.039,6.298-14.039,14.04S16.259,37.977,24,37.977s14.039-6.298,14.039-14.039v-1h3.367v1
+			C41.406,33.535,33.598,41.344,24,41.344z"/>
+	</g>
+	<g>
+		<polygon fill="#ffffff" points="28.396,32.126 21.88,25.61 21.571,24.863 21.571,14.874 24.643,14.874 24.643,24.029 
+			30.567,29.955 		"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,163 @@
+{
+    "schemaVersion": "1.0.0",
+
+    "actions": {
+        "enablePLStats": {
+            "actionType": "JSFunction",
+            "method": "enablePLStats",
+            "deps": "js/Awp0PLStatsService"
+        },
+        "disablePLStats": {
+            "actionType": "JSFunction",
+            "method": "disablePLStats",
+            "deps": "js/Awp0PLStatsService"
+        },
+        "initSpeedTest": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initStartTest"
+                },
+                {
+                    "action": "initrunningSpeedTest"
+                }
+            ]
+        },
+        "initStartTest" : {
+            "actionType": "JSFunction",
+            "method": "startSpeedTest",
+            "inputData":{
+                "latency":  "{{i18n.latency}}",
+                "upTime" :  "{{i18n.uploadSpeed}}",
+                "downTime": "{{i18n.downloadSpeed}}",
+                "runningSpeedTest":"{{i18n.runningSpeedTest}}"
+            },
+            "outputData": {
+                "plSpeedTestData": "",
+                "speedTest": false
+            },
+            "deps":"js/Awp0PLStatsService"
+        },
+        "initrunningSpeedTest" : {
+            "actionType": "JSFunctionAsync",
+            "method" : "runningSpeedTest",
+            "inputData": {
+                "latency":  "{{i18n.latency}}",
+                "upTime" :  "{{i18n.uploadSpeed}}",
+                "downTime": "{{i18n.downloadSpeed}}",
+                "goodConnection": "{{i18n.goodConnection}}",
+                "poorConnection": "{{i18n.poorConnection}}",
+                "connectionStatus": "{{i18n.connectionStatus}}"
+
+            },
+            "outputData": {
+                "plSpeedTestData": "",
+                "plStatsConnectionStatus": "",
+                "speedTest":true
+            },
+            "deps":"js/Awp0PLStatsService"
+        },
+        "updatePerformanceDisplayData": {
+            "actionType": "JSFunction",
+            "method": "updatePerformanceDisplayData",
+            "inputData": {
+                "browserType": "{{i18n.browserType}}",
+                "tti": "{{i18n.tti}}",
+                "totalNetworkTime": "{{i18n.totalNetworkTime}}",
+                "totalSoaRequests": "{{i18n.totalSoaRequests}}",
+                "totalHttpRequests": "{{i18n.totalHttpRequests}}",
+                "domNodeCount": "{{i18n.domNodeCount}}",
+                "domTreeDepth": "{{i18n.domTreeDepth}}",
+                "uniqueComponents": "{{i18n.uniqueComponents}}",
+                "componentRenders": "{{i18n.componentRenders}}"
+            },
+            "outputData": {
+                "plStatsData": ""
+            },
+            "deps": "js/Awp0PLStatsService"
+        },
+        "resetPerformanceDisplayData": {
+            "actionType": "JSFunction",
+            "method": "resetPerformanceDisplayData",
+            "inputData": {
+                "browserType": "{{i18n.browserType}}",
+                "tti": "{{i18n.tti}}",
+                "totalNetworkTime": "{{i18n.totalNetworkTime}}",
+                "totalSoaRequests": "{{i18n.totalSoaRequests}}",
+                "totalHttpRequests": "{{i18n.totalHttpRequests}}",
+                "domNodeCount": "{{i18n.domNodeCount}}",
+                "domTreeDepth": "{{i18n.domTreeDepth}}",
+                "uniqueComponents": "{{i18n.uniqueComponents}}",
+                "componentRenders": "{{i18n.componentRenders}}"
+            },
+            "outputData": {
+                "plStatsData": ""
+            },
+            "deps": "js/Awp0PLStatsService"
+        }
+    },
+    "data": {
+        "speedTestTitle": {
+            "displayName": "{{i18n.speedTestTitle}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true"
+        },
+        "performanceTitle": {
+            "displayName": "{{i18n.performanceTitle}}",
+            "type": "STRING",
+            "isEditable": false,
+            "isModifiable": false
+        },
+        "note": {
+            "displayName": "{{i18n.note}}",
+            "type": "STRING",
+            "dispValue": "{{i18n.detailsMessage}}",
+            "isEditable": false,
+            "isModifiable": false,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "speedTest": true
+    },
+    "onEvent": [
+        {
+            "eventId": "plStats.update",
+            "action": "updatePerformanceDisplayData"
+        },
+        {
+            "eventId": "plStats.reset",
+            "action": "resetPerformanceDisplayData"
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "enablePLStats",
+        "onUnmount": "disablePLStats"
+    },
+    "conditions": {
+        "isSpeedTestRunning": {
+            "expression": "!data.speedTest"
+        }
+    },
+    "i18n": {
+        "performanceTitle": ["plStatsMessages"],
+        "browserType": ["plStatsMessages"],
+        "tti": ["plStatsMessages"],
+        "totalNetworkTime": ["plStatsMessages"],
+        "totalSoaRequests": ["plStatsMessages"],
+        "totalHttpRequests": ["plStatsMessages"],
+        "domNodeCount": ["plStatsMessages"],
+        "domTreeDepth": ["plStatsMessages"],
+        "uniqueComponents": ["plStatsMessages"],
+        "componentRenders": ["plStatsMessages"],
+        "detailsMessage": ["plStatsMessages"],
+        "note": ["plStatsMessages"],
+        "latency": ["plStatsMessages"],
+        "uploadSpeed": ["plStatsMessages"],
+        "downloadSpeed": ["plStatsMessages"],
+        "speedTestTitle":["plStatsMessages"],
+        "goodConnection":["plStatsMessages"],
+        "poorConnection":["plStatsMessages"],
+        "runningSpeedTest":["plStatsMessages"],
+        "connectionStatus":["plStatsMessages"]
+    }
+}

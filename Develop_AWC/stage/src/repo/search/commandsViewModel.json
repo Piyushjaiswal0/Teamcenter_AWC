@@ -1,0 +1,3364 @@
+{
+  "commands": {
+    "Awp0StartEditSearchSummary": {
+      "iconId": "cmdEdit",
+      "isGroup": false,
+      "title": "{{i18n.Awp0StartEditSummaryTitle}}",
+      "description": "{{i18n.Awp0StartEditSummaryDesc}}"
+    },
+    "Awp0ExportWithTemplate": {
+      "iconId": "cmdExport",
+      "isGroup": false,
+      "title": "{{i18n.Awp0ExportWithTemplateTitle}}",
+      "description": "{{i18n.Awp0ExportWithTemplateDesc}}"
+    },
+    "Awp0ShowMyActiveFolder": {
+      "iconId": "cmdSearchFolder",
+      "isGroup": false,
+      "title": "{{i18n.activeFoldersTitle}}",
+      "description": "{{i18n.activeFoldersDescription}}"
+    },
+    "Awp0OpenActiveFolderGroup": {
+      "iconId": "cmdOpen",
+      "isRibbon": true,
+      "title": "{{i18n.showObjectCommandTitle}}",
+      "description": "{{i18n.Awp0OpenGroupDesc}}"
+    },
+    "Awp0OpenSaveSearch": {
+      "iconId": "cmdOpen",
+      "title": "{{i18n.open}}",
+      "description": "{{i18n.Awp0OpenSavedSearch}}"
+    },
+    "Awp0NewActiveFolderGroup": {
+      "iconId": "cmdNew",
+      "isRibbon": true,
+      "title": "{{i18n.newTabTitle}}",
+      "description": "{{i18n.Awp0NewGroupDesc}}"
+    },
+    "Awp0CreateSearchFolderMenuCtx": {
+      "iconId": "cmdAddSearchFolder",
+      "isGroup": false,
+      "title": "{{i18n.Awp0SearchFolderCreateTitle}}",
+      "description": "{{i18n.Awp0SearchFolderCreateDesc}}"
+    },
+    "Awp0CreateSearchFolderCommandBarCtx": {
+      "iconId": "cmdAddSearchFolder",
+      "isGroup": false,
+      "title": "{{i18n.Awp0SearchFolderCreateTitle}}",
+      "description": "{{i18n.Awp0SearchFolderCreateDesc}}"
+    },
+    "Awp0CreateSearchFolderPopupCtx": {
+      "iconId": "cmdAddSearchFolder",
+      "isGroup": false,
+      "title": "{{i18n.Awp0SearchFolderCreateTitle}}",
+      "description": "{{i18n.Awp0SearchFolderCreateDesc}}"
+    },
+    "Awp0StartEditSavedSearchRule": {
+      "iconId": "cmdEdit",
+      "isGroup": false,
+      "title": "{{i18n.startEdit}}",
+      "description": "{{i18n.Awp0StartEditSavedSearchRuleDesc}}"
+    },
+    "Awp0StartEditSearchFolderRule": {
+      "iconId": "cmdEdit",
+      "isGroup": false,
+      "title": "{{i18n.startEdit}}",
+      "description": "{{i18n.Awp0StartEditSearchFolderRuleDesc}}"
+    },
+    "Awp0SelectAllSearchResults": {
+      "iconId": "cmdCheckmark",
+      "title": "{{i18n.selectAll}}",
+      "description": "{{i18n.Awp0SelectAllDesc}}"
+    },
+    "Awp0DeselectAllSearchResults": {
+      "iconId": "cmdCheckmark",
+      "title": "{{i18n.clearSelections}}",
+      "description": "{{i18n.Awp0DeselectAllDesc}}"
+    },
+    "Awp0EnableMultiSelectSearchResults": {
+      "iconId": "cmdMultiSelect",
+      "title": "{{i18n.selectionMode}}",
+      "description": "{{i18n.Awp0EnableMultiSelectDesc}}"
+    },
+    "Awp0DisableMultiSelectSearchResults": {
+      "iconId": "cmdMultiSelect",
+      "title": "{{i18n.selectionMode}}",
+      "description": "{{i18n.Awp0EnableMultiSelectDesc}}"
+    },
+    "Awp0Search": {
+      "iconId": "cmdSearch",
+      "isGroup": false,
+      "title": "{{i18n.Awp0SearchTitle}}",
+      "description": "{{i18n.Awp0SearchDesc}}"
+    },
+    "Awp0AdvancedSearch": {
+      "iconId": "cmdSearch",
+      "isGroup": false,
+      "title": "{{i18n.advancedSearch}}",
+      "description": "{{i18n.Awp0AdvancedSearchDesc}}"
+    },
+    "Awp0ReviewAndExecuteAdvancedSavedSearch": {
+      "iconId": "cmdSearch",
+      "isGroup": false,
+      "title": "{{i18n.reviewAndExecuteAdvancedSavedSearch}}",
+      "description": "{{i18n.Awp0ReviewAndExecuteAdvancedSavedSearchDesc}}"
+    },
+    "Awp0SearchFilter": {
+      "iconId": "cmdFilterActive",
+      "isGroup": false,
+      "title": "{{i18n.searchFiltersTitle}}",
+      "description": "{{i18n.Awp0SearchFilterDesc}}"
+    },
+    "Awp0SearchSettings": {
+      "iconId": "cmdSettings",
+      "isGroup": false,
+      "title": "{{i18n.Awp0SearchSettingsTitle}}",
+      "description": "{{i18n.Awp0SearchSettingsDesc}}"
+    },
+    "Awp0SaveSearch": {
+      "iconId": "cmdSaveSearch",
+      "isGroup": false,
+      "title": "{{i18n.SaveSearch}}",
+      "description": "{{i18n.Awp0SaveSearchDesc}}"
+    },
+    "Awp0SaveAdvSearch": {
+      "iconId": "cmdSaveSearch",
+      "isGroup": false,
+      "title": "{{i18n.SaveSearch}}",
+      "description": "{{i18n.Awp0SaveSearchDesc}}"
+    },
+    "Awp0ShowColor": {
+      "iconId": "cmdDisplayColor",
+      "title": "{{i18n.ColorFilteringCommandTitle}}",
+      "selected": {
+        "title": "{{i18n.ColorFilteringCommandTitle}}"
+      },
+      "description": "{{i18n.Awp0ShowColorDesc}}"
+    },
+    "Awp0HighlightColorGroup": {
+      "iconId": "cmdHighlight",
+      "isGroup": true,
+      "title": "{{i18n.HighlightingAndColorFilteringCommandTitle}}",
+      "selected": {
+        "title": "{{i18n.HighlightingAndColorFilteringCommandTitle}}"
+      },
+      "description": "{{i18n.Awp0HighlightColorGroupDesc}}"
+    },
+    "Awp0Highlighting": {
+      "iconId": "cmdHighlight",
+      "title": "{{i18n.HighlightingCommandTitle}}",
+      "selected": {
+        "title": "{{i18n.HighlightingCommandTitle}}"
+      },
+      "description": "{{i18n.Awp0HighlightingDesc}}"
+    },
+    "Awp0ColorFiltering": {
+      "iconId": "cmdDisplayColor",
+      "title": "{{i18n.ColorFilteringCommandTitle}}",
+      "selected": {
+        "title": "{{i18n.ColorFilteringCommandTitle}}"
+      },
+      "description": "{{i18n.Awp0ColorFilteringDesc}}"
+    },
+    "Awp0DeleteRecentSearch": {
+      "iconId": "cmdDelete",
+      "isGroup": false,
+      "title": "{{i18n.DeleteSavedSearchCommandTitle}}",
+      "description": "{{i18n.Awp0DeleteRecentSearchDesc}}"
+    },
+    "SS1ShapeSearch": {
+      "iconId": "cmdShapeSearch",
+      "isGroup": false,
+      "title": "{{i18n.SS1ShapeSearchTitle}}",
+      "description": "{{i18n.SS1ShapeSearchDesc}}"
+    },
+    "SS1ShapeSearchInSearchLocation": {
+      "iconId": "cmdShapeSearch",
+      "isGroup": false,
+      "title": "{{i18n.SS1ShapeSearchSimilar}}",
+      "description": "{{i18n.SS1ShapeSearchDesc}}"
+    },
+    "SS1ShapeSearchInShapeLocation": {
+      "iconId": "cmdSelectParts",
+      "isGroup": false,
+      "title": "{{i18n.SS1Shapes}}",
+      "description": "{{i18n.SS1SelectShapeSearchDesc}}"
+    },
+    "Awp0PinSearch": {
+      "iconId": "cmdPin",
+      "title": "{{i18n.PinSearchCommandTitle}}",
+      "description": "{{i18n.Awp0PinSearchDesc}}"
+    },
+    "Awp0UnpinSearch": {
+      "iconId": "cmdUnpin",
+      "title": "{{i18n.UnpinSearchCommandTitle}}",
+      "description": "{{i18n.Awp0UnpinSearchDesc}}"
+    },
+    "Awp0AddSearchFolderAccessor": {
+      "iconId": "cmdDemote",
+      "isGroup": false,
+      "title": "{{i18n.Awp0AddAccessorOrProjectTitle}}",
+      "description": "{{i18n.Awp0AddAccessorOrProjectDescription}}"
+    },
+    "Awp0RemoveSearchFolderAccessor": {
+      "iconId": "cmdPromote",
+      "isGroup": false,
+      "title": "{{i18n.Awp0RemoveAccessorOrProjectTitle}}",
+      "description": "{{i18n.Awp0RemoveAccessorOrProjectDescription}}"
+    },
+    "Awp0ExportSearchFolder": {
+      "iconId": "cmdExport",
+      "isGroup": false,
+      "title": "{{i18n.Awp0ExportSearchFolderTitle}}",
+      "description": "{{i18n.Awp0ExportSearchFolderDescription}}"
+    },
+    "Awp0ImportSearchFolder": {
+      "iconId": "cmdImport",
+      "isGroup": false,
+      "title": "{{i18n.Awp0ImportSearchFolderTitle}}",
+      "description": "{{i18n.Awp0ImportSearchFolderDescription}}"
+    },
+    "Awp0ExportToExcelForSavedSearch": {
+      "iconId": "cmdExport",
+      "title": "{{i18n.Awp0ExportToExcelTitle}}",
+      "description": "{{i18n.Awp0ExportToExcelDesc}}"
+    },
+    "Awp0SelectAllForSavedSearchObjectSet": {
+      "iconId": "cmdCheckmark",
+      "title": "{{i18n.selectAll}}",
+      "description": "{{i18n.Awp0SelectAllDesc}}"
+    },
+    "Awp0DeselectAllForSavedSearchObjectSet": {
+      "iconId": "cmdCheckmark",
+      "title": "{{i18n.clearSelections}}",
+      "description": "{{i18n.Awp0DeselectAllDesc}}"
+    },
+    "Awp0EnableMultiSelectForSavedSearchObjectSet": {
+      "iconId": "cmdMultiSelect",
+      "title": "{{i18n.selectionMode}}",
+      "description": "{{i18n.Awp0EnableMultiSelectDesc}}"
+    },
+    "Awp0DisableMultiSelectForSavedSearchObjectSet": {
+      "iconId": "cmdMultiSelect",
+      "title": "{{i18n.selectionMode}}",
+      "description": "{{i18n.Awp0EnableMultiSelectDesc}}"
+    },
+    "Awp0ExportToExcelForSearchFolder": {
+      "iconId": "cmdExport",
+      "title": "{{i18n.Awp0ExportToExcelTitle}}",
+      "description": "{{i18n.Awp0ExportToExcelDesc}}"
+    },
+    "Awp0SelectAllForSearchFolderObjectSet": {
+      "iconId": "cmdCheckmark",
+      "title": "{{i18n.selectAll}}",
+      "description": "{{i18n.Awp0SelectAllDesc}}"
+    },
+    "Awp0DeselectAllForSearchFolderObjectSet": {
+      "iconId": "cmdCheckmark",
+      "title": "{{i18n.clearSelections}}",
+      "description": "{{i18n.Awp0DeselectAllDesc}}"
+    },
+    "Awp0EnableMultiSelectForSearchFolderObjectSet": {
+      "iconId": "cmdMultiSelect",
+      "title": "{{i18n.selectionMode}}",
+      "description": "{{i18n.Awp0EnableMultiSelectDesc}}"
+    },
+    "Awp0DisableMultiSelectForSearchFolderObjectSet": {
+      "iconId": "cmdMultiSelect",
+      "title": "{{i18n.selectionMode}}",
+      "description": "{{i18n.Awp0EnableMultiSelectDesc}}"
+    }
+  },
+  "commandHandlers": {
+    "searchFilterPanelCloseCommandHandler": {
+      "id": "Awp0CloseCommandPanel",
+      "action": "setFilterPanelStateSessionVariableForCloseButton",
+      "activeWhen": {
+        "condition": "conditions.isSearchFilterPanelOpen"
+      },
+      "visibleWhen": true
+    },
+    "searchTableSortAscendingCommandHandler": {
+      "id": "splmTableSortAscending",
+      "action": "sortAscending",
+      "activeWhen": {
+        "condition": "conditions.searchSortCommandVisible"
+      },
+      "enableWhen": true,
+      "visibleWhen": true,
+      "selectWhen": {
+        "condition": "conditions.sortSearchAscendingSelected"
+      }
+    },
+    "searchTableSortDescendingCommandHandler": {
+      "id": "splmTableSortDescending",
+      "action": "sortDescending",
+      "activeWhen": {
+        "condition": "conditions.searchSortCommandVisible"
+      },
+      "enableWhen": true,
+      "visibleWhen": true,
+      "selectWhen": {
+        "condition": "conditions.sortSearchDescendingSelected"
+      }
+    },
+    "searchTableRemoveSortCommandHandler": {
+      "id": "splmTableRemoveSort",
+      "action": "removeSort",
+      "activeWhen": {
+        "condition": "conditions.searchSortCommandVisible"
+      },
+      "enableWhen": true,
+      "visibleWhen": true,
+      "selectWhen": {
+        "condition": "conditions.removeSearchSortSelected"
+      }
+    },
+    "Arm0ExportImportHideHandler": {
+      "id": "Arm0ExportImport",
+      "activeWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      },
+      "visibleWhen": false
+    },
+    "htmlPanelListViewMode": {
+      "id": "objectSetListViewMode",
+      "action": "changeHtmlPanelListView",
+      "activeWhen": {
+        "condition": "conditions.isActiveFolderHtmlPanel"
+      },
+      "visibleWhen": {
+        "condition": "conditions.objectSetSupportsListView"
+      },
+      "selectWhen": {
+        "condition": "conditions.isHtmlPanelListView"
+      }
+    },
+    "htmlPanelTableViewMode": {
+      "id": "objectSetTableViewMode",
+      "action": "changeHtmlPanelTableView",
+      "activeWhen": {
+        "condition": "conditions.isActiveFolderHtmlPanel"
+      },
+      "visibleWhen": {
+        "condition": "conditions.objectSetSupportsTableView"
+      },
+      "selectWhen": {
+        "condition": "conditions.isHtmlPanelTableView"
+      }
+    },
+    "htmlPanelCompareViewMode": {
+      "id": "objectSetCompareViewMode",
+      "action": "changeHtmlPanelCompareView",
+      "activeWhen": {
+        "condition": "conditions.isActiveFolderHtmlPanel"
+      },
+      "visibleWhen": {
+        "condition": "conditions.objectSetSupportsCompareView"
+      },
+      "selectWhen": {
+        "condition": "conditions.isHtmlPanelCompareView"
+      }
+    },
+    "htmlPanelImageViewMode": {
+      "id": "objectSetImageViewMode",
+      "action": "changeHtmlPanelImageView",
+      "activeWhen": {
+        "condition": "conditions.isActiveFolderHtmlPanel"
+      },
+      "visibleWhen": {
+        "condition": "conditions.objectSetSupportsImageView"
+      },
+      "selectWhen": {
+        "condition": "conditions.isHtmlPanelImageView"
+      }
+    },
+    "Awp0ExportWithTemplateHandler": {
+      "id": "Awp0ExportWithTemplate",
+      "action": "activateExportWithTemplate",
+      "activeWhen": {
+        "condition": "conditions.exportWithTemplateAvailable"
+      },
+      "visibleWhen": {
+        "condition": "conditions.exportWithTemplateAvailable"
+      }
+    },
+    "Awp0ShowAddObjectHandlerForActiveFolder": {
+      "id": "Awp0ShowAddObject",
+      "action": "registerAddToContext",
+      "activeWhen": {
+        "condition": "conditions.isAddToCommandVisible"
+      },
+      "visibleWhen": false
+    },
+    "Awp0OpenSaveSearchHandler": {
+      "id": "Awp0OpenSaveSearch",
+      "action": "executeSavedSearch",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Awp0ShowMyActiveFolderCommandHandler": {
+      "id": "Awp0ShowMyActiveFolder",
+      "action": "getMyActiveFolder",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Awp0ImportSearchFolderCommandHandler": {
+      "id": "Awp0ImportSearchFolder",
+      "action": "activateImportSearchFolder",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Awp0ImportSearchFolderCommandConditionActive"
+      }
+    },
+    "Awp0ExportSearchFolderCommandHandler": {
+      "id": "Awp0ExportSearchFolder",
+      "action": "exportSearchFolder",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Awp0ExportSearchFolderCommandConditionActive"
+      }
+    },
+    "createSearchFolderCtxMenuCommandHandler": {
+      "id": "Awp0CreateSearchFolderMenuCtx",
+      "action": "addObjectToSearchFolder",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      }
+    },
+    "createSearchFolderCtxCommandBarCommandHandler": {
+      "id": "Awp0CreateSearchFolderCommandBarCtx",
+      "action": "addObjectToSearchFolder",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      }
+    },
+    "Awp0NewGroupCommandHandlerActiveFolder": {
+      "id": "Awp0NewGroup",
+      "activeWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      },
+      "visibleWhen": false
+    },
+    "Awp0NewActiveFolderGroupCommandHandler": {
+      "id": "Awp0NewActiveFolderGroup",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isAwp0NewActiveFolderGroupCommandVisible"
+      }
+    },
+    "OpenGroupCommandHandlerActiveFolder": {
+      "id": "Awp0OpenGroup",
+      "activeWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      },
+      "visibleWhen": false
+    },
+    "OpenGroupCommandHandlerFooter": {
+      "id": "OpenGroupCommandFooter",
+      "activeWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      },
+      "visibleWhen": false
+    },
+    "OpenActiveFolderGroupCommandHandler": {
+      "id": "Awp0OpenActiveFolderGroup",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isOpenActiveFolderGroupCommandVisible"
+      }
+    },
+    "createSearchFolderCtxCommandPopupHandler": {
+      "id": "Awp0CreateSearchFolderPopupCtx",
+      "action": "addObjectToSearchFolder",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isCreateSearchFolderCommandVisible"
+      }
+    },
+    "Awp0EditSearchFolderRuleHandler": {
+      "id": "Awp0StartEditSummary",
+      "action": "Awp0EditSearchFolderRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0EditSearchFolderRuleActiveCondition"
+      },
+      "visibleWhen": false
+    },
+    "Awp0StartEditSearchSummaryCommandHandler": {
+      "id": "Awp0StartEditSearchSummary",
+      "action": "startEditSummary",
+      "activeWhen": {
+        "condition": "conditions.awp0HideEditActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0OnOverviewPage"
+      }
+    },
+    "Awp0StartEditTableSearchCommandHandler": {
+      "id": "Awp0StartEditTable",
+      "activeWhen": {
+        "condition": "conditions.hideStartEditCmdForSearch"
+      },
+      "visibleWhen": false
+    },
+    "Awp0EditSavedSearchRuleHandler": {
+      "id": "Awp0StartEditSummary",
+      "action": "startEditSummary",
+      "activeWhen": {
+        "condition": "conditions.awp0HideEditActiveCondition"
+      },
+      "visibleWhen": false
+    },
+    "Awp0StartEditSavedSearchRuleHandler": {
+      "id": "Awp0StartEditSavedSearchRule",
+      "action": "Awp0EditSavedSearchRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0StartEditSavedSearchRuleActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0EditSavedSearchRuleVisibleCondition"
+      }
+    },
+    "Awp0CancelEditSavedSearchRuleHandler": {
+      "id": "Awp0CancelEdits",
+      "action": "Awp0CancelEditSavedSearchRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0CancelEditSavedSearchRuleActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0CancelEditSavedSearchRuleVisibleCondition"
+      }
+    },
+    "Awp0SaveSearchRuleHandler": {
+      "id": "Awp0SaveEdits",
+      "action": "overwriteAdvancedSavedSearch",
+      "activeWhen": {
+        "condition": "conditions.awp0SaveSavedSearchRuleActiveCondition"
+      },
+      "visibleWhen": true
+    },
+    "Awp0SaveFullTextSearchRuleHandler": {
+      "id": "Awp0SaveEdits",
+      "action": "Awp0SaveSavedFullTextSearchRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0SaveSavedFullTextSearchRuleActiveCondition"
+      },
+      "visibleWhen": true
+    },
+    "Awp0StartEditSearchFolderRuleHandler": {
+      "id": "Awp0StartEditSearchFolderRule",
+      "action": "Awp0EditSearchFolderRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0StartEditSearchFolderRuleActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0EditSearchFolderRuleVisibleCondition"
+      }
+    },
+    "Awp0CancelEditSearchFolderRuleHandler": {
+      "id": "Awp0CancelEdits",
+      "action": "Awp0CancelEditSearchFolderRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0CancelEditSearchFolderRuleActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0CancelEditSearchFolderRuleVisibleCondition"
+      }
+    },
+    "Awp0SaveSearchFolderRuleHandler": {
+      "id": "Awp0SaveEdits",
+      "action": "Awp0SaveSearchFolderRuleCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0SaveSearchFolderRuleActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0SaveSearchFolderRuleVisibleCondition"
+      }
+    },
+    "Awp0SelectAllSearchResultsHandler": {
+      "id": "Awp0SelectAllSearchResults",
+      "action": "Awp0SelectAllSearchResultsCommandAction",
+      "activeWhen": false,
+      "visibleWhen": {
+        "condition": "conditions.awp0SelectAllSearchResultsCondition"
+      }
+    },
+    "Awp0DeselectAllSearchResultsHandler": {
+      "id": "Awp0DeselectAllSearchResults",
+      "action": "Awp0DeselectAllSearchResultsCommandAction",
+      "activeWhen": false,
+      "visibleWhen": {
+        "condition": "conditions.awp0DeselectAllSearchResultsCondition"
+      }
+    },
+    "Awp0EnableMultiSelectSearchResultsHandler": {
+      "id": "Awp0EnableMultiSelectSearchResults",
+      "action": "Awp0EnableMultiSelectSearchResultsCommandAction",
+      "activeWhen": false,
+      "visibleWhen": {
+        "condition": "conditions.awp0MultiSelectSearchResultsEnableCondition"
+      }
+    },
+    "Awp0DisableMultiSelectSearchResultsHandler": {
+      "id": "Awp0DisableMultiSelectSearchResults",
+      "action": "Awp0DisableMultiSelectSearchResultsCommandAction",
+      "activeWhen": false,
+      "visibleWhen": {
+        "condition": "conditions.awp0MultiSelectSearchResultsDisableCondition"
+      },
+      "selectWhen": true
+    },
+    "searchCommandHandler": {
+      "id": "Awp0Search",
+      "action": "activateSearch",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.showSearchCommandCondition"
+      }
+    },
+    "advancedSearchCommandHandler": {
+      "id": "Awp0AdvancedSearch",
+      "action": "activateAdvancedSearch",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.advancedSearchCommandVisible"
+      }
+    },
+    "reviewAndExecuteAdvancedSavedSearchCommandHandler": {
+      "id": "Awp0ReviewAndExecuteAdvancedSavedSearch",
+      "action": "activateReviewAndExecuteAdvancedSavedSearch",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.reviewAndExecuteAdvancedSavedSearchCommandVisible"
+      }
+    },
+    "searchFilterCommandHandler": {
+      "id": "Awp0SearchFilter",
+      "action": "activateSearchFilterBatchJob",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.searchFilterCommandVisible"
+      }
+    },
+    "searchSettingsCommandHandler": {
+      "id": "Awp0SearchSettings",
+      "action": "activateSearchSettings",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.searchSettingsCommandVisible"
+      }
+    },
+    "saveSearchCommandHandler": {
+      "id": "Awp0SaveSearch",
+      "action": "activateSaveSearchPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.saveSearchCommandVisible"
+      }
+    },
+    "saveAdvSearchCommandHandler": {
+      "id": "Awp0SaveAdvSearch",
+      "action": "activateSaveAdvSearchPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.saveAdvSearchCommandVisible"
+      }
+    },
+    "Awp0ShowColorHandler": {
+      "id": "Awp0ShowColor",
+      "action": "toggleColorAction",
+      "activeWhen": {
+        "condition": "conditions.cmdShowColorCommandActive"
+      },
+      "visibleWhen": {
+        "condition": "conditions.cmdShowColorCommandActive"
+      },
+      "selectWhen": {
+        "condition": "conditions.checkColorFilteringPrefValue"
+      }
+    },
+    "Awp0HighlightColorGroupHandler": {
+      "id": "Awp0HighlightColorGroup",
+      "activeWhen": true
+    },
+    "Awp0HighlightingHandler": {
+      "id": "Awp0Highlighting",
+      "action": "toggleHighlightingAction",
+      "activeWhen": {
+        "condition": "conditions.cmdHighlightingCommandActive"
+      },
+      "visibleWhen": {
+        "condition": "conditions.cmdHighlightingCommandActive"
+      },
+      "selectWhen": {
+        "condition": "conditions.checkHighlightingPrefValue"
+      },
+      "enableWhen": {
+        "condition": "conditions.cmdHighlightColorGroupEnabled"
+      }
+    },
+    "Awp0ColorFilteringHandler": {
+      "id": "Awp0ColorFiltering",
+      "action": "toggleColorAction",
+      "activeWhen": {
+        "condition": "conditions.cmdColorFilteringCommandActive"
+      },
+      "visibleWhen": {
+        "condition": "conditions.cmdColorFilteringCommandVisible"
+      },
+      "selectWhen": {
+        "condition": "conditions.checkColorFilteringPrefValue"
+      },
+      "enableWhen": {
+        "condition": "conditions.cmdHighlightColorGroupEnabled"
+      }
+    },
+    "deleteSaveSearchCommandHandler": {
+      "id": "Awp0DeleteRecentSearch",
+      "action": "confirmDeleteSavedSearch",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.deleteSaveSearchCommandVisible"
+      }
+    },
+    "SS1ShapeSearchInShapeLocationCommandHandler": {
+      "id": "SS1ShapeSearchInShapeLocation",
+      "action": "showShapeSearchPanel",
+      "activeWhen": {
+        "condition": "conditions.shapeSearchCommandVisibility"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shapeSearchCommandVisibility"
+      }
+    },
+    "ShapeSearchCommandHandler": {
+      "id": "SS1ShapeSearch",
+      "action": "ShapeSearch",
+      "activeWhen": {
+        "condition": "conditions.shapeSearchVisibility"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shapeSearchVisibility"
+      }
+    },
+    "ShapeSearchInSearchLocationCommandHandler": {
+      "id": "SS1ShapeSearchInSearchLocation",
+      "action": "ShapeSearch",
+      "activeWhen": {
+        "condition": "conditions.locationforShapeCommandActive"
+      },
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.shapeSearchInSearchLocationVisibility"
+      }
+    },
+    "ShapeSearchInXRTCommandHandler": {
+      "id": "SS1ShapeSearch",
+      "action": "ShapeSearchInXRT",
+      "activeWhen": {
+        "condition": "conditions.shapeSearchInXRTCommandActive"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shapeSearchInXRTVisibility"
+      }
+    },
+    "savedSearchCheckoutHandler": {
+      "id": "Awp0Checkout",
+      "activeWhen": {
+        "condition": "conditions.savedSearchCheckoutCommandActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0ShowObjectInSearchCommandHandler": {
+      "id": "Awp0ShowObject",
+      "activeWhen": {
+        "condition": "conditions.cmdOpenInSearchConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0OpenWindowInSearchCommandHandler": {
+      "id": "Awp0OpenInNewWindow",
+      "activeWhen": {
+        "condition": "conditions.cmdOpenInNewWindowInSearchCommandActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0ShareURLInSearchCommandHandler": {
+      "id": "Awp0ShareURL",
+      "activeWhen": {
+        "condition": "conditions.cmdShareURLInSearchCommandActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0OpenTabInSearchCommandHandler": {
+      "id": "Awp0OpenInNewTab",
+      "activeWhen": {
+        "condition": "conditions.cmdOpenInNewTabInSearchCommandActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0OpenInRACInSearchCommandHandler": {
+      "id": "Awp0OpenInRAC",
+      "activeWhen": {
+        "condition": "conditions.cmd0OpenInRACInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0PinSearchCommandHandler": {
+      "id": "Awp0PinSearch",
+      "action": "pinSavedSearch",
+      "activeWhen": {
+        "condition": "conditions.pinSearchCommandCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.pinSearchCommandCondition"
+      }
+    },
+    "Awp0UnpinSearchCommandHandler": {
+      "id": "Awp0UnpinSearch",
+      "action": "unpinSearch",
+      "activeWhen": {
+        "condition": "conditions.unpinSearchCommandCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.unpinSearchCommandCondition"
+      }
+    },
+    "Awp0StartEditInSearchCommandHandler": {
+      "id": "Awp0StartEdit",
+      "activeWhen": {
+        "condition": "conditions.cmd0StartEditInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0AssignProjectsInSearchCommandHandler": {
+      "id": "Awp0AssignProjects",
+      "activeWhen": {
+        "condition": "conditions.Awp0AssignProjectsInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Cm1ShowCreateChangeInContextInSearchCommandHandler": {
+      "id": "Cm1ShowCreateChangeInContext",
+      "activeWhen": {
+        "condition": "conditions.Cm1ShowCreateChangeInContextInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0AddToFavoritesInSearchCommandHandler": {
+      "id": "Awp0AddToFavorites",
+      "activeWhen": {
+        "condition": "conditions.Awp0AddToFavoritesInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0RemoveFromFavoritesInSearchCommandHandler": {
+      "id": "Awp0RemoveFromFavorites",
+      "activeWhen": {
+        "condition": "conditions.Awp0RemoveFromFavoritesInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0ChangeOwnerInSearchCommandHandler": {
+      "id": "Awp0ChangeOwner",
+      "activeWhen": {
+        "condition": "conditions.Awp0ChangeOwnerInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0CopyInSearchCommandHandler": {
+      "id": "Awp0Copy",
+      "activeWhen": {
+        "condition": "conditions.Awp0CopyInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0CopyContextMenuInSearchCommandHandler": {
+      "id": "Awp0CopyContextMenu",
+      "activeWhen": {
+        "condition": "conditions.Awp0CopyInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0PinObjectInSearchCommandHandler": {
+      "id": "Awp0PinObject",
+      "activeWhen": {
+        "condition": "conditions.Awp0PinObjectInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0UnPinObjectInSearchCommandHandler": {
+      "id": "Awp0UnPinObject",
+      "activeWhen": {
+        "condition": "conditions.Awp0UnPinObjectInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Sub0SubscribeInSearchCommandHandler": {
+      "id": "Sub0Subscribe",
+      "activeWhen": {
+        "condition": "conditions.Sub0SubscribeInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0ShowCreateObjectInSearchCommandHandler": {
+      "id": "Awp0ShowCreateObject",
+      "activeWhen": {
+        "condition": "conditions.Awp0ShowCreateObjectInSearchCommandConditionActive"
+      },
+      "visibleWhen": false
+    },
+    "Awp0AddSearchFolderAccessorCommandHandler": {
+      "id": "Awp0AddSearchFolderAccessor",
+      "action": "addSearchFolderAccessor",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.Awp0AddSearchFolderAccessorCommandConditionActive"
+      }
+    },
+    "Awp0RemoveSearchFolderAccessorCommandHandler": {
+      "id": "Awp0RemoveSearchFolderAccessor",
+      "action": "removeSearchFolderAccessor",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.Awp0RemoveSearchFolderAccessorCommandConditionActive"
+      }
+    },
+    "Awp0ExportToExcelForSavedSearchCommandHandler": {
+      "id": "Awp0ExportToExcelForSavedSearch",
+      "action": "activateExportToExcelPanelForSavedSearch",
+      "activeWhen": {
+        "condition": "conditions.awp0ExportToExcelForSavedSearchVisibleCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0ExportToExcelForSavedSearchVisibleCondition"
+      }
+    },
+    "Awp0SelectAllForSavedSearchObjectSetHandler": {
+      "id": "Awp0SelectAllForSavedSearchObjectSet",
+      "action": "Awp0SelectAllForSavedSearchObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0SelectAllForSavedSearchObjectSetCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0SelectAllForSavedSearchObjectSetCondition"
+      }
+    },
+    "Awp0DeselectAllForSavedSearchObjectSetHandler": {
+      "id": "Awp0DeselectAllForSavedSearchObjectSet",
+      "action": "Awp0DeselectAllForSavedSearchObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0DeselectAllForSavedSearchObjectSetCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0DeselectAllForSavedSearchObjectSetCondition"
+      }
+    },
+    "Awp0EnableMultiSelectForSavedSearchObjectSetHandler": {
+      "id": "Awp0EnableMultiSelectForSavedSearchObjectSet",
+      "action": "Awp0EnableMultiSelectForSavedSearchObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0MultiSelectForSavedSearchObjectSetEnableCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0MultiSelectForSavedSearchObjectSetEnableCondition"
+      }
+    },
+    "Awp0DisableMultiSelectForSavedSearchObjectSetHandler": {
+      "id": "Awp0DisableMultiSelectForSavedSearchObjectSet",
+      "action": "Awp0DisableMultiSelectForSavedSearchObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0MultiSelectForSavedSearchObjectSetDisableCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0MultiSelectForSavedSearchObjectSetDisableCondition"
+      },
+      "selectWhen": true
+    },
+    "Awp0ExportToExcelForSearchFolderCommandHandler": {
+      "id": "Awp0ExportToExcelForSearchFolder",
+      "action": "activateExportToExcelPanelForSearchFolder",
+      "activeWhen": {
+        "condition": "conditions.awp0ExportToExcelForSearchFolderVisibleCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0ExportToExcelForSearchFolderVisibleCondition"
+      }
+    },
+    "Awp0SelectAllForSearchFolderObjectSetHandler": {
+      "id": "Awp0SelectAllForSearchFolderObjectSet",
+      "action": "Awp0SelectAllForSearchFolderObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0SelectAllForSearchFolderObjectSetCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0SelectAllForSearchFolderObjectSetCondition"
+      }
+    },
+    "Awp0DeselectAllForSearchFolderObjectSetHandler": {
+      "id": "Awp0DeselectAllForSearchFolderObjectSet",
+      "action": "Awp0DeselectAllForSearchFolderObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0DeselectAllForSearchFolderObjectSetCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0DeselectAllForSearchFolderObjectSetCondition"
+      }
+    },
+    "Awp0EnableMultiSelectForSearchFolderObjectSetHandler": {
+      "id": "Awp0EnableMultiSelectForSearchFolderObjectSet",
+      "action": "Awp0EnableMultiSelectForSearchFolderObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0MultiSelectForSearchFolderObjectSetEnableCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0MultiSelectForSearchFolderObjectSetEnableCondition"
+      }
+    },
+    "Awp0DisableMultiSelectForSearchFolderObjectSetHandler": {
+      "id": "Awp0DisableMultiSelectForSearchFolderObjectSet",
+      "action": "Awp0DisableMultiSelectForSearchFolderObjectSetCommandAction",
+      "activeWhen": {
+        "condition": "conditions.awp0MultiSelectForSearchFolderObjectSetDisableCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.awp0MultiSelectForSearchFolderObjectSetDisableCondition"
+      },
+      "selectWhen": true
+    },
+    "Awp0DeleteCommandHandlerForActiveFolders": {
+      "id": "Awp0Delete",
+      "action": "confirmDeleteActiveFolders",
+      "activeWhen": {
+        "condition": "conditions.deleteMultipleActiveFolderCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.deleteMultipleActiveFolderCondition"
+      }
+    },
+    "Awp0DeleteCommandHandlerForMyActiveFolder": {
+      "id": "Awp0Delete",
+      "activeWhen": {
+        "condition": "conditions.deleteMyActiveFolderCondition"
+      },
+      "visibleWhen": false
+    },
+    "Awp0NewGroupCommandHandlerForSavedSearchObject": {
+      "id": "Awp0NewGroup",
+      "activeWhen": {
+        "condition": "conditions.areCommandsVisibleForSavedSearch"
+      },
+      "visibleWhen": false
+    },
+    "Awp0ManageGroupCommandHandlerForSavedSearchObject": {
+      "id": "Awp0ManageGroup",
+      "activeWhen": {
+        "condition": "conditions.areCommandsVisibleForSavedSearch"
+      },
+      "visibleWhen": false
+    },
+    "OpenInIllustratorCommandHandlerForSavedSearchObject": {
+      "id": "openInIllustrator",
+      "activeWhen": {
+        "condition": "conditions.areCommandsVisibleForSavedSearch"
+      },
+      "visibleWhen": false
+    },
+    "Arm0ExistingTraceLinkCommandHandlerForSavedSearchObject": {
+      "id": "Arm0ExistingTraceLink",
+      "activeWhen": {
+        "condition": "conditions.areCommandsVisibleForSavedSearch"
+      },
+      "visibleWhen": false
+    },
+    "Awp0ViewOwnershipTransferCommandHandlerForSavedSearchObject": {
+      "id": "Awp0ViewOwnershipTransfer",
+      "activeWhen": {
+        "condition": "conditions.areCommandsVisibleForSavedSearch"
+      },
+      "visibleWhen": false
+    }
+  },
+  "commandPlacements": {
+    "Awp0StartEditSearchSummaryOneStep": {
+      "id": "Awp0StartEditSearchSummary",
+      "uiAnchor": "aw_rightWall",
+      "priority": 20,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "SS1ShapeSearchInShapeLocationPlacement": {
+      "id": "SS1ShapeSearchInShapeLocation",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 31
+    },
+    "Awp0OpenSaveSearchPlacement": {
+      "id": "Awp0OpenSaveSearch",
+      "uiAnchor": "search_save_open_command",
+      "priority": 1,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Awp0ShowObjectOneStepActiveFolder": {
+      "id": "Awp0ShowObject",
+      "uiAnchor": "aw_rightWall",
+      "parentGroupId": "Awp0OpenActiveFolderGroup",
+      "priority": 1
+    },
+    "Awp0OpenInNewTabOneStepActiveFolder": {
+      "id": "Awp0OpenInNewTab",
+      "uiAnchor": "aw_rightWall",
+      "parentGroupId": "Awp0OpenActiveFolderGroup",
+      "priority": 2
+    },
+    "Awp0OpenInNewWindowOneStepActiveFolder": {
+      "id": "Awp0OpenInNewWindow",
+      "uiAnchor": "aw_rightWall",
+      "parentGroupId": "Awp0OpenActiveFolderGroup",
+      "priority": 3
+    },
+    "OpenActiveFolderGroupCommandOneStep": {
+      "id": "Awp0OpenActiveFolderGroup",
+      "uiAnchor": "aw_rightWall",
+      "priority": 20
+    },
+    "OpenActiveFolderGroupCommandOneStep_workarea": {
+      "id": "Awp0OpenActiveFolderGroup",
+      "uiAnchor": "aw_workarea_toolbar",
+      "relativeTo": "Awp0OpenGroup"
+    },
+    "Awp0NewActiveFolderGroupPlacement": {
+      "id": "Awp0NewActiveFolderGroup",
+      "uiAnchor": "aw_rightWall",
+      "priority": 1000
+    },
+    "Awp0NewActiveFolderGroupPlacement_workarea": {
+      "id": "Awp0NewActiveFolderGroup",
+      "uiAnchor": "aw_workarea_toolbar",
+      "relativeTo": "Awp0NewGroup"
+    },
+    "Awp0CreateSearchFolderCtxMenuPlacement": {
+      "id": "Awp0CreateSearchFolderMenuCtx",
+      "uiAnchor": "aw_contextMenu2",
+      "priority": 1
+    },
+    "Awp0CreateSearchFolderCtxCommandBarPlacement": {
+      "id": "Awp0CreateSearchFolderCommandBarCtx",
+      "uiAnchor": "aw_workArea_right",
+      "priority": 1
+    },
+    "Awp0CreateSearchFolderCtxPopupPlacement": {
+      "id": "Awp0CreateSearchFolderPopupCtx",
+      "uiAnchor": "Awp0NewActiveFolderGroup",
+      "priority": 0.25
+    },
+    "createTracelinkPopupPlacementActiveFolder": {
+      "id": "Arm0CreateTraceLink",
+      "uiAnchor": "Awp0NewActiveFolderGroup",
+      "priority": 480
+    },
+    "generateTraceabilityMatrixDisplayActiveFolder": {
+      "id": "Arm0GenerateTraceabilityMatrix",
+      "uiAnchor": "Awp0NewActiveFolderGroup",
+      "priority": 490
+    },
+    "Awp0StartEditDisplaySavedSearch": {
+      "id": "Awp0StartEditSavedSearchRule",
+      "uiAnchor": "aw_SavedSearchRule",
+      "priority": 6
+    },
+    "Awp0CancelEditsDisplaySavedSearch": {
+      "id": "Awp0CancelEdits",
+      "uiAnchor": "aw_SavedSearchRule",
+      "priority": 17
+    },
+    "Awp0SaveEditsDisplaySavedSearch": {
+      "id": "Awp0SaveEdits",
+      "uiAnchor": "aw_SavedSearchRule",
+      "priority": 18
+    },
+    "Awp0StartEditDisplayActiveFolder": {
+      "id": "Awp0StartEditSearchFolderRule",
+      "uiAnchor": "aw_SearchFolderRule",
+      "priority": 6
+    },
+    "Awp0StartEditRightWallActiveFolder": {
+      "id": "Awp0StartEditSearchFolderRule",
+      "uiAnchor": "aw_rightWall",
+      "priority": 10,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Awp0CancelEditsDisplayActiveFolder": {
+      "id": "Awp0CancelEdits",
+      "uiAnchor": "aw_SearchFolderRule",
+      "priority": 17
+    },
+    "Awp0SaveEditsDisplayActiveFolder": {
+      "id": "Awp0SaveEdits",
+      "uiAnchor": "aw_SearchFolderRule",
+      "priority": 18
+    },
+    "Awp0SelectAllSearchResultsDisplayActiveFolder": {
+      "id": "Awp0SelectAllSearchResults",
+      "uiAnchor": "aw_SearchResults",
+      "priority": 7
+    },
+    "Awp0DeselectAllSearchResultsDisplayActiveFolder": {
+      "id": "Awp0DeselectAllSearchResults",
+      "uiAnchor": "aw_SearchResults",
+      "priority": 7
+    },
+    "Awp0EnableMultiSelectSearchResultsDisplayActiveFolder": {
+      "id": "Awp0EnableMultiSelectSearchResults",
+      "uiAnchor": "aw_SearchResults",
+      "priority": 6
+    },
+    "Awp0DisableMultiSelectSearchResultsDisplayActiveFolder": {
+      "id": "Awp0DisableMultiSelectSearchResults",
+      "uiAnchor": "aw_SearchResults",
+      "priority": 6
+    },
+    "advancedSearchToolbar": {
+      "id": "Awp0AdvancedSearch",
+      "uiAnchor": "aw_primaryWorkArea_Awp0AdvancedSearch",
+      "priority": 30
+    },
+    "advancedSearchFooterToolbar": {
+      "id": "Awp0AdvancedSearch",
+      "uiAnchor": "aw_footer",
+      "priority": 2
+    },
+    "reviewAndExecuteAdvancedSavedSearchToolbar": {
+      "id": "Awp0ReviewAndExecuteAdvancedSavedSearch",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SavedSearch",
+      "priority": 1250
+    },
+    "reviewAndExecuteAdvancedSavedSearchFooterToolbar": {
+      "id": "Awp0ReviewAndExecuteAdvancedSavedSearch",
+      "uiAnchor": "aw_footer",
+      "priority": 2
+    },
+    "Awp0SearchFilterToolbar_Awp0SavedSearch": {
+      "id": "Awp0SearchFilter",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SavedSearch",
+      "priority": 30
+    },
+    "Awp0SearchFilterToolbar_Awp0SearchResults": {
+      "id": "Awp0SearchFilter",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SearchResults",
+      "priority": 30
+    },
+    "Awp0SearchFilterFooterToolbar": {
+      "id": "Awp0SearchFilter",
+      "uiAnchor": "aw_footer",
+      "priority": 0.5
+    },
+    "Awp0SearchSettingsToolbar": {
+      "id": "Awp0SearchSettings",
+      "uiAnchor": "aw_primaryWorkArea_com_siemens_splm_client_search_SearchLocation",
+      "priority": 1291
+    },
+    "Awp0SearchSettingsFooterToolbar": {
+      "id": "Awp0SearchSettings",
+      "uiAnchor": "aw_footer",
+      "priority": 0.5
+    },
+    "saveSearchToolsAndInfo": {
+      "id": "Awp0SaveSearch",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SearchResults",
+      "priority": 33
+    },
+    "saveAdvSearchToolsAndInfo": {
+      "id": "Awp0SaveAdvSearch",
+      "uiAnchor": "aw_primaryWorkArea_Awp0AdvancedSearch",
+      "priority": 31
+    },
+    "Awp0ShowColorOneStep": {
+      "id": "Awp0ShowColor",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 102
+    },
+    "Awp0HighlightColorGroupOneStep": {
+      "id": "Awp0HighlightColorGroup",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SearchResults",
+      "priority": 1290
+    },
+    "Awp0HighlightingOneStep-classic": {
+      "id": "Awp0Highlighting",
+      "uiAnchor": "aw_display",
+      "priority": 1,
+      "parentGroupId": "Awp0HighlightColorGroup"
+    },
+    "Awp0HighlightingOneStep": {
+      "id": "Awp0Highlighting",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SearchResults",
+      "priority": 20,
+      "parentGroupId": "Awp0HighlightColorGroup"
+    },
+    "Awp0ColorFilteringOneStep-classic": {
+      "id": "Awp0ColorFiltering",
+      "uiAnchor": "aw_display",
+      "priority": 2,
+      "parentGroupId": "Awp0HighlightColorGroup"
+    },
+    "Awp0ColorFilteringOneStep": {
+      "id": "Awp0ColorFiltering",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SearchResults",
+      "priority": 70,
+      "parentGroupId": "Awp0HighlightColorGroup"
+    },
+    "deleteRecentSearchOneStep": {
+      "id": "Awp0DeleteRecentSearch",
+      "uiAnchor": "aw_rightWall",
+      "priority": 1,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "SS1ShapeSearchOneStep": {
+      "id": "SS1ShapeSearch",
+      "uiAnchor": "aw_rightWall",
+      "priority": 720,
+      "parentGroupId": "Awp0ViewGroup"
+    },
+    "SS1ShapeSearchInSearchLocation": {
+      "id": "SS1ShapeSearchInSearchLocation",
+      "uiAnchor": "aw_primaryWorkArea_Awp0SearchResults",
+      "priority": 31
+    },
+    "Awp0PinSearchOneStep": {
+      "id": "Awp0PinSearch",
+      "uiAnchor": "aw_rightWall",
+      "priority": 120,
+      "parentGroupId": "Awp0ViewGroup"
+    },
+    "Awp0UnpinSearchOneStep": {
+      "id": "Awp0UnpinSearch",
+      "uiAnchor": "aw_rightWall",
+      "priority": 120,
+      "parentGroupId": "Awp0ViewGroup"
+    },
+    "Awp0AddSearchFolderAccessorCommandPlacement": {
+      "id": "Awp0AddSearchFolderAccessor",
+      "uiAnchor": "aw_searchFolderAccessorToolbar",
+      "priority": 400
+    },
+    "Awp0RemoveSearchFolderAccessorCommandPlacement": {
+      "id": "Awp0RemoveSearchFolderAccessor",
+      "uiAnchor": "aw_searchFolderAccessorToolbar",
+      "priority": 400
+    },
+    "Awp0ExportSearchFolderCommandPlacement": {
+      "id": "Awp0ExportSearchFolder",
+      "uiAnchor": "aw_rightWall",
+      "priority": 80,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "Awp0ImportSearchFolderCommandPlacementForSearchFolder": {
+      "id": "Awp0ImportSearchFolder",
+      "uiAnchor": "aw_rightWall",
+      "priority": 80,
+      "parentGroupId": "Awp0NewActiveFolderGroup"
+    },
+    "Awp0ImportSearchFolderCommandPlacementForFolder": {
+      "id": "Awp0ImportSearchFolder",
+      "uiAnchor": "aw_rightWall",
+      "priority": 500,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Awp0ShowMyActiveFolderGlobalNavigationbar": {
+      "id": "Awp0ShowMyActiveFolder",
+      "uiAnchor": "aw_globalNavigationbar",
+      "priority": 60
+    },
+    "Awp0ExportToExcelForSavedSearchCommandPlacement": {
+      "id": "Awp0ExportToExcelForSavedSearch",
+      "uiAnchor": "aw_savedSearchContentsExportSet",
+      "priority": 3
+    },
+    "Awp0SelectAllForSavedSearchObjectSetDisplay": {
+      "id": "Awp0SelectAllForSavedSearchObjectSet",
+      "uiAnchor": "aw_savedSearchContentsSelectionSet",
+      "priority": 7
+    },
+    "Awp0DeselectAllForSavedSearchObjectSetDisplay": {
+      "id": "Awp0DeselectAllForSavedSearchObjectSet",
+      "uiAnchor": "aw_savedSearchContentsSelectionSet",
+      "priority": 7
+    },
+    "Awp0EnableMultiSelectForSavedSearchObjectSetDisplay": {
+      "id": "Awp0EnableMultiSelectForSavedSearchObjectSet",
+      "uiAnchor": "aw_savedSearchContentsSelectionSet",
+      "priority": 6
+    },
+    "Awp0DisableMultiSelectForSavedSearchObjectSetDisplay": {
+      "id": "Awp0DisableMultiSelectForSavedSearchObjectSet",
+      "uiAnchor": "aw_savedSearchContentsSelectionSet",
+      "priority": 6
+    },
+    "Awp0ExportToExcelForSearchFolderCommandPlacement": {
+      "id": "Awp0ExportToExcelForSearchFolder",
+      "uiAnchor": "aw_searchFolderContentsExportSet",
+      "priority": 3
+    },
+    "Awp0SelectAllForSearchFolderObjectSetDisplay": {
+      "id": "Awp0SelectAllForSearchFolderObjectSet",
+      "uiAnchor": "aw_searchFolderContentsSelectionSet",
+      "priority": 7
+    },
+    "Awp0DeselectAllForSearchFolderObjectSetDisplay": {
+      "id": "Awp0DeselectAllForSearchFolderObjectSet",
+      "uiAnchor": "aw_searchFolderContentsSelectionSet",
+      "priority": 7
+    },
+    "Awp0EnableMultiSelectForSearchFolderObjectSetDisplay": {
+      "id": "Awp0EnableMultiSelectForSearchFolderObjectSet",
+      "uiAnchor": "aw_searchFolderContentsSelectionSet",
+      "priority": 6
+    },
+    "Awp0DisableMultiSelectForSearchFolderObjectSetDisplay": {
+      "id": "Awp0DisableMultiSelectForSearchFolderObjectSet",
+      "uiAnchor": "aw_searchFolderContentsSelectionSet",
+      "priority": 6
+    },
+    "Awp0ExportWithTemplateToolsAndInfo": {
+      "id": "Awp0ExportWithTemplate",
+      "uiAnchor": "aw_rightWall",
+      "priority": 120,
+      "parentGroupId": "Awp0ShareGroup"
+    }
+  },
+  "actions": {
+    "changeHtmlPanelListView": {
+      "actionType": "JSFunction",
+      "method": "updateObjectSetViewMode",
+      "deps": "js/xrtObjectSetService",
+      "inputData": {
+        "commandContext": "{{commandContext.currentDisplayField}}",
+        "newDisplay": "listDisplay"
+      }
+    },
+    "changeHtmlPanelTableView": {
+      "actionType": "JSFunction",
+      "method": "updateObjectSetViewMode",
+      "deps": "js/xrtObjectSetService",
+      "inputData": {
+        "commandContext": "{{commandContext.currentDisplayField}}",
+        "newDisplay": "tableDisplay"
+      }
+    },
+    "changeHtmlPanelCompareView": {
+      "actionType": "JSFunction",
+      "method": "updateObjectSetViewMode",
+      "deps": "js/xrtObjectSetService",
+      "inputData": {
+        "commandContext": "{{commandContext.currentDisplayField}}",
+        "newDisplay": "compareDisplay"
+      }
+    },
+    "changeHtmlPanelImageView": {
+      "actionType": "JSFunction",
+      "method": "updateObjectSetViewMode",
+      "deps": "js/xrtObjectSetService",
+      "inputData": {
+        "commandContext": "{{commandContext.currentDisplayField}}",
+        "newDisplay": "thumbnailDisplay"
+      }
+    },
+    "showShapeSearchPanel": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "SS1ShapeSearchInShapeLocation",
+          "placement": "left",
+          "parent": ".aw-layout-defaultSublocation",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "activateExportWithTemplate": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "AwExportWithTemplate",
+          "placement": "right",
+          "parent": ".aw-layout-workarea",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}"
+        }
+      }
+    },
+    "executeAdvancedSavedSearch": {
+      "actionType": "JSFunction",
+      "method": "executeAdvancedSavedSearch",
+      "inputData": {
+        "vmo": "{{commandContext.vmo}}",
+        "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}"
+      },
+      "deps": "js/Awp0SaveSearchService"
+    },
+    "getAttributeModelObjectForSavedQueryForPinningAdvancedSavedSearch": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2016-12-AdvancedSearch",
+      "method": "getSelectedQueryCriteria",
+      "inputData": {
+        "selectedQuery": {
+          "uid": "{{commandContext.selectionData.selected[0].props.savedsearch_query.dbValue}}",
+          "type": "ImanQuery"
+        }
+      },
+      "outputData": {
+        "advSavedSearchViewModelObject": "{{function:updateSearchAttributesWithSelectedQuery}}"
+      },
+      "deps": "js/advancedSearchService"
+    },
+    "getAttributeModelObjectForSavedQuery": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2016-12-AdvancedSearch",
+      "method": "getSelectedQueryCriteria",
+      "inputData": {
+        "selectedQuery": {
+          "uid": "{{commandContext.vmo.props.savedsearch_query.dbValue}}",
+          "type": "ImanQuery"
+        }
+      },
+      "outputData": {
+        "advSavedSearchViewModelObject": "{{function:updateSearchAttributesWithSelectedQuery}}"
+      },
+      "deps": "js/advancedSearchService"
+    },
+    "updateAttributesAdvancedSavedSearchForPinning": {
+      "actionType": "JSFunction",
+      "method": "updateAttributesAdvSavedSearch",
+      "inputData": {
+        "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+        "savedSearchObject": "{{commandContext.selectionData.selected[0]}}"
+      },
+      "outputData": {
+        "advSavedSearchViewModelObject": ""
+      },
+      "deps": "js/advancedSearchService"
+    },
+    "updateAttributesAdvancedSavedSearch": {
+      "actionType": "JSFunction",
+      "method": "updateAttributesAdvSavedSearch",
+      "inputData": {
+        "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+        "savedSearchObject": "{{commandContext.vmo}}"
+      },
+      "outputData": {
+        "advSavedSearchViewModelObject": ""
+      },
+      "deps": "js/advancedSearchService"
+    },
+    "confirmDeleteActiveFolders": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {}
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "ActiveFolderDeleteConfirmationMessage"
+          }
+        ]
+      }
+    },
+    "deleteMultipleActiveFolders": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-Search-2021-12-SearchFolder",
+      "method": "deleteActiveFolders",
+      "inputData": {
+        "activeFolders": "{{function:getActiveFolderUids}}"
+      },
+      "outputData": {
+        "deleteActiveFolderPartialErrors": "partialErrors"
+      },
+      "deps": "js/searchFolderService",
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          },
+          {
+            "name": "cdm.relatedModified",
+            "eventData": {
+              "refreshLocationFlag": true,
+              "relatedModified": [
+                "{{ctx.xrtSummaryContextObject}}"
+              ]
+            }
+          }
+        ],
+        "failure": [
+          {
+            "name": "primaryWorkarea.reset"
+          },
+          {
+            "name": "cdm.relatedModified",
+            "eventData": {
+              "refreshLocationFlag": true,
+              "relatedModified": [
+                "{{ctx.xrtSummaryContextObject}}"
+              ]
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "condition": "ctx.mselected && ctx.mselected.length >= 1",
+            "message": "deleteActiveFolderFailureMessage"
+          }
+        ]
+      }
+    },
+    "executeAdvancedSavedSearchBatchJob": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "getAttributeModelObjectForSavedQuery"
+        },
+        {
+          "action": "updateAttributesAdvancedSavedSearch",
+          "condition": "data.advSavedSearchViewModelObject"
+        },
+        {
+          "action": "executeAdvancedSavedSearch"
+        }
+      ]
+    },
+    "executeFullTextSavedSearch": {
+      "actionType": "JSFunction",
+      "method": "executeFullTextSavedSearch",
+      "inputData": {
+        "vmo": "{{commandContext.vmo}}"
+      },
+      "deps": "js/Awp0SaveSearchService"
+    },
+    "setTypeForSavedSearchObject": {
+      "actionType": "JSFunction",
+      "method": "setTypeForSavedSearchObject",
+      "inputData": {
+        "vmo": "{{commandContext.vmo}}"
+      },
+      "outputData": {
+        "selectedSavedSearchObjectType": ""
+      },
+      "deps": "js/Awp0SaveSearchService"
+    },
+    "executeSavedSearch": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "setTypeForSavedSearchObject"
+        },
+        {
+          "action": "executeFullTextSavedSearch",
+          "condition": "data.selectedSavedSearchObjectType === 'Awp0FullTextSavedSearch'"
+        },
+        {
+          "action": "executeAdvancedSavedSearchBatchJob",
+          "condition": "data.selectedSavedSearchObjectType === 'SavedSearch'"
+        }
+      ]
+    },
+    "getMyActiveFolder": {
+      "actionType": "TcSoaService",
+      "method": "performSearchViewModel5",
+      "serviceName": "Internal-AWS2-2023-06-Finder",
+      "inputData": {
+        "searchInput": {
+          "attributesToInflate": [],
+          "startIndex": 0,
+          "maxToLoad": 50,
+          "maxToReturn": 50,
+          "providerName": "Awp0SearchFolderProvider",
+          "searchCriteria": {
+            "parentUid": "MyActiveFolderRoot"
+          },
+          "searchSortCriteria": [],
+          "searchFilterFieldSortType": "Priority",
+          "searchFilterMap6": {}
+        },
+        "columnConfigInput": {},
+        "inflateProperties": false,
+        "saveColumnConfigData": {}
+      },
+      "outputData": {
+        "searchResults": "{{json:searchResultsJSON}}",
+        "defaultActiveFolders": "additionalSearchInfoMap.defaultActiveFolders"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "setCanExecuteSearch"
+          },
+          {
+            "name": "showMyActiveFolder"
+          }
+        ]
+      }
+    },
+    "setCanExecuteSearch": {
+      "actionType": "JSFunction",
+      "method": "setCanExecuteSearch",
+      "inputData": {
+        "defaultActiveFolders": "{{data.defaultActiveFolders}}"
+      },
+      "deps": "js/searchFolderService"
+    },
+    "showMyActiveFolder": {
+      "actionType": "Navigate",
+      "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+      "navigationParams": {
+        "uid": "{{data.searchResults.objects[0].uid}}",
+        "cmdId": "{{commandContext.cmdId}}",
+        "cmdArg": "{{commandContext.cmdArgs}}"
+      }
+    },
+    "addObjectToSearchFolder": {
+      "actionType": "JSFunction",
+      "method": "addObjectToSearchFolder",
+      "inputData": {
+        "selectedObject": "{{ctx.selected.uid}}"
+      },
+      "deps": "js/searchFolderService"
+    },
+    "Awp0EditSavedSearchRuleCommandAction": {
+      "actionType": "JSFunction",
+      "method": "editSavedSearchRule",
+      "deps": "js/savedSearchService",
+      "inputData": {
+        "savedSearch": "{{commandContext}}"
+      }
+    },
+    "Awp0CancelEditSavedSearchRuleCommandAction": {
+      "actionType": "JSFunction",
+      "method": "cancelEditSavedSearchRule",
+      "deps": "js/savedSearchService",
+      "inputData": {
+        "vmo": "{{ctx.xrtSummaryContextObject}}",
+        "savedSearch": "{{commandContext}}"
+      }
+    },
+    "overwriteAdvancedSavedSearch": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "getSavedSearchObjectParamsFromSearchState"
+        },
+        {
+          "action": "doOverwriteAdvancedSavedSearch"
+        }
+      ]
+    },
+    "doOverwriteAdvancedSavedSearch": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2019-06-AdvancedSavedSearch",
+      "method": "createAdvancedSavedSearch",
+      "inputData": {
+        "inputs": [
+          {
+            "stringValueInputKeyValuePairs": {
+              "savedSearchName": "{{commandContext.savedSearch.props.object_name.dbValue}}",
+              "referencingSavedQuery": "{{data.referencingSavedQuery.dbValue}}"
+            },
+            "boolValueInputKeyValuePairs": {
+              "pinToHome": "{{commandContext.pinToHome.dbValue}}",
+              "override": true,
+              "shareSavedSearch": "{{commandContext.savedSearch.props.shared.dbValue}}"
+            },
+            "savedSearchCriteria": "{{function:getSavedSearchCriteriaFromAdvancedSearch}}"
+          }
+        ]
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "deps": "js/Awp0SaveSearchUtils"
+    },
+    "getSavedSearchObjectParamsFromSearchState": {
+      "actionType": "JSFunction",
+      "method": "getSavedSearchObjectParamsFromSearchState",
+      "inputData": {
+        "savedSearchObject": "{{commandContext}}",
+        "data": {
+          "savedSearchCriteria": {},
+          "referencingSavedQuery": {}
+        }
+      },
+      "outputData": {
+        "savedSearchCriteria": "savedSearchCriteria",
+        "referencingSavedQuery": "referencingSavedQuery"
+      },
+      "deps": "js/Awp0SaveSearchService"
+    },
+    "Awp0SaveSavedFullTextSearchRuleCommandAction": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-Search-2022-12-FullTextSearch",
+      "method": "createFullTextSavedSearch2",
+      "inputData": {
+        "inputs": [
+          {
+            "applicationName": "{{commandContext.applicationName}}",
+            "applicationPinnedSavedSearchTileTemplateId": "{{commandContext.applicationPinnedSavedSearchTileTemplateId}}",
+            "pinSearch": "{{function:getPinToHomeIntegerValue}}",
+            "savedSearchName": "{{commandContext.vmo.props.object_name.dbValue}}",
+            "searchString": "{{commandContext.criteria.searchString}}",
+            "overwriteExistingSearch": true,
+            "receiveNotification": 0,
+            "shareSavedSearch": "{{function:getSharedIntegerValue}}",
+            "searchFilterMap": "{{function:constructSavedSearchFilterMapForSaveEdits}}",
+            "chartInputParameters": {
+              "chartOn": "{{function:getChartByForSave}}"
+            }
+          }
+        ]
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "deps": "js/Awp0SaveSearchUtils"
+    },
+    "Awp0EditSearchFolderRuleCommandAction": {
+      "actionType": "JSFunction",
+      "method": "editSearchFolderRule",
+      "deps": "js/searchFolderService",
+      "inputData": {
+        "searchFolderCtx": "{{commandContext}}"
+      }
+    },
+    "Awp0CancelEditSearchFolderRuleCommandAction": {
+      "actionType": "JSFunction",
+      "method": "cancelEditSearchFolderRule",
+      "deps": "js/searchFolderService",
+      "inputData": {
+        "searchFolderCtx": "{{commandContext}}"
+      }
+    },
+    "Awp0SaveSearchFolderRuleCommandAction": {
+      "actionType": "JSFunction",
+      "method": "editActiveFolder",
+      "deps": "js/searchFolderService",
+      "inputData": {
+        "parentFolderUID": "",
+        "searchFolder": "{{commandContext}}",
+        "reportDefinitionUID": "{{function:getReportDefinitionUID}}",
+        "searchCriteria": "{{function:getReportDefinitionCriteriaForSave}}"
+      }
+    },
+    "Awp0SelectAllSearchResultsCommandAction": {
+      "actionType": "JSFunction",
+      "method": "selectAll",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.search.searchFolderDataProvider}}"
+      }
+    },
+    "Awp0DeselectAllSearchResultsCommandAction": {
+      "actionType": "JSFunction",
+      "method": "selectNone",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{ctx.search.searchFolderDataProvider}}"
+      }
+    },
+    "Awp0EnableMultiSelectSearchResultsCommandAction": {
+      "actionType": "JSFunction",
+      "method": "dataProviderEnableMultiSelect",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{ctx.search.searchFolderDataProvider}}"
+      }
+    },
+    "Awp0DisableMultiSelectSearchResultsCommandAction": {
+      "actionType": "JSFunction",
+      "method": "dataProviderDisableMultiSelect",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{ctx.search.searchFolderDataProvider}}"
+      }
+    },
+    "activateSearch": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0Search",
+          "placement": "left",
+          "parent": ".aw-layout-defaultSublocation",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "activateAdvancedSearch": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Awp0AdvancedSearch",
+        "location": "aw_navigation"
+      }
+    },
+    "activateReviewAndExecuteAdvancedSavedSearch": {
+      "actionType": "dialog",
+      "inputData": {
+        "savedSearchObject": "{{ctx.selected}}",
+        "options": {
+          "view": "Awp0ReviewAndExecuteAdvancedSavedSearch",
+          "placement": "left",
+          "parent": ".aw-layout-defaultSublocation",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "setFilterPanelStateSessionVariableForCommand": {
+      "actionType": "JSFunction",
+      "method": "setFilterPanelStateSessionVariableForCommand",
+      "inputData": {
+        "isSearchFilterPanelCmdActive": "{{data.isSearchFilterPanelCmdActive}}"
+      },
+      "deps": "js/awSearchLocationFilterPanelService"
+    },
+    "isSearchFilterPanelCmdActive": {
+      "actionType": "JSFunction",
+      "method": "isSearchFilterPanelCmdActive",
+      "inputData": {
+        "activeNavigationCmdCtx": "{{ctx.activeNavigationCommand}}"
+      },
+      "outputData": {
+        "isSearchFilterPanelCmdActive": ""
+      },
+      "deps": "js/awSearchLocationFilterPanelService"
+    },
+    "activateSearchFilterBatchJob": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "isSearchFilterPanelCmdActive"
+        },
+        {
+          "action": "activateSearchFilter"
+        },
+        {
+          "action": "setFilterPanelStateSessionVariableForCommand",
+          "condition": "!(ctx.preferences.AW_Search_Auto_Open_Filter_Panel && ctx.preferences.AW_Search_Auto_Open_Filter_Panel[0] === 'false')"
+        }
+      ]
+    },
+    "activateSearchFilter": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Awp0SearchFilter",
+        "location": "aw_navigation"
+      }
+    },
+    "activateSearchSettings": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0SearchSettings",
+          "placement": "right",
+          "parent": ".aw-layout-workarea",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "activateSaveSearchPanel": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0SaveSearch",
+          "placement": "right",
+          "parent": ".aw-layout-workarea",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "activateSaveAdvSearchPanel": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0SaveAdvSearch",
+          "placement": "right",
+          "parent": ".aw-layout-workarea",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "toggleColorAction": {
+      "actionType": "JSFunction",
+      "method": "getToggleCommandSelection",
+      "inputData": {
+        "prefValue": "{{ctx.preferences.AWC_ColorFiltering}}",
+        "searchState": "{{commandContext.searchState}}"
+      },
+      "deps": "js/AwFilterPanelUtils"
+    },
+    "toggleHighlightSelection": {
+      "actionType": "JSFunction",
+      "method": "toggleHighlightSelection",
+      "inputData": {
+        "prefVals": "{{ctx.preferences}}",
+        "toToggle": true,
+        "searchTermsToHighlight": "{{commandContext.searchState.additionalSearchInfoMap.searchTermsToHighlight}}",
+        "searchState": "{{commandContext.searchState}}"
+      },
+      "outputData": {
+        "isHighlighted": ""
+      },
+      "deps": "js/Awp0SearchHighlightingService"
+    },
+    "toggleHighlightingAction": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "toggleHighlightSelection"
+        },
+        {
+          "action": "updateHighlightPrefValue"
+        }
+      ]
+    },
+    "updateHighlightPrefValue": {
+      "actionType": "TcSoaService",
+      "serviceName": "Administration-2012-09-PreferenceManagement",
+      "method": "setPreferences2",
+      "inputData": {
+        "preferenceInput": [
+          {
+            "preferenceName": "AW_Highlighting",
+            "values": "{{data.isHighlighted}}"
+          }
+        ]
+      }
+    },
+    "confirmDeleteSavedSearch": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {}
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "confirmDeleteMessage"
+          }
+        ]
+      }
+    },
+    "deleteSavedSearch": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2006-03-DataManagement",
+      "method": "deleteObjects",
+      "inputData": {
+        "objects": [
+          "{{ctx.selected}}"
+        ]
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "deletedSuccessMessage"
+          }
+        ]
+      }
+    },
+    "ShapeSearch": {
+      "actionType": "JSFunction",
+      "method": "doShapeSearch",
+      "deps": "js/Awp0ShapeSearchService",
+      "inputData": {
+        "targetState": "teamcenter_search_shapesearch",
+        "searchCriteria": "{{ctx.selected.uid}}",
+        "searchBoxContent": "{{ctx.selected.cellHeader2}}"
+      }
+    },
+    "ShapeSearchInXRT": {
+      "actionType": "JSFunction",
+      "method": "doShapeSearch",
+      "deps": "js/Awp0ShapeSearchService",
+      "inputData": {
+        "targetState": "teamcenter_search_shapesearch",
+        "searchCriteria": "{{ctx.selected.props.awb0UnderlyingObject.dbValues[0]}}"
+      }
+    },
+    "pinSearch": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2018-05-DataManagement",
+      "method": "pinObjects",
+      "inputData": {
+        "input": [
+          {
+            "uid": "{{commandContext.selectionData.selected[0].uid}}",
+            "actionParams": "{{data.escapedParam}}",
+            "templateId": "{{data.templateId}}"
+          }
+        ]
+      },
+      "events": {
+        "success": [
+          {
+            "name": "cdm.updated",
+            "eventData": {
+              "updatedObjects": "{{ctx.mselected}}"
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "pinSearchSuccessMessage"
+          }
+        ],
+        "failure": [
+          {
+            "message": "pinSearchFailedMessage"
+          }
+        ]
+      }
+    },
+    "unpinSearch": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2018-05-DataManagement",
+      "method": "unpinObjects",
+      "inputData": {
+        "uidsToUnpin": [
+          "{{ctx.mselected[0].uid}}"
+        ],
+        "returnGateway": false
+      },
+      "events": {
+        "success": [
+          {
+            "name": "cdm.updated",
+            "eventData": {
+              "updatedObjects": "{{ctx.mselected}}"
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "unpinSearchSuccessMessage"
+          }
+        ],
+        "failure": [
+          {
+            "message": "unpinSearchFailedMessage"
+          }
+        ]
+      }
+    },
+    "setTypeForPinningSavedSearchObject": {
+      "actionType": "JSFunction",
+      "method": "setTypeForSavedSearchObject",
+      "inputData": {
+        "vmo": "{{commandContext.selectionData.selected[0]}}"
+      },
+      "outputData": {
+        "selectedSavedSearchObjectType": ""
+      },
+      "deps": "js/Awp0SaveSearchService"
+    },
+    "pinSavedSearch": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "setTypeForPinningSavedSearchObject"
+        },
+        {
+          "action": "getEscapedParamsForFullTextSavedSearch",
+          "condition": "data.selectedSavedSearchObjectType === 'Awp0FullTextSavedSearch'"
+        },
+        {
+          "action": "getAttributeModelObjectForSavedQueryForPinningAdvancedSavedSearch",
+          "condition": "data.selectedSavedSearchObjectType === 'SavedSearch'"
+        },
+        {
+          "action": "updateAttributesAdvancedSavedSearchForPinning",
+          "condition": "data.selectedSavedSearchObjectType === 'SavedSearch' && data.advSavedSearchViewModelObject"
+        },
+        {
+          "action": "getEscapedParamsForAdvancedSavedSearch",
+          "condition": "data.selectedSavedSearchObjectType === 'SavedSearch' && data.advSavedSearchViewModelObject"
+        },
+        {
+          "action": "pinSearch"
+        }
+      ]
+    },
+    "getEscapedParamsForFullTextSavedSearch": {
+      "actionType": "JSFunction",
+      "method": "getEscapedParamsForFullTextSavedSearch",
+      "inputData": {
+        "selectedObject": "{{commandContext.selectionData.selected[0]}}"
+      },
+      "outputData": {
+        "escapedParam": "encodedParamString",
+        "templateId": "templateId"
+      },
+      "deps": "js/Awp0SaveSearchUtils"
+    },
+    "getEscapedParamsForAdvancedSavedSearch": {
+      "actionType": "JSFunction",
+      "method": "getEscapedParamsForAdvancedSavedSearch",
+      "inputData": {
+        "selectedObject": "{{commandContext.selectionData.selected[0]}}",
+        "advancedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}"
+      },
+      "outputData": {
+        "escapedParam": "encodedParamString",
+        "templateId": "templateId"
+      },
+      "deps": "js/Awp0SaveSearchUtils"
+    },
+    "createInputForAddingSearchFolderAccessors": {
+      "actionType": "JSFunction",
+      "method": "createInputForAddingSearchFolderAccessors",
+      "inputData": {
+        "selectedObjects": "{{commandContext.searchFolderShareRuleState.selectedAccessors}}",
+        "searchFolderShareRuleState": "{{commandContext.searchFolderShareRuleState}}"
+      },
+      "outputData": {
+        "projectUids": "projectUids",
+        "accessorInfoArray": "accessorInfoArray"
+      },
+      "deps": "js/Awp0SearchFolderShareRuleService"
+    },
+    "addSearchFolderAccessorSOACall": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-Search-2020-12-SearchFolder",
+      "method": "createOrEditSearchFolders",
+      "inputData": {
+        "input": [
+          {
+            "parentFolderUID": "",
+            "reportDefinitionUID": "",
+            "searchCriteria": [],
+            "searchFolderUID": "{{ctx.xrtSummaryContextObject.uid}}",
+            "searchFolderAttributes": {
+              "shared_projects": "{{data.projectUids}}"
+            },
+            "searchFolderAccessors": "{{data.accessorInfoArray}}"
+          }
+        ]
+      },
+      "policy": {
+        "types": [
+          {
+            "name": "Awp0SearchFolder",
+            "properties": [
+              {
+                "name": "awp0IsShared"
+              }
+            ]
+          }
+        ]
+      },
+      "outputData": {
+        "createOrEditSOACallFinished": true
+      }
+    },
+    "processAddAccessorOutput": {
+      "actionType": "JSFunction",
+      "method": "processAddAccessorOutput",
+      "inputData": {
+        "searchFolderShareRuleState": "{{commandContext.searchFolderShareRuleState}}"
+      },
+      "deps": "js/Awp0SearchFolderShareRuleService"
+    },
+    "addSearchFolderAccessor": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "createInputForAddingSearchFolderAccessors"
+        },
+        {
+          "action": "addSearchFolderAccessorSOACall"
+        },
+        {
+          "action": "processAddAccessorOutput",
+          "condition": "data.createOrEditSOACallFinished"
+        }
+      ]
+    },
+    "createInputForRemovingSearchFolderAccessors": {
+      "actionType": "JSFunction",
+      "method": "createInputForRemovingSearchFolderAccessors",
+      "inputData": {
+        "selectedObjects": "{{commandContext.searchFolderShareRuleState.selectedAccessors}}",
+        "searchFolderShareRuleState": "{{commandContext.searchFolderShareRuleState}}"
+      },
+      "outputData": {
+        "projectUids": "projectUids",
+        "accessorInfoArray": "accessorInfoArray"
+      },
+      "deps": "js/Awp0SearchFolderShareRuleService"
+    },
+    "removeSearchFolderAccessorSOACall": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-Search-2020-12-SearchFolder",
+      "method": "createOrEditSearchFolders",
+      "inputData": {
+        "input": [
+          {
+            "parentFolderUID": "",
+            "reportDefinitionUID": "",
+            "searchCriteria": [],
+            "searchFolderUID": "{{ctx.xrtSummaryContextObject.uid}}",
+            "searchFolderAttributes": {
+              "remove_project": "{{data.projectUids}}",
+              "remove_accessor": "{{data.accessorInfoArray}}"
+            }
+          }
+        ]
+      },
+      "policy": {
+        "types": [
+          {
+            "name": "Awp0SearchFolder",
+            "properties": [
+              {
+                "name": "awp0IsShared"
+              }
+            ]
+          }
+        ]
+      },
+      "outputData": {
+        "createOrEditSOACallFinished": true
+      }
+    },
+    "processRemoveAccessorOutput": {
+      "actionType": "JSFunction",
+      "method": "processRemoveAccessorOutput",
+      "inputData": {
+        "searchFolderShareRuleState": "{{commandContext.searchFolderShareRuleState}}"
+      },
+      "deps": "js/Awp0SearchFolderShareRuleService"
+    },
+    "removeSearchFolderAccessor": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "createInputForRemovingSearchFolderAccessors"
+        },
+        {
+          "action": "removeSearchFolderAccessorSOACall"
+        },
+        {
+          "action": "processRemoveAccessorOutput",
+          "condition": "data.createOrEditSOACallFinished"
+        }
+      ]
+    },
+    "exportSearchFolder": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-Search-2020-12-SearchFolder",
+      "method": "exportSearchFolders",
+      "inputData": {
+        "searchFolderUIDs": [
+          "{{ctx.xrtSummaryContextObject.uid}}"
+        ]
+      },
+      "outputData": {
+        "response": ""
+      },
+      "events": {
+        "success": [
+          {
+            "name": "Awp0ExportSearchFolder.downloadFile"
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "condition": "errorCode.code === 141387 || errorCode.code === 141388",
+            "message": "exportFailed"
+          }
+        ]
+      }
+    },
+    "downloadFile": {
+      "actionType": "JSFunction",
+      "method": "openFile",
+      "deps": "js/fmsUtils",
+      "inputData": {
+        "fileTicket": "{{data.response.transientFileReadTickets[0]}}",
+        "openFileName": ""
+      }
+    },
+    "activateImportSearchFolder": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0ImportSearchFolder",
+          "placement": "right",
+          "parent": ".aw-layout-workarea",
+          "width": "STANDARD",
+          "height": "FULL",
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}",
+          "push": true
+        }
+      }
+    },
+    "activateExportToExcelPanelForSearchFolder": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0ExportToExcel",
+          "parent": ".aw-layout-workareaMain",
+          "width": "SMALL",
+          "height": "FULL",
+          "context": {
+            "providerName": "{{commandContext.searchFolder.exportPanelContext.providerName}}",
+            "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider}}",
+            "columnProvider": "{{commandContext.searchFolder.exportPanelContext.columnProvider}}",
+            "searchCriteria": "{{commandContext.searchFolder.exportPanelContext.searchCriteria}}",
+            "vmo": "{{ctx.xrtSummaryContextObject}}"
+          },
+          "isCloseVisible": false,
+          "subPanelContext": "{{commandContext}}"
+        }
+      }
+    },
+    "activateExportToExcelPanelForSavedSearch": {
+      "actionType": "dialog",
+      "inputData": {
+        "options": {
+          "view": "Awp0ExportToExcel",
+          "parent": ".aw-layout-workareaMain",
+          "width": "SMALL",
+          "height": "FULL",
+          "context": {
+            "providerName": "{{commandContext.providerName}}",
+            "columns": "{{commandContext.columns}}",
+            "dataProvider": "{{commandContext.searchState.dataProvider}}",
+            "objectSetUri": "{{commandContext.objectSetUri}}",
+            "operationType": "{{commandContext.operationType}}",
+            "columnProvider": "{{commandContext.columnProvider}}",
+            "searchCriteria": "{{commandContext.searchState.criteria}}",
+            "displayTitle": "{{commandContext.displayTitle}}",
+            "vmo": "{{commandContext.selected}}"
+          },
+          "isCloseVisible": false,
+          "subPanelContext": {
+            "dataProvider": "{{commandContext.searchState.dataProvider}}",
+            "providerName": "{{commandContext.searchState.provider}}",
+            "searchCriteria": "{{commandContext.searchState.criteria}}",
+            "searchFilterMap": "{{commandContext.searchState.activeFilterMap}}"
+          }
+        }
+      }
+    },
+    "Awp0SelectAllForSavedSearchObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "selectAll",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchState.dataProvider}}"
+      }
+    },
+    "Awp0DeselectAllForSavedSearchObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "selectNone",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchState.dataProvider}}"
+      }
+    },
+    "Awp0EnableMultiSelectForSavedSearchObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "dataProviderEnableMultiSelect",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchState.dataProvider}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "Awp0SavedSearchContentsTable.refreshTable",
+            "eventData": {
+              "dataProvider": "{{commandContext.searchState.dataProvider.name}}"
+            }
+          }
+        ]
+      }
+    },
+    "Awp0DisableMultiSelectForSavedSearchObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "dataProviderDisableMultiSelect",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchState.dataProvider}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "Awp0SavedSearchContentsTable.refreshTable",
+            "eventData": {
+              "dataProvider": "{{commandContext.searchState.dataProvider.name}}"
+            }
+          }
+        ]
+      }
+    },
+    "Awp0SelectAllForSearchFolderObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "selectAll",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider}}"
+      }
+    },
+    "Awp0DeselectAllForSearchFolderObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "selectNone",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider}}"
+      }
+    },
+    "Awp0EnableMultiSelectForSearchFolderObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "dataProviderEnableMultiSelect",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "Awp0SearchFolderContentsTable.refreshTable",
+            "eventData": {
+              "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider.name}}"
+            }
+          }
+        ]
+      }
+    },
+    "Awp0DisableMultiSelectForSearchFolderObjectSetCommandAction": {
+      "actionType": "JSFunction",
+      "method": "dataProviderDisableMultiSelect",
+      "deps": "js/dataProviderFactory",
+      "inputData": {
+        "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "Awp0SearchFolderContentsTable.refreshTable",
+            "eventData": {
+              "dataProvider": "{{commandContext.searchFolder.exportPanelContext.dataProvider.name}}"
+            }
+          }
+        ]
+      }
+    },
+    "setFilterPanelStateSessionVariableForCloseButton": {
+      "actionType": "JSFunction",
+      "method": "setFilterPanelStateSessionVariableForCloseButton",
+      "inputData": {},
+      "deps": "js/awSearchLocationFilterPanelService"
+    }
+  },
+  "functions": {
+    "getActiveFolderUids": {
+      "functionName": "getActiveFolderUids",
+      "parameters": [
+        "{{ctx.mselected}}"
+      ]
+    },
+    "getReportDefinitionCriteriaForSave": {
+      "functionName": "getReportDefinitionCriteriaForSave",
+      "parameters": [
+        "{{commandContext}}",
+        "{{data}}"
+      ]
+    },
+    "getReportDefinitionUID": {
+      "functionName": "getReportDefinitionUID",
+      "parameters": [
+        "{{commandContext.props.awp0SearchDefinition.dbValue}}"
+      ]
+    },
+    "constructSavedSearchFilterMapForSaveEdits": {
+      "functionName": "constructSavedSearchFilterMapForSaveEdits",
+      "parameters": [
+        "{{commandContext}}"
+      ]
+    },
+    "getChartByForSave": {
+      "functionName": "getChartByForSave",
+      "parameters": [
+        "{{commandContext.currentChartBy.internalName}}",
+        "{{commandContext.vmo.props.awp0ChartOn.dbValues[0]}}"
+      ]
+    },
+    "getSavedSearchCriteriaFromAdvancedSearch": {
+      "functionName": "getSavedSearchCriteriaFromAdvancedSearch",
+      "parameters": [
+        "{{commandContext}}"
+      ]
+    },
+    "getPinToHomeIntegerValue": {
+      "functionName": "getIntegerValueForBooleanValue",
+      "parameters": [
+        "{{commandContext.pinToHome.dbValue}}"
+      ]
+    },
+    "getSharedIntegerValue": {
+      "functionName": "getIntegerValueForBooleanValue",
+      "parameters": [
+        "{{commandContext.vmo.props.awp0is_global_shared.dbValue}}"
+      ]
+    }
+  },
+  "onEvent": [
+    {
+      "eventId": "setCanExecuteSearch",
+      "action": "setCanExecuteSearch"
+    },
+    {
+      "eventId": "showMyActiveFolder",
+      "action": "showMyActiveFolder"
+    },
+    {
+      "eventId": "Awp0ExportSearchFolder.downloadFile",
+      "action": "downloadFile"
+    },
+    {
+      "eventId": "updateHighlightPrefValue",
+      "action": "updateHighlightPrefValue"
+    },
+    {
+      "eventId": "setExecuteFlagForReferencedActiveFolders",
+      "action": "setExecuteFlagForReferencedActiveFolders"
+    },
+    {
+      "eventId": "confirmDeleteActiveFolderEvent",
+      "message": "singleActiveFolderDeleteConfirmationMessage"
+    }
+  ],
+  "messages": {
+    "confirmDeleteMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.deleteConfirmationText}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.object_string.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "Cancel",
+          "text": "{{i18n.CancelText}}",
+          "action": ""
+        },
+        {
+          "option": "Delete",
+          "text": "{{i18n.delete}}",
+          "action": "deleteSavedSearch"
+        }
+      ]
+    },
+    "deletedSuccessMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.deleteSuccessful}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.object_string.dbValues[0]}}"
+      ]
+    },
+    "pinSearchSuccessMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.pinObjectConfirmation}}",
+      "messageTextParams": [
+        "{{commandContext.selectionData.selected[0].props.object_string.dbValues[0]}}"
+      ]
+    },
+    "unpinSearchSuccessMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.unpinObjectConfirmation}}",
+      "messageTextParams": [
+        "{{commandContext.selectionData.selected[0].props.object_string.dbValues[0]}}"
+      ]
+    },
+    "pinSearchFailedMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.pinObjectFailed}}"
+    },
+    "unpinSearchFailedMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.unpinTileFailed}}"
+    },
+    "exportFailed": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.exportActiveFolderFailedMessage}}",
+      "messageTextParams": [
+        "{{ctx.xrtSummaryContextObject.props.object_string.dbValues[0]}}"
+      ]
+    },
+    "singleActiveFolderDeleteConfirmationMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.singleObjDeleteConfirmationMessage}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.object_string.uiValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "Cancel",
+          "text": "{{i18n.cancel}}"
+        },
+        {
+          "option": "Delete",
+          "text": "{{i18n.delete}}",
+          "action": "deleteActiveFolder"
+        }
+      ]
+    },
+    "ActiveFolderDeleteConfirmationMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.singleDeleteConfirmationMessage}}",
+      "messageTextParams": [
+        "{{ctx.mselected.length}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "Cancel",
+          "text": "{{i18n.cancel}}"
+        },
+        {
+          "option": "Delete",
+          "text": "{{i18n.delete}}",
+          "action": "deleteMultipleActiveFolders"
+        }
+      ]
+    },
+    "deleteActiveFolderFailureMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.deleteSingleFailureMessage}}",
+      "messageTextParams": [
+        "{{ctx.mselected.length}}",
+        "{{data.deleteActiveFolderPartialErrors[0].errorValues[0].message}}"
+      ]
+    }
+  },
+  "conditions": {
+    "searchSortCommandVisible": {
+      "expression": "ctx.sublocation.historyNameToken === 'teamcenter_search_search' && (ctx.ViewModeContext.ViewModeContext === 'TableView' || ctx.ViewModeContext.ViewModeContext === 'TableSummaryView')"
+    },
+    "sortSearchAscendingSelected": {
+      "expression": "( commandContext.gridContext.columnDef.name === commandContext.sortCriteria[0].fieldName || commandContext.gridContext.columnDef.propertyName === commandContext.sortCriteria[0].fieldName ) && commandContext.sortCriteria[0].sortDirection === 'ASC'"
+    },
+    "sortSearchDescendingSelected": {
+      "expression": "( commandContext.gridContext.columnDef.name === commandContext.sortCriteria[0].fieldName || commandContext.gridContext.columnDef.propertyName === commandContext.sortCriteria[0].fieldName ) && commandContext.sortCriteria[0].sortDirection === 'DESC'"
+    },
+    "removeSearchSortSelected": {
+      "expression": "!commandContext.sortCriteria || commandContext.sortCriteria.length === 0 || commandContext.gridContext.columnDef.name !== commandContext.sortCriteria[0].fieldName"
+    },
+    "isActiveFolderHtmlPanel": {
+      "expression": "commandContext.searchFolder !== undefined"
+    },
+    "isHtmlPanelListView": {
+      "expression": "commandContext.currentDisplayField.activeDisplay === 'listDisplay'"
+    },
+    "isHtmlPanelTableView": {
+      "expression": "commandContext.currentDisplayField.activeDisplay === 'tableDisplay'"
+    },
+    "isHtmlPanelCompareView": {
+      "expression": "commandContext.currentDisplayField.activeDisplay === 'compareDisplay'"
+    },
+    "isHtmlPanelImageView": {
+      "expression": "commandContext.currentDisplayField.activeDisplay === 'thumbnailDisplay'"
+    },
+    "shapeSearchCommandVisibility": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:ShapeSearchResultsSubLocation'"
+    },
+    "exportWithTemplateAvailable": {
+      "expression": "conditions.searchExportCommandVisible"
+    },
+    "searchExportCommandVisible": {
+      "expression": "(ctx.sublocation.historyNameToken === 'teamcenter_search_search' || ctx.sublocation.historyNameToken === 'teamcenter_search_advancedSearch') && (ctx.ViewModeContext.ViewModeContext === 'TableView' || ctx.ViewModeContext.ViewModeContext === 'TableSummaryView')"
+    },
+    "isAddToCommandVisible": {
+      "expression": "conditions.xrtIncludeAddCommand && conditions.isCreateSearchFolderCommandVisible"
+    },
+    "areCommandsVisibleForSavedSearch": {
+      "expression": "ctx.mselected && ctx.mselected.length === 1 && (ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Awp0FullTextSavedSearch' ) > -1 || ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'SavedSearch' ) > -1)"
+    },
+    "isCreateSearchFolderCommandVisible": {
+      "expression": "ctx.mselected && ctx.mselected.length === 1 && (ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Awp0MySearchFolder' ) > -1 || ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Awp0SearchFolder' ) > -1)"
+    },
+    "isAwp0NewActiveFolderGroupCommandVisible": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible"
+    },
+    "isOpenActiveFolderGroupCommandVisible": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible"
+    },
+    "awp0EditSearchFolderRuleActiveCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && commandContext.onRulePage"
+    },
+    "awp0HideEditActiveCondition": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch && conditions.isNoneContextActive && ctx.visibleServerCommands.Awp0StartEdit && ctx.NONE.canEdit"
+    },
+    "awp0OnOverviewPage": {
+      "expression": "commandContext.pageContext.secondaryActiveTabId === 'tc_xrt_Overview'"
+    },
+    "awp0StartEditSavedSearchRuleActiveCondition": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch && commandContext.onRulePage"
+    },
+    "awp0EditSavedSearchRuleVisibleCondition": {
+      "expression": "!(commandContext.isEditMode === true) && conditions.awp0HideEditActiveCondition"
+    },
+    "awp0CancelEditSavedSearchRuleActiveCondition": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch && commandContext.onRulePage && commandContext.isEditMode === true"
+    },
+    "awp0CancelEditSavedSearchRuleVisibleCondition": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch && commandContext.onRulePage && commandContext.isEditMode === true"
+    },
+    "awp0SaveSavedSearchRuleActiveCondition": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch && commandContext.onRulePage && commandContext.isEditMode === true && commandContext.savedSearchType === 'SavedSearch'"
+    },
+    "awp0SaveSavedFullTextSearchRuleActiveCondition": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch && commandContext.onRulePage && commandContext.isEditMode === true && commandContext.savedSearchType === 'Awp0FullTextSavedSearch'"
+    },
+    "awp0StartEditSearchFolderRuleActiveCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && commandContext.onRulePage"
+    },
+    "awp0EditSearchFolderRuleVisibleCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && !(commandContext.isEditMode === true)"
+    },
+    "awp0CancelEditSearchFolderRuleActiveCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && commandContext.onRulePage && commandContext.isEditMode === true"
+    },
+    "awp0CancelEditSearchFolderRuleVisibleCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && commandContext.onRulePage && commandContext.isEditMode === true"
+    },
+    "awp0SaveSearchFolderRuleActiveCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && commandContext.onRulePage && commandContext.isEditMode === true"
+    },
+    "awp0SaveSearchFolderRuleVisibleCondition": {
+      "expression": "conditions.isCreateSearchFolderCommandVisible && commandContext.onRulePage && commandContext.isEditMode === true"
+    },
+    "awp0SelectAllSearchResultsCondition": {
+      "expression": "commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple' && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.selectionState !== 'all' && commandContext.searchFolder.exportPanelContext.dataProvider.viewModelCollection.loadedVMObjects.length > 0"
+    },
+    "awp0DeselectAllSearchResultsCondition": {
+      "expression": "commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple' && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.selectionState === 'all' && commandContext.searchFolder.exportPanelContext.dataProvider.viewModelCollection.loadedVMObjects.length > 0"
+    },
+    "awp0MultiSelectSearchResultsEnableCondition": {
+      "expression": "commandContext.searchFolder.exportPanelContext.dataProvider.viewModelCollection.loadedVMObjects.length > 0 && !commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.multiSelectEnabled  && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple'"
+    },
+    "awp0MultiSelectSearchResultsDisableCondition": {
+      "expression": "commandContext.searchFolder.exportPanelContext.dataProvider.viewModelCollection.loadedVMObjects.length > 0 && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.multiSelectEnabled  && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple'"
+    },
+    "Awp0UnpinSearch": {
+      "expression": "ctx.visibleServerCommands.Awp0UnpinSearch"
+    },
+    "Awp0PinSearch": {
+      "expression": "ctx.visibleServerCommands.Awp0PinSearch"
+    },
+    "showSearchCommandCondition": {
+      "expression": "ctx.visibleServerCommands.Awp0Search"
+    },
+    "advancedSearchCommandVisible": {
+      "expression": "(ctx.sublocation.clientScopeURI==='Awp0AdvancedSearch' || ctx.sublocation.historyNameToken==='teamcenter_search_advancedSearch') "
+    },
+    "reviewAndExecuteAdvancedSavedSearchCommandVisible": {
+      "expression": "( (ctx.sublocation.clientScopeURI === 'Awp0SavedSearch' || ctx.sublocation.historyNameToken === 'teamcenter_search_savedSearch' ) && ctx.selected.type === 'SavedSearch' ) "
+    },
+    "searchFilterCommandVisible": {
+      "expression": "( commandContext.clientScopeURI === 'Awp0SavedSearch' || commandContext.clientScopeURI === 'Awp0SearchResults' ) && commandContext.searchState.categories && commandContext.searchState.categories.length > 0"
+    },
+    "searchSettingsCommandVisible": {
+      "expression": "ctx.locationContext['ActiveWorkspace:Location'] === 'com.siemens.splm.client.search.SearchLocation'"
+    },
+    "saveSearchCommandVisible": {
+      "expression": "ctx.sublocation.clientScopeURI === 'Awp0SearchResults' && commandContext.searchState.criteria.searchString.length > 0 "
+    },
+    "editSaveSearchCommandVisible": {
+      "expression": "(ctx.selected.props.object_type.dbValues[0] === 'Awp0FullTextSavedSearch' || ctx.selected.props.object_type.dbValues[0] === 'SavedSearch') && ctx.sublocation.clientScopeURI === 'Awp0SavedSearch' && ctx.selected && ctx.user.uid === ctx.selected.props.owning_user.dbValues[0]"
+    },
+    "deleteSaveSearchCommandVisible": {
+      "expression": "ctx.sublocation.clientScopeURI === 'Awp0SavedSearch' && ctx.selected && ctx.user.uid === ctx.selected.props.owning_user.dbValues[0]"
+    },
+    "saveAdvSearchCommandVisible": {
+      "expression": "ctx.sublocation.clientScopeURI === 'Awp0AdvancedSearch'"
+    },
+    "deleteSaveAdvSearchCommandVisible": {
+      "expression": "ctx.sublocation.clientScopeURI === 'Awp0SavedSearch' && ctx.selected && ctx.user.uid === ctx.selected.props.owning_user.dbValues[0]"
+    },
+    "cmdShowColorCommandActive": {
+      "expression": "ctx.supportsColorToggleCommand"
+    },
+    "cmdColorFilteringCommandActive": {
+      "expression": "ctx.sublocation.clientScopeURI === 'Awp0SearchResults'"
+    },
+    "cmdColorFilteringCommandVisible": {
+      "expression": "commandContext.searchState.isChartVisible === true"
+    },
+    "cmdHighlightColorGroupEnabled": {
+      "expression": "commandContext.searchState.totalFound > 0"
+    },
+    "cmdHighlightingCommandActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SearchResultsSubLocation'"
+    },
+    "checkColorFilteringPrefValue": {
+      "expression": "commandContext.searchState.colorToggle === true"
+    },
+    "checkHighlightingPrefValue": {
+      "expression": "commandContext.searchState.highlighting === true"
+    },
+    "shapeSearchVisibility": {
+      "expression": "ctx.visibleServerCommands.SS1ShapeSearch && ctx.selected.props.item_id.dbValues.length > 0 && ctx.sublocation.nameToken !== 'com.siemens.splm.client.search:SearchResultsSubLocation'"
+    },
+    "shapeSearchInSearchLocationVisibility": {
+      "expression": "ctx.visibleServerCommands.SS1ShapeSearch && ctx.selected.props.item_id.dbValues.length > 0 && (ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SearchResultsSubLocation' || ctx.sublocation.nameToken === 'com.siemens.splm.client.search:ShapeSearchResultsSubLocation')"
+    },
+    "isSearchFilterPanelOpen": {
+      "expression": "conditions.inSearchLocationActive && ctx.activeNavigationCommand && ctx.activeNavigationCommand.commandId === 'Awp0SearchFilter'"
+    },
+    "inSearchLocationActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SearchResultsSubLocation'"
+    },
+    "inShapeLocationActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:ShapeSearchResultsSubLocation'"
+    },
+    "locationforShapeCommandActive": {
+      "expression": "conditions.inSearchLocationActive || conditions.inShapeLocationActive"
+    },
+    "shapeSearchInXRTCommandActive": {
+      "expression": "ctx.visibleServerCommands.SS1ShapeSearch && ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Awb0PositionedElement' ) > -1 "
+    },
+    "shapeSearchInXRTVisibility": {
+      "expression": "ctx.visibleServerCommands.SS1ShapeSearch && ctx.selected.props.awb0ArchetypeId.dbValues.length > 0"
+    },
+    "shapeSearchFilterVisibility": {
+      "expression": "commandContext.searchState.provider ==='SS1ShapeSearchDataProvider'"
+    },
+    "savedSearchCheckoutCommandActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "cmdOpenInSearchConditionActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "cmdOpenInNewWindowInSearchCommandActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation' && !ctx.aw_hosting_enabled"
+    },
+    "cmdShareURLInSearchCommandActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "cmdOpenInNewTabInSearchCommandActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation' && !ctx.aw_hosting_enabled"
+    },
+    "cmd0OpenInRACInSearchCommandConditionActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "pinSearchCommandCondition": {
+      "expression": "ctx.visibleServerCommands.Awp0PinSearch && ctx.sublocation.clientScopeURI === 'Awp0SavedSearch' && (commandContext.selectionData.selected[0].type === 'SavedSearch' || commandContext.selectionData.selected[0].type === 'Awp0FullTextSavedSearch')"
+    },
+    "unpinSearchCommandCondition": {
+      "expression": "ctx.visibleServerCommands.Awp0UnpinSearch && ctx.sublocation.clientScopeURI === 'Awp0SavedSearch' && (commandContext.selectionData.selected[0].type === 'SavedSearch' || commandContext.selectionData.selected[0].type === 'Awp0FullTextSavedSearch')"
+    },
+    "cmd0StartEditInSearchCommandConditionActive": {
+      "expression": "conditions.isStartEditAllowed && ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "Awp0AssignProjectsInSearchCommandConditionActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "Cm1ShowCreateChangeInContextInSearchCommandConditionActive": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.client.search:SavedSearchSubLocation'"
+    },
+    "Awp0AddToFavoritesInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Awp0AddToFavorites && ctx.selected.type === 'SavedSearch' "
+    },
+    "Awp0RemoveFromFavoritesInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Awp0RemoveFromFavorites && ctx.selected.type === 'SavedSearch' "
+    },
+    "Awp0ChangeOwnerInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Awp0ChangeOwner && ctx.selected.type === 'SavedSearch' "
+    },
+    "Awp0CopyInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Awp0Copy && ctx.selected.type === 'SavedSearch' "
+    },
+    "Awp0PinObjectInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Awp0PinObject && ctx.selected.type === 'SavedSearch' "
+    },
+    "Awp0UnPinObjectInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Awp0UnPinObject && ctx.selected.type === 'SavedSearch' "
+    },
+    "Sub0SubscribeInSearchCommandConditionActive": {
+      "expression": "ctx.visibleServerCommands.Sub0Subscribe && ctx.selected.type === 'SavedSearch' "
+    },
+    "Awp0AddSearchFolderAccessorCommandConditionActive": {
+      "expression": "commandContext.searchFolderShareRuleState.availableTableSelection && !commandContext.searchFolderShareRuleState.sharedWithTableSelection && !commandContext.searchFolderShareRuleState.disableAddButton"
+    },
+    "Awp0RemoveSearchFolderAccessorCommandConditionActive": {
+      "expression": "!commandContext.searchFolderShareRuleState.availableTableSelection && commandContext.searchFolderShareRuleState.sharedWithTableSelection && !commandContext.searchFolderShareRuleState.disableRemoveButton"
+    },
+    "Awp0ShowCreateObjectInSearchCommandConditionActive": {
+      "expression": "ctx.selected.type === 'Awp0SearchFolder' || ctx.sublocation.clientScopeURI === 'Awp0MyActiveFolders'"
+    },
+    "Awp0ExportSearchFolderCommandConditionActive": {
+      "expression": "ctx.mselected.length === 1 && ctx.mselected[0] && ctx.mselected[0].type === 'Awp0SearchFolder'"
+    },
+    "folderSelected": {
+      "expression": "ctx.selected.modelType.typeHierarchyArray.indexOf( 'Folder' ) > -1 && ctx.sublocation.nameToken === 'com.siemens.splm.clientfx.tcui.xrt.objectNavigationSubLocation' && ctx.mselected.length === 1 && ctx.selected.type !== 'Awp0SearchFolder'"
+    },
+    "Awp0ImportSearchFolderCommandConditionActive": {
+      "expression": "ctx.selected.modelType.typeHierarchyArray.indexOf( 'Folder' ) > -1 && ctx.mselected.length === 1"
+    },
+    "awp0ExportToExcelForSavedSearchVisibleCondition": {
+      "expression": "ctx.xrtSummaryContextObject.type === 'SavedSearch' || ctx.xrtSummaryContextObject.type === 'Awp0FullTextSavedSearch'"
+    },
+    "awp0SelectAllForSavedSearchObjectSetCondition": {
+      "expression": "commandContext.searchState.dataProvider.selectionModel.mode === 'multiple' && commandContext.searchState.dataProvider.selectionModel.selectionState !== 'all' && commandContext.searchState.totalLoaded > 0"
+    },
+    "awp0DeselectAllForSavedSearchObjectSetCondition": {
+      "expression": "commandContext.searchState.dataProvider.selectionModel.mode === 'multiple' && commandContext.searchState.dataProvider.selectionModel.selectionState === 'all' && commandContext.searchState.totalLoaded > 0"
+    },
+    "awp0MultiSelectForSavedSearchObjectSetEnableCondition": {
+      "expression": "commandContext.searchState.totalFound > 0 && !commandContext.searchState.dataProvider.selectionModel.multiSelectEnabled  && commandContext.searchState.dataProvider.selectionModel.mode === 'multiple'"
+    },
+    "awp0MultiSelectForSavedSearchObjectSetDisableCondition": {
+      "expression": "commandContext.searchState.totalFound > 0 && commandContext.searchState.dataProvider.selectionModel.multiSelectEnabled  && commandContext.searchState.dataProvider.selectionModel.mode === 'multiple'"
+    },
+    "awp0ExportToExcelForSearchFolderVisibleCondition": {
+      "expression": "ctx.xrtSummaryContextObject.type === 'Awp0SearchFolder'"
+    },
+    "awp0SelectAllForSearchFolderObjectSetCondition": {
+      "expression": "commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple' && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.selectionState !== 'all' && commandContext.searchFolder.totalFound > 0"
+    },
+    "awp0DeselectAllForSearchFolderObjectSetCondition": {
+      "expression": "commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple' && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.selectionState === 'all' && commandContext.searchFolder.totalFound > 0"
+    },
+    "awp0MultiSelectForSearchFolderObjectSetEnableCondition": {
+      "expression": "commandContext.searchFolder.totalFound > 0 && !commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.multiSelectEnabled  && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple'"
+    },
+    "awp0MultiSelectForSearchFolderObjectSetDisableCondition": {
+      "expression": "commandContext.searchFolder.totalFound > 0 && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.multiSelectEnabled  && commandContext.searchFolder.exportPanelContext.dataProvider.selectionModel.mode === 'multiple'"
+    },
+    "deleteMultipleActiveFolderCondition": {
+      "expression": "conditions.Awp0DeleteCommandConditionVisible && ctx.mselected.length >= 1 && ctx.mselected[0].type === 'Awp0SearchFolder'"
+    },
+    "deleteMyActiveFolderCondition": {
+      "expression": "conditions.Awp0DeleteCommandConditionVisible && ctx.mselected.length >= 1 && ctx.mselected[0].type === 'Awp0MySearchFolder'"
+    },
+    "isMyActiveFoldersLocation": {
+      "expression": "ctx.sublocation.clientScopeURI === 'Awp0MyActiveFolders' || ctx.mselected[0].type === 'Awp0SearchFolder'"
+    },
+    "hideStartEditCmdForSearch": {
+      "expression": "conditions.areCommandsVisibleForSavedSearch || conditions.isCreateSearchFolderCommandVisible"
+    }
+  },
+  "i18n": {
+    "showObjectCommandTitle": [
+      "XRTMessages"
+    ],
+    "Awp0OpenGroupDesc": [
+      "ZeroCompileCommandMessages"
+    ],
+    "Awp0OpenSavedSearch": [
+      "SearchMessages"
+    ],
+    "OpenGroupCommandFooterDesc": [
+      "ZeroCompileCommandMessages"
+    ],
+    "newTabTitle": [
+      "awAddDirectiveMessages"
+    ],
+    "open": [
+      "SearchMessages"
+    ],
+    "Awp0NewGroupDesc": [
+      "ZeroCompileCommandBaseMessages"
+    ],
+    "Awp0NameValueCreateTitle": [
+      "ZeroCompileCommandMessages"
+    ],
+    "reset": [
+      "SearchMessages"
+    ],
+    "Awp0StartEditSavedSearchRuleDesc": [
+      "SearchMessages"
+    ],
+    "Awp0StartEditSearchFolderRuleDesc": [
+      "SearchMessages"
+    ],
+    "Awp0SearchTitle": [
+      "SearchMessages"
+    ],
+    "advancedSearch": [
+      "SearchMessages"
+    ],
+    "reviewAndExecuteAdvancedSavedSearch": [
+      "SearchMessages"
+    ],
+    "searchFiltersTitle": [
+      "SearchMessages"
+    ],
+    "Awp0SearchSettingsTitle": [
+      "SearchMessages"
+    ],
+    "SaveSearch": [
+      "SearchMessages"
+    ],
+    "ShowColorFilteringCommandTitle": [
+      "SearchMessages"
+    ],
+    "HideColorFilteringCommandTitle": [
+      "SearchMessages"
+    ],
+    "HighlightingAndColorFilteringCommandTitle": [
+      "SearchMessages"
+    ],
+    "HighlightingCommandTitle": [
+      "SearchMessages"
+    ],
+    "ColorFilteringCommandTitle": [
+      "SearchMessages"
+    ],
+    "DeleteSavedSearchCommandTitle": [
+      "SearchMessages"
+    ],
+    "deleteConfirmationText": [
+      "SearchMessages"
+    ],
+    "SS1ShapeSearchTitle": [
+      "SearchMessages"
+    ],
+    "SS1ShapeSearchFilterTitle": [
+      "SearchMessages"
+    ],
+    "CancelText": [
+      "SearchMessages"
+    ],
+    "delete": [
+      "SearchMessages"
+    ],
+    "deleteSuccessful": [
+      "SearchMessages"
+    ],
+    "PinSearchCommandTitle": [
+      "SearchMessages"
+    ],
+    "UnpinSearchCommandTitle": [
+      "SearchMessages"
+    ],
+    "pinObjectConfirmation": [
+      "SearchMessages"
+    ],
+    "unpinObjectConfirmation": [
+      "SearchMessages"
+    ],
+    "pinObjectFailed": [
+      "SearchMessages"
+    ],
+    "unpinTileFailed": [
+      "SearchMessages"
+    ],
+    "SS1ShapeSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0SearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0AdvancedSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0ReviewAndExecuteAdvancedSavedSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0SearchFilterDesc": [
+      "SearchMessages"
+    ],
+    "Awp0SaveSearchDesc": [
+      "SearchMessages"
+    ],
+    "fakeCommandToForceServerVisibilityAwp0PinSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0ShowColorDesc": [
+      "SearchMessages"
+    ],
+    "Awp0HighlightColorGroupDesc": [
+      "SearchMessages"
+    ],
+    "Awp0HighlightingDesc": [
+      "SearchMessages"
+    ],
+    "Awp0ColorFilteringDesc": [
+      "SearchMessages"
+    ],
+    "Awp0DeleteRecentSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0PinSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0UnpinSearchDesc": [
+      "SearchMessages"
+    ],
+    "Awp0SearchSettingsDesc": [
+      "SearchMessages"
+    ],
+    "Awp0AddAccessorOrProjectTitle": [
+      "SearchMessages"
+    ],
+    "Awp0AddAccessorOrProjectDescription": [
+      "SearchMessages"
+    ],
+    "Awp0RemoveAccessorOrProjectTitle": [
+      "SearchMessages"
+    ],
+    "Awp0RemoveAccessorOrProjectDescription": [
+      "SearchMessages"
+    ],
+    "Awp0SearchFolderCreateTitle": [
+      "SearchMessages"
+    ],
+    "Awp0SearchFolderCreateDesc": [
+      "SearchMessages"
+    ],
+    "Awp0ExportSearchFolderTitle": [
+      "SearchMessages"
+    ],
+    "Awp0ExportSearchFolderDescription": [
+      "SearchMessages"
+    ],
+    "Awp0ImportSearchFolderTitle": [
+      "SearchMessages"
+    ],
+    "Awp0ImportSearchFolderDescription": [
+      "SearchMessages"
+    ],
+    "activeFoldersTitle": [
+      "SearchMessages"
+    ],
+    "activeFoldersDescription": [
+      "SearchMessages"
+    ],
+    "exportActiveFolderFailedMessage": [
+      "SearchMessages"
+    ],
+    "Awp0ExportWithTemplateDesc": [
+      "SearchMessages"
+    ],
+    "Awp0ExportWithTemplateTitle": [
+      "SearchMessages"
+    ],
+    "SS1Shapes": [
+      "SearchMessages"
+    ],
+    "SS1ShapeSearchSimilar": [
+      "SearchMessages"
+    ],
+    "startEditButtonText": [
+      "TCUICommandPanelsMessages"
+    ],
+    "SS1SelectShapeSearchDesc": [
+      "SearchMessages"
+    ],
+    "singleObjDeleteConfirmationMessage": [
+      "SearchMessages"
+    ],
+    "cancel": [
+      "SearchMessages"
+    ],
+    "deleteSingleFailureMessage": [
+      "SearchMessages"
+    ],
+    "singleDeleteConfirmationMessage": [
+      "SearchMessages"
+    ],
+    "startEdit": [
+      "SearchMessages"
+    ],
+    "selectAll": [
+      "SearchMessages"
+    ],
+    "Awp0SelectAllDesc": [
+      "SearchMessages"
+    ],
+    "clearSelections": [
+      "SearchMessages"
+    ],
+    "Awp0DeselectAllDesc": [
+      "SearchMessages"
+    ],
+    "selectionMode": [
+      "SearchMessages"
+    ],
+    "Awp0EnableMultiSelectDesc": [
+      "SearchMessages"
+    ],
+    "Awp0ExportToExcelTitle": [
+      "ZeroCompileCommandMessages"
+    ],
+    "Awp0ExportToExcelDesc": [
+      "ZeroCompileCommandMessages"
+    ],
+    "Awp0StartEditSummaryTitle": [
+      "ZeroCompileCommandMessages"
+    ],
+    "Awp0StartEditSummaryDesc": [
+      "ZeroCompileCommandMessages"
+    ]
+  }
+}

@@ -1,0 +1,233 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awTypeSelectorRenderFunction",
+            "deps": "js/AwTypeSelectorService"
+        },
+        "initialize": {
+            "actionType": "dataProvider",
+            "method": "awTypeSelector"
+        },
+        "loadTypeSelector": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateVmpFromProps"
+                },
+                {
+                    "action": "validatePropsAndTriggerSoa"
+                },
+                {
+                    "action": "checkAndOpenTypeSelector"
+                }
+            ]
+        },
+        "loadListWithRecent": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "loadRecentTypes"
+                },
+                {
+                    "action": "loadTypeList"
+                }
+            ]
+        },
+        "updateVmpFromProps": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateVmpFromProps",
+            "inputData": {
+                "prop": "{{props}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "autoSelectOnUniqueTypeTracker": "autoSelectOnUniqueTypeTracker",
+                "preferredTypeTracker": "preferredTypeTracker"
+            },
+            "deps": "js/AwTypeSelectorService"
+        },
+        "validatePropsAndTriggerSoa": {
+            "actionType": "JSFunction",
+            "method": "validatePropsAndTriggerSoa",
+            "inputData": {
+                "prop": "{{props}}",
+                "data": "{{data}}",
+                "initializeSoaAction": "{{actions.initialize}}"
+            },
+            "deps": "js/AwTypeSelectorService"
+        },
+        "checkAndOpenTypeSelector":{
+            "actionType": "JSFunction",
+            "method": "checkAndOpenTypeSelector",
+            "inputData": {
+                "props": "{{props}}"
+            },
+            "deps": "js/AwTypeSelectorService"
+        },
+        "loadTypeList": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": "{{function:getSearchInput}}"
+            },
+            "outputData": {
+                "typeListTotalFound": "totalFound",
+                "typeList": "{{function:convertTypesToLovEntries}}"
+            },
+            "deps": "js/AwTypeSelectorService"
+        },
+        "loadRecentTypes": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadRecentTypes",
+            "inputData": {
+                "prop": "{{props}}",
+                "data":"{{data}}"
+            },
+            "outputData": {
+                "preferredChoices": "preferredChoices"
+            },
+            "deps": "js/AwTypeSelectorService"
+        },
+        "typeSelectorObjectsUpdated": {
+            "actionType": "JSFunction",
+            "method": "typeSelectorObjectsUpdated",
+            "inputData": {
+                "prop": "{{props}}",
+                "dataProvider": "{{dataProviders.awTypeSelector}}",
+                "typeList": "{{typeList}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "autoSelectOnUniqueTypeTracker": "autoSelectOnUniqueTypeTracker",
+                "preferredTypeTracker": "preferredTypeTracker"
+            },
+            "deps": "js/AwTypeSelectorService"
+        },
+        "clearMRUList":{
+            "actionType": "JSFunction",
+            "method": "clearOutRecentUsedList",
+            "inputData": {
+                "selectedValueTracker":"{{data.selectedValueTracker}}",
+                "preferredChoices":"{{data.preferredChoices}}",
+                "props":"{{props}}"
+            },
+            "outputData": {
+                "selectedValueTracker":"selectedValueTracker",
+                "preferredChoices":"preferredChoices"
+            },
+            "deps": "js/AwTypeSelectorService"
+        }
+    },
+    "data": {
+        "autoSelectOnUniqueTypeTracker": {
+            "dbValue": false,
+            "type": "BOOLEAN"
+        },
+        "preferredTypeTracker": {
+            "dbValue": "",
+            "type": "STRING"
+        },
+        "selectedValueTracker":{
+            "dbValue": "",
+            "type": "STRING"
+        }
+    },
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "loadTypeSelector",
+        "onUpdate": [
+            {
+                "action": "typeSelectorObjectsUpdated",
+                "observers": [
+                    "viewModel.dataProviders.awTypeSelector.vmCollectionObj.vmCollection.loadedVMObjects"
+                ]
+            },
+            {
+                "action": "clearMRUList",
+                "observers": [
+                    "props.value"
+                ]
+            }
+        ]
+    },
+    "dataProviders": {
+        "awTypeSelector": {
+            "action": "loadListWithRecent",
+            "response": "{{data.typeList}}",
+            "totalFound": "{{data.typeListTotalFound}}",
+            "inputData": {
+                "selectionData": "{{props.selectionData}}"
+            },
+            "preferredChoices": "{{data.preferredChoices}}"
+        }
+    },
+    "functions": {
+        "convertTypesToLovEntries": {
+            "functionName": "convertTypesToLovEntries",
+            "parameters": [
+                "{{data}}"
+            ],
+            "deps": "js/AwTypeSelectorService"
+        },
+        "getSearchInput": {
+            "functionName": "getSearchInput",
+            "parameters": [
+                "{{props}}",
+                "{{data}}"
+            ],
+            "deps": "js/AwTypeSelectorService"
+        }
+    },
+    "i18n": {},
+    "props": {
+        "prop": {
+            "type": "field"
+        },
+        "load-sub-types": {
+            "type": "string"
+        },
+        "include": {
+            "type": "string"
+        },
+        "auto-select-on-unique-type": {
+            "type": "string"
+        },
+        "max-recent-count": {
+            "type": "string"
+        },
+        "override-id": {
+            "type": "string"
+        },
+        "preferred-type": {
+            "type": "string"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "search-input": {
+            "type": "object"
+        },
+        "auto-open-on-mount":{
+            "type":"string"
+        }
+    }
+}

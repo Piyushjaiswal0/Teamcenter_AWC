@@ -1,0 +1,20 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<polyline fill="none" stroke="#969696" stroke-width="2" stroke-miterlimit="10" points="10,29 10,24 38,24 38,19 "/>
+<linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="28.5" y1="0.5" x2="47.5" y2="19.5">
+	<stop  offset="0" style="stop-color:#C8C8C8"/>
+	<stop  offset="0.1747" style="stop-color:#C3C3C3"/>
+	<stop  offset="0.4567" style="stop-color:#B5B5B5"/>
+	<stop  offset="0.8089" style="stop-color:#9F9F9F"/>
+	<stop  offset="1" style="stop-color:#919191"/>
+</linearGradient>
+<rect id="XMLID_21_" x="28.5" y="0.5" fill="url(#XMLID_2_)" stroke="#464646" stroke-miterlimit="10" width="19" height="19"/>
+<linearGradient id="XMLID_3_" gradientUnits="userSpaceOnUse" x1="0.5" y1="28.5" x2="19.5" y2="47.5">
+	<stop  offset="0" style="stop-color:#C8C8C8"/>
+	<stop  offset="0.1747" style="stop-color:#C3C3C3"/>
+	<stop  offset="0.4567" style="stop-color:#B5B5B5"/>
+	<stop  offset="0.8089" style="stop-color:#9F9F9F"/>
+	<stop  offset="1" style="stop-color:#919191"/>
+</linearGradient>
+<rect id="XMLID_20_" x="0.5" y="28.5" fill="url(#XMLID_3_)" stroke="#464646" stroke-miterlimit="10" width="19" height="19"/>
+</svg>

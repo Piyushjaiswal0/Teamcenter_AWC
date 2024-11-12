@@ -1,0 +1,11 @@
+{
+    "Organization": "Organización",
+    "orgTreeFilterText": "Filtro",
+    "resultsText": "Resultados",
+    "noFiltersFound": "No se encontró ningún resultado",
+    "noOrgTreeResultsFound": "No se encontró ningún resultado correspondiente a la cadena del filtro \"{0}\".",
+    "orgFilterUsage": "<br>Por ejemplo, {0}:\"Ed Engineer\" devuelve todos los usuarios correspondientes a Ed Engineer.<br>Los campos válidos son {1}, y {2}.",
+    "usageMessage": "\"{0}\" no es una cadena de filtro válida.{1}",
+    "orgEscapeChars": "<br>Las cadenas de filtro que contienen comillas deberán estar precedidos por una barra inversa (\\\").{0}",
+    "advancedSearchMessage": "<br>Las cadenas de filtro que contengan dos puntos deben estar entrecomilladas (\" \"), a menos que se utilicen para buscar un valor de campo específico.{0}"
+}

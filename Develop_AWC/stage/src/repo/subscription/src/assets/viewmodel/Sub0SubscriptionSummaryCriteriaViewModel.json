@@ -1,0 +1,300 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+
+    ],
+    "onEvent": [ {
+            "eventId": "subscriptionCriteriaTable.criteriaContextLoaded",
+            "action": "loadSubscribableProperties"
+        },
+        {
+            "eventId": "subscriptionCriteriaTable.loadCriteriaContext",
+            "action": "loadCriteriaContext"
+        },
+        {
+            "eventId": "subscriptionCriteriaTable.subscribablePropertiesLoaded",
+            "action": "loadCriteriaObjects"
+        },
+        {
+            "eventId": "subscriptionCriteriaTable.reveal",
+            "action": "subscriptionCriteriaTableDataProvider"
+        },
+        {
+            "eventId": "subscriptionCriteriaObjects.updated",
+            "action": "updateSubscriptionObject"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "condition": "state === 'starting' && subPanelContext.xrtType === 'SUMMARY'",
+            "action": "loadEventType"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "condition": "state === 'canceling'",
+            "action": "resetCriteriaTable"
+        }
+    ],
+    "actions": {
+        "initialView": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getColumnsName"
+                },
+                {
+                    "action": "getViewModelProperties"
+                }
+            ]
+        },
+        "getColumnsName": {
+            "actionType": "JSFunction",
+            "method": "getColumnsNameArray",
+            "inputData": {
+                "columnDefs": "{{data.columnProviders.subscriptionCriteriaTableColumnProvider.columns}}"
+            },
+            "outputData": {
+                "columnNames" : ""
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "getViewModelProperties": {
+            "actionType": "JSFunctionAsync",
+            "method": "getViewModelProperties",
+            "inputData": {
+                "targetTypeName": [
+                    "{{subPanelContext.selected}}"
+                ],
+                "columnDefs": "{{data.columnNames}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionCriteriaTable.loadCriteriaContext"
+                } ]
+            },
+            "deps": "js/tcViewModelObjectService"
+        },
+        "loadCriteriaContext": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadCriteriaContext",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.subscriptionCriteriaTableDataProvider}}",
+                "valueTypeDefs": "{{data.valueTypeDefs}}",
+                "columnDefs": "{{data.columnProviders.subscriptionCriteriaTableColumnProvider.columns}}",
+                "targetTypeName": "{{subPanelContext.selected}}",
+                "selectPropertyStr": "{{i18n.selectProperty}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionCriteriaTable.criteriaContextLoaded"
+                } ]
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "loadSubscribableProperties": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Notification-2017-11-SubscriptionManagement",
+            "method": "getSubscribableProperties",
+            "inputData": {
+                "subscribableObjectTypes": [ {
+                    "uid": "{{subPanelContext.selected.props.target.dbValue}}"
+                } ]
+            },
+            "outputData": {
+                "subscribableCtx": "{{function:processGetSubscribablePropertiesResponse}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionCriteriaTable.subscribablePropertiesLoaded"
+                } ]
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "loadEventType": {
+            "actionType": "JSFunction",
+            "method": "getObject",
+            "inputData": {
+                "data": "{{subPanelContext.selected.props.event_type.dbValues[0]}}"
+            },
+            "outputData": {
+                "ctx.sub0Criteria.eventType": "props.eventtype_id.dbValues[0]"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionCriteriaTable.eventTypeLoaded"
+                } ]
+            },
+            "deps": "soa/kernel/clientDataModel"
+        },
+        "loadTargetTypeDescriptor": {
+            "actionType": "JSFunction",
+            "method": "getType",
+            "inputData": {
+                "name": "{{subPanelContext.selected.props.target.dbValue}}"
+            },
+            "outputData": {
+                "ctx.sub0Criteria.targetTypeDescriptor": "propertyDescriptorsMap"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionCriteriaTable.targetTypeDescriptorLoaded"
+                } ]
+            },
+            "deps": "soa/kernel/clientMetaModel"
+        },
+        "loadCriteriaObjects": {
+            "actionType": "JSFunction",
+            "method": "loadCriteriaObjects",
+            "inputData": {
+                "criteriaCtx": "{{ctx.sub0Criteria}}",
+                "subscriptionObject": "{{subPanelContext.selected}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "subscriptionCriteriaTable.reveal"
+                    },
+                    {
+                        "name": "subscriptionCriteriaTable.criteriaObjectsLoaded"
+                    }
+                ]
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "loadCriteriaTableData": {
+            "actionType": "JSFunction",
+            "method": "setValue",
+            "inputData": {
+                "input": "{{ctx.sub0Criteria.criteriaObjects}}"
+            },
+            "outputData": {
+                "totalFound": "data.length",
+                "searchResults": "data"
+            },
+            "events": {
+
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "updateSubscriptionObject": {
+            "actionType": "JSFunction",
+            "method": "updateSubscriptionObject",
+            "inputData": {
+                "subscriptionObject": "{{subPanelContext.selected}}",
+                "columnDefs": "{{ctx.sub0Criteria.columnDefs}}",
+                "criteriaObjects": "{{ctx.sub0Criteria.criteriaObjects}}",
+                "xrtState": "{{subPanelContext.xrtState}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionCriteriaTable.updateComplete"
+                } ]
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "resetCriteriaTable":{
+            "actionType": "JSFunction",
+            "method": "resetCriteriaTable",
+            "inputData": {
+                "criteriaCtx": "{{ctx.sub0Criteria}}",
+                "subscriptionObject": "{{subPanelContext.selected}}"
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        }
+    },
+    "data": {
+        "valueTypeDefs": [
+            "STRINGARRAY",
+            "STRINGARRAY",
+            "DATEARRAY",
+            "DOUBLEARRAY",
+            "DOUBLEARRAY",
+            "INTEGERARRAY",
+            "STRINGARRAY",
+            "INTEGERARRAY",
+            "STRINGARRAY",
+            "STRINGARRAY",
+            "STRINGARRAY",
+            "STRINGARRAY",
+            "STRINGARRAY",
+            "STRINGARRAY",
+            "STRINGARRAY"
+        ]
+    },
+    "dataProviders": {
+        "subscriptionCriteriaTableDataProvider": {
+            "action": "loadCriteriaTableData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "single",
+            "inputData": {
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "columnProviders": {
+        "subscriptionCriteriaTableColumnProvider": {
+            "columns": [ {
+                    "name": "logic_operators",
+                    "displayName": "{{i18n.logicalColumnTitle}}",
+                    "typeName": "String",
+                    "width": 120,
+                    "isTableCommand": false,
+                    "pinnedLeft": false,
+                    "enableColumnMenu": false
+                },
+                {
+                    "name": "attribute_names",
+                    "displayName": "{{i18n.propertyColumnTitle}}",
+                    "typeName": "String",
+                    "width": 120,
+                    "isTableCommand": false,
+                    "pinnedLeft": false,
+                    "enableColumnMenu": false
+                },
+                {
+                    "name": "math_operators",
+                    "displayName": "{{i18n.operatorColumnTitle}}",
+                    "typeName": "String",
+                    "width": 120,
+                    "isTableCommand": false,
+                    "pinnedLeft": false,
+                    "enableColumnMenu": false
+                },
+                {
+                    "name": "attribute_values",
+                    "displayName": "{{i18n.valueColumnTitle}}",
+                    "typeName": "String",
+                    "width": 120,
+                    "isTableCommand": false,
+                    "pinnedLeft": false,
+                    "enableColumnMenu": false
+                }
+            ]
+        }
+    },
+    "grids": {
+        "subscriptionCriteriaTable": {
+            "dataProvider": "subscriptionCriteriaTableDataProvider",
+            "columnProvider": "subscriptionCriteriaTableColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enableGridMenu": false,
+                "enableSorting": false
+            }
+        }
+    },
+    "i18n": {
+        "logicalColumnTitle": [ "SubscriptionMessages" ],
+        "propertyColumnTitle": [ "SubscriptionMessages" ],
+        "operatorColumnTitle": [ "SubscriptionMessages" ],
+        "valueColumnTitle": [ "SubscriptionMessages" ],
+        "selectProperty": [ "SubscriptionMessages" ]
+    },
+    "ctx": {
+        "sub0Criteria": {
+            "type":"object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialView"
+    }
+}

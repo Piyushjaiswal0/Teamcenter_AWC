@@ -1,0 +1,503 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerObjectSetReusableTableRenderFunction",
+            "deps": "js/AwWalkerObjectSetReusableTableService"
+        },
+        "loadObjectSetData": {
+            "actionType": "JSFunction",
+            "method": "loadObjectSetData",
+            "inputData": {
+                "firstPageUids": "{{props.firstPageUids}}",
+                "objectSetInfo": "{{props.objectSetInfo}}",
+                "firstPageResults": "{{data._ObjectSet_Provider_searchResults}}",
+                "objectSetUri": "{{props.objectSetUri}}",
+                "columns": "{{props.columns}}",
+                "initialOperationType": "{{props.operationType}}",
+                "updatedOperationType": "{{data.dataProviders.ObjectSet_1_Provider.columnConfig.operationType}}",
+                "columnFilters": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance.columnFilters}}",
+                "xrtContext": "{{props.xrtContext}}",
+                "objectSetData": "{{props.objectSetData}}",
+                "vmo": "{{props.vmo}}",
+                "sortCriteria": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance.sortCriteria}}",
+                "startIndex": "{{data.dataProviders.ObjectSet_1_Provider.startIndex}}",
+                "colsToInflate": "{{function:ObjectSet_1_Provider_getAttributesToInflate}}",
+                "reload": "{{props.reload}}",
+                "objectSetState": "{{props.objectSetState}}",
+                "totalFound": "{{props.totalFound}}",
+                "parentUid": "{{props.parentUid}}"
+            },
+            "outputData": {
+                "_ObjectSet_Provider_searchResults": "firstPageObjs",
+                "_ObjectSet_Provider_totalFound": "totalFound",
+                "dataProviders.ObjectSet_1_Provider.columnConfig": "{{function:ObjectSet_1_Provider_getValidColumnConfig}}"
+            },
+            "deps": "js/xrtUtilities"
+        },
+        "ObjectSet_1_Provider_getFilterFacetValues": {
+            "actionType": "TcSoaService",
+            "method": "getFilterValues",
+            "serviceName": "Internal-AWS2-2019-12-Finder",
+            "deps": "js/xrtUtilities",
+            "events": {},
+            "headerState": {
+                "unloadObjects": false
+            },
+            "inputData": {
+                "filterFacetInput": {
+                    "columnFilters": "{{filterFacetInput.columnFilters}}",
+                    "columnName": "{{filterFacetInput.column.field}}",
+                    "maxToReturn": 50,
+                    "providerName": "Awp0ObjectSetRowProvider",
+                    "searchCriteria": {
+                        "ActiveWorkspace:xrtContext": "{{function:getActiveWorkspaceXrtContext}}",
+                        "objectSet": "{{props.objectSetData.source}}",
+                        "parentUid": "{{props.vmo.uid}}",
+                        "showConfiguredRev": "{{props.objectSetData.showConfiguredRev}}"
+                    },
+                    "startIndex": "{{filterFacetInput.startIndex}}"
+                }
+            },
+            "outputData": {
+                "filterFacetResults": "{{json:facetValues}}",
+                "partialErrors": "ServiceData.partialErrors"
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "partialErrors"
+                } ]
+            }
+        },
+        "ObjectSet_1_Provider_saveColumnConfigLoadData": {
+            "actionType": "TcSoaService",
+            "method": "performSearchViewModel5",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "headerState": {},
+            "deps": "js/xrtUtilities",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{props.objectSetUri}}",
+                    "operationType": "{{eventData.operationType}}"
+                },
+                "inflateProperties": true,
+                "saveColumnConfigData": {
+                    "clientScopeURI": "{{props.objectSetUri}}",
+                    "columnConfigId": "{{data.dataProviders.ObjectSet_1_Provider.columnConfig.columnConfigId}}",
+                    "columns": "{{function:ObjectSet_1_Provider_getObjSetColumns}}",
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "columnFilters": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance.columnFilters}}",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0ObjectSetRowProvider",
+                    "searchCriteria": {
+                        "ActiveWorkspace:Location": "{{ctx.locationContext.ActiveWorkspace:Location}}",
+                        "ActiveWorkspace:SubLocation": "{{ctx.locationContext.ActiveWorkspace:SubLocation}}",
+                        "ActiveWorkspace:xrtContext": "{{function:getActiveWorkspaceXrtContext}}",
+                        "isRedLineMode": "{{ctx.isRedLineMode}}",
+                        "objectSet": "{{props.objectSetData.source}}",
+                        "parentUid": "{{props.vmo.uid}}",
+                        "showConfiguredRev": "{{props.objectSetData.showConfiguredRev}}"
+                    },
+                    "searchSortCriteria": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.ObjectSet_1_Provider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "_ObjectSet_Provider_searchResults": "{{json:searchResultsJSON}}",
+                "_ObjectSet_Provider_totalFound": "totalFound",
+                "ctx.searchResponseInfo.columnConfig": "{{function:ObjectSet_1_Provider_getValidColumnConfig}}",
+                "dataProviders.ObjectSet_1_Provider.columnConfig": "{{function:ObjectSet_1_Provider_getValidColumnConfig}}",
+                "partialErrors": "ServiceData.partialErrors"
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "partialErrors"
+                } ]
+            },
+            "events": {}
+        },
+        "ObjectSet_1_Provider_saveColumnConfig": {
+            "actionType": "TcSoaService",
+            "method": "performSearchViewModel5",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "deps": "js/xrtUtilities",
+            "headerState": {},
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{props.objectSetUri}}",
+                    "operationType": "{{data.dataProviders.ObjectSet_1_Provider.columnConfig.operationType}}"
+                },
+                "inflateProperties": false,
+                "noServiceData": true,
+                "saveColumnConfigData": {
+                    "clientScopeURI": "{{props.objectSetUri}}",
+                    "columnConfigId": "{{data.dataProviders.ObjectSet_1_Provider.columnConfig.columnConfigId}}",
+                    "columns": "{{function:ObjectSet_1_Provider_getObjSetColumns}}",
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "columnFilters": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance.columnFilters}}",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0ObjectSetRowProvider",
+                    "searchCriteria": {
+                        "ActiveWorkspace:Location": "{{ctx.locationContext.ActiveWorkspace:Location}}",
+                        "ActiveWorkspace:SubLocation": "{{ctx.locationContext.ActiveWorkspace:SubLocation}}",
+                        "ActiveWorkspace:xrtContext": "{{function:getActiveWorkspaceXrtContext}}",
+                        "isRedLineMode": "{{ctx.isRedLineMode}}",
+                        "objectSet": "{{props.objectSetData.source}}",
+                        "parentUid": "{{props.vmo.uid}}",
+                        "showConfiguredRev": "{{props.objectSetData.showConfiguredRev}}"
+                    },
+                    "searchSortCriteria": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.ObjectSet_1_Provider.startIndex}}"
+                }
+            },
+            "outputData": {},
+            "actionMessages": {
+                "failure": [ {
+                    "message": "partialErrors"
+                } ]
+            },
+            "events": {}
+        },
+        "ObjectSet_1_Provider_resetColumnConfig": {
+            "actionType": "TcSoaService",
+            "method": "getOrResetUIColumnConfigs4",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "inputData": {
+                "getOrResetUiConfigsIn": [ {
+                    "clientName": "clientName",
+                    "columnConfigQueryInfos": [ {
+                        "clientScopeURI": "{{props.objectSetUri}}",
+                        "columnsToExclude": [],
+                        "operationType": "configured",
+                        "typeNames": [
+                            "WorkspaceObject"
+                        ]
+                    } ],
+                    "resetColumnConfig": true,
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                } ]
+            },
+            "outputData": {
+                "dataProviders.ObjectSet_1_Provider.columnConfig": "columnConfigurations[0].columnConfigurations[0]"
+            },
+            "deps": "",
+            "events": {
+                "success": [ {
+                    "eventData": {
+                        "refreshLocationFlag": true,
+                        "relatedModified": [
+                            "{{ctx.selected}}"
+                        ]
+                    },
+                    "name": "cdm.relatedModified"
+                } ]
+            },
+            "headerState": {},
+            "actionMessages": {
+                "failure": [ {
+                    "message": "partialErrors"
+                } ]
+            }
+        },
+        "startEditForNewVmos": {
+            "actionType": "JSFunction",
+            "method": "startEditForNewVmos",
+            "deps": "js/editEventsService",
+            "inputData": {
+                "editContext": "NONE"
+            }
+        },
+        "invokeSaveEditsCommand": {
+            "actionType": "Command",
+            "inputData": {
+                "commandId": "Awp0SaveEdits"
+            }
+        },
+        "refreshDataProvider": {
+            "actionType": "JSFunction",
+            "method": "refreshDataProvider",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.ObjectSet_1_Provider}}",
+                "eventData": "{{data.eventData}}",
+                "objectSetSource": "{{props.objectSetData.source}}",
+                "vmo": "{{props.vmo}}",
+                "isRefreshAllObjectSets": "{{props.isRefreshAllObjectSets}}"
+            },
+            "deps": "js/xrtUtilities"
+        },
+        "loadColumns": {
+            "actionType": "JSFunction",
+            "method": "loadColumns",
+            "inputData": {
+                "props":"{{props}}"
+            },
+            "outputData": {
+                "columns":"columnInfos",
+                "dataProviders.ObjectSet_1_Provider.columnConfig":"columnConfig"
+            },
+            "deps": "js/AwWalkerObjectSetReusableTableService"
+        },
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "initialize",
+            "deps": "js/AwWalkerObjectSetReusableTableService",
+            "inputData": {
+                "dataProvider": "{{dataProviders.ObjectSet_1_Provider}}",
+                "columnProvider": "{{data.grids.ObjectSet_1_Provider.columnProviderInstance}}",
+                "dpRef": "{{props.dpRef}}",
+                "objectSetSource": "{{props.objectSetData.source}}"
+            }
+        },
+        "cleanup": {
+            "actionType": "JSFunction",
+            "method": "cleanup",
+            "deps": "js/AwWalkerObjectSetReusableTableService",
+            "inputData": {
+                "dataProvider": "{{dataProviders.ObjectSet_1_Provider}}",
+                "dpRef": "{{props.dpRef}}"
+            }
+        },
+        "doArrangeEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "arrangeObjectSetColumns",
+            "inputData": {
+                "eventData": "{{fields.columnsData}}",
+                "viewModel": "{{data}}",
+                "props": "{{props}}"
+
+            },
+            "outputData": {},
+            "deps": "js/AwWalkerObjectSetReusableTableService"
+        },
+        "initializeDataProvider": {
+            "actionType": "dataProvider",
+            "method": "ObjectSet_1_Provider"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "render": "render",
+        "onUpdate": [
+            {
+                "action": "initializeDataProvider",
+                "observers": [ "props.objectSetInfo" ]
+            },
+            {
+            "action": "loadColumns",
+            "observers": [ "props.columns" ]
+            },
+            {
+                "action": "doArrangeEvent",
+                "observers": [ "fields.columnsData" ]
+            }
+
+        ],
+        "onUnmount": "cleanup"
+    },
+    "data": {
+        "reusable": true,
+        "columnsData": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        },
+        "showCheckBox": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        },
+        "isBulkEditing": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        },
+        "startEdit": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        },
+        "cancelEdit": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        },
+        "saveEdit": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "selectRows": {
+            "initialValues": {
+                "value": ""
+            },
+            "meta": {}
+        },
+        "arrangeData": {
+            "initialValues": {
+                "value": false
+            },
+            "meta": {}
+        }
+    },
+    "dataProviders": {
+        "ObjectSet_1_Provider": {
+            "action": "loadObjectSetData",
+            "commandsAnchor": "com.siemens.splm.clientfx.ui.modelObjectDataGridActionCommands",
+            "filterFacetAction": "ObjectSet_1_Provider_getFilterFacetValues",
+            "filterFacetResults": "{{data._filterFacetResults}}",
+            "response": "{{data._ObjectSet_Provider_searchResults}}",
+            "selectionModelMode": "multiple",
+            "totalFound": "{{data._ObjectSet_Provider_totalFound}}",
+            "isObjectSetSourceDCP": "{{function:ObjectSet_1_Provider_isObjectSetSourceDCP}}",
+            "editContext": "NONE",
+            "editConfig": {
+                "startEditAction": "splmTableStartEdit",
+                "saveEditAction": "splmTableSaveEdit",
+                "identifier": "uid"
+            },
+            "inputData": {
+                "selectionData": "{{props.selectionData}}",
+                "selectionModel": "{{props.selectionModel}}"
+            }
+        }
+    },
+    "columnProviders": {
+        "ObjectSet_1_ColumnProvider": {
+            "loadColumnAction": "loadColumns",
+            "columns": "{{data.columns}}",
+            "saveColumnAndLoadAction": "ObjectSet_1_Provider_saveColumnConfigLoadData",
+            "saveColumnAction": "ObjectSet_1_Provider_saveColumnConfig",
+            "resetColumnAction": "ObjectSet_1_Provider_resetColumnConfig"
+        }
+    },
+    "grids": {
+        "ObjectSet_1_Provider": {
+            "dataProvider": "ObjectSet_1_Provider",
+            "columnProvider": "ObjectSet_1_ColumnProvider",
+            "enableArrangeMenu": true,
+            "gridOptions": {
+                "enableExpandAndPaginationInEdit": true,
+                "enableGridMenu": true,
+                "enableSorting": true,
+                "isFilteringEnabled": true
+            }
+        }
+    },
+    "functions": {
+        "getActiveWorkspaceXrtContext": {
+            "functionName": "getActiveWorkspaceXrtContext",
+            "parameters": [
+                "{{ctx.ActiveWorkspace:xrtContext}}"
+            ]
+        },
+        "ObjectSet_1_Provider_getValidColumnConfig": {
+            "functionName": "getValidColumnConfig",
+            "parameters": [
+                "{{data.dataProviders.ObjectSet_1_Provider.columnConfig}}"
+            ]
+        },
+        "ObjectSet_1_Provider_getObjSetColumns": {
+            "functionName": "getObjSetColumns",
+            "parameters": [
+                "{{data.dataProviders.ObjectSet_1_Provider.newColumns}}",
+                "{{data.columnProviders.ObjectSet_1_ColumnProvider.columnConfig.columns}}"
+            ]
+        },
+        "ObjectSet_1_Provider_getAttributesToInflate": {
+            "functionName": "getAttributesToInflate",
+            "parameters": [
+                "{{data.dataProviders.ObjectSet_1_Provider.columnConfig}}",
+                "{{props.columns}}"
+            ]
+        },
+        "ObjectSet_1_Provider_isObjectSetSourceDCP": {
+            "functionName": "isObjectSetSourceDCP",
+            "parameters": [
+                "{{props.objectSetData.source}}"
+            ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "ObjectSet_1_Provider.startEditForNewVmosRequested",
+            "action": "startEditForNewVmos"
+        },
+        {
+            "eventId": "saveEditsRequested",
+            "action": "invokeSaveEditsCommand"
+        },
+        {
+            "eventId": "cdm.relatedModified",
+            "action": "refreshDataProvider",
+            "cacheEventData": true
+        }
+    ],
+    "messages": {
+        "partialErrors": {
+            "messageText": "{{i18n.error}}",
+            "messageTextParams": [
+                "{{data.partialErrors[0].errorValues[0].message}}"
+            ],
+            "messageType": "ERROR"
+        }
+    },
+    "i18n": {
+        "error": [
+            "XRTMessages"
+        ]
+    },
+    "props": {
+        "objsetdata": {
+            "type": "object"
+        },
+        "first-page-uids": {
+            "type": "array"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "selection-model": {
+            "type": "object"
+        },
+        "columns": {
+            "type": "array"
+        },
+        "operation-type": {
+            "type": "string"
+        },
+        "obj-set-uri": {
+            "type": "string"
+        },
+        "xrt-state": {
+            "type": "object"
+        },
+        "totalFound": {
+            "type": "integer"
+        },
+        "parentUid": {
+            "type": "string"
+        }
+    }
+}

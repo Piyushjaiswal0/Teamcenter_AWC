@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "Избранное",
+    "myFavorites": "Избранное",
+    "myRecentViewedObjects": "Последнее",
+    "addToFavoritesCommandTitle": "Добавить в Избранное",
+    "addToFavoritesConfirmation": "Выбранные объекты успешно добавлены в Избранное",
+    "addToFavoritesFailed": "Ошибка добавления в Избранное",
+    "removeFromFavoritesCommandTitle": "Удалить из Избранного",
+    "removeFromFavoritesConfirmation": "Выбранные объекты успешно удалены из Избранного",
+    "removeFromFavoritesFailed": "Ошибка добавления в Избранное",
+    "Awp0AddToFavoritesDesc": "Добавьте выбор в список Избранное.",
+    "Awp0RemoveFromFavoritesDesc": "Удалите выбранное из списка Избранное.",
+    "noFavoritesFound": "No Favorites Here",
+    "noFavoritesFoundHint": "To add an object to Favorites, select the object and use the Add to Favorites command.",
+    "noRecentsFound": "No Recent Activity",
+    "noRecentsFoundHint": "There are currently no items to display.",
+    "nothingSelected": "Ничего не выбрано",
+    "nothingSelectedSWAHint": "Select an item in the list to view details."
+}

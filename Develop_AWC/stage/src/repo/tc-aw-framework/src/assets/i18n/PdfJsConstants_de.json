@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "PDF Datei-Viewer",
+    "ShowStreamErrorMessage": "Der Strom muss Daten besitzen",
+    "LoadingPDFfile": "Datei wird geladen...",
+    "LoadingFileSuccess": "Datei wurde erfolgreich geladen...",
+    "LoadingFileFailed": "Datei kann nicht geladen werden."
+}

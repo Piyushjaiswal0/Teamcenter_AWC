@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "문자 인코딩",
+    "uvCheckoutTitle": "체크아웃",
+    "uvCheckoutDesc": "다른 사용자가 변경하지 못하도록 선택 항목을 예약합니다.",
+    "cancelCheckoutTitle": "체크아웃 취소",
+    "Awp0CancelCheckoutDesc": "체크아웃을 취소하고 변경사항을 되돌립니다.",
+    "uvCheckinTitle": "체크인",
+    "Awp0CheckinDesc": "개체를 체크인하고 변경 내용을 저장합니다.",
+    "uvCodeWordWrapTitle": "자동 단어 넘김",
+    "uvCodeWordWrapDesc": "긴 텍스트를 여러 행으로 줄바꿈합니다."
+}

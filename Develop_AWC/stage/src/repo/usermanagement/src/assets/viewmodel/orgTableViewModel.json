@@ -1,0 +1,270 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "tableLoaded": false
+    },
+    "actions": {
+        "initDataProvider": {
+            "actionType": "JSFunction",
+            "method": "initDataProvider",
+            "inputData": {
+                "data": "{{data.actions}}",
+                "actionName": "doGridDataProvider",
+                "tableLoaded": "{{data.tableLoaded}}"
+            },
+            "deps": "js/awSearchService"
+        },
+        "doArrangeEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "arrangeColumns",
+            "inputData": {
+                "declViewModel": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/columnArrangeService"
+        },
+        "resetColumnConfig": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "getOrResetUIColumnConfigs4",
+            "inputData": {
+                "getOrResetUiConfigsIn": [ {
+                    "scope": "LoginUser",
+                    "scopeName": "",
+                    "clientName": "AWClient",
+                    "resetColumnConfig": true,
+                    "columnConfigQueryInfos": [ {
+                        "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                        "operationType": "configured",
+                        "typeNames": [ "WorkspaceObject" ],
+                        "columnsToExclude": []
+                    } ],
+                    "businessObjects": [ {} ]
+                } ]
+            },
+            "outputData": {
+                "dataProviders.gridDataProvider.columnConfig": "columnConfigurations[0].columnConfigurations[0]"
+            }
+        },
+        "saveColumnConfigLoadData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "operationType": "as_arranged",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "saveColumnConfigData": {
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "columnConfigId": "{{data.dataProviders.gridDataProvider.columnConfig.columnConfigId}}",
+                    "columns": "{{data.dataProviders.gridDataProvider.newColumns}}",
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.gridDataProvider.startIndex}}"
+                },
+                "inflateProperties": true
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "dataProviders.gridDataProvider.columnConfig": "columnConfig",
+                "output": "{{function:processOutput}}",
+                "tableLoaded": true
+            },
+            "deps": "js/userMgmtService"
+        },
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "gridDataProvider"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "attributesToInflate": "{{subPanelContext.searchState.tableViewProperties}}",
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex":"{{data.dataProviders.gridDataProvider.cursorObject.startIndex}}",
+                        "endIndex":"{{data.dataProviders.gridDataProvider.cursorObject.endIndex}}",
+                        "startReached":"{{data.dataProviders.gridDataProvider.cursorObject.startReached}}",
+                        "endReached":"{{data.dataProviders.gridDataProvider.cursorObject.endReached}}"
+                    },
+                    "focusObjUid": "{{ctx.newlyCreatedObj.uid}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": true,
+                "4": "{{ctx.newlyCreatedObj}}"
+            },
+
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "dataProviders.gridDataProvider.columnConfig": "columnConfig",
+                "tableLoaded": true,
+                "output": "{{function:processOutput}}",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "loadNextData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex":"{{data.dataProviders.gridDataProvider.cursorObject.startIndex}}",
+                        "endIndex":"{{data.dataProviders.gridDataProvider.cursorObject.endIndex}}",
+                        "startReached":"{{data.dataProviders.gridDataProvider.cursorObject.startReached}}",
+                        "endReached":"{{data.dataProviders.gridDataProvider.cursorObject.endReached}}"
+                    },
+                    "pagingType": "GetNextPage",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": false,
+                "4": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "tableLoaded": true,
+                "output": "{{function:processOutput}}",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "loadPrevData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex":"{{data.dataProviders.gridDataProvider.cursorObject.startIndex}}",
+                        "endIndex":"{{data.dataProviders.gridDataProvider.cursorObject.endIndex}}",
+                        "startReached":"{{data.dataProviders.gridDataProvider.cursorObject.startReached}}",
+                        "endReached":"{{data.dataProviders.gridDataProvider.cursorObject.endReached}}"
+                    },
+                    "pagingType": "GetPreviousPage",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": false,
+                "4": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "tableLoaded": true,
+                "output": "{{function:processOutput}}",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "plTableClientRefresh": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "gridView.plTable.clientRefresh"
+                } ]
+            }
+        }
+    },
+    "dataProviders": {
+        "gridDataProvider": {
+            "action": "loadData",
+            "nextAction": "loadNextData",
+            "previousAction": "loadPrevData",
+            "editContext": "TABLE_CONTEXT",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+
+    "columnProviders": {
+        "clientScopeUI": {
+            "saveColumnAction": "saveColumnConfigLoadData",
+            "resetColumnAction": "resetColumnConfig",
+            "sortCriteria": [],
+            "commandProperty": "object_name"
+        }
+    },
+
+    "grids": {
+        "gridView": {
+            "dataProvider": "gridDataProvider",
+            "columnProvider": "clientScopeUI",
+            "gridOptions": {
+                "enableSorting": false,
+                "enablePinning": true
+            }
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "primaryWorkarea.multiSelectAction",
+            "action": "plTableClientRefresh"
+        }
+    ],
+    "functions":
+    {
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initDataProvider"
+    }
+}

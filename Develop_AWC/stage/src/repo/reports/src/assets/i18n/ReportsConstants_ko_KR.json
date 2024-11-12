@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "보고서",
+    "allSubLocation": "모두",
+    "reportBuilderSubLocation": "템플릿",
+    "runReportTitle": "보고서 생성",
+    "runReportOperationName": "보고서 실행",
+    "doWorkOperationName": "실행",
+    "execution": "예외",
+    "criteria": "조건",
+    "stylesheet": "스타일 시트",
+    "dataset": "파일 이름으로 저장",
+    "myreportsSubLocation": "저장된 파일",
+    "loadingMsg": "로드 중...",
+    "zeroSearchResults": "검색 결과가 없습니다",
+    "reportResultsChartTitle": "다음으로 결과 필터링:",
+    "AddSnapshot": "스냅샷",
+    "AddNew": "새로 만들기",
+    "doQueueOperation": "대기열에 추가",
+    "runTcraReport": "실행",
+    "dosnapShotViewOperation": "보기",
+    "myDashboard": "내 대시보드",
+    "inOpenRptCommand": "열기"
+}

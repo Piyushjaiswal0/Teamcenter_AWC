@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "Domaine:",
+    "objectTypeLabel": "Type d'objet:",
+    "xrtTypeLabel": "Type XRT:",
+    "locationLabel": "Emplacement:",
+    "sublocationLabel": "Sous-emplacement:",
+    "loadButtonText": "Charger",
+    "editLabel": "Editer: ",
+    "readOnlyLabel": "(lecture seule)",
+    "overrideMsg": "\"{0}\" sera remplacé au niveau du domaine utilisateur.",
+    "cancel": "Annuler",
+    "override": "Remplacer"
+}

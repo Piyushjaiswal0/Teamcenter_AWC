@@ -1,0 +1,15 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {},
+    "data": {
+    },
+    "onEvent": [],
+    "i18n": {
+        "dataTabName": [
+            "ReportChartMessages"
+        ],
+        "itemTabName": [
+            "ReportChartMessages"
+        ]
+    }
+}

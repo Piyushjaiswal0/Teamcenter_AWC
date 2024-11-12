@@ -1,0 +1,15 @@
+[
+  {},
+  {
+    "conditions": {
+      "modelType.typeHierarchyArray": {
+        "$in": "Awp0XRTObjectSetRow"
+      }
+    },
+    "target": {
+      "prop": "awp0Target",
+      "method": "getAlternateSelectedObjects",
+      "deps": "js/selection.service"
+    }
+  }
+]

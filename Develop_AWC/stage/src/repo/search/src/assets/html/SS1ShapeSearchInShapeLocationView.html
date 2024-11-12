@@ -1,0 +1,13 @@
+<aw-command-panel caption="i18n.SS1Shapes" context="{...data,...subPanelContext}" >
+    <aw-panel-body scrollable="false">
+        <aw-tab-set tabs="data.tabModels">
+            <palette-tab-page-sub sub-panel-context="{searchFilterTabModels: data.searchFilterTabModels.dbValue,addPanelState: data.addPanelState}" visible-when="data.selectedTab.tabKey === 'palettePage'"></palette-tab-page-sub>
+            <aw-keyword-search sub-panel-context="{...subPanelContext, searchState : data.searchState, selectionModel : selectionModels.resultTabModel, selectionData : data.selectionData}" active-search="data.activeSearch" visible-when="data.activeSearch.name === 'keyword' && data.selectedTab.tabKey === 'searchPage'"></aw-keyword-search>
+        </aw-tab-set>
+    </aw-panel-body>
+    <aw-panel-footer visible-when="conditions.isSearchCandidateSelected">
+        <aw-button size='auto' action="performShapeSearch">
+            <aw-i18n>i18n.SS1ShapeSearchTitleAction</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

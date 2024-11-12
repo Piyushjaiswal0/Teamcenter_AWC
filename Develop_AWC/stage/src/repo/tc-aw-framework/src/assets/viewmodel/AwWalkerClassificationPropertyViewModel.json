@@ -1,0 +1,32 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerClassificationPropertyRenderFunction",
+            "deps": "js/AwWalkerClassificationPropertyService"
+        },
+        "onMount": {
+            "actionType": "JSFunction",
+            "method": "awWalkerClassificationPropertyOnMountFunction",
+            "inputData": {
+                "classification": "{{props.classification}}"
+            },
+            "outputData": {
+                "classificationTrace": "classificationTrace",
+                "classificationProperties": "classificationProperties"
+            },
+            "deps": "js/AwWalkerClassificationPropertyService"
+        }
+    },
+    "data": {},
+    "lifecycleHooks": {
+        "onMount": "onMount",
+        "render": "render"
+    },
+    "props": {
+        "classification": {
+            "type": "object"
+        }
+    }
+}

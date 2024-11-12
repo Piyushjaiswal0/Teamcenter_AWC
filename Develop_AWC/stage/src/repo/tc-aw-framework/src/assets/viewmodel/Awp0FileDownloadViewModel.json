@@ -1,0 +1,248 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-base-sublocation.directive",
+        "js/aw-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-link.directive",
+        "js/aw-break.directive",
+        "js/exist-when.directive"
+    ],
+    "actions": {
+        "loadObjectWithUIDInfo": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadObjects",
+            "inputData": {
+                "data": [
+                    "{{ctx.state.params.uid}}"
+                ]
+            },
+            "events": {
+                "success": [ {
+                    "name": "Awp0FileDownload.objectLoaded"
+                } ]
+            },
+            "policy": {
+                "name": "ImanFile",
+                "properties": [ {
+                    "name": "original_file_name"
+                } ]
+            },
+            "deps": "soa/dataManagementService"
+        },
+        "convertLoadedObjToModelObj": {
+            "actionType": "JSFunction",
+            "method": "getObject",
+            "deps": "soa/kernel/clientDataModel",
+            "inputData": {
+                "dataset": "{{ctx.state.params.uid}}"
+            },
+            "outputData": {
+                "iModelObject": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "fileDownload.modelObjLoaded"
+                } ]
+            }
+        },
+        "forkEventAction": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "condition": "conditions.isDatasetToBeProcessedCondition",
+                        "name": "fileDownload.datasetToBeProcessed"
+                    },
+                    {
+                        "condition": "conditions.isImanFileToBeProcessedCondition",
+                        "name": "fileDownload.iManFileToBeProcessed"
+                    }
+                ]
+            }
+        },
+        "retryDownloadAction": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "condition": "conditions.isDatasetToBeProcessedCondition",
+                        "name": "fileDownload.datasetToBeProcessed"
+                    },
+                    {
+                        "condition": "conditions.isImanFileToBeProcessedCondition",
+                        "name": "fileDownload.getFileTicketForImanFileObj"
+                    }
+                ]
+            }
+        },
+        "getFileNamesAndTicketsForDataset": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-FileMgmt",
+            "method": "getFileNamesWithTicketInfo",
+            "inputData": {
+                "businessObjectsIn": [
+                    "{{data.iModelObject}}"
+                ]
+            },
+            "outputData": {
+                "fileTicketForDatasetObj": "output[0].fileTicket",
+                "fileNameForDatasetObj": "output[0].fileName"
+            },
+            "events": {
+                "success": [ {
+                        "name": "fileDownload.prepareMessageBeforeDownload"
+                    },
+                    {
+                        "name": "fileDownload.openFileTicketFromDatasetInfo"
+                    }
+                ]
+            }
+        },
+        "openFileTicketFromDatasetObj": {
+            "actionType": "openFile",
+            "inputData": {
+                "fileTicket": "{{data.fileTicketForDatasetObj}}",
+                "openFileName": "{{data.fileNameForDatasetObj}}"
+            }
+        },
+        "prepareMessageActionBeforeDownload": {
+            "actionType": "JSFunction",
+            "method": "prepareMessageBeforeDownload",
+            "deps": "js/fileDownloadService",
+            "inputData": {
+                "data": "{{data}}",
+                "textMsgParamForImanFileObj": "{{data.iModelObject.props.original_file_name.uiValues[0]}}",
+                "textMsgParamForDatasetObj": "{{data.fileNameForDatasetObj}}"
+            },
+            "outputData": {
+                "messageText": ""
+            }
+        },
+        "initiateDownloadForImanFileObj": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "fileDownload.prepareMessageBeforeDownload"
+                    },
+                    {
+                        "name": "fileDownload.getFileTicketForImanFileObj"
+                    }
+                ]
+            }
+        },
+        "downloadFileForImanFileObj": {
+            "actionType": "JSFunctionAsync",
+            "method": "getFileReadTickets",
+            "deps": "soa/fileManagementService",
+            "inputData": {
+                "files": {
+                    "$adapt": [
+                        "{{data.iModelObject}}"
+                    ]
+                }
+            },
+            "outputData": {
+                "fileTicketForImanFileObj": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "fileDownload.openFileTicketFromImanFileObj"
+                } ]
+            }
+        },
+        "openFileTicketFromImanFileObj": {
+            "actionType": "openFile",
+            "inputData": {
+                "fileTicket": "{{data.fileTicketForImanFileObj.tickets[1][0]}}",
+                "openFileName": "{{data.fileTicketForImanFileObj.tickets[0][0].props.original_file_name.dbValues[0]}}"
+            }
+        }
+    },
+    "onEvent": [ {
+            "eventId": "Awp0FileDownload.contentLoaded",
+            "action": "loadObjectWithUIDInfo"
+        },
+        {
+            "eventId": "Awp0FileDownload.objectLoaded",
+            "action": "convertLoadedObjToModelObj"
+        },
+        {
+            "eventId": "fileDownload.datasetToBeProcessed",
+            "action": "getFileNamesAndTicketsForDataset"
+        },
+        {
+            "eventId": "fileDownload.modelObjLoaded",
+            "action": "forkEventAction"
+        },
+        {
+            "eventId": "fileDownload.openFileTicketFromDatasetInfo",
+            "action": "openFileTicketFromDatasetObj"
+        },
+        {
+            "eventId": "fileDownload.prepareMessageBeforeDownload",
+            "action": "prepareMessageActionBeforeDownload"
+        },
+        {
+            "eventId": "fileDownload.iManFileToBeProcessed",
+            "action": "initiateDownloadForImanFileObj"
+        },
+        {
+            "eventId": "fileDownload.getFileTicketForImanFileObj",
+            "action": "downloadFileForImanFileObj"
+        },
+        {
+            "eventId": "fileDownload.openFileTicketFromImanFileObj",
+            "action": "openFileTicketFromImanFileObj"
+        }
+    ],
+    "conditions": {
+        "isDatasetToBeProcessedCondition": {
+            "expression": {
+                "$source": {
+                    "$adapt": "data.iModelObject"
+                },
+                "$query": {
+                    "$source": "modelType.typeHierarchyArray",
+                    "$query": {
+                        "$in": [
+                            "Dataset"
+                        ]
+                    }
+                }
+            }
+        },
+        "isImanFileToBeProcessedCondition": {
+            "expression": {
+                "$source": {
+                    "$adapt": "data.iModelObject"
+                },
+                "$query": {
+                    "$source": "modelType.typeHierarchyArray",
+                    "$query": {
+                        "$in": [
+                            "ImanFile"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "i18n": {
+        "fileDownloadRetryMessage": [
+            "ZeroCompileCommandMessages"
+        ],
+        "retryDownloadLinkLabel": [
+            "ZeroCompileCommandMessages"
+        ]
+    },
+    "functions": {},
+    "data": {
+        "retryFileDownload": {
+            "displayName": "{{i18n.retryDownloadLinkLabel}}",
+            "type": "STRING"
+        }
+    }
+}

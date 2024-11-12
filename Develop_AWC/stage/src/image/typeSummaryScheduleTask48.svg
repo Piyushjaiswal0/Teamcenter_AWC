@@ -1,0 +1,36 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<rect x="0.5" y="0.5" fill="#DCDCDC" width="47" height="47"/>
+<rect x="6" y="0.5" fill="#BEBEBE" width="23" height="47"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="32.8799" y1="33.2948" x2="46.2932" y2="46.7081">
+	<stop  offset="0" style="stop-color:#DCDCDC"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" stroke="#6E6E6E" stroke-miterlimit="10" d="M47.5,45.501H32.502c-1.105,0-2-0.895-2-2v-7
+	c0-1.105,0.895-2,2-2H47.5"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="15.586" y1="14.5864" x2="38.4144" y2="37.4148">
+	<stop  offset="0" style="stop-color:#DCDCDC"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path fill="url(#SVGID_2_)" stroke="#6E6E6E" stroke-miterlimit="10" d="M43.5,31.501h-33c-1.105,0-2-0.895-2-2v-7
+	c0-1.105,0.895-2,2-2h33c1.105,0,2,0.895,2,2v7C45.5,30.605,44.605,31.501,43.5,31.501z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="30.5002" y1="11.5002" x2="30.5002" y2="3.5">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<polyline fill="url(#SVGID_3_)" stroke="#147391" stroke-miterlimit="10" points="47.5,11.5 13.501,11.5 13.501,3.5 47.5,3.5 "/>
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="3.5" y1="10.1666" x2="13.5" y2="10.1666">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<polygon fill="url(#SVGID_4_)" stroke="#147391" stroke-miterlimit="10" points="8.5,16.833 3.5,11.833 3.5,3.5 13.5,3.5 
+	13.5,11.833 "/>
+<rect x="0.5" y="0.5" fill="none" width="47" height="47"/>
+<rect x="0.5" y="0.5" fill="none" stroke="#464646" stroke-miterlimit="10" width="47" height="47"/>
+</svg>

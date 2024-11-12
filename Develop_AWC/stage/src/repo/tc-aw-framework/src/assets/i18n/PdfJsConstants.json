@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "PDF File Viewer",
+    "ShowStreamErrorMessage": "The stream must have data",
+    "LoadingPDFfile": "Loading the file...",
+    "LoadingFileSuccess": "File Loaded Successfully...",
+    "LoadingFileFailed": "File Load Failed!"
+}

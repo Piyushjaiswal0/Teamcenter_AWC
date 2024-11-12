@@ -1,0 +1,182 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-i18n.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive"
+    ],
+
+    "actions": {
+        "getInContextReportDefinitionsReveal": {
+            "actionType": "dataProvider",
+            "method": "getInContextReportDefinitions"
+        },
+        "generateAWReport":{
+
+            "actionType": "JSFunction",
+            "method": "openFileInNewTab",
+            "inputData":
+            {
+                "vMO": "{{ctx.selected}}",
+                "fileTicket": "",
+                "data": "{{data}}",
+                "commandContext": "{{subPanelContext}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        },
+                        "condition": "!subPanelContext.panelPinned"
+                    }
+                ]
+            },
+            "deps": "js/Awp0InContextReportsService"
+        },
+        "getCriteria": {
+            "actionType": "JSFunction",
+            "method": "displayCriteriaPanel",
+            "inputData": {
+                "selectedObject": "{{data.dataProviders.getInContextReportDefinitions.selectedObjects[0]}}",
+                "data": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+
+            "deps": "js/Awp0InContextReportsService"
+        },
+
+
+        "getstoredreportdefinitions": {
+            "actionType": "JSFunction",
+            "method": "getTCInContextReportDefs",
+            "inputData": {
+                "subPanelContext": "{{subPanelContext}}"
+            },
+
+            "outputData": {
+                "reportdef": ""
+            },
+            "deps": "js/Awp0InContextReportsService"
+        }
+    },
+    "data":
+    {
+        "runReportAsync":
+        {
+            "displayName":"{{i18n.runReportAsync}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true"
+        }
+    },
+
+    "onEvent": [ {
+            "eventId": "awPanel.reveal",
+            "criteria": {
+                "panelId": "Awp0InContextTCReportsList"
+            },
+
+            "action": "getInContextReportDefinitionsReveal"
+        },
+        {
+            "eventId": "getInContextReportDefinitions.selectionChangeEvent",
+            "action": "getCriteria",
+            "condition": "!conditions.showAWGenerateButton"
+
+        },
+        {
+            "eventId": "getStylesheets.office_templates",
+            "action": "getOfficeTemplates"
+        },
+        {
+            "eventId": "getLocaleInfo_temp",
+            "action": "getLanguageList"
+        }
+    ],
+
+    "dataProviders": {
+        "getInContextReportDefinitions": {
+            "action": "getstoredreportdefinitions",
+            "response": "{{data.reportdef}}",
+            "uidInResponse": "reportdefinition.uid",
+            "selectionModelMode": "single"
+        }
+    },
+
+    "i18n": {
+        "inContextReportPanelTitle": [
+            "ReportMessages"
+        ],
+        "runReportAsync":
+        [
+            "ReportMessages"
+        ],
+        "generateReport":
+        [
+            "ReportMessages"
+        ],
+        "reportsPage":
+        [
+            "ReportMessages"
+        ],
+        "awReportNotDisplayedMsg":
+        [
+            "ReportMessages"
+        ],
+        "backButton":[
+            "ReportMessages"
+        ],
+        "trueVal":[
+            "ReportMessages"
+        ],
+        "falseVal":[
+            "ReportMessages"
+        ]
+    },
+    "messages": {
+        "awReportNotDisplayedMsg": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.awReportNotDisplayedMsg}}",
+            "messageTextParams": [
+                "{{data.dataProviders.getInContextReportDefinitions.selectedObjects[0].props.rd_name.dbValues[0]}}",
+                "{{ctx.selected.modelType.displayName}}"
+            ]
+        }
+    },
+
+    "functions": {
+        "getreportdefinitionsoainput": {
+            "functionName": "getreportdefinitionsoainput",
+            "parameters": [
+                "{{data}}",
+                "{{ctx.selected}}"
+            ]
+        },
+
+        "processResponseToStoreReportDefs": {
+            "functionName": "storeReportDefsAndSetTabsVisibility",
+            "parameters": [
+
+            ]
+        }
+    },
+    "conditions":
+    {
+        "showAWGenerateButton":
+        {
+            "expression": "data.dataProviders.getInContextReportDefinitions.selectedObjects.length > 0 && data.dataProviders.getInContextReportDefinitions.selectedObjects[0].props.rd_source.dbValues[0] === 'Active Workspace'"
+        }
+
+    },
+    "lifecycleHooks": {
+        "onMount": "getInContextReportDefinitionsReveal"
+    }
+}

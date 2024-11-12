@@ -1,0 +1,23 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-link-with-popup.directive",
+        "js/aw-popup-command-bar.directive"
+    ],
+    "data": {
+        "userData": {
+            "displayName": "{{ctx.userSession.props.user.uiValue}}",
+            "type": "STRING",
+            "dbValue": "{{ctx.userSession.props.user.dbValue}}",
+            "dispValue": "{{ctx.userSession.props.user.uiValue}}"
+        }
+    },
+    "i18n": {
+        "signOut": [
+            "UIMessages"
+        ],
+        "profile": [
+            "UIMessages"
+        ]
+    }
+}

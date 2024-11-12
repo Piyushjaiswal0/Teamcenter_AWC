@@ -1,0 +1,25 @@
+<aw-panel-body>
+    <aw-panel-section exist-when="subPanelContext.addPanelState.datasetVMO.props">
+        <aw-widget prop="subPanelContext.addPanelState.datasetVMO.props.datasetName"></aw-widget>
+        <aw-widget prop="subPanelContext.addPanelState.datasetVMO.props.datasetDesc"></aw-widget>
+        <aw-widget prop="subPanelContext.addPanelState.datasetVMO.props.datasetType"
+          visible-when="data.datasetTypeList.length > 1"
+          action="updateTypeAndReferences"></aw-widget>
+        <aw-widget prop="subPanelContext.addPanelState.datasetVMO.props.reference"
+          visible-when="data.references.length > 1"></aw-widget>
+    </aw-panel-section>
+
+    <aw-panel-section exist-when="!subPanelContext.addPanelState.datasetVMO.props">
+        <aw-widget prop="data.datasetName"></aw-widget>
+        <aw-widget prop="data.datasetDesc"></aw-widget>
+        <aw-widget prop="data.datasetType" visible-when="data.datasetTypeList.length>1" action="updateTypeAndReferences"></aw-widget>
+        <aw-widget prop="data.reference" visible-when="data.references.length>1"></aw-widget>
+    </aw-panel-section>
+</aw-panel-body>
+
+<aw-panel-footer class="sw-column" visible-when="subPanelContext.hideRelation !== 'true'">
+    <aw-widget prop="data.creationRelation" show-when="conditions.showRelationsList"></aw-widget>
+    <aw-button size="auto" default="true" action="handleObjectCreate" enable-when="!subPanelContext.addPanelState.datasetVMO.props && data.datasetName.dbValue && !data.isObjectCreateInProgress" exist-when="!subPanelContext.hideAddCommand">
+        <aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

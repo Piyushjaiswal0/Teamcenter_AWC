@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="3.141" y1="23.293" x2="29.304" y2="23.293" gradientTransform="translate(24 -9.941) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <line x1="19" y1="43" x2="19" y2="27" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="24 38 18.984 43 14 38" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="46" y1="18" x2="29.5" y2="18" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <polygon points="19 29.5 0.5 18 19 6.5 37.5 18 19 29.5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <polyline points="42 13 47 18.016 42 23" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+</svg>

@@ -1,0 +1,158 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "addReport":{
+            "actionType": "activateCommandPanel",
+            "inputData": {
+                "commandId": "Rb0AddDashboardReportWithPanel",
+                "location": "aw_toolsAndInfo",
+                "context": {
+                    "dashboardListPreference": "{{subPanelContext.preferenceName}}"
+                },
+                "config": {
+                    "isPinUnpinEnabled": true
+                }
+            }
+        },
+        "startDashboardLoading": {
+            "actionType": "dataProvider",
+            "method": "imageDataProvider"
+        },
+        "getReportDefinitionsForTileView": {
+            "actionType": "JSFunction",
+            "method": "getReportDefinitionsForTileView",
+            "inputData": {
+                "data": "{{data}}",
+                "dashboardLastRefresh": "{{data.dashboardLastRefresh}}",
+                "startIndex": "{{data.dataProviders.imageDataProvider.startIndex}}",
+                "searchState": "{{subPanelContext.searchState}}",
+                "subPanelContext" : "{{subPanelContext}}"
+            },
+            "outputData": {
+                "searchResults": "reportdefinitions",
+                "totalFound": "totalFound",
+                "dashboardLastRefresh": "refreshtime",
+                "showLastUpdateTime": "showLastUpdateTm",
+                "moreValuesToRender": "rendering",
+                "deletedRepList": "{{function:removeDeletedReportAndUpdate}}"
+            },
+            "deps": "js/showMyDashboardService"
+        },
+        "myDashboardUpdate": {
+            "actionType": "JSFunction",
+            "method": "myDashboardUpdate",
+            "inputData": {
+                "data": "{{data.dataProviders.imageDataProvider}}",
+                "reportId":"{{data.eventData.reportDef}}",
+                "operation":"{{data.eventData.operation}}",
+                "tileIndex": "{{data.eventData.tileIndex}}",
+                "searchState":  "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/showMyDashboardService"
+        },
+        "myDashboardUpdateByState": {
+            "actionType": "JSFunction",
+            "method": "myDashboardUpdate",
+            "inputData": {
+                "data": "{{data.dataProviders.imageDataProvider}}",
+                "reportId":"{{subPanelContext.searchState.reportDashboard.reportDef}}",
+                "operation":"{{props.subPanelContext.searchState.reportDashboard.operation}}",
+                "tileIndex":"{{props.subPanelContext.searchState.reportDashboard.tileIndex}}",
+                "searchState":  "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/showMyDashboardService"
+        },
+        "updateReportDashboard": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{props.subPanelContext.searchState}}",
+                "value": {
+                    "reportDashboard": {}
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "listOfReportConfigs": [],
+        "dashboardLastRefresh":{
+                "displayName": "{{i18n.dashboardLastRefresh}}",
+                "type": "STRING",
+                "isRequired": "false",
+                "isEditable": "false",
+                "dbValue": "",
+                "dispValue": ""
+            },
+        "moreValuesToRender": "true"
+    },
+    "dataProviders": {
+        "imageDataProvider": {
+            "action": "getReportDefinitionsForTileView",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "none",
+            "moreValuesExist": "{{data.moreValuesToRender}}"
+        }
+    },
+    "functions": {
+        "getReportDefinitionSOAInput": {
+            "functionName": "getReportDefinitionSOAInput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext}}"
+            ]
+        },
+        "getCursorObject": {
+            "functionName": "getCursorObject",
+            "parameters": []
+        },
+        "removeDeletedReportAndUpdate": {
+            "functionName": "removeDeletedReportAndUpdate",
+            "parameters": [
+                "{{subPanelContext.preferenceName}}"
+            ]
+        }
+    },
+    "preferences": [
+        "REPORT_AW_MyDashboard_TC_Report",
+        "REPORT_AW_MyDashboard_PageSize"
+    ],
+    "lifecycleHooks": {
+        "onMount" : "startDashboardLoading",
+        "onUpdate": [ {
+            "action": "myDashboardUpdateByState",
+            "observers": [ "props.subPanelContext.searchState.reportDashboard" ]
+        }],
+        "onUnmount": "updateReportDashboard"
+    },
+    "onEvent": [ {
+        "eventId": "reportDashboard.update",
+        "action": "myDashboardUpdate",
+        "cacheEventData": true
+    } ],
+    "i18n": {
+        "dashboardLastRefresh": [ "ReportChartMessages" ],
+        "noReports": ["ReportChartMessages"],
+        "reportsDashboardHint": ["ReportChartMessages"],
+        "addDashboardReportWithPanelTitle": ["ReportChartMessages"],
+        "rep_month_Jan": [ "ReportChartMessages" ],
+        "rep_month_Feb": [ "ReportChartMessages" ],
+        "rep_month_Mar": [ "ReportChartMessages" ],
+        "rep_month_Apr": [ "ReportChartMessages" ],
+        "rep_month_May": [ "ReportChartMessages" ],
+        "rep_month_Jun": [ "ReportChartMessages" ],
+        "rep_month_Jul": [ "ReportChartMessages" ],
+        "rep_month_Aug": [ "ReportChartMessages" ],
+        "rep_month_Sep": [ "ReportChartMessages" ],
+        "rep_month_Oct": [ "ReportChartMessages" ],
+        "rep_month_Nov": [ "ReportChartMessages" ],
+        "rep_month_Dec": [ "ReportChartMessages" ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

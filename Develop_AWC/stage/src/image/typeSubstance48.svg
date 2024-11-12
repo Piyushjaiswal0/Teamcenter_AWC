@@ -1,0 +1,19 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+	<radialGradient id="SVGID_1_" cx="22.2884" cy="21.956" r="6.0047" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#7EBACC"/>
+		<stop  offset="0.1949" style="stop-color:#64A8BD"/>
+		<stop  offset="0.554" style="stop-color:#398BA5"/>
+		<stop  offset="0.8345" style="stop-color:#1E7A97"/>
+		<stop  offset="1" style="stop-color:#147391"/>
+	</radialGradient>
+		<circle fill="url(#SVGID_1_)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="24" cy="24" r="3.5"/>
+		<ellipse fill="none" stroke="#969696" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" cx="24.2" cy="24" rx="9.9" ry="22.4"/>
+	<path fill="none" stroke="#969696" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M19.2,15.3
+		C29.8,9.1,40.6,8,43.4,12.8c2.7,4.8-3.6,13.7-14.2,19.9C18.5,38.9,7.7,40,5,35.2C2.2,30.4,8.6,21.5,19.2,15.3z"/>
+	<path fill="none" stroke="#969696" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M19.2,32.7
+		C8.6,26.5,2.2,17.6,5,12.8C7.7,8,18.5,9.1,29.1,15.3c10.6,6.2,17,15.1,14.2,19.9C40.6,40,29.8,38.9,19.2,32.7z"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -7.0208 7.0503)" fill="#3C91AF" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="5" cy="12" rx="2.5" ry="2.5"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 3.766 29.0919)" fill="#3C91AF" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="37" cy="10" rx="2.5" ry="2.5"/>
+<ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -24.4264 25.0294)" fill="#3C91AF" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="18" cy="42" rx="2.5" ry="2.5"/>
+</svg>

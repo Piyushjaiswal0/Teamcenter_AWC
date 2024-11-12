@@ -1,0 +1,340 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+
+    "actions": {
+        "setup3DViewer": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "setThumbnailUrl"
+                },
+                {
+                    "action": "setThreeDViewerConfiguration"
+                },
+                {
+                    "action": "initialize3DViewer"
+                }
+            ]
+        },
+        "cleanup3DView": {
+            "actionType": "JSFunction",
+            "method": "cleanup3DViewer",
+            "inputData": {
+                "viewerInstance": "{{data.threeDInstance}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "initialize3DViewer": {
+            "actionType": "JSFunctionAsync",
+            "method": "initialize3DViewer",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{props.subPanelContext}}",
+                "viewerAtomicData": "{{props.viewerStateProp}}",
+                "force3DViewerReload": false
+            },
+            "outputData": {
+                "threeDInstance": "",
+                "displayImageCapture": false,
+                "loadingViewer": false
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "setThreeDViewerConfiguration": {
+            "actionType": "JSFunction",
+            "method": "setThreeDViewerConfiguration",
+            "inputData": {
+                "viewerAtomicData": "{{props.viewerStateProp}}",
+                "renderLocation":"{{data.supportedRenderLocation}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "setThumbnailUrl": {
+            "actionType": "JSFunction",
+            "method": "setThumbnailUrl",
+            "inputData": {
+                "subPanelContext": "{{props.subPanelContext}}"
+            },
+            "outputData": {
+                "thumbnailImage": ""
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "setViewerLoadingStatus": {
+            "actionType": "JSFunction",
+            "method": "setViewerLoadingStatus",
+            "inputData": {
+                "isLoading": "{{data.eventMap['threeDViewer.viewerLoadingStatus'].loadingStatus}}"
+            },
+            "outputData": {
+                "loadingViewer": ""
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "showViewerEmmProgress": {
+            "actionType": "JSFunction",
+            "method": "showViewerEmmProgress",
+            "inputData": {
+                "isShow": "{{data.eventMap['emmProgressIndicator'].emmProgressIndicatorStatus}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "showViewerProgress": {
+            "actionType": "JSFunction",
+            "method": "showViewerProgress",
+            "inputData": {
+                "isShow": "{{data.eventMap['progressIndicator'].progressIndicatorStatus}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "resetParametersFor3DReload": {
+            "actionType": "JSFunction",
+            "method": "resetParametersFor3DReload",
+            "outputData": {
+                "displayImageCapture": "output[0].displayImageCapture",
+                "loadingViewer": "output[0].loadingViewer",
+                "showViewerEmmProgress": "output[0].showViewerEmmProgress",
+                "showViewerProgress": "output[0].showViewerProgress"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "reload3DViewer": {
+            "actionType": "JSFunction",
+            "method": "reload3DViewer",
+            "inputData": {
+                "viewerInstance": "{{data.threeDInstance}}",
+                "subPanelContext": "{{props.subPanelContext}}",
+                "viewerStateProp": "{{props.viewerStateProp}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "set3DViewerSize": {
+            "actionType": "JSFunction",
+            "method": "set3DViewerSize",
+            "inputData": {
+                "viewerInstance": "{{data.threeDInstance}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "prepare3DViewer": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getSupportedRenderLocationFor3D"
+                },
+                {
+                    "condition": "data.supportedRenderLocation === 'SSR' || data.supportedRenderLocation === 'CSR'",
+                    "action": "setup3DViewer"
+                }
+            ]
+        },
+        "getSupportedRenderLocationFor3D": {
+            "actionType": "JSFunctionAsync",
+            "method": "getSupportedRenderLocationFor3D",
+            "inputData": {
+                "subPanelContext": "{{props.subPanelContext}}",
+                "viewerAtomicData": "{{props.viewerStateProp}}"
+            },
+            "outputData": {
+                "supportedRenderLocation": ""
+            },
+            "actionMessages": {
+                "success": [ {
+                        "condition": "data.supportedRenderLocation === 'unSupportedCSR'",
+                        "message": "unSupportedCSRMessage"
+                    },
+                    {
+                        "condition": "data.supportedRenderLocation === 'unSupported'",
+                        "message": "unSupportedRenderingMessage"
+                    },
+                    {
+                        "condition": "data.supportedRenderLocation === 'viewerNotConfigured'",
+                        "message": "viewerNotConfiguredMessage"
+                    }
+                ]
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "updateRenderLocationToSSR":{
+            "actionType": "JSFunction",
+            "method": "updateRenderLocationToSSR",
+            "outputData": {
+                "supportedRenderLocation": ""
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "switchToSSRRenderLocation": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateRenderLocationToSSR"
+                },
+                {
+                    "action": "setup3DViewer"
+                }
+            ]
+        },
+        "stopViewerProgressIndicator":{
+            "actionType": "JSFunction",
+            "method": "stopViewerProgressIndicator",
+            "inputData": {
+                "viewerAtomicData": "{{props.viewerStateProp}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        }
+    },
+
+    "data": {
+        "viewContainerProp": {
+            "initialValues": {
+                "startLoading": false
+            },
+            "meta": {}
+        },
+        "loadingViewer": true,
+        "showViewerEmmProgress": true,
+        "showViewerProgress": false
+    },
+
+    "messages": {
+        "unSupportedCSRMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.csrNotSupportedSsrSupported}}",
+            "navigationOptions": [ {
+                    "option": "Cancel",
+                    "text": "{{i18n.Cancel}}",
+                    "action": "stopViewerProgressIndicator"
+                },
+                {
+                    "option": "switchToSSR",
+                    "text": "{{i18n.switchToSSR}}",
+                    "action": "switchToSSRRenderLocation"
+                }
+            ]
+        },
+        "unSupportedRenderingMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.renderingNotSupported}}"
+        },
+        "viewerNotConfiguredMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.viewerNotConfigured}}"
+        }
+    },
+    "conditions": {
+        "displayImageCapture": {
+            "expression": "props.viewerStateProp.displayImageCapture"
+        },
+        "loadingViewer": {
+            "expression": "props.viewerStateProp.loadingViewer"
+        },
+        "showToolbar": {
+            "expression": "props.viewerStateProp.showToolbar"
+        },
+        "show3DViewer": {
+            "expression": "!props.viewerStateProp.loadingViewer && !conditions.displayImageCapture"
+        },
+        "hasThumbnail": {
+            "expression": "data.hasThumbnail"
+        },
+        "showViewerProgress": {
+            "expression": "props.viewerStateProp.showViewerProgress"
+        },
+        "showViewerEmmProgress": {
+            "expression": "props.viewerStateProp.showViewerEmmProgress"
+        },
+        "doesPanelChangeRequire3DResize": {
+            "expression": "name === 'activeNavigationCommand' || (name === 'activeToolsAndInfoCommand' && value === undefined) || name === 'fullscreen' || name === 'ViewModeContext'"
+        },
+        "isSideNavConfigChangeRequire3DResize": {
+            "expression": "name === 'awSidenavConfig' && target === 'globalSidenavContext.globalNavigationSideNav'"
+        },
+        "displaySubCommandToolbar": {
+            "expression": "props.viewerStateProp.isSubCommandsToolbarVisible"
+        }
+    },
+    "functions": {},
+    "onEvent": [ {
+            "eventId": "emmProgressIndicator",
+            "action": "showViewerEmmProgress",
+            "condition": "viewerContext === props.viewerStateProp.viewerCtxNamespace",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "progressIndicator",
+            "action": "showViewerProgress",
+            "condition": "viewerContext === props.viewerStateProp.viewerCtxNamespace",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "threeDViewer.resetParametersFor3DReload",
+            "action": "resetParametersFor3DReload",
+            "condition": "viewerContext === props.viewerStateProp.viewerCtxNamespace && !conditions.loadingViewer",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "threeDViewer.reload3DViewer",
+            "action": "reload3DViewer",
+            "condition": "viewerContext === props.viewerStateProp.viewerCtxNamespace && !conditions.loadingViewer"
+        },
+        {
+            "eventId": "threeDViewer.viewerLoadingStatus",
+            "action": "setViewerLoadingStatus",
+            "condition": "viewerContext === props.viewerStateProp.viewerCtxNamespace",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "appCtx.register",
+            "condition": "conditions.doesPanelChangeRequire3DResize",
+            "action": "set3DViewerSize"
+        },
+        {
+            "eventId": "appCtx.update",
+            "condition": "conditions.isSideNavConfigChangeRequire3DResize",
+            "action": "set3DViewerSize"
+        },
+        {
+            "eventId": "appCtx.register",
+            "condition": "name==='taskbarfullscreen'",
+            "action": "set3DViewerSize"
+        },
+        {
+            "eventId": "commandBarResized",
+            "action": "set3DViewerSize"
+        },
+        {
+            "eventId": "aw-splitter-update",
+            "action": "set3DViewerSize"
+        }
+    ],
+    "lifecycleHooks": {
+        "onUnmount": "cleanup3DView",
+        "onUpdate": [ {
+                "action": "prepare3DViewer",
+                "observers": [ "viewModel.atomicData.viewContainerProp.viewerContainerDiv" ]
+            },
+            {
+                "action": "reload3DViewer",
+                "observers": [ "props.viewerStateProp.renderLocation", "props.subPanelContext.selection" ]
+            },
+            {
+                "action":"set3DViewerSize",
+                "observers":["props.subPanelContext.fullScreenState"]
+            }
+        ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "viewer-state-prop": {
+            "type": "object"
+        }
+    },
+    "i18n": {
+        "LoadingViewer": [ "Awv0threeDViewerMessages" ],
+        "csrNotSupportedSsrSupported":[ "Awv0threeDViewerMessages" ],
+        "Cancel": [ "Awv0threeDViewerMessages" ],
+        "switchToSSR":[ "Awv0threeDViewerMessages" ],
+        "renderingNotSupported":[ "Awv0threeDViewerMessages" ],
+        "viewerNotConfigured":[ "Awv0threeDViewerMessages" ]
+    }
+}

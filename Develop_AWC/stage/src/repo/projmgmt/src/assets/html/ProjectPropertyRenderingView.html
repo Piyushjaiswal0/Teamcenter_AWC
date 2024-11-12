@@ -1,0 +1,14 @@
+<div visible-when="!subPanelContext.xrtState.xrtVMO.isEditing">
+    <aw-label prop="subPanelContext.xrtState.xrtVMO.props.isActive" exist-when="subPanelContext.xrtState.xrtVMO.props.isActive"></aw-label>
+    <aw-label prop="subPanelContext.xrtState.xrtVMO.props.isVisible" exist-when="subPanelContext.xrtState.xrtVMO.props.isVisible"></aw-label>
+    <aw-label prop="subPanelContext.xrtState.xrtVMO.props.useProgramSecurity" exist-when="subPanelContext.xrtState.xrtVMO.props.useProgramSecurity"></aw-label>
+</div>
+<div visible-when="subPanelContext.xrtState.xrtVMO.isEditing">
+    <aw-break> </aw-break>
+    <aw-checkbox prop="subPanelContext.xrtState.xrtVMO.props.isActive" action="isActiveChange"
+        exist-when="subPanelContext.xrtState.xrtVMO.props.isActive"></aw-checkbox>
+    <aw-checkbox prop="subPanelContext.xrtState.xrtVMO.props.isVisible" enable-when="!subPanelContext.xrtState.xrtVMO.props.isActive.value"
+        exist-when="subPanelContext.xrtState.xrtVMO.props.isVisible"></aw-checkbox>
+    <aw-radiobutton prop="subPanelContext.xrtState.xrtVMO.props.useProgramSecurity"
+        exist-when="subPanelContext.xrtState.xrtVMO.props.useProgramSecurity"></aw-radiobutton>
+</div>

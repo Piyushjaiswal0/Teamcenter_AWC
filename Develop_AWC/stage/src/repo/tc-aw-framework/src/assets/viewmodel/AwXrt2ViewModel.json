@@ -1,0 +1,198 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "type": {
+            "type": "string"
+        },
+        "object-type": {
+            "type": "string"
+        },
+        "xrt-data": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "callback": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "xrt-state": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        },
+        "objectset-info": {
+            "type": "object"
+        },
+        "vmo": {
+            "type": "object"
+        },
+        "enable-resize-callback": {
+            "type": "object"
+        }
+    },
+    "data": {
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "_lastActivePageTitle": ""
+    },
+    "actions": {
+        "render": {
+            "method": "awXrt2RenderFunction",
+            "deps": "js/AwXrt2Service",
+            "options": {
+                "elementRefList": [
+                    "dpRef"
+                ]
+            }
+        },
+        "addObjectHandler": {
+            "actionType": "JSFunction",
+            "method": "addObjectHandler",
+            "inputData": {
+                "data": "{{data}}",
+                "pageType": "{{props.type}}"
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "checkEdit": {
+            "actionType": "JSFunction",
+            "method": "checkEdit",
+            "inputData": {
+                "pageType": "{{props.type}}"
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "handleFocusChange": {
+            "actionType": "JSFunction",
+            "method": "handleFocusChange",
+            "inputData": {
+                "pageType": "{{props.type}}",
+                "parentFocusComponent": "{{props.subPanelContext.context.pageContext.sublocationState.focusComponent}}",
+                "dispatch": "{{data.dispatch}}"
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "handleSelectionChange": {
+            "actionType": "JSFunction",
+            "method": "handleSelectionChange",
+            "inputData": {
+                "pageType": "{{props.type}}",
+                "localSelectionData": "{{data.selectionData}}",
+                "parentSelectionData": "{{props.selectionData}}",
+                "currentActivePageTitle": "{{props.xrtData.data._activePageTitle}}",
+                "dispatch": "{{data.dispatch}}",
+                "focusComponent": "{{data._focusComponentId}}"
+            },
+            "outputData": {
+                "_lastActivePageTitle": "lastActivePageTitle"
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "handleTabSelectionChange": {
+            "actionType": "JSFunction",
+            "method": "handleTabSelectionChange",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}",
+                "previousSelectionData": "{{props.selectionData}}",
+                "ctxPselected": "{{ctx.pselected}}",
+                "currentActivePageTitle": "{{props.xrtData.data._activePageTitle}}",
+                "lastActivePageTitle": "{{data._lastActivePageTitle}}",
+                "locationContext": "{{ctx.locationContext}}"
+            },
+            "outputData": {
+                "_lastActivePageTitle": "lastActivePageTitle"
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "handleXrtDataUpdateHook": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initialize"
+                },
+                {
+                    "action": "handleTabSelectionChange",
+                    "condition": "data.selectionData.selected.length > 0"
+                },
+                {
+                    "action": "checkEdit",
+                    "condition": "!data.selectionData.selected"
+                }
+            ]
+        },
+        "cleanUp": {
+            "actionType": "JSFunction",
+            "method": "cleanUp",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}",
+                "type": "{{props.type}}"
+            },
+            "outputData": {
+                "localSelectionData": ""
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "initialize",
+            "inputData": {
+                "elementRefList": "{{parameters.elementRefList}}",
+                "prop": "{{props.xrtState}}",
+                "xrtData": "{{props.xrtData}}",
+                "vmo": "{{props.vmo}}",
+                "type": "{{props.type}}",
+                "objectType": "{{props.objectType}}",
+                "subPanelContext": "{{props.subPanelContext}}"
+            },
+            "deps": "js/AwXrt2Service"
+        },
+        "refreshData": {
+            "actionType": "JSFunction",
+            "method": "refreshData",
+            "inputData": {
+                "prop": "{{props.xrtState}}",
+                "response": "{{data.eventData}}",
+                "vmo": "{{props.vmo}}"
+            },
+            "deps": "js/AwXrt2Service"
+        }
+    },
+    "ctx": {
+        "pselected": null,
+        "locationContext": null
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUnmount": "cleanUp",
+        "onUpdate": [ {
+                "action": "handleSelectionChange",
+                "observers": [ "viewModel.atomicData.selectionData" ]
+            },
+            {
+                "action": "handleXrtDataUpdateHook",
+                "observers": [ "props.xrtData" ]
+            },
+            {
+                "action": "handleFocusChange",
+                "observers": [ "props.subPanelContext.context.pageContext.sublocationState.focusComponent" ]
+            }
+        ]
+    },
+    "onEvent": [ {
+        "eventId": "cdm.modified",
+        "action": "refreshData",
+        "cacheEventData": true
+    }, {
+        "eventId": "cdm.updated",
+        "action": "refreshData",
+        "cacheEventData": true
+    } ]
+}

@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="0.325" y1="8.891" x2="28.564" y2="37.13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="7.019" y1="-1.713" x2="21.981" y2="13.249" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="7.618" y1="6.618" x2="5.382" y2="4.382" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="17.215" y1="15.844" x2="47.785" y2="46.414" xlink:href="#paper_gradient"/>
+    <linearGradient id="Dark_Blue_Grad-2" x1="26.395" y1="23.967" x2="38.615" y2="36.187" xlink:href="#Dark_Blue_Grad"/>
+  <path d="M28.5,15.923a2.812,2.812,0,0,0-1.111-2.059V7.827c-2.131,1.886-7.1,3.209-12.889,3.209-5.9,0-10.941-1.376-13-3.321v6.259a2.732,2.732,0,0,0-1,1.948,2.732,2.732,0,0,0,1,1.948V24.13a2.732,2.732,0,0,0-1,1.948,2.732,2.732,0,0,0,1,1.948v6.26a2.732,2.732,0,0,0-1,1.948c0,2.91,6.268,5.268,14,5.268s14-2.359,14-5.268a2.812,2.812,0,0,0-1.111-2.059V28.137A2.812,2.812,0,0,0,28.5,26.077a2.812,2.812,0,0,0-1.111-2.059V17.982A2.812,2.812,0,0,0,28.5,15.923Z" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+    <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" width="48" height="48" fill="none"/>
+  <ellipse cx="14.5" cy="5.768" rx="14" ry="5.268" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <path d="M28.5,15.923c0,2.91-6.268,5.268-14,5.268S.5,18.832.5,15.923" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <path d="M28.5,26.077c0,2.91-6.268,5.268-14,5.268S.5,28.987.5,26.077" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <ellipse cx="6.5" cy="5.5" rx="2" ry="1" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <path d="M45.221,42.452a6.9,6.9,0,0,0-1.647-.956q.249-1.2.434-2.469a46.371,46.371,0,0,0,.474-6.649,44.439,44.439,0,0,0-1.156-10.246,34.028,34.028,0,0,0-1.152-3.818,6.455,6.455,0,0,0,1.393-1.15c1.433-1.558,1.986-3.484,1.236-4.3s-2.521-.214-3.954,1.344a6.933,6.933,0,0,0-1.036,1.475,25.616,25.616,0,0,0-7.313-.994,25.616,25.616,0,0,0-7.313.994,6.933,6.933,0,0,0-1.036-1.475c-1.433-1.558-3.2-2.16-3.954-1.344s-.2,2.741,1.236,4.3a6.455,6.455,0,0,0,1.393,1.15,34.029,34.029,0,0,0-1.152,3.818,44.439,44.439,0,0,0-1.156,10.245,46.377,46.377,0,0,0,.474,6.649q.184,1.265.434,2.469a6.9,6.9,0,0,0-1.647.956c-1.816,1.416-2.736,3.4-2.054,4.437s2.707.725,4.523-.691A7.357,7.357,0,0,0,23.6,44.817a21.329,21.329,0,0,0,8.9,1.738,21.329,21.329,0,0,0,8.9-1.738A7.357,7.357,0,0,0,42.752,46.2c1.816,1.416,3.841,1.725,4.523.691S47.037,43.868,45.221,42.452Z" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-3)"/>
+  <path d="M40.445,25.787a108.342,108.342,0,0,0-15.878.008L24.5,34.3q8,.394,16,0Z" stroke="#147391" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+</svg>

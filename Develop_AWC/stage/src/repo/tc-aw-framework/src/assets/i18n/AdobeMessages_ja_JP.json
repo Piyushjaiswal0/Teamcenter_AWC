@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "デジタルアセット",
+    "imagePanelTitle": "イメージおよび色",
+    "updatesSectionTitle": "Teamcenterにおいて更新",
+    "digitalAssetsInUseSectionTitle": "\"{0}\"内のデジタルアセット",
+    "imageInUseSectionTitle": "\"{0}\"におけるイメージおよび色",
+    "adobeFile": "Adobeファイル",
+    "typeLabel": "タイプ",
+    "revisionLabel": "リビジョン",
+    "quantityLabel": "数量",
+    "expectedLabel": "予想された",
+    "cmdReplaceDigitalAsset": "置換",
+    "showObjectCell": "開く",
+    "cmdDeleteDigitalAsset": "削除",
+    "adobe_cell_commands_updatesList": "セルコマンド更新リスト",
+    "adobe_cell_commands_inUseList": "セルコマンド使用中リスト",
+    "DigitalAssetsPanelDesc": "アートワークに関連するデジタルアセットを表示します。",
+    "ImagePanelDesc": "2D CADに関連するイメージおよび色を表示します。",
+    "cmdReplaceDigitalAssetDesc": "Adobeアプリケーションにおいて開かれているデジタルアセットを、Teamcenterにおいて更新されたもので置換します。",
+    "cmdDeleteDigitalAssetDesc": "アートワークから選択したデジタルアセットを除去します。",
+    "showObjectCellDesc": "選択を開きます。"
+}

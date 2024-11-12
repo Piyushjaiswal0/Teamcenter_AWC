@@ -1,0 +1,205 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        
+    ],
+    "onEvent": [
+        {
+            "eventId": "editHandlerStateChange",
+            "condition": "state === 'saved' && data.newsfeedPurgeThreshold.dbValue!==ctx.preferences.SCM_newsfeed_purge_threshold[0] ",
+            "action": "setNewsfeedPurgeThreshold"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "condition": "state === 'canceling'",
+            "action": "resetNewsfeedPurgeThreshold"
+        }
+    ],
+    "actions":
+    {
+        "initial": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getNotificationMode"
+                },
+                {
+                    "action": "initialView"
+                } 
+            ]
+        },
+        "getNotificationMode":
+        {
+            "actionType": "JSFunctionAsync",
+            "method": "getNotificationMode",
+            "inputData":
+            {
+                "data" : "{{data}}"
+            },
+            "outputData": 
+            {
+                "notificationModes" : "notificationModes",
+                "notificationModeValues": "notificationModeValues"
+            },
+            "deps": "js/aw.subscription.settings.service"
+        },
+        "initialView":
+        {
+            "actionType": "JSFunctionAsync",
+            "method": "loadPreference",
+            "inputData":
+            {
+                "data" : "{{data}}"
+            },
+            "outputData": 
+            {
+                "newsfeedPurgeThreshold" : "newsfeedPurgeThreshold",
+                "isNewsfeedPurgeAvailable": "isNewsfeedPurgeAvailable",
+                "usePeriodicDigest": "usePeriodicDigest"
+            },
+            "deps": "js/aw.subscription.settings.service"
+        },
+        "notificationModeUpdated": {
+            "actionType": "JSFunctionAsync",
+            "method": "notificationModeUpdated",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "deps": "js/aw.subscription.settings.service"
+        },
+        "usePeriodicDigestClick": {
+            "actionType": "JSFunction",
+            "method": "usePeriodicDigestClick",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+            "deps": "js/aw.subscription.settings.service"
+        },
+        "setNewsfeedPurgeThreshold": {
+            "actionType": "JSFunction",
+            "method": "setNewsFeedPurgeThreshold",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "fields": "{{fields.newsfeedPurgeThreshold}}"
+            },
+            "outputData":
+            {
+                "newsfeedPurgeThreshold" : "newsfeedPurgeThreshold",
+                "newsfeedPurgeError"     : "newsfeedPurgeError"
+            },
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "condition":"data.newsfeedPurgeError!==''",
+                        "message": "invalidValueInfoMessage"
+                    }
+                ]
+            },
+            "deps": "js/aw.subscription.settings.service"
+        },
+        "resetNewsfeedPurgeThreshold": {
+            "actionType": "JSFunction",
+            "method": "resetNewsFeedPurgeThreshold",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "fields": "{{fields.newsfeedPurgeThreshold}}"
+            },
+            "outputData":
+            {
+                "newsfeedPurgeThreshold": "newsfeedPurgeThreshold",
+                "newsfeedPurgeError": "newsfeedPurgeError"
+            },
+            "deps": "js/aw.subscription.settings.service"
+        }
+    },
+    "preferences":
+    [
+        "SCM_notification_mode",
+        "SCM_notification_digest"
+    ],
+    "data":
+    {
+        "usePeriodicDigest":
+        {
+            "displayName": "{{i18n.usePeriodicDigestLabel}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "notificationModes":
+        {
+            "displayName": "{{i18n.notificationMethodTitle}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "notificationModeValues":
+        {
+            "type": "STRING",
+            "dbValue": []
+        },
+        "newsfeedPurgeThreshold":{
+            "displayName": "{{i18n.newsfeedPurgeThresholdTitle}}",
+            "type": "INTEGER",
+            "isRequired": "false",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "validationCriteria": [
+                {
+                    "condition": "conditions.invalidRetainNewsfeedThreshold",
+                    "value": "{{i18n.invalidRetainNewsfeedThreshold}}"
+                }
+            ]
+        },
+        "newsfeedPurgeErrorProp":{
+            "displayName": "{{i18n.newsfeedPurgeThresholdTitle}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "dbValue":"{{i18n.invalidConfigurationValueLabel}}",
+            "dispValue":"{{i18n.invalidConfigurationValueLabel}}"
+        },
+        "isNewsfeedPurgeAvailable": false
+    },
+    "messages": {
+        "invalidValueInfoMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.invalidValueInfoMessage}}"
+        }
+    },
+    "conditions":
+    {
+        "isNewsfeedPurgeAvailable":
+        {
+            "expression": "ctx.preferences.SCM_newsfeed_purge_threshold"
+        },
+        "invalidRetainNewsfeedThreshold": {
+            "expression": "data.newsfeedPurgeThreshold.dbValue<0"
+        }
+    },     
+    "i18n" :
+    {
+        "mySybscriptionsTitle":["SubscriptionMessages"],
+        "usePeriodicDigestLabel" :["SubscriptionMessages"],
+        "emailNotificationText" :["SubscriptionMessages"],
+        "newsfeedNotificationText" :["SubscriptionMessages"],
+        "allNotificationsText" :["SubscriptionMessages"],
+        "notificationMethodTitle":["SubscriptionMessages"],
+        "newsfeedPurgeThresholdTitle":["SubscriptionMessages"],
+        "invalidRetainNewsfeedThreshold":["SubscriptionMessages"],
+        "invalidValueInfoMessage":["SubscriptionMessages"],
+        "invalidConfigurationValueLabel":["SubscriptionMessages"],
+        "keepAlwaysValueLabel":["SubscriptionMessages"]
+    },
+    "lifecycleHooks":
+    {
+        "onMount": "initial"
+    }
+} 

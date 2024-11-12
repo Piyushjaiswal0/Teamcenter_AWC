@@ -1,0 +1,566 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+
+    "actions": {
+        "triggerMasterQuery": {
+            "actionType": "dataProvider",
+            "method": "masterListDataProvider"
+        },
+
+        "masterGridAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadPrivilegeListGridAsync",
+            "inputData": {
+                "data": "{{data}}"
+            },
+
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults"
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "masterGridSelection": {
+            "actionType": "JSFunction",
+            "method": "gridSelection",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "outputData": {
+                "selectedPriv": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.refreshDetailsData",
+                    "condition": "data.eventData.selectedObjects && data.eventData.selectedObjects.length > 0"
+                } ]
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "refreshDetailsDataProvider": {
+            "actionType": "dataProvider",
+            "method": "detailsDataProvider"
+        },
+
+        "detailsGridAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadPrivilegeInfoDetailsGridAsync",
+            "inputData": {
+                "data": "{{data}}"
+            },
+
+            "outputData": {
+                "totalDetailsFound": "totalFound",
+                "searchDetailsResults": "searchResults"
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "loadMasterGridColumns": {
+            "actionType": "JSFunction",
+            "method": "loadMasterGridColumns",
+            "inputData": {
+                "data": "{{data}}"
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "loadDetailsGridColumns": {
+            "actionType": "JSFunction",
+            "method": "loadDetailsGridColumns",
+            "inputData": {
+                "data": "{{data}}"
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "evalRoleInputLovChangeAction": {
+            "actionType": "JSFunction",
+            "method": "evalInputLovChange",
+            "inputData": {
+                "dataProviders": "{{data.dataProviders}}",
+                "group": null,
+                "role": null,
+                "proj": "{{fields.modelPropUser.fnd0OAREvalCtxtProj}}"
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "evalProjInputLovChangeAction": {
+            "actionType": "JSFunction",
+            "method": "evalInputLovChange",
+            "inputData": {
+                "dataProviders": "{{data.dataProviders}}",
+                "group": null,
+                "role": null,
+                "proj": null
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "evalUsrInputLovChangeAction": {
+            "actionType": "JSFunction",
+            "method": "evalInputLovChange",
+            "inputData": {
+                "dataProviders": "{{data.dataProviders}}",
+                "group": "{{fields.modelPropUser.fnd0OAREvalCtxtGrp}}",
+                "role": "{{fields.modelPropUser.fnd0OAREvalCtxtRole}}",
+                "proj": "{{fields.modelPropUser.fnd0OAREvalCtxtProj}}",
+                "vmData": "{{data}}"
+            },
+            "outputData": {
+                "userIdString": "userIdString",
+                "userNameString": "userNameString"
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "evalGrpInputLovChangeAction": {
+            "actionType": "JSFunction",
+            "method": "evalInputLovChange",
+            "inputData": {
+                "dataProviders": "{{data.dataProviders}}",
+                "group": null,
+                "role": "{{fields.modelPropUser.fnd0OAREvalCtxtRole}}",
+                "proj": "{{fields.modelPropUser.fnd0OAREvalCtxtProj}}"
+            },
+
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "getGroupMemeberData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2013-12-OrganizationManagement",
+            "method": "getGroupMembership2",
+            "inputData": {
+                "input": {
+                    "userId": "{{data.userIdString}}",
+                    "userName": "{{data.userNameString}}",
+                    "groupName": "{{data.modelPropUser.props.fnd0OAREvalCtxtGrp.uiValue}}",
+                    "roleName": "{{data.modelPropUser.props.fnd0OAREvalCtxtRole.uiValue}}",
+                    "searchForSubGroup": true,
+                    "startIndex": 0,
+                    "maxToReturn": 1,
+                    "maxToLoad": 1
+                }
+
+            },
+            "outputData": {
+                "groupMember": "groupMembers[0].groupMembers[0]",
+                "userObj": "userToPersonMap[0][0]"
+            },
+
+            "events": {
+                "success": [ {
+                    "name": "Aut0.callCheckAccessorsPrivileges"
+                } ]
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "checkAccessorsPrivileges": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2006-03-IRM",
+            "method": "checkAccessorsPrivileges",
+            "inputData": {
+                "groupMember": "{{data.groupMember}}",
+                "objects": "{{data.selectedObjArray}}",
+                "privilegeNames": "{{data.amPrivList}}"
+            },
+            "outputData": {
+                "privilegeReports": "privilegeReports[0].privilegeInfos"
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.doneCheckAccessorsPrivileges"
+                } ]
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+
+        "getExtraProtectionInfo2": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2010-04-IRM",
+            "method": "getExtraProtectionInfo2",
+            "inputData": {
+                "user": "{{data.userObj}}",
+                "objects": "{{data.selectedObjArray}}"
+            },
+            "outputData": {
+                "extraProtectionInfos": "extraProtectionReports[0].extraProtectionInfos"
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.doneGetExtraProtectionInfo2"
+                } ]
+            }
+        },
+        "initObjPrivilegeDetailsPage": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "setSelectedObject"
+                },
+                {
+                    "action": "getStylesheet"
+                }
+            ]
+        },
+        "setSelectedObject": {
+            "actionType": "JSFunction",
+            "method": "setSelectedObject",
+            "inputData": {
+                "selected": "{{ctx.selected}}",
+                "vmData": "{{data}}"
+            },
+            "outputData": {
+                "selectedObjArray": "selectedObjArray"
+
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+        "getStylesheet": {
+
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "processEntireXRT": true,
+                "input": [ {
+                        "businessObjectType": "Fnd0OARAccessDlg",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": "unknownType"
+                        },
+                        "styleSheetType": "CREATE",
+                        "styleSheetLastModDate": "",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.client.oar.oarLocation",
+                            "ActiveWorkspace:SubLocation": "oarRules"
+                        }
+                    }
+
+                ]
+
+            },
+
+            "policy": {
+                "types": [ {
+                    "name": "Fnd0OARAccessDlgCreI",
+                    "modifiers": [ {
+                        "name": "includeIsModifiable",
+                        "Value": "true"
+                    } ],
+                    "properties": [ {
+                            "name": "fnd0OARCanSeeAccessDetails"
+                        },
+                        {
+                            "name": "fnd0OARCanSeeOthersAccess"
+                        },
+                        {
+                            "name": "fnd0OAREvalCtxtUsr"
+                        },
+                        {
+                            "name": "fnd0OAREvalCtxtGrp"
+                        },
+                        {
+                            "name": "fnd0OAREvalCtxtRole"
+                        }
+                    ]
+                } ]
+            },
+
+            "outputData": {
+                "modelPropUser": "{{dataParseDefinitions:convertNvObject}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.setInitialContext"
+                } ]
+            }
+        },
+
+        "setInitialContext": {
+            "actionType": "JSFunction",
+            "method": "setInitialContext",
+            "inputData": {
+                "vmData": "{{data}}"
+            },
+            "outputData": {
+                "fnd0OAREvalCtxtUsr": "modelPropUser.props.fnd0OAREvalCtxtUsr",
+                "fnd0OAREvalCtxtGrp": "modelPropUser.props.fnd0OAREvalCtxtGrp",
+                "fnd0OAREvalCtxtRole": "modelPropUser.props.fnd0OAREvalCtxtRole",
+                "fnd0OAREvalCtxtProj": "modelPropUser.props.fnd0OAREvalCtxtProj",
+                "userIdString": "userIdString",
+                "userNameString": "userNameString"
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.getPrivilegeNames"
+                } ]
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+        "batchJobAction": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "triggerMasterQuery"
+                },
+                {
+                    "action": "getExtraProtectionInfo2"
+                }
+            ]
+        },
+        "getPrivilegeNames": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2010-04-IRM",
+            "method": "getPrivilegeNames",
+            "inputData": {},
+            "outputData":{                
+                "amPrivDisplayList":"{{function:createPrivDisplayList}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.privilegeVerdictCheckReady"
+                } ]
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+        "formatPrivReport": {
+            "actionType": "JSFunction",
+            "method": "formatPrivDataForTable",
+            "inputData": {
+                "privilegeReports": "{{data.privilegeReports}}",
+                "vmData": "{{data}}"
+            },
+            "outputData": {
+                "privSearchResults": "privSearchResults",
+                "totalPrivLoaded": "totalPrivLoaded",
+                "totalPrivFound": "totalPrivFound"
+            },
+            "events": {
+                "success": [ {
+                    "name": "Aut0.privReportsFormattedForTable"
+                } ]
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        },
+        "formatExtraProtectionInfo": {
+            "actionType": "JSFunction",
+            "method": "formatExtraProtectionInfoForTable",
+            "inputData": {
+                "extraProtectionInfos": "{{data.extraProtectionInfos}}",
+                "vmData": "{{data}}"
+            },
+            "outputData": {
+                "formattedExtraProtectionInfosMap": ""
+            },
+            "deps": "js/Aut0ObjAccessDetailsService"
+        }
+    },
+
+    "data": {},
+
+    "onEvent": [ {
+            "eventId": "masterListDataProvider.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "masterGridSelection"
+        },
+
+        {
+            "eventId": "Aut0.refreshDetailsData",
+            "action": "refreshDetailsDataProvider"
+        },
+        {
+            "eventId": "Aut0.setInitialContext",
+            "action": "setInitialContext"
+        },
+        {
+            "eventId": "Aut0.getPrivilegeNames",
+            "action": "getPrivilegeNames"
+        },
+        {
+            "eventId": "fnd0OAREvalCtxtUsr.lovValueChanged",
+            "action": "evalUsrInputLovChangeAction"
+        },
+        {
+            "eventId": "fnd0OAREvalCtxtGrp.lovValueChanged",
+            "action": "evalGrpInputLovChangeAction"
+        },
+        {
+            "eventId": "fnd0OAREvalCtxtRole.lovValueChanged",
+            "action": "evalRoleInputLovChangeAction"
+        },
+        {
+            "eventId": "fnd0OAREvalCtxtProj.lovValueChanged",
+            "action": "evalProjInputLovChangeAction"
+        },
+        {
+            "eventId": "Aut0.callCheckAccessorsPrivileges",
+            "action": "checkAccessorsPrivileges"
+        },
+        {
+            "eventId": "Aut0.privilegeVerdictCheckReady",
+            "action": "getGroupMemeberData"
+        },
+        {
+            "eventId": "Aut0.doneCheckAccessorsPrivileges",
+            "action": "formatPrivReport"
+        },
+        {
+            "eventId": "Aut0.privReportsFormattedForTable",
+            "action": "batchJobAction"
+        },
+        {
+            "eventId": "Aut0.doneGetExtraProtectionInfo2",
+            "action": "formatExtraProtectionInfo"
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "initObjPrivilegeDetailsPage"
+    },
+    "conditions": {
+
+        "showRuleSection": {
+            "expression": "true"
+        },
+
+        "allInputsPresent": {
+            "expression": "data.modelPropUser.props.fnd0OAREvalCtxtUsr && data.modelPropUser.props.fnd0OAREvalCtxtUsr.uiValue && data.modelPropUser.props.fnd0OAREvalCtxtGrp && data.modelPropUser.props.fnd0OAREvalCtxtGrp.uiValue && data.modelPropUser.props.fnd0OAREvalCtxtRole && data.modelPropUser.props.fnd0OAREvalCtxtRole.uiValue"
+        }
+    },
+    "dataParseDefinitions": {
+        "convertNvObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "ServiceData.plain[0]",
+            "operationType": "CREATE"
+        }
+    },
+    "functions": {
+        "createPrivList": {
+            "functionName": "createPrivList",
+            "parameters": [
+                "{{response}}"
+            ]
+        },
+        "createPrivDisplayList":{
+            "functionName": "createPrivDisplayList",
+            "parameters": [
+                "{{response}}"
+            ]
+        }
+    },
+    "columnProviders": {
+        "masterColumnProvider": {
+            "loadColumnAction": "loadMasterGridColumns",
+            "columns": "{{data.masterColumns}}"
+        },
+
+        "detailsColumnProvider": {
+            "loadColumnAction": "loadDetailsGridColumns",
+            "columns": "{{data.detailColumns}}"
+        }
+    },
+
+    "grids": {
+        "masterOpInfoGrid": {
+            "dataProvider": "masterListDataProvider",
+            "columnProvider": "masterColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enablePinning": false,
+                "enableGridMenu": false,
+                "enableSorting": false
+            }
+        },
+
+        "detailRuleInfoGrid": {
+            "dataProvider": "detailsDataProvider",
+            "columnProvider": "detailsColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enablePinning": false,
+                "enableGridMenu": false,
+                "enableSorting": false
+            }
+        }
+    },
+
+    "dataProviders": {
+        "masterListDataProvider": {
+            "action": "masterGridAction",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}"
+        },
+
+        "detailsDataProvider": {
+            "action": "detailsGridAction",
+            "response": "{{data.searchDetailsResults}}",
+            "totalFound": "{{data.totalDetailsFound}}"
+        }
+    },
+
+    "i18n": {
+        "associatedRulesSectionHdr": [
+            "SecurityMessages"
+        ],
+
+        "grantingOperationsSectionHdr": [
+            "SecurityMessages"
+        ],
+
+        "autShowAccessBtn": [
+            "SecurityMessages"
+        ],
+
+        "privilegeName": [
+            "SecurityMessages"
+        ],
+
+        "verdict": [
+            "SecurityMessages"
+        ],
+
+        "user": [
+            "SecurityMessages"
+        ],
+
+        "group": [
+            "SecurityMessages"
+        ],
+
+        "role": [
+            "SecurityMessages"
+        ],
+
+        "grant": [
+            "SecurityMessages"
+        ],
+
+        "deny": [
+            "SecurityMessages"
+        ],
+
+        "namedACL": [
+            "SecurityMessages"
+        ],
+
+        "accessor": [
+            "SecurityMessages"
+        ],
+
+        "rulePath": [
+            "SecurityMessages"
+        ]
+    }
+}

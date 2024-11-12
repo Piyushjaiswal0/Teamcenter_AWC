@@ -1,0 +1,31 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-0.5" y1="-1026.5" x2="41" y2="-1068" gradientTransform="matrix(1 0 0 -1 0 -1020)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2323" style="stop-color:#FAFAFA"/>
+	<stop  offset="0.4964" style="stop-color:#EDEDED"/>
+	<stop  offset="0.775" style="stop-color:#D6D6D6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<polygon fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" points="28.5,0.5 5.5,0.5 5.5,47.5 41.5,47.5 41.5,13.5 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="25.25" y1="-1023.75" x2="38.25" y2="-1036.75" gradientTransform="matrix(1 0 0 -1 0 -1020)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<polygon fill="url(#SVGID_2_)" stroke="#464646" stroke-linejoin="round" stroke-miterlimit="10" points="28.5,0.5 28.5,13.5 
+	41.5,13.5 "/>
+<polyline fill="none" stroke="#147391" points="10.5,17 10.5,43.5 37,43.5 "/>
+<line fill="none" stroke="#BEBEBE" x1="16.5" y1="17" x2="16.5" y2="43"/>
+<line fill="none" stroke="#BEBEBE" x1="22.5" y1="17" x2="22.5" y2="43"/>
+<line fill="none" stroke="#BEBEBE" x1="28.5" y1="17" x2="28.5" y2="43"/>
+<line fill="none" stroke="#BEBEBE" x1="33.5" y1="17" x2="33.5" y2="43"/>
+<line fill="none" stroke="#BEBEBE" x1="37" y1="37.5" x2="11" y2="37.5"/>
+<line fill="none" stroke="#BEBEBE" x1="37" y1="31.5" x2="11" y2="31.5"/>
+<line fill="none" stroke="#BEBEBE" x1="37" y1="25.5" x2="11" y2="25.5"/>
+<line fill="none" stroke="#BEBEBE" x1="37" y1="19.5" x2="11" y2="19.5"/>
+<polyline fill="none" stroke="#147391" points="12.4,28.6 18.9,22.2 26.7,27.3 37,18.3 "/>
+<polyline fill="none" stroke="#147391" points="12.4,36.4 21.5,32.5 29.2,35.1 37,23.5 "/>
+</svg>

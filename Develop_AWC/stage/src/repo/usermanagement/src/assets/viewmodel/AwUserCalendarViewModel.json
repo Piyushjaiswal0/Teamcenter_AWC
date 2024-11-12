@@ -1,0 +1,201 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "getCalendarForUser": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-09-DataManagement",
+            "method": "expandGRMRelationsForPrimary",
+            "inputData": {
+                "primaryObjects": ["{{subPanelContext.selected}}"],
+                "pref": {
+                    "expItemRev": false,
+                    "returnRelations": true,
+                    "info": [ {
+                        "relationTypeName": "TCCalendar_Rel_Type"
+                    } ]
+                }
+            },
+            "policy": {
+                "types": [ {
+                    "name": "TCCalendar",
+                    "properties": [ {
+                            "name": "sun_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "mon_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "tue_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "wed_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "thu_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "fri_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "sat_ranges",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "time_zone"
+                        },
+                        {
+                            "name": "object_string"
+                        },
+                        {
+                            "name": "tccal_type"
+                        },
+                        {
+                            "name": "tccal_desc"
+                        },
+                        {
+                            "name": "base_calendar_tag",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Range",
+                    "properties": [ {
+                            "name": "range_end"
+                        },
+                        {
+                            "name": "range_start"
+                        }
+                    ]
+                },
+                {
+                    "name": "TCCalendarEvent",
+                    "properties": [ {
+                            "name": "tccalendar_tag"
+                        },
+                        {
+                            "name": "recur_interval"
+                        },
+                        {
+                            "name": "recur_month"
+                        },
+                        {
+                            "name": "recur_weeks_of_month"
+                        },
+                        {
+                            "name": "recur_days_of_week"
+                        },
+                        {
+                            "name": "timestamp"
+                        },
+                        {
+                            "name": "owning_site"
+                        },
+                        {
+                            "name": "pid"
+                        }
+                    ]
+                }
+                ]
+            },
+            "outputData": {
+                "userCalendar": "{{function:processResponseForUserCalendar}}"
+            },
+            "deps": "js/AwUserCalendarUtils"
+        },
+        "openCreateUserCalendarPanel": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "AwCreateCalendar",
+                "location": "aw_toolsAndInfo",
+                "context": {
+                    "nameEdit": false,
+                    "calendar": "userCalendar",
+                    "user": "{{subPanelContext.selected}}"
+                }
+            }
+        },
+        "unRegisterUserCalendar": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "inputData": {
+                "name": "userCalendar"
+            },
+            "deps": "js/appCtxService"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "resetUserCalendarPage",
+            "action": "getCalendarForUser"
+        }
+    ],
+    "conditions": {
+        "accessCheck": {
+            "expression": "(ctx.userSession.props.group_name.dbValue === 'dba') || (subPanelContext.selected.uid === ctx.user.uid)"
+        },
+        "userCalendarExists": {
+            "expression": "data.userCalendar.type === 'TCCalendar'"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "getCalendarForUser",
+        "onUnmount": "unRegisterUserCalendar"
+    },
+    "functions": {
+        "processResponseForUserCalendar": {
+            "functionName": "processResponseForUserCalendar",
+            "parameters": [
+                "{{subPanelContext.selected}}"
+            ]
+        }
+    },
+    "messages":{
+        "userCalendarNotExits": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.userCalendarNotExits}}",
+            "messageTextLinks": [
+            ]
+        }
+    },
+    "i18n": {
+        "userCalendarNotExits":[
+            "UsermanagementMessages"
+        ],
+        "addButtonText":[
+            "UsermanagementMessages"
+        ]
+    }
+}

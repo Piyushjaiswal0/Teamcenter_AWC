@@ -1,0 +1,18 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="11.3358" y1="3.8358" x2="37.6642" y2="30.1642" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dcdcdc"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="21.5" y1="21.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="47" height="47" fill="#dcdcdc" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="6" y="1" width="19" height="46" fill="#bebebe"/>
+  <rect x="3.5" y="10.5" width="42" height="13" rx="2" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+  <rect x="21.5" y="21.5" width="26" height="26" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <path d="M35.0921,28.98,38.71,25.5H26.5V37.2435l3.367-3.2382s5.98,2.5128,7.7241,5.1955c2.341,3.6007-.6524,4.2407-.6524,4.2407v.6524a2.6433,2.6433,0,0,0,3.1887-.2535A3.3067,3.3067,0,0,0,41.16,42.0526C42.44,35.9,35.0921,28.98,35.0921,28.98Z" fill="#3c91af" stroke="#147391"/>
+</svg>

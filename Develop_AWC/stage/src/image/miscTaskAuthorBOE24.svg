@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <rect width="24" height="24" fill="#e47d82"/>
+  <path d="M20,12.492H9.389l-.207,0a2.5,2.5,0,0,0,0,5l.207,0H20" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <path d="M20,10.511H9.906l-1.012,0a4.158,4.158,0,0,0-4.33,4.476,4.173,4.173,0,0,0,4.33,4.517l1.012,0H20" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <circle cx="10.037" cy="14.997" r="1" fill="#fff"/>
+  <circle cx="13.932" cy="14.997" r="1" fill="#fff"/>
+  <circle cx="18" cy="14.997" r="0.974" fill="#fff"/>
+  <rect x="8.52" y="5.5" width="4.5" height="3" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <rect x="15" y="5.5" width="4.5" height="3" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+</svg>

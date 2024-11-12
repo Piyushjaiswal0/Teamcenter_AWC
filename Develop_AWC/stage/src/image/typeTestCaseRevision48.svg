@@ -1,0 +1,44 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="2.5" y1="2.5" x2="45.5" y2="45.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.3045" stop-color="#fbfbfb"/>
+      <stop offset="0.5835" stop-color="#f0f0f0"/>
+      <stop offset="0.8518" stop-color="#dedede"/>
+      <stop offset="1" stop-color="#d0d0d0"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="7.5" y1="33.5" x2="18.5" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="13" y1="-2" x2="35" y2="20" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="18.5" y1="33.5" x2="29.5" y2="44.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="29.5" y1="33.5" x2="40.5" y2="44.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="9.25" y1="5.75" x2="15.75" y2="12.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="18.25" y1="5.75" x2="24.75" y2="12.25" xlink:href="#New_Gradient_Swatch_1"/>
+  <rect x="4.5" y="0.5" width="39" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="9.5" y="17.5" width="6" height="6" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="18" y1="20.5" x2="28" y2="20.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="18" y1="28.5" x2="28" y2="28.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="11.5 20.5 12.5 21.5 14 19" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="9.5" y="25.5" width="6" height="6" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="11.5 28.5 12.5 29.5 14 27" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="7.5" y="33.5" width="11" height="11" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="7.5" y="3.5" width="33" height="11" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <polyline points="10.5 39.5 12.5 41.5 15.5 36.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="18.5" y="33.5" width="11" height="11" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-3)"/>
+  <rect x="29.5" y="33.5" width="11" height="11" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-4)"/>
+  <line x1="21.4977" y1="36.5" x2="26.5" y2="41.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="26.4989" y1="36.4989" x2="21.4989" y2="41.5011" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="32" y1="38.5" x2="38" y2="38.5" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <polygon points="15.5 5.5 9.5 5.5 11.5 9 9.5 12.5 15.5 12.5 17.5 9 15.5 5.5" stroke="#147391" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_1)"/>
+  <polygon points="24.5 5.5 18.5 5.5 20.5 9 18.5 12.5 24.5 12.5 26.5 9 24.5 5.5" stroke="#147391" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_1-2)"/>
+</svg>

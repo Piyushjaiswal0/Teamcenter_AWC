@@ -1,0 +1,22 @@
+<aw-panel-body>
+    <aw-command-panel-section caption="i18n.forClass" anchor="data.rootClassCommands" context="{data: data, reportsContext: props.subPanelContext.reportsContext}" collapsed="disabled">
+        <aw-list dataprovider="data.dataProviders.rootClassProvider">
+            <aw-default-cell vmo="item"></aw-default-cell>
+        </aw-list>
+    </aw-command-panel-section>
+    <aw-command-panel-section caption="i18n.sampleSource" anchor="data.rootClassSampleCommands" context="{data: data, reportsContext: props.subPanelContext.reportsContext}" collapsed="disabled">
+        <aw-list dataprovider="data.dataProviders.rootClassSampleProvider">
+            <aw-default-cell vmo="item"></aw-default-cell>
+        </aw-list>
+    </aw-command-panel-section>
+    <aw-command-panel-section caption="i18n.segments" anchor="data.segmentCommands" context="{data: data, reportsContext: props.subPanelContext.reportsContext}" collapsed="disabled">
+        <aw-tree name="segmentree" tree="props.subPanelContext.reportsContext.segmentTree">
+            {{node.label}}
+        </aw-tree>
+    </aw-command-panel-section>
+    <aw-command-panel-section caption="i18n.layout" anchor="data.layoutCommands" context="{data: data, reportsContext: props.subPanelContext.reportsContext}" collapsed="disabled">
+        <aw-label prop="data.chart1LabelTxt" exist-when="conditions.canShowChart1LabelTxt"></aw-label>
+        <aw-label prop="data.chart2LabelTxt" exist-when="conditions.canShowChart2LabelTxt"></aw-label>
+        <aw-label prop="data.chart3LabelTxt" exist-when="conditions.canShowChart3LabelTxt"></aw-label>
+    </aw-command-panel-section>
+</aw-panel-body>

@@ -1,0 +1,47 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<circle fill="#F0F0F0" cx="24" cy="14" r="13.5"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="6.086" y1="27.914" x2="10.086" y2="31.914">
+	<stop  offset="0" style="stop-color:#74B3C7"/>
+	<stop  offset="0.1774" style="stop-color:#6BADC2"/>
+	<stop  offset="0.4638" style="stop-color:#539DB4"/>
+	<stop  offset="0.8215" style="stop-color:#2D839D"/>
+	<stop  offset="1" style="stop-color:#177490"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M12.7,21.3L1.5,32.5c-1.1,1.1-1.1,2.9,0,4c1.1,1.1,2.9,1.1,4,0l11.2-11.2
+	C15.1,24.3,13.7,22.9,12.7,21.3z"/>
+<path fill="none" stroke="#147391" stroke-miterlimit="10" d="M12.7,21.3c1,1.6,2.4,3,4,4"/>
+<path fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M24,0.5
+	c-7.5,0-13.5,6-13.5,13.5c0,2.7,0.8,5.2,2.2,7.3L1.5,32.5c-1.1,1.1-1.1,2.9,0,4c1.1,1.1,2.9,1.1,4,0l11.2-11.2
+	c2.1,1.4,4.6,2.2,7.3,2.2c7.5,0,13.5-6,13.5-13.5C37.5,6.5,31.5,0.5,24,0.5z"/>
+<linearGradient id="XMLID_4_" gradientUnits="userSpaceOnUse" x1="20.25" y1="22.75" x2="46.25" y2="48.75">
+	<stop  offset="0" style="stop-color:#74B3C7"/>
+	<stop  offset="0.1774" style="stop-color:#6BADC2"/>
+	<stop  offset="0.4638" style="stop-color:#539DB4"/>
+	<stop  offset="0.8215" style="stop-color:#2D839D"/>
+	<stop  offset="1" style="stop-color:#177490"/>
+</linearGradient>
+<polygon id="XMLID_24_" fill="url(#XMLID_4_)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" points="47.5,26.5 
+	47.5,47.5 21.5,47.5 21.5,21.5 42.5,21.5 "/>
+<linearGradient id="XMLID_5_" gradientUnits="userSpaceOnUse" x1="26.2352" y1="32.2057" x2="42.7648" y2="48.7352">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2284" style="stop-color:#FAFAFA"/>
+	<stop  offset="0.4881" style="stop-color:#EDEDED"/>
+	<stop  offset="0.7621" style="stop-color:#D7D6D6"/>
+	<stop  offset="1" style="stop-color:#BDBCBC"/>
+</linearGradient>
+<path id="XMLID_1_" fill="url(#XMLID_5_)" stroke="#147391" stroke-miterlimit="10" d="M44.5,47V35c0-1.4-1.1-2.5-2.5-2.5H27
+	c-1.4,0-2.5,1.1-2.5,2.5v12"/>
+<linearGradient id="XMLID_6_" gradientUnits="userSpaceOnUse" x1="29.625" y1="20.875" x2="39.375" y2="30.625">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2284" style="stop-color:#FAFAFA"/>
+	<stop  offset="0.4881" style="stop-color:#EDEDED"/>
+	<stop  offset="0.7621" style="stop-color:#D7D6D6"/>
+	<stop  offset="1" style="stop-color:#BDBCBC"/>
+</linearGradient>
+<polyline id="XMLID_2_" fill="url(#XMLID_6_)" stroke="#147391" stroke-miterlimit="10" points="28.5,22 28.5,29.5 40.5,29.5 
+	40.5,22 "/>
+<rect id="XMLID_36_" x="36.5" y="23.5" fill="#73B4C8" stroke="#147391" width="2" height="4"/>
+<line id="XMLID_35_" fill="none" stroke="#6F6E6E" x1="28" y1="41.5" x2="41" y2="41.5"/>
+<line id="XMLID_34_" fill="none" stroke="#6F6E6E" x1="28" y1="37.5" x2="41" y2="37.5"/>
+</svg>

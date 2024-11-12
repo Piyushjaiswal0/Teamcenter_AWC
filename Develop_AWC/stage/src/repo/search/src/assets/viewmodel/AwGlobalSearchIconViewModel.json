@@ -1,0 +1,23 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "show": {
+            "type": "field"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awGlobalSearchIconServiceRenderFunction",
+            "deps": "js/AwGlobalSearchIconService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "i18n": {
+        "searchBtn": [
+            "SearchMessages"
+        ]
+    }
+}

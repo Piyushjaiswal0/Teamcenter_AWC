@@ -1,0 +1,10 @@
+<aw-panel>
+    <aw-panel-section caption="i18n.mySybscriptionsTitle" collapsed="false" visible-when="ctx.user.uid===subPanelContext.openedObject.uid">
+      <aw-panel-body>
+        <aw-listbox prop="data.notificationModes" list="data.notificationModeValues.dbValue" action="notificationModeUpdated"></aw-listbox>
+      </aw-panel-body>
+      <aw-checkbox prop="data.usePeriodicDigest" exist-when="ctx.preferences.SCM_notification_digest" action="usePeriodicDigestClick"></aw-checkbox>
+      <aw-label prop="data.newsfeedPurgeThreshold" visible-when="data.isNewsfeedPurgeAvailable && !subPanelContext.xrtState.xrtVMO.isEditing"></aw-label>
+      <aw-widget prop="data.newsfeedPurgeThreshold" exist-when="data.isNewsfeedPurgeAvailable && subPanelContext.xrtState.xrtVMO.isEditing"></aw-widget>
+     </aw-panel-section>
+</aw-panel>

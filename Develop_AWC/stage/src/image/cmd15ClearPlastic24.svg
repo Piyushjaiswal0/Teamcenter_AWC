@@ -1,0 +1,29 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="4.2106" y1="4.835" x2="21.6517" y2="20.878">
+	<stop  offset="0.1828" style="stop-color:#E5E5E6"/>
+	<stop  offset="0.8504" style="stop-color:#BFC0C2"/>
+</linearGradient>
+<circle fill="url(#SVGID_1_)" cx="12" cy="12" r="12"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="6.4" y1="19.3981" x2="11.7322" y2="1.3649">
+		<stop  offset="0" style="stop-color:#C9C9CA"/>
+		<stop  offset="0.108" style="stop-color:#D4D4D5"/>
+		<stop  offset="0.2935" style="stop-color:#E1E1E2"/>
+		<stop  offset="0.4686" style="stop-color:#E5E5E6"/>
+		<stop  offset="0.6525" style="stop-color:#DCDCDD"/>
+		<stop  offset="0.9526" style="stop-color:#C4C4C5"/>
+		<stop  offset="1" style="stop-color:#BFC0C1"/>
+	</linearGradient>
+	<path fill="url(#SVGID_2_)" d="M18,2.6c-0.2-0.1-3.2-1.1-5.4-1.1C7.2,1.5,2.8,4.4,2.8,8c0,0.4,0.1,0.8,0.2,1.2
+		c0.1,0.5,0.2,1.1,0.4,1.6c0,0,0,0.1,0,0.1c0,0,0,0,0,0c0,0.1,0,0.1,0,0.2l-0.7,0.6c0,0-0.3-0.8-0.5-2c0,0,0,0,0,0c0,0,0,0,0,0
+		C2,8.1,2,5.8,3.4,3.6c0,0,0,0,0,0C1.3,5.8,0,8.7,0,12c0,6.6,5.3,11.9,11.9,12c-1.4-0.4-1.2-1.2-0.9-1.7c0.4,0.2,0.8,0.3,1.2,0.3
+		c1,0,1.8-0.5,2.2-1.1c0,0,0,0,0,0c0,0,0,0,0.1,0c0.1-0.2,0.2-0.4,0.2-0.7c0-0.6-0.4-1.1-0.9-1.4c2.4-2.5,4.7-9.1,4.9-10
+		C19.2,6.2,18.7,4,18,2.6z"/>
+<path opacity="0.66" fill="#B2B4B8" d="M11.2,0c0.2,0.2,0.6,0.8,0.5,2.9c-0.2,3.1,0,11.8,0.1,12.9l0.6,0c0,0,0.5-5.6,0.4-8.5
+	c0-2.9-0.1-5.9-0.1-5.9s1.5-0.9,2-0.3c0.4,0.6,1.8,5.2-1.6,17l0.4,0.2c0,0,4.9-9.8,2.2-17.1c0,0,0.6,0.1,0.8,0.2
+	c0.1,0-0.1-0.3-0.3-0.6C14.9,0.3,13.5,0,12,0C11.7,0,11.5,0,11.2,0z"/>
+<path opacity="0.66" fill="#B2B4B8" d="M9.1,0.4C8.3,1.3,7,4.3,9.1,13.8l0.9-0.2c0,0-2.2-10.3,0.3-13.4C10,0.2,9.5,0.3,9.1,0.4z"/>
+<path opacity="0.66" fill="#B2B4B8" d="M7.7,0.8C7.3,1,6.9,1.2,6.5,1.4C5.9,1.9,4.6,3.6,4.7,6.6c0.1,3.8,1.2,5.8,1.2,5.8L6.7,12
+	c0,0-1.3-4.3-0.9-7.8C6,2.8,6.8,1.7,7.7,0.8z"/>
+<ellipse fill="#BFC1C2" cx="12" cy="21" rx="1.3" ry="1"/>
+</svg>

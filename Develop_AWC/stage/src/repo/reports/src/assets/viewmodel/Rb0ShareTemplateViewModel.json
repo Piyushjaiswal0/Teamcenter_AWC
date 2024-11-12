@@ -1,0 +1,53 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "initialize":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updateSelectedReportFromSelection",
+                "condition": "!props.subPanelContext.reportsState"
+            }, {
+                "action": "updateSelectedReportFromReportsState",
+                "condition": "props.subPanelContext.reportsState"
+            }]
+        },
+        "updateSelectedReportFromSelection": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.rb0ShareState}}",
+                "value": {
+                    "selectedReport": "{{props.subPanelContext.selectionData.selected[0]}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateSelectedReportFromReportsState": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.rb0ShareState}}",
+                "value": {
+                    "selectedReport": "{{props.subPanelContext.reportsState.selectedReport}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "activeView": "ShareTemplate",
+        "rb0ShareState": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize"
+    },
+    "onEvent": [],
+    "i18n": {
+        "shareTemplateTitle": [
+            "ReportChartMessages"
+        ]
+    }
+}

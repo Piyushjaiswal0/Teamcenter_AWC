@@ -1,0 +1,44 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [
+    ],
+    "actions":{
+        "bindProperties":{
+            "actionType": "JSFunction",
+            "method": "bindProperties",
+            "inputData": {
+                "context": "{{props.subPanelContext}}"
+            },
+            "deps": "js/projMgmtService"
+        },
+        "useProgramSecurityChange":{
+            "actionType": "JSFunction",
+            "method": "changeUseProgramSecurityDisplay",
+            "inputData": {
+                "xrtState": "{{props.subPanelContext.xrtState}}"
+            },
+            "deps": "js/projMgmtService"
+        },
+        "isActiveChange":{
+            "actionType": "JSFunction",
+            "method": "changeActiveVisible",
+            "inputData": {
+                "xrtState": "{{subPanelContext.xrtState}}"
+            },
+            "deps": "js/projMgmtService"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount":"bindProperties"
+    },
+    "onEvent": [
+
+        {
+            "eventId": "editHandlerStateChange",
+            "cacheEventData": true,
+            "condition": "state === 'saved' || state === 'canceling'" ,
+            "action": "useProgramSecurityChange"
+        }
+    ]
+
+}

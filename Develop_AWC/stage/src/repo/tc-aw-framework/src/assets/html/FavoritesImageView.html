@@ -1,0 +1,18 @@
+<aw-empty-workarea class="aw-base-scrollPanel"
+    exist-when="data.totalFound == 0 && subPanelContext.searchState.provider === 'Awp0FavoritesProvider'"
+    image="graNoFavoritesList"
+    title="i18n.noFavoritesFound"
+    hint="i18n.noFavoritesFoundHint">
+</aw-empty-workarea>
+<aw-empty-workarea class="aw-base-scrollPanel"
+    exist-when="data.totalFound == 0 && subPanelContext.searchState.provider === 'Awp0RecentObjectsProvider'"
+    image="graNoFavoritesList"
+    title="i18n.noRecentsFound"
+    hint="i18n.noRecentsFoundHint">
+</aw-empty-workarea>
+<aw-list show-when="data.totalFound === undefined || data.totalFound !== 0" 
+  dataprovider="data.dataProviders.listDataProvider" 
+  show-context-menu="true" 
+  show-check-box="subPanelContext.showCheckBox">
+    <aw-image-cell vmo="item"></aw-image-cell>
+</aw-list>

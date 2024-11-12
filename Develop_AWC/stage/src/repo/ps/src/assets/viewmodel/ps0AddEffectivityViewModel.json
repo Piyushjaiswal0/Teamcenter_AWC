@@ -1,0 +1,44 @@
+{
+    "schemaVersion": "1.0.0",
+    "data":{
+        "flag":{
+            "type":"STRING",
+            "dbValue": "AUTHOR"
+        }
+    },
+    "actions": {
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "condition": "!data._internal.isDestroyed && conditions.isPwaSelectionChanged",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        }
+
+    },
+
+    "conditions": {
+        "isPwaSelectionChanged": {
+            "expression": "(props.subPanelContext.expEffPanelState.previousSelectionUid !== props.subPanelContext.occContext.selectedModelObjects[0].uid) || props.subPanelContext.occContext.selectedModelObjects.length > 1"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onUpdate": [{
+            "action": "closePanel",
+            "observers": [ "props.subPanelContext.occContext.selectedModelObjects" ]
+        }]
+    },
+
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

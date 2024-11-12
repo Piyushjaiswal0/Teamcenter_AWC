@@ -1,0 +1,32 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="1.6716" y1="1.6716" x2="32.3284" y2="32.3284" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2284" stop-color="#fafafa"/>
+      <stop offset="0.4881" stop-color="#ededed"/>
+      <stop offset="0.7621" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="26.25" y1="23.75" x2="48.75" y2="46.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.3045" stop-color="#fbfbfb"/>
+      <stop offset="0.5835" stop-color="#f0f0f0"/>
+      <stop offset="0.8518" stop-color="#dedede"/>
+      <stop offset="1" stop-color="#d0d0d0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="33" height="33" rx="4" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4)"/>
+  <polyline points="5.4 12.4 11 18 17 12 26 21" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="5"/>
+  <polyline points="17 21.5 26.5 21.5 26.5 12" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="5"/>
+  <path d="M6,13l5,5,6-6,9.5,9.5m-8.5,0h8.5V13" fill="none" stroke="#3c91af" stroke-miterlimit="10" stroke-width="3"/>
+  <rect x="27.5" y="22.5" width="20" height="25" stroke="#464646" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+  <rect x="30.5" y="25.5" width="5" height="5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="34.389 26.611 32.722 29.389 31.611 28.277" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="38" y1="28.5" x2="45" y2="28.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="30.5" y="32.5" width="5" height="5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="34.389 33.611 32.722 36.389 31.611 35.277" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="38" y1="35.5" x2="45" y2="35.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="30.5" y="39.5" width="5" height="5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="34.389 40.611 32.722 43.389 31.611 42.277" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="38" y1="42.5" x2="45" y2="42.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+</svg>

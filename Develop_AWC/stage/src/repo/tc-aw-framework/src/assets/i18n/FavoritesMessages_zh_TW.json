@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "我的最愛",
+    "myFavorites": "我的最愛",
+    "myRecentViewedObjects": "最近",
+    "addToFavoritesCommandTitle": "新增到我的最愛",
+    "addToFavoritesConfirmation": "選定的物件已成功新增到我的最愛",
+    "addToFavoritesFailed": "新增到我的最愛失敗",
+    "removeFromFavoritesCommandTitle": "從我的最愛中移除",
+    "removeFromFavoritesConfirmation": "已從我的最愛中成功移除選定的物件",
+    "removeFromFavoritesFailed": "新增到我的最愛失敗",
+    "Awp0AddToFavoritesDesc": "將選定物件新增到我的最愛清單。",
+    "Awp0RemoveFromFavoritesDesc": "從我的最愛清單中移除選定物件。",
+    "noFavoritesFound": "此處沒有我的最愛",
+    "noFavoritesFoundHint": "要將物件新增到我的最愛，選取物件並使用「新增到我的最愛」指令。",
+    "noRecentsFound": "無最近活動",
+    "noRecentsFoundHint": "目前沒有要顯示的項。",
+    "nothingSelected": "未選定任何物件",
+    "nothingSelectedSWAHint": "選取清單中某項以檢視詳細資訊。"
+}

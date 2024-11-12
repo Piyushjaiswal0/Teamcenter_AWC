@@ -1,0 +1,14 @@
+{
+    "replace": "Nahradit",
+    "upload": "Odeslat",
+    "chooseFromSystem": "Vybrat soubor ze systému",
+    "replaceFileError": "Aktualizujte soubor se stejnou příponou jako předchozí soubor u této položky",
+    "replaceSuccessWithFileName": "Položka \"{0}\" byla nahrazena.",
+    "replaceFailureWithFileName": "Kvůli neplatné příponě souboru není možné přidat soubor importu jako pojmenovanou referenci do datasetu",
+    "replaceNoValidTarget": "\"{0}\" nemá platný soubor k nahrazení.",
+    "replaceFileCommandTitle": "Nahradit soubor",
+    "InvalidSelectedObject": "Byl zadán neplatný soubor datasetu nebo objemu pro generování souboru PLMD. Zkuste to znovu s platným souborem datasetu nebo objemu.",
+    "AsynUploadInProgress": "Právě probíhá asynchronní načítání souboru na svazek Teamcenteru.",
+    "PlatformNotSupported": "Operace asynchronního nahrazení není na této platformě podporována: Probíhá přepínání na synchronní nahrazení",
+    "Awp0ReplaceDatasetDesc": "Nahraďte vybraný soubor novým z vašeho zařízení."
+}

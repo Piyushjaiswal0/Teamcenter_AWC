@@ -1,0 +1,58 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/popupService"
+    ],
+    "actions": {
+        "render": {
+            "method": "AwClearLink",
+            "deps": "js/AwClearLink",
+            "options": {
+                "useMemo": false
+            }
+        },
+        "clearMessages": {
+            "actionType": "JSFunction",
+            "method": "markSubscriptionMessagesRead",
+            "inputData": {
+                "messageObjs": "{{props.prop}}"
+            },
+            "deps": "js/aw.notification.service"
+        },
+        "closePopup": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupEl": "{{ctx.alertPopupId}}"
+            },
+            "deps": "js/popupService"
+        }
+    },
+    "data": {
+        "clearLink": {
+            "displayName": "{{i18n.clear}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "clear",
+            "dispValue": "{{i18n.clear}}"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "closeAlertPopup",
+            "action": "closePopup"
+        }
+    ],
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "i18n": {
+        "clear": [
+            "NotificationMessages"
+        ],
+        "noNotificationMsg": [
+            "NotificationMessages"
+        ]
+    }
+}

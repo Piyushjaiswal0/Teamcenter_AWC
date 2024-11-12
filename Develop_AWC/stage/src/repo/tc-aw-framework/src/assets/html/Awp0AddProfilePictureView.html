@@ -1,0 +1,12 @@
+<aw-command-panel caption="i18n.AddProfilePicture" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section caption="i18n.upload">
+            <aw-file-upload file-change-action="fileChangeAction" type-filter=".png, .gif, .jpg, .jpeg"></aw-file-upload>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button enable-when="conditions.validFile" action="updatePicture" ><aw-i18n>i18n.updateProfilePicture</aw-i18n></aw-button>
+    </aw-panel-footer>
+
+</aw-command-panel>
+

@@ -1,0 +1,7 @@
+<aw-column visible-when="ctx.userSession.props.fnd0LocationCode && ctx.userSession.props.fnd0LocationCode.uiValues[0]!=''">
+    <aw-property-label prop="data.location" visible-when="ctx.userSession.props.fnd0LocationCode && ctx.userSession.props.fnd0LocationCode.uiValues[0]!=''"></aw-property-label>
+    <aw-context-separator token="-" visible-when="ctx.userSession.props.fnd0LocationCode && ctx.userSession.props.fnd0LocationCode.uiValues[0]!=''"></aw-context-separator>
+    <!-- Location link -->
+    <aw-link-with-popup-menu prop="ctx.userSession.props.fnd0LocationCode" dataprovider="data.dataProviders.locationLink" link-popup-menu-id="aw-state-locationCode" visible-when="conditions.showLocationCode"></aw-link-with-popup-menu>
+    <aw-link-with-popup-menu prop="ctx.userSession.props.fnd0LocationCode" dataprovider="data.dataProviders.locationLinkLOV" link-popup-menu-id="aw-state-locationCode" visible-when="conditions.showLocationCodeLOV"></aw-link-with-popup-menu>
+</aw-column>

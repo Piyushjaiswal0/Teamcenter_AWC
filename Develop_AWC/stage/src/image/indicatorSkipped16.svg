@@ -1,0 +1,6 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M15,0H0V15H15V0h0Z" fill="#464646"/>
+  <polyline points="14 1 14 14 1 14 1 1 14 1" fill="#3c91af"/>
+  <polygon points="2.854 11.854 2.146 11.146 5.793 7.5 2.146 3.854 2.854 3.146 7.207 7.5 2.854 11.854" fill="#fff"/>
+  <polygon points="11 3 11 6.793 7.354 3.146 6.646 3.854 10.293 7.5 6.646 11.146 7.354 11.854 11 8.207 11 12 12 12 12 3 11 3" fill="#fff"/>
+</svg>

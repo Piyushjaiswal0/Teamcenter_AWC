@@ -1,0 +1,168 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [],
+    "actions":
+    {
+        "validateTCLOV": {
+            "actionType": "JSFunctionAsync",
+            "method": "validateLOVValueSelections",
+            "inputData": {
+                "lovEntries": "request.selected",
+                "viewProp": "{{ctx.userSession.props.awp0RevRule}}",
+                "operationName": "FakeOperation",
+                "vmo": "{{ctx.userSession}}",
+                "owningObjUid": "",
+                "dataProviderName": "revisionLink"
+            },
+            "deps": "js/lovService"
+        },
+        "updateRevisionRule":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData":
+            {
+                "attributes":
+                [
+                    "awp0RevRule",
+                    "user",
+                    "project",
+                    "group",
+                    "role",
+                    "fnd0LocationCode"
+                ],
+                "objects":
+                [{
+                 "uid": "{{ctx.userSession.uid}}",
+                 "type": "UserSession"
+                }]
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "context.awGlobalRevisionChange"
+                    }
+                ]
+            }
+
+
+        },
+
+        "validateLOVEntry": {
+            "actionType": "JSFunction",
+            "method": "validateLOV",
+            "inputData": {
+               "data":"{{data}}"
+            },
+            "deps": "js/awSearchService"
+        },
+        "resetDataProvider": {
+            "actionType": "JSFunction",
+            "method": "getInitialValuesWrapper",
+            "inputData": {
+                "filterStr": "",
+                "lovPageSize":10000,
+                "viewModelObj": "{{ctx.userSession}}",
+                "viewProp": "{{ctx.userSession.props.awp0RevRule}}",
+                "operationName": "FakeOperation"
+            },
+            "outputData": {
+                "lovDataInfo" : ""
+            },
+            "deps": "js/awSearchService"
+        },
+        "setActiveRevRule": {
+            "actionType": "JSFunction",
+            "method": "setActiveRevRule",
+            "inputData": {
+               "data":"{{data}}"
+            },
+            "outputData": {
+                "isRevRuleChangeValid":""
+            },
+            "deps": "js/awSearchService"
+        },
+        "setIsRevRuleChangeValidToTrue": {
+            "actionType": "JSFunction",
+            "method": "setIsRevRuleChangeValidToTrue",
+            "inputData": {
+               "isRevRuleChangeValid":"{{data.isRevRuleChangeValid}}"
+            },
+            "outputData": {
+                "isRevRuleChangeValid":""
+            },
+            "deps": "js/awSearchService"
+        }
+
+    },
+
+    "data":{
+        "isRevRuleChangeValid": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        }
+    },
+
+    "dataProviders":
+    {
+
+        "revisionLink":
+        {
+            "action":"resetDataProvider",
+            "response": "{{data.lovDataInfo.lovEntries}}",
+            "totalFound": "{{data.totalFound}}",
+            "validateAction": "validateTCLOV"
+        }
+
+    },
+
+    "conditions":
+    {
+        "isRevisionRuleSel":
+        {
+            "expression": "property.propertyName === 'awp0RevRule'"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "aw.revisionRuleChangeEvent",
+            "action": "updateRevisionRule"
+        },
+
+        {
+            "eventId": "awlinkPopup.selected",
+            "condition":"conditions.isRevisionRuleSel",
+            "cacheEventData": true,
+            "action": "validateLOVEntry"
+        },
+
+        {
+            "eventId": "revisionRule.reset",
+            "action": "resetDataProvider"
+        },
+
+        {
+            "eventId": "revisionRule.allowRevRuleChange",
+            "action": "setIsRevRuleChangeValidToTrue"
+        }
+
+    ],
+    "ctxFields": [
+        "userSession.props.awp0RevRule"
+    ],
+    "lifecycleHooks": {
+        "onUpdate": [
+        {
+            "action": "setActiveRevRule",
+            "observers": [
+                "viewModel.data.lovDataInfo.lovEntries"
+            ]
+        }
+        ]
+    }
+}

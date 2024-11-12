@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Ativos digitais",
+    "imagePanelTitle": "Imagens e cores",
+    "updatesSectionTitle": "Atualizações no Teamcenter",
+    "digitalAssetsInUseSectionTitle": "Ativos Digitais em \"{0}\"",
+    "imageInUseSectionTitle": "Imagens e Cores em \"{0}\"",
+    "adobeFile": "Arquivo do Adobe",
+    "typeLabel": "Tipo",
+    "revisionLabel": "Revisão",
+    "quantityLabel": "Quantidade",
+    "expectedLabel": "Esperado",
+    "cmdReplaceDigitalAsset": "Substituir",
+    "showObjectCell": "Abrir",
+    "cmdDeleteDigitalAsset": "Excluir",
+    "adobe_cell_commands_updatesList": "Lista de atualizações de comandos de célula",
+    "adobe_cell_commands_inUseList": "Lista de comandos de célula em uso",
+    "DigitalAssetsPanelDesc": "Visualize os ativos digitais associados à arte final.",
+    "ImagePanelDesc": "Visualize as imagens e cores associadas ao CAD 2D.",
+    "cmdReplaceDigitalAssetDesc": "Substitua o ativo digital aberto no aplicativo Adobe pelo atualizado no Teamcenter.",
+    "cmdDeleteDigitalAssetDesc": "Remova o ativo digital selecionado da arte final.",
+    "showObjectCellDesc": "Abra a seleção."
+}

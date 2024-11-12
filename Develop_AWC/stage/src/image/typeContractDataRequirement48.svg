@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="-2" y1="44" x2="35.999" y2="6" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="3" y1="1" x2="15" y2="13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c8c8"/>
+      <stop offset="0.175" stop-color="#c3c3c3"/>
+      <stop offset="0.457" stop-color="#b5b5b5"/>
+      <stop offset="0.809" stop-color="#9f9f9f"/>
+      <stop offset="1" stop-color="#919191"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="24.501" y1="24.501" x2="47.501" y2="47.501" xlink:href="#Dark_Blue_Grad"/>
+  <rect x="0.5" y="1.5" width="33" height="43" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <polygon points="14.5 13.5 9 8 3.5 13.5 3.5 0.5 14.5 0.5 14.5 13.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <path id="_Path_" data-name="&lt;Path&gt;" d="M38.979,24.5a4.352,4.352,0,0,0,1.269-3.076,4.242,4.242,0,1,0-8.484,0A4.352,4.352,0,0,0,33.033,24.5H24.5v8.484a4.242,4.242,0,1,1,0,5.922V47.5h23v-23Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <line x1="17" y1="21.5" x2="30" y2="21.5" fill="none" stroke="#5a5a5a" stroke-miterlimit="10"/>
+  <line x1="17" y1="37.5" x2="30" y2="37.5" fill="none" stroke="#5a5a5a" stroke-miterlimit="10"/>
+  <line x1="17" y1="29.5" x2="23.999" y2="29.5" fill="none" stroke="#5a5a5a" stroke-miterlimit="10"/>
+  <polyline points="7 37 9.5 39.5 15 33" fill="none" stroke="#5a5a5a" stroke-linejoin="round"/>
+  <polyline points="7 29 9.5 31.5 15 25" fill="none" stroke="#5a5a5a" stroke-linejoin="round"/>
+  <polyline points="7 21 9.5 23.5 15 17" fill="none" stroke="#5a5a5a" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,28 @@
+{
+    "schemaVersion" : "1.0.0",
+    "conditions": {
+        "checkIfOnlySWAIsEmpty": {
+            "expression": "props.subPanelContext.context.searchState.totalFound>0"
+        },
+        "checkIfPWAIsEmpty": {
+            "expression": "!props.subPanelContext.context.searchState.totalFound"
+        },
+        "isShowMyReports":{
+            "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showMyReports'"
+        },
+        "isShowReportBuilderReports":{
+            "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReportBuilderReports'"
+        },
+        "isShowMyDashboard":{
+            "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showMyDashboard'"
+        }
+    },
+    "i18n": {
+        "showMyReportsSwaHint": [
+            "ReportChartMessages"
+        ],
+        "showReportBuilderReportsSwaHint": [
+            "ReportChartMessages"
+        ]
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "Pliki załącznika",
+    "dropHere": "Upuść tutaj",
+    "chooseFile": "Wybierz plik",
+    "removeFileBtnTooltip": "Usuń plik",
+    "failureToAttachFiles": "Nie dodano \"{0}\", ponieważ ten typ pliku jest niedozwolony jako załącznik."
+}

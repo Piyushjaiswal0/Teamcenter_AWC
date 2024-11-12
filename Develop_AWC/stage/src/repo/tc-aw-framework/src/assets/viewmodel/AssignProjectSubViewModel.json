@@ -1,0 +1,48 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-project-selector.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive"
+    ],
+    "actions": {
+        "assignProject": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.projectState}}",
+                "value" : {
+                    "triggerAssign": true
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "projectSearchFilter": {
+            "type": "STRING",
+            "isEditable": "true",
+            "requiredText": "{{i18n.FILTER_TEXT}}"
+        }
+    },
+    "onEvent": [],
+    "conditions": {
+        "isAssignProjectButtonVisible": {
+            "expression": "subPanelContext.projectState.value.selectedProjects.length > 0"
+        }
+    },
+    "i18n": {
+        "searchText": [
+            "UIMessages"
+        ],
+        "assignButtonTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "FILTER_TEXT": [
+            "BaseMessages"
+        ]
+    }
+}

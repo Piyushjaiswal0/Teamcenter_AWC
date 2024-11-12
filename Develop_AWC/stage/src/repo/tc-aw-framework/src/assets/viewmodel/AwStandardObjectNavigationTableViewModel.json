@@ -1,0 +1,448 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "doArrangeEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "arrangeColumns",
+            "inputData": {
+                "declViewModel": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/columnArrangeService"
+        },
+        "sortCriteriaChangeEvent": {
+            "actionType": "JSFunction",
+            "method": "sortCriteriaUpdated",
+            "inputData": {
+                "data": "{{ctx.search.criteria}}"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "resetColumnConfig": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "getOrResetUIColumnConfigs4",
+            "inputData": {
+                "getOrResetUiConfigsIn": [ {
+                    "scope": "LoginUser",
+                    "scopeName": "",
+                    "clientName": "AWClient",
+                    "resetColumnConfig": true,
+                    "columnConfigQueryInfos": [ {
+                        "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                        "operationType": "intersection",
+                        "typeNames": "{{function:getTypeNames}}",
+                        "columnsToExclude": []
+                    } ],
+                    "businessObjects": [
+                        {}
+                    ]
+                } ]
+            },
+            "outputData": {
+                "dataProviders.gridDataProvider.columnConfig": "columnConfigurations[0].columnConfigurations[0]",
+                "dataProviders.gridDataProvider.columnConfig.typesForArrange": "{{function:getTypeNames}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "gridView.plTable.reload"
+                } ]
+            },
+            "deps": "js/tcarrange.service"
+        },
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "gridDataProvider"
+        },
+        "saveColumnConfig": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "saveUIColumnConfigs2",
+            "inputData": {
+                "columnConfigurations": [ {
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "columnConfigId": "{{data.dataProviders.gridDataProvider.columnConfig.columnConfigId}}",
+                    "columns": "{{data.dataProviders.gridDataProvider.newColumns}}",
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                } ]
+            },
+            "outputData": {}
+        },
+        "saveColumnConfigLoadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "attributesToInflate": "{{subPanelContext.provider.context.search.tableViewProperties}}",
+                    "columnFilters": "{{data.columnProviders.clientScopeUI.columnFilters}}",
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.provider.context.search.provider}}",
+                    "searchCriteria": "{{subPanelContext.provider.searchContext.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "searchFilterMap6": "{{subPanelContext.provider.context.search.activeFilterMap}}",
+                    "searchSortCriteria": "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.gridDataProvider.startIndex}}",
+                    "cursor": "{{data.dataProviders.gridDataProvider.cursorObject}}",
+                    "focusObjUid": "{{function:getFocusObjUid}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "operationType": "{{data.eventMap['columnArrange'].operationType}}"
+                },
+                "2": {
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "columnConfigId": "{{data.dataProviders.gridDataProvider.columnConfig.columnConfigId}}",
+                    "columns": "{{data.dataProviders.gridDataProvider.newColumns}}",
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                }
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "dataProviders.gridDataProvider.columnConfig": "{{function:getValidColumnConfig}}",
+                "output": "{{function:processOutput}}",
+                "ctx.search.totalFound": "totalFound",
+                "ctx.search.totalLoaded": "totalLoaded",
+                "ctx.search.filterMap": "searchFilterMap",
+                "ctx.search.filterCategories": "searchFilterCategories",
+                "ctx.search.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.searchFilterCategories": "searchFilterCategories",
+                "ctx.searchResponseInfo.searchFilterMap": "searchFilterMap",
+                "ctx.searchResponseInfo.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.columnConfig": "columnConfig",
+                "ctx.searchResponseInfo.propDescriptors": "propDescriptors",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "attributesToInflate": "{{subPanelContext.provider.context.search.tableViewProperties}}",
+                    "columnFilters": "{{data.columnProviders.clientScopeUI.columnFilters}}",
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.provider.context.search.provider}}",
+                    "searchCriteria": "{{subPanelContext.provider.searchContext.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "searchFilterMap6": "{{subPanelContext.provider.context.search.activeFilterMap}}",
+                    "searchSortCriteria": "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.gridDataProvider.startIndex}}",
+                    "cursor": "{{data.dataProviders.gridDataProvider.cursorObject}}",
+                    "focusObjUid": "{{function:getFocusObjUid}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "operationType": "{{data.dataProviders.gridDataProvider.columnConfig.operationType}}"
+                },
+                "2": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "dataProviders.gridDataProvider.columnConfig": "columnConfig",
+                "ctx.search.totalFound": "totalFound",
+                "ctx.search.totalLoaded": "totalLoaded",
+                "ctx.search.filterMap": "searchFilterMap",
+                "ctx.search.filterCategories": "searchFilterCategories",
+                "ctx.search.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.searchFilterCategories": "searchFilterCategories",
+                "ctx.searchResponseInfo.searchFilterMap": "searchFilterMap",
+                "ctx.searchResponseInfo.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.columnConfig": "columnConfig",
+                "ctx.searchResponseInfo.propDescriptors": "propDescriptors",
+                "output": "{{function:processOutput}}",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "events": {
+                "success": [ {
+                    "name": "aw.tableDataLoaded"
+                } ]
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "loadNextData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "attributesToInflate": "{{subPanelContext.provider.context.search.tableViewProperties}}",
+                    "columnFilters": "{{data.columnProviders.clientScopeUI.columnFilters}}",
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.provider.context.search.provider}}",
+                    "searchCriteria": "{{subPanelContext.provider.searchContext.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "searchFilterMap6": "{{subPanelContext.provider.context.search.activeFilterMap}}",
+                    "searchSortCriteria": "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.gridDataProvider.startIndex}}",
+                    "cursor": "{{data.dataProviders.gridDataProvider.cursorObject}}",
+                    "pagingType": "GetNextPage"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "operationType": "{{data.dataProviders.gridDataProvider.columnConfig.operationType}}"
+                },
+                "2": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "dataProviders.gridDataProvider.columnConfig": "columnConfig",
+                "ctx.search.totalFound": "totalFound",
+                "ctx.search.totalLoaded": "totalLoaded",
+                "ctx.search.filterMap": "searchFilterMap",
+                "ctx.search.filterCategories": "searchFilterCategories",
+                "ctx.search.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.searchFilterCategories": "searchFilterCategories",
+                "ctx.searchResponseInfo.searchFilterMap": "searchFilterMap",
+                "ctx.searchResponseInfo.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.columnConfig": "columnConfig",
+                "ctx.searchResponseInfo.propDescriptors": "propDescriptors",
+                "output": "{{function:processOutput}}",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "events": {
+                "success": [ {
+                    "name": "aw.tableDataLoaded"
+                } ]
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "loadPrevData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "attributesToInflate": "{{subPanelContext.provider.context.search.tableViewProperties}}",
+                    "columnFilters": "{{data.columnProviders.clientScopeUI.columnFilters}}",
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.provider.context.search.provider}}",
+                    "searchCriteria": "{{subPanelContext.provider.searchContext.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "searchFilterMap6": "{{subPanelContext.provider.context.search.activeFilterMap}}",
+                    "searchSortCriteria": "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.gridDataProvider.startIndex}}",
+                    "cursor": "{{data.dataProviders.gridDataProvider.cursorObject}}",
+                    "pagingType": "GetPreviousPage"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}",
+                    "operationType": "{{data.dataProviders.gridDataProvider.columnConfig.operationType}}"
+                },
+                "2": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "dataProviders.gridDataProvider.columnConfig": "columnConfig",
+                "ctx.search.totalFound": "totalFound",
+                "ctx.search.totalLoaded": "totalLoaded",
+                "ctx.search.filterMap": "searchFilterMap",
+                "ctx.search.filterCategories": "searchFilterCategories",
+                "ctx.search.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.searchFilterCategories": "searchFilterCategories",
+                "ctx.searchResponseInfo.searchFilterMap": "searchFilterMap",
+                "ctx.searchResponseInfo.objectsGroupedByProperty": "objectsGroupedByProperty",
+                "ctx.searchResponseInfo.columnConfig": "columnConfig",
+                "ctx.searchResponseInfo.propDescriptors": "propDescriptors",
+                "output": "{{function:processOutput}}",
+                "dataProviders.gridDataProvider.cursorObject": "cursor"
+            },
+            "events": {
+                "success": [ {
+                    "name": "aw.tableDataLoaded"
+                } ]
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "getFilterFacets": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-Finder",
+            "method": "getFilterValues",
+            "inputData": {
+                "filterFacetInput": {
+                    "columnFilters": "{{filterFacetInput.columnFilters}}",
+                    "columnName": "{{filterFacetInput.column.field}}",
+                    "maxToReturn": "{{filterFacetInput.maxToReturn}}",
+                    "providerName": "{{ctx.search.provider}}",
+                    "searchCriteria": "{{subPanelContext.provider.searchContext.criteria}}",
+                    "searchFilterMap": "{{ctx.search.activeFilterMap}}",
+                    "startIndex": "{{filterFacetInput.startIndex}}"
+                }
+            },
+            "headerState": {
+                "unloadObjects": false
+            },
+            "outputData": {
+                "filterFacetResults": "{{json:facetValues}}"
+            }
+        },
+        "plTableClientRefresh": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "gridView.plTable.clientRefresh"
+                } ]
+            }
+        },
+        "startEditForNewVmos": {
+            "actionType": "JSFunction",
+            "method": "startEditForNewVmos",
+            "inputData": {
+                "editContext": "{{data.dataProviders.gridDataProvider.json.editContext}}"
+            },
+            "deps": "js/editEventsService"
+        },
+        "invokeSaveEditsCommand": {
+            "actionType": "Command",
+            "inputData": {
+                "commandId": "Awp0SaveEditsPWA"
+            }
+        },
+        "handleCdmRelatedModifiedEvent": {
+            "actionType": "JSFunction",
+            "method": "handleCdmRelatedModifiedEvent",
+            "inputData": {
+                "eventdata": "{{parameters.eventData}}",
+                "baseSelection": "{{subPanelContext.provider.baseSelection}}",
+                "dataProvider": "{{data.dataProviders.gridDataProvider}}",
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "deps": "js/objectNavigationService"
+        }
+    },
+    "data": {
+        "uid": "{{subPanelContext.provider.baseSelection.uid}}"
+    },
+    "dataProviders": {
+        "gridDataProvider": {
+            "action": "loadData",
+            "nextAction": "loadNextData",
+            "previousAction": "loadPrevData",
+            "editContext": "TABLE_CONTEXT",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectObjectNavigationCellListActionCommands",
+            "filterFacetAction": "getFilterFacets",
+            "filterFacetResults": "{{data.filterFacetResults}}"
+        }
+    },
+    "columnProviders": {
+        "clientScopeUI": {
+            "saveColumnAndLoadAction": "saveColumnConfigLoadData",
+            "saveColumnAction": "saveColumnConfig",
+            "resetColumnAction": "resetColumnConfig",
+            "sortCriteria": "{{ctx.sublocation.sortCriteria}}"
+        }
+    },
+    "grids": {
+        "gridView": {
+            "dataProvider": "gridDataProvider",
+            "columnProvider": "clientScopeUI",
+            "enableArrangeMenu": true,
+            "gridOptions": {
+                "enableGridMenu": true,
+                "isFilteringEnabled": true,
+                "enableExpandAndPaginationInEdit": true
+            }
+        }
+    },
+    "onEvent": [ {
+            "eventId": "columnArrange",
+            "cacheEventData": true,
+            "action": "doArrangeEvent"
+        },
+        {
+            "eventId": "appCtx.update",
+            "criteria": {
+                "name": "Awp0ObjectNavigation"
+            },
+            "action": "sortCriteriaChangeEvent"
+        },
+        {
+            "eventId": "primaryWorkarea.multiSelectAction",
+            "action": "plTableClientRefresh"
+        },
+        {
+            "eventId": "gridDataProvider.startEditForNewVmosRequested",
+            "action": "startEditForNewVmos"
+        },
+        {
+            "eventId": "saveEditsRequested",
+            "action": "invokeSaveEditsCommand"
+        },
+        {
+            "eventId": "cdm.relatedModified",
+            "cacheEventData": true,
+            "action": "handleCdmRelatedModifiedEvent",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        }
+    ],
+    "functions": {
+        "getTypeNames": {
+            "functionName": "getTypeNames",
+            "parameters": [
+                "{{ctx.searchResponseInfo.searchFilterMap}}"
+            ]
+        },
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getValidColumnConfig": {
+            "functionName": "getValidColumnConfig",
+            "parameters": [
+                "{{data.dataProviders.gridDataProvider.columnConfig}}"
+            ]
+        },
+        "processColumnConfig": {
+            "functionName": "processColumnConfig",
+            "parameters": [
+                "intersection",
+                "{{dataProviders.gridDataProvider.columnConfig}}",
+                "{{dataProviders.gridDataProvider.resetColumnConfigs}}"
+            ]
+        },
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}",
+                "{{subPanelContext}}"
+            ]
+        },
+        "getFocusObjUid": {
+            "functionName": "getFocusObjUid",
+            "parameters": [
+                "{{eventData.createdObjects[0].uid}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "handleCdmRelatedModifiedEvent",
+            "observers": [ "subPanelContext.searchState.newlyAddedObjects" ]
+        }
+    }
+}

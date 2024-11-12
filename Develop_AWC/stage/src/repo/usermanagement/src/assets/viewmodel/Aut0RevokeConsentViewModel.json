@@ -1,0 +1,108 @@
+{
+    "schemaVersion" : "1.0.0",
+     "actions":
+     {
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "getObject",
+            "inputData": {
+                "data": "{{ctx.userSession.props.group.dbValues[0]}}"
+            },
+            "outputData": {
+                "isPrivilege": "props.privilege"
+            },
+
+            "deps": "soa/kernel/clientDataModel"
+        },
+         "revokeConsentStatement": {
+             "actionType": "Event",
+             "method": "Event",
+             "inputData": {
+                 "events": [
+                     {
+                         "name": "revokeUserConsentEvent",
+                         "condition": "data.revokeGDPRConsent.dbValue === true"
+                     }
+                 ]
+             }
+         },
+         "revokeGDPR":
+         {
+             "actionType": "JSFunction",
+             "method": "revokeGDPRConsentClick",
+             "inputData":
+             {
+             },
+             "deps": "js/userMgmtService"
+         },
+         "cancelRevoke":
+         {
+             "actionType": "JSFunction",
+             "method": "cancelRevoke",
+             "inputData":
+             {
+                "data": "{{data}}"
+             },
+             "outputData":{
+                "revokeGDPRConsent": ""
+            },
+             "deps": "js/userMgmtService"
+         }
+     },
+     "conditions": {
+         "revokeVisibility": {
+             "expression": "ctx.preferences.TC_Org_AllowRevoke && ctx.preferences.TC_Org_GDPRUserConsent && (ctx.preferences.TC_Org_AllowRevoke[0] === 'true' ) && (ctx.preferences.TC_Org_GDPRUserConsent[0] === 'true')"
+         },
+         "isPrivilegedUser": {
+            "expression": "data.isPrivilege.dbValues[0] === '1'|| ctx.user.uid===subPanelContext.selected.uid"
+        }
+     },
+     "messages": {
+        "revokeConsentMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.revokeConsentConfirmationMessage}}",
+            "navigationOptions": [
+                {
+                    "option": "Cancel",
+                    "text": "{{i18n.cancel}}",
+                    "action": "cancelRevoke"
+                },
+                {
+                    "option": "Delete",
+                    "text": "{{i18n.revoke}}",
+                    "action": "revokeGDPR"
+                }
+            ]
+        }
+    },
+     "data":
+     {
+         "revokeGDPRConsent":
+         {
+             "displayName": "{{i18n.revokeGDPRConsentLabel}}",
+             "type": "BOOLEAN",
+             "isRequired": "false",
+             "isEditable": "true",
+             "dbValue": false,
+             "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+         }
+     },
+     "i18n" :
+     {
+         "RevokeConsentTitle":["UsermanagementMessages"],
+         "revokeGDPRConsentLabel" :["UsermanagementMessages"],
+         "revokeConsentConfirmationMessage" :["UsermanagementMessages"],
+         "cancel" :["UsermanagementMessages"],
+         "revoke" :["UsermanagementMessages"]
+     },
+     "lifecycleHooks": {
+        "onMount": "reveal"
+    },
+    "onEvent": [
+        {
+         "eventId": "revokeUserConsentEvent",
+         "message": "revokeConsentMessage"
+        }
+    ]
+
+ }

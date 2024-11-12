@@ -1,0 +1,97 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [],
+    "actions":
+    {
+        "updateRevisionRule":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData":
+            {
+                "attributes":
+                [
+                    "awp0RevRule",
+                    "user",
+                    "project",
+                    "group",
+                    "role",
+                    "fnd0LocationCode"
+                ],
+                "objects":
+                [{
+                 "uid": "{{ctx.userSession.uid}}",
+                 "type": "UserSession"
+                }]
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "context.awGlobalRevisionChange"
+                    }
+                ]
+            }
+
+
+        },
+
+        "validateLOVEntry": {
+            "actionType": "JSFunction",
+            "method": "validateLOV",
+            "inputData": {
+               "data":"{{data}}"
+            },
+            "deps": "js/awSearchService"
+        }
+
+    },
+
+
+    "dataProviders":
+    {
+
+        "revisionLink":
+        {
+            "dataProviderType": "TcLOV",
+            "lovConfiguration":
+            {
+                "filterStr": "",
+                "lovPageSize":10000,
+                "viewModelObj": "{{ctx.userSession}}",
+                "viewProp": "{{ctx.userSession.props.awp0RevRule}}",
+                "operationName": "FakeOperation"
+            },
+            "totalFound": ""
+        }
+
+    },
+
+    "conditions":
+    {
+        "isRevisionRuleSel":
+        {
+            "expression": "property.propertyName === 'awp0RevRule'"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "aw.revisionRuleChangeEvent",
+            "action": "updateRevisionRule"
+        },
+
+        {
+            "eventId": "awlinkPopup.selected",
+            "condition":"conditions.isRevisionRuleSel",
+            "cacheEventData": true,
+            "action": "validateLOVEntry"
+        }
+
+    ]
+
+
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1=".25" y1="2.75" x2="36.75" y2="39.25" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-6.7501" y1="9.75" x2="15.7625" y2="32.2626" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" data-name="Dark Blue Grad" x1="11.5" y1="7.5" x2="13.5" y2="9.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" data-name="Dark Blue Grad" x1="11.5" y1="12.5" x2="13.5" y2="14.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" data-name="Dark Blue Grad" x1="11.5" y1="17.5" x2="13.5" y2="19.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-5" data-name="Dark Blue Grad" x1="11.5" y1="22.5" x2="13.5" y2="24.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-6" data-name="Dark Blue Grad" x1="11.5" y1="27.5" x2="13.5" y2="29.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-7" data-name="Dark Blue Grad" x1="11.5" y1="32.5003" x2="13.5" y2="34.5003" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-8" data-name="Dark Blue Grad" x1="27.4921" y1="19.7145" x2="32.8496" y2="32.6489" gradientTransform="translate(-6.3936 -2.1429) rotate(-22.5)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-9" data-name="Dark Blue Grad" x1="27.75" y1="24.25" x2="43.25" y2="39.75" xlink:href="#Dark_Blue_Grad"/>
+  </defs>
+  <rect x="2.5" y=".5" width="32" height="41" fill="url(#paper_gradient)" stroke="#147391" stroke-miterlimit="10"/>
+  <polygon points="6.5256 41.4996 2.5 41.5 2.4998 .5 6.4998 .5 6.5256 41.4996" fill="url(#Dark_Blue_Grad)" stroke="#147391" stroke-miterlimit="10"/>
+  <polygon points="34.5254 41.4996 2.4998 41.4996 2.4998 .5 34.4996 .5 34.5254 41.4996" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="11.5" y="7.5" width="2" height="2" fill="url(#Dark_Blue_Grad-2)" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="27" y1="8.5" x2="16" y2="8.5" fill="none" stroke="#5a5a5a"/>
+  <rect x="11.5" y="12.5" width="2" height="2" fill="url(#Dark_Blue_Grad-3)" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="27" y1="13.4999" x2="16" y2="13.4999" fill="none" stroke="#5a5a5a"/>
+  <rect x="11.5" y="17.5" width="2" height="2" fill="url(#Dark_Blue_Grad-4)" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="27" y1="18.4999" x2="16" y2="18.4999" fill="none" stroke="#5a5a5a"/>
+  <rect x="11.5" y="22.5" width="2" height="2" fill="url(#Dark_Blue_Grad-5)" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="27" y1="23.4998" x2="16" y2="23.4998" fill="none" stroke="#5a5a5a"/>
+  <rect x="11.5" y="27.5" width="2" height="2" fill="url(#Dark_Blue_Grad-6)" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="27" y1="28.4997" x2="16" y2="28.4997" fill="none" stroke="#5a5a5a"/>
+  <rect x="11.5" y="32.5003" width="2" height="2" fill="url(#Dark_Blue_Grad-7)" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="27" y1="33.5" x2="16" y2="33.5" fill="none" stroke="#5a5a5a"/>
+  <polygon points="29.6248 5.973 31.4999 3.5 33.3751 5.973 36.4497 5.5502 36.0269 8.6248 38.4999 10.5 36.0269 12.3751 36.4497 15.4497 33.3751 15.027 31.4999 17.5 29.6248 15.027 26.5502 15.4497 26.9729 12.3751 24.4999 10.5 26.9729 8.6248 26.5502 5.5502 29.6248 5.973" fill="url(#Dark_Blue_Grad-8)" stroke="#464646" stroke-linejoin="round"/>
+  <polygon points="47.5 35.5 35.5 47.5 23.5 35.5 27.5 35.5 27.5 24.5 43.5 24.4999 43.5 35.5 47.5 35.5" fill="url(#Dark_Blue_Grad-9)" stroke="#464646" stroke-linejoin="round"/>
+</svg>

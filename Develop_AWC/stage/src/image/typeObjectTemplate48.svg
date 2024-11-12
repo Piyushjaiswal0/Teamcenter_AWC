@@ -1,0 +1,34 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="41.501" x2="42" y2="0.001" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="14.5" y1="21.499" x2="34.5" y2="41.499" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="26.25" y1="3.75" x2="39.25" y2="16.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="32.75" y1="-2.75" x2="45.75" y2="10.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="29.5" y1="47.501" x2="42.5" y2="34.501" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" xlink:href="#paper_gradient"/>
+  <polygon points="29.5 0.499 6.5 0.499 6.5 47.499 42.5 47.499 42.5 13.499 29.5 0.499" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path id="_Path_" data-name="&lt;Path&gt;" d="M27.09,21.5a3.786,3.786,0,0,0,1.1-2.675,3.689,3.689,0,0,0-7.377,0,3.786,3.786,0,0,0,1.1,2.675H14.5v7.377a3.689,3.689,0,1,1,0,5.149V41.5h20v-20H27.09Z" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <polygon points="29.5 13.5 42.5 13.5 29.5 0.5 29.5 13.5" fill="url(#paper_gradient)"/>
+  <polygon points="42.5 13.5 42.5 0.5 29.5 0.5 42.5 13.5" fill="url(#Light_Blue_Grad)"/>
+  <line x1="42.5" y1="13.499" x2="29.5" y2="0.499" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <rect x="29.5" y="0.5" width="13" height="13" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

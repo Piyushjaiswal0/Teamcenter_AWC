@@ -1,0 +1,40 @@
+<aw-panel-header>
+        <aw-widget prop="data.performanceTitle"></aw-widget>
+</aw-panel-header>
+<aw-panel-body>
+    <aw-splitter direction="HORIZONTAL"></aw-splitter>
+    <div class='sw-section'>
+        <aw-widget prop='data.plStatsData.props.browserType'></aw-widget>
+    </div>
+    <div class='sw-section'>
+        <aw-widget prop='data.plStatsData.props.tti'></aw-widget>
+    </div>
+    <div class='sw-section'>
+        <aw-widget prop='data.plStatsData.props.totalNetworkTime'></aw-widget>
+        <aw-layout-slot name="aw_plstats_widgets_slot" context="{data:data,slotKey:'serverTime'}"></aw-layout-slot>
+        <aw-widget prop='data.plStatsData.props.totalSoaRequests'></aw-widget>
+        <aw-widget prop='data.plStatsData.props.totalHttpRequests'></aw-widget>
+        <aw-layout-slot name="aw_plstats_widgets_slot" context="{data:data,slotKey:'requestCount'}"></aw-layout-slot>
+    </div>
+    <div class='sw-section'>
+        <aw-widget prop='data.plStatsData.props.domNodeCount'></aw-widget>
+        <aw-widget prop='data.plStatsData.props.domTreeDepth'></aw-widget>
+    </div>
+    <div class="sw_section">
+        <aw-widget prop='data.plStatsData.props.uniqueComponents'></aw-widget>
+        <aw-widget prop='data.plStatsData.props.componentRenders'></aw-widget>
+    </div>
+    <aw-splitter direction="HORIZONTAL"></aw-splitter>
+    <div class="sw_section">
+        <aw-button class='small' button-type='base' action='initSpeedTest' enable-when="!conditions.isSpeedTestRunning" prop='data.speedTestTitle'><aw-i18n> i18n.speedTestTitle </aw-i18n></aw-button>
+        <aw-widget prop='data.plSpeedTestData.props.connectionStatusValue'></aw-widget>
+        <aw-widget prop='data.plSpeedTestData.props.latency'></aw-widget>
+        <aw-widget prop='data.plSpeedTestData.props.downTime'></aw-widget>
+        <aw-widget prop='data.plSpeedTestData.props.upTime'></aw-widget>
+    </div>
+</aw-panel-body>
+<aw-panel-footer>
+    <div class='sw-column'>
+        <aw-widget prop='data.note'></aw-widget>
+    </div>
+</aw-panel-footer>

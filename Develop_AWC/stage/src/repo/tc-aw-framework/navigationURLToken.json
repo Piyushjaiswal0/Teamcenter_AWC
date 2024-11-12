@@ -1,0 +1,74 @@
+[
+  {
+    "conditions": {
+      "$and": [
+        {
+          "modelType.typeHierarchyArray": {
+            "$in": [
+              "ImanFile"
+            ]
+          }
+        }
+      ]
+    },
+    "navigations": {
+      "navigateTo": "downloadFile",
+      "navigationParams": {
+        "uid": {
+          "$adapt": "{{navContext.vmo}}",
+          "path": "uid"
+        }
+      },
+      "navigateIn": "newTab"
+    }
+  },
+  {
+    "conditions": {
+      "$and": [
+        {
+          "modelType.typeHierarchyArray": {
+            "$in": [
+              "Tie0SchemaMap"
+            ]
+          }
+        }
+      ]
+    },
+    "navigations": {
+      "navigateTo": "schemaMapProject",
+      "navigationParams": {
+        "prj_uid": {
+          "$adapt": "{{navContext.vmo}}",
+          "path": "uid"
+        },
+        "prj_name": {
+          "$adapt": "{{navContext.vmo}}",
+          "path": "cellHeader1"
+        }
+      }
+    }
+  },
+  {
+    "conditions": {
+      "$and": [
+        {
+          "modelType.typeHierarchyArray": {
+            "$notin": [
+              "ImanFile",
+              "Tie0SchemaMap"
+            ]
+          }
+        }
+      ]
+    },
+    "navigations": {
+      "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+      "navigationParams": {
+        "uid": {
+          "$adapt": "{{navContext.vmo}}",
+          "path": "uid"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="2.086" y1="5.086" x2="43.5" y2="46.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="15.149" y1="19.256" x2="32.87" y2="36.977" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="22.232" y1="26.232" x2="25.768" y2="29.768" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <path d="M1.5,43.5h45v-33h-27L16.094,5.391A2,2,0,0,0,14.43,4.5H3.5a2,2,0,0,0-2,2Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <path d="M16.647,38.294,19.5,35.5h9l2.853,2.794A12.949,12.949,0,0,0,36.5,28.007a12.5,12.5,0,1,0-25,.089A12.778,12.778,0,0,0,16.647,38.294Z" stroke="#6e6e6e" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="22" y1="26" x2="18.5" y2="22.5" fill="none" stroke="#147391"/>
+  <circle cx="24" cy="28" r="2.5" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+</svg>

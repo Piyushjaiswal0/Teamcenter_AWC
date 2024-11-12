@@ -1,0 +1,7 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+	<circle class="aw-theme-iconFilledBackground" fill="#FFFFFF" cx="12" cy="12" r="12"/>
+	<path class="aw-theme-iconHomeOutline" fill="#464646" d="M12,23C5.9,23,1,18.1,1,12C1,5.9,5.9,1,12,1c6.1,0,11,4.9,11,11C23,18.1,18.1,23,12,23z M12,2
+		C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10c5.5,0,10-4.5,10-10C22,6.5,17.5,2,12,2z"/>
+<polygon class="aw-theme-iconHomeOutline" fill="#464646" points="16,8 16,15.3 7.9,7.1 7.1,7.9 15.3,16 8,16 8,17 17,17 17,8 "/>
+</svg>

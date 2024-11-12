@@ -1,0 +1,61 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "applyBulkFilters": {
+            "actionType": "JSFunction",
+            "method": "applyBulkFilters",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.searchState}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "toggleAutoUpdate": {
+            "actionType": "JSFunction",
+            "method": "updateAutoUpdateVMPropAfterSettingPreference",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "autoApplyFiltersVMPropBoolValue": "{{data.autoApply.dbValue}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "data": {
+        "autoApply": {
+            "displayName": "{{i18n.AWC_Search_Auto_Update_Filters}}",
+            "type": "BOOLEAN",
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE",
+            "isRequired": false,
+            "isEditable": true,
+            "dbValue": "{{subPanelContext.searchState.autoApplyFilters}}"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "functions": {
+    },
+    "lifecycleHooks": {
+    },
+    "onEvent": [
+    ],
+    "messages": {
+    },
+    "conditions": {
+        "showApplyAllButton": {
+            "expression": "!subPanelContext.searchState.autoApplyFilters && subPanelContext.searchState.bulkFiltering && (subPanelContext.searchState.positivePendingFilters && subPanelContext.searchState.positivePendingFilters.length > 0 || subPanelContext.searchState.negativePendingFilters && subPanelContext.searchState.negativePendingFilters.length > 0 || subPanelContext.searchState.additionalSearchString && subPanelContext.searchState.additionalSearchString.length > 0)"
+        },
+        "showAutoUpdateToggleButton": {
+            "expression": "subPanelContext.searchState.bulkFiltering && subPanelContext.searchState.showAutoUpdateFilteringOption"
+        },
+        "populatedSearchString": {
+            "expression": "subPanelContext.searchState.criteria && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.criteria.searchString.length > 0"
+        }
+    },
+    "i18n": {
+        "ApplyAll": [ "ClassificationPanelMessages" ],
+        "AWC_Search_Auto_Update_Filters": [ "SearchMessages" ]
+    }
+}

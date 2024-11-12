@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" no es un archivo válido aplicable al conjunto de objetos \"{1}\". No aparecerá el objeto creado recientemente en el conjunto de objetos.",
+    "addedObjectIsNotUnique": "No se guardó el objeto \"{1}-{0}\" porque el \"Id = {1}\" no es único.",
+    "fileSizeException": "\"{0}\" no fue agregado. El tamaño del archivo sobrepasa el límite máximo.",
+    "userNotAuthorized": "\"{0}\" no fue agregado. El usuario actual no está autorizado.",
+    "addACopy": "Agregar una copia",
+    "cancel": "Cancelar",
+    "sourceObject": "Fuente",
+    "chooseFromSystem": "Seleccionar un archivo del sistema",
+    "chooseFromDrive": "Seleccionar de la unidad",
+    "fileNameExceedsLengthLimit": "\"{0}\" no fue agregado. La longitud del nombre del archivo sobrepasa el límite máximo."
+}

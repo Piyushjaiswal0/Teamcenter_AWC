@@ -1,0 +1,6 @@
+<aw-panel-section caption="{{i18n.ProfilePicture}}" collapsed="false" anchor="{{data.addProfilePictureCommands}}">
+    <aw-panel-body>
+        <aw-image source="subPanelContext.selected.thumbnailURL" exist-when="subPanelContext.selected.thumbnailURL !== '' "  ></aw-image>
+        <aw-avatar size="xlarge" initials="{{subPanelContext.selected.cellHeader1}}" exist-when="ctx.user.hasThumbnail === false && subPanelContext.selected.thumbnailURL === '' "></aw-avatar>
+   </aw-panel-body>
+</aw-panel-section>

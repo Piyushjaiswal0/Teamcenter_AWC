@@ -1,0 +1,102 @@
+// Copyright (c) 2023 Siemens
+
+.aw-arrange-loadingLabel {
+    display: inline;
+    font-weight: 600;
+    font-size: $fontsize_small;
+    height: 11px;
+    margin-right: 4px;
+}
+
+.aw-arrange-arrangePropertiesCommands {
+    margin-left: auto;
+}
+
+.aw-arrange-arrangeProperties>.aw-layout-panelBody {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+.aw-arrange-propertiesContainer {
+    flex: 1 1 auto;
+    align-self: auto;
+}
+
+.aw-arrange-contributionContainer {
+    flex: 0 0 auto;
+    align-self: auto;
+}
+
+.aw-arrange-popupItem {
+    width: 145px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.aw-arrange-balloon {
+    .aw-base-scrollPanel {
+        max-height: 227px;
+    }
+
+    .aw-widgets-noResultsLabel {
+        justify-content: center;
+    }
+}
+
+.aw-arrange-noSelect {
+    user-select: none;
+}
+
+.aw-arrange-columnConfigLabel.sw-property {
+    display: inline-block;
+    word-break: break-all;
+    margin-left: 1rem;
+}
+
+/*Needed for arrange panel applied column config name to be displayed without unnecessary text wrapping;
+achieves same style as in 5.2 and prior releases*/
+.aw-arrange-columnConfigLabel.sw-property.sw-row>.sw-property-val,
+.aw-arrange-newColumnConfigName>.sw-property {
+    width: 100%;
+}
+
+/*Needed for arrange panel deleteNamedColumnConfig command styling parity with aw5.2. Fixes issue where
+deleteNamedColumnConfig command expands the list item unecessarily and is not properly aligned.*/
+.aw-arrange-popupItem+.aw-widgets-cellListCellCommands>.aw-widgets-cellCommandsContainer {
+    .aw-command {
+        max-height: 15px;
+
+        .aw-commands-commandIconButton.aw-commandId-deleteNamedColumnConfig {
+            max-height: 14px;
+            padding: 0 0 6px 6px;
+
+            .aw-commandIcon {
+                float: right;
+                margin-top: -2px;
+            }
+        }
+    }
+}
+
+.aw-arrange-noSelect .aw-panelSection {
+    width: 100%;
+
+    >.sw-section-content {
+        height: calc(100% - 32px);
+
+        // height calc above is ignored due to flex bug in older chromium(qt)
+        // QT doesn't support list-style-type which makes this max-height property QT-specific
+        @supports not(list-style-type: disclosure-closed) {
+            // this can me removed once QT is on a newer version of chromium
+            max-height: 40vh;
+        }
+
+        >.sw-section {
+            height: 100%;
+        }
+    }
+}

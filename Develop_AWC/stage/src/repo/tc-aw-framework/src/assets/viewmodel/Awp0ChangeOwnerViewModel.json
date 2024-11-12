@@ -1,0 +1,162 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "addUserPanelState": {
+            "initialValues": {
+                "provider": "Awp0PeoplePickerProvider",
+                "selectionModelMode": "single",
+                "criteria": {
+                    "providerContentType": "GroupMember",
+                    "searchString": "*",
+                    "selectedObject": "",
+                    "searchSubGroup": "true",
+                    "group": "",
+                    "role": "",
+                    "participantType": ""
+                },
+                "selectedUsers": "",
+                "isAddButtonNeeded": false
+            },
+            "meta": {
+                "selectedUsers": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        }
+    },
+    "actions": {
+        "changeOwner": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "changeOwnership",
+            "inputData": {
+                "input": "{{function:getChangeOwnerInput}}"
+            },
+            "outputData": {
+                "changeOwnershipPartialErrors": "partialErrors"
+            },
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closePanelDialog"
+                    }
+                ],
+                "failure": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closePanelDialog"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                    "condition": "(ctx.mselected && ctx.mselected.length === 1)",
+                    "message": "singleObjectChangeOwnershipSuccess"
+                }, {
+                    "condition": "(ctx.mselected && ctx.mselected.length > 1)",
+                    "message": "multipleObjectsChangeOwnershipSuccess"
+                } ],
+                "failure": [ {
+                        "condition": "(ctx.mselected && ctx.mselected.length === 1 && data.changeOwnershipPartialErrors )",
+                        "message": "changeOwnershipForObjectFailure"
+                    },
+                    {
+                        "condition": "(ctx.mselected && ctx.mselected.length > 1 && data.changeOwnershipPartialErrors )",
+                        "message": "partialObjectsChangeOwnershipFailure"
+                    }
+                ]
+            },
+            "deps": "js/tcChangeOwnerService"
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "messages": {
+        "singleObjectChangeOwnershipSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.singleObjectChangeOwnershipSuccess}}",
+            "messageTextParams": [ "{{ctx.mselected[0].props.object_string.uiValues[0]}}" ]
+        },
+        "multipleObjectsChangeOwnershipSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.multipleObjectsChangeOwnershipSuccess}}",
+            "messageTextParams": [
+                "{{ctx.mselected.length}}",
+                "{{ctx.mselected.length}}"
+            ]
+        },
+        "partialObjectsChangeOwnershipFailure": {
+            "expression": {
+                "successCount": "ctx.mselected.length - data.changeOwnershipPartialErrors.length"
+            },
+            "messageType": "ERROR",
+            "messageKey": "changeOwnerNotyError",
+            "messageTextParams": [
+                "{{expression.successCount}}",
+                "{{ctx.mselected.length}}"
+            ],
+            "messageData": {
+                "partialErrors": "{{data.changeOwnershipPartialErrors}}"
+            },
+            "message": {
+                "messageParam": {
+                    "name": "multipleObjectsChangeOwnershipSuccess"
+                },
+                "partialError": {
+                    "name": "changeOwnershipForObjectFailure"
+                }
+            }
+        },
+        "changeOwnershipForObjectFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.changeOwnershipForObjectFailure}}",
+            "messageTextParams": [ "{{ctx.mselected[0].props.object_string.uiValues[0]}}" ]
+        }
+    },
+    "conditions": {
+        "isValidToPerformChangeOwnership": {
+            "expression": "addUserPanelState.selectedUsers.length === 1"
+        }
+    },
+    "lifecycleHooks": {},
+    "functions": {
+        "getChangeOwnerInput": {
+            "functionName": "getChangeOwnerInput",
+            "parameters": [
+                "{{data}}",
+                "{{ctx.mselected}}",
+                "{{data.addUserPanelState.selectedUsers[0]}}"
+            ]
+        }
+    },
+    "i18n": {
+        "user": [ "Awp0ChangeOwnerMessages" ],
+        "change": [ "Awp0ChangeOwnerMessages" ],
+        "Awp0ChangeOwner": [ "Awp0ChangeOwnerMessages" ],
+        "singleObjectChangeOwnershipSuccess": [ "Awp0ChangeOwnerMessages" ],
+        "multipleObjectsChangeOwnershipSuccess": [ "Awp0ChangeOwnerMessages" ],
+        "changeOwnershipForObjectFailure": [ "Awp0ChangeOwnerMessages" ]
+    },
+    "onEvent": [ {
+        "eventId": "closePanelDialog",
+        "action": "closePanelDialog"
+    } ]
+}

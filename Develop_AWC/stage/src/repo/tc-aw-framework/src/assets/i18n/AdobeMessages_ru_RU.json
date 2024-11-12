@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Цифровые активы",
+    "imagePanelTitle": "Изображения и цвета",
+    "updatesSectionTitle": "Обновляется в Teamcenter",
+    "digitalAssetsInUseSectionTitle": "Цифровые активы в \"{0}\"",
+    "imageInUseSectionTitle": "Изображения и цвета в \"{0}\"",
+    "adobeFile": "Файл Adobe",
+    "typeLabel": "Тип",
+    "revisionLabel": "Ревизия",
+    "quantityLabel": "Количество",
+    "expectedLabel": "Ожидаемое",
+    "cmdReplaceDigitalAsset": "Заменить",
+    "showObjectCell": "Открыть",
+    "cmdDeleteDigitalAsset": "Удалить",
+    "adobe_cell_commands_updatesList": "Команды ячейки Список обновлений",
+    "adobe_cell_commands_inUseList": "Команды ячейки Список используемых объектов",
+    "DigitalAssetsPanelDesc": "Просмотрите цифровые активы, связанные с декорациями.",
+    "ImagePanelDesc": "Просмотреть изображения и цвета, связанные с 2D CAD.",
+    "cmdReplaceDigitalAssetDesc": "Заменить цифровой актив, открытый в приложении Adobe, на актив, обновленный в Teamcenter.",
+    "cmdDeleteDigitalAssetDesc": "Удалите выбранный цифровой актив из декорации.",
+    "showObjectCellDesc": "Откройте выбранные объекты."
+}

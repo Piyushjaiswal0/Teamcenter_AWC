@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="22.404" y1="5.697" x2="39.689" y2="22.982" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="26.75" y1="27.25" x2="35.25" y2="35.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="12.559" y1="25.369" x2="33.84" y2="46.651" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.228" stop-color="#fafafa"/>
+      <stop offset="0.488" stop-color="#ededed"/>
+      <stop offset="0.762" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+  <path d="M35,27.67c0-2.847,3.031-6.971,3.031-6.971A14.22,14.22,0,0,0,41.5,11.831a10.5,10.5,0,0,0-21,0,14.229,14.229,0,0,0,3.479,8.882l-.006.007s3.065,3.955,3.065,6.8" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <polygon points="35.5 27.5 26.5 27.5 26.5 35.5 28.305 35.5 29.848 37.5 32.23 37.5 33.772 35.5 35.5 35.5 35.5 27.5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M33.838,36.832,36.9,35.441a3.864,3.864,0,0,0,.521-.286l4.47-2.929c2.849-1.6,4.573,2.407,2.047,4.272a30.963,30.963,0,0,1-4.915,3.2c-7.476,3.429-7.421,3.452-11.642,3.452A30.8,30.8,0,0,1,14.72,40.276c-1.716-.758-5.012.467-9.012,1.478a2.387,2.387,0,0,1-2.887-1.66c-.116-.415-.359-1.483-.585-2.5a2.679,2.679,0,0,1,1.718-3.2,60.4,60.4,0,0,0,6.115-1.663c3.415-1.288,6.046-2.127,11.2-.27.154.056,3.514,1.7,4.4,2.148a2.334,2.334,0,0,0,.737.226l5.7.768c2.916.471,1.765,4.81-1.339,4.538l-5.3-.723a5.521,5.521,0,0,1-1.642-.493l-4.2-2.017" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_2)"/>
+</svg>

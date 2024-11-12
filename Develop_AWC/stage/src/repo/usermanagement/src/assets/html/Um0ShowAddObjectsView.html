@@ -1,0 +1,12 @@
+<aw-command-panel caption="i18n.AddTitle">
+        <div class="aw-layout-subPanelContent h-12">
+            <div class='aw-xrt-tabsContainer aw-create-tabsContainer'>
+                <aw-tab-container tab-container-model="data.tabModels" exist-when="data.tabModels" callback="data.tabApiCallback" tab-set-id='SecondaryWorkAreaNewTab'>
+                    <aw-tab tab-model='tab' aw-repeat='tab: data.tabModels'></aw-tab>
+                </aw-tab-container>
+            </div>
+            <div class='aw-layout-flexColumn'>
+                <aw-include name="{{data.activeTab.view}}" exist-when="data.activeTab" sub-panel-context="{ ...subPanelContext }"></aw-include>
+            </div>
+        </div>
+</aw-command-panel>

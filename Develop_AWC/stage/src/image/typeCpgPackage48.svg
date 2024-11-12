@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="0.5" y1="24" x2="47.5" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+  <polygon points="17.5 12.5 4.5 12.5 0.5 14.5 0.5 34.5 4.5 36.5 4.5 44.5 17.357 44.5 21.5 44.5 24.5 38.5 24.5 44.5 38.5 44.5 38.5 38.633 42.5 44.5 47.5 44.5 47.5 6.5 42.5 6.5 38.5 11.5 38.5 3.5 24.5 3.5 24.5 11.5 21.5 6.5 17.5 6.5 17.5 12.5" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+  <line x1="5" y1="36.5" x2="47" y2="36.5" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-dasharray="1 1"/>
+  <line x1="19" y1="12.5" x2="47" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-dasharray="1 1"/>
+  <line x1="17.5" y1="14" x2="17.5" y2="44" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-dasharray="1 1"/>
+  <line x1="4.5" y1="13" x2="4.5" y2="36" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-dasharray="1 1"/>
+  <line x1="24.5" y1="13" x2="24.5" y2="37" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-dasharray="1 1"/>
+  <line x1="38.5" y1="13" x2="38.5" y2="37" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-dasharray="1 1"/>
+</svg>

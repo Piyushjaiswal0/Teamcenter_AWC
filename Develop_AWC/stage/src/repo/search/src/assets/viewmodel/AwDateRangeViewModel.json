@@ -1,0 +1,80 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "startValue": {
+            "displayName": "",
+            "type": "DATE",
+            "isRequired": "false",
+            "isEditable": "true",
+            "requiredText": "",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "endValue": {
+            "displayName": "",
+            "type": "DATE",
+            "isRequired": "false",
+            "isEditable": "true",
+            "requiredText": "",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awDateRangeRenderFunction",
+            "deps": "js/AwDateRangeService"
+        },
+        "updateDefaultDateRangeValues": {
+            "actionType": "JSFunction",
+            "method": "updateDefaultDateRangeValues",
+            "inputData": {
+                "defaultStartValue": "{{props.defaultStartValue}}",
+                "startValue": "{{data.startValue}}",
+                "defaultEndValue": "{{props.defaultEndValue}}",
+                "endValue": "{{data.endValue}}"
+            },
+            "outputData": {
+                "startValue": "startValue",
+                "endValue": "endValue"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "i18n": {
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "updateDefaultDateRangeValues",
+        "onUpdate": [ {
+            "action": "updateDefaultDateRangeValues",
+            "observers": [ "props.defaultStartValue", "props.defaultEndValue" ]
+        } ]
+    },
+    "props": {
+        "dateRangeAction": {
+            "type": "object"
+        },
+        "iconId": {
+            "type": "object"
+        },
+        "iconClass": {
+            "type": "object"
+        },
+        "separatorClass": {
+            "type": "object"
+        },
+        "defaultStartValue": {
+            "type": "object"
+        },
+        "defaultEndValue": {
+            "type": "object"
+        },
+        "dateBoxClass": {
+            "type": "object"
+        }
+    },
+    "messages": {},
+    "conditions": {}
+}

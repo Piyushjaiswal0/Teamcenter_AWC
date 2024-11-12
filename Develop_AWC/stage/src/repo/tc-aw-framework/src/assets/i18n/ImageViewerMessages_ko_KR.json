@@ -1,0 +1,6 @@
+{
+    "rotateClockwise": "시계 방향으로 회전",
+    "rotateCounterclockwise": "시계 반대 방향으로 회전",
+    "rotateCWDesc": "파일을 시계 방향으로 90° 회전합니다.",
+    "rotateCCWDesc": "파일을 반시계 방향으로 90° 회전합니다."
+}

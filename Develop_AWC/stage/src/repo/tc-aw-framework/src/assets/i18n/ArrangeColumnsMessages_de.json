@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Anordnen",
+    "arrangeButtonTitle": "Anordnen",
+    "arrangeAdminTitle": "Administration",
+    "arrangeNoColumnConfigs": "Keine gespeicherten Anordnungen",
+    "arrangeConfigNameTitle": "Anordnung",
+    "arrangeNewConfigNameTitle": "Name",
+    "arrangeNewConfigNameTitleRequired": "Anordnung benennen",
+    "arrangeNewConfigTitle": "Als neue Anordnung speichern",
+    "arrangeAndSaveButtonTitle": "Speichern und anordnen",
+    "arrangeAndCreateButtonTitle": "Speichern und anordnen",
+    "defaultNewColumnConfigName": "Neue Spaltenanordnung",
+    "availableColumnsTitle": "Verfügbare Spalten",
+    "tableColumnsTitle": "Angezeigte Spalten",
+    "box1Title": "Beispiel für Active Workspace-Befehl mit Texthinweis-Popup",
+    "seeMorePropertiesTitle": "Vollständige Datenbank anzeigen..."
+}

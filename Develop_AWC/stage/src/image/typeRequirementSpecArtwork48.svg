@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-4.75" y1="38.25" x2="32.25" y2="1.25" gradientTransform="translate(0 44) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2323" stop-color="#fafafa"/>
+      <stop offset=".4964" stop-color="#ececec"/>
+      <stop offset=".775" stop-color="#d5d5d5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="18.75" y1="40.75" x2="29.75" y2="29.75" gradientTransform="translate(0 44) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="7.5" y1="16.5" x2="25.4999" y2="34.4999" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="18.5" y1="22.5" x2="45.5" y2="49.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset=".2214" stop-color="#c6e2e8"/>
+      <stop offset=".5419" stop-color="#b2d7e0"/>
+      <stop offset=".9212" stop-color="#93c7d4"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" data-name="New Gradient Swatch 1" x1="21.5" y1="33.5" x2="33.5" y2="33.5" xlink:href="#New_Gradient_Swatch_1"/>
+  </defs>
+  <polygon points="21.5 .5 .5 .5 .5 42.5 32.5 42.5 32.5 11.5 21.5 .5" fill="url(#linear-gradient)" stroke="#464646" stroke-miterlimit="10"/>
+  <polygon points="21.5 .5 21.5 11.5 32.5 11.5 21.5 .5" fill="url(#paper_gradient)" stroke="#464646" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="m18.8309,16.5001c.6119-.6022.9929-1.4811.9929-2.4074,0-1.8335-1.4863-3.3198-3.3198-3.3198s-3.3198,1.4863-3.3198,3.3198c0,.9263.381,1.8053.9929,2.4074h-6.677s0,6.6397,0,6.6397c.6028-.6171,1.4416-1.0026,2.3724-1.0026,1.8335,0,3.3198,1.4863,3.3198,3.3198s-1.4863,3.3198-3.3198,3.3198c-.9309,0-1.7697-.3855-2.3724-1.0026v6.7258h17.9999v-18s-6.6689.0001-6.6689.0001Z" fill="url(#Dark_Blue_Grad)" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="16.5" y="24.5" width="31" height="23" fill="url(#New_Gradient_Swatch_1)" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="45.5 39.5 31.5 39.5 31.5 45.5208" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="45.5" y1="42.5" x2="31.5" y2="42.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="36.5" y1="40" x2="36.5" y2="45.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="18.5" y="26.5" width="27" height="19" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <g>
+    <rect x="21.5" y="29.5" width="12" height="8" fill="url(#New_Gradient_Swatch_1-2)" stroke="#147391" stroke-miterlimit="10"/>
+    <g>
+      <path d="m23.9707,32.8333c.585,0,1.0587-.4481,1.0587-1.0002s-.4737-.9998-1.0587-.9998-1.059.4478-1.059.9998.4742,1.0002,1.059,1.0002Z" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <polygon points="22.2059 37.5 27.1471 32.8333 28.5588 34.1667 31.3824 31.5 33.5 33.5 33.5 37.5 22.2059 37.5" fill="#969696" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+  </g>
+  <rect x="21.5" y="39.5" width="8" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="35.5" y="29.5" width="7" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="35.5" y="34.5" width="7" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

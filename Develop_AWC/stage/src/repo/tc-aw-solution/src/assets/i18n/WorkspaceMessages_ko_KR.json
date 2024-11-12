@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "기본값",
+    "tcAuthorWorkspaceName": "작성자",
+    "tcConsumerWorkspaceName": "소비자",
+    "tcActiveAdminWorkspaceName": "활성 관리",
+    "tcActiveArchitectWorkspaceName": "활성 아키텍트",
+    "mbmWorkspaceName":"MBOM 관리자"
+}

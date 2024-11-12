@@ -1,0 +1,67 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awFavoriteRenderFunction",
+            "deps": "js/AwFavoriteService"
+        },
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "getFavoriteProvider"
+        },
+        "getFavoritesData": {
+            "actionType": "JSFunctionAsync",
+            "method": "getFavorites",
+            "deps": "js/AwFavoriteService",
+            "inputData": {
+                "filterTypes": "{{props.filterTypes}}",
+                "isIncludeSubTypes": "{{props.isIncludeSubTypes}}"
+            },
+            "outputData": {
+                "totalFound": "favResultLength",
+                "searchResults": "favResults"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "reveal",
+        "onUpdate": [ {
+            "action": "reveal",
+            "observers": [ "props.filterTypes" ]
+        } ]
+    },
+    "dataProviders": {
+        "getFavoriteProvider": {
+            "action": "getFavoritesData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}",
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "i18n": {
+        "favoritesTitle": [
+            "ZeroCompileCommandBaseMessages"
+        ]
+    },
+    "props": {
+        "filter-types": {
+            "type": "string"
+        },
+        "selection-mode": {
+            "type": "string"
+        },
+        "is-include-sub-types": {
+            "type": "string"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="2.086" y1="5.086" x2="43.5" y2="46.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="33.777" cy="27.54" r="4.289" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7ebacc"/>
+      <stop offset="0.195" stop-color="#64a8bd"/>
+      <stop offset="0.554" stop-color="#398ba5"/>
+      <stop offset="0.835" stop-color="#1e7a97"/>
+      <stop offset="1" stop-color="#147391"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="26.288" cy="34.957" r="6.005" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="17.544" cy="24.165" r="6.863" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="18.248" cy="-57.653" r="5.719" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-5" cx="11.582" cy="-37.653" r="5.719" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+  <path d="M1.5,43.5h45v-33h-27L16.094,5.391A2,2,0,0,0,14.43,4.5H3.5a2,2,0,0,0-2,2Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <polyline points="19.5 17 19.5 26.5 13.5 34.5" fill="none" stroke="#5a5a5a" stroke-linejoin="round"/>
+  <polyline points="19.5 26.5 28 37 35 29" fill="none" stroke="#5a5a5a" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="35" cy="29" r="2.5" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient)"/>
+  <circle cx="28" cy="37" r="3.5" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-2)"/>
+  <circle cx="19.5" cy="26.5" r="4" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-3)"/>
+  <circle cx="19.5" cy="16.5" r="3" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-4)"/>
+  <circle cx="13.5" cy="34.5" r="3" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-5)"/>
+</svg>

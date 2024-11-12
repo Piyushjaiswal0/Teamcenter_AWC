@@ -1,0 +1,42 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="1.2071" y1="7.8118" x2="30.2071" y2="36.8118" gradientTransform="translate(3.7403 -4.796)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e9e9e9"/>
+      <stop offset="0.2032" stop-color="#e2e2e2"/>
+      <stop offset="0.7554" stop-color="#cfcfcf"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2" data-name="front -45 2" x1="6.1618" y1="4.0976" x2="33.233" y2="31.1688" gradientTransform="translate(5.579 -4.7183) rotate(15.8863)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="0.5" stop-color="#c9c9c9"/>
+      <stop offset="0.6282" stop-color="#c4c4c4"/>
+      <stop offset="0.7762" stop-color="#b7b7b7"/>
+      <stop offset="0.9335" stop-color="#a0a0a0"/>
+      <stop offset="0.99" stop-color="#969696"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="4.1787" y1="22.0722" x2="33.1787" y2="51.0722" gradientTransform="translate(6.2914 -13.5621)" xlink:href="#linear-gradient"/>
+    <linearGradient id="front_-45_2-2" x1="11.0139" y1="8.9632" x2="39.309" y2="37.2582" gradientTransform="translate(3.4809 -3.293) rotate(8.0426)" xlink:href="#front_-45_2"/>
+    <linearGradient id="linear-gradient-3" x1="16" y1="16" x2="45" y2="45" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="front_-45_2-3" x1="26" y1="33" x2="41.5" y2="48.5" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#front_-45_2"/>
+    <linearGradient id="New_Gradient_Swatch_3" data-name="New Gradient Swatch 3" x1="24.2664" y1="46.9414" x2="28.9938" y2="51.6688" gradientTransform="translate(3.827 -6.8624) rotate(5.0648)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0b0b0"/>
+      <stop offset="1" stop-color="#7e7e7e"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2-4" x1="30.5" y1="37.8333" x2="33.1667" y2="40.5" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#front_-45_2"/>
+    <linearGradient id="Dark_Blue_Grad_3" data-name="Dark Blue Grad 3" x1="39.0481" y1="29.2852" x2="41.7148" y2="31.9519" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c6c6c6"/>
+      <stop offset="0.1774" stop-color="#c1c1c1"/>
+      <stop offset="0.4638" stop-color="#b3b3b3"/>
+      <stop offset="0.8215" stop-color="#9c9c9c"/>
+      <stop offset="1" stop-color="#8f8f8f"/>
+    </linearGradient>
+    <rect x="3.4474" y="4.5158" width="32" height="26" transform="translate(-4.0518 5.9923) rotate(-15.8863)" fill="url(#linear-gradient)"/>
+    <rect x="3.6974" y="4.6332" width="32" height="26" transform="translate(-4.0744 6.0652) rotate(-15.8863)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45_2)"/>
+    <rect x="8.9701" y="10.0101" width="32" height="26" transform="translate(-2.9737 3.7199) rotate(-8.0426)" fill="url(#linear-gradient-2)"/>
+    <rect x="9.1615" y="10.1107" width="32" height="26" transform="translate(-2.9859 3.7477) rotate(-8.0426)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45_2-2)"/>
+      <rect x="14.5" y="17.5" width="32" height="26" fill="url(#linear-gradient-3)"/>
+        <path d="M22.5005,29.5a4,4,0,1,0-4-4.001A4,4,0,0,0,22.5005,29.5Z" fill="#ffffff" stroke="#8f8f8f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <polygon points="15.5 43.5 29.5 29.5 32.5 32.5 39.5 25.5 46.5 32.5 46.5 43.5 15.5 43.5" stroke="#6f6f6f" stroke-linecap="round" stroke-miterlimit="10" fill="url(#front_-45_2-3)"/>
+      <rect x="14.5" y="17.5" width="32" height="26" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+      <path d="M28.8649,39.4443a5.0168,5.0168,0,0,0-4.7375,3.2395A5.9635,5.9635,0,0,1,20.0626,46.61s9.94,3.8576,11.48-4.49" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_3)"/>
+      <polygon points="31.543 42.12 28.833 39.5 32.167 36.167 34.833 38.833 31.543 42.12" stroke="#464646" stroke-linejoin="round" fill="url(#front_-45_2-4)"/>
+      <path d="M32.1667,36.1667,46.1512,23.7056a.81.81,0,0,1,1.1116.0316h0a.81.81,0,0,1,.0314,1.1119L34.8333,38.8333Z" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad_3)"/>
+</svg>

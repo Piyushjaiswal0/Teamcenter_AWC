@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" fill="#b9a78e"/>
+  <rect x="8.5" y="8.5" width="31" height="6" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <rect x="8.5" y="20.5" width="31" height="6" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <rect x="8.5" y="33.5" width="12" height="6" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <rect x="27.523" y="33.5" width="12" height="6" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <line x1="14.5" y1="26.979" x2="14.5" y2="31.989" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <line x1="24" y1="15" x2="24" y2="19.478" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <polyline points="26.239 17.239 24 19.478 21.761 17.239" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polyline points="16.739 30.253 14.5 32.492 12.261 30.253" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <line x1="21" y1="36.5" x2="26.044" y2="36.5" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <polyline points="24.216 34.261 26.455 36.5 24.216 38.739" fill="none" stroke="#fff" stroke-linejoin="round"/>
+</svg>

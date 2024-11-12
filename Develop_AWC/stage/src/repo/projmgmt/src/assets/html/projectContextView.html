@@ -1,0 +1,9 @@
+<!-- (No) Project link -->
+<aw-column>
+    <aw-property-label prop="data.project"></aw-property-label>
+    <aw-context-separator token="-" visible-when="conditions.hasNoProjects || ctx.userSession.props.project.uiValues[0]===''"></aw-context-separator>
+    <aw-link-with-popup-menu prop="data.projectText" dataprovider="data.dataProviders.projectLink" link-popup-menu-id="aw-state-userProject" visible-when="conditions.hasNoProjects || ctx.userSession.props.project.uiValues[0]===''" disable="ctx.projectChangeDisabled"></aw-link-with-popup-menu>
+    <aw-context-separator token="-" visible-when="ctx.userSession.props.project.uiValues[0]!=''"></aw-context-separator>
+    <!-- Project link -->
+    <aw-link-with-popup-menu prop="ctx.userSession.props.project" dataprovider="data.dataProviders.projectLink" link-popup-menu-id="aw-state-userProject" visible-when="ctx.userSession.props.project.uiValues[0]!=''" disable="ctx.projectChangeDisabled"></aw-link-with-popup-menu>
+</aw-column>

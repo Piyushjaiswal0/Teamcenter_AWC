@@ -1,0 +1,182 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+.aw-create-datasetCreateInput {
+    float: left;
+    display: inline;
+    overflow: hidden;
+    width: 100%;
+}
+
+.aw-create-datasetCreateInput:hover {
+    overflow-y: auto;
+}
+
+.aw-create-fileUploadPanel {
+    float: left;
+    display: inline;
+    padding: 13px;
+}
+
+.aw-create-multiFileUploadLabel {
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aw-create-loadingLabel {
+    display: inline;
+    font-weight: 600;
+    font-size: $fontsize_small;
+    height: 11px;
+    margin-right: 4px;
+}
+
+.aw-create-mainPanel .aw-layout-left .aw-widgets-requiredIndicator {
+    float: left;
+}
+
+/* file name list */
+
+.aw-create-multiFileUploadFileList {
+    display: grid;
+    padding-bottom: 2px;
+}
+
+
+/* Set file chooser to be mostly invisible */
+.aw-create-multiFileUploadFileUpload input {
+    height: 25px;
+    opacity: 0.01;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.hide-input form {
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+
+/* set file chooser list to be relative to parent element */
+.aw-create-multiFileUploadFileChooserList {
+    position: relative;
+}
+
+/* set drop area to overlap with file chooser */
+.aw-create-multiFileUploadFileDrop {
+    position: absolute;
+    display: block;
+    cursor: default;
+    width: 90%;
+    height: 25px;
+    top: 0;
+    font-size: $fontsize_large;
+}
+
+/* hide drop area if not supported by browser */
+@media screen and (-ms-high-contrast: none) {
+    /* Windows 8+ IE only */
+    .aw-create-multiFileUploadFileDrop {
+        display: none;
+    }
+}
+
+.aw-create-multiFileUploadFileChooserButton {
+    padding-left: 4px;
+    padding-right: 4px;
+    vertical-align: text-bottom;
+}
+
+// special-case layout... should be re-worked
+.aw-xrt-tabsContainer.aw-create-tabsContainer {
+    margin-bottom: 0;
+
+    // subPanelContent will provide padding when inside
+    .aw-layout-subPanelContent & {
+        padding: 0;
+        margin-bottom: $margin_large;
+    }
+}
+
+.aw-create-fillAvailable {
+    max-height: 100%;
+}
+
+.aw-create-fillAvailable .aw-panel-footer button.sw-button {
+    align-self: end;
+}
+
+.aw-panel-header.aw-create-fillAvailable {
+    -webkit-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+// skeleton for add panel
+.aw-create-panelSkeleton:empty {
+    margin: auto;
+    width: 100%;
+    height: 600px;
+
+    background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.50) 50%, rgba(255, 255, 255, 0) 100%), /* highlight */
+        linear-gradient( #00000012 32px, transparent 0 ), /* section */
+        linear-gradient( #00000012 16px, transparent 0 ), /* rem-calc(16) */
+        linear-gradient( #00000012 32px, transparent 0 ),
+        linear-gradient( #00000012 16px, transparent 0 ),
+        linear-gradient( #00000012 32px, transparent 0 ),
+        linear-gradient( #00000012 16px, transparent 0 ),
+        linear-gradient( #00000012 64px, transparent 0 ),
+        linear-gradient( #00000012 16px, transparent 0 ),
+        linear-gradient( #00000012 64px, transparent 0 );
+
+    background-repeat: no-repeat;
+
+    background-size:
+        64px 800px, /* highlight */
+        322px 800px, /* section */
+        32px 800px, /* label */
+        306px 800px, /* text */
+        68px 800px, /* label */
+        306px 800px, /* text */
+        52px 800px, /* label */
+        306px 800px, /* text */
+        64px 800px, /* label */
+        306px 800px; /* text */
+
+    background-position:
+        -64px 0, /* highlight */
+        2px 0px, /* section */
+        10px 40px, /* label */
+        10px 60px, /* text */
+        10px 100px, /* label */
+        10px 120px, /* text */
+        10px 160px, /* label */
+        10px 180px, /* text */
+        10px 252px, /* label */
+        10px 272px; /* text */
+
+
+    animation: panel-shine 2s infinite;
+}
+
+@keyframes panel-shine {
+    to {
+        background-position:
+        360px 0, /* move highlight to right */
+        2px 0px, /* section */
+        10px 40px, /* label */
+        10px 60px, /* text */
+        10px 100px, /* label */
+        10px 120px, /* text */
+        10px 160px, /* label */
+        10px 180px, /* text */
+        10px 252px, /* label */
+        10px 272px; /* text */
+
+
+    }
+}
+

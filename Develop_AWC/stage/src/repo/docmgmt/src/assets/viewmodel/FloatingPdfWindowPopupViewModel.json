@@ -1,0 +1,115 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "addToAction": {
+            "actionType": "JSFunction",
+            "method": "addDataset",
+            "inputData": {
+                "i18n": "{{i18n}}"
+            },
+            "deps": "js/FloatingPdfWindowHandler"
+        },
+        "getViewerData":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2017-06-DataManagement",
+            "method": "getViewerData",
+            "inputData":
+            {
+                "inputs":
+                {
+                    "obj": "{{subPanelContext.obj}}",
+                    "dataset": "{{subPanelContext.dataset}}",
+                    "direction": ""
+                }
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Dataset",
+                         "properties":
+                        [
+                            {
+                                "name": "object_name"
+                            },
+                            {
+                                "name": "object_type"
+                            },
+                            {
+                                "name": "last_mod_date"
+                            },
+                            {
+                                "name": "ref_list",
+                                "modifiers":
+                                [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "checked_out"
+                            },
+                            {
+                                "name": "checked_out_user"
+                            },
+                            {
+                                "name": "is_modifiable"
+                            },
+                            {
+                                "name": "fnd0IsCheckoutable"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ImanFile",
+                        "properties":
+                        [
+                            {
+                                "name": "file_size"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData":
+            {
+                "viewerData": "{{function:processViewerData}}"
+            },
+            "deps": "js/FloatingPdfWindowHandler"
+        },
+        "cancelAction": {
+            "actionType": "JSFunction",
+            "method": "deleteDataset",
+            "inputData": {
+                "i18n": "{{i18n}}"
+            },
+            "deps": "js/FloatingPdfWindowHandler"
+        }
+    },
+    "data": {
+    },
+    "i18n": {
+        "add": [ "FloatingPdfMessages" ],
+        "cancel": [ "FloatingPdfMessages" ],
+        "confirmAddPdf": [ "FloatingPdfMessages" ],
+        "addPdfError": [ "FloatingPdfMessages" ],
+        "deletePdfError": [ "FloatingPdfMessages" ]
+    },
+    "lifecycleHooks": {
+        "onInit": "getViewerData"
+    },
+    "messages": {
+        "pdfInfo" : {
+            "messageType": "INFO",
+            "messageText": "{{i18n.confirmAddPdf}}",
+            "messageTextParams": [
+                "{{subPanelContext.datasetName}}",
+                "{{subPanelContext.targetName}}"
+            ]
+        }
+    }
+}

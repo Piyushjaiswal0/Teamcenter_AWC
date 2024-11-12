@@ -1,0 +1,25 @@
+<aw-show-object-page header-title="subPanelContext.showObjectContext.displayName"
+    browser-sub-title="subPanelContext.showObjectContext.displayName">
+    <aw-show-object-header headerVMO="subPanelContext.openedObject" header-data="subPanelContext.headerData"
+        header-props="subPanelContext.showObjectContext.xrtViewModel.data._headers" sub-panel-context="subPanelContext">
+        <h1 data-locator='aw-layout-locationTitle' class='aw-layout-locationTitle aw-layout-flexRow'>
+            {{subPanelContext.showObjectContext.displayName}}</h1>
+        <aw-global-search exist-when="subPanelContext.provider.headerPreference.hideGlobalSearch !== true" showsearchbox="{{subPanelContext.showsearchbox}}"></aw-global-search>
+        <aw-logo exist-when="subPanelContext.provider.headerPreference.hideLogo !== true"></aw-logo>
+    </aw-show-object-header>
+    <aw-tab-container tab-container-model="subPanelContext.showObjectContext.subLocationTabs"
+        callback="subPanelContext.showObjectContext.api" tab-set-id="primary" sub-panel-context="data.selectionData">
+    </aw-tab-container>
+    <aw-base-sublocation base-selection="subPanelContext.openedObject"
+        provider="subPanelContext.showObjectContext.provider"
+        sub-panel-context="{selectionData:data.selectionData,pageContext:{primaryActiveTabId: subPanelContext.primaryActiveTabId, primarySublocTabState: subPanelContext.primarySublocTabState}, ...subPanelContext}">
+        <div class='aw-layout-panelBody aw-layout-sublocationContent aw-base-scrollPanel aw-layout-wrap'>
+            <aw-show-object-xrt type="SUMMARY" xrt-data="subPanelContext.showObjectContext.xrtViewModel"
+                callback="subPanelContext.showObjectContext.api" selection-data="data.selectionData"
+                objectset-info="subPanelContext.showObjectContext.objectSetInfo"
+                vmo="subPanelContext.openedObject"
+                sub-panel-context="{pageContext:{primaryActiveTabId: subPanelContext.primaryActiveTabId}, ...subPanelContext}">
+            </aw-show-object-xrt>
+        </div>
+    </aw-base-sublocation>
+</aw-show-object-page>

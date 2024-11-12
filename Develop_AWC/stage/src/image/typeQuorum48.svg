@@ -1,0 +1,24 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="12.5314" y1="13.314" x2="41.9993" y2="42.7819" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2658" stop-color="#f2f2f2"/>
+      <stop offset="0.7507" stop-color="#d2d2d2"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-2.6873" y1="21.6873" x2="14.9381" y2="39.3127" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <path d="M12.7607,21.4206S23.9141,13.1,23.1139,4.3965C22.5069-2.206,35.4222,2.8434,28.2331,19.51H44.1706a3.1632,3.1632,0,1,1,0,6.3176h-.344a3.1628,3.1628,0,1,1,0,6.3182h-2.229a3.1632,3.1632,0,1,1,0,6.3178H39.0234c3.9069,0,5.0555,5.6338-.3484,5.6338,0,0-14.0847.2357-25.9143-3.5965" fill="url(#linear-gradient)"/>
+  <line x1="43.8266" y1="25.8274" x2="39.7578" y2="25.8274" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="41.5976" y1="32.1456" x2="38.675" y2="32.1456" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12.7607,40.5007c11.83,3.8322,25.9143,3.5965,25.9143,3.5965,5.4039,0,4.2553-5.6338.3484-5.6338H37.4648" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12.7607,21.4206S23.9141,13.1,23.1139,4.3965C22.5069-2.206,35.4222,2.8434,28.2331,19.51H44.1706a3.1632,3.1632,0,1,1,0,6.3176h-.344a3.1628,3.1628,0,1,1,0,6.3182h-2.229a3.1632,3.1632,0,1,1,0,6.3178H39.0239" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M.5,18.5H11.221A1.279,1.279,0,0,1,12.5,19.779V41.221A1.279,1.279,0,0,1,11.221,42.5H.5a0,0,0,0,1,0,0v-24A0,0,0,0,1,.5,18.5Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M23.9987,28.695a1.7461,1.7461,0,0,0,.0469-.36c0-.1567-.094-.2505-.2973-.2505h-.6266l.1724-.9237h1.0644c.5638,0,.8143.2505.8143.6576a5.8792,5.8792,0,0,1-.2193,1.1742h.0312a4.2,4.2,0,0,1,3.46-2.02,1.9346,1.9346,0,0,1,2.2232,2.1136,5.776,5.776,0,0,1-.11.97l-.6891,3.5538a2.007,2.007,0,0,0-.0312.2663q0,.2347.2817.2347h.6578l-.1724.9237H29.51c-.5638,0-.8143-.2192-.8143-.6888a3.3808,3.3808,0,0,1,.0312-.36l.72-3.6947a4.7749,4.7749,0,0,0,.11-.9236,1.2308,1.2308,0,0,0-1.4089-1.3934c-1.785,0-3.2723,1.7378-3.5852,3.3189l-.72,3.7417H22.7775Z" fill="#464646"/>
+</svg>

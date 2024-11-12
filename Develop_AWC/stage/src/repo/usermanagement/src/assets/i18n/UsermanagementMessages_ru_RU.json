@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "Люди",
+    "organizationTitle": "Организационная структура",
+    "groupTitle": "Группы",
+    "roleTitle": "Роли",
+    "userTitle": "Пользователи",
+    "RevokeConsentTitle": "Отменить согласие",
+    "revokeGDPRConsentLabel": "Отменить согласие пользователя",
+    "revokeConsentConfirmationMessage": "Отменив свое согласие, вы выйдите из Teamcenter",
+    "Group": "Группа",
+    "DefaultRole":  "Роль по умолчанию",
+    "DefaultGroup": "Группа по умолчанию",
+    "cancel": "Отмена",
+    "revoke": "Отменить",
+    "group": "Группа",
+    "role": "Роль",
+    "userMembershipTitle":"Принадлежность пользователя",
+    "userCalendarNotExits":"No User Calendar",
+    "addButtonText": "Добавить"
+}

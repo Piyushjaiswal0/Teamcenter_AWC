@@ -1,0 +1,102 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.5" y1="-0.5" x2="42.5" y2="40.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2" data-name="front -45 2" x1="6" y1="4" x2="11" y2="9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="0.5" stop-color="#cacac9"/>
+      <stop offset="0.6282" stop-color="#c5c5c4"/>
+      <stop offset="0.7762" stop-color="#b7b7b7"/>
+      <stop offset="0.9335" stop-color="#a0a0a0"/>
+      <stop offset="0.99" stop-color="#969696"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2-2" x1="6" y1="13" x2="11" y2="18" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-3" x1="13.5" y1="5" x2="16.5" y2="8" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-4" x1="13.5" y1="14" x2="16.5" y2="17" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-5" x1="13.5" y1="23" x2="16.5" y2="26" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-6" x1="19" x2="24" y2="9" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-7" x1="18" y1="12" x2="25" y2="19" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-8" x1="31" x2="38" y2="11" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-9" x1="26.25" y1="5.25" x2="28.75" y2="7.75" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-10" x1="7.5" y1="10" x2="9.5" y2="12" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-11" x1="6" y1="22" x2="11" y2="27" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-12" x1="19" y1="22" x2="24" y2="27" xlink:href="#front_-45_2"/>
+    <linearGradient id="front_-45_2-13" x1="20.375" y1="19.125" x2="22.625" y2="21.375" xlink:href="#front_-45_2"/>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="23.5" y1="23.5" x2="43.5" y2="43.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset="0.1774" stop-color="#6badc2"/>
+      <stop offset="0.4638" stop-color="#539db4"/>
+      <stop offset="0.8215" stop-color="#2d839d"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="19.5" y1="27.5" x2="23.5" y2="27.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2477" stop-color="#f8f8f8"/>
+      <stop offset="0.6057" stop-color="#e5e5e5"/>
+      <stop offset="1" stop-color="#c8c8c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y1="31.5" y2="31.5" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-4" y1="35.5" y2="35.5" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" y1="39.5" y2="39.5" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-6" x1="43.5" y1="27.5" x2="47.5" y2="27.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c8c8"/>
+      <stop offset="0.3943" stop-color="#e5e5e5"/>
+      <stop offset="0.7523" stop-color="#f8f8f8"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" y1="31.5" y2="31.5" xlink:href="#linear-gradient-6"/>
+    <linearGradient id="linear-gradient-8" y1="35.5" y2="35.5" xlink:href="#linear-gradient-6"/>
+    <linearGradient id="linear-gradient-9" y1="39.5" y2="39.5" xlink:href="#linear-gradient-6"/>
+    <linearGradient id="linear-gradient-10" x1="-36.5" y1="-47.5" x2="-32.5" y2="-47.5" gradientTransform="translate(74 69)" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-11" x1="-36.5" y1="-43.5" x2="-32.5" y2="-43.5" gradientTransform="translate(70 65)" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-12" x1="-36.5" y1="-39.5" x2="-32.5" y2="-39.5" gradientTransform="translate(66 61)" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-13" x1="-36.5" y1="-35.5" x2="-32.5" y2="-35.5" gradientTransform="translate(62 57)" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-14" x1="-12.5" y1="-47.5" x2="-8.5" y2="-47.5" gradientTransform="translate(50 93)" xlink:href="#linear-gradient-6"/>
+    <linearGradient id="linear-gradient-15" x1="-12.5" y1="-43.5" x2="-8.5" y2="-43.5" gradientTransform="translate(46 89)" xlink:href="#linear-gradient-6"/>
+    <linearGradient id="linear-gradient-16" x1="-12.5" y1="-39.5" x2="-8.5" y2="-39.5" gradientTransform="translate(42 85)" xlink:href="#linear-gradient-6"/>
+    <linearGradient id="linear-gradient-17" x1="-12.5" y1="-35.5" x2="-8.5" y2="-35.5" gradientTransform="translate(38 81)" xlink:href="#linear-gradient-6"/>
+  </defs>
+  <rect x="0.5" y="0.5" width="43" height="39" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="5.5" y="4.5" width="6" height="4" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2)"/>
+  <rect x="5.5" y="13.5" width="6" height="4" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-2)"/>
+  <line x1="12" y1="6.5" x2="18" y2="6.5" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-3)"/>
+  <line x1="12" y1="15.5" x2="18" y2="15.5" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-4)"/>
+  <line x1="12" y1="24.5" x2="18" y2="24.5" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-5)"/>
+  <rect x="18.5" y="4.5" width="6" height="4" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-6)"/>
+  <rect x="17.5" y="12.5" width="8" height="6" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-7)"/>
+  <rect x="30.5" y="4.5" width="8" height="6" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-8)"/>
+  <line x1="25" y1="6.5" x2="30" y2="6.5" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-9)"/>
+  <line x1="8.5" y1="13" x2="8.5" y2="9" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-10)"/>
+  <polyline points="34.5 11 34.5 15.5 25.562 15.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+  <rect x="5.5" y="22.5" width="6" height="4" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-11)"/>
+  <rect x="18.5" y="22.5" width="6" height="4" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-12)"/>
+  <line x1="21.5" y1="22.5" x2="21.5" y2="18" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#front_-45_2-13)"/>
+  <polyline points="1 31.5 15.5 31.5 15.5 39" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+  <g>
+    <polygon points="42.5 44.5 24.5 44.5 22.5 42.5 22.5 24.5 24.5 22.5 42.5 22.5 44.5 24.5 44.5 42.5 42.5 44.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+    <polygon points="38.843 40.5 28.157 40.5 26.5 38.843 26.5 28.157 28.157 26.5 38.843 26.5 40.5 28.157 40.5 38.843 38.843 40.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <rect x="19.5" y="26.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+    <rect x="19.5" y="30.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+    <rect x="19.5" y="34.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+    <rect x="19.5" y="38.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-5)"/>
+    <rect x="43.5" y="26.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-6)"/>
+    <rect x="43.5" y="30.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-7)"/>
+    <rect x="43.5" y="34.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-8)"/>
+    <rect x="43.5" y="38.5" width="4" height="2" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-9)"/>
+    <rect x="37.5" y="20.5" width="4" height="2" transform="translate(61 -18) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-10)"/>
+    <rect x="33.5" y="20.5" width="4" height="2" transform="translate(57 -14) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-11)"/>
+    <rect x="29.5" y="20.5" width="4" height="2" transform="translate(53 -10) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-12)"/>
+    <rect x="25.5" y="20.5" width="4" height="2" transform="translate(49 -6) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-13)"/>
+    <rect x="37.5" y="44.5" width="4" height="2" transform="translate(85 6) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-14)"/>
+    <rect x="33.5" y="44.5" width="4" height="2" transform="translate(81 10) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-15)"/>
+    <rect x="29.5" y="44.5" width="4" height="2" transform="translate(77 14) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-16)"/>
+    <rect x="25.5" y="44.5" width="4" height="2" transform="translate(73 18) rotate(90)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-17)"/>
+  </g>
+  <line x1="4" y1="34.5" x2="12" y2="34.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+  <line x1="4" y1="36.5" x2="12" y2="36.5" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+</svg>

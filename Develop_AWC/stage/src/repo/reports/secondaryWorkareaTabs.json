@@ -1,0 +1,8 @@
+[
+  {
+    "name": "",
+    "priority": 10,
+    "view": "ReportsEmptyState",
+    "visibleWhen": "selection.length === 0 && (context.clientScopeURI === 'Awp0ReportBuilder' || context.clientScopeURI === 'Fnd0Report')"
+  }
+]

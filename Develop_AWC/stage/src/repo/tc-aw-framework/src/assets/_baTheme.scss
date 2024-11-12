@@ -1,0 +1,36 @@
+// Copyright (c) 2023 Siemens
+
+/* login */
+
+// DEEP BLUE temp color def -- moving to swf soon...
+$Siemens_Deep_Blue_100: #000028;
+$Siemens_Deep_Blue_40: #66667E;
+$Siemens_Accent_Blue: #AAE6F5;
+$Siemens_Backfill_Blue: #23233C;
+
+.aw-login-signIn {
+    background-color: $Siemens_Backfill_Blue;
+
+    input[type="text"],
+    input[type="password"] {
+        background-color: transparent;
+        color: $base_text_color;
+    }
+}
+
+.aw-login-copyright {
+    background-color: $Siemens_Deep_Blue_100;
+    color: $Siemens_Deep_Blue_40;
+}
+
+.aw-login-tcLoginView {
+    background-color: $Siemens_Deep_Blue_100;
+}
+
+.aw-login-brandPanel {
+    color: $Siemens_Snow;
+}
+
+.aw-login-signIn .sw-property.sw-required:not(.sw-readOnly) .sw-property-name:before {
+    color: $Siemens_Accent_Blue;
+}

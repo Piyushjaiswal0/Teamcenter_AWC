@@ -1,0 +1,8 @@
+<aw-command-panel caption="i18n.Awp0ImportSearchFolderTitle" context="subPanelContext">
+    <aw-panel-body>
+        <aw-file-upload file-change-action="initiateImport" type-filter=".xml" is-required="true"></aw-file-upload>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button size='auto' action="importSearchFolder" visible-when="conditions.isValidToImport"><aw-i18n>i18n.Import</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="39.5" y1="39.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="30.5" y1="28.5" x2="38.5" y2="36.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="21.5" y1="17.5" x2="29.5" y2="25.5" xlink:href="#paper_gradient"/>
+  <path d="M13.5,7.9591v.0495L.5,15.4678V45.4824l13-7.5172c.0087-.0287-.0065-14.9693,0-14.9974v.0085l13-7.517V.5Z" fill="#888"/>
+  <line x1="13.5" y1="22.9764" x2="13.5" y2="7.9592" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="13.5" y1="23.006" x2="0.5" y2="30.4652" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <path d="M.5,15.4678V45.4824l13-7.5172c.0087-.0287-.0065-14.9693,0-14.9974l13-7.5085V.5Z" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <polyline points="39.5 43.5 34.5 43.5 34.5 36.5" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="3"/>
+  <polyline points="40 43.5 34.5 43.5 34.5 36" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <polyline points="30.5 32.5 25.5 32.5 25.5 25.5" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="3"/>
+  <polyline points="31 32.5 25.5 32.5 25.5 25" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+  <rect x="39.5" y="39.5" width="8" height="8" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <rect x="30.5" y="28.5" width="8" height="8" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <rect x="21.5" y="17.5" width="8" height="8" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+</svg>

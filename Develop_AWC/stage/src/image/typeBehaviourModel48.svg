@@ -1,0 +1,20 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="1.519" y1="24.646" x2="14.247" y2="24.646" gradientTransform="translate(37.646 5.117) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="17.075" y1="9.09" x2="29.803" y2="9.09" gradientTransform="translate(44.09 -10.439) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="17.075" y1="40.203" x2="29.803" y2="40.203" gradientTransform="translate(53.203 11.561) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="32.632" y1="24.646" x2="45.36" y2="24.646" gradientTransform="translate(59.646 -3.996) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+  <line y1="13" x2="48" y2="13" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line y1="35" x2="48" y2="35" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="13" x2="13" y2="48" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="35" x2="35" y2="48" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <rect x="6.636" y="6.636" width="12.728" height="12.728" transform="translate(-5.385 13) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="28.636" y="6.636" width="12.728" height="12.728" transform="translate(1.059 28.556) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <rect x="6.636" y="28.636" width="12.728" height="12.728" transform="translate(-20.941 19.444) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+  <rect x="28.636" y="28.636" width="12.728" height="12.728" transform="translate(-14.497 35) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-4)"/>
+</svg>

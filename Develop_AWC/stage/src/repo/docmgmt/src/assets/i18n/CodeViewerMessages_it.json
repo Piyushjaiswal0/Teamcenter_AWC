@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Codifica caratteri",
+    "uvCheckoutTitle": "Checkout",
+    "uvCheckoutDesc": "Riservare la selezione per impedire ad altri utenti di apportare modifiche.",
+    "cancelCheckoutTitle": "Annulla checkout",
+    "Awp0CancelCheckoutDesc": "Annullare il checkout e le eventuali modifiche.",
+    "uvCheckinTitle": "Checkin",
+    "Awp0CheckinDesc": "Eseguire il checkin dell'oggetto e salvare le modifiche.",
+    "uvCodeWordWrapTitle": "A capo automatico",
+    "uvCodeWordWrapDesc": "Mandare a capo il testo su più righe."
+}

@@ -1,0 +1,7 @@
+{
+    "name": "mysamplemodule",
+    "description": "This is the mysamplemodule module",
+    "themeExtensions": [
+        "ui-Develop"
+    ]
+}

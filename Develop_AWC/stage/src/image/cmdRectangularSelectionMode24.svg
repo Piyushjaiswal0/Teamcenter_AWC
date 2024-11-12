@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g>
+    <polygon class="aw-theme-iconOutline" points="23 20.994 21.5 20.994 21.5 19.994 22 19.994 22 19.494 23 19.494 23 20.994" fill="#464646"/>
+    <path class="aw-theme-iconOutline" d="M19.389,20.994H17.277v-1h2.111Zm-4.223,0h-2.11v-1h2.11Zm-4.222,0H8.833v-1h2.111Zm-4.222,0H4.611v-1H6.722Z" fill="#464646"/>
+    <polygon class="aw-theme-iconOutline" points="2.5 20.994 1 20.994 1 19.494 2 19.494 2 19.994 2.5 19.994 2.5 20.994" fill="#464646"/>
+    <path class="aw-theme-iconOutline" d="M2,17.352H1V15.209H2Zm0-4.286H1V10.923H2ZM2,8.78H1V6.637H2Z" fill="#464646"/>
+    <polygon class="aw-theme-iconOutline" points="2 4.494 1 4.494 1 2.994 2.5 2.994 2.5 3.994 2 3.994 2 4.494" fill="#464646"/>
+    <path class="aw-theme-iconOutline" d="M19.389,3.994h-2.11v-1h2.11Zm-4.222,0H13.056v-1h2.111Zm-4.222,0H8.833v-1h2.111Zm-4.222,0H4.611v-1H6.723Z" fill="#464646"/>
+    <polygon class="aw-theme-iconOutline" points="23 4.494 22 4.494 22 3.994 21.5 3.994 21.5 2.994 23 2.994 23 4.494" fill="#464646"/>
+    <path class="aw-theme-iconOutline" d="M23,17.352H22V15.209h1Zm0-4.286H22V10.923h1ZM23,8.78H22V6.637h1Z" fill="#464646"/>
+  </g>
+</svg>

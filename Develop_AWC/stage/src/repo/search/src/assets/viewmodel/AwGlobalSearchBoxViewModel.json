@@ -1,0 +1,419 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "search-state": {
+            "type": "object"
+        },
+        "search-prop": {
+            "type": "field"
+        },
+        "show-suggestions": {
+            "type": "string"
+        },
+        "suggestion-action": {
+            "type": "action"
+        },
+        "show-popup": {
+            "type": "object"
+        },
+        "prefilter1": {
+            "type": "field"
+        },
+        "prefilter1-provider": {
+            "type": "object"
+        },
+        "prefilter2": {
+            "type": "field"
+        },
+        "prefilter2-provider": {
+            "type": "object"
+        },
+        "prefilter3": {
+            "type": "field"
+        },
+        "prefilter3-provider": {
+            "type": "object"
+        },
+        "advanced-search-prop": {
+            "type": "object"
+        },
+        "action": {
+            "type": "action"
+        },
+        "conditions": {
+            "type": "object"
+        },
+        "show": {
+            "type": "field"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awGlobalSearchBoxServiceRenderFunction",
+            "deps": "js/AwGlobalSearchBoxService"
+        },
+        "addRemoveClickListener": {
+            "actionType": "JSFunction",
+            "method": "addRemoveClickListener",
+            "inputData": {
+                "expand": "{{props.expand}}"
+            },
+            "deps": "js/AwGlobalSearchBoxUtils"
+        },
+        "expandCollapseSearchBox": {
+            "actionType": "JSFunction",
+            "method": "expandCollapseSearchBox",
+            "inputData": {
+                "expand": "{{props.expand}}",
+                "searchString": "{{data.searchBox.dbValue}}"
+            },
+            "deps": "js/AwGlobalSearchBoxUtils"
+        },
+        "hintPopup": {
+            "actionType": "popup",
+            "options": {
+                "whenParentScrolls": "close",
+                "height": "fit-content",
+                "toggleMode": true,
+                "clickOutsideToClose": true,
+                "forceCloseOthers": true,
+                "autoFocus": false
+            }
+        },
+        "doGlobalSearch": {
+            "actionType": "JSFunction",
+            "method": "performGlobalSearch2",
+            "inputData": {
+                "criteria": "{{data.searchBox.dbValue}}",
+                "ownerPrefilter": "{{data.selectPrefilter1.dbValue}}",
+                "categoryPrefilter": "{{data.selectPrefilter2.dbValue}}",
+                "anySource":"{{data.anyDataSource.propDisplayValue}}"
+            },
+            "outputData": {
+                "owners": ""
+            },
+            "deps": "js/globalSearchService"
+        },
+        "getPrefilters": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2012-10-FullTextSearch",
+            "method": "getPreFilters",
+            "inputData": {
+
+            },
+            "outputData": {
+                "response": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "awPrefilter.populateDataProviders",
+                    "eventData": {
+                        "data": "{{data}}"
+                    }
+                } ]
+            },
+            "deps": "js/globalSearchService"
+        },
+        "populateDataProviders": {
+            "actionType": "JSFunction",
+            "method": "populateDataProviders2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+
+        "updatePrefilter1": {
+            "actionType": "JSFunction",
+            "method": "updatePrefilter1",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+
+        "updatePrefilter2": {
+            "actionType": "JSFunction",
+            "method": "updatePrefilter2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+        "updatePrefilter3": {
+            "actionType": "JSFunction",
+            "method": "updatePrefilter3",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "selectPrefilter3": "newVMP",
+                "selectPrefilter1": "newPrefilter1"
+            },
+            "deps": "js/globalSearchService"
+        },
+        "initialize2": {
+            "actionType": "JSFunction",
+            "method": "initialize2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+
+        "initialize": {
+            "actionType": "batchJob",
+            "steps":[
+                {
+                    "action":"initialize2"
+                },
+                {
+                    "action":"addRemoveClickListener",
+                    "condition": "!props.show.value"
+                }
+            ]
+        },
+        "advancedSearchLink": {
+            "actionType": "JSFunction",
+            "method": "advancedSearchLink",
+            "deps": "js/globalSearchService"
+        }
+        ,
+        "savedSearchLink": {
+            "actionType": "JSFunction",
+            "method": "savedSearchLink",
+            "deps": "js/globalSearchService"
+        }
+    },
+
+    "dataProviders": {
+        "searchOrg": {
+            "response": [ {
+                    "propDisplayValue": "Latest Working",
+                    "propInternalValue": "lw",
+                    "selected": true
+                },
+                {
+                    "propDisplayValue": "Manufacturing",
+                    "propInternalValue": "manufacturing",
+                    "selected": false
+                },
+                {
+                    "propDisplayValue": "Project Administration",
+                    "propInternalValue": "pa",
+                    "selected": false
+                },
+                {
+                    "propDisplayValue": "Simulation Administration",
+                    "propInternalValue": "sa",
+                    "selected": false
+                },
+                {
+                    "propDisplayValue": "Validation Administration",
+                    "propInternalValue": "va",
+                    "selected": false
+                },
+                {
+                    "propDisplayValue": "dba",
+                    "propInternalValue": "dba",
+                    "selected": false
+                },
+                {
+                    "propDisplayValue": "system",
+                    "propInternalValue": "system",
+
+                    "selected": false
+                }
+            ],
+            "totalFound": 7
+        },
+        "prefilterList1DP": {
+            "response": "{{data.prefilterList1}}"
+        },
+        "prefilterList2DP": {
+            "response": "{{data.prefilterList2}}"
+        },
+        "prefilterList3DP": {
+            "response": "{{data.prefilterList3}}"
+        },
+        "ownerPrefilterProvider": {
+            "dataProviderType": "Static"
+        },
+
+        "categoryPrefilterProvider": {
+            "dataProviderType": "Static"
+        },
+        "revisionLink": {
+            "dataProviderType": "TcLOV",
+            "lovConfiguration": {
+                "filterStr": "",
+                "lovPageSize": 10000,
+                "viewModelObj": "{{ctx.userSession}}",
+                "viewProp": "{{ctx.userSession.props.awp0RevRule}}",
+                "operationName": "Edit"
+            },
+            "totalFound": ""
+        }
+    },
+    "onEvent": [
+
+        {
+            "eventId": "search.expandCollapseSearchBox",
+            "action": "expandCollapseSearchBox",
+            "condition": "props.expand.value === 'true'"
+        },
+        {
+            "eventId": "narrowMode.prefilter1Updated",
+            "cacheEventData": true,
+            "action": "updatePrefilter1"
+        },
+        {
+            "eventId": "narrowMode.prefilter2Updated",
+            "cacheEventData": true,
+            "action": "updatePrefilter2"
+        },
+
+        {
+            "eventId": "awPrefilter.getPrefilters",
+            "action": "getPrefilters"
+        },
+        {
+            "eventId": "awPrefilter.populateDataProviders",
+            "cacheEventData": true,
+            "action": "populateDataProviders"
+        },
+        {
+            "eventId":"prefilterList3DP.selectionChangeEvent",
+            "action":"updatePrefilter3",
+            "cacheEventData":true
+        }
+    ],
+
+    "functions": {
+
+    },
+    "data": {
+        "searchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "requiredText": "{{i18n.searchBtn}}"
+        },
+        "orgTextLink": {
+            "type": "STRING",
+            "isRequired": "true"
+        },
+        "selectPrefilter1": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "hasLov": true,
+            "dataProvider": "prefilterList1DP",
+            "uiValue": "{{ctx.searchPreFilters.ownPrefilters.propDisplayName}}",
+            "dbValue": "{{ctx.searchPreFilters.ownPrefilters.selectedOwner}}",
+            "emptyLOVEntry": false
+        },
+        "selectPrefilter2": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "hasLov": true,
+            "dataProvider": "prefilterList2DP",
+            "uiValue": "{{ctx.searchPreFilters.catPrefilters.propDisplayName}}",
+            "dbValue": "{{ctx.searchPreFilters.catPrefilters.selectedCategory}}",
+            "emptyLOVEntry": false
+        },
+        "selectPrefilter3": {
+            "displayName": "",
+            "type": "CHECKBOX",
+            "isRequired": false,
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "dataProvider": "prefilterList3DP",
+            "emptyLOVEntry": false,
+            "isArray": true,
+            "renderingHint": "checkboxoptionlov",
+            "placeholder": "",
+            "requiredText": ""
+        },
+        "advancedSearch": {
+            "displayName": "{{i18n.advancedSearch}}",
+            "type": "STRING",
+            "isRequired": "true"
+        },
+        "savedSearch": {
+            "displayName": "{{i18n.savedSearch}}",
+            "type": "STRING",
+            "isRequired": "true"
+        },
+        "searchBoxPlaceHolder": {
+            "dbValue": "{{i18n.Awp0SearchTitle}}"
+        },
+        "advancedText": {
+            "displayName": "{{i18n.advancedText}}",
+            "type": "STRING",
+            "isRequired": "true"
+        },
+        "defaultPrefilter1Value": {
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "defaultPrefilter2Value": {
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "defaultPrefilter3Value": {
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "anyDataSource": {
+            "propDisplayValue": "{{i18n.anySource}}",
+            "propInternalValue": "{{i18n.anySource}}"
+        }
+    },
+    "conditions": {
+        "isPrefilter1Dirty":
+        {
+            "expression":"!data.selectPrefilter1.dbValue || data.selectPrefilter1.dbValue === 'ANY'"
+        },
+        "isPrefilter2Dirty":
+        {
+            "expression":"!data.selectPrefilter2.dbValue || data.selectPrefilter2.dbValue === 'ANY'"
+        },
+        "showAdvancedSearchLink": {
+            "expression": "ctx.preferences.AW_Advanced_Search_Visibility[0]==='true'"
+        },
+        "showSavedSearchLink": {
+            "expression": "true"
+        },
+        "hideGlobalRevisionRuleLink": {
+            "expression": "ctx.preferences.AW_Hide_Revision_Rule && ctx.preferences.AW_Hide_Revision_Rule[0]==='true' "
+        },
+        "isPrefilter3Dirty":
+        {
+            "expression":"data.selectPrefilter3.dbValues.includes('Any Source')"
+        }
+    },
+    "i18n": {
+        "advancedSearch": [ "SearchMessages" ],
+        "savedSearch": [ "SearchMessages" ],
+        "Awp0SearchTitle": [ "SearchMessages" ],
+        "advancedText": [ "SearchMessages" ],
+        "searchBtn": [ "SearchMessages" ],
+        "anySource": [ "SearchMessages" ],
+        "Teamcenter": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize",
+        "onUpdate": [ {
+            "action": "addRemoveClickListener",
+            "observers": [ "props.expand.value" ]
+        } ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Checkout",
+    "uvCheckinTitle": "Checkin",
+    "uvCancelCheckoutTitle": "Cancel Checkout",
+    "previousButtonTitle": "Previous",
+    "nextButtonTitle": "Next",
+    "noObjectSelectionMessage": "Select something to view.",
+    "fullViewModeTitle": "Full Screen",
+    "uvWordWrapTitle": "Word Wrap",
+    "exitFullViewModeTitle": "Exit Full Screen",
+    "aw_viewerRightSide": "Viewer Right Side",
+    "aw_universalViewerLink": "Universal Viewer Link",
+    "uvCheckoutDesc": "Reserve the selection to prevent other users from making changes.",
+    "fullViewModeDesc": "Switch to the full-screen view.",
+    "uvWordWrapDesc": "Wrap lengthy text into multiple lines.",
+    "Awp0ShowObjectForUVpDesc": "Open this file in the current window.",
+    "Awp0ViewFileForUVDesc": "Download the file."
+}

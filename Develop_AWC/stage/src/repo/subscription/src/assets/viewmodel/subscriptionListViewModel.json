@@ -1,0 +1,70 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "loadData": {
+            "actionType": "JSFunction",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "searchInput": {
+                    "attributesToInflate": "{{subPanelContext.searchState.tableViewProperties}}",
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "startIndex": "{{data.dataProviders.listDataProvider.startIndex}}"
+                },
+                "inflateProperties": false
+            },
+            "policy": {
+                "types": [ {
+                    "name": "BusinessObject",
+                    "properties": [ {
+                        "name": "awp0CellProperties"
+                    } ]
+                } ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        }
+    },
+    "dataProviders": {
+        "listDataProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "functions": {
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    }
+}

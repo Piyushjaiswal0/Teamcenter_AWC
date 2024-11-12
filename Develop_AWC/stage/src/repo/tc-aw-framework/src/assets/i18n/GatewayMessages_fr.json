@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Accueil",
+    "pinObjectCommandTitle": "Epingler à Accueil",
+    "unPinObjectCommandTitle": "Ne plus épingler à Accueil",
+    "pinObjectFailed": "Epingler a échoué.",
+    "unPinObjectFailed": "Ne plus épingler a échoué.",
+    "tileUpdateFailedMsg": "Echec de mise à jour de la tuile.",
+    "pinObjectFailedNoGateway": "Problème d'accès à votre dossier Accueil.",
+    "pinObjectMultipleObjectError": "Un seul objet à la fois peut être épinglé. Les autres seront ignorés.",
+    "unpinTileFailed": "Ne plus épingler a échoué.",
+    "homeFolderTitle": "Dossiers",
+    "Awp0ShowHomeFolderDesc": "Ouvrir votre dossier Accueil.",
+    "Awp0PinObjectDesc": "Ajouter la sélection à votre page d'accueil sous forme de tuile."
+}

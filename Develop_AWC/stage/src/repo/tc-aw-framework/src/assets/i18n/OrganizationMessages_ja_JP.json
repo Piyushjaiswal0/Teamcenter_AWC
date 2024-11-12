@@ -1,0 +1,11 @@
+{
+    "Organization": "組織",
+    "orgTreeFilterText": "フィルタ",
+    "resultsText": "結果",
+    "noFiltersFound": "結果が見つかりませんでした",
+    "noOrgTreeResultsFound": "フィルタ文字列\"{0}\"に対して結果が見つかりませんでした。",
+    "orgFilterUsage": "<br>例として、{0}:\"Ed Engineer\"は、Ed Engineerに対してすべてのユーザを返します。<br>有効なフィールドは、{1}、および{2}です。",
+    "usageMessage": "\"{0}\"は有効なフィルタ文字列ではありません。{1}",
+    "orgEscapeChars": "<br>引用符を含んでいるフィルタ文字列の前にはバックスラッシュ(\\\")がなければなりません。{0}",
+    "advancedSearchMessage": "<br>コロンを含んでいるフィルタ文字列は、特定のフィールド値の検索に使用されない限り、引用符(\" \")で囲まれなければなりません。{0}"
+}

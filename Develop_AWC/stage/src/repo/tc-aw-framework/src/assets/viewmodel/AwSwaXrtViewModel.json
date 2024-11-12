@@ -1,0 +1,82 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "xrtState": {
+            "initialValues": {},
+            "meta": {
+                "xrtVMO": {
+                    "field": "true",
+                    "type": "viewModelObject"
+                }
+            }
+        }
+    },
+    "editHandlers": {
+        "swaEditHandler": {
+            "context": "{{props.editContextKey}}",
+            "setActive": true,
+            "dataSource": {
+                "xrtVMO": "{{data.xrtState}}"
+            }
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awSwaXrtRenderFunction",
+            "deps": "js/AwSwaXrtService"
+        },
+        "refreshObjectSet": {
+            "actionType": "JSFunction",
+            "method": "refreshObjectSet",
+            "inputData": {
+                "viewModel": "{{data}}",
+                "props": "{{props}}"
+            },
+            "deps": "js/xrtUtilities"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "type": {
+            "type": "string"
+        },
+        "object-type": {
+            "type": "string"
+        },
+        "edit-context-key": {
+            "type": "string"
+        },
+        "xrt-data": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "callback": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        },
+        "objectset-info": {
+            "type": "object"
+        },
+        "vmo": {
+            "type": "object"
+        },
+        "enable-resize-callback": {
+            "type": "object"
+        }
+    },
+    "onEvent": [ {
+        "eventId": "cdm.relatedModified",
+        "action": "refreshObjectSet",
+        "cacheEventData": true
+    } ]
+}

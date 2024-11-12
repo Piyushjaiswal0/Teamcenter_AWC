@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <rect x="0.5" y="0.5" width="47.0001" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <line x1="13.5" y1="6.5" x2="13.5" y2="41.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="20.5" y1="6.5" x2="20.5" y2="41.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="27.5" y1="6.5" x2="27.5" y2="41.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="34.5" y1="6.5" x2="34.5" y2="41.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="41.5" y1="13.5" x2="6.5" y2="13.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="41.5" y1="20.5" x2="6.5" y2="20.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="41.5" y1="27.5" x2="6.5" y2="27.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <line x1="41.5" y1="34.5" x2="6.5" y2="34.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+    <rect x="6.5" y="6.5" width="35" height="35" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="42.11 20.532 34.5 33.35 27.5 26.85 20.5 35.85 13.5 22.35 6.5 31.748" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="2 3"/>
+    <polygon points="39.247 20.857 41.719 21.191 43.196 23.202 44 17.35 39.247 20.857" fill="#147391"/>
+    <polyline points="36.274 9.479 34.5 18.35 27.5 16.35 20.5 29.35 13.5 30.85 6.5 41.748" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke-dasharray="2 3"/>
+    <polygon points="33.681 10.736 36.124 10.23 38.184 11.637 37 5.85 33.681 10.736" fill="#147391"/>
+</svg>

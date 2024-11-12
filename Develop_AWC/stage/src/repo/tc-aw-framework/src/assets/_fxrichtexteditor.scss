@@ -1,0 +1,277 @@
+// Copyright (c) 2021 Siemens
+
+// mixins
+@import 'mixins/mixins';
+
+.aw-jswidgets-cellTop aw-property-rich-text-area-val {
+    display: inherit;
+    width: inherit;
+}
+
+// Rich Text Inline Editor Override Styling
+.aw-widgets-propertyRichTextEditValue,
+.aw-widgets-propertyRichTextEditValue.ck.ck-editor__editable_inline {
+    clear: both;
+    float: left;
+    width: 100%;
+    height: 100%;
+    min-height: 29px;
+    margin-top: 2px;
+    border-width: 2px;
+    border-style: solid;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-left: 8px;
+
+    //Reverting to browser stylesheet for ckeditor
+    i {
+        font-style: revert;
+    }
+
+    ol, ul {
+        margin: revert;
+        padding: revert;
+        list-style: revert;
+    }
+}
+
+.aw-jswidgets-arrayEditWidgetContainer .aw-widgets-propertyRichTextEditValue,
+.aw-jswidgets-arrayEditWidgetContainer .aw-widgets-propertyRichTextEditValue.ck.ck-editor__editable_inline {
+    margin-bottom: 0;
+    border-style: none;
+}
+
+/* CK-Editor(3rd party tool) uses inline styling for width of dialog button.
+Hence, overriding using !important here*/
+
+.cke_dialog_ui_button {
+    width: 98% !important;
+}
+
+.aw-jswidgets-property .aw-widgets-richText {
+    font-size: $fontsize_normal;
+    display: table;
+}
+
+.aw-jswidgets-property .aw-widgets-richTextEdit {
+    display: block;
+    word-wrap: break-word;
+}
+
+.aw-widgets-richText h1,
+.aw-widgets-richText h2,
+.aw-widgets-richText h3,
+.aw-widgets-richText h4,
+.aw-widgets-richText h5,
+.aw-widgets-richText h6 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.aw-widgets-richText h1 {
+    display: block;
+    font-size: $fontsize_2x_large;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.aw-widgets-richText h2 {
+    display: block;
+    font-size: $fontsize_x_large;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.aw-widgets-richText h3 {
+    display: block;
+    font-size: $fontsize_normal;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.aw-widgets-richText h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.aw-widgets-richText h5 {
+    display: block;
+    font-size: $fontsize_small;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.aw-widgets-richText h6 {
+    display: block;
+    font-size: $fontsize_2x_small;
+    -webkit-margin-before: 2.33em;
+    -webkit-margin-after: 2.33em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    font-weight: bold;
+}
+
+.aw-widgets-richText i,
+.aw-widgets-richText cite,
+.aw-widgets-richText em,
+.aw-widgets-richText var,
+.aw-widgets-richText address,
+.aw-widgets-richText dfn {
+    font-style: italic;
+}
+
+.aw-widgets-richText b,
+strong {
+    font-weight: bold;
+}
+
+.aw-widgets-richText .cke_contents_ltr blockquote {
+    padding-left: 20px;
+    padding-right: 8px;
+    border-left-width: 5px;
+}
+
+.aw-widgets-richText .cke_contents_rtl blockquote {
+    padding-left: 8px;
+    padding-right: 20px;
+    border-right-width: 5px;
+}
+
+.aw-widgets-richText blockquote:after,
+blockquote:before,
+q {
+    content: inherit;
+    quotes: inherit;
+}
+
+.aw-widgets-richText q::before {
+    content: open-quote;
+}
+
+.aw-widgets-richText q::after {
+    content: close-quote;
+}
+
+.aw-widgets-richText ol,
+.aw-widgets-richText ul {
+    padding: 0 40px;
+}
+
+.aw-widgets-richText ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.aw-widgets-richText ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
+
+.aw-widgets-richText pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    -webkit-tab-size: 4;
+    tab-size: 4;
+}
+
+.aw-widgets-richText span[lang] {
+    font-style: italic;
+}
+
+.aw-widgets-richText figure>figcaption {
+    text-align: center;
+    display: block;
+}
+
+.aw-widgets-richText tt,
+.aw-widgets-richText code,
+.aw-widgets-richText kbd,
+.aw-widgets-richText samp {
+    font-family: monospace;
+}
+
+.aw-widgets-richText small {
+    font-size: $fontsize_small;
+}
+
+.aw-widgets-richText big {
+    font-size: $fontsize_2x_large;
+}
+
+.aw-widgets-richText sub {
+    vertical-align: sub;
+    font-size: $fontsize_small;
+}
+
+.aw-widgets-richText sup {
+    vertical-align: super;
+    font-size: $fontsize_small;
+}
+
+.aw-widgets-richText hr {
+    border: 0;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.aw-widgets-richText blockquote {
+    font-style: italic;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    padding: 2px 0;
+    border-style: solid;
+    border-width: 0;
+}
+
+.aw-widgets-richText figure {
+    text-align: center;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 10px 20px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.aw-widgets-richText a>img {
+    padding: 1px;
+    margin: 1px;
+    border: none;
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+.aw-widgets-richText img.right {
+    float: right;
+    margin-left: 15px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.aw-widgets-richText img.left {
+    float: left;
+    margin-right: 15px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+}

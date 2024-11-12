@@ -1,0 +1,43 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "obj-nav-state": {
+            "type": "object"
+        },
+        "vmo": {
+            "type": "viewModelObject"
+        },
+        "selections": {
+            "type": "object"
+        }
+    },
+    "data": {
+        "crumbs": [],
+        "breadcrumbViewMode": "false"
+    },
+    "actions": {
+        "buildCrumbs": {
+            "actionType": "JSFunction",
+            "method": "buildNavigateBreadcrumb",
+            "inputData": {
+                "totalFound": "{{props.objNavState.totalFound}}",
+                "selectedObjects": "{{props.selections}}",
+                "baseSelection": "{{subPanelContext.baseSelection}}"
+            },
+            "outputData": {
+                "crumbs": "crumbs"
+            },
+            "deps": "js/aw.navigateBreadCrumbService"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+            "action": "buildCrumbs",
+            "observers": [ "props.subPanelContext.baseSelection", "props.objNavState.totalFound", "props.selections.length", "props.selections[0].uid", "props.vmo.props.object_string.dbValue"]
+        } ]
+    }
+
+}

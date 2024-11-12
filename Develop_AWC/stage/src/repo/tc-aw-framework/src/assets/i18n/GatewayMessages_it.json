@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Pagina iniziale",
+    "pinObjectCommandTitle": "Aggancia alla pagina iniziale",
+    "unPinObjectCommandTitle": "Sgancia dalla pagina iniziale",
+    "pinObjectFailed": "Errore durante l'aggancio.",
+    "unPinObjectFailed": "Errore durante lo sganciamento.",
+    "tileUpdateFailedMsg": "Errore durante l'aggiornamento del riquadro.",
+    "pinObjectFailedNoGateway": "Problema durante l'accesso alla pagina iniziale.",
+    "pinObjectMultipleObjectError": "È possibile agganciare un solo oggetto per volta. Eventuali altri oggetti saranno ignorati.",
+    "unpinTileFailed": "Errore durante lo sganciamento.",
+    "homeFolderTitle": "Cartelle",
+    "Awp0ShowHomeFolderDesc": "Aprire la cartella Home.",
+    "Awp0PinObjectDesc": "Aggiungere la selezione come riquadro nella pagina iniziale."
+}

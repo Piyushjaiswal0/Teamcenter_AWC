@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.493" y1="8.54" x2="5.679" y2="8.54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="21.249" y1="-1.212" x2="41.754" y2="19.293" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="1.501" y1="24.54" x2="5.686" y2="24.54" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="21.246" y1="13.79" x2="41.746" y2="34.29" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="1.501" y1="39.54" x2="5.686" y2="39.54" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="21.246" y1="28.79" x2="41.746" y2="49.29" xlink:href="#linear-gradient"/>
+  </defs>
+  <circle cx="3.586" cy="8.54" r="2.093" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="6.028" y1="8.54" x2="16.494" y2="8.54" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="16.496" y="3.54" width="30.011" height="11" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <circle cx="3.594" cy="24.54" r="2.093" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <line x1="6.034" y1="24.54" x2="16.496" y2="24.54" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="16.496" y="18.54" width="30" height="11" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+  <circle cx="3.594" cy="39.54" r="2.093" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-5)"/>
+  <line x1="6.034" y1="39.54" x2="16.496" y2="39.54" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="16.496" y="33.54" width="30" height="11" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-6)"/>
+</svg>

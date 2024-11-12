@@ -1,0 +1,268 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+
+.aw-viewerjs-scroll {
+    overflow: auto;
+    width: 100%;
+}
+
+@media only screen and (max-device-width: 1024px) {
+
+    /* always expose scroll-y in narrow-mode and for touch devices */
+    .aw-viewerjs-scroll {
+        overflow-y: auto;
+    }
+}
+
+.aw-viewerjs-margin {
+    margin: 5px 5px 5px 5px;
+}
+
+.aw-viewerjs {
+    float: left;
+    height: inherit;
+}
+
+.aw-viewerjs-gutter {
+    border-right: 1px solid;
+}
+
+.aw-viewerjs-gutterText {
+    text-align: right;
+    margin-right: 2px;
+}
+
+.aw-viewerjs-text {
+    font-family: "Courier New", Courier, monospace;
+    font-size: $fontsize_large;
+    line-height: 18px;
+    overflow: auto;
+    width: 100%;
+}
+
+.aw-viewerjs-text * {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.aw-viewerjs-textLines {
+    padding-right: 10px;
+    float: left;
+    text-align: right;
+}
+
+.aw-viewerjs-textLines.aw-viewerjs-wordWrapped {
+    display: none;
+}
+
+.aw-viewerjs-border {
+    border: 2px solid;
+}
+
+.aw-viewerjs-header {
+    height: auto;
+}
+
+.aw-viewerjs-header .aw-layout-flexRow {
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+
+}
+
+.aw-viewerjs-header .aw-layout-flexRowContainer {
+    height: auto;
+}
+
+.aw-viewerjs-headerPropertyPopup {
+    margin-top: 20px;
+}
+
+.aw-viewerjs-content {
+    width: calc(100% - 20px);
+}
+
+.aw-viewerjs-innerContent {
+    height: calc(100% - 77px);
+}
+
+.aw-viewerjs-innerContentNoHeader {
+    height: 100%;
+}
+
+.aw-viewerjs-controlArrow {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+.aw-viewerjs-controlArrowContainer {
+    min-width: 16px;
+    display: none;
+}
+
+.aw-viewerjs-hover .aw-viewerjs-controlArrowContainer {
+    display: block;
+}
+
+.aw-viewerjs-controlArrowContainerLeft {
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+}
+
+.aw-viewerjs-controlArrowContainerRight {
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    right: 0;
+}
+
+.aw-viewerjs-leftArrow {
+    left: 0;
+}
+
+.aw-viewerjs-rightArrow {
+    right: 0;
+}
+
+.aw-viewerjs-controlArrow:hover {
+    width: 32px;
+}
+
+.aw-viewerjs-elementPosition {
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+}
+
+
+.sw-full-screen-on {
+    .aw-viewerjs-elementPosition {
+        align-items: inherit;
+        -webkit-align-items: inherit;
+        -ms-flex-align: inherit;
+    }
+}
+
+.aw-viewerjs-arrowWidth {
+    width: 5%;
+    min-width: 16px;
+    min-height: 30px;
+    position: relative;
+}
+
+.aw-viewerjs-dimensions {
+    width: 100%;
+    min-height: 400px;
+}
+
+.aw-layout-primaryWorkareaFill .aw-viewerjs-headerPropertyPopup .aw-widgets-cellListWidget {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.aw-viewerjs-header .aw-layout-headerProperties {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+}
+
+.aw-viewerjs-container .aw-viewerjs-header .aw-layout-headerProperties {
+    max-height: 4.2em;
+}
+
+@media all and (max-width: $narrowMode_max_width) {
+    .aw-viewerjs-header .aw-layout-headerProperties {
+        width: 100%;
+    }
+
+    .aw-viewerjs-commandBarLayout {
+        width: 100%;
+    }
+
+    .aw-viewerjs-header .aw-layout-headerProperties .aw-layout-flexRowContainer:not(:first-child) {
+        display: none;
+    }
+}
+
+.aw-viewerjs-hideContent,
+.aw-xrt-columnContentPanel.aw-viewerjs-hideContent {
+    display: none;
+}
+
+/*
+This class is used only for viewer full-screen. !important enables full-screen to work in state-less mode.
+The service only applies/removes a marker class. There is no need to manage existing width and height state of
+XRT sections before going into full screen and restoring the same on coming out of full-screen.
+*/
+.aw-viewerjs-fullViewActive {
+    width: 100% !important;
+    margin-left: 16px;
+}
+
+.aw-viewerjs-fullViewActiveBody {
+    aw-showobject-page .aw-layout-headerSubTitle a {
+        font-weight: 600;
+        padding: 0 0 2px 0;
+    }
+
+    .aw-layout-headerProperties.aw-viewerjs-elementPosition {
+        padding: 10px 0 10px 0;
+    }
+}
+
+.aw-layout-headerProperties.aw-viewerjs-elementPosition {
+    margin-bottom: 8px;
+}
+
+.aw-viewerjs-commandBarLayout {
+    width: 100%;
+}
+
+.aw-viewerjs-commandBarLayout .aw-commands-svg {
+    width: 24px;
+    height: 24px;
+}
+
+.aw-viewerjs-header .aw-widgets-propertyValueLink {
+    padding: 0 10px 5px 0;
+}
+
+.aw-viewerjs-header .sw-property-val {
+    padding: 0 10px 5px 10px;
+}
+
+.aw-viewerjs-progress {
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    background: url("./image/miscSessionProgressBlack32.svg");
+}
+
+.aw-viewerjs-progressContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.aw-viewerjs-commandBarLayout aw-command-bar.aw-commands-nativeCommandBar div.aw-commands-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.aw-viewerjs-officeFrame {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}

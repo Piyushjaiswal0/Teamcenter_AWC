@@ -1,0 +1,415 @@
+{
+    "types": [{
+        "name": "Awp0FullTextSavedSearch",
+        "properties": [{
+            "name": "object_name"
+        }, {
+            "name": "awp0search_string"
+        }, {
+            "name": "creation_date"
+        }, {
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "awp0string_filters"
+        }, {
+            "name": "last_mod_date"
+        }]
+    }, {
+        "name": "Awp0StringSearchFilter",
+        "properties": [{
+            "name": "awp0filter_name"
+        }, {
+            "name": "awp0value"
+        }]
+    }, {
+        "name": "ItemRevision",
+        "properties": [{
+            "name": "item_id"
+        }, {
+            "name": "item_revision_id"
+        }, {
+            "name": "object_name"
+        }, {
+            "name": "object_desc"
+        }, {
+            "name": "items_tag"
+        }, {
+            "name": "awp0ThumbnailImageTicket"
+        }
+        ]
+    }, {
+        "name": "Awp0AdvancedSearchInput",
+        "properties": [{
+            "name": "awp0AdvancedQueryName"
+        }, {
+            "name": "awp0QuickSearchName"
+        }]
+    },{
+        "name": "BusinessObject",
+        "properties": [
+        {
+            "name": "awp0CellProperties"
+        }, {"name": "object_string"}]
+    },{
+        "name": "Awb0Element",
+        "properties": [
+        {
+            "name": "awb0NumberOfChildren",
+            "modifiers": [ {
+                "name": "excludeUiValues",
+                "Value": "true"
+            } ]
+        }]
+    }, {
+        "name": "EPMTask",
+        "properties": [{
+            "name": "due_date"
+        }, {
+            "name": "viewed_by_me"
+        }, {
+            "name": "responsible_party",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "active_surrogate"
+        }, {
+            "name": "fnd0Assignee",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "awp0PerformableByMeBehavior"
+        }, {
+            "name": "awp0AssignableByMeBehavior"
+        }, {
+            "name": "root_target_attachments"
+        }, {
+            "name": "job_name"
+        }, {
+            "name": "fnd0PerformForm"
+        }, {
+            "name": "fnd0TaskExecutionStatus"
+        }, {
+            "name": "fnd0TaskExecutionErrors"
+            }]
+    }, {
+        "name": "Awb0ConditionalElement",
+        "properties": [{
+            "name": "awb0ArchetypeId"
+        }, {
+            "name": "awb0ArchetypeRevDescription"
+        }, {
+            "name": "awb0ArchetypeRevId"
+        }, {
+            "name": "awb0ArchetypeRevName"
+        }, {
+            "name": "awb0LogicalDesignator"
+        }, {
+            "name": "awb0Quantity"
+        }, {
+            "name": "awb0Sequence"
+        }]
+    },
+    {
+        "name": "ResourcePool",
+        "properties": [{
+            "name": "group"
+        }, {
+            "name": "role"
+        }]
+    }, {
+        "name": "POM_member",
+        "properties": [{
+            "name": "user",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }]
+    }, {
+        "name": "Role",
+        "properties": [{
+            "name": "role_name"
+        }]
+    }, {
+        "name": "Group",
+        "properties": [{
+            "name": "name"
+        }]
+    }, {
+        "name": "EPMJob",
+        "properties": [{
+            "name": "object_desc"
+        }]
+    }, {
+        "name": "Person",
+        "properties": [{
+            "name": "PA9"
+        }, {
+            "name": "PA10"
+        }]
+    }, {
+        "name": "Signoff",
+        "properties": [{
+            "name": "group_member",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "resource_pool",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "origin",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "origin_profile",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "fnd0ParentTask",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "decision"
+        }, {
+            "name": "object_name"
+        }, {
+            "name": "job_name"
+        }, {
+            "name": "fnd0Assignee",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "owning_user"
+        }, {
+            "name": "due_date"
+        }, {
+            "name": "active_surrogate",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "awp0PerformableByMeBehavior"
+        }, {
+            "name": "awp0AssignableByMeBehavior"
+        }, {
+            "name": "awp0AddReviewerByMeBehavior"
+        }, {
+            "name": "fnd0TaskExecutionStatus"
+        }, {
+            "name": "fnd0TaskExecutionErrors"
+        }]
+    }, {
+        "name": "WorkspaceObject",
+        "properties": [{
+            "name": "release_status_list"
+        }]
+    },
+       
+        {
+            "name": "Awb0Element",
+            "properties": [
+                {
+                    "name":"awb0CopyStableId"
+                },
+                {
+                    "name": "awb0UnderlyingObject"                     
+                },
+                {
+                    "name": "awb0TraceLinkFlag"    
+                }
+             ]
+        },
+        {
+            "name": "RevisionRule",
+            "properties": [
+                {
+                    "name":"object_desc"
+                },
+                {
+                    "name":"suppressed"
+                }
+             ]
+        },  
+        {
+            "name": "ClosureRule",
+            "properties": [
+                {
+                    "name":"name"
+                }
+             ]
+        },        
+        {
+            "name":"Awb0ConditionalElement", 
+            "properties":
+            [
+                {
+                    "name":"awb0NumberOfChildren"
+                },              
+                {
+                    "name":"awb0Parent",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                    
+                }
+            ]
+        },
+        {
+            "name": "Awb0ProductContextInfo",
+            "properties": [
+                {
+                    "name": "awb0Product",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "awb0CurrentRevRule",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },
+                {
+                    "name":"awb0SupportedFeatures",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },
+                {
+                    "name":"awb0AutoBookmark"
+                },
+                {
+                    "name":"awb0ContextObject",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },                                              
+                {
+                    "name":"awb0EffDate"                    
+                },
+                {
+                    "name":"awb0EffUnitNo"                    
+                },
+                {
+                    "name":"awb0IndexUpdateDate"
+                },  
+                {
+                    "name":"awb0StartEffDates"                    
+                },
+                {
+                    "name":"awb0EndEffDates"                    
+                },
+                {
+                    "name":"awb0StartEffUnits"                    
+                },
+                {
+                    "name":"awb0EndEffUnits"                    
+                },
+                {
+                    "name":"awb0EffEndItem",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },
+                {
+                    "name":"awb0CurrentVariantRule",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]                    
+                },
+                {
+                    "name":"awb0VariantRuleOwningRev",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },                  
+                {
+                    "name":"awb0ClientScopeUri"
+                },
+                {
+                    "name": "awb0ClosureRule",
+                    "modifiers": [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },
+                {
+                    "name":"awb0UseGlobalRevisionRule"
+                }
+             ]
+        },  
+        {
+            "name": "Awb0SaveWorkingContextFeature",
+            "properties": [
+                {
+                    "name": "awb0ContainerNames"
+                }
+             ]
+        },
+        {
+            "name": "Awb0FeatureList",
+            "properties": [
+                {
+                    "name": "awb0AvailableFeatures"
+                },
+                {
+                    "name": "awb0NonModifiableFeatures"
+                }
+             ]
+        },
+        {
+            "name":"Awb0SavedBookmark",
+            "properties": [
+                {
+                    "name": "awb0PendingChanges"
+                }
+            ]
+        }    
+    ]
+}

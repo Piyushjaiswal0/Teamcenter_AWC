@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <rect x="7" width="1" height="5" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="7" y="10" width="1" height="5" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="10" y="7" width="5" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="0" y="7" width="5" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="8.6716" y="3.0001" width="5.6569" height=".9999" transform="translate(.8934 9.1569) rotate(-45)" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x=".6716" y="11.0001" width="5.6569" height=".9999" transform="translate(-7.1066 5.8431) rotate(-45)" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="11.0001" y="8.6716" width=".9999" height="5.6569" transform="translate(-4.7635 11.5) rotate(-45)" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3.0001" y=".6716" width=".9999" height="5.6569" transform="translate(-1.4497 3.5) rotate(-45)" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

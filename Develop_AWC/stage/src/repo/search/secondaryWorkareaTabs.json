@@ -1,0 +1,18 @@
+[
+  {
+    "name": "SearchChart",
+    "priority": 50,
+    "view": "AwSearchChart",
+    "visibleWhen": "selection.length === 0 && context.searchState && context.searchState.chartTitle && context.searchState.forceChart && !(context.searchState.thresholdExceeded==='true')"
+  },
+  {
+    "name": "AdvancedResultsEmptyWorkarea",
+    "view": "Awp0AdvancedSearchSWAEmptyState",
+    "visibleWhen": "selection.length === 0  && (context.clientScopeURI === 'Awp0AdvancedSearch' || context.nameToken === 'com.siemens.splm.client.search:SearchResultsSubLocation' || context.nameToken === 'com.siemens.splm.client.search:ShapeSearchResultsSubLocation') && !context.searchState.chartProvider"
+  },
+  {
+    "name": "SavedEmptyWorkarea",
+    "view": "Awp0AdvancedSearchSWAEmptyState",
+    "visibleWhen": "context.searchState && context.searchState.totalFound > 0 && selection.length === 0  && context.clientScopeURI === 'Awp0SavedSearch' && !context.searchState.chartProvider"
+  }
+]

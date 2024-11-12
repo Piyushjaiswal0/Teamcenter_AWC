@@ -1,0 +1,14 @@
+{
+    "replace": "Reemplazar",
+    "upload": "Cargar",
+    "chooseFromSystem": "Seleccionar un archivo del sistema",
+    "replaceFileError": "Actualice el archivo con la misma extensión que el archivo anterior presente en el ítem que se reemplazó.",
+    "replaceSuccessWithFileName": "\"{0}\" fue reemplazado.",
+    "replaceFailureWithFileName": "No se puede agregar el archivo importado como una referencia definida a un conjunto de datos porque la extensión de dicho archivo no es válida",
+    "replaceNoValidTarget": "\"{0}\" no tiene un archivo válido para reemplazar.",
+    "replaceFileCommandTitle": "Reemplazar archivo",
+    "InvalidSelectedObject": "Se proporcionó un conjunto de datos o un objeto de archivo de volúmenes no válido para generar un archivo PLMD. Vuelva a intentar usando un conjunto de datos o un objeto de archivo de volúmenes que sea válido.",
+    "AsynUploadInProgress": "Se encuentra en curso la carga asíncrona del archivo en el volumen de Teamcenter.",
+    "PlatformNotSupported": "No se admite la operación de reemplazo sincrónico en esta plataforma: cambiando por el reemplazo sincrónico.",
+    "Awp0ReplaceDatasetDesc": "Reemplaza el archivo seleccionado por uno nuevo de su dispositivo."
+}

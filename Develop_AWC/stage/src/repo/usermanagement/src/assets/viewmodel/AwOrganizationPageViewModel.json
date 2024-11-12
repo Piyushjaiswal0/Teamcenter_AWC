@@ -1,0 +1,94 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "type": "navigate",
+                "vm" : "orgBreadCrumb"
+            },
+            "label": {
+                "source": "/i18n/UsermanagementMessages",
+                "key": "organizationTitle"
+            },
+            "clientScopeURI": "Um0ShowOrganization",
+            "nameToken": "com.siemens.splm.client.usermanagement:organizationsublocation",
+            "context": {
+                "search": {
+                    "provider": "um0AdminDataProvider",
+                    "criteria": {
+                        "resourceProviderContentType": "Organization"
+                    },
+                    "sortType": "Alphabetical",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "hideInContentSearchBox": true,
+                    "showLoadingText": true
+                }
+            },
+            "policy": "/policies/adminObjectPropertyPolicy.json",
+            "selectionMode": "single",
+            "viewBase": "org",
+            "viewModes": {
+                "SummaryView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": true
+                },
+                "TableSummaryView": {
+                    "primaryWorkArea": "table",
+                    "secondaryWorkArea": true
+                },
+                "ListView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": false
+                },
+                "TableView": {
+                    "primaryWorkArea": "table",
+                    "secondaryWorkArea": false
+                },
+                "ImageView": {
+                    "primaryWorkArea": "image",
+                    "secondaryWorkArea": false
+                },
+                "TreeView": {
+                    "primaryWorkArea": "tree",
+                    "secondaryWorkArea": false
+                },
+                "TreeSummaryView": {
+                    "primaryWorkArea": "tree",
+                    "secondaryWorkArea": true
+                }
+            }
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "searchState": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "onEvent": [ {
+        "eventId": "locationChangeSuccess",
+        "action": "updateSearchCriteriaAndXrtContext"
+    } ],
+    "lifecycleHooks": {
+        "onMount": "updateSearchCriteriaAndXrtContext",
+        "onUpdate": [ {
+            "action": "updateSearchCriteriaAndXrtContext",
+            "observers": [ "viewModel.atomicData.selectionData" ]
+        } ]
+    },
+    "actions": {
+        "updateSearchCriteriaAndXrtContext": {
+            "actionType": "JSFunction",
+            "method": "updateSearchCriteriaAndXrtContext",
+            "inputData": {
+                "searchStateAtomicData": "{{data.atomicDataRef.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}",
+                "selectionData": "{{data.selectionData}}"
+            },
+            "deps": "js/userMgmtService"
+        }
+    }
+}

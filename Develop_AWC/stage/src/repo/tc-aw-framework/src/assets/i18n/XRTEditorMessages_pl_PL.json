@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "Zakres:",
+    "objectTypeLabel": "Typ obiektu:",
+    "xrtTypeLabel": "Typ XRT:",
+    "locationLabel": "Lokalizacja:",
+    "sublocationLabel": "Lokalizacja podrzędna:",
+    "loadButtonText": "Załaduj",
+    "editLabel": "Edycja: ",
+    "readOnlyLabel": "(Tylko do odczytu)",
+    "overrideMsg": "\"{0}\" zostanie zastąpione w zakresie użytkownika.",
+    "cancel": "Anuluj",
+    "override": "Zastąp"
+}

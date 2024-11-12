@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Warnungen",
+    "subManAppLabel": "Newsfeed",
+    "clear": "Löschen",
+    "noNotificationMsg": "Keine neuen Benachrichtigungen",
+    "multipleObjectsMsg": "\"{0}\" und \"{1}\" mehr",
+    "aw_globalToolbar": "Globale Symbolleiste",
+    "Awp0ShowAlertWithBubbleDesc": "Neue Warnungen anzeigen."
+}

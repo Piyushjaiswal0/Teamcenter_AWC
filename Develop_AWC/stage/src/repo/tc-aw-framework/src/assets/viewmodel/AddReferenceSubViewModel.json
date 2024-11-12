@@ -1,0 +1,88 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-add.directive",
+        "js/aw-panel.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "data": {
+        "addPanelState": {
+            "initialValues": {
+                "sourceObjects": "",
+                "selectedTab": ""
+            },
+            "meta": {
+                "sourceObjects": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                },
+                "selectedTab": {
+                    "field": "true",
+                    "type": "OBJECT"
+                }
+            }
+        }
+    },
+    "actions": {
+        "updateRefProperty": {
+            "actionType": "JSFunction",
+            "method": "updateRefProperty",
+            "deps": "js/addObjectUtils",
+            "inputData": {
+                "sourceObjects": "{{addPanelState.sourceObjects}}",
+                "subPanelContext": "{{props.activeState.value.context}}"
+            }
+        },
+        "setTypeReference": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateRefProperty"
+                },
+                {
+                    "action": "navigateBack"
+                },
+                {
+                    "action": "setActiveView"
+                }
+            ]
+        },
+        "navigateBack": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData":
+            {
+                "events":
+                [
+                    {
+                        "name": "awPanel.navigate",
+                        "eventData":
+                        {
+                            "backNavigation": true,
+                            "destPanelId": "{{ctx.panelContext.srcPanelId}}"
+                        }
+                    }
+                ]
+            }
+        },
+        "setActiveView": {
+            "actionType": "JSFunction",
+            "method": "setActiveView",
+            "deps": "js/addObjectUtils",
+            "inputData": {
+                "activeViewState": "{{props.activeState}}",
+                "destPanelId": "{{props.prePanelId}}"
+            }
+        }
+    },
+    "i18n": {
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ]
+    },
+    "ctx": {
+        "panelContext": null
+    }
+}

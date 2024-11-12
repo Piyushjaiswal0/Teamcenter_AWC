@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Uspořádat",
+    "arrangeButtonTitle": "Uspořádat",
+    "arrangeAdminTitle": "Správce",
+    "arrangeNoColumnConfigs": "Žádná uložená uspořádání",
+    "arrangeConfigNameTitle": "Uspořádání",
+    "arrangeNewConfigNameTitle": "Název",
+    "arrangeNewConfigNameTitleRequired": "Pojmenujte uspořádání",
+    "arrangeNewConfigTitle": "Uložit jako nové uspořádání",
+    "arrangeAndSaveButtonTitle": "Uložit a uspořádat",
+    "arrangeAndCreateButtonTitle": "Uložit a uspořádat",
+    "defaultNewColumnConfigName": "Nové uspořádání sloupce",
+    "availableColumnsTitle": "Dostupné sloupce",
+    "tableColumnsTitle": "Zobrazené sloupce",
+    "box1Title": "Příklad příkazu Active Workspace s bublinovou místní nabídkou",
+    "seeMorePropertiesTitle": "Zobrazit celou databázi..."
+}

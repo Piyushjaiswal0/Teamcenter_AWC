@@ -1,0 +1,18 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M11,8H1V1h10V8z M2,7.125h8v-5.25H2V7.125z"/>
+</g>
+<g>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M11,22H1v-7h10V22z M2,21.125h8v-5.25H2V21.125z"/>
+</g>
+<g>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M23,15H13V8h10V15z M13.909,14.222h8.182V8.778h-8.182V14.222z"/>
+</g>
+<g>
+	<rect x="5" y="7.458" class="aw-theme-iconOutline" fill="#464646" width="1" height="7.958"/>
+</g>
+<g>
+	<rect x="5" y="11" class="aw-theme-iconOutline" fill="#464646" width="8.25" height="1"/>
+</g>
+</svg>

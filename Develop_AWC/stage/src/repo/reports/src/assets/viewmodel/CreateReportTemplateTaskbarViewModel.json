@@ -1,0 +1,313 @@
+{
+    "schemaVersion": "1.0.0",
+    "data":{
+        "reportTypeLabel": {
+            "propertyDisplayName": "{{i18n.reportType}}"
+        },
+        "reportTypeName": {
+            "displayName": "{{i18n.reportType}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "hasLov": true,
+            "dataProvider": "reportTypeProvider",
+            "dbValue": "{{ctx.state.params.reportType}}",
+            "emptyLOVEntry": false
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "criteria": {
+            "propertyDisplayName": "{{i18n.criteria}}"
+        },
+        "relations":{
+            "propertyDisplayName": "{{i18n.relations}}"
+        },
+        "criteriaValue": {
+            "displayName": "",
+            "dispValue": "{{i18n.defaultCriteria}}",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "criteriaChips":[],
+        "segmentChips": [{
+            "chipType": "BUTTON",
+            "labelDisplayName": ""
+        }]
+    },
+    "dataProviders": {
+        "reportTypeProvider": {
+            "dataProviderType": "Static",
+            "response": [
+                {
+                    "propDisplayDescription": "{{i18n.advSummReportDesc}}",
+                    "propDisplayValue": "{{i18n.advSummReport}}",
+                    "propInternalValue": "4",
+                    "selected": false
+                },
+                {
+                    "propDisplayDescription": "{{i18n.advItemReportDesc}}",
+                    "propDisplayValue": "{{i18n.advItemReport}}",
+                    "propInternalValue": "1",
+                    "selected": false
+                }
+            ],
+            "totalFound": 2
+        },
+        "criteriaChipDataProvider": {
+            "type": "Static",
+            "response": "{{data.criteriaChips}}",
+            "selectionModelMode": "none"
+        },
+        "segmentChipDataProvider": {
+            "type": "Static",
+            "response": "{{data.segmentChips}}",
+            "selectionModelMode": "none"
+        }
+    },
+    "i18n": {
+        "reportType": [ "ReportChartMessages" ],
+        "advSummReport": ["ReportChartMessages"],
+        "advItemReport": ["ReportChartMessages"],
+        "advSummReportDesc": ["ReportChartMessages"],
+        "advItemReportDesc": ["ReportChartMessages"],
+        "defaultCriteria": ["ReportChartMessages"],
+        "criteria": ["ReportChartMessages"],
+        "segments": ["ReportChartMessages"],
+        "parentSource": ["ReportChartMessages"],
+        "relations": ["ReportChartMessages"],
+        "totalSegments": ["ReportChartMessages"],
+        "barChart": ["ReportChartMessages"],
+        "rptCancel": ["ReportMessages"],
+        "changeReportTypeConfirmationMsg": ["ReportChartMessages"],
+        "continue": ["ReportChartMessages"]
+    },
+    "messages": {
+        "changeReportTypeConfirmationMsg":{
+            "messageType": "WARNING",
+            "messageText": "{{i18n.changeReportTypeConfirmationMsg}}",
+            "navigationOptions": [ {
+                "option": "CancelButtonLabel",
+                "text": "{{i18n.rptCancel}}",
+                "action": "setReportTypeName"
+            }, {
+                "option": "proceedOption",
+                "text": "{{i18n.continue}}",
+                "action": "updateLocationAndClearReportsState"
+            } ]
+        }
+    },
+    "actions": {
+        "initialize":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "setReportTypeName"
+            },{
+                "action": "callUpdateSourceObjectBreadcrumb"
+            }]
+        },
+        "changeReportType":{
+            "actionType": "batchJob",
+            "steps":[{
+                "action": "changeReportTypeConfirmation",
+                "condition": "conditions.canChangeReportType"
+            },{
+                "action": "updateLocationAndClearReportsState",
+                "condition": "!conditions.canChangeReportType"
+            }]
+        },
+        "changeReportTypeConfirmation":{
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "changeReportTypeConfirmation"
+                } ]
+            }
+        },
+        "setReportTypeName": {
+            "actionType": "JSFunction",
+            "method": "setReportTypeName",
+            "inputData": {
+                "reportType": "{{ctx.state.params.reportType}}",
+                "reportTypeName": "{{data.reportTypeName}}",
+                "i18n": "{{i18n}}"
+            },
+            "outputData": {
+                "reportTypeName": ""
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "updateLocationAndClearReportsState": {
+            "actionType": "batchJob",
+            "steps": [{
+                "action": "updateLocation",
+                "condition": "data.reportTypeName.uiValue"
+            }, {
+                "action": "clearReportsState"
+            }]
+        },
+        "updateLocation":{
+            "actionType": "Navigate",
+            "navigateTo": "createReportTemplate",
+            "navigationParams": {
+                "previewMode": "false",
+                "reportType": "{{data.reportTypeName.uiValue == i18n.advItemReport? '1' : '4'}}"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "clearReportsState": {
+            "actionType": "JSFunction",
+            "method": "updateState",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}",
+                "value": {
+                    "initRepDisp": true
+                },
+                "i18n": "{{i18n}}"
+            },
+            "outputData": {
+                "criteriaChips": ""
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "removeCriteriaAction": {
+            "actionType": "batchJob",
+            "steps":[
+                {
+                    "action": "updateSearchCriteria"
+                },
+                {
+                    "action": "clearReportsState"
+                }
+            ]
+        },
+        "updateSearchCriteria":{
+            "actionType": "Navigate",
+            "navigateTo": "createReportTemplate",
+            "navigationParams": {
+                "previewMode": "false",
+                "reportType": "{{ctx.state.params.reportType}}"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "callUpdateSourceObjectBreadcrumb": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updateSourceObjectBreadcrumb",
+                "condition": "conditions.itemReport"
+            } ]
+        },
+        "updateSourceObjectBreadcrumb":{
+            "actionType": "JSFunctionAsync",
+            "method": "updateSourceObjectBreadcrumb",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "criteriaChips": ""
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "openSegmentPopup": {
+            "actionType": "popup",
+            "inputData": {
+                "options": {
+                    "view": "SegmentTreePopup",
+                    "placement": "bottom",
+                    "hasArrow": true,
+                    "hasCloseButton": false,
+                    "subPanelContext": {
+                        "reportsState": "{{props.subPanelContext.reportsState}}"
+                    }
+                }
+            },
+            "deps": "js/AwConfigureChartService"
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        },
+         "updateSegmentChips":{
+            "actionType": "JSFunctionAsync",
+            "method": "updateSegmentChips",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}",
+                "i18n": "{{i18n}}"
+            },
+            "outputData": {
+                "segmentChips": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "segmentChipDataProvider.reset"
+                } ]
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "updateCriteriaChipsProvider": {
+            "actionType": "dataProvider",
+            "method": "criteriaChipDataProvider"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUpdate": [
+            {
+                "action": "callUpdateSourceObjectBreadcrumb",
+                "observers":[
+                    "viewModel.ctx.state.params.searchCriteria",
+                    "props.subPanelContext.reportsState.reportParameters.ReportDefProps.ReportClassParameters.rootSampleUid"
+                ]
+            },
+            {
+                "action": "updateSegmentChips",
+                "observers":[
+                    "props.subPanelContext.reportsState.segmentTree"
+                ]
+            },
+            {
+                "action": "updateCriteriaChipsProvider",
+                "observers":[
+                    "viewModel.data.criteriaChips"
+                ]
+            }
+        ]
+    },
+    "conditions": {
+        "notPreviewed":{
+            "expression": "ctx.state.params.previewMode === 'false'"
+        },
+        "editMode":{
+            "expression": "conditions.notPreviewed && !props.subPanelContext.reportsState.selectedReport"
+        },
+        "itemReport":{
+            "expression": "ctx.state.params.reportType === '1'"
+        },
+        "segmentsAvailable":{
+            "expression": "props.subPanelContext.reportsState.rootClassSampleObject.length>0 && props.subPanelContext.reportsState.segmentTree[0].children.length>0"
+        },
+        "canChangeReportType":{
+            "expression": "data.reportTypeName.dbValue !== ctx.state.params.reportType && ctx.state.params.searchCriteria"
+        }
+    },
+    "onEvent": [{
+        "eventId": "changeReportTypeConfirmation",
+        "message": "changeReportTypeConfirmationMsg"
+      }]
+}

@@ -1,0 +1,11 @@
+{
+    "Organization": "Organização",
+    "orgTreeFilterText": "Filtro",
+    "resultsText": "Resultados",
+    "noFiltersFound": "Nenhum resultado encontrado",
+    "noOrgTreeResultsFound": "Nenhum resultado encontrado para a string de filtro \"{0}\".",
+    "orgFilterUsage": "<br>Por exemplo, {0}:\"Ed Engenheiro\" retorna todos os usuários com Ed Engenheiro.<br>Os campos válidos são {1} e {2}.",
+    "usageMessage": "\"{0}\" não é uma string de filtro válida.{1}",
+    "orgEscapeChars": "<br>Strings de filtros contendo aspas devem ser precedidas por uma barra invertida (\\\").{0}",
+    "advancedSearchMessage": "<br>Strings de filtros contendo dois pontos devem ficar entre aspas (\" \"), a menos que usadas para encontrar um valor de campo específico.{0}"
+}

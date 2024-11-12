@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "Область:",
+    "objectTypeLabel": "Тип объекта:",
+    "xrtTypeLabel": "Тип XRT:",
+    "locationLabel": "Расположение:",
+    "sublocationLabel": "Вспомогательное расположение:",
+    "loadButtonText": "Загрузить",
+    "editLabel": "Изменить: ",
+    "readOnlyLabel": "(Только для чтения)",
+    "overrideMsg": "\"{0}\" will be overridden at the user scope.",
+    "cancel": "Отмена",
+    "override": "Исключение"
+}

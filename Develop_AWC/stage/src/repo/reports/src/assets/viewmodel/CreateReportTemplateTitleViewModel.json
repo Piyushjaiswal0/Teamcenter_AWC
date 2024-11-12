@@ -1,0 +1,16 @@
+{
+    "schemaVersion": "1.0.0",
+    "i18n": {
+        "createReport": [
+            "ReportChartMessages"
+        ],
+        "editReportTitle": [
+            "ReportChartMessages"
+        ]
+    },
+    "conditions": {
+        "clickedOnEditReport": {
+            "expression": "ctx.state.params.editReport === 'true'"
+        }
+    }
+}

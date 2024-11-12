@@ -1,0 +1,103 @@
+{
+  "typeProperties": {
+    "ImanSubscription": {
+      "displayProperty": "object_string",
+      "additionalProperties": [
+        {
+          "name": "subscriber"
+        },
+        {
+          "name": "is_modifiable"
+        },
+        {
+          "name": "fnd0EventHandlers",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "notification",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "event_handler",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "fnd0Condition"
+        },
+        {
+          "name": "target"
+        },
+        {
+          "name": "attribute_names"
+        },
+        {
+          "name": "attribute_values"
+        },
+        {
+          "name": "logic_operators"
+        },
+        {
+          "name": "math_operators"
+        },
+        {
+          "name": "handler_parameters"
+        }
+      ]
+    },
+    "Fnd0NotificationTemplate": {
+      "additionalProperties": [
+        {
+          "name": "subject"
+        },
+        {
+          "name": "message"
+        },
+        {
+          "name": "properties"
+        }
+      ]
+    },
+    "ImanActionHandler": {
+      "additionalProperties": [
+        {
+          "name": "handler_id"
+        }
+      ]
+    },
+    "ImanEventType": {
+      "additionalProperties": [
+        {
+          "name": "eventtype_id"
+        },
+        {
+          "name": "fnd0eventtype_name"
+        }
+      ]
+    },
+    "Fnd0Message": {
+      "additionalProperties": [
+        {
+          "name": "fnd0ApplicationType"
+        },
+        {
+          "name": "fnd0TargetObject"
+        }
+      ]
+    }
+  }
+}

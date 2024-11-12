@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Arrange",
+    "arrangeButtonTitle": "Arrange",
+    "arrangeAdminTitle": "Admin",
+    "arrangeNoColumnConfigs": "No Saved Arrangements",
+    "arrangeConfigNameTitle": "Arrangement",
+    "arrangeNewConfigNameTitle": "Name",
+    "arrangeNewConfigNameTitleRequired": "Name your arrangement",
+    "arrangeNewConfigTitle": "Save as new arrangement",
+    "arrangeAndSaveButtonTitle": "Save and Arrange",
+    "arrangeAndCreateButtonTitle": "Save and Arrange",
+    "defaultNewColumnConfigName": "New Column Arrangement",
+    "availableColumnsTitle": "Available Columns",
+    "tableColumnsTitle": "Displayed Columns",
+    "box1Title": "Example for Active Workspace command with balloon popup",
+    "seeMorePropertiesTitle": "View the full data base..."
+}

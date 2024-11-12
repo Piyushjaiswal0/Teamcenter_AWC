@@ -1,0 +1,5 @@
+<!-- Group link -->
+<aw-column visible-when="ctx.userSession.props.group.uiValue[0]!=''">
+    <aw-property-label prop="data.group"></aw-property-label>
+    <aw-link-with-popup-menu prop="ctx.userSession.props.group" dataprovider="data.dataProviders.groupLink" link-popup-menu-id="aw-state-userGroup" display-property="props.group" disable="ctx.groupRoleChangeDisabled"></aw-link-with-popup-menu>
+</aw-column>

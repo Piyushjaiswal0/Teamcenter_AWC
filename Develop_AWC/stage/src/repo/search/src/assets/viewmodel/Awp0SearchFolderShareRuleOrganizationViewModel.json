@@ -1,0 +1,120 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "disableRemoveButton": {
+            "actionType": "JSFunction",
+            "method": "disableButton",
+            "inputData": {
+                "buttonName": "remove",
+                "dataProvider": "{{data.dataProviders.orgTreeTableDataProvider}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "unRegisterOrgContext": {
+            "actionType": "JSFunction",
+            "method": "unRegisterOrgContext",
+            "deps": "js/Awp0SearchFolderShareRuleService",
+            "inputData": {
+            }
+        },
+        "handleOrgTreeSelection": {
+            "actionType": "JSFunction",
+            "method": "disableButton2",
+            "inputData": {
+                "buttonName": "remove",
+                "selectionData": "{{data.selectionData}}",
+                "searchFolderShareRuleState": "{{props.searchFolderShareRuleState}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "handleSelectionBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "handleOrgTreeSelection"
+                }
+            ]
+        },
+        "updateOrgTreeSelectionAfterSearchFolderShareRuleStateUpdate": {
+            "actionType": "JSFunction",
+            "method": "updateOrgTreeSelectionAfterSearchFolderShareRuleStateUpdate",
+            "inputData": {
+                "selectionData": "{{data.selectionData}}",
+                "searchFolderShareRuleState": "{{props.searchFolderShareRuleState}}",
+                "selectionDataUpdater": "{{data.updateAtomicData}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        }
+    },
+    "conditions": {},
+    "onEvent": [
+    ],
+    "data": {
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "searchState": {
+            "initialValues": {
+                "autoApplyFilters": true,
+                "criteria": {
+                    "searchString": ""
+                },
+                "label": {
+                    "source": "/i18n/SearchMessages",
+                    "key": "resultsText"
+                },
+                "provider": "Awp0OrgTreeProvider",
+                "hideSectionHeaders":true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+
+                } ]
+            }
+        }
+    },
+    "selectionModels": {
+        "activeFolderShareRuleSelectionModel": {
+            "selectionMode": "multiple"
+        }
+    },
+    "dataProviders": {
+    },
+    "columnProviders": {
+    },
+    "grids": {
+    },
+    "dataParseDefinitions": {
+    },
+    "lifecycleHooks": {
+        "onUnmount": "unRegisterOrgContext",
+        "onUpdate": [
+            {
+                "action": "handleSelectionBatchJob",
+                "observers": [
+                    "viewModel.atomicData.selectionData.selected"
+                ]
+            },
+            {
+                "action": "updateOrgTreeSelectionAfterSearchFolderShareRuleStateUpdate",
+                "observers": [
+                    "props.searchFolderShareRuleState"
+                ]
+            }
+        ]
+    },
+    "messages": {},
+    "i18n": {},
+    "props": {
+        "search-folder-share-rule-state": {
+            "type": "object"
+        }
+    }
+}

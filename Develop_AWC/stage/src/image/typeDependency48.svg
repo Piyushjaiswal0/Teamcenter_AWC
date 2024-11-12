@@ -1,0 +1,21 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	  viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3.5" y1="-2.5" x2="24.5" y2="18.5">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" d="M27.5,15.5h-27v-15h27V15.5z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="23.5" y1="29.5" x2="44.5" y2="50.5">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<path fill="url(#SVGID_2_)" stroke="#464646" stroke-miterlimit="10" d="M47.5,47.5h-27v-15h27V47.5z"/>
+<polyline fill="none" stroke="#969696" stroke-width="2" points="28,8 34,8 34,29 "/>
+<polyline fill="none" stroke="#969696" stroke-width="2" points="27,23 34,30 41,23 "/>
+</svg>

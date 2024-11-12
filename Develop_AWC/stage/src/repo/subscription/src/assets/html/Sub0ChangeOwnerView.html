@@ -1,0 +1,11 @@
+<aw-command-panel caption="i18n.Sub0ChangeOwner">
+    <aw-panel-body scrollable="false">
+        <aw-panel-section class="aw-people-picker-section" caption="i18n.user">
+            <aw-people-picker sub-panel-context="{ ...subPanelContext, addUserPanelState : data.addUserPanelState }"  ></aw-people-picker>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button visible-when="conditions.isValidSubTransfer"  action="transfer"><aw-i18n>i18n.transferButtonTitle</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "Wersje",
+    "FileVersionsPanelHeader": "Wersje zestawu danych",
+    "DownloadVersionButton": "Pobierz wersję",
+    "RestoreVersionButton": "Przywróć wersję",
+    "RestoreFailureMessage": "Przywrócenie poprzedniej wersji zestawu danych nie powiodło się.",
+    "UnsavedEditWarning": "{0} zawiera niezapisane zmiany. Przywrócenie poprzedniej wersji tego zestawu danych spowoduje usunięcie wprowadzonych zmian.",
+    "ConfirmButtonLabel": "Kontynuuj",
+    "CancelButtonLabel": "Anuluj"
+}

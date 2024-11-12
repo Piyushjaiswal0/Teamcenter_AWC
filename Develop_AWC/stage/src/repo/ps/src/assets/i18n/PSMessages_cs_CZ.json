@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0} z {1} bylo přidáno.<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0} z {1} bylo odebráno.<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "Výsledky hledání nebyly filtrovány kvůli interní chybě.",
+    "invalidDateRangeError": "Počáteční datum musí předcházet koncovému datu.",
+    "invalidUnitRange": "Neplatný rozsah jednotky",
+    "notificationForBaselineCreation": "Položka {0} se ukládá. Na dokončení operace budete upozorněni.",
+    "notificationForBaselineCreationSync": "Položka \"{0}\" je uložena a dostupná ve složce Domů."
+}

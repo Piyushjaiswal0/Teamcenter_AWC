@@ -1,0 +1,9 @@
+<aw-command-panel caption="i18n.importCmdTitle" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section>
+                <aw-file-upload type-filter=".xlsm" file-change-action="initDSCreateParams" is-required="true" upload-model="data.uploadFileProvider" selection-data="data.uploadFileSelectionData"></aw-file-upload>
+        </aw-panel-section>
+        <aw-checkbox prop="data.conflict"></aw-checkbox>
+    </aw-panel-body>
+    <aw-include name="{{data.uploadFileSelectionData.modelInfo.propertyViewId}}" sub-panel-context="{...subPanelContext, uploadFileSelectionData:data.uploadFileSelectionData, conflict:data.conflict}" exist-when="data.uploadFileSelectionData.modelInfo.propertyViewId"></aw-include>
+</aw-command-panel>

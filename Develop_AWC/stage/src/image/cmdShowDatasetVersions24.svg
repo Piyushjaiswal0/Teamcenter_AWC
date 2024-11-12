@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M23.938,18.2588A9.9747,9.9747,0,0,0,18,13.3527V9.293L11.707,3H3V23h8.3989a9.0439,9.0439,0,0,0,4.0987,1,9.6564,9.6564,0,0,0,8.44-5.2588A.5011.5011,0,0,0,23.938,18.2588ZM12,4.707,16.293,9H12ZM4,22V4h7v6h6v3.1375A9.0589,9.0589,0,0,0,15.4976,13,9.6574,9.6574,0,0,0,7.062,18.25a.5006.5006,0,0,0-.0005.4815A10.6189,10.6189,0,0,0,9.82,22Zm11.4976,1a8.6184,8.6184,0,0,1-7.4229-4.5088A8.6318,8.6318,0,0,1,15.4976,14a8.6311,8.6311,0,0,1,7.4277,4.5A8.6311,8.6311,0,0,1,15.4976,23Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M15.5,15A3.5,3.5,0,1,0,19,18.5,3.5038,3.5038,0,0,0,15.5,15Zm0,6A2.5,2.5,0,1,1,18,18.5,2.5031,2.5031,0,0,1,15.5,21Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="0 2 1 2 1 1 2 1 2 0 0 0 0 2" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="14 2 15 2 15 0 13 0 13 1 14 1 14 2" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="1 18 0 18 0 20 2 20 2 19 1 19 1 18" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" width="3" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="10" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="14" y="3" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="3" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="15" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="12" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="9" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="6" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

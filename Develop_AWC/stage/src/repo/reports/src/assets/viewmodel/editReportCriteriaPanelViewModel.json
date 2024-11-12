@@ -1,0 +1,60 @@
+{
+    "schemaVersion": "1.0.0",
+
+    "actions": {
+        "doSaveCriteria": {
+            "actionType": "batchJob",
+            "steps": [{
+                "action": "saveRevRule"
+            }, {
+                "action": "closePopup"
+            }]
+        },
+        "saveRevRule":{
+            "actionType": "JSFunction",
+            "method": "saveEditReportCriteria",
+            "inputData": {
+                "revRuleProp": "{{data.revRuleProp}}",
+                "reportsState": "{{subPanelContext.reportsState}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "closePopup": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupEl": "{{subPanelContext.reportsState.criteriaPopupId}}",
+                "targetEvent": "{{$event}}"
+            },
+            "deps": "js/popupService"
+        }
+    },
+
+    "data": {
+        "revRuleProp":
+        {
+            "displayName": "{{i18n.appliedRevRule}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "hasLov": true,
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "dbValue": "{{subPanelContext.appliedRevRuleObj.uid}}",
+            "uiValues": ["{{subPanelContext.appliedRevRuleObj.propDisplayValue}}"],
+            "uiValue": "{{subPanelContext.appliedRevRuleObj.propDisplayValue}}",
+            "dispValue": "{{subPanelContext.appliedRevRuleObj.propDisplayValue}}"
+        }
+
+    },
+
+    "i18n":
+    {
+        "applyCriteria":
+        [
+            "ReportChartMessages"
+        ],
+        "appliedRevRule":
+        [
+            "ReportChartMessages"
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+/*
+   @<COPYRIGHT>@
+   ==================================================
+   Copyright 2022.
+   Siemens Product Lifecycle Management Software Inc.
+   All Rights Reserved.
+   ==================================================
+   @<COPYRIGHT>@
+*/
+
+.aw-layout-primaryWorkarea .aw-search-inContentSearchBox.aw-organization-searchBox{
+    width: 100%;
+    padding: $padding_xlarge;
+}
+
+.aw-search-inContentSearchBox.aw-organization-searchBox{
+    width: 100%;
+    padding: 0;
+}

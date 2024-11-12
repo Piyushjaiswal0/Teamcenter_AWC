@@ -1,0 +1,130 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "loadSavedSearchData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "Awp0SavedSearchProvider",
+                    "searchCriteria": {
+                        "applicationName":"{{subPanelContext.searchState.applicationName}}"
+                    },
+                    "startIndex": "{{data.dataProviders.listDataProvider.startIndex}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}"
+                },
+                "inflateProperties": false
+            },
+            "policy": {
+                "types": [ {
+                    "name": "Awp0FullTextSavedSearch",
+                    "properties": [ {
+                        "name": "awp0is_global_shared",
+                        "name": "awp0ChartOn"
+                    } ]
+                } ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "selectFirstObject": "{{function:processSelectionOfFirstObject}}",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/Awp0SaveSearchUtils"
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}",
+                "newSelection": "{{data.searchResults.objects[0].uid}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "searchListViewLoadBatchJob": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "loadSavedSearchData"
+                },
+                {
+                    "action": "selectFirstItem",
+                    "condition": "data.selectFirstObject"
+                }
+            ]
+        },
+        "closeNavigationPanelInSavedSearchSublocation": {
+            "actionType": "JSFunction",
+            "method": "closeNavigationPanelInSavedSearchSublocation",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        }
+    },
+    "functions": {
+        "processSelectionOfFirstObject": {
+            "functionName": "processSelectionOfFirstObject",
+            "parameters": [
+            ]
+        },
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        }
+    },
+    "dataProviders": {
+        "listDataProvider": {
+            "action": "searchListViewLoadBatchJob",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "single",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "search_save_open_command"
+        }
+    },
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "closeNavigationPanelInSavedSearchSublocation",
+                "observers": [
+                    "props.subPanelContext.searchState.pwaSelection[0]"
+                ]
+            },
+            {
+                "action": "reveal",
+                "observers": [
+                    "props.subPanelContext.searchState.filterString"
+                ]
+            }
+        ]
+    },
+    "i18n": {
+        "noSavedSearch": [
+            "SearchMessages"
+        ],
+        "noSavedSearchHint": [
+            "SearchMessages"
+        ]
+    }
+}

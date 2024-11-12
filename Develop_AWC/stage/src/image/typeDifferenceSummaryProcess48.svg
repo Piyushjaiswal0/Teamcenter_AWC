@@ -1,0 +1,49 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-4" y1="1035" x2="21" y2="1060" gradientTransform="translate(0 -1030)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="15" y1="1035" x2="40" y2="1060" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="17" y1="1046.5" x2="19" y2="1048.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-168.616" y1="1105.244" x2="-145.935" y2="1128.888" gradientTransform="translate(211.169 -1027.988) scale(1.116 0.95)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="1141.26" y1="1677.52" x2="1151.435" y2="1686.347" gradientTransform="translate(-485.898 -736.483) scale(0.459)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#dcdcdc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="1138.482" y1="-586.035" x2="1149.328" y2="-593.956" gradientTransform="matrix(0.459, 0, 0, -0.459, -485.898, -240.859)" xlink:href="#linear-gradient-5"/>
+    <linearGradient id="linear-gradient-7" x1="1124.585" y1="1655.036" x2="1135.879" y2="1664.306" gradientTransform="translate(-485.898 -736.483) scale(0.459)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="1" stop-color="#177491"/>
+    </linearGradient>
+  </defs>
+  <g id="g902">
+    <path id="rect30" d="M.5.5h16v34H.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <path id="rect32" d="M19.5.5h16v34h-16Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+    <path id="line34" d="M6,17.5H17" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="polyline36" d="M10.5,12.5l-5,5,5,5" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="line38" d="M16,17.5h4" stroke="#464646" stroke-miterlimit="10" stroke-width="5" fill="url(#linear-gradient-3)"/>
+    <path id="line58" d="M5.5,17.5h25" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="polyline60" d="M25.5,12.5l5,5-5,5" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path id="polyline62" d="M25.5,12.5l5,5-5,5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="line64" d="M5.5,17.5h25" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+    <path id="polyline66" d="M10.5,12.5l-5,5,5,5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="rect977" d="M26.61,21.5H47.576V47.511H26.61Z" stroke="#464646" stroke-miterlimit="10" stroke-width="0.934" fill="url(#linear-gradient-4)"/>
+    <path id="line64-4" d="M30,38.5l14,.005" fill="none" stroke="#6e6e6e"/>
+    <path id="line66" d="M30,41.5l14,.005" fill="none" stroke="#6e6e6e"/>
+    <path id="line68" d="M30,44.5l14,.005" fill="none" stroke="#6e6e6e"/>
+    <path id="rect15" d="M37.638,33.292h4.41v3.592h-4.41Z" fill="url(#linear-gradient-5)"/>
+    <path id="rect17" d="M36.764,28.087h4.127v3.29H36.764Z" fill="url(#linear-gradient-6)"/>
+    <path id="rect19" d="M30.116,23.07h5.707v4.49H30.116Z" fill="url(#linear-gradient-7)"/>
+    <path id="path21" d="M40.051,33.292a12.711,12.711,0,0,0-.3-1.777H41.01V27.923h-2.9a30.928,30.928,0,0,0-2.291-2.318V23.116H30.116v4.49h5.707V25.992c.674.635,1.419,1.361,1.927,1.931H36.6v3.591h2.871a13.242,13.242,0,0,1,.317,1.778H37.638v3.592h4.41V33.292Zm-4.487-5.986H30.378v-3.89h5.186Zm1.3,3.91V28.223h3.891v2.993Zm4.929,5.369H37.9V33.591h3.891Z" fill="#464646" stroke="#464646" stroke-width="0.433"/>
+  </g>
+</svg>

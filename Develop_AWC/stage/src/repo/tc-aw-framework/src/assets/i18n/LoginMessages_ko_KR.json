@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "사용자 이름",
+    "PASSWORD_PLACEHOLDER": "암호",
+    "SIGN_IN_TEXT": "로그인",
+    "LOGIN_TEXT": "로그인",
+    "LOGGING_IN_TEXT": "로그인하는 중",
+    "UNABLE_TO_CONNECT": "내부 오류로 인해 로그인되지 않았습니다.",
+    "VERSION_TEXT": "버전",
+    "COPYRIGHT_DATE_TEXT": "게시 취소된 작업.",
+    "COPYRIGHT_MESSAGE": "본 자료에는 Siemens Industry Software Inc. 또는 그 계열사(총칭 \"Siemens\") 또는 라이선스 기업이 소유한 기업 비밀 또는 기밀 정보가 포함되어 있습니다. 이 정보의 액세스 및 사용은 Siemens와 고객의 적용 가능한 계약에 규정된 경우 엄격하게 제한됩니다."
+}

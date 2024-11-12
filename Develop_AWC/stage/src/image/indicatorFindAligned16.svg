@@ -1,0 +1,15 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16">
+  <defs>
+    <linearGradient id="linear-gradient" x1="2.8237" y1="11.6761" x2="4.3229" y2="13.1754" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <path d="M10,0A5.9866,5.9866,0,0,0,4.5635,8.5222L.6025,12.4834a2.06,2.06,0,1,0,2.9132,2.9131l3.9608-3.9606A5.997,5.997,0,1,0,10,0Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <circle cx="10" cy="6" r="5" fill="#f0f0f0"/>
+  <path d="M9,8.5a.4981.4981,0,0,1-.3535-.1465l-2-2,.7071-.707L9,7.293l3.6467-3.6465.7071.707-4,4A.4981.4981,0,0,1,9,8.5Z" fill="#006487"/>
+  <path d="M1.31,13.19a1.0616,1.0616,0,0,0,0,1.4991,1.0858,1.0858,0,0,0,1.4991,0l3.7781-3.7778A6.0187,6.0187,0,0,1,5.0874,9.4124Z" fill="url(#linear-gradient)"/>
+</svg>

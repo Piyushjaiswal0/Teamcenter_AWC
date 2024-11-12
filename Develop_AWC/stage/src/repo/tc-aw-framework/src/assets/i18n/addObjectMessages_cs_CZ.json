@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" není platný soubor pro sadu objektu \"{1}\". Nově vytvořený objekt se nezobrazí v sadě objektů.",
+    "addedObjectIsNotUnique": "Objekt \"{1}-{0}\" není uložen, protože \"ID = {1}\" není jedinečné.",
+    "fileSizeException": "\"{0}\" nebylo přidáno. Velikost souboru překračuje maximální limit.",
+    "userNotAuthorized": "\"{0}\" nebylo přidáno. Aktuální uživatel nemá oprávnění.",
+    "addACopy": "Přidat kopii",
+    "cancel": "Storno",
+    "sourceObject": "Zdroj",
+    "chooseFromSystem": "Vybrat soubor ze systému",
+    "chooseFromDrive": "Vybrat z jednotky",
+    "fileNameExceedsLengthLimit": "\"{0}\" nebylo přidáno. Délka názvu souboru překračuje maximální limit."
+}

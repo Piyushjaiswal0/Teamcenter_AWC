@@ -1,0 +1,61 @@
+// Copyright 2021 Siemens Product Lifecycle Management Software Inc.
+.aw-layout-popup {
+    .aw-occmgmt-tooltipEffectivityCell div.aw-widgets-cellListCellImage{
+        max-height: 48px;
+    }
+
+    .aw-occmgmt-tooltipEffectivityCell .aw-widgets-cellListItemContainer .aw-widgets-cellListItemCell{
+        width: 100%;
+    }
+}
+
+.aw-occmgmt-elemEffEndItem span.sw-property-name {
+    width: auto;
+    min-width: 5rem;
+}
+
+.aw-ps-labelAlignmentInPanelHeader.sw-property.sw-row {
+    font-size: $fontsize_large;
+}
+
+.aw-ps-labelAlignmentInPanelHeader,
+.aw-ps-hintAlignmentInPanelHeader {
+    &.sw-property.sw-row {
+        margin-bottom: 0;
+        .sw-property-name {
+            width: auto;
+            min-width: auto;
+        }
+    }
+}
+
+.sw-readOnly.aw-ps-hintAlignmentInPanelHeader {
+    .sw-property-val {
+        font-style: italic;
+    }
+}
+
+.aw-ps-hintAlignmentInPanelHeader.sw-property.sw-row {
+    margin-top: $margin_large;
+    .sw-property-name {
+        font-size: $fontsize_large;
+    }
+    .sw-property-val {
+        font-style: italic;
+    }
+}
+
+.aw-ps-separatorAlignmentInPanelHeader.aw-xrt-separator {
+    padding: 0;
+    margin-left: 0;
+    margin-top: $margin_large;
+}
+
+.aw-ps-labelAlignmentInPanelHeaderForMultipleElements.sw-property.sw-row {
+    margin-bottom: 0;
+    .sw-property-name {
+        width: min-content;
+        min-width: auto;
+        margin-right: rem-calc(55);
+    }
+}

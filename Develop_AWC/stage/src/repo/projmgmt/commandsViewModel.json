@@ -1,0 +1,779 @@
+{
+  "commands": {
+    "Awp0AssignProjects": {
+      "iconId": "cmdAssignProject",
+      "isGroup": false,
+      "title": "{{i18n.ProjectsTitle}}",
+      "description": "{{i18n.Awp0AssignProjectsDesc}}"
+    },
+    "Awp0AssignProjectsXrt": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.ProjectsTitle}}",
+      "description": "{{i18n.Awp0AssignProjectsDesc}}"
+    },
+    "Awp0AddProjectsCell": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addProjectTitle}}",
+      "description": "{{i18n.Awp0AddProjectsCellDesc}}"
+    },
+    "RemoveMemberProjectsCell": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.removeProjectTitle}}",
+      "description": "{{i18n.RemoveMemberProjectsCellDesc}}"
+    },
+    "Awp0ReplaceOwningProjectCell": {
+      "iconId": "cmdReplace",
+      "isGroup": false,
+      "title": "{{i18n.replaceOwningProjectTitle}}",
+      "description": "{{i18n.Awp0ReplaceOwningProjectCellDesc}}"
+    },
+    "Awp0SetOwningProjectCell": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.setOwningProjectTitle}}",
+      "description": "{{i18n.Awp0SetOwningProjectCellDesc}}"
+    },
+    "Aut0setPriviledge": {
+      "iconId": "cmdSetPrivilegedUser",
+      "isGroup": false,
+      "title": "{{i18n.setPrivileged}}",
+      "description": "{{i18n.Aut0setPriviledgeDesc}}"
+    },
+    "Aut0setNonPriviledge": {
+      "iconId": "cmdSetNonPrivilegedUser",
+      "isGroup": false,
+      "title": "{{i18n.setNonPrivileged}}",
+      "description": "{{i18n.Aut0setNonPriviledgeDesc}}"
+    },
+    "Aut0setProjectTeamAdmin": {
+      "iconId": "cmdSetProjectTeamAdmin",
+      "isGroup": false,
+      "title": "{{i18n.setProjectTeamAdministrator}}",
+      "description": "{{i18n.Aut0setProjectTeamAdminDesc}}"
+    },
+    "addRemoveProjectTeamMembers": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.add}}",
+      "description": "{{i18n.addRemoveProjectTeamMembersDesc}}"
+    },
+    "removeProjectTeamMembers": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.RemoveTitle}}",
+      "description": "{{i18n.removeProjectTeamMembersDesc}}"
+    },
+    "Aut0AddProject": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.AddProjectLabel}}",
+      "description": "{{i18n.AddProjectDesc}}"
+    },
+    "Aut0SaveAsProject": {
+      "iconId": "cmdSaveAs",
+      "isGroup": false,
+      "title": "{{i18n.SaveAsProjectLabel}}",
+      "description": "{{i18n.SaveAsProjectDesc}}"
+    },
+    "Aut0setDefaultProject": {
+      "iconId": "cmdSetDefaultProject",
+      "isGroup": false,
+      "title": "{{i18n.setDefaultProjectLabel}}",
+      "description": "{{i18n.Aut0setDefaultProjectDesc}}"
+    },
+    "Aut0AddProjectTeamMembers": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.AddProjectTeamMembersLabel}}",
+      "description": "{{i18n.AddProjectTeamMembersDesc}}"
+    }
+  },
+  "commandHandlers": {
+    "awp0AssignProjectsCommandHandler": {
+      "id": "Awp0AssignProjects",
+      "action": "showAssignProjectsPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.showProjectsCmdCond"
+      }
+    },
+    "awp0AssignProjectsXrtCommandHandler": {
+      "id": "Awp0AssignProjectsXrt",
+      "action": "showAssignProjectsPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.showProjectsCmdCond"
+      }
+    },
+    "Aut0AddProjectCommandHandler": {
+      "id": "Aut0AddProject",
+      "action": "showAddProjectPanel",
+      "activeWhen": {
+        "condition": "conditions.Aut0AddProjectCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.Aut0AddProjectCmdCond"
+      }
+    },
+    "Aut0SaveAsProjectCommandHandler": {
+      "id": "Aut0SaveAsProject",
+      "action": "showSaveAsProjectPanel",
+      "activeWhen": {
+        "condition": "conditions.Aut0SaveAsProjectCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.Aut0SaveAsProjectCmdCond"
+      }
+    },
+    "TcProjectShowObjectCommandHandler": {
+      "id": "Awp0ShowObject",
+      "action": "TcProjectShowDelegatedObject",
+      "activeWhen": {
+        "condition": "conditions.TcProjectOpenConditionActive"
+      },
+      "visibleWhen": {
+        "condition": "conditions.TcProjectOpenConditionActive"
+      }
+    },
+    "showAddProjectCellCommandHandler": {
+      "id": "Awp0AddProjectsCell",
+      "action": "addProjectsCellCmdAction",
+      "activeWhen": {
+        "condition": "conditions.showProjectCellCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showProjectCellCmdCond"
+      }
+    },
+    "showRemoveProjectCellCommandHandler": {
+      "id": "RemoveMemberProjectsCell",
+      "action": "removeMemberProjectsCellCmdAction",
+      "activeWhen": {
+        "condition": "conditions.showRemoveProjectsCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showRemoveProjectsCmdCond"
+      }
+    },
+    "Awp0ReplaceOwningProjectCellCommandHandler": {
+      "id": "Awp0ReplaceOwningProjectCell",
+      "action": "Awp0ReplaceOwningProjectCellCmdAction",
+      "activeWhen": {
+        "condition": "conditions.showReplaceOwningProjectCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showReplaceOwningProjectCmdCond"
+      }
+    },
+    "Awp0SetOwningProjectCellCommandHandler": {
+      "id": "Awp0SetOwningProjectCell",
+      "action": "Awp0ReplaceOwningProjectCellCmdAction",
+      "activeWhen": {
+        "condition": "conditions.showSetOwningProjectCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showSetOwningProjectCmdCond"
+      }
+    },
+    "Aut0setPriviledgeCommandHandler": {
+      "id": "Aut0setPriviledge",
+      "action": "setPrivilegeStatus",
+      "activeWhen": {
+        "condition": "conditions.showPrivilegeCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showPrivilegeCommand"
+      }
+    },
+    "Aut0setNonPriviledgeCommandHandler": {
+      "id": "Aut0setNonPriviledge",
+      "action": "setNonPrivilegeStatus",
+      "activeWhen": {
+        "condition": "conditions.showNonPrivilegeCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showNonPrivilegeCommand"
+      }
+    },
+    "Aut0setProjectTeamAdminCommandHandler": {
+      "id": "Aut0setProjectTeamAdmin",
+      "action": "setProjectTeamAdmin",
+      "activeWhen": {
+        "condition": "conditions.showSetProjectTeamAdmin"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showSetProjectTeamAdmin"
+      }
+    },
+    "addRemoveProjectTeamMembersCommandHandler": {
+      "id": "addRemoveProjectTeamMembers",
+      "action": "showOrgTree",
+      "activeWhen": {
+        "condition": "conditions.showProjOrgCommands"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showProjOrgCommands"
+      }
+    },
+    "removeProjectTeamMembersCommandHandler": {
+      "id": "removeProjectTeamMembers",
+      "action": "removeTeamMembers",
+      "activeWhen": {
+        "condition": "conditions.showRemoveProjectTeamMembersCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showRemoveProjectTeamMembersCommand"
+      }
+    },
+    "Aut0setDefaultProjectCommandHandler": {
+      "id": "Aut0setDefaultProject",
+      "action": "setDefaultProject",
+      "activeWhen": {
+        "condition": "conditions.showDefaultProjectCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.showDefaultProjectCommand"
+      }
+    },
+    "Aut0AddProjectTeamMembers": {
+      "id": "Aut0AddProjectTeamMembers",
+      "action": "showOrgTree",
+      "activeWhen": {
+        "condition": "conditions.Aut0AddProjectTeamMembersCmdCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.Aut0AddProjectTeamMembersCmdCond"
+      }
+    }
+  },
+  "actions": {
+    "Awp0ReplaceOwningProjectCellCmdAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "awp0AssignProjects.replaceProject",
+            "eventData": {
+              "vmo": "{{commandContext.vmo}}"
+            }
+          }
+        ]
+      }
+    },
+    "removeTeamMembers": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "removeGroupAndGroupMembers"
+          }
+        ]
+      }
+    },
+    "setNonPrivilegeStatus": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "proj.setNonPrivilegeStatus"
+          }
+        ]
+      }
+    },
+    "setPrivilegeStatus": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "proj.setPrivilegeStatus"
+          }
+        ]
+      }
+    },
+    "setProjectTeamAdmin": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "proj.setProjectTeamAdmin"
+          }
+        ]
+      }
+    },
+    "showAssignProjectsPanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Awp0AssignProjects",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "showOrgTree": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "addRemoveProjectTeamMembers",
+        "location": "aw_toolsAndInfo",
+        "context": null,
+        "push": false,
+        "closeWhenCommandHidden": false,
+        "config": {
+          "width": "DOUBLEWIDE",
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "showAddProjectPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Aut0AddProject",
+        "location": "aw_toolsAndInfo",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "showSaveAsProjectPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Aut0SaveAsProject",
+        "location": "aw_toolsAndInfo",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "TcProjectShowDelegatedObject": {
+      "actionType": "Navigate",
+      "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+      "navigationParams": {
+        "uid": "{{ctx.selected.uid}}"
+      }
+    },
+    "addProjectsCellCmdAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "awp0AssignProjects.addProjects",
+            "eventData": {
+              "vmo": "{{commandContext.vmo}}"
+            }
+          }
+        ]
+      }
+    },
+    "removeMemberProjectsCellCmdAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "awp0AssignProjects.removeProjects",
+            "eventData": {
+              "vmo": "{{commandContext.vmo}}"
+            }
+          }
+        ]
+      }
+    },
+    "setDefaultProject": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "proj.selectNodeForDefaultProject"
+          }
+        ]
+      }
+    },
+    "addSelectedTeamMembers": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "addTeamMembers"
+          }
+        ]
+      }
+    }
+  },
+  "commandPlacements": {
+    "awp0AssignProjectsToolsAndInfo": {
+      "id": "Awp0AssignProjects",
+      "uiAnchor": "aw_rightWall",
+      "priority": 500,
+      "parentGroupId": "Awp0ManageGroup"
+    },
+    "Awp0AssignProjectsXrtPlacement": {
+      "id": "Awp0AssignProjectsXrt",
+      "uiAnchor": "Awp0ProjectAnchor",
+      "priority": 100
+    },
+    "Aut0AddProjectCommandPlacement": {
+      "id": "Aut0AddProject",
+      "uiAnchor": "aw_rightWall",
+      "priority": 520,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Aut0AddProjectPWACommandPlacement": {
+      "id": "Aut0AddProject",
+      "uiAnchor": "aw_primaryWorkArea_Aut0MyProjectList",
+      "priority": 520
+    },
+    "Aut0SaveAsProjectCommandPlacement": {
+      "id": "Aut0SaveAsProject",
+      "uiAnchor": "aw_rightWall",
+      "priority": 520,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Aut0SaveAsProjectPWACommandPlacement": {
+      "id": "Aut0SaveAsProject",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 520
+    },
+    "awp0AddProjectsCellCommandPlacement": {
+      "id": "Awp0AddProjectsCell",
+      "uiAnchor": "aw_addProjectsCellCommandAction",
+      "areas": [
+        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+      ],
+      "priority": 300,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "removeMemberProjectsCellCommandPlacement": {
+      "id": "RemoveMemberProjectsCell",
+      "uiAnchor": "aw_removeMemberProjectsCellCmdAction",
+      "areas": [
+        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+      ],
+      "priority": 300,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Awp0ReplaceOwningProjectCellCommandPlacement": {
+      "id": "Awp0ReplaceOwningProjectCell",
+      "uiAnchor": "aw_replaceOwningProjectsCellCommandAction",
+      "areas": [
+        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+      ],
+      "priority": 300,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Awp0SetOwningProjectCellCommandPlacement": {
+      "id": "Awp0SetOwningProjectCell",
+      "uiAnchor": "aw_replaceOwningProjectsCellCommandAction",
+      "areas": [
+        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+      ],
+      "priority": 300,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Aut0setPriviledgePlacement": {
+      "id": "Aut0setPriviledge",
+      "uiAnchor": "aw_EditProjectTeamMembers",
+      "priority": 7
+    },
+    "Aut0setNonPriviledgePlacement": {
+      "id": "Aut0setNonPriviledge",
+      "uiAnchor": "aw_EditProjectTeamMembers",
+      "priority": 7
+    },
+    "Aut0setProjectTeamAdminPlacement": {
+      "id": "Aut0setProjectTeamAdmin",
+      "uiAnchor": "aw_EditProjectTeamMembers",
+      "priority": 7
+    },
+    "addRemoveProjectTeamMembersToolsAndInfo": {
+      "id": "addRemoveProjectTeamMembers",
+      "uiAnchor": "aw_EditProjectTeamMembers",
+      "priority": 7
+    },
+    "removeProjectTeamMembersPlacement": {
+      "id": "removeProjectTeamMembers",
+      "uiAnchor": "aw_EditProjectTeamMembers",
+      "priority": 7
+    },
+    "Aut0setDefaultProjectPlacement": {
+      "id": "Aut0setDefaultProject",
+      "uiAnchor": "aw_EditProjectTeamMembers",
+      "priority": 5
+    },
+    "Aut0AddProjectTeamMembersCommandPlacement": {
+      "id": "Aut0AddProjectTeamMembers",
+      "uiAnchor": "aw_rightWall",
+      "priority": 520,
+      "parentGroupId": "Awp0ManageGroup"
+    },
+    "Aut0AddProjectTeamMembersPWACommandPlacement": {
+      "id": "Aut0AddProjectTeamMembers",
+      "uiAnchor": "aw_primaryWorkArea_Aut0MyProjectList",
+      "priority": 520
+    }
+  },
+  "conditions": {
+    "showProjectsCmdCond": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "ctx.visibleServerCommands.Awp0AssignProjects",
+            "$query": {
+              "$eq": true
+            }
+          },
+          {
+            "$source": "ctx.mselected.length",
+            "$query": {
+              "$gte": 1
+            }
+          },
+          {
+            "$source": "ctx.mselected",
+            "$query": {
+              "$source": "modelType.typeHierarchyArray",
+              "$query": {
+                "$notin": [
+                  "Mdl0ApplicationModel",
+                  "Mdl0ModelElement",
+                  "Mdl0SubsetDefinition"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "showProjectCellCmdCond": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "commandContext.vmo.type",
+            "$query": {
+              "$eq": "TC_Project"
+            }
+          },
+          {
+            "$source": "ctx.mselected.length",
+            "$query": {
+              "$gte": 1
+            }
+          },
+          {
+            "$source": "commandContext.selected",
+            "$query": {
+              "$source": "modelType.typeHierarchyArray",
+              "$query": {
+                "$notin": [
+                  "Mdl0ApplicationModel",
+                  "Mdl0ModelElement",
+                  "Mdl0SubsetDefinition"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "showRemoveProjectsCmdCond": {
+      "expression": "commandContext.vmo.type==='TC_Project' && ctx.selected && !(!ctx.preferences.TC_allow_remove_owning_project[0] && ctx.owningProject.uid===commandContext.vmo.uid)"
+    },
+    "showSetOwningProjectCmdCond": {
+      "expression": "!ctx.owningProject"
+    },
+    "showReplaceOwningProjectCmdCond": {
+      "expression": "ctx.owningProject"
+    },
+    "showNonPrivilegeCommand": {
+      "expression": "ctx.selected &&  ctx.pselected && conditions.isNotSHLPProject && ( (ctx.mselected.length > 1) || ((ctx.mselected.length === 1) && ((ctx.mselected[0].props.status.value === 1) || ((ctx.mselected[0].props.status.value === 2) && (ctx.mselected[0].user.dbValues[0] !== ctx.userSession.props.user.dbValues[0])) || (ctx.mselected[0].type === 'Group') || (ctx.mselected[0].tcRole.type === 'Role'))))"
+    },
+    "showPrivilegeCommand": {
+      "expression": "ctx.selected &&  ctx.pselected && conditions.isNotSHLPProject && ( (ctx.mselected.length > 1) || ((ctx.mselected.length === 1) && ((ctx.mselected[0].props.status.value === 0) || ((ctx.mselected[0].props.status.value === 2) && (ctx.mselected[0].user.dbValues[0] !== ctx.userSession.props.user.dbValues[0])) || (ctx.mselected[0].type === 'Group') || (ctx.mselected[0].tcRole.type === 'Role'))))"
+    },
+    "showSetProjectTeamAdmin": {
+      "expression": "ctx.selected && ctx.pselected && conditions.isNotSHLPProject && ( (ctx.mselected.length > 1) || ((ctx.mselected.length === 1) && ((ctx.mselected[0].props.status.value === 0) || (ctx.mselected[0].props.status.value === 1) || (ctx.mselected[0].type === 'Group') || (ctx.mselected[0].tcRole.type === 'Role'))))"
+    },
+    "showRemoveProjectTeamMembersCommand": {
+      "expression": "ctx.selected &&  ctx.pselected && conditions.isNotSHLPProject && ( (ctx.mselected.length > 1) || ((ctx.mselected.length === 1) && ((ctx.mselected[0].props.status.value === 0) || (ctx.mselected[0].props.status.value === 1) || ((ctx.mselected[0].props.status.value === 2) && (ctx.mselected[0].user.dbValues[0] !== ctx.userSession.props.user.dbValues[0])) || ((ctx.mselected[0].props.status.value === 3) && (ctx.mselected[0].user.dbValues[0] !== ctx.userSession.props.user.dbValues[0])) || (ctx.mselected[0].type === 'Group') || (ctx.mselected[0].tcRole.type === 'Role'))))"
+    },
+    "showProjOrgCommands": {
+      "expression": "ctx.selected && conditions.isNotSHLPProject"
+    },
+    "isNotSHLPProject": {
+      "expression": "!commandContext.selected.props.fnd0Parent.dbValue && commandContext.selected.props.fnd0Children.dbValue.length===0"
+    },
+    "TcProjectOpenConditionActive": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "ctx.selected",
+            "$query": {
+              "$or": [
+                {
+                  "$source": "type",
+                  "$query": {
+                    "$eq": "TC_Project"
+                  }
+                },
+                {
+                  "$source": "modelType.typeHierarchyArray",
+                  "$query": {
+                    "$in": [
+                      "TC_Project"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "Aut0AddProjectCmdCond": {
+      "expression": "!ctx.selected && ctx.visibleServerCommands.Aut0AddProject && ctx.sublocation.clientScopeURI === 'Aut0MyProjectList'"
+    },
+    "Aut0SaveAsProjectCmdCond": {
+      "expression": "ctx.visibleServerCommands.Aut0AddProject && ((ctx.selected && ctx.mselected.length === 1 && !ctx.selected.props.fnd0Parent.dbValue && ctx.selected.props.fnd0Children.dbValue.length===0) || (ctx.pselected && !ctx.pselected.props.fnd0Parent.dbValue && ctx.pselected.props.fnd0Children.dbValue.length===0))"
+    },
+    "showDefaultProjectCommand": {
+      "expression": "ctx.selected && ctx.pselected && conditions.isNotSHLPProject && commandContext.selected.props.use_program_security.dbValue && ((ctx.mselected.length > 1) || ((ctx.mselected.length===1) && (ctx.mselected[0].type=== 'User')))"
+    },
+    "Aut0AddProjectTeamMembersCmdCond": {
+      "expression": "ctx.mselected.length > 1 && ctx.sublocation.clientScopeURI === 'Aut0MyProjectList' && commandContext.searchState.projectsPrivileged === true"
+    }
+  },
+  "i18n": {
+    "ProjectsTitle": [
+      "ProjmgmtConstants"
+    ],
+    "addProjectTitle": [
+      "ProjmgmtConstants"
+    ],
+    "removeProjectTitle": [
+      "ProjmgmtConstants"
+    ],
+    "replaceOwningProjectTitle": [
+      "ProjmgmtConstants"
+    ],
+    "setOwningProjectTitle": [
+      "ProjmgmtConstants"
+    ],
+    "aw_addProjectsCellCommandAction": [
+      "ProjmgmtConstants"
+    ],
+    "aw_removeMemberProjectsCellCmdAction": [
+      "ProjmgmtConstants"
+    ],
+    "aw_replaceOwningProjectsCellCommandAction": [
+      "ProjmgmtConstants"
+    ],
+    "setProjectTeamAdministrator": [
+      "ProjmgmtConstants"
+    ],
+    "setPrivileged": [
+      "ProjmgmtConstants"
+    ],
+    "setNonPrivileged": [
+      "ProjmgmtConstants"
+    ],
+    "Awp0AssignProjectsDesc": [
+      "ProjmgmtConstants"
+    ],
+    "Awp0AddProjectsCellDesc": [
+      "ProjmgmtConstants"
+    ],
+    "RemoveMemberProjectsCellDesc": [
+      "ProjmgmtConstants"
+    ],
+    "Awp0ReplaceOwningProjectCellDesc": [
+      "ProjmgmtConstants"
+    ],
+    "Awp0SetOwningProjectCellDesc": [
+      "ProjmgmtConstants"
+    ],
+    "Aut0setPriviledgeDesc": [
+      "ProjmgmtConstants"
+    ],
+    "Aut0setNonPriviledgeDesc": [
+      "ProjmgmtConstants"
+    ],
+    "Aut0setProjectTeamAdminDesc": [
+      "ProjmgmtConstants"
+    ],
+    "addRemoveProjectTeamMembersDesc": [
+      "ProjmgmtConstants"
+    ],
+    "removeProjectTeamMembersDesc": [
+      "ProjmgmtConstants"
+    ],
+    "addTeamMember_PinButtonToolTip": [
+      "ProjmgmtConstants"
+    ],
+    "addTeamMember_UnpinButtonToolTip": [
+      "ProjmgmtConstants"
+    ],
+    "AddProjectLabel": [
+      "ProjmgmtConstants"
+    ],
+    "AddProjectDesc": [
+      "ProjmgmtConstants"
+    ],
+    "SaveAsProjectLabel": [
+      "ProjmgmtConstants"
+    ],
+    "SaveAsProjectDesc": [
+      "ProjmgmtConstants"
+    ],
+    "PinPanelCommandTitle": [
+      "ProjmgmtConstants"
+    ],
+    "UnPinPanelCommandTitle": [
+      "ProjmgmtConstants"
+    ],
+    "panelPinButtonDesc": [
+      "ProjmgmtConstants"
+    ],
+    "panelUnPinButtonDesc": [
+      "ProjmgmtConstants"
+    ],
+    "setDefaultProjectLabel": [
+      "ProjmgmtConstants"
+    ],
+    "Aut0setDefaultProjectDesc": [
+      "ProjmgmtConstants"
+    ],
+    "AddProjectTeamMembersLabel": [
+      "ProjmgmtConstants"
+    ],
+    "AddProjectTeamMembersDesc": [
+      "ProjmgmtConstants"
+    ]
+  }
+}

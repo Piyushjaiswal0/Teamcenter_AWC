@@ -1,0 +1,8 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+	<path class="aw-theme-iconOutline" fill="#464646" d="M8,8h6v1h1V0H0v15h9v-1H8V8z M14,7H8V1h6V7z M7,1v6H1V1H7z M1,8h6v6H1V8z"/>
+	<rect x="15" y="18" class="aw-theme-iconOutline" fill="#464646" width="4" height="1"/>
+	<rect x="15" y="20" class="aw-theme-iconOutline" fill="#464646" width="4" height="1"/>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M20.7,10H10v14h14V13.3L20.7,10z M15,11h2v2h1v-2h1v3h-4V11z M21,23h-8v-5.5c0-0.3,0.2-0.5,0.5-0.5h7
+		c0.3,0,0.5,0.2,0.5,0.5V23z M23,23h-1v-5.5c0-0.8-0.7-1.5-1.5-1.5h-7c-0.8,0-1.5,0.7-1.5,1.5V23h-1V11h3v4h6v-4h0.3l2.7,2.7V23z"/>
+</svg>

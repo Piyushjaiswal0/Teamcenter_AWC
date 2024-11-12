@@ -1,0 +1,7 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <line x1="7" y1="4.5" x2="2" y2="4.5" class="aw-theme-iconOutline" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="7" x2="4.5" y2="2" class="aw-theme-iconOutline" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M19,11.182V0H0V19H11.181A6.5,6.5,0,1,0,19,11.182ZM13,1.707,17.293,6H13Zm5,3.586L13.707,1H18ZM18,7V9H10V1h2V7ZM9,1V9H1V1ZM1,10H9v8H1Zm9,8V10h8v1.025c-.166-.013-.332-.025-.5-.025A6.508,6.508,0,0,0,11,17.5c0,.168.013.334.025.5Zm7.5,5A5.5,5.5,0,1,1,23,17.5,5.505,5.505,0,0,1,17.5,23Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <polygon points="21 17 18 17 18 14 17 14 17 17 14 17 14 18 17 18 17 21 18 21 18 18 21 18 21 17" class="aw-theme-iconOutline" fill="#464646"/>
+  <polyline points="8 11.5 2.5 11.5 2.5 12 5.5 14 2.5 16 2.5 16.5 8 16.5" class="aw-theme-iconOutline" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

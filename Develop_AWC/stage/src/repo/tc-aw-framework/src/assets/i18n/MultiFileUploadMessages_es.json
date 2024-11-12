@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "Archivos adjuntos ",
+    "dropHere": "Soltar aquí",
+    "chooseFile": "Seleccionar archivo",
+    "removeFileBtnTooltip": "Quitar el archivo",
+    "failureToAttachFiles": "\"{0}\" no fue agregado porque no se permite dicho tipo de archivo como adjunto."
+}

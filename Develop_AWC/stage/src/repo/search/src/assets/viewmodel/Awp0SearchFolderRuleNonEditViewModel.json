@@ -1,0 +1,119 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "data": {
+        "searchFolderCriteria": {
+            "displayName": "{{i18n.searchCriteria}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false"
+        },
+        "searchFolderFilters": {
+            "displayName": "{{i18n.searchFiltersTitle}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false"
+        },
+        "translatedSearchString": ""
+    },
+    "actions":
+    {
+        "getInputSearchCriteriaForSearchSettings": {
+            "actionType": "JSFunction",
+            "method": "getInputSearchCriteriaForSearchSettings",
+            "inputData": {
+                "searchFolder": "{{subPanelContext.searchState}}"
+            },
+            "outputData": {
+                "translatedSearchCriteriaInput": ""
+            },
+            "deps": "js/searchFolderService"
+        },
+        "getTranslatedSearchString": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-FullTextSearch",
+            "method": "getSearchSettings",
+            "inputData": {
+                "searchSettingInput": {
+                    "inputSettings": {
+                        "getTranslatedSearchCriteriaForCurrentLocale": "{{data.translatedSearchCriteriaInput}}"
+                    }
+                }
+            },
+            "outputData": {
+                "translatedSearchString": "{{function:setTranslatedSearchString}}"
+            },
+            "deps": "js/searchFolderService"
+        },
+        "searchFolderRuleNonEditBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getInputSearchCriteriaForSearchSettings"
+                },
+                {
+                    "action": "getTranslatedSearchString",
+                    "condition": "conditions.getTranslatedSearchString"
+                },
+                {
+                    "action": "updateCriteriaAndFilters"
+                }
+            ]
+        },
+        "updateCriteriaAndFilters":
+        {
+            "actionType": "JSFunction",
+            "method": "updateCriteriaAndFilters",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "searchFolder": "{{subPanelContext.searchState}}"
+            },
+            "outputData":
+            {
+                "data": ""
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "primaryWorkarea.reset",
+                        "condition": "data.updatePrimaryWorkarea === true"
+                    }
+                ]
+            },
+            "deps": "js/searchFolderService"
+        }
+    },
+    "functions": {
+        "setTranslatedSearchString": {
+            "functionName": "setTranslatedSearchString",
+            "parameters": []
+        }
+    },
+    "conditions": {
+        "getTranslatedSearchString": {
+            "expression": "data.translatedSearchCriteriaInput && data.translatedSearchCriteriaInput.length>0"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "searchFolderRuleNonEditBatchJob",
+        "onUpdate": [{
+            "action": "searchFolderRuleNonEditBatchJob",
+            "observers": [
+                "props.subPanelContext.searchState.uid"
+            ]
+        }]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n":
+    {
+        "noRuleFound": [ "SearchMessages" ],
+        "searchCriteria": [ "SearchMessages" ],
+        "searchFiltersTitle": [ "SearchMessages" ]
+    }
+}

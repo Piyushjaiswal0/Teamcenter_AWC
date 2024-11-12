@@ -1,0 +1,14 @@
+{
+    "replace": "Ersetzen",
+    "upload": "Hochladen",
+    "chooseFromSystem": "Datei aus System auswählen",
+    "replaceFileError": "Aktualisieren Sie bitte die Datei mit der gleichen Dateierweiterung, die für die vorherige Datei vorhanden war",
+    "replaceSuccessWithFileName": "\"{0}\" wurde ersetzt.",
+    "replaceFailureWithFileName": "Hinzufügen der Importdatei als benannte Referenz für Dataset aufgrund von ungültiger Dateierweiterung nicht möglich",
+    "replaceNoValidTarget": "\"{0}\" verfügt über keine gültige Datei zum Ersetzen.",
+    "replaceFileCommandTitle": "Datei ersetzen",
+    "InvalidSelectedObject": "Zum Erzeugen einer PLMD-Datei wurde ein ungültiges Dataset oder Volumendateiobjekt angegeben. Wiederholen Sie den Vorgang mit einem gültigen Dataset oder Volumendateiobjekt.",
+    "AsynUploadInProgress": "Der asynchrone Upload der Datei in das Teamcenter-Volume findet derzeit statt.",
+    "PlatformNotSupported": "Der asynchrone Ersetzungsvorgang wird nicht für diese Plattform unterstützt: synchrone Ersetzung wird verwendet",
+    "Awp0ReplaceDatasetDesc": "Ausgewählte Datei mit einer neuen Datei von Ihrem Gerät ersetzen."
+}

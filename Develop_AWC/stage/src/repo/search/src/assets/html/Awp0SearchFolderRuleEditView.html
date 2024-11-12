@@ -1,0 +1,7 @@
+<div class="aw-layout-flexColumn aw-search-folderColumn">
+    <aw-radiobutton prop="data.ruleType" list="data.ruleTypeValues.dbValue" action="setRuleType"></aw-radiobutton>
+    <awp0-search-folder-rule-fulltext exist-when="data.ruleType.dbValue === 'Awp0FullTextSearchProvider'" sub-panel-context="subPanelContext"></awp0-search-folder-rule-fulltext>
+    <awp0-search-folder-rule-advanced exist-when="data.ruleType.dbValue === 'Awp0SavedQuerySearchProvider'" sub-panel-context="subPanelContext"></awp0-search-folder-rule-advanced>
+    <awp0-search-folder-rule-saved exist-when="data.ruleType.dbValue === 'saved'" sub-panel-context="subPanelContext"></awp0-search-folder-rule-saved>
+</div>
+

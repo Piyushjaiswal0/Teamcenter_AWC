@@ -1,0 +1,10 @@
+<aw-panel-body>
+    <aw-textbox prop="data.reportName"></aw-textbox>
+    <aw-widget prop="data.reportDesc"></aw-widget>
+    <aw-textbox prop="data.reportId"></aw-textbox>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="addNewReportAction" enable-when="data.reportName.uiValue.length > 0" size="auto">
+        <aw-i18n>i18n.saveReport</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

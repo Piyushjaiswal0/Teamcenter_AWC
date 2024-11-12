@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="12" fill="#005f87"/>
+  <circle cx="12" cy="12" r="11.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <g>
+    <polygon points="15 5.994 6 5.994 6 14.99 7 14.99 7 6.994 15 6.994 15 5.994" fill="#fff"/>
+    <polygon points="17 8 7.99 8 7.99 16.997 8.99 16.997 8.99 9 17 9 17 8" fill="#fff"/>
+    <path d="M9.995,9.995v9h9v-9Zm8,8H11V11h7Z" fill="#fff"/>
+  </g>
+</svg>

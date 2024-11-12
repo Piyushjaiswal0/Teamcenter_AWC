@@ -1,0 +1,6 @@
+{
+    "rotateClockwise": "顺时针旋转",
+    "rotateCounterclockwise": "逆时针旋转",
+    "rotateCWDesc": "顺时针旋转文件 90°。",
+    "rotateCCWDesc": "逆时针旋转文件 90°。"
+}

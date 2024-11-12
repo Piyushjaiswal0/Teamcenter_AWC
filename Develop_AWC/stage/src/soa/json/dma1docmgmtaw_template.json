@@ -1,0 +1,452 @@
+{
+  "BusinessObjectInterface": [
+    {
+      "createRelease": "Awp03.3.0",
+      "description": "Interface Name for Business Object Dma1PrintConfigCustomLOVBO",
+      "libraryName": "Dma1docmgmtaw",
+      "name": "Dma1PrintConfigCustomLOVBO",
+      "namespace": "dma1docmgmtaw",
+      "primaryInterface": "true",
+      "typeName": "Dma1PrintConfigCustomLOVBO"
+    },
+    {
+      "createRelease": "Awp03.3.0",
+      "description": "Interface Name for Business Object Dma1PrintConfigRuntime",
+      "libraryName": "Dma1docmgmtaw",
+      "name": "Dma1PrintConfigRuntime",
+      "namespace": "dma1docmgmtaw",
+      "primaryInterface": "true",
+      "typeName": "Dma1PrintConfigRuntime"
+    }
+  ],
+  "Date": "Wed Jun 12 12:28:46 PM 2019",
+  "Library": [
+    {
+      "createRelease": "Awp03.3.0",
+      "description": "Active Workspace Document service library.",
+      "isThirdParty": "false",
+      "name": "Dma1SoaDocMgmtAw",
+      "namespace": "Dma1::Soa::DocMgmtAw",
+      "serviceLibrary": "true"
+    },
+    {
+      "DependentOn": [
+        {
+          "name": "metaframework"
+        },
+        {
+          "name": "tccore"
+        },
+        {
+          "name": "tc"
+        },
+        {
+          "name": "cxpom"
+        }
+      ],
+      "createRelease": "Awp03.3.0",
+      "description": "Active Workspace Document Management",
+      "isThirdParty": "false",
+      "name": "Dma1docmgmtaw",
+      "namespace": "",
+      "serviceLibrary": "false"
+    }
+  ],
+  "Operation": [
+    {
+      "canOverride": "false",
+      "component": "Dma1docmgmtaw",
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "This operation returns Print Configuration definition information from the <b>PrintConfiguration</b> object defined in Teamcenter.",
+      "exceptionCondition": "",
+      "id": "getPrinterDefinitions#",
+      "interface": "Dma1::Soa::DocMgmtAw::DocMgmt",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "true",
+      "name": "getPrinterDefinitions",
+      "opTemplate": "Dma1::Soa::DocMgmtAw::_2017_06::DocMgmt::PrinterDefinitionResponse#Dma1::Soa::DocMgmtAw::DocMgmt::getPrinterDefinitions",
+      "returnDescription": "The Print Configuration definition information. The following partial errors may be returned:<br /><br />     515155 The PrintConfiguration class does not exist in the System",
+      "useCase": "The client wants to get the print configuration information required for the Batch Printing action in Active Workspace."
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "The base object for markups.",
+          "parameterName": "baseObject"
+        },
+        {
+          "description": "The version   of the markups on the client before the user's modification, set by the server, opaque to the client.  For load action, the string is empty.  For save action, retrieve the version string from load action response object.",
+          "parameterName": "version"
+        },
+        {
+          "description": "The property map(string, strings).  Contain the key/value pairs.  Possible values are:<br /><ul><ul><li type=\"disc\">Key: &ldquo;action&rdquo;.  Value: &ldquo;load&rdquo; or &ldquo;save&rdquo; </li><li type=\"disc\">Key: &ldquo;message&rdquo;.  Value: &ldquo;all_users&rdquo; or &ldquo;single_user&rdquo;</li><li type=\"disc\">&quot;all_users&quot; - save or load the markups for all users.</li><li type=\"disc\">&quot; single_user&quot; - save or load the markups for the current user.</li></ul></ul>",
+          "parameterName": "properties"
+        },
+        {
+          "description": "A user supplied JSON markup.  Empty string is allowed.  Valid only for &ldquo;save&rdquo; action.",
+          "parameterName": "markups"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awp0AWS",
+      "createRelease": "Awp04.2.0",
+      "dependencies": "",
+      "description": "Description:<br />This operation processes the markups on the server. <br />Use Cases:<br /><ul><ul><li type=\"disc\">Load all the existing markups from the server.</li><li type=\"disc\">Save the user created or modified markups to the server.</li></ul></ul>",
+      "exceptionCondition": "",
+      "id": "processMarkups#const,Teamcenter::WorkspaceObject,&$const,std::string,&$const,Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupProperties,&$const,std::string,&",
+      "interface": "Dma1::Soa::DocMgmtAw::DocMgmt",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "processMarkups",
+      "opTemplate": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupResponse#Dma1::Soa::DocMgmtAw::DocMgmt::processMarkups#const,Teamcenter::WorkspaceObject,&$const,std::string,&$const,Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupProperties,&$const,std::string,&",
+      "returnDescription": "Return the common MarkupResponse that contains the version, message, updated base object, updated markups, and possibly partial errors. <br /><br />Following are some possible errors return in the ServiceData:<br /><ul><ul><li type=\"disc\">260037 'MARKUP' access privilege on the Item is needed to create or update its Markup.</li><li type=\"disc\">260038 'MARKUP' access privilege on the Item Revision is needed to create or update its Markup.</li><li type=\"disc\">260039 'MARKUP' access privilege on the Based Dataset is needed to create or update its Markup.</li><li type=\"disc\">260040 The Markup cannot be created or updated because the base Dataset is checked-out by somebody else or is out-of-date. Refresh the base Dataset to obtain its latest version.</li></ul></ul>",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "The Dataset to be processed.",
+          "parameterName": "baseObject"
+        },
+        {
+          "description": "For action &ldquo;load&rdquo;, this string is to be empty.  For action &ldquo;save&rdquo;, this string contains the text that is saved as a text file and added as a name reference to the Dataset.",
+          "parameterName": "content"
+        },
+        {
+          "description": "Supported values are:<br /><ul><ul><li type=\"disc\">&ldquo;load&rdquo; &ndash; loads the contents of the text file that is a named reference in the Dataset and returns it in the ProcessTextDatasetResponse.  If there is more than one named reference, only the first one is returned.</li><li type=\"disc\">&ldquo;save&rdquo; &ndash;  saves the content string as a text file and adds it as a named reference to the Dataset.</li></ul></ul>",
+          "parameterName": "action"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Dma1docmgmtaw",
+      "createRelease": "Awp04.3.0",
+      "dependencies": "",
+      "description": "This operation extracts the contents of the text dataset to a string and returns it or saves the input string to the contents of a text dataset.",
+      "exceptionCondition": "",
+      "id": "processTextDataset#const,Teamcenter::Dataset,&$const,std::string,&$const,std::string,&",
+      "interface": "Dma1::Soa::DocMgmtAw::DocMgmt",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "processTextDataset",
+      "opTemplate": "Dma1::Soa::Internal::DocMgmtAw::_2019_12::DocMgmt::ProcessTextDatasetResponse#Dma1::Soa::DocMgmtAw::DocMgmt::processTextDataset#const,Teamcenter::Dataset,&$const,std::string,&$const,std::string,&",
+      "returnDescription": "The dataset content.<br /><br />The following partial errors may be returned:<br /><ul><ul><li type=\"disc\">387004 Dataset is not checked out.  Unable to update the dataset.</li><li type=\"disc\">387005 Input object is not a valid text dataset.</li><li type=\"disc\">387006 Input dataset contains a named reference to a binary file.</li></ul></ul>",
+      "useCase": "<ul><ul><li type=\"disc\">Load the text from the dataset and return it in a string.</li><li type=\"disc\">Save the input text string to the dataset.</li></ul></ul>"
+    }
+  ],
+  "OperationTemplate": [
+    {
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Dma1::Soa::DocMgmtAw::_2017_06::DocMgmt::PrinterDefinitionResponse",
+          "qualifier": ""
+        }
+      ],
+      "const": "false",
+      "createRelease": "Awp03.3.0",
+      "description": "This operation returns Print Configuration definition information from the <b>PrintConfiguration</b> object defined in Teamcenter.",
+      "id": "Dma1::Soa::DocMgmtAw::_2017_06::DocMgmt::PrinterDefinitionResponse#Dma1::Soa::DocMgmtAw::DocMgmt::getPrinterDefinitions",
+      "name": "Dma1::Soa::DocMgmtAw::DocMgmt::getPrinterDefinitions",
+      "returnConst": "false",
+      "returnDescription": "The Print Configuration definition information. The following partial errors may be returned:<br /><br />     515155 The PrintConfiguration class does not exist in the System",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Teamcenter::WorkspaceObject",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The base object for markups.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "baseObject"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The version   of the markups on the client before the user's modification, set by the server, opaque to the client.  For load action, the string is empty.  For save action, retrieve the version string from load action response object.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "version"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupProperties",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The property map(string, strings).  Contain the key/value pairs.  Possible values are:<br /><ul><ul><li type=\"disc\">Key: &ldquo;action&rdquo;.  Value: &ldquo;load&rdquo; or &ldquo;save&rdquo; </li><li type=\"disc\">Key: &ldquo;message&rdquo;.  Value: &ldquo;all_users&rdquo; or &ldquo;single_user&rdquo;</li><li type=\"disc\">&quot;all_users&quot; - save or load the markups for all users.</li><li type=\"disc\">&quot; single_user&quot; - save or load the markups for the current user.</li></ul></ul>",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "properties"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A user supplied JSON markup.  Empty string is allowed.  Valid only for &ldquo;save&rdquo; action.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "markups"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupResponse",
+          "qualifier": ""
+        }
+      ],
+      "const": "false",
+      "createRelease": "Awp04.2.0",
+      "description": "Description:<br />This operation processes the markups on the server. <br />Use Cases:<br /><ul><ul><li type=\"disc\">Load all the existing markups from the server.</li><li type=\"disc\">Save the user created or modified markups to the server.</li></ul></ul>",
+      "id": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupResponse#Dma1::Soa::DocMgmtAw::DocMgmt::processMarkups#const,Teamcenter::WorkspaceObject,&$const,std::string,&$const,Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupProperties,&$const,std::string,&",
+      "name": "Dma1::Soa::DocMgmtAw::DocMgmt::processMarkups",
+      "returnConst": "false",
+      "returnDescription": "Return the common MarkupResponse that contains the version, message, updated base object, updated markups, and possibly partial errors. <br /><br />Following are some possible errors return in the ServiceData:<br /><ul><ul><li type=\"disc\">260037 'MARKUP' access privilege on the Item is needed to create or update its Markup.</li><li type=\"disc\">260038 'MARKUP' access privilege on the Item Revision is needed to create or update its Markup.</li><li type=\"disc\">260039 'MARKUP' access privilege on the Based Dataset is needed to create or update its Markup.</li><li type=\"disc\">260040 The Markup cannot be created or updated because the base Dataset is checked-out by somebody else or is out-of-date. Refresh the base Dataset to obtain its latest version.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Teamcenter::Dataset",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The Dataset to be processed.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "baseObject"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "For action &ldquo;load&rdquo;, this string is to be empty.  For action &ldquo;save&rdquo;, this string contains the text that is saved as a text file and added as a name reference to the Dataset.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "content"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Supported values are:<br /><ul><ul><li type=\"disc\">&ldquo;load&rdquo; &ndash; loads the contents of the text file that is a named reference in the Dataset and returns it in the ProcessTextDatasetResponse.  If there is more than one named reference, only the first one is returned.</li><li type=\"disc\">&ldquo;save&rdquo; &ndash;  saves the content string as a text file and adds it as a named reference to the Dataset.</li></ul></ul>",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "action"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Dma1::Soa::Internal::DocMgmtAw::_2019_12::DocMgmt::ProcessTextDatasetResponse",
+          "qualifier": ""
+        }
+      ],
+      "const": "false",
+      "createRelease": "Awp04.3.0",
+      "description": "This operation extracts the contents of the text dataset to a string and returns it or saves the input string to the contents of a text dataset.",
+      "id": "Dma1::Soa::Internal::DocMgmtAw::_2019_12::DocMgmt::ProcessTextDatasetResponse#Dma1::Soa::DocMgmtAw::DocMgmt::processTextDataset#const,Teamcenter::Dataset,&$const,std::string,&$const,std::string,&",
+      "name": "Dma1::Soa::DocMgmtAw::DocMgmt::processTextDataset",
+      "returnConst": "false",
+      "returnDescription": "The dataset content.<br /><br />The following partial errors may be returned:<br /><ul><ul><li type=\"disc\">387004 Dataset is not checked out.  Unable to update the dataset.</li><li type=\"disc\">387005 Input object is not a valid text dataset.</li><li type=\"disc\">387006 Input dataset contains a named reference to a binary file.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    }
+  ],
+  "ServiceInterface": [
+    {
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "The service provides operations for Active Workspace Document Management batch print.<br /><br />The getPrinterDefinition operation gets the printer configuration definition information required for the Batch Print action from Active Workspace.",
+      "libraryName": "Dma1SoaDocMgmtAw",
+      "name": "DocMgmt",
+      "namespace": "Dma1::Soa::DocMgmtAw",
+      "serviceLibraryRef": ""
+    }
+  ],
+  "Struct": [
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::WorkspaceObject"
+            }
+          ],
+          "description": "The resulting base object after process markups.",
+          "name": "baseObject"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The version of the markups set by the server, opaque to the client.",
+          "name": "version"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt::MarkupProperties"
+            }
+          ],
+          "description": "A map (string/string) of properties.    Values can be:<br /><ul><ul><li type=\"disc\">Key: &ldquo;message&rdquo;.  Value: &ldquo;author&rdquo;,&ldquo;reviewer&rdquo; or &ldquo;editor&rdquo;</li></ul></ul>",
+          "name": "properties"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The user supplied JSON markup data that was updated or loaded.",
+          "name": "markups"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "The Service Data that may contain partial errors.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.2.0",
+      "description": "This MarkupResponse structure is for the response of all processMarkups operations.",
+      "isPublished": "false",
+      "name": "MarkupResponse",
+      "namespace": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt",
+      "scope": "Dma1::Soa::DocMgmtAw::DocMgmt"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "dma1docmgmtaw::Dma1PrintConfigRuntime"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of Print Configuration Runtime business objects.  This business object contains all print configuration information properties such as Print Configuration Name, Printer Name, Paper Sizes, etc.",
+          "name": "printConfigurations"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "Standard return; includes any error information.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp03.3.0",
+      "description": "Printer Definition Response structure.",
+      "isPublished": "true",
+      "name": "PrinterDefinitionResponse",
+      "namespace": "Dma1::Soa::DocMgmtAw::_2017_06::DocMgmt",
+      "scope": "Dma1::Soa::DocMgmtAw::DocMgmt"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "For the &ldquo;load&rdquo; action, this string contains the contents of the text file that is a named reference in the Dataset. If there is more than one named reference, only the first one is returned.  For &ldquo;save&rdquo; action, this string is empty.",
+          "name": "content"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "The Service Data that may contain partial errors.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.3.0",
+      "description": "This ProcessTextDatasetResponse structure is for the response of all processTextDataset operations.",
+      "isPublished": "false",
+      "name": "ProcessTextDatasetResponse",
+      "namespace": "Dma1::Soa::Internal::DocMgmtAw::_2019_12::DocMgmt",
+      "scope": "Dma1::Soa::DocMgmtAw::DocMgmt"
+    }
+  ],
+  "TcVersion": "tc11000.2.0",
+  "Typedef": [
+    {
+      "DataTypeRefParam": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            },
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "dataType": "std::map"
+        }
+      ],
+      "createRelease": "Awp04.2.0",
+      "description": "Contains the key/value pairs for client/server communication.",
+      "isPublished": "false",
+      "name": "MarkupProperties",
+      "namespace": "Dma1::Soa::Internal::DocMgmtAw::_2019_06::DocMgmt",
+      "scope": "Dma1::Soa::DocMgmtAw::DocMgmt"
+    }
+  ],
+  "xmlns": "http://teamcenter.com/BusinessModel/TcBusinessData"
+}

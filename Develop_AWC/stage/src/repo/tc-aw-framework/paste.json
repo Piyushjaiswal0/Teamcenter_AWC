@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "1.0.0",
+  "defaultPasteHandler": {
+    "dep": "js/tcDefaultPasteHandler"
+  },
+  "defaultPasteFileHandler": {
+    "dep": "js/pasteFileHandler"
+  },
+  "pasteHandlers": {
+    "tcDefaultPasteHandler": {
+      "action": "tcDefaultPasteAction"
+    },
+    "pasteHandlerForDocumentRevision": {
+      "action": "tcDefaultPasteAction",
+      "activeWhen": {
+        "condition": "conditions.isPasteHandlerActiveForDocumentRevision"
+      }
+    },
+    "pasteHandlerForFolder": {
+      "action": "tcDefaultPasteAction",
+      "activeWhen": {
+        "condition": "conditions.isPasteHandlerActiveForFolder"
+      }
+    },
+    "pasteHandlerForFolderNew": {
+      "action": "tcDefaultPasteAction",
+      "activeWhen": {
+        "condition": "conditions.isPasteHandlerActiveForFolderNew"
+      }
+    },
+    "pasteHandlerForItem": {
+      "action": "tcDefaultPasteAction",
+      "activeWhen": {
+        "condition": "conditions.isPasteHandlerActiveForItem"
+      }
+    },
+    "pasteHandlerForItemRevisionDataset": {
+      "action": "tcDefaultPasteAction",
+      "activeWhen": {
+        "condition": "conditions.isPasteHandlerActiveForItemRevisionDataset"
+      }
+    },
+    "pasteHandlerForItemRevisionDocumentRevision": {
+      "action": "tcDefaultPasteAction",
+      "activeWhen": {
+        "condition": "conditions.isPasteHandlerActiveForItemRevisionDocumentRevision"
+      }
+    }
+  },
+  "actions": {
+    "tcDefaultPasteAction": {
+      "actionType": "JSFunction",
+      "method": "tcDefaultPasteHandler",
+      "deps": "js/tcDefaultPasteHandler",
+      "inputData": {
+        "targetObject": "{{pasteContext.targetObject}}",
+        "sourceObject": "{{pasteContext.sourceObject}}",
+        "relationType": "{{pasteContext.relationType}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "dragDrop.success",
+            "condition": "pasteContext.isDragDropIntent",
+            "eventData": {
+              "sourceObjects": "{{pasteContext.sourceObject}}",
+              "targetObject": "{{pasteContext.targetObject}}"
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "condition": "errorCode.code !== 515107  && errorCode.code !== 35015 && errorCode.code !== 6007 && errorCode.code !== 48004 && errorCode.code !== 6157",
+            "message": "pasteFailure"
+          },
+          {
+            "condition": "errorCode.code === 35015",
+            "message": "pasteRelationFailureMessage"
+          },
+          {
+            "condition": "errorCode.code === 6007",
+            "message": "pasteSourceDuplicateFailureMessage"
+          },
+          {
+            "condition": "errorCode.code === 48004",
+            "message": "pasteTargetSourceSameFailureMessage"
+          },
+          {
+            "condition": "errorCode.code === 6157",
+            "message": "pasteSameFolderFailureMessage"
+          }
+        ]
+      }
+    }
+  },
+  "conditions": {
+    "isPasteHandlerActiveForDocumentRevision": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "pasteContext.targetObject",
+            "$query": {
+              "$typeOf": "DocumentRevision"
+            }
+          },
+          {
+            "$source": "pasteContext.sourceObject",
+            "$query": {
+              "$typeOf": "Dataset"
+            }
+          }
+        ]
+      }
+    },
+    "isPasteHandlerActiveForItem": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "pasteContext.targetObject",
+            "$query": {
+              "$typeOf": "Item"
+            }
+          },
+          {
+            "$source": "pasteContext.sourceObject",
+            "$query": {
+              "$typeOf": "Dataset"
+            }
+          }
+        ]
+      }
+    },
+    "isPasteHandlerActiveForItemRevisionDataset": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "pasteContext.targetObject",
+            "$query": {
+              "$typeOf": "ItemRevision"
+            }
+          },
+          {
+            "$source": "pasteContext.sourceObject",
+            "$query": {
+              "$typeOf": "Dataset"
+            }
+          }
+        ]
+      }
+    },
+    "isPasteHandlerActiveForFolder": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "pasteContext.targetObject",
+            "$query": {
+              "$typeOf": "Folder"
+            }
+          },
+          {
+            "$source": "pasteContext.sourceObject",
+            "$query": {
+              "$typeOf": "WorkspaceObject"
+            }
+          },
+          {
+            "expression": "ctx.mselected.length === 1"
+          }
+        ]
+      }
+    },
+    "isPasteHandlerActiveForFolderNew": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "pasteContext.targetObject",
+            "$query": {
+              "$typeOf": "Folder"
+            }
+          },
+          {
+            "$source": "pasteContext.sourceObject",
+            "$query": {
+              "$typeOf": "WorkspaceObject"
+            }
+          }
+        ]
+      }
+    },
+    "isPasteHandlerActiveForItemRevisionDocumentRevision": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "pasteContext.targetObject",
+            "$query": {
+              "$typeOf": "ItemRevision"
+            }
+          },
+          {
+            "$source": "pasteContext.sourceObject",
+            "$query": {
+              "$typeOf": "DocumentRevision"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "messages": {
+    "pasteFailure": {
+      "messageType": "ERROR",
+      "messageText": "{{errorCode}}"
+    },
+    "pasteRelationFailureMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.pasteRelationFailureMessage}}"
+    },
+    "pasteSourceDuplicateFailureMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{errorCode}}"
+    },
+    "pasteTargetSourceSameFailureMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.pasteTargetSourceSameFailureMessage}}"
+    },
+    "pasteSameFolderFailureMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.pasteSameFolderFailureMessage}}"
+    }
+  },
+  "i18n": {
+    "pasteRelationFailureMessage": [
+      "ZeroCompileCommandMessages"
+    ],
+    "pasteSourceDuplicateFailureMessage": [
+      "ZeroCompileCommandMessages"
+    ],
+    "pasteTargetSourceSameFailureMessage": [
+      "ZeroCompileCommandMessages"
+    ],
+    "pasteSameFolderFailureMessage": [
+      "ZeroCompileCommandMessages"
+    ]
+  }
+}

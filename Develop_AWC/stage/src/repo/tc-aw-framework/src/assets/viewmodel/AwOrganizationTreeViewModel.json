@@ -1,0 +1,356 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "updateSearchStateAfterFilterAction": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateAfterFilterAction",
+            "inputData": {
+                "searchState": "{{props.searchState}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "toggleFilterView": {
+            "actionType": "JSFunction",
+            "method": "toggleFilterView",
+            "inputData": {
+                "activeSection": "{{data.activeSection}}"
+            },
+            "outputData": {
+                "activeSection": ""
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "loadOrgTreeData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadTreeTableData",
+            "inputData": {
+                "0": {
+                    "attributesToInflate": [],
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0OrgTreeProvider",
+                    "searchCriteria": {
+                        "useInactiveGMPref": "true",
+                        "searchString": "{{data.data.orgTreeSearchBox.dbValue}}"
+                    },
+                    "focusObjUid": "",
+                    "startIndex": "{{data.treeLoadInput.startChildNdx}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": "{{data.treeLoadInput}}",
+                "5": "{{props.searchState}}"
+            },
+            "outputData": {
+                "totalFound": "result.treeLoadResult.totalFound",
+                "treeLoadResult": "result.treeLoadResult"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "OrgTree.nodeExpansion"
+                    }
+                ]
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "nodeExpansion": {
+            "actionType": "JSFunction",
+            "method": "nodeExpansion",
+            "inputData": {
+                "data": "{{data}}",
+                "selectionData": "{{props.selectionData}}"
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "orgTreeDoSearchBatchAction": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateSearchStateWithIncontentCriteria"
+                },
+                {
+                    "action": "orgTreeDoSearch"
+                }
+            ]
+        },
+        "updateSearchStateWithIncontentCriteria": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateWithIncontentCriteria",
+            "inputData": {
+                "searchState": "{{props.searchState}}",
+                "inContentSearchBoxString": "{{data.orgTreeSearchBox.dbValue}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "orgTreeDoSearch": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadFilteredTreeTableData",
+            "inputData": {
+                "searchString": "{{data.orgTreeSearchBox.dbValue}}",
+                "data": "{{data}}",
+                "props": "{{props}}",
+                "orgTreeTableDataProvider": "{{data.dataProviders.orgTreeTableDataProvider}}"
+            },
+            "outputData": {
+                "totalFound": "result.treeLoadResult.totalFound",
+                "treeLoadResult": "result.treeLoadResult"
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "treeNodeSelected": {
+            "actionType": "JSFunction",
+            "method": "treeNodeSelected",
+            "inputData": {
+                "data": "{{data}}",
+                "currentNode": "{{data.eventData.selectedObjects}}",
+                "selectionModelMode": "{{props.selectionModel.mode}}",
+                "selectionData": "{{props.selectionData}}"
+            },
+            "outputData": {
+                "selectedTreeNode": "currentNode"
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "loadPropertiesActionJS": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadPropertiesJS",
+            "inputData": {
+                "dataProvider": "{{data}}",
+                "propertyLoadInput": "{{data.propertyLoadInput}}"
+            },
+            "outputData": {},
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "treeNodeCreated": {
+            "actionType": "JSFunction",
+            "method": "treeNodeCreated",
+            "inputData": {
+                "eventData":"{{data.eventData}}"
+            },
+            "outputData": {
+                "isTreeReload": "isTreeReload",
+                "treeNodeSelection":"treeNodeSelection"
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "setIsTreeReloadFlag": {
+            "actionType": "JSFunction",
+            "method": "setIsTreeReloadFlag",
+            "outputData": {
+                "isTreeReload": false
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "setSelection": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.orgTreeTableDataProvider}}",
+                "selectionData": "{{props.selectionData}}",
+                "treeNodeSelection":"{{data.treeNodeSelection}}"
+            },
+            "deps": "js/awOrganizationTreeUtils"
+        },
+        "updateResultsCaption": {
+            "actionType": "JSFunction",
+            "method": "updateResultsCaption",
+            "inputData": {
+                "resultsText": "{{i18n.resultsText}}",
+                "searchState": "{{props.searchState}}",
+                "customResultsCount": "{{props.searchState.customResultsCount}}"
+            },
+            "outputData": {
+                "resultsText": "resultsText"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "constructBreadCrumbTitle": {
+            "actionType": "JSFunctionAsync",
+            "method": "buildTitle",
+            "inputData": {
+                "searchObject": "{{props.searchState}}"
+            },
+            "outputData": {
+                "crumbTitle": ""
+            },
+            "deps": "js/AwSearchBreadcrumbUtils"
+        },
+        "loadOrgTreeDataBatchAction":{
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "loadOrgTreeData",
+                    "condition": "!conditions.searchFilterApplied"
+                }
+            ]
+        },
+        "changeViewMode":{
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "orgTreeDoSearch",
+                    "condition": "conditions.searchFilterApplied"
+                }
+            ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "orgTreeTableDataProvider.selectionChangeEvent",
+            "condition": "!data.isTreeReload",
+            "cacheEventData": true,
+            "action": "treeNodeSelected"
+        },
+        {
+            "eventId": "orgTreeTableDataProvider.selectionChangeEvent",
+            "condition": "data.isTreeReload",
+            "cacheEventData": true,
+            "action": "setIsTreeReloadFlag"
+        },
+        {
+            "eventId": "awOrgTree.treeNodeCreated",
+            "cacheEventData": true,
+            "action": "treeNodeCreated"
+        },
+        {
+            "eventId": "orgTreeTableDataProvider.treeNodesLoaded",
+            "cacheEventData": true,
+            "action": "setSelection"
+        },
+        {
+            "eventId": "OrgTree.nodeExpansion",
+            "action": "nodeExpansion"
+        }
+    ],
+    "data": {
+        "orgTreeName": "prefOrgTree",
+        "selectedTreeNode": null,
+        "filteringOrgTree": false,
+        "initialExpand": false,
+        "parents": null,
+        "orgTreeSearchBox": {
+            "displayName": "{{i18n.orgTreeFilterText}}",
+            "type": "STRING",
+            "requiredText": "{{i18n.orgTreeFilterText}}"
+        },
+        "filterCommand": {
+            "action": "toggleFilterView",
+            "iconName": "cmdFilterActive",
+            "tooltip": "{{i18n.filters}}"
+        },
+        "activeSection": "result"
+    },
+    "dataProviders": {
+        "orgTreeTableDataProvider": {
+            "action": "loadOrgTreeDataBatchAction",
+            "initializeAction": "loadOrgTreeDataBatchAction",
+            "nextAction": "loadOrgTreeData",
+            "previousAction": "loadOrgTreeData",
+            "treeLoadResult": "{{data.treeLoadResult}}",
+            "selectionModelMode": "multiple",
+            "cacheCollapse": true,
+            "inputData": {
+                "accessMode": "tree",
+                "topNodeUid": "SiteLevel",
+                "selectionModel": "{{props.selectionModel}}"
+            },
+            "totalFound": "{{data.totalFound}}"
+        },
+        "orgTreeTablePropertyProvider": {
+            "action": "loadPropertiesActionJS",
+            "propertyLoadResult": "action.result.propertyLoadResult"
+        }
+    },
+
+    "columnProviders": {
+        "orgTreeTableColumnProvider": {
+            "columns": [ {
+                "name": "Test",
+                "isTreeNavigation": true,
+                "isTableCommand": false,
+                "enableSorting": false,
+                "width": 450,
+                "minWidth": 450,
+                "enableColumnMoving": false
+            } ],
+            "soaEnabled": false,
+            "sortCriteria": []
+        }
+    },
+
+    "grids": {
+        "orgTreeTable12": {
+            "dataProvider": "orgTreeTableDataProvider",
+            "propertyProvider": "orgTreeTablePropertyProvider",
+            "columnProvider": "orgTreeTableColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "useStaticFirstCol": true,
+                "enableExpansionStateCaching": false
+            }
+        }
+    },
+    "functions": {
+    },
+    "messages": {},
+    "i18n": {
+        "orgTreeFilterText": [ "OrganizationMessages" ],
+        "Organization":["OrganizationMessages"],
+        "resultsText": [ "OrganizationMessages" ],
+        "noFiltersFound": [ "OrganizationMessages" ]
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+                "action": "updateSearchStateAfterFilterAction",
+                "observers": [ "props.searchState" ]
+            },
+
+            {
+                "action": "orgTreeDoSearch",
+                "observers": [ "props.searchState.filterString"]
+            },
+            {
+                "action": "updateResultsCaption",
+                "observers": [ "props.searchState.cursorInfoString" ]
+            },
+            {
+                "action": "constructBreadCrumbTitle",
+                "observers": [ "props.searchState" ]
+            },
+            {
+                "action": "changeViewMode",
+                "observers": [ "props.subPanelContext.sidenavMode" ]
+            }
+        ]
+    },
+
+    "conditions": {
+        "isMobileMode": {
+            "expression": "!subPanelContext.sidenavMode || subPanelContext.sidenavMode === 'mobile'"
+        },
+        "nonMobileMode": {
+            "expression": "subPanelContext.sidenavMode && subPanelContext.sidenavMode !=='mobile'"
+        },
+        "populatedSearchString": {
+            "expression": "props.searchState.criteria && props.searchState.criteria.searchString && props.searchState.criteria.searchString.length > 0"
+        },
+        "searchFilterApplied": {
+            "expression": "(conditions.populatedSearchString) || ( props.searchState.filterString && props.searchState.filterString.length > 0)"
+        }
+    },
+    "props": {
+        "selection-model": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "search-state":{
+            "type": "object"
+        }
+    }
+}

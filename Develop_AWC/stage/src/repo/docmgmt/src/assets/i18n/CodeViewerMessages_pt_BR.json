@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Codificação de caractere",
+    "uvCheckoutTitle": "Verificação na saída",
+    "uvCheckoutDesc": "Reserve a seleção para evitar que outros usuários façam alterações.",
+    "cancelCheckoutTitle": "Cancelar Reserva",
+    "Awp0CancelCheckoutDesc": "Cancele a reserva e reverta as alterações.",
+    "uvCheckinTitle": "Devolução",
+    "Awp0CheckinDesc": "Faça o check-in no objeto e salve suas alterações.",
+    "uvCodeWordWrapTitle": "Qubra de linha",
+    "uvCodeWordWrapDesc": "Ajuste o texto longo em múltiplas linhas."
+}

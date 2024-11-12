@@ -1,0 +1,127 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "relation-map": {
+            "type": "object"
+        },
+        "target-object": {
+            "type": "object"
+        },
+        "edit-handler": {
+            "type": "object"
+        },
+        "relations": {
+            "type": "string"
+        },
+        "include-types": {
+            "type": "string"
+        },
+        "load-sub-types": {
+            "type": "boolean"
+        },
+        "type-override-id": {
+            "type": "string"
+        },
+        "auto-select-on-unique-type": {
+            "type": "boolean"
+        },
+        "visible-tabs": {
+            "type": "string"
+        },
+        "default-tab": {
+            "type": "string"
+        },
+        "max-recent-count": {
+            "type": "string"
+        },
+        "type-filter": {
+            "type": "string"
+        },
+        "selection-mode": {
+            "type": "string"
+        },
+        "preferred-type": {
+            "type": "string"
+        },
+        "search-filter": {
+            "type": "string"
+        },
+        "is-include-sub-types": {
+            "type": "string"
+        },
+        "hide-relation": {
+            "type": "string"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "add-panel-state": {
+            "type": "object"
+        },
+        "search-state": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        },
+        "xrt-state": {
+            "type": "object"
+        },
+        "project-state": {
+            "type": "object"
+        },
+        "is-custom-dataset-action": {
+            "type": "boolean"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awAddRenderFunction",
+            "deps": "js/AwAddService",
+            "options": {
+                "useMemo": true,
+                "optionalTabs": "{{data.optionalTabs}}"
+            }
+        },
+        "initialize": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/addTabUtils",
+            "method": "initialize",
+            "outputData": {
+                "optionalTabs": "optionalTabs",
+                "ctxParameters": "ctxParameters",
+                "additionalParameters": "additionalParameters"
+            }
+        }
+    },
+    "ctx": {
+        "AddTabModelsClass": {
+            "parser": {
+                "method": "getAddTabModels",
+                "deps": "js/AwAddService"
+            }
+        },
+        "SearchFilterTabModelsClass": {
+            "parser": {
+                "method": "getSearchFilterTabModels",
+                "deps": "js/AwAddService"
+            }
+        },
+        "RelationMapClass": {
+            "parser": {
+                "method": "getRelationMap",
+                "deps": "js/AwAddService"
+            }
+        }
+    },
+    "data": {
+        "optionalTabs": null
+    },
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize"
+    }
+}

@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <g>
+    <polygon points="1 1 2 1 2 0 0 0 0 2 1 2 1 1" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="1 12 0 12 0 14 2 14 2 13 1 13 1 12" fill="#464646"/>
+    <rect y="3" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="6" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect y="9" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="13" y="3" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="13 2 14 2 14 0 12 0 12 1 13 1 13 2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="13" width="2" height="1" fill="#464646"/>
+    <path d="M13.707,6H8V5H9V2H6V5H7V6H6V9H5v1H4V7H5V4H2V7H3v4H5v1H6v4H16V8.293ZM7,3H8V4H7ZM3,5H4V6H3Zm7,2h2V9H10Zm3,8H9V12.5a.5.5,0,0,1,.5-.5h3a.5.5,0,0,1,.5.5Zm2,0H14V12.5A1.5017,1.5017,0,0,0,12.5,11h-3A1.5017,1.5017,0,0,0,8,12.5V15H7V7H9v3h4V7h.293L15,8.707Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="10" y="13" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  </g>
+</svg>

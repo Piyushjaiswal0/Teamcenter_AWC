@@ -1,0 +1,17 @@
+ <aw-panel-body>
+            <aw-panel-section visible-when="data.activeView!='Sub0AddFollowerSub'">
+                <aw-date  prop="data.sub0startDate"></aw-date>
+                <aw-date  prop="data.sub0endDate"></aw-date>             
+            </aw-panel-section>
+            <aw-command-panel-section caption="i18n.temporaryNotifier" anchor="data.addFollowersCommand" context="{...subPanelContext}" 
+            visible-when="data.activeView!='Sub0AddFollowerSub'">
+                <aw-list dataprovider="data.dataProviders.followers_provider">
+                     <aw-default-cell vmo="item">
+                        </aw-default-cell>
+                </aw-list>
+            </aw-command-panel-section>        
+</aw-panel-body>
+<aw-panel-footer> 
+      <aw-button action="isValidtoTranserNotification" visible-when="conditions.isValidToDoTransfer"><aw-i18n>i18n.transferButtonTitle</aw-i18n></aw-button>
+</aw-panel-footer>
+    

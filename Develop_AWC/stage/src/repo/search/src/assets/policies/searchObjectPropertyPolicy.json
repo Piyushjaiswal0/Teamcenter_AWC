@@ -1,0 +1,132 @@
+{
+    "types": [ {
+        "name": "Awp0SearchFolder",
+        "properties": [ {
+            "name": "object_string"
+        }, {
+            "name": "object_type"
+        },{
+            "name": "checked_out"
+        }, {
+            "name": "owning_user"
+        }, {
+            "name": "owning_group"
+        },{
+            "name": "last_mod_date"
+        }, {
+            "name": "release_status_list"
+        }, {
+            "name": "awp0SearchDefinition"
+        }, {
+            "name": "awp0SearchType"
+        }, {
+            "name": "awp0CanExecuteSearch"
+        }, {
+            "name": "awp0Rule"
+        }, {
+            "name": "awp0IsShared"
+        }
+        ]
+        },
+        {
+            "name": "Awp0FullTextSavedSearch",
+            "properties": [ {
+                "name": "object_name"
+            }, {
+                "name": "awp0search_string"
+            }, {
+                "name": "creation_date"
+            }, {
+                "name": "awp0string_filters",
+                "modifiers": [ {
+                    "name": "withProperties",
+                    "Value": "true"
+                } ]
+            }, {
+                "name": "last_mod_date"
+            }, {
+                "name": "awp0SearchFilterArray"
+            }, {
+                "name": "owning_user"
+            }, {
+                "name": "awp0is_global_shared"
+            }, {
+                "name": "awp0ChartOn"
+            } ]
+        }, {
+            "name": "SavedSearch",
+            "properties": [ {
+                "name": "object_name"
+            }, {
+                "name": "savedsearch_attr_names"
+            }, {
+                "name": "savedsearch_attr_values"
+            }, {
+                "name": "shared"
+            }, {
+                "name": "last_mod_date"
+            }, {
+                "name": "savedsearch_query",
+                "modifiers": [ {
+                    "name": "withProperties",
+                    "Value": "true"
+                } ]
+            }, {
+                "name": "owning_user"
+            }, {
+                "name": "saved_search_criteria"
+            } ]
+        }, {
+            "name": "SavedQueryCriteria",
+            "properties": [ {
+                "name": "fnd0AttributeDisplayValues"
+            } ]
+        }, {
+            "name": "Awp0StringSearchFilter",
+            "properties": [ {
+                "name": "awp0filter_name"
+            }, {
+                "name": "awp0value"
+            } ]
+        }, {
+            "name": "ItemRevision",
+            "properties": [ {
+                "name": "item_id"
+            }, {
+                "name": "item_revision_id"
+            }, {
+                "name": "object_name"
+            }, {
+                "name": "object_desc"
+            }, {
+                "name": "items_tag"
+            },{
+                "name": "awb0IsDiscoveryIndexed"
+            }, {
+                "name": "awb0DiscoveryIndexTime"
+            }
+         ]
+        }, {
+            "name": "Awp0AdvancedSearchInput",
+            "properties": [ {
+                "name": "awp0AdvancedQueryName"
+            }, {
+                "name": "awp0QuickSearchName"
+            } ]
+        },
+        {
+            "name": "Xst0ExternalSystemObject",
+            "properties": [ {
+                "name": "xst0DataSource"
+            }, {
+                "name": "xst0DataSourceURI"
+            },{
+                "name": "xst0DataSourceID"
+            }, {
+                "name": "xst0Type"
+            }, {
+                "name": "xst0Name"
+            } ]
+        }
+    ]
+}

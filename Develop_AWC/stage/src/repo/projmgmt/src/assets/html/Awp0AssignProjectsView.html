@@ -1,0 +1,60 @@
+
+<aw-command-panel caption="i18n.updateProjectsTitle">
+    <aw-panel-body>
+        <div class='aw-xrt-tabsContainer aw-create-tabsContainer'>
+            <aw-tab-set tabs="data.tabModels">
+                <aw-panel-section visible-when="conditions.showMemberOfTab && conditions.hideOwningProgramTab">
+                    <aw-row height="16f">
+                        <aw-scrollpanel>
+                            <aw-list dataprovider="data.dataProviders.memberOfProjectList">
+                                <aw-default-cell vmo="item"></aw-default-cell>
+                            </aw-list>
+                        </aw-scrollpanel>
+                    </aw-row>
+                </aw-panel-section>
+                <aw-command-panel-section caption="i18n.availableSectionTitle" visible-when="conditions.showMemberOfTab">
+                    <aw-row height="25f">
+                        <aw-scrollpanel>
+                            <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.availableProjects">
+                                <aw-default-cell vmo="item"></aw-default-cell>
+                            </aw-list-filter>
+                        </aw-scrollpanel>
+                    </aw-row>
+                </aw-command-panel-section>
+                <aw-panel-section visible-when="conditions.showOwningProgram && conditions.hideMemberOfTab">
+                    <aw-row height="6f">
+                        <aw-scrollpanel>
+                            <aw-default-cell vmo="ctx.owningProject"></aw-default-cell>
+                        </aw-scrollpanel>
+                    </aw-row>
+                </aw-panel-section>
+                <aw-command-panel-section caption="i18n.availableSectionTitle" visible-when="conditions.showOwningProgramTab">
+                    <aw-row height="25f">
+                        <aw-scrollpanel>
+                            <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.availableOwningProgram">
+                                <aw-default-cell vmo="item"></aw-default-cell>
+                            </aw-list-filter>
+                        </aw-scrollpanel>
+                    </aw-row>
+                </aw-command-panel-section>
+            </aw-tab-set>
+        </div>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-panel-section visible-when="conditions.showMemberOfTab && conditions.is4GObject">
+            <aw-radiobutton prop="data.applyTo"></aw-radiobutton>
+        </aw-panel-section>
+        <aw-panel-section visible-when="conditions.showMemberOfTab && conditions.isACEContext">
+            <aw-radiobutton prop="data.structure" visible-when="conditions.isValidToShowBOMStructure"></aw-radiobutton>
+            <aw-numeric prop="data.level" list="data.lovLevelListArray" visible-when="conditions.isValidToShowLevel && conditions.isValidToShowBOMStructure"></aw-numeric>
+        </aw-panel-section>
+        <aw-button action="save" visible-when="conditions.isValidToShowAssignButton && awPanelBody.$valid">
+            <aw-i18n>i18n.AssignButtonText</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>
+
+
+
+
+

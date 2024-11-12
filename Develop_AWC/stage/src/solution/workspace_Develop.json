@@ -1,0 +1,26 @@
+{
+    "schemaVersion": "1.0.0",
+    "workspaceId": "Develop",
+    "workspaceName": {
+        "source": "/i18n/mysamplemoduleMessages",
+        "key": "DevelopName"
+    },
+    "workspaceType": "Exclusive",
+    "defaultPage": "showHome",
+    "availablePages": [
+        "showHome",
+        "myFavorites",
+        "com_siemens_splm_clientfx_tcui_xrt_showObject",
+        "showPreferences",
+        "xrtEditor",
+        "myIdDisplayRules"
+    ],
+    "excludedCommands": [
+        "GoToCommandBuilder",
+        "GoToPanelBuilder",
+        "GoToUIComp",
+        "cmdQuickAccess",
+        "Awp0GoReports"
+    ],
+    "defaultTheme": "ui-Develop"
+}

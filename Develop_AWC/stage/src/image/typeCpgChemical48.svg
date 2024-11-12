@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="5.5" y1="24.003" x2="42.5" y2="24.003" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.228" stop-color="#fafafa"/>
+      <stop offset="0.488" stop-color="#ededed"/>
+      <stop offset="0.762" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="5.5" y1="34.5" x2="42.5" y2="34.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="13.323" y1="25" x2="34.677" y2="25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+  <path d="M17.5,7.244V16L5.679,40.663l-.024.059A2.085,2.085,0,0,0,5.5,41.5c0,3.314,8.283,6,18.5,6s18.5-2.686,18.5-6a2.122,2.122,0,0,0-.2-.9l-.031-.059L30.5,16V7.247l0,0c.634-.367,1-.792,1-1.246V3.006c0-1.381-3.358-2.5-7.5-2.5s-7.5,1.119-7.5,2.5h0V6c0,.45.357.873.982,1.238Z" fill="url(#New_Gradient_Swatch_2)"/>
+  <path d="M13.459,24.441C14.276,22.774,18.684,21.5,24,21.5s9.713,1.27,10.538,2.934l7.735,16.124a2.138,2.138,0,0,1,.227.942c0,3.314-8.283,6-18.5,6s-18.5-2.686-18.5-6a2.092,2.092,0,0,1,.164-.8Z" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M31.5,6.006c0-1.381-3.358-2.5-7.5-2.5s-7.5,1.119-7.5,2.5" fill="none" stroke="#bbb9b8" stroke-miterlimit="10"/>
+  <path d="M17.482,7.236A14.206,14.206,0,0,0,24,8.5a14.254,14.254,0,0,0,6.5-1.254" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M5.5,41.5c0-3.314,8.283-6,18.5-6s18.5,2.686,18.5,6" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <ellipse cx="24" cy="25" rx="10.677" ry="3.5" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+  <path d="M17.5,7.244V16L5.679,40.663l-.024.059A2.085,2.085,0,0,0,5.5,41.5c0,3.314,8.283,6,18.5,6s18.5-2.686,18.5-6a2.122,2.122,0,0,0-.2-.9l-.031-.059L30.5,16V7.247l0,0c.634-.367,1-.792,1-1.246V3.006c0-1.381-3.358-2.5-7.5-2.5s-7.5,1.119-7.5,2.5h0V6c0,.45.357.873.982,1.238Z" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M31.5,3.006c0,1.381-3.358,2.5-7.5,2.5s-7.5-1.119-7.5-2.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

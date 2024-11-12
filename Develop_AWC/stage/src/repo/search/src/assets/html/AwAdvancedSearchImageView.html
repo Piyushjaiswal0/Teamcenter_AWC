@@ -1,0 +1,25 @@
+<aw-empty-workarea class="aw-base-scrollPanel" 
+    exist-when="!subPanelContext.searchState.totalFound 
+    && !subPanelContext.searchState.totalLoaded 
+    && subPanelContext.searchState.advancedSearchCriteria"
+    image="graNoSearchResult"
+    title="i18n.noResultsFound"
+    hint="i18n.noResultsSearchAreaHint"
+    action="actions.advancedSearchLinkCommand"
+    link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+    link-text="i18n.advancedSearch">
+</aw-empty-workarea>
+<aw-empty-workarea class="aw-base-scrollPanel" 
+    exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded && !subPanelContext.searchState.advancedSearchCriteria"
+    image="graEmptySearchList"
+    title="i18n.nothingFound"
+    hint="i18n.emptySearchAreaHint"
+    action="actions.advancedSearchLinkCommand"
+    link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+    link-text="i18n.advancedSearch">
+</aw-empty-workarea>
+<aw-scrollpanel exist-when="subPanelContext.searchState.totalFound !== 0 || subPanelContext.searchState.totalFound === undefined">
+    <aw-list dataprovider="data.dataProviders.imageDataProvider" show-context-menu="true" show-check-box="subPanelContext.showCheckBox">
+       <aw-image-cell vmo="item"></aw-image-cell>
+    </aw-list>
+  </aw-scrollpanel>

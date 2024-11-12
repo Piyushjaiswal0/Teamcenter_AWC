@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "字元編碼",
+    "uvCheckoutTitle": "簽出",
+    "uvCheckoutDesc": "保留選取以防止其他使用者變更。",
+    "cancelCheckoutTitle": "取消簽出",
+    "Awp0CancelCheckoutDesc": "取消簽出並還原任何變更。",
+    "uvCheckinTitle": "簽入",
+    "Awp0CheckinDesc": "簽入物件並儲存變更。",
+    "uvCodeWordWrapTitle": "自動換列",
+    "uvCodeWordWrapDesc": "將長文字換成多列。"
+}

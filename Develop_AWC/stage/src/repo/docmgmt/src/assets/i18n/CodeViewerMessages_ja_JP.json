@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "文字エンコーディング",
+    "uvCheckoutTitle": "チェックアウト",
+    "uvCheckoutDesc": "選択内容を予約して、他のユーザが変更を行うことを防止します。",
+    "cancelCheckoutTitle": "チェックアウトのキャンセル",
+    "Awp0CancelCheckoutDesc": "チェックアウトをキャンセルして、すべての変更を戻します。",
+    "uvCheckinTitle": "チェックイン",
+    "Awp0CheckinDesc": "オブジェクトをチェックインして変更内容を保存します。",
+    "uvCodeWordWrapTitle": "テキスト折返し",
+    "uvCodeWordWrapDesc": "長いテキストを折返して複数行にします。"
+}

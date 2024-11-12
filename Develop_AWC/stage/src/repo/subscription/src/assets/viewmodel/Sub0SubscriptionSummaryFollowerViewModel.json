@@ -1,0 +1,166 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "onEvent": [
+        {
+            "eventId": "subscriptionFollowerTable.loadFollowerObjects",
+            "action": "loadFollowerObjects"
+        },
+        {
+            "eventId": "subscriptionFollowerTable.reveal",
+            "action": "followers_provider"
+        },
+        {
+            "eventId": "subscriptionFollowerObjects.updated",
+            "action": "updateSubscriptionObject"
+        },
+        {
+            "eventId": "editHandlerStateChange",
+            "condition": "state === 'canceling'",
+            "action": "resetFollowerTable"
+        },
+        {
+            "eventId": "subscriptionFollowerTable.loadFollowerContext",
+            "action": "loadFollowerContext"
+        }
+    ],
+    "actions": {
+        "loadData": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getColumnsName"
+                },
+                {
+                    "action": "getViewModelProperties"
+                }
+            ]
+        },
+        "getColumnsName": {
+            "actionType": "JSFunction",
+            "method": "getColumnsNameArray",
+            "inputData": {
+                "columnDefs": "{{data.columnProviders.subscriptionFollowerTableColumnProvider.columns}}"               
+            },
+            "outputData": {
+                "columnNames" : ""
+            },
+            "deps": "js/awSubscriptionFollowerTableService"
+        },
+        "getViewModelProperties": {
+            "actionType": "JSFunctionAsync",
+            "method": "getViewModelProperties",
+            "inputData": {
+                "targetTypeName": [
+                    "{{subPanelContext.selected}}"
+                ],
+                "columnDefs": "{{data.columnNames}}"                
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionFollowerTable.loadFollowerContext"
+                } ]
+            },
+            "deps": "js/tcViewModelObjectService"
+        },
+        "loadFollowerContext": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadFollowerContext",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.followers_provider}}",
+                "columnDefs": "{{data.columnProviders.subscriptionFollowerTableColumnProvider.columns}}",
+                "targetTypeName": "{{subPanelContext.selected}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionFollowerTable.loadFollowerObjects"
+                } ]
+            },
+            "deps": "js/awSubscriptionFollowerTableService"
+        },
+        "loadFollowerObjects": {
+            "actionType": "JSFunction",
+            "method": "loadFollowerObjects",
+            "inputData": {
+                "followerCtx": "{{ctx.sub0Follower}}",
+                "subscriptionObject": "{{subPanelContext.selected}}"
+            },
+            "outputData": {
+                "searchResults": ""
+            },
+            "events": {
+                "success": [ {
+                    "name": "subscriptionFollowerTable.reveal"
+                } ]
+            },
+            "deps": "js/awSubscriptionFollowerTableService"
+        },
+        "updateSubscriptionObject": {
+            "actionType": "JSFunction",
+            "method": "updateSubscriptionObject",
+            "inputData": {
+                "subscriptionObject": "{{subPanelContext.selected}}",
+                "columnDefs": "{{ctx.sub0Follower.columnDefs}}",
+                "followerObjects": "{{ctx.sub0Follower.followerObjects}}",
+                "xrtState": "{{subPanelContext.xrtState}}"
+            },
+            "deps": "js/awSubscriptionFollowerTableService"
+        },
+        "resetFollowerTable":{
+            "actionType": "JSFunction",
+            "method": "resetFollowerTable",
+            "inputData": {
+                "followerCtx":"{{ctx.sub0Follower}}",
+                "subscriptionObject": "{{subPanelContext.selected}}"
+            },
+            "deps": "js/awSubscriptionFollowerTableService"
+        }
+    },
+    "dataProviders": {
+        "followers_provider": {
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.searchResults.length}}",
+            "selectionModelMode": "single",
+            "inputData": {
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "columnProviders": {
+        "subscriptionFollowerTableColumnProvider": {
+            "columns": [ {
+                "name": "handler_parameters",
+                "displayName": "{{i18n.followersHeaderTitle}}",
+                "typeName": "String",
+                "isTableCommand": false,
+                "pinnedLeft": false,
+                "enableColumnMenu": false
+            } ],
+            "frozenColumnIndex": -1
+        }
+    },
+    "grids": {
+        "subscriptionFollowerTable": {
+            "dataProvider": "followers_provider",
+            "columnProvider": "subscriptionFollowerTableColumnProvider",
+            "addIconColumn": false,
+            "gridOptions": {
+                "enableGridMenu": false,
+                "enableSorting": false
+            }
+        }
+    },
+    "i18n": {
+        "followersHeaderTitle": [ "SubscriptionMessages" ]
+    },
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "loadData",
+                "observers": [
+                    "props.subPanelContext.selected.props.handler_parameters.dbValue"
+                ]
+            }
+        ]
+    }
+}

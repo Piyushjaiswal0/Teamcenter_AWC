@@ -1,0 +1,30 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "priority": 2,
+            "label": {
+                "source": "/i18n/ReportsConstants",
+                "key": "reportBuilderSubLocation"
+            },
+            "clientScopeURI": "Awp0ReportBuilder",
+            "nameToken": "com.siemens.splm.reports:showReportBuilderReports",
+            "selectionMode": "single",
+            "viewBase": "showReportBuilderReports"
+        },
+        "searchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "{{ctx.awp0SummaryReports.reportFilter}}",
+            "dispValue": "{{ctx.awp0SummaryReports.reportFilter}}"
+        },
+        "searchState": {
+            "initialValues": { },
+            "meta": { }
+        }
+    }
+}

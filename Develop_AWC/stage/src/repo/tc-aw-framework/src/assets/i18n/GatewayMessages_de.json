@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Pers. Ablage",
+    "pinObjectCommandTitle": "An Startseite anheften",
+    "unPinObjectCommandTitle": "Von persönlicher Ablage lösen",
+    "pinObjectFailed": "Anheften fehlgeschlagen.",
+    "unPinObjectFailed": "Trennen fehlgeschlagen.",
+    "tileUpdateFailedMsg": "Kachelaktualisierung fehlgeschlagen.",
+    "pinObjectFailedNoGateway": "Problem beim Zugriff auf Ihre persönliche Ablage.",
+    "pinObjectMultipleObjectError": "Es kann jeweils nur ein Objekt angeheftet werden. Zusätzliche Objekte werden ignoriert.",
+    "unpinTileFailed": "Trennen fehlgeschlagen.",
+    "homeFolderTitle": "Ordner",
+    "Awp0ShowHomeFolderDesc": "Öffnen der persönlichen Ablage.",
+    "Awp0PinObjectDesc": "Auswahl zu Ihrer Startseite als Kachel hinzufügen."
+}

@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0} 個（共 {1} 個）已新增。<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0} 個（共 {1} 個）已移除。<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "由於內部錯誤，未能篩選搜尋結果。",
+    "invalidDateRangeError": "開始日期必須早於結束日期。",
+    "invalidUnitRange": "單元範圍無效",
+    "notificationForBaselineCreation": "「{0}」正在儲存，完成時將發出通知。",
+    "notificationForBaselineCreationSync": "「{0}」已儲存，位於 Home 資料夾中。"
+}

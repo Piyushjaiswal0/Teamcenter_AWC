@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\"は、オブジェクトセット\"{1}\"に対して有効なファイルではありません。 新しく作成されたオブジェクトは、オブジェクトセット内に出現しません。",
+    "addedObjectIsNotUnique": "オブジェクト\"{1}-{0}\"は、\"ID = {1}\"が一意でないため、保存されていません。",
+    "fileSizeException": "\"{0}\"は追加されませんでした。ファイルサイズ制限を超過しました。",
+    "userNotAuthorized": "\"{0}\"は追加されませんでした。現在のユーザには権限がありません。",
+    "addACopy": "コピーを追加",
+    "cancel": "キャンセル",
+    "sourceObject": "ソース",
+    "chooseFromSystem": "システムからファイルを選択",
+    "chooseFromDrive": "ドライブから選択",
+    "fileNameExceedsLengthLimit": "\"{0}\"は追加されませんでした。 ファイル名長さが最大制限を超過しました。"
+}

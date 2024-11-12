@@ -1,0 +1,38 @@
+<aw-command-panel caption="i18n.AddTitle">
+  <aw-panel-body>
+        <aw-panel-section action="getStyleSheetForUser" exist-when="data.modelPropUser.props!=null" caption="i18n.NewTab">
+           <aw-textbox prop="data.name"></aw-textbox>
+           <aw-textbox prop="data.user_id"></aw-textbox>
+           <aw-widget prop="data.modelPropUser.props.os_username"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.default_group"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.volume"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.local_volume"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.status"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.license_level"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.fnd0LicenseServer" visible-when="data.modelPropUser.props.fnd0LicenseServer"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.fnd0license_bundles" visible-when="data.modelPropUser.props.fnd0license_bundles"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.geography"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.nationality"></aw-widget>
+           <aw-widget prop="data.modelPropUser.props.fnd0citizenships"></aw-widget>
+       </aw-panel-section>
+       <aw-panel-section exist-when="data.modelPropertyPerson.props!=null" caption="i18n.PersonProperties">
+             <aw-widget prop="data.modelPropertyPerson.props.PA1"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA2"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA3"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA4"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA5"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA6"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA7"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA8"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA9"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.PA10"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.locale"></aw-widget>
+             <aw-widget prop="data.modelPropertyPerson.props.timezone"></aw-widget>
+       </aw-panel-section>
+  </aw-panel-body>
+  <aw-panel-footer>
+    <aw-button action="validateAndCreateObject" visible-when="conditions.isValidToCreateObjects">
+        <aw-i18n>i18n.AddButton</aw-i18n>
+    </aw-button>
+</aw-panel-footer>
+</aw-command-panel>

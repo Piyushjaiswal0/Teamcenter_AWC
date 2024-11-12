@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "Ludzie",
+    "organizationTitle": "Organizacja",
+    "groupTitle": "Grupy",
+    "roleTitle": "Role",
+    "userTitle": "Użytkownicy",
+    "RevokeConsentTitle": "Odbierz zgodę",
+    "revokeGDPRConsentLabel": "Odbierz zgodę użytkownika",
+    "revokeConsentConfirmationMessage": "Odebranie zgody spowoduje wylogowanie z programu Teamcenter",
+    "Group": "Grupa",
+    "DefaultRole":  "Domyślna rola",
+    "DefaultGroup": "Domyślna grupa",
+    "cancel": "Anuluj",
+    "revoke": "Odbierz",
+    "group": "Grupa",
+    "role": "Rola",
+    "userMembershipTitle":"Członkostwa użytkownika",
+    "userCalendarNotExits":"Brak kalendarza użytkownika",
+    "addButtonText": "Dodaj"
+}

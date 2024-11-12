@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Checkout",
+    "uvCheckinTitle": "Checkin",
+    "uvCancelCheckoutTitle": "Annulla checkout",
+    "previousButtonTitle": "Precedente",
+    "nextButtonTitle": "Successivo",
+    "noObjectSelectionMessage": "Selezionare un oggetto da visualizzare.",
+    "fullViewModeTitle": "Schermo intero",
+    "uvWordWrapTitle": "A capo automatico",
+    "exitFullViewModeTitle": "Esci dalla modalità schermo intero",
+    "aw_viewerRightSide": "Lato destro del visualizzatore",
+    "aw_universalViewerLink": "Collegamento al visualizzatore universale",
+    "uvCheckoutDesc": "Riservare la selezione per impedire ad altri utenti di apportare modifiche.",
+    "fullViewModeDesc": "Passare alla vista a schermo intero.",
+    "uvWordWrapDesc": "Mandare a capo il testo su più righe.",
+    "Awp0ShowObjectForUVpDesc": "Aprire il file nella finestra corrente.",
+    "Awp0ViewFileForUVDesc": "Scaricare il file."
+}

@@ -1,0 +1,55 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.5" y1="41.5" x2="39" y2="2" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="23.375" y1="43.875" x2="35.875" y2="31.375" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="30.9998" y1="22.9775" x2="42.0002" y2="33.9778" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="23.4943" y1="30.483" x2="38.5057" y2="45.4943" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-4" x1="31.5042" y1="24.0039" x2="42.4448" y2="34.9446" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <polygon points="26.5 0.5 5.5 0.5 5.5 45.5 39.5 45.5 39.5 13.5 26.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polyline points="26.5 1 26.5 13.5 39 13.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <rect x="10.5" y="20.5" width="24" height="20" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="15.5" y1="40.5" x2="15.5" y2="20.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="20.5" y1="40.5" x2="20.5" y2="20.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="34.5" y1="36.5" x2="10.5" y2="36.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="34.5" y1="32.5" x2="10.5" y2="32.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="34.5" y1="28.5" x2="10.5" y2="28.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="34.5" y1="24.5" x2="10.5" y2="24.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+      <path d="M14.5724,13.7457a3.3661,3.3661,0,0,0,1.9483.808,1.62,1.62,0,0,0,1.7147-1.5047c-.0015-.8294-.8233-1.2382-1.72-1.4984-.93-.2895-1.7188-.6693-1.72-1.4986A1.62,1.62,0,0,1,16.51,8.5472a1.7724,1.7724,0,0,1,1.4934.7544" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="16.4779" y1="7" x2="16.4779" y2="8.6412" fill="none" stroke="#464646" stroke-linejoin="round"/>
+      <line x1="16.4779" y1="14.3588" x2="16.4779" y2="16" fill="none" stroke="#464646" stroke-linejoin="round"/>
+      <path d="M14.5724,13.7457a3.3661,3.3661,0,0,0,1.9483.808,1.62,1.62,0,0,0,1.7147-1.5047c-.0015-.8294-.8233-1.2382-1.72-1.4984-.93-.2895-1.7188-.6693-1.72-1.4986A1.62,1.62,0,0,1,16.51,8.5472a1.7724,1.7724,0,0,1,1.4934.7544" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+      <line x1="16.4779" y1="7" x2="16.4779" y2="8.6412" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+      <line x1="16.4779" y1="14.3588" x2="16.4779" y2="16" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polygon points="36.5 34.839 47.5 28.478 47.5 41.139 36.5 47.5 36.5 34.839" fill="#3c91af"/>
+    <polygon points="25.5 28.477 36.481 22.116 47.5 28.478 36.5 34.839 25.5 28.477" fill="url(#linear-gradient-2)"/>
+    <polygon points="36.5 34.839 36.5 47.5 25.5 41.138 25.5 28.477 36.5 34.839" fill="url(#linear-gradient-3)"/>
+    <line x1="36.5" y1="34.8389" x2="36.5" y2="47.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <polygon points="32.367 24.5 29.138 26.37 40.5 32.938 40.5 36.889 43.1 33.769 43.1 30.868 32.367 24.5" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+    <polyline points="47.5 28.478 36.5 34.839 25.5 28.477" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <polygon points="36.481 22.116 25.5 28.477 25.5 41.138 36.5 47.5 47.5 41.139 47.5 28.478 36.481 22.116" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <circle cx="16.5" cy="11.5" r="6" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+</svg>

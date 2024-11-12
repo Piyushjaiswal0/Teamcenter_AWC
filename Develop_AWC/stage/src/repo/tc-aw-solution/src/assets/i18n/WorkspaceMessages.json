@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "Default",
+    "tcAuthorWorkspaceName": "Author",
+    "tcConsumerWorkspaceName": "Consumer",
+    "tcActiveAdminWorkspaceName": "Active Admin",
+    "tcActiveArchitectWorkspaceName": "Active Architect",
+    "mbmWorkspaceName":"MBOM Manager"
+}

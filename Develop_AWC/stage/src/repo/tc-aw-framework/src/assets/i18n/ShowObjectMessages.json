@@ -1,0 +1,10 @@
+{
+    "tasksAppDisplayName": "Treetop Test",
+    "content": "Content Tab",
+    "Awp0ShowObjectTitle": "Open",
+    "aw_3dViewer": "3D Viewer",
+    "aw_2dViewer": "2D Viewer",
+    "aw_workArea_right": "Work Area Right",
+    "Awp0OpenSnapShotDataDesc": "View properties of the captured image.",
+    "Awp0ShowObjectDesc": "Open the selected object in the current window."
+}

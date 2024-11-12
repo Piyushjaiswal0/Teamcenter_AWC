@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="linear-gradient" x1="88.3211" y1="-4.2094" x2="124.2653" y2="31.7348" gradientTransform="translate(-18.6652 -17.3226) rotate(10)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edf6f8"/>
+      <stop offset="1" stop-color="#cfe2e8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="83.8125" y1="13.8119" x2="132.4386" y2="62.438" gradientTransform="translate(119.3224 -69.1266) rotate(90)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="91.0067" y1="31.7023" x2="109.0744" y2="57.5058" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#e5f1f4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="67.6776" y1="49.5075" x2="104.944" y2="86.7739" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="102.9826" y1="57.3531" x2="124.5579" y2="78.9284" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-6" x1="17.4588" y1="8.2783" x2="38.4601" y2="29.2797" xlink:href="#linear-gradient-3"/>
+    <linearGradient id="linear-gradient-7" x1="5.6727" y1="42.9871" x2="50.2462" y2="87.5606" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-8" x1="-.093" y1="61.1043" x2="57.7059" y2="118.9032" gradientTransform="translate(12.0377 7.2583) rotate(-10)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-9" x1="-11.2484" y1="72.2597" x2="24.22" y2="107.7282" gradientTransform="translate(27.5665 4.7648)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g>
+    <path d="m77.6777,12.3492l-2.598-8.2404c-.3165-.707-.9699-1.2134-1.7411-1.3494l-12.6064-2.2229c-1.274-.2246-2.4861.6097-2.7071,1.8635l-2.1867,12.4017,57.4649,10.1326,1.0779-6.1133-36.7034-6.4718Z" fill="url(#linear-gradient)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <polygon points="107.1222 24.2399 64.311 16.7612 64.4001 9.1428 106.2569 7.6986 107.1222 24.2399" fill="#fff" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <rect x="61.7469" y="9.8233" width="38.9009" height="58.3514" transform="translate(28.6911 112.1907) rotate(-80)" fill="url(#linear-gradient-2)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon points="127.5 44.604 100.041 28.9129 72.5811 44.604 100.0405 60.2952 127.5 44.604" fill="url(#linear-gradient-3)" stroke="#bfd8e2" stroke-linejoin="round"/>
+    <polygon points="72.5811 44.604 72.5811 75.9863 100.0405 91.6774 100.0405 60.2952 72.5811 44.604" fill="url(#linear-gradient-4)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <polygon points="100.0405 60.2952 100.0405 91.6774 127.5 75.9863 127.5 44.604 100.0405 60.2952" fill="url(#linear-gradient-5)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <line x1="100.0405" y1="60.2952" x2="100.0405" y2="91.6774" fill="none" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <path d="m42.343,17.6622c0,7.5827-6.4397,17.6525-14.3835,17.6525s-14.3835-10.0698-14.3835-17.6525S20.0157,3.9324,27.9595,3.9324s14.3835,6.147,14.3835,13.7297Z" fill="url(#linear-gradient-6)" stroke="#bfd8e2" stroke-linejoin="round"/>
+    <path d="m55.4189,82.388v-27.4621c0-6.9072-4.4601-12.8611-10.9967-16.0486-4.6509,3.2876-10.2655,5.3617-16.4627,5.3617s-11.8118-2.0742-16.4627-5.3617C4.9601,42.0648.5,48.0186.5,54.9258v27.4621h54.9189Z" fill="url(#linear-gradient-7)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <line x1="13.0856" y1="82.3063" x2="13.0856" y2="59.4234" fill="none" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <line x1="42.8333" y1="83.4505" x2="42.8333" y2="59.4234" fill="none" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon points="86.5139 118.6195 36.8977 127.3681 25.573 63.1427 75.1505 54.4008 86.5139 118.6195" fill="url(#linear-gradient-8)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <rect x="31.1919" y="62.1506" width="5.7207" height="65.2162" transform="translate(-15.9373 7.3527) rotate(-10)" fill="url(#linear-gradient-9)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <rect x="42.2544" y="70.5652" width="28.6036" height="13.7297" rx="1.5255" ry="1.5255" transform="translate(-12.5864 10.9972) rotate(-10)" fill="#fff" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <line x1="63.7141" y1="78.4915" x2="46.8127" y2="81.4717" fill="none" stroke="#bfd8e2" stroke-miterlimit="10"/>
+    <line x1="65.1729" y1="73.5871" x2="46.018" y2="76.9646" fill="none" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  </g>
+</svg>

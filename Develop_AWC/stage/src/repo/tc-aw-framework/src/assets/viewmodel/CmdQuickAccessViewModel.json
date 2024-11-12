@@ -1,0 +1,14 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": 
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-clipboard.directive",
+        "js/aw-favorite.directive",
+        "js/aw-history.directive" 
+    ],
+    "i18n": 
+    {   "QuickAccessTitle": [ "ZeroCompileCommandMessages" ]
+    }
+}

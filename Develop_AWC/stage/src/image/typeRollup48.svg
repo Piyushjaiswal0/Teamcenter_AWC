@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad_4" data-name="Dark Blue Grad 4" x1="3.2476" y1="3.7524" x2="43.4976" y2="44.0024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75b2c5"/>
+      <stop offset="0.1774" stop-color="#6cacc0"/>
+      <stop offset="0.4638" stop-color="#549cb2"/>
+      <stop offset="0.8215" stop-color="#2e839b"/>
+      <stop offset="1" stop-color="#18748e"/>
+    </linearGradient>
+  <path d="M16.6173,4.5,28.4845,21.5037v2.0315L14.3115,42.5H30.3522a6.5806,6.5806,0,0,0,4.7047-2.0242c.9083-.9083,1.5627-2.808,2.1537-5.9758h3.4185L40,47.5H6.5V45.8128l15.8728-21.21L6.5,2.1872V.5H40.4905V12.5044H37.3184c-.97-3.6952-1.9664-5.4815-2.9939-6.5833S31.6737,4.5,29.738,4.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_4)"/>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "slots": {
+    "awAppLogoSlot": {
+      "name": "aw_appLogo",
+      "view": "AwAppLogo",
+      "activeWhen": true
+    },
+    "performanceMonitoringPanelVisSlot": {
+      "name": "aw_plstats_widgets_slot",
+      "view": "Awv0PLStatsPanel",
+      "activeWhen": true
+    },
+    "loggingPanelVisSlot": {
+      "name": "otherModuleLoggingViewSlot",
+      "view": "Awv0VisLoggingPanel",
+      "activeWhen": {
+        "condition": "conditions.visLoggingEnabled"
+      }
+    }
+  },
+  "conditions": {
+    "visLoggingEnabled": {
+      "expression": "context === 'VISLOGS'"
+    }
+  }
+}

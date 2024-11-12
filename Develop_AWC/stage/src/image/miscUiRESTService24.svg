@@ -1,0 +1,24 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <rect x="14.5" y="7.5" width="4" height="4" rx="0.8" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <rect x="0.5" y="0.5" width="4" height="4" rx="0.8" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="9.5" cy="9.5" r="3" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="16.5" cy="2.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="9.5" cy="2.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="2.5" cy="9.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="2.5" cy="16.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="9.5" cy="16.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <circle cx="16.5" cy="16.5" r="2" fill="#55a0b9" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="4.5" y1="9.5" x2="6.5" y2="9.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="12.5" y1="9.5" x2="14.5" y2="9.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="9.5" y1="6.5" x2="9.5" y2="4.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="12" y1="7.5" x2="15.5" y2="4" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="11.5" y1="11.5" x2="15" y2="15" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="4.5" y1="4.5" x2="7.5" y2="7.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="4" y1="15.5" x2="7.5" y2="12" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <line x1="9.5" y1="14.5" x2="9.5" y2="12.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M19.8184,23.5a3.8952,3.8952,0,0,0-.42-7.7791,3.7177,3.7177,0,0,0-4.206-2.8995c-2.9193-2.8086-7.288-.9062-7.9234,3.5009C3.9784,18.6411,5.6973,23.5,9.0037,23.5Z" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="14" y1="19.5" x2="19.5" y2="19.5" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <polyline points="17.5 21.5 19.5 19.472 17.5 17.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="15" y1="17.5" x2="9.5" y2="17.5" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  <polyline points="11.5 15.5 9.5 17.528 11.5 19.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

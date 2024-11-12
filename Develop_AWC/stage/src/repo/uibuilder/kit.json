@@ -1,0 +1,9 @@
+{
+  "name": "uibuilder",
+  "description": "",
+  "modules": [
+    "uibuilder"
+  ],
+  "version": "6.3.1",
+  "OOTB": true
+}

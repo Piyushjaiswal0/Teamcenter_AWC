@@ -1,0 +1,12 @@
+
+<div visible-when="conditions.isShowMyReports && conditions.checkIfOnlySWAIsEmpty" style="width: 100%;">
+    <aw-empty-workarea image="graEmptyReportSummary128" hint="i18n.showMyReportsSwaHint"></aw-empty-workarea>
+</div>
+<div visible-when="(conditions.isShowReportBuilderReports || conditions.isShowMyDashboard) && conditions.checkIfOnlySWAIsEmpty" style="width: 100%;">
+    <aw-empty-workarea image="graEmptyReportSummary128" hint="i18n.showReportBuilderReportsSwaHint"></aw-empty-workarea>
+</div>
+<div visible-when="conditions.checkIfPWAIsEmpty" style="width: 100%;">
+    <aw-empty-workarea image="graEmptyReportSummary128"></aw-empty-workarea>
+</div>
+
+

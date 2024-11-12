@@ -1,0 +1,36 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {},
+    "data": {
+        "startLoading": false,
+        "viewerStateProp": {
+            "initialValues": {
+                "isViewerRevealed": false,
+                "viewerViewMode": "NOVIEWER",
+                "loadingViewer": true,
+                "showToolbar": false,
+                "subCommandToolbarState": {},
+                "viewerMeasurement": {},
+                "geoAnalysisVolumeSearch": {},
+                "hasPMIData": false,
+                "allowSectionCreation": false,
+                "enableSectionCommandPanel": false,
+                "showViewerEmmProgress": true,
+                "showViewerProgress": false,
+                "displayImageCapture": false,
+                "onScreen2dMarkupContext": {},
+                "activeCaptureGalleryTab":"InputImageCapture",
+                "renderLocation":"CSR",
+                "isSubCommandsToolbarVisible" : false
+            },
+            "meta": {}
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "conditions": {},
+    "lifecycleHooks": {}
+}

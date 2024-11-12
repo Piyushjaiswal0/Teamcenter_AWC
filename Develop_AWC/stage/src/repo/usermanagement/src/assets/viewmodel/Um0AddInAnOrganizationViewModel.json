@@ -1,0 +1,111 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-tab-set.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/visible-when.directive",
+        "js/aw-include.directive",
+        "js/aw-tab-container.directive",
+        "js/aw-tab.directive"
+    ],
+
+    "actions":
+    {
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "loadPanelTabs",
+            "inputData": {
+                "tabs": "{{data.saveAsTabsModel}}"
+            },
+            "outputData": {
+                "tabModels": "visibleTabs",
+                "tabApiCallback": "api"
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+        "handleTabChange": {
+            "actionType": "JSFunction",
+            "method": "handleTabChange",
+            "inputData": {
+                "tabs": "{{data.tabModels}}",
+                "pageId": "{{data.eventData.pageId}}",
+                "tabTitle": "{{data.eventData.tabTitle}}"
+            },
+            "outputData": {
+                "activeTab": "activeTab"
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+        "closePanel":
+        {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData":
+            {
+                "events":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "onEvent":
+    [
+        {
+            "eventId": "awPanel.selectionChange",
+            "action": "closePanel"
+        },
+        {
+            "eventId": "saveAsObject.tabChange",
+            "action": "handleTabChange",
+            "cacheEventData": true
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "initialize"
+    },
+
+    "data":
+    {
+        "saveAsTabsModel": [
+            {
+                "name": "{{i18n.NewTab}}",
+                "tabKey": "new",
+                "pageId": "OrganizationNewTab",
+                "view": "OrganizationNewTab",
+                "recreatePanel": true,
+                "visibleWhen": "data.selectedTab.tabKey === 'new'",
+                "priority": 1
+            },
+            {
+                "name": "{{i18n.SearchTab}}",
+                "tabKey": "search",
+                "pageId": "OrganizationSearchTab",
+                "view": "OrganizationSearchTab",
+                "recreatePanel": true,
+                "visibleWhen": "data.selectedTab.tabKey === 'search'",
+                "priority": 0
+            }
+
+        ]
+    },
+
+    "i18n":
+    {
+        "AddTitle": [ "UsermanagementCommandPanelMessages" ],
+        "NewTab": [ "UsermanagementCommandPanelMessages" ],
+        "SearchTab": [ "UsermanagementCommandPanelMessages" ],
+        "AddButton": [ "UsermanagementCommandPanelMessages" ]
+    }
+}

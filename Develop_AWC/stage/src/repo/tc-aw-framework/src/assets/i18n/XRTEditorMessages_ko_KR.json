@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "범위:",
+    "objectTypeLabel": "개체 유형:",
+    "xrtTypeLabel": "XRT 유형:",
+    "locationLabel": "위치:",
+    "sublocationLabel": "하위 위치:",
+    "loadButtonText": "로드",
+    "editLabel": "편집: ",
+    "readOnlyLabel": "(읽기 전용)",
+    "overrideMsg": "\"{0}\"은(는) 사용자 범위에서 재정의됩니다.",
+    "cancel": "취소",
+    "override": "재정의"
+}

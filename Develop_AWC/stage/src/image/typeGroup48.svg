@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="20.268" y1="22.803" x2="44.732" y2="47.268" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="10.062" y1="6.162" x2="20.938" y2="17.037" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="27.062" y1="3.162" x2="37.938" y2="14.037" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad-2" x1="3.268" y1="25.803" x2="27.732" y2="50.268" xlink:href="#Dark_Blue_Grad"/>
+  <path d="M47.5,44.5V29.267c0-3.773-2.436-7.025-6.007-8.767a15.565,15.565,0,0,1-8.993,3,15.565,15.565,0,0,1-8.993-3c-3.571,1.741-6.007,4.994-6.007,8.767V44.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <line x1="40.5" y1="44" x2="40.5" y2="32" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <path d="M22.5,10.938c0,4.108-3.134,9.563-7,9.563s-7-5.455-7-9.562a7.229,7.229,0,0,1,7-7.437A7.229,7.229,0,0,1,22.5,10.938Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <path d="M39.5,7.938c0,4.108-3.134,9.563-7,9.563s-7-5.455-7-9.562A7.229,7.229,0,0,1,32.5.5,7.229,7.229,0,0,1,39.5,7.938Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <path d="M30.5,47.5V32.267c0-3.773-2.436-7.025-6.007-8.767a15.565,15.565,0,0,1-8.993,3,15.565,15.565,0,0,1-8.993-3C2.936,25.241.5,28.494.5,32.267V47.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <line x1="7.5" y1="47" x2="7.5" y2="35" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="23.5" y1="47" x2="23.5" y2="35" fill="none" stroke="#147391" stroke-linejoin="round"/>
+</svg>

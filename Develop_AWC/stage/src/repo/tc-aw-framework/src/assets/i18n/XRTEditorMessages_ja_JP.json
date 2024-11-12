@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRTEditor",
+    "scopeLabel": "範囲:",
+    "objectTypeLabel": "オブジェクトタイプ:",
+    "xrtTypeLabel": "XRTタイプ:",
+    "locationLabel": "場所:",
+    "sublocationLabel": "サブロケーション:",
+    "loadButtonText": "ロード",
+    "editLabel": "編集: ",
+    "readOnlyLabel": "(読取り専用)",
+    "overrideMsg": "\"{0}\"は、ユーザ範囲でオーバライドされます。",
+    "cancel": "キャンセル",
+    "override": "オーバライド"
+}

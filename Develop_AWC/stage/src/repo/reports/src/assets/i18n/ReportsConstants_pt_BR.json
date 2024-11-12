@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Relatórios",
+    "allSubLocation": "Tudo",
+    "reportBuilderSubLocation": "Modelos",
+    "runReportTitle": "Gerar relatório",
+    "runReportOperationName": "Executar Relatório",
+    "doWorkOperationName": "Executar",
+    "execution": "Execução",
+    "criteria": "Critérios",
+    "stylesheet": "Folha de estilos",
+    "dataset": "Salvar no Nome do arquivo",
+    "myreportsSubLocation": "Arquivos Salvos",
+    "loadingMsg": "Carregando...",
+    "zeroSearchResults": "Nenhum resultado encontrado",
+    "reportResultsChartTitle": "Filtrar Resultados por:",
+    "AddSnapshot": "Retratos",
+    "AddNew": "Novo",
+    "doQueueOperation": "Adicionar à fila",
+    "runTcraReport": "Executar",
+    "dosnapShotViewOperation": "Exibir",
+    "myDashboard": "Meu painel",
+    "inOpenRptCommand": "Abrir"
+}

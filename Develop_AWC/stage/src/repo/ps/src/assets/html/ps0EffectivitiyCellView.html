@@ -1,0 +1,25 @@
+
+    <div class="aw-default-cell sw-row">
+        <div class="sw-cell-image">
+            <img class="aw-base-icon aw-type-icon" src="assets/image/typeEffectivity48.svg" draggable="false" ondragstart="return false;" alt="Element Effectivity"></img>
+        </div>
+        <div class="aw-widgets-cellListCellProperties">
+            <div class="sw-defaultCell-properties" exist-when="props.subPanelContext.effStartDate">
+                <label class="sw-property-name">{{i18n.startDate}}:</label>
+                <label class="aw-widgets-propertyValue" title="{{props.subPanelContext.effStartDate}}" aw-highlight-property-html display-val="props.subPanelContext.effStartDate">{{props.subPanelContext.effStartDate}}</label>
+            </div>
+            <div class="sw-defaultCell-properties" exist-when="props.subPanelContext.effEndDate">
+                <label class="sw-property-name" >{{i18n.endDate}}:</label>
+                <label class="aw-widgets-propertyValue" title="{{props.subPanelContext.effEndDate}}" aw-highlight-property-html display-val="props.subPanelContext.effEndDate">{{props.subPanelContext.effEndDate}}</label>
+            </div>
+            <div class="sw-defaultCell-properties" exist-when="props.subPanelContext.effEndItem">
+                <label class="sw-property-name" >{{i18n.endItemMessage}}:</label>
+                <label class="aw-widgets-propertyValue" title="{{props.subPanelContext.effEndItem}}" aw-highlight-property-html display-val="props.subPanelContext.effEndItem">{{props.subPanelContext.effEndItem}}</label>
+            </div>
+            <div class="sw-defaultCell-properties" exist-when="props.subPanelContext.effUnitDisplayString">
+                <label class="sw-property-name">{{i18n.unitEffectivity}}:</label>
+                <label class="aw-widgets-propertyValue" title="{{props.subPanelContext.effUnitDisplayString}}" aw-highlight-property-html display-val="props.subPanelContext.effUnitDisplayString">{{props.subPanelContext.effUnitDisplayString}}</label>
+            </div>
+        </div>
+    </div>
+

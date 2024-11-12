@@ -1,0 +1,59 @@
+<div class="sw-column" exist-when="!conditions.showDatasetComp">
+    <aw-panel-header>
+        <aw-panel-section caption="i18n.objectType">
+            <aw-type-selector exist-when="data.preferredType"
+                prop="data.typeListProp"
+                include="{{subPanelContext.includeTypes}}"
+                load-sub-types="{{subPanelContext.loadSubTypes}}"
+                auto-select-on-unique-type="{{subPanelContext.autoSelectOnUniqueType}}"
+                override-id="{{subPanelContext.typeOverrideId}}"
+                preferred-type="{{data.preferredType}}"
+                max-recent-count="{{subPanelContext.maxRecentCount}}"
+                selection-data="data.typeListSelectionData"
+                auto-open-on-mount="true">
+            </aw-type-selector>
+            <aw-type-selector exist-when="!data.preferredType"
+                prop="data.typeListProp"
+                include="{{subPanelContext.includeTypes}}"
+                load-sub-types="{{subPanelContext.loadSubTypes}}"
+                auto-select-on-unique-type="{{subPanelContext.autoSelectOnUniqueType}}"
+                override-id="{{subPanelContext.typeOverrideId}}"
+                preferred-type="{{subPanelContext.preferredType}}"
+                max-recent-count="{{subPanelContext.maxRecentCount}}"
+                selection-data="data.typeListSelectionData"
+                auto-open-on-mount="true">
+            </aw-type-selector>
+        </aw-panel-section>
+    </aw-panel-header>
+
+    <aw-panel-body exist-when="data.creationType" class="aw-create-panelSkeleton">
+        <aw-xrt-2 exist-when="data.xrtData"
+            object-type="{{data.creationType.props.type_name.dbValues[0]}}"
+            type="CREATE"
+            xrt-data="data.xrtData"
+            sub-panel-context="subPanelContext"
+            xrt-state="subPanelContext.xrtState"
+            active-state="subPanelContext.activeState">
+        </aw-xrt-2>
+        <aw-panel-section caption="i18n.ownProjectSectionTitle" exist-when="data.isProjectAssignable && data.xrtData && !conditions.isProjectNotSupported">
+            <aw-list dataprovider="data.dataProviders.getOwningProjectsProvider" exist-when="ctx.userSession.props.project.dbValues[0] !== ''">
+                <aw-default-cell vmo="item"></aw-default-cell>
+            </aw-list>
+        </aw-panel-section>
+        <aw-command-panel-section caption="i18n.projectsSectionTitle" anchor="data.widgetProjectSectionCommands" exist-when="data.isProjectAssignable && data.xrtData && !conditions.isProjectNotSupported" context="subPanelContext.activeState">
+            <aw-list dataprovider="data.dataProviders.getAssignedProjectsProvider" command-context="subPanelContext.projectState" has-floating-cell-commands=false>
+                <aw-default-cell vmo="item"></aw-default-cell>
+            </aw-list>
+        </aw-command-panel-section>
+    </aw-panel-body>
+
+    <aw-panel-footer class="sw-column" exist-when="subPanelContext.hideRelation !== 'true'">
+        <aw-widget prop="data.creationRelation" show-when="conditions.showRelationsList"></aw-widget>
+    </aw-panel-footer>
+</div>
+
+<div class="sw-column aw-create-fillAvailable" exist-when="conditions.showDatasetComp">
+    <dataset-create-sub sub-panel-context="{ isDSMUsable: data.isDSMUsable, ...subPanelContext }"
+        dataset-state="data.datasetState">
+    </dataset-create-sub>
+</div>

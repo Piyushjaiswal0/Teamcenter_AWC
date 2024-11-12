@@ -1,0 +1,11 @@
+<div class="aw-base-scrollPanel" exist-when="!data.totalFound">
+    <aw-empty-workarea
+        title="i18n.noPrintedReport"
+        hint="i18n.noPrintedReportHint">
+    </aw-empty-workarea>
+</div>
+<aw-scrollpanel exist-when="data.totalFound>0">
+  <aw-list dataprovider="data.dataProviders.listDataProvider">
+     <aw-default-cell vmo="item"></aw-default-cell>
+  </aw-list>
+</aw-scrollpanel>

@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "Favoris",
+    "myFavorites": "Mes Favoris",
+    "myRecentViewedObjects": "Récents",
+    "addToFavoritesCommandTitle": "Ajouter aux Favoris",
+    "addToFavoritesConfirmation": "Objet(s) sélectionnés correctement ajoutés aux favoris",
+    "addToFavoritesFailed": "Echec de Ajouter aux Favoris",
+    "removeFromFavoritesCommandTitle": "Supprimer des Favoris",
+    "removeFromFavoritesConfirmation": "Objet(s) sélectionnés correctement supprimés des favoris",
+    "removeFromFavoritesFailed": "Echec de Ajouter aux Favoris",
+    "Awp0AddToFavoritesDesc": "Ajouter la sélection à vos Favoris.",
+    "Awp0RemoveFromFavoritesDesc": "Supprimer la sélection de vos Favoris.",
+    "noFavoritesFound": "Pas de favoris ici",
+    "noFavoritesFoundHint": "Pour ajouter un objet aux Favoris, sélectionnez l’objet et utilisez la commande Ajouter aux favoris.",
+    "noRecentsFound": "Aucune activité récente",
+    "noRecentsFoundHint": "Il n’y a actuellement aucun article à afficher.",
+    "nothingSelected": "Aucun objet sélectionné",
+    "nothingSelectedSWAHint": "Sélectionner un article dans la liste pour afficher les détails."
+}

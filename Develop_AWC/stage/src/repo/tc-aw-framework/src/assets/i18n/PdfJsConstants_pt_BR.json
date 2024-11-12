@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "Visualizador de arquivos PDT",
+    "ShowStreamErrorMessage": "O fluxo deve conter dados",
+    "LoadingPDFfile": "Carregando o arquivo...",
+    "LoadingFileSuccess": "Arquivo Carregado com Sucesso...",
+    "LoadingFileFailed": "Falha ao Carregar Arquivo!"
+}

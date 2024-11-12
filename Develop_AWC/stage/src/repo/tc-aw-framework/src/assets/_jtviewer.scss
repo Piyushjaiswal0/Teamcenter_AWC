@@ -1,0 +1,139 @@
+/* Copyright 2019 Siemens Product Lifecycle Management Software Inc. */
+
+aw-jt-viewer {
+    width: 100%;
+    min-width: 260px;
+}
+
+aw-3d-viewer-extended {
+    width: 100%;
+}
+
+.aw-viewer-viewer3DContainer {
+    position: absolute;
+    width:stretch;
+    z-index: 99;
+}
+
+.aw-threeDViewer-viewer3DParentContainer {
+    position: relative;
+    align-content:stretch;
+    height:100%;
+}
+
+.aw-threeDViewer-viewer3DChildContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.aw-threeDViewer-viewer3DChildContainer .sw-pic-container {
+    position: absolute;
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.aw-threeDViewer-viewer3DChildContainer .sw-pic-container img {
+    height: 100%;
+}
+
+.aw-threeDViewer-topMessage {
+    z-index: 99;
+}
+
+.aw-threeDViewer-loadProgressContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 99;
+    justify-content: right;
+}
+
+.aw-threeDViewer-emmLoadProgressContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 99;
+    justify-content: center;
+}
+
+.aw-viewer-loadProgressPerformant {
+    overflow: hidden;
+    background: url(image/miscSessionProgressNeutral32.svg);
+    animation: spin 0.35s infinite steps( 10 );
+}
+
+.aw-threeDViewer-loadbarContainer {
+    position: absolute;
+    width: 100%;
+    z-index: 50;
+    padding-top: $padding_small;
+    justify-content: top;
+}
+
+.aw-threeDViewer-stopButtonContainer {
+    width: 12%;
+    padding: $padding_small;
+    text-align: right;
+}
+
+.aw-threeDViewer-loadProgress {
+    @include align-self(flex-end);
+    width: 4%;
+    height: 0;
+    padding-bottom: 4%;
+    pointer-events: none;
+}
+
+.aw-threeDViewer-emmLoadProgress {
+    @include align-self(center);
+    width: 8%;
+    height: 0;
+    padding-bottom: 8%;
+    pointer-events: none;
+}
+
+.aw-threeDViewer-percentageLabel {
+    @include align-self(center);
+    width: 12%;
+    text-align: center;
+    padding: $padding_small;
+}
+
+.aw-threeDViewer-loadbarBackground {
+    @include align-self(center);
+    width: 76%;
+    height: rem-calc(4);
+    pointer-events: none;
+    border-radius: rem-calc(4);
+    z-index: 50;
+}
+
+.aw-threeDViewer-loadbar {
+    width: 0%;
+    height: 100%;
+    border-radius: rem-calc(4);
+    z-index: 51;
+    transition: width 1s ease;
+}
+
+.aw-threeDViewer-loadbarMessage {
+    text-align: center;
+}
+
+.aw-threeDViewer-imageCaptureContainer{
+    z-index: 99;
+}
+
+.aw-viewer-viewerMarkupContainer {
+    position: absolute;
+    width:stretch;
+    z-index: 101;
+}

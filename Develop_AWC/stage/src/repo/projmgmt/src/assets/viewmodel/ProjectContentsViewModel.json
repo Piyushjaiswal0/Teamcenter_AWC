@@ -1,0 +1,99 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+
+        "_sublocation":{
+
+            "name": "com.siemens.splm.client.projmgmt:ProjectContentsSubLocation",
+            "label": "{{ctx.locationContext.modelObject.props.object_string.dbValues[0]}}",
+            "clientScopeURI": "Awp0SearchResults",
+            "nameToken": "com.siemens.splm.client.projmgmt:ProjectContentsSubLocation",
+            "context": {
+                "search": {
+                    "provider": "Awp0FullTextSearchProvider",
+                    "sortType": "Alphabetical",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "chartTitle": {
+                        "source": "/i18n/SearchMessages",
+                        "key": "SearchResultsChartTitle"
+                    }
+                }
+            },
+            "viewBase": "ProjectContents",
+            "policy": "/policies/projectObjectPropertyPolicy.json"
+        },
+        "searchState": {
+            "initialValues": {},
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        }
+    },
+    "actions":{
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+
+                {
+                    "action":"updateSubPanelContext"
+                },
+                {
+                    "action": "initializeSearchState"
+                }
+            ]
+        },
+        "initializeSearchState": {
+            "actionType": "JSFunctionAsync",
+            "method": "createStateFromUrl",
+            "inputData": {
+                "provider": "{{data._sublocation}}",
+                "searchStateProp": null,
+                "searchState": "{{data.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}",
+                "skipURL": false,
+                "searchCriteria": null
+            },
+            "deps": "js/awSearchSublocationService"
+        },
+        "updateSearchStateURL": {
+            "actionType": "JSFunction",
+            "method": "updateURL",
+            "inputData": {
+                "searchStateProp": "{{props.searchState}}",
+                "searchState": "{{data.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}",
+                "skipURL": null
+            },
+            "deps": "js/awSearchSublocationService"
+        },
+        "updateSubPanelContext": {
+            "actionType": "JSFunctionAsync",
+            "method": "getSubPanelContextData",
+            "inputData": {
+                "provider": "{{data._sublocation}}"
+            },
+            "outputData": {
+                "_sublocation":""
+            },
+            "deps": "js/projMgmtService"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUpdate": [
+            {
+                "action": "updateSearchStateURL",
+                "observers": [ "viewModel.searchState" ]
+            }
+        ]
+    }
+
+}

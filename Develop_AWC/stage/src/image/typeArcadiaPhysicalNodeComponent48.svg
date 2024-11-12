@@ -1,0 +1,39 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="4.457" y1="-7" x2="47.457" y2="-7" gradientTransform="matrix(1 0 0 1 0 32)">
+		<stop  offset="0" style="stop-color:#FFF7CD"/>
+		<stop  offset="0.215" style="stop-color:#FFF5C6"/>
+		<stop  offset="0.525" style="stop-color:#FFF1B3"/>
+		<stop  offset="0.892" style="stop-color:#FFEA94"/>
+		<stop  offset="1" style="stop-color:#FFE889"/>
+	</linearGradient>
+	
+		<rect x="4.5" y="9.5" fill="url(#SVGID_1_)" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" width="43" height="31"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1.957" y1="-21.043" x2="11.957" y2="-11.043" gradientTransform="matrix(1 0 0 1 0 32)">
+		<stop  offset="0" style="stop-color:#FFF7CD"/>
+		<stop  offset="0.215" style="stop-color:#FFF5C6"/>
+		<stop  offset="0.525" style="stop-color:#FFF1B3"/>
+		<stop  offset="0.892" style="stop-color:#FFEA94"/>
+		<stop  offset="1" style="stop-color:#FFE889"/>
+	</linearGradient>
+	
+		<rect x="0.5" y="12.5" fill="url(#SVGID_2_)" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" width="13" height="7"/>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="1.957" y1="-11.043" x2="11.957" y2="-1.043" gradientTransform="matrix(1 0 0 1 0 32)">
+		<stop  offset="0" style="stop-color:#FFF7CD"/>
+		<stop  offset="0.215" style="stop-color:#FFF5C6"/>
+		<stop  offset="0.525" style="stop-color:#FFF1B3"/>
+		<stop  offset="0.892" style="stop-color:#FFEA94"/>
+		<stop  offset="1" style="stop-color:#FFE889"/>
+	</linearGradient>
+	
+		<rect x="0.5" y="22.5" fill="url(#SVGID_3_)" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" width="13" height="7"/>
+</g>
+<path fill="#464646" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" d="M22.4,17.6c1.2-0.2,2.3-0.3,3.5-0.3
+	c1.4-0.1,2.8,0.3,4,1.2c0.8,0.8,1.3,1.8,1.2,3c0.1,1.1-0.3,2.2-1.1,3c-1.2,1.1-2.7,1.6-4.3,1.6c-0.5,0-1,0-1.5-0.1v5.7h-1.8
+	C22.4,31.7,22.4,17.6,22.4,17.6z M24.2,24.4c0.5,0.1,1,0.2,1.5,0.1c2.2,0,3.5-1.1,3.5-3s-1.3-2.8-3.3-2.8c-0.6,0-1.2,0-1.7,0.1V24.4
+	z"/>
+</svg>

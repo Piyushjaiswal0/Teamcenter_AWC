@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" is not a valid file for object set \"{1}\". Newly created object will not appear in object set.",
+    "addedObjectIsNotUnique": "The object \"{1}-{0}\" is not saved because \"ID = {1}\" is not unique.",
+    "fileSizeException": "\"{0}\" was not added. The file size exceeded the maximum limit.",
+    "userNotAuthorized": "\"{0}\" was not added. The current user is not authorized.",
+    "addACopy": "Add a Copy",
+    "cancel": "Cancel",
+    "sourceObject": "Source",
+    "chooseFromSystem": "Choose File from System",
+    "chooseFromDrive": "Choose from Drive",
+    "fileNameExceedsLengthLimit": "\"{0}\" was not added. The filename length exceeded the maximum limit."
+}

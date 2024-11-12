@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Reports",
+    "allSubLocation": "All",
+    "reportBuilderSubLocation": "Templates",
+    "runReportTitle": "Generate Report",
+    "runReportOperationName": "Run Report",
+    "doWorkOperationName": "Run",
+    "execution": "Execution",
+    "criteria": "Criteria",
+    "stylesheet": "Style Sheet",
+    "dataset": "Save to File Name",
+    "myreportsSubLocation": "Saved Files",
+    "loadingMsg": "Loading...",
+    "zeroSearchResults": "No results found",
+    "reportResultsChartTitle": "Filter Results by:",
+    "AddSnapshot": "Snapshots",
+    "AddNew": "New",
+    "doQueueOperation": "Add to Queue",
+    "runTcraReport": "Run",
+    "dosnapShotViewOperation": "View",
+    "myDashboard": "My Dashboard",
+    "inOpenRptCommand": "Open"
+}

@@ -1,0 +1,19 @@
+<aw-command-panel caption="i18n.SetOrClearLocationCodePanel">
+    <aw-panel-body scrollable="false" >
+        <aw-command-panel-section caption="i18n.SessionLocCodeSectionName" anchor="data.securityCmdPanelCommands" visible-when="conditions.shouldShowClear">
+            <aw-label  prop="data.currentSessionLocCode"></aw-label>
+        </aw-command-panel-section>
+        <aw-panel-section caption="i18n.AvailableLocationsSectionName">
+            <aw-flex-row height="50f">
+                <aw-panel-body scrollable="false"> 
+                <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.performSearch">
+                    <aw-default-cell vmo="item"></aw-default-cell>
+                </aw-list-filter>
+             </aw-panel-body>
+            </aw-flex-row>
+        </aw-panel-section>
+    </aw-panel-body>    
+    <aw-panel-footer>
+        <aw-button action="setBtn" visible-when="conditions.isValidToShowSet"><aw-i18n>i18n.SetBtn</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

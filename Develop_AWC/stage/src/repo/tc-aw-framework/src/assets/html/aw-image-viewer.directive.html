@@ -1,0 +1,11 @@
+<div id="aw-image-viewer" class="aw-base-scrollPanel" ng-style="{'height': viewerHeight}">
+    <div ng-if="viewerHeaderProperties" class="aw-viewerjs-header">
+        <aw-viewer-header data="viewerHeaderProperties"></aw-viewer-header>
+    </div>
+    <div ng-if="loading"  class="aw-jswidgets-text">{{$parent.loadingMsg}}</div>
+    <div class="aw-imageviewer-viewer aw-viewerjs-innerContent" id="imageViewer">
+        <div ng-if="!loading">
+            <img src="" alt=""/>
+        </div>
+    </div>
+</div>

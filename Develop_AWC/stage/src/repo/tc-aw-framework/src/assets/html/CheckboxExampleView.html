@@ -1,0 +1,56 @@
+        <aw-panel class='w-6' caption='Checkbox'>
+            <aw-panel-body>
+                <aw-panel-section caption='Default View'>
+                    <aw-label prop="data.descriptionBasic"></aw-label>
+                    <aw-checkbox
+                        action="updateEntertainment"
+                        prop="data.categoryEntertainment"
+                    ></aw-checkbox>
+                    <aw-checkbox
+                        action="updateTechnology"
+                        prop="data.categoryTechnology"
+                    ></aw-checkbox>
+                    <aw-checkbox
+                        action="updateSports"
+                        prop="data.categorySports"
+                    ></aw-checkbox>
+                    <aw-label prop="data.categoryLbl"></aw-label>
+                </aw-panel-section>
+                <aw-panel-section caption='Horizontal View'>
+                    <aw-label prop="data.descriptionHorizontal"></aw-label>
+                    <aw-checkbox
+                        prop="data.foodWaffles"
+                        action="updateWaffles"
+                    ></aw-checkbox>
+                    <aw-checkbox
+                        prop="data.foodPanCakes"
+                        action="updatePanCakes"
+                    ></aw-checkbox>
+                    <aw-checkbox
+                        prop="data.foodBrownie"
+                        action="updateBrownie"
+                    ></aw-checkbox>
+                    <aw-label prop="data.selectedFood"></aw-label>
+                </aw-panel-section>
+                <aw-panel-section caption='Pre-selected and label at left'>
+                    <aw-label prop="data.descriptionLeft"></aw-label>
+                    <aw-checkbox
+                        prop="data.colorBlack"
+                    ></aw-checkbox>
+                    <aw-checkbox
+                        prop="data.colorBlue"
+                    ></aw-checkbox>
+                </aw-panel-section>
+                <aw-panel-section caption='Disabled'>
+                    <aw-label prop="data.descriptionLeft"></aw-label>
+                    <div class='sw-row sw-component'>
+                        <aw-checkbox
+                            prop="data.disabledUnchecked"
+                        ></aw-checkbox>
+                        <aw-checkbox
+                            prop="data.disabledChecked"
+                        ></aw-checkbox>
+                    </div>
+                </aw-panel-section>
+            </aw-panel-body>
+        </aw-panel>

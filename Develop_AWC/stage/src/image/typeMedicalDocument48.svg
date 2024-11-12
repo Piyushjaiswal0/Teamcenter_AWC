@@ -1,0 +1,38 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="6.5002" y1="4.5001" x2="45.5129" y2="43.5128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45" data-name="front -45" x1="-4.25" y1="11.25" x2="21.25" y2="36.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.6296" stop-color="#c7c7c7"/>
+      <stop offset="0.7792" stop-color="#b9b9b9"/>
+      <stop offset="0.9383" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="18.4289" y1="25.4289" x2="32.5711" y2="39.5711" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset="0.1774" stop-color="#6badc2"/>
+      <stop offset="0.4638" stop-color="#539db4"/>
+      <stop offset="0.8215" stop-color="#2d839d"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+  </defs>
+  <polygon points="41.526 47.5 10.5 47.5 10.5 0.5 41.5 0.5 41.526 47.5" fill="url(#paper_gradient)"/>
+  <rect x="6.5" y="0.5" width="4" height="47" fill="url(#front_-45)"/>
+  <line x1="10.5" y1="0.5" x2="10.5" y2="47.5" fill="none" stroke="#5a5a5a" stroke-miterlimit="10"/>
+  <rect x="15.5" y="8.5" width="20" height="9" rx="1" fill="#fff" stroke="#5a5a5a"/>
+  <line x1="29" y1="14.5" x2="17" y2="14.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="32" y1="11.5" x2="17" y2="11.5" fill="none" stroke="#5a5a5a"/>
+  <rect x="6.5" y="0.5" width="35" height="47" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <circle cx="25.5" cy="32.5" r="10" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+  <g>
+    <polygon points="23.5 39.5 23.5 34.5 18.5 34.5 18.5 30.5 23.5 30.5 23.5 25.5 27.5 25.5 27.5 30.5 32.5 30.5 32.5 34.5 27.5 34.5 27.5 39.5 23.5 39.5" fill="#fff"/>
+    <path d="M27,26v5h5v3H27v5H24V34H19V31h5V26h3m1-1H23v5H18v5h5v5h5V35h5V30H28V25Z" fill="#147391"/>
+  </g>
+</svg>

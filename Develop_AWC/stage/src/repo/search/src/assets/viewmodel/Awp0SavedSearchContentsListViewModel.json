@@ -1,0 +1,191 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "updateSelectAll": {
+            "actionType": "JSFunction",
+            "method": "updateSelectAll",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/savedSearchService"
+        },
+        "docontentsDataProvider": {
+            "actionType": "dataProvider",
+            "method": "contentsDataProvider"
+        },
+        "executeAdvancedSavedSearchBatchJob": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getAttributeModelObjectForSavedQuery"
+                },
+                {
+                    "action": "updateAttributesAdvancedSavedSearch",
+                    "condition": "data.advSavedSearchViewModelObject"
+                },
+                {
+                    "action": "doAdvancedSearch"
+                }
+            ]
+        },
+        "getAttributeModelObjectForSavedQuery": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-AdvancedSearch",
+            "method": "getSelectedQueryCriteria",
+            "inputData": {
+                "selectedQuery": {
+                    "uid": "{{subPanelContext.selected.props.savedsearch_query.dbValue}}",
+                    "type": "ImanQuery"
+                }
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": "{{function:updateSearchAttributesWithSelectedQuery}}"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "updateAttributesAdvancedSavedSearch": {
+            "actionType": "JSFunction",
+            "method": "updateAttributesAdvSavedSearch",
+            "inputData": {
+                "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "savedSearchObject": "{{subPanelContext.selected}}"
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": ""
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "doAdvancedSearch": {
+            "actionType": "JSFunction",
+            "method": "doAdvancedSearch",
+            "inputData": {
+                "vmo": "{{subPanelContext.selected.props.savedsearch_query}}",
+                "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "searchState": "{{subPanelContext.searchState}}",
+                "skipUrl": true,
+                "skipTimeStampForJSON": true
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "loadAdvancedSearchData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "Awp0SavedQuerySearchProvider",
+                    "searchCriteria": "{{function:getSearchCriteria}}",
+                    "searchFilterFieldSortType": "Priority",
+                    "startIndex": "{{data.dataProviders.contentsDataProvider.startIndex}}",
+                    "searchFilterMap6": "",
+                    "searchSortCriteria": ""
+                },
+                "inflateProperties": false
+            },
+            "policy": {
+                "types": "{{function:populatePropetyPolicy}}",
+                "override":"{{props.subPanelContext.searchState.policy.override}}"
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/advancedSearchService",
+            "actionMessages": {
+                "failure": [
+                    {
+                        "message": "loadAdvancedSearchDataFailure"
+                    }
+                ]
+            }
+        },
+        "getSavedSearchProperties": {
+            "actionType": "JSFunction",
+            "method": "getSavedSearchProperties",
+            "inputData": {
+                "vmo": "{{subPanelContext.selected}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/savedSearchService"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "contentsDataProvider.selectAll",
+            "action": "updateSelectAll"
+        },
+        {
+            "eventId": "contentsDataProvider.selectNone",
+            "action": "updateSelectAll"
+        }
+    ],
+    "functions": {
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getSearchCriteria": {
+            "functionName": "getSearchCriteria",
+            "parameters": [
+                "{{data.dataProviders.contentsDataProvider.startIndex}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "processOutput": {
+            "functionName": "processSavedSearchOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "populatePropetyPolicy": {
+            "functionName": "populatePropetyPolicy",
+            "parameters": [
+                "{{props}}"
+            ]
+        }
+    },
+    "dataProviders": {
+        "contentsDataProvider": {
+            "action": "loadAdvancedSearchData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "multiSelectEnabled": true
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "data": {
+        "uid": "{{subPanelContext.selected.uid}}"
+    },
+    "messages": {
+        "loadSearchDataFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        },
+        "showAdditionalInfoMessages": {
+            "messageType": "INFO",
+            "messageText": "{{subPanelContext.searchState.additionalInfoMessages}}"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "executeAdvancedSavedSearchBatchJob",
+        "onUpdate": {
+            "action": "docontentsDataProvider",
+            "observers": [
+                "props.subPanelContext.searchState.advancedSearchJSONString"
+            ]
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

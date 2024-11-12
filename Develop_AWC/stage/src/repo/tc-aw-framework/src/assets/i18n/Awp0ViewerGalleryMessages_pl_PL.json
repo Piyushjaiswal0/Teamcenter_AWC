@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Wycofaj",
+    "uvCheckinTitle": "Zwróć",
+    "uvCancelCheckoutTitle": "Anuluj wycofanie",
+    "previousButtonTitle": "Wstecz",
+    "nextButtonTitle": "Dalej",
+    "noObjectSelectionMessage": "Wybierz zawartość do wyświetlenia.",
+    "fullViewModeTitle": "Pełny ekran",
+    "uvWordWrapTitle": "Zawijaj wiersze",
+    "exitFullViewModeTitle": "Zamknij tryb pełnoekranowy",
+    "aw_viewerRightSide": "Prawa strona przeglądarki",
+    "aw_universalViewerLink": "Łącze przeglądarki uniwersalnej",
+    "uvCheckoutDesc": "Zarezerwuj wybór, aby uniemożliwić innym użytkownikom wprowadzanie zmian.",
+    "fullViewModeDesc": "Przełącz do następnego widoku pełnoekranowego.",
+    "uvWordWrapDesc": "Zawijaj długi tekst w wielu wierszach.",
+    "Awp0ShowObjectForUVpDesc": "Otwórz ten plik w bieżącym oknie.",
+    "Awp0ViewFileForUVDesc": "Pobierz plik."
+}

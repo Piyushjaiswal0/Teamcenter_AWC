@@ -1,0 +1,24 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerPropertyRenderFunction",
+            "deps": "js/AwWalkerPropertyService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "propdata": {
+            "type": "object"
+        },
+        "prop": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "render": {
+            "method": "awFilterCategoryStringFilterRenderFunction",
+            "deps": "js/AwFilterCategoryStringFilterService"
+        },
+        "updateNumberOfFiltersToShowForMoreLink": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateNumberOfFiltersToShowForMoreLink",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateNumberOfFiltersToShowForMoreLinkAfterFacetSearch": {
+            "actionType": "JSFunction",
+            "method": "updateNumberOfFiltersToShowForMoreLinkAfterFacetSearch",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateNumberOfFiltersToShowForLessLink": {
+            "actionType": "JSFunction",
+            "method": "updateNumberOfFiltersToShowForLessLink",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateNumberOfFiltersShownAndFacetSearchString": {
+            "actionType": "JSFunction",
+            "method": "updateNumberOfFiltersShownAndFacetSearchString",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}",
+                "facetSearchString": "{{data.facetSearchString}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": "numberOfFiltersToShow",
+                "facetSearchString": "facetSearchString"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "data": {
+        "numberOfFiltersToShow": {
+            "type": "INTEGER",
+            "isRequired": "false",
+            "propertyDisplayName": "numberOfFiltersToShow",
+            "dbValue": 5
+        },
+        "facetSearchString": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "propertyDisplayName": "",
+            "requiredText": "{{i18n.filterPanelCategoryFilterPlaceholderText}}",
+            "dbValue": ""
+        },
+        "delayedFacetSearchString": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "propertyDisplayName": "",
+            "requiredText": "{{i18n.filterPanelCategoryFilterPlaceholderText}}",
+            "dbValue": ""
+        }
+    },
+    "i18n": {
+        "filterPanelCategoryFilterPlaceholderText": [ "SearchMessages" ]
+    },
+    "conditions": {},
+    "onEvent": [],
+    "props": {
+        "category": {
+            "type": "object"
+        },
+        "facetAction": {
+            "type": "object"
+        },
+        "updateNumberOfFiltersShown": {
+            "type": "boolean"
+        },
+        "noResultsFoundLabel": {
+            "type": "object"
+        },
+        "isBulkMode": {
+            "type": "object"
+        },
+        "bulkModeStringAction": {
+            "type": "object"
+        },
+        "selectFilterAction": {
+            "type": "object"
+        },
+        "hideBulkModeActionCommand": {
+            "type": "object"
+        }
+    },
+    "ctx": {
+        "preferences": null
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "updateNumberOfFiltersShownAndFacetSearchString",
+        "onUpdate": {
+            "action": "updateNumberOfFiltersToShowForMoreLinkAfterFacetSearch",
+            "observers": [ "props.category.updateNumberOfFiltersShown" ]
+        }
+    }
+}

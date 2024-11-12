@@ -1,0 +1,44 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awCopyOptionsRenderFunction",
+            "deps": "js/AwCopyOptionsService"
+        },
+        "initCopyOptions": {
+            "actionType": "JSFunction",
+            "inputData": {
+                "copyOptions": "{{props.xrtState.copyOptions}}",
+                "xrtState": "{{props.xrtState}}"
+            },
+            "outputData": {
+                "copyOptionProps": "copyOptionProps"
+            },
+            "method": "initCopyOptions",
+            "deps": "js/AwCopyOptionsService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": {
+            "action": "initCopyOptions",
+            "observers": [
+                "props.copyOptions"
+            ]
+        }
+    },
+    "props": {
+        "copy-options": {
+            "type": "array"
+        },
+        "xrt-state": {
+            "type": "object"
+        }
+    },
+    "i18n": {
+        "copyOptions": [
+            "TCUICommandPanelsMessages"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+<aw-command-panel caption="i18n.reviewAndExecuteAdvancedSavedSearch" hide-title="props.hideTitle" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section visible-when="conditions.showAdvancedSavedSearchAttributes">
+            <aw-widget prop="data.savedQuery"></aw-widget>
+            <aw-advanced-search-attributes attributes="fields.advSavedSearchViewModelObject" call-back-action="clearAll"></aw-advanced-search-attributes>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button size='auto' visible-when="conditions.showExecuteAdvancedSavedSearchButton" action="reviewAndExecuteAdvancedSavedSearch">
+            <aw-i18n>i18n.executeBtn</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

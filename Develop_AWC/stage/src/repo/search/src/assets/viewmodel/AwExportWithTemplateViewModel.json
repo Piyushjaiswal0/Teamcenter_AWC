@@ -1,0 +1,259 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "actions": {
+        "initializeExportTypes": {
+            "actionType": "JSFunction",
+            "method": "initializeExportTypes",
+            "inputData": {
+                "exportType": "{{data.exportType}}"
+            },
+            "outputData": {
+                "exportType": ""
+            },
+            "deps": "js/Awp0ExportToExcelService"
+        },
+        "initializeSearchType": {
+            "actionType": "JSFunction",
+            "method": "initializeSearchType",
+            "inputData": {
+                "searchLocation": "{{ctx.sublocation.historyNameToken}}"
+            },
+            "outputData": {
+                "searchLocation": ""
+            },
+            "deps": "js/Awp0ExportToExcelService"
+        },
+        "getExportPreferenceValue": {
+            "actionType": "JSFunction",
+            "method": "getExportPreferenceValue",
+            "inputData": {
+                "searchExportMaxRowsPreference": "{{ctx.preferences.AW_Search_Results_Export_Max_Rows}}"
+            },
+            "outputData": {
+                "searchExportMaxRowsPreference": ""
+            },
+            "deps": "js/Awp0ExportToExcelService"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getExportPreferenceValue"
+                },
+                {
+                    "action": "initializeExportTypes"
+                },
+                {
+                    "action": "initializeSearchType"
+                }
+            ]
+        },
+        "downloadFile": {
+            "actionType": "JSFunction",
+            "method": "openFile",
+            "inputData": {
+                "fileTicket": "{{data.fileTicket}}",
+                "openFileName": ""
+            },
+            "deps": "js/fmsUtils"
+        },
+        "confirmationToExportObjectsEvent": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "confirmationToExportObjects"
+                } ]
+            }
+        },
+        "exportSearchResultsBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "confirmationToExportObjectsEvent",
+                    "condition": "conditions.limitedResults || conditions.selectedResults"
+                },
+                {
+                    "action": "exportSearchResultsAndDownloadBatchJob",
+                    "condition": "!conditions.limitedResults && !conditions.selectedResults"
+                }
+            ]
+        },
+        "exportSearchResultsAndDownloadBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "exportFullTextSearch",
+                    "condition": "data.searchLocation === 'teamcenter_search_search'"
+                },
+                {
+                    "action": "exportAdvancedSearch",
+                    "condition": "data.searchLocation === 'teamcenter_search_advancedSearch'"
+                },
+                {
+                    "action": "downloadFile",
+                    "condition": "data.fileTicket && data.fileTicket.length > 0"
+                }
+            ]
+        },
+        "exportFullTextSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2018-12-Finder",
+            "method": "exportSearchResults",
+            "inputData": {
+                "searchInput": {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "searchFilterMap": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{function:getSearchSortCriteria}}",
+                    "cursor": {
+                        "startIndex": 0
+                    }
+                },
+                "columnConfig": {
+                    "columnConfigId": "{{subPanelContext.searchState.columnConfig.columnConfigId}}",
+                    "operationType": "{{subPanelContext.searchState.columnConfig.operationType}}",
+                    "columns": "{{subPanelContext.searchState.columnConfig.columns}}"
+                },
+                "exportAll": "{{data.exportType.dbValue}}",
+                "selectedObjectUIDs": "{{function:getSelectedUids}}",
+                "applicationFormat": "MSExcelX"
+            },
+            "outputData": {
+                "fileTicket": "transientFileReadTickets[0]"
+            },
+            "deps": "js/awSearchService"
+        },
+        "exportAdvancedSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2018-12-Finder",
+            "method": "exportSearchResults",
+            "inputData": {
+                "searchInput": {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "Awp0SavedQuerySearchProvider",
+                    "searchCriteria": "{{subPanelContext.searchState.advancedSearchCriteria}}",
+                    "searchFilterFieldSortType": "Priority",
+                    "searchFilterMap6": {},
+                    "searchSortCriteria": "{{ctx.sublocation.sortCriteria}}",
+                    "cursor": {
+                        "startIndex": 0
+                    }
+                },
+                "columnConfig": {
+                    "columnConfigId": "{{subPanelContext.searchState.columnConfig.columnConfigId}}",
+                    "operationType": "{{subPanelContext.searchState.columnConfig.operationType}}",
+                    "columns": "{{subPanelContext.searchState.columnConfig.columns}}"
+                },
+                "exportAll": "{{data.exportType.dbValue}}",
+                "selectedObjectUIDs": "{{function:getSelectedUids}}",
+                "applicationFormat": "MSExcelX"
+            },
+
+            "outputData": {
+                "fileTicket": "transientFileReadTickets[0]"
+            },
+            "deps": "js/advancedSearchService"
+        }
+    },
+    "data": {
+        "exportType": {
+            "displayName": "",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": true,
+            "vertical": true,
+            "labelPosition": "NO_PROPERTY_LABEL",
+            "propertyRadioTrueText": "",
+            "propertyRadioFalseText": ""
+        },
+        "startIndex": 0
+    },
+    "conditions": {
+        "searchExportTabVisible": {
+            "expression": "(ctx.sublocation.historyNameToken === 'teamcenter_search_search' || ctx.sublocation.historyNameToken === 'teamcenter_search_advancedSearch') && (ctx.ViewModeContext.ViewModeContext === 'TableView' || ctx.ViewModeContext.ViewModeContext === 'TableSummaryView')"
+        },
+        "limitedResults": {
+            "expression": "data.exportType.dbValue === true && props.subPanelContext.searchState.totalFound > data.searchExportMaxRowsPreference"
+        },
+        "selectedResults": {
+            "expression": "data.exportType.dbValue === false && props.subPanelContext.selectionData.selected.length > data.searchExportMaxRowsPreference"
+        }
+    },
+    "onEvent": [ {
+        "eventId": "confirmationToExportObjects",
+        "message": "confirmationToExportObjectsMsg"
+    } ],
+    "lifecycleHooks": {
+        "onMount": "initialize"
+    },
+    "functions": {
+        "getSelectedUids": {
+            "functionName": "getSelectedUids",
+            "parameters": [
+                "{{ctx}}"
+            ]
+        },
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getSearchCriteria": {
+            "functionName": "getSearchCriteria",
+            "parameters": [
+                "{{data.startIndex}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getSearchSortCriteria": {
+            "functionName": "getSearchSortCriteria",
+            "parameters": [
+                "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "ctx": {
+        "tabModelsClass": {
+            "parser": {
+                "method": "createExportPanel",
+                "deps": "js/Awp0ExportToExcelService"
+            }
+        }
+    },
+    "i18n": {
+        "Awp0ExportWithTemplateTitle": [ "SearchMessages" ],
+        "cancel": [ "SearchMessages" ],
+        "continue": [ "SearchMessages" ],
+        "confirmationToExportObjectsMessage": [ "SearchMessages" ]
+    },
+    "messages": {
+        "confirmationToExportObjectsMsg": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.confirmationToExportObjectsMessage}}",
+            "messageTextParams": [
+                "{{props.subPanelContext.searchState.totalFound}}",
+                "{{data.searchExportMaxRowsPreference}}"
+            ],
+            "navigationOptions": [ {
+                "option": "CancelButtonLabel",
+                "text": "{{i18n.cancel}}"
+            }, {
+                "option": "proceedOption",
+                "text": "{{i18n.continue}}",
+                "action": "exportSearchResultsAndDownloadBatchJob"
+            } ]
+        }
+    }
+}

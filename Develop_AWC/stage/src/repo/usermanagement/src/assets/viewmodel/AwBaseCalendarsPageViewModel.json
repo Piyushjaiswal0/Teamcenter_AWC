@@ -1,0 +1,52 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "search",
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "priority": 10,
+            "label": {
+                "source": "/i18n/CalendarManagementMessages",
+                "key": "baseCalendars"
+            },
+            "clientScopeURI": "Awp0TCCalendar",
+            "nameToken": "",
+            "context": {
+                "search": {
+                    "hideInContentSearchBox": true,
+                    "provider": "Awp0CalendarDataProvider",
+                    "criteria":
+                    {
+                        "searchContentType": "baseCalendars",
+                        "tccal_type": "1"
+                    },
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "showLoadingText": true
+                }
+            },
+            "viewBase": "AwCalendarsPage",
+            "viewModes": {
+                "ListView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": false
+                },
+                "SummaryView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": true
+                },
+                "TableView": {
+                    "primaryWorkArea": "table",
+                    "secondaryWorkArea": false
+                },
+                "TableSummaryView": {
+                    "primaryWorkArea": "table",
+                    "secondaryWorkArea": true
+                }
+            },
+            "policy": "/policies/calendarPropertyPolicy.json"
+        }
+    }
+}

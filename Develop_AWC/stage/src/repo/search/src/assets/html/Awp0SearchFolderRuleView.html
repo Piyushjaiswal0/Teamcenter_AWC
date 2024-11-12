@@ -1,0 +1,27 @@
+
+<div class="aw-layout-declarativePanelRoot aw-layout-panel aw-search-folder">
+    <div class="aw-layout-flexRow aw-layout-flexRowContainer aw-search-rulesTabHeader">
+        <div class="aw-layout-flexColumn aw-search-rulesTabHeaderBox">
+            <div class="aw-layout-panelSectionTitle aw-layout-flexRow aw-layout-flexRowContainer">
+                <div><label title="{{i18n.searchFolderSearch}}">{{i18n.searchFolderSearch}}</label></div>
+                <div class="aw-search-searchFolderButtons">
+                    <aw-server-visibility-toolbar first-anchor="" second-anchor="aw_SearchFolderRule" context="data.searchFolder"></aw-server-visibility-toolbar>
+                </div>
+            </div>
+        </div>
+        <div class="aw-search-ruleSection aw-search-folderSectionSpace"></div>
+        <div class="aw-layout-flexColumn aw-search-rulesTabHeaderBox">
+            <aw-panel-section collapsed="disabled" caption="{{data.resultsText}}" class="aw-results-section" include-component-name="AwSearchBreadcrumbUnreadableCount" context="{{data.searchFolder.additionalSearchInfoMap.unReadableCount[0]}}"></aw-panel-section>
+        </div>
+    </div>
+    <div class="aw-layout-flexRow aw-layout-flexRowContainer aw-search-rulesTabContent">
+        <awp0-search-folder-rule-non-edit sub-panel-context="{'searchState':data.searchFolder}" exist-when="!(data.searchFolder.isEditMode === true)"></awp0-search-folder-rule-non-edit>
+        <awp0-search-folder-rule-edit sub-panel-context="{'searchState':data.searchFolder}" exist-when="data.searchFolder.isEditMode === true"></awp0-search-folder-rule-edit>
+        <div class="aw-search-ruleSection aw-search-folderSectionSpace"></div>
+        <div class="aw-layout-flexColumn aw-search-folderColumn">
+            <aw-search-results-list exist-when="conditions.fullTextSearchNonEditModeSOACallCondition" sub-panel-context="{'searchState': {...data.searchFolder, 'provider':'Awp0FullTextSearchProvider'}}"></aw-search-results-list>
+            <aw-search-results-list exist-when="conditions.fullTextSearchEditModeSOACallCondition" sub-panel-context="{'searchState': {...data.searchFolder, 'provider':'Awp0FullTextSearchProvider'}}"></aw-search-results-list>
+            <aw-advanced-search-list exist-when="conditions.isSavedQueryProvider" sub-panel-context="{'searchState': {...data.searchFolder, 'provider':'Awp0SavedQuerySearchProvider'}}"></aw-advanced-search-list>
+        </div>
+    </div>
+</div>

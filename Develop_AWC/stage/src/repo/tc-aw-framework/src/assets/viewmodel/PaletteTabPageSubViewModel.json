@@ -1,0 +1,363 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-clipboard.directive",
+        "js/aw-favorite.directive",
+        "js/aw-history.directive"
+    ],
+    "data": {
+        "creationRelation": {
+            "displayName": "{{i18n.relation}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dataProvider": "getRelationListProvider"
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "actions": {
+        "createRelationForPaletteOrSearch": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "addObject.startCreateRelation"
+                } ]
+            }
+        },
+        "evalObjBasedOnConfigRevRulePaletteSearch": {
+            "actionType": "JSFunction",
+            "method": "evaluateObjsBasedOnConfiguredRevRule",
+            "inputData": {
+                "objectToEvaluateForExactRelation": "{{data.sourceObjects}}",
+                "addObjectContext": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "objToRelateBasedOnConfiguredRevRule": ""
+            },
+            "deps": "js/awConfiguredRevService",
+            "events": {
+                "success": [ {
+                    "name": "addObject.existingObjToRelateEvaluated"
+                } ]
+            }
+        },
+        "createRelations": {
+            "actionType": "JSFunctionAsync",
+            "method": "execute",
+            "inputData": {
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "sourceObjects": "{{data.objToRelateBasedOnConfiguredRevRule}}",
+                "relationName": "{{data.creationRelation.dbValue}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "gwt.CreateOrAddObjectCompleteEvent",
+                        "eventData": {
+                            "createdObjs": "{{data.sourceModelObjects}}"
+                        }
+                    },
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                            "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                            "relations": "{{data.creationRelation}}",
+                            "relatedModified": "{{data.targetModelObjects}}",
+                            "createdObjects": "{{data.sourceModelObjects}}"
+                        }
+                    },
+                    {
+                        "name": "addObject.objectCreatedWithRelation"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "!subPanelContext.panelPinned",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                "failure": [ {
+                    "name": "cdm.relatedModified",
+                    "condition": {
+                        "$source": "errorCodes",
+                        "$query": {
+                            "$all": {
+                                "$source": "code",
+                                "$query": {
+                                    "$eq": 6007
+                                }
+                            }
+                        }
+                    },
+                    "eventData": {
+                        "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                        "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                        "relations": "{{data.creationRelation}}",
+                        "relatedModified": "{{data.targetModelObjects}}",
+                        "createdObjects": "{{data.sourceModelObjects}}"
+                    }
+                } ]
+            },
+            "actionMessages": {
+                "success": [ {
+                        "condition": "data.sourceObjects.length == 1",
+                        "message": "paletteObjectSuccess"
+                    },
+                    {
+                        "condition": "data.sourceObjects.length > 1",
+                        "message": "paletteRelationSuccess"
+                    }
+                ]
+            },
+            "deps": "js/pasteService"
+        },
+        "updateCallbackWithRelatedObject": {
+            "actionType": "JSFunction",
+            "method": "updateCallbackWithCreatedObject",
+            "inputData": {
+                "createdObject": "{{data.sourceModelObjects}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "handleObjectCreate": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "createRelationForPaletteOrSearch",
+                "condition": "conditions.readyToStartCreateOperation"
+            }
+            ]
+        },
+        "handleSelectionChange": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateTheFocusedComponent",
+                    "condition": "data.selectionData.selected.length > 0 || (data.focusedCompId === data.selectionData.id && data.selectionData.selected.length === 0)"
+                },
+                {
+                    "action": "handlePaletteSelection",
+                    "condition": "data.selectionData.selected.length > 0 || (data.focusedCompId === data.selectionData.id && data.selectionData.selected.length === 0)"
+                }
+            ]
+        },
+        "updateTheFocusedComponent": {
+            "actionType": "JSFunction",
+            "method": "updateTheFocusedComponent",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}"
+            },
+            "outputData": {
+                "focusedCompId": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "handlePaletteSelection": {
+            "actionType": "JSFunction",
+            "method": "handlePaletteSelection",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}",
+                "selectionModels": [
+                    "{{selectionModels.clipboardSelectionModel}}",
+                    "{{selectionModels.favoritesSelectionModel}}",
+                    "{{selectionModels.historySelectionModel}}"
+                ],
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "getRelationInputs": "getRelationInputs",
+                "sourceObjects": "sourceObjects"
+            },
+            "events": {
+                "success": [ {
+                    "name": "relations.getDefaultRelation",
+                    "condition": "subPanelContext.targetObject != undefined && data.activeView!='addReferenceSub'"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "getDefaultRelation": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDefaultRelation",
+            "inputData": {
+                "input": "{{data.getRelationInputs}}"
+            },
+            "outputData": {
+                "defaultRelation": "output[0].defaultRelation",
+                "secondaryType": "output[0].secondaryType"
+            },
+            "events": {
+                "success": [ {
+                    "name": "relations.updateRelationList"
+                } ],
+                "failure": [ {
+                    "name": "relations.updateRelationList"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateRelationList": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateRelationList",
+            "inputData": {
+                "creationType": "{{data.creationType}}",
+                "relationMap": "{{subPanelContext.relationMap}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "type": "{{data.selectionData.selected[0].type}}",
+                "defaultRelation": "{{data.defaultRelation}}",
+                "creationRelation": "{{data.creationRelation}}",
+                "invalidObjectInfo": {
+                    "fileName": "{{data.datasetInfo.fileName}}",
+                    "objectSetSource": "{{ctx.panelContext.objectSetSource}}"
+                },
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "relationList": "relationList",
+                "creationRelation": "creationRelation"
+            },
+            "events": {
+                "success": [ {
+                    "name": "addObject.useSelectionCallBackInPalette"
+                }, {
+                    "name": "relationList.updatedRecentTypeInPalette"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "useSelectionCallBackInPalette": {
+            "actionType": "JSFunction",
+            "method": "useSelectionCallBackInPalette",
+            "inputData": {
+                "sourceObjects": "{{data.sourceObjects}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "creationRelation": "{{data.creationRelation}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "sourceModelObjects": "sourceModelObjects",
+                "targetModelObjects": "targetModelObjects"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateRecentTypes": {
+            "actionType": "JSFunction",
+            "method": "updateRecentUsedTypes",
+            "inputData": {
+                "recentTypeName": "{{data.secondaryType}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "dataProviders": {
+        "getRelationListProvider": {
+            "response": "{{data.relationList}}",
+            "totalFound": "{{data.relationList.length}}"
+        }
+    },
+    "messages": {
+        "paletteObjectSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.pasteSuccessful}}",
+            "messageTextParams": [
+                "{{data.sourceObjects[0].props.object_string.dbValues[0]}}"
+            ]
+        },
+        "paletteRelationSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.mutiRelationObject}}",
+            "messageTextParams": [
+                "{{data.sourceObjects.length}}"
+            ]
+        }
+    },
+    "onEvent": [ {
+            "eventId": "addObject.startCreateRelation",
+            "condition": "data.sourceObjects.length > 0",
+            "action": "evalObjBasedOnConfigRevRulePaletteSearch"
+        },
+        {
+            "eventId": "addObject.existingObjToRelateEvaluated",
+            "action": "createRelations"
+        },
+        {
+            "eventId": "addObject.objectCreatedWithRelation",
+            "action": "updateCallbackWithRelatedObject"
+        },
+        {
+            "eventId": "relations.getDefaultRelation",
+            "condition": "data.subPanelContext.targetObject && subPanelContext.hideRelation !== 'true'",
+            "action": "getDefaultRelation"
+        },
+        {
+            "eventId": "relations.updateRelationList",
+            "condition": "subPanelContext.hideRelation !== 'true'",
+            "action": "updateRelationList"
+        },
+        {
+            "eventId": "addObject.useSelectionCallBackInPalette",
+            "action": "useSelectionCallBackInPalette"
+        },
+        {
+            "eventId": "relationList.updatedRecentTypeInPalette",
+            "action": "updateRecentTypes"
+        }
+    ],
+    "conditions": {
+        "showRelationsList": {
+            "expression": "(data.creationType || (data.sourceObjects && data.sourceObjects.length > 0)) && data.relationList.length>1"
+        },
+        "readyToStartCreateOperation": {
+            "expression": "subPanelContext.triggerCreate && subPanelContext.triggerCreate.dbValue && subPanelContext.addPanelState.selectedTab.tabKey === 'palette' && (data.sourceObjects && data.sourceObjects.length > 0)"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+                "action": "handleObjectCreate",
+                "observers": [ "viewModel.subPanelContext.triggerCreate" ]
+            },
+            {
+                "action": "handleSelectionChange",
+                "observers": [ "viewModel.atomicData.selectionData" ]
+            }
+        ]
+    },
+    "selectionModels": {
+        "clipboardSelectionModel": {
+            "selectionMode": "{{data.subPanelContext.selectionMode}}"
+        },
+        "favoritesSelectionModel": {
+            "selectionMode": "{{data.subPanelContext.selectionMode}}"
+        },
+        "historySelectionModel": {
+            "selectionMode": "{{data.subPanelContext.selectionMode}}"
+        }
+    },
+    "i18n": {
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ],
+        "pasteSuccessful": [
+            "awAddDirectiveMessages"
+        ],
+        "mutiRelationObject": [
+            "awAddDirectiveMessages"
+        ],
+        "relation": [
+            "XRTMessages"
+        ]
+    },
+    "props":{
+        "sub-panel-context":{
+            "type": "object"
+        }
+    }
+}

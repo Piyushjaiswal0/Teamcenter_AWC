@@ -1,0 +1,13 @@
+<aw-command-panel caption="i18n.SET_PANEL_CAPTION">
+    <aw-add visible-tabs="palette,search"
+        type-filter="{{ctx.panelContext.filterTypes}}"
+        search-filter="{{ctx.panelContext.searchFilter}}"
+        add-panel-state="fields.addPanelState"
+        sub-panel-context="{selectionMode: subPanelContext.selectionMode}"></aw-add>
+    </aw-add>
+    <aw-panel-footer>
+        <aw-button action="setTypeReference" visible-when="fields.addPanelState.sourceObjects.length > 0">
+            <aw-i18n>i18n.SET_PANEL_CAPTION</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

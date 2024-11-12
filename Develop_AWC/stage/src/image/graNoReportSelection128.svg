@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_10" data-name="New Gradient Swatch 10" x1="-62.2411" y1="305.821" x2="-39.0037" y2="329.0584" gradientTransform="translate(68.6541 -275.6251)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4eb"/>
+      <stop offset=".6517" stop-color="#87b8c8"/>
+      <stop offset="1" stop-color="#68a4b8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_11" data-name="New Gradient Swatch 11" x1="-43.7182" y1="310.8029" x2="-23.8023" y2="330.7188" gradientTransform="translate(68.9746 -278.6036)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".4889" stop-color="#4695ae"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_8" data-name="New Gradient Swatch 8" x1="-31.7713" y1="295.7902" x2="-2.0249" y2="325.5367" gradientTransform="translate(66.9883 -281.3803)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef6f8"/>
+      <stop offset="1" stop-color="#d1e6ec"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_10-2" data-name="New Gradient Swatch 10" x1="-117.0876" y1="438.1633" x2="-96.2879" y2="458.963" gradientTransform="translate(-5.9598 -417.1971) rotate(-22.3806)" xlink:href="#New_Gradient_Swatch_10"/>
+    <linearGradient id="New_Gradient_Swatch_11-2" data-name="New Gradient Swatch 11" x1="-92.2482" y1="425.3745" x2="-63.1566" y2="454.4662" gradientTransform="translate(-5.9598 -417.1971) rotate(-22.3806)" xlink:href="#New_Gradient_Swatch_11"/>
+    <linearGradient id="New_Gradient_Swatch_8-2" data-name="New Gradient Swatch 8" x1="-96.5158" y1="458.7338" x2="-75.9439" y2="479.3057" gradientTransform="translate(-5.9598 -417.1971) rotate(-22.3806)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="New_Gradient_Swatch_8-3" data-name="New Gradient Swatch 8" x1="4.12" y1="57.9071" x2="59.1202" y2="112.9073" gradientTransform="translate(15.3799 -1.4072)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="New_Gradient_Swatch_10-3" data-name="New Gradient Swatch 10" x1="22.6969" y1="81.501" x2="56.6115" y2="115.4157" gradientTransform="translate(15.3799 -1.4072)" xlink:href="#New_Gradient_Swatch_10"/>
+    <linearGradient id="New_Gradient_Swatch_8-4" data-name="New Gradient Swatch 8" x1="-16.7208" y1="74.0353" x2="-15.2754" y2="75.4807" gradientTransform="translate(38.4492 6.1432) rotate(-10)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="New_Gradient_Swatch_8-5" data-name="New Gradient Swatch 8" x1=".4492" y1="88.4777" x2="1.8946" y2="89.9231" gradientTransform="translate(38.4492 6.1432) rotate(-10)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="New_Gradient_Swatch_8-6" data-name="New Gradient Swatch 8" x1="24.2739" y1="65.1793" x2="25.7193" y2="66.6246" gradientTransform="translate(38.4492 6.1432) rotate(-10)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="New_Gradient_Swatch_8-7" data-name="New Gradient Swatch 8" x1="-35.8403" y1="88.3052" x2="-34.3949" y2="89.7506" gradientTransform="translate(38.4492 6.1432) rotate(-10)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="New_Gradient_Swatch_8-8" data-name="New Gradient Swatch 8" x1="78.8475" y1="78.8475" x2="119.1525" y2="119.1525" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="85.331" y1="87.9689" x2="110.4198" y2="113.0576" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset=".1774" stop-color="#6badc1"/>
+      <stop offset=".4638" stop-color="#539cb3"/>
+      <stop offset=".8215" stop-color="#2c829c"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <line x1="55.1422" y1=".5" x2="1.2986" y2="9.994" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+    <line x1="56.9169" y1="10.5649" x2="3.0733" y2="20.0588" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+    <line x1="58.6916" y1="20.6297" x2="4.848" y2="30.1237" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+    <line x1="60.4663" y1="30.6946" x2="6.6227" y2="40.1885" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+    <line x1="62.241" y1="40.7594" x2="8.3974" y2="50.2534" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+    <polyline points=".5 5.4648 10.1715 60.3147 65.0216 50.6435" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m12.5571,24.4298h10.9492c.5036,0,.9125.4089.9125.9125v33.3227h-12.7741V25.3422c0-.5036.4089-.9125.9125-.9125Z" transform="translate(-6.9407 3.7624) rotate(-10)" fill="url(#New_Gradient_Swatch_10)" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m29.7398,28.0939h10.9492c.5036,0,.9125.4089.9125.9125v26.6796h-12.7741v-26.6796c0-.5036.4089-.9125.9125-.9125Z" transform="translate(-6.7391 6.7513) rotate(-10)" fill="url(#New_Gradient_Swatch_11)" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m44.6156,5.3892h10.9492c.5036,0,.9125.4089.9125.9125v46.1519c0,.2518-.2044.4562-.4562.4562h-11.8617c-.2518,0-.4562-.2044-.4562-.4562V6.3017c0-.5036.4089-.9125.9125-.9125Z" transform="translate(-4.3008 9.1409) rotate(-10)" fill="url(#New_Gradient_Swatch_8)" stroke="#16748f" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <path d="m70.0218,12.9007c-.0013.0005-.0025.0009-.0038.0015-14.8578,6.1181-21.9358,23.1225-15.8179,37.98,3.103,7.5358,9.0074,13.0659,16.0097,15.893,1.1524-2.8549,10.8888-26.9742,10.8888-26.9742l-11.0768-26.9002Z" fill="url(#New_Gradient_Swatch_10-2)" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m73.0228,5.6979l11.0769,26.9003h0s26.9003-11.0768,26.9003-11.0768C104.8811,6.6681,87.8815-.4182,73.0228,5.6979Z" fill="url(#New_Gradient_Swatch_11-2)" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m81.0986,39.801c-.0006.0016-9.7364,24.1194-10.8888,26.9742,6.8023,2.7464,14.6406,2.9424,21.9619-.0724,14.861-6.1194,21.9464-23.1181,15.829-37.9744-.0006-.0014-.0013-.0028-.0019-.0043l-26.9002,11.0768Z" fill="url(#New_Gradient_Swatch_8-2)" stroke="#16748f" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <rect x="19.5" y="56.4999" width="55" height="55.0002" fill="url(#New_Gradient_Swatch_8-3)" stroke="#16748f" stroke-miterlimit="10"/>
+    <polygon points="19.5 99.7475 35.7963 82.3744 55.1481 93.6158 74.5 66.5342 74.5 111.5 19.5 111.4999 19.5 99.7475" fill="url(#New_Gradient_Swatch_10-3)" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m36.6977,82.5436c0,.5644-.4575,1.0219-1.0219,1.0219-.5644,0-1.0219-.4575-1.0219-1.0219,0-.5644.4575-1.0219,1.0219-1.0219s1.0219.4575,1.0219,1.0219Z" fill="url(#New_Gradient_Swatch_8-4)" stroke="#16748f" stroke-miterlimit="10"/>
+    <circle cx="55.0928" cy="93.785" r="1.0219" fill="url(#New_Gradient_Swatch_8-5)" stroke="#16748f" stroke-miterlimit="10"/>
+    <path d="m75.5318,66.7034c0,.5644-.4575,1.0219-1.0219,1.0219-.5644,0-1.0219-.4575-1.0219-1.0219s.4575-1.0219,1.0219-1.0219,1.0219.4575,1.0219,1.0219Z" fill="url(#New_Gradient_Swatch_8-6)" stroke="#16748f" stroke-miterlimit="10"/>
+    <circle cx="19.3246" cy="99.9167" r="1.0219" fill="url(#New_Gradient_Swatch_8-7)" stroke="#16748f" stroke-miterlimit="10"/>
+    <circle cx="69.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="64.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="59.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="49.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="44.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="39.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="34.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="29.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="61.5" r=".5" fill="#16748f"/>
+    <circle cx="69.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="64.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="59.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="49.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="44.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="39.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="34.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="29.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="66.5" r=".5" fill="#16748f"/>
+    <circle cx="69.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="64.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="59.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="49.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="44.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="39.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="34.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="29.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="71.5" r=".5" fill="#16748f"/>
+    <circle cx="64.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="59.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="49.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="44.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="39.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="34.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="29.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="76.5" r=".5" fill="#16748f"/>
+    <circle cx="59.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="49.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="44.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="39.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="34.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="29.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="81.5" r=".5" fill="#16748f"/>
+    <circle cx="59.5" cy="86.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="86.5" r=".5" fill="#16748f"/>
+    <circle cx="49.5" cy="86.5" r=".5" fill="#16748f"/>
+    <circle cx="44.5" cy="86.5" r=".5" fill="#16748f"/>
+    <circle cx="29.5" cy="86.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="86.5" r=".5" fill="#16748f"/>
+    <circle cx="54.5" cy="91.5" r=".5" fill="#16748f"/>
+    <circle cx="24.5" cy="91.5" r=".5" fill="#16748f"/>
+  </g>
+  <circle cx="99" cy="99" r="28.5" fill="url(#New_Gradient_Swatch_8-8)" stroke="#16748f" stroke-linejoin="round"/>
+  <path d="m111.545,100.7989l-18.7451-20.2989-2.3449,27.5306,7.3403-5.6866,5.2052,15.156,4.4646-1.4876-5.2204-15.1992,9.3003-.0143Z" fill="url(#Dark_Blue_Grad_2)" stroke="#16748f" stroke-miterlimit="10"/>
+</svg>

@@ -1,0 +1,153 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+
+body.compact {
+
+    /* cell list */
+    .sw-cell-image,
+    .sw-cell-image .aw-base-icon {
+        max-width: 24px;
+        max-height: 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .aw-widgets-cellListCellTitle {
+        font-size: $fontsize_large;
+    }
+
+    .aw-widgets-cellListItem .aw-base-small {
+        font-size: $fontsize_normal;
+    }
+
+    .aw-widgets-modelObjectTypeIconOverlay>.aw-base-icon {
+        visibility: hidden;
+    }
+
+    /* table */
+    aw-table .aw-jswidgets-cellTop .aw-jswidgets-dataGridCellText,
+    aw-table .aw-jswidgets-cellTop .aw-jswidgets-text {
+        font-size: $fontsize_normal;
+    }
+
+    aw-table aw-model-icon .aw-base-icon {
+        padding: 0 2px 2px 2px;
+    }
+
+    aw-table-command-cell .aw-jswidgets-cellTop {
+        align-items: normal;
+    }
+
+    aw-table-icon-cell .aw-widgets-gridCellColorContainer.aw-occmgmt-cellImageTooltip {
+        width: rem-calc(18);
+        height: rem-calc(18);
+    }
+
+    .aw-jswidgets-grid .aw-widgets-dataGridCellImage>.aw-base-icon {
+        min-width: rem-calc(18);
+        width: rem-calc(18);
+        height: rem-calc(18);
+        align-self: center;
+    }
+
+    .aw-jswidgets-grid .aw-widgets-dataGridCellImage {
+        max-height: rem-calc(18);
+        max-width: rem-calc(18);
+        min-width: rem-calc(18);
+        object-fit: cover;
+    }
+
+    /* PLTable Compact */
+    .aw-splm-table .aw-splm-tableIconCell .aw-base-icon {
+        min-height: rem-calc(18);
+        min-width: rem-calc(18);
+    }
+
+    /* PLTable Compact */
+    .aw-splm-tableIcon {
+        height: rem-calc(18);
+        width: rem-calc(18);
+    }
+
+    aw-splm-table .aw-splm-tablePinnedContainer .ui-grid-cell {
+        height: 24px;
+    }
+
+    aw-splm-table .aw-splm-tableScrollContainer .ui-grid-cell {
+        height: 24px;
+    }
+
+    aw-splm-table .aw-splm-tableCellTop,
+    aw-splm-table .aw-splm-tableCellTop .aw-splm-tableCellText {
+        font-size: $fontsize_normal;
+    }
+
+    .aw-splm-tablePropertyValueLinks {
+        font-size: $fontsize_normal;
+        padding: 0px;
+    }
+
+    .aw-splm-table .aw-jswidgets-editableGridCell {
+        min-height: rem-calc(16);
+    }
+
+    .aw-splm-table {
+        .aw-splm-tableRow {
+            .aw-splm-tableCellTop {
+                height: stretch;
+                padding: 0px;
+                margin: 0 $margin_xsmall;
+
+                .aw-splm-gridCellCommandsContainer {
+                    height: 100%;
+
+                    .aw-jswidgets-gridCellCommands {
+                        height: inherit;
+
+                        .aw-commands-command {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+
+            .aw-splm-tableTreeCommandCell {
+                .aw-jswidgets-tableNonEditContainer {
+                    height: auto;
+                }
+                box-sizing: content-box;
+            }
+        }
+        .aw-splm-tableEditCellTop {
+            .aw-widget-icon {
+                top: 4px;
+            }
+            .sw-checkbox-val {
+                >.sw-checkbox-pseudo::before {
+                    margin-top: $margin_xsmall;
+                    margin-bottom: $margin_xsmall;
+                }
+                >.sw-checkbox-pseudo::after {
+                    top: $margin_xsmall;
+                }
+            }
+            div.aw-layout-flexRowContainer {
+                .aw-command-bar.aw-commands-commandBarHorizontal {
+                    .aw-commands-commandIconButton{
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .aw-splm-table aw-command-bar {
+        &.aw-commands-commandBarHorizontal {
+            .aw-commands-commandIconButton {
+                height: 24px;
+                width: 24px;
+                padding: 2px;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,28 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="2.0858" y1="5.0858" x2="43.5" y2="46.5">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2323" style="stop-color:#FAFAFA"/>
+	<stop  offset="0.4964" style="stop-color:#EDEDED"/>
+	<stop  offset="0.775" style="stop-color:#D6D6D6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" d="M1.5,43.5h45v-33h-27l-3.4-5.1c-0.4-0.6-1-0.9-1.7-0.9H3.5
+	c-1.1,0-2,0.9-2,2V43.5z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="13.6626" y1="22.4492" x2="34.3374" y2="43.1241">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<path fill="url(#SVGID_2_)" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M21.7,14.6
+	l-11.9,22c-0.9,1.7,0.3,3.9,2.3,3.9h23.7c2,0,3.3-2.1,2.3-3.9l-11.9-22C25.3,12.7,22.7,12.7,21.7,14.6z"/>
+	<path fill="#FFFFFF" d="M21,38.1c-0.2,0-0.3-0.1-0.4-0.2l-4.8-6c-0.1-0.1-0.1-0.2-0.1-0.4c0-0.1,0.1-0.3,0.2-0.3l1.6-1.2
+		c0.1-0.1,0.2-0.1,0.3-0.1c0,0,0,0,0.1,0c0.1,0,0.3,0.1,0.3,0.2l2.8,3.5l6.8-8.5c0.1-0.1,0.2-0.2,0.3-0.2c0,0,0,0,0.1,0
+		c0.1,0,0.2,0,0.3,0.1l1.6,1.2c0.1,0.1,0.2,0.2,0.2,0.3c0,0.1,0,0.3-0.1,0.4l-8.8,11C21.3,38,21.2,38.1,21,38.1z"/>
+	<path fill="#147391" d="M28.2,25.4l1.6,1.2l-8.8,11l-4.8-6l1.6-1.2l3.2,4L28.2,25.4 M28.2,24.4c-0.3,0-0.6,0.1-0.8,0.4l-6.4,8
+		l-2.4-3c-0.2-0.2-0.5-0.4-0.8-0.4c-0.2,0-0.4,0.1-0.6,0.2l-1.6,1.2c-0.2,0.2-0.3,0.4-0.4,0.7c0,0.3,0,0.5,0.2,0.7l4.8,6
+		c0.2,0.2,0.5,0.4,0.8,0.4s0.6-0.1,0.8-0.4l8.8-11c0.2-0.2,0.2-0.5,0.2-0.7c0-0.3-0.2-0.5-0.4-0.7l-1.6-1.2
+		C28.7,24.4,28.4,24.4,28.2,24.4L28.2,24.4z"/>
+</svg>

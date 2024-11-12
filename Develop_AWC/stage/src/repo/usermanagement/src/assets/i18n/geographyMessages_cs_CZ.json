@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "Odhlásit",
+    "CONTINUE_TEXT": "Pokračovat",
+    "GEOGRAPHY_SECTION_TITLE" : "Geografie",
+    "GEOGRAPHY_SECTION_PROMPT" : "Zadejte své aktuální pracovní umístění",
+    "CONFIDENTIAL_SECTION_TITLE" : "Smlouva o mlčenlivosti",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "Souhlasím",
+    "GDPR_CHECKBOX_LABEL" : "Souhlasím",
+    "INITIAL_LIST_VALUE" : "Požadovaný..."
+}

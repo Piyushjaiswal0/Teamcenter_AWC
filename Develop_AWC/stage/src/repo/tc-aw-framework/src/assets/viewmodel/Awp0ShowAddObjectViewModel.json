@@ -1,0 +1,26 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-include.directive"
+    ],
+    "ctx": {
+        "panelContext": null
+    },
+    "actions": {
+        "saveData": {
+            "actionType": "JSFunction",
+            "method": "updateAddObjectData",
+            "inputData": {
+                "inputData": "{{ctx.panelContext}}",
+                "addObject": "{{data.addObject}}"
+            },
+            "outputData": {
+                "panelContext": ""
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "saveData"
+    }
+}

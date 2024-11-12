@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "報告",
+    "allSubLocation": "全部",
+    "reportBuilderSubLocation": "範本",
+    "runReportTitle": "產生報告",
+    "runReportOperationName": "執行報告",
+    "doWorkOperationName": "執行",
+    "execution": "執行",
+    "criteria": "準則",
+    "stylesheet": "樣式表",
+    "dataset": "儲存到檔名",
+    "myreportsSubLocation": "儲存的檔案",
+    "loadingMsg": "正在載入...",
+    "zeroSearchResults": "未找到結果",
+    "reportResultsChartTitle": "按以下依據篩選結果：",
+    "AddSnapshot": "快照",
+    "AddNew": "新建",
+    "doQueueOperation": "新增到佇列",
+    "runTcraReport": "執行",
+    "dosnapShotViewOperation": "檢視",
+    "myDashboard": "我的儀錶板",
+    "inOpenRptCommand": "開啟"
+}

@@ -1,0 +1,37 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awPropertyRichTextAreaValRenderFunction",
+            "options": {
+                "elementRefList": [
+                    "richTextAreaVal"
+                ]
+            },
+            "deps": "js/AwPropertyRichTextAreaValService"
+        },
+        "onUnmount": {
+            "actionType": "JSFunction",
+            "method": "unmountEditor",
+            "inputData": {
+                "editor": "{{data.ckEditorInstance}}"
+            },
+            "deps": "js/AwPropertyRichTextAreaValService"
+        }
+    },
+    "data": {
+        "ckEditorInstance": ""
+    },
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render",
+        "onUnmount": "onUnmount"
+    },
+    "props": {
+        "prop": {
+            "type": "field"
+        }
+    }
+}

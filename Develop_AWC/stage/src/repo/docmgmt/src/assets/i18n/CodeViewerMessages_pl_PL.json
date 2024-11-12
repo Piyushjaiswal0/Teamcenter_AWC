@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Kodowanie znaków",
+    "uvCheckoutTitle": "Wycofaj",
+    "uvCheckoutDesc": "Zarezerwuj wybór, aby uniemożliwić innym użytkownikom wprowadzanie zmian.",
+    "cancelCheckoutTitle": "Anuluj wycofanie",
+    "Awp0CancelCheckoutDesc": "Anuluj pobranie i odwróć zmiany.",
+    "uvCheckinTitle": "Zwróć",
+    "Awp0CheckinDesc": "Zwróć element i zapisz zmiany.",
+    "uvCodeWordWrapTitle": "Zawijaj wiersze",
+    "uvCodeWordWrapDesc": "Zawijaj długi tekst w wielu wierszach."
+}

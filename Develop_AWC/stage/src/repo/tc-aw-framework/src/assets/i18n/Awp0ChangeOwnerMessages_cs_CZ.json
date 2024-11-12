@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "Změnit vlastníka",
+ "change" : "Změnit",
+ "user" : "Uživatel",
+ "EmailAddress" : "E-mailová adresa:",
+ "PhoneNumber" : "Telefonní číslo:",
+ "singleObjectChangeOwnershipSuccess": "\"{0}\" bylo změněno.",
+ "multipleObjectsChangeOwnershipSuccess": "{0} z {1} výběrů bylo změněno.", 
+ "changeOwnershipForObjectFailure": "\"{0}\" nebylo změněno, protože nemáte oprávnění."
+}

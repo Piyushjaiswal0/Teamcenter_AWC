@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Report",
+    "allSubLocation": "Tutto",
+    "reportBuilderSubLocation": "Template",
+    "runReportTitle": "Genera report",
+    "runReportOperationName": "Esegui report",
+    "doWorkOperationName": "Esegui",
+    "execution": "Esecuzione",
+    "criteria": "Criteri",
+    "stylesheet": "Foglio di stile",
+    "dataset": "Salva file con nome",
+    "myreportsSubLocation": "File salvati",
+    "loadingMsg": "Caricamento...",
+    "zeroSearchResults": "Nessun risultato trovato",
+    "reportResultsChartTitle": "Filtra risultati per:",
+    "AddSnapshot": "Istantanee ",
+    "AddNew": "Nuovo",
+    "doQueueOperation": "Aggiungi alla coda",
+    "runTcraReport": "Esegui",
+    "dosnapShotViewOperation": "Visualizza",
+    "myDashboard": "Il mio dashboard",
+    "inOpenRptCommand": "Apri"
+}

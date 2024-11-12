@@ -1,0 +1,77 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  
+    <linearGradient id="linear-gradient" x1="3.75" y1="-316.25" x2="45.25" y2="-357.75" gradientTransform="matrix(1, 0, 0, -1, 0, -310)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="23.5" y1="11.356" x2="31.5" y2="19.356" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="18.006" y1="16.85" x2="28.078" y2="26.922" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.159" stop-color="#a4d0dc"/>
+      <stop offset="0.706" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="30.5" y1="-313.5" x2="42.5" y2="-325.5" gradientTransform="matrix(1, 0, 0, -1, 0, -310)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  
+  <polygon points="33.5 0.5 9.5 0.5 9.5 47.5 45.5 47.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="35.5 15.356 27.5 10.689 19.5 15.356 27.5 20 35.5 15.356" fill="url(#linear-gradient-2)"/>
+  <polygon points="19.5 15.356 19.5 24.689 24.319 27.5 27.5 27.5 27.5 20 19.5 15.356" fill="url(#linear-gradient-3)"/>
+  <polygon points="27.5 20 27.5 27.5 30.681 27.5 35.5 24.689 35.5 15.356 27.5 20" fill="#3c91af"/>
+  <polyline points="19.5 15.356 27.5 20 35.5 15.356" fill="none" stroke="#147391"/>
+  <polyline points="19.75 20.022 27.555 24.575 35.36 20.022" fill="none" stroke="#147391"/>
+  <line x1="27.5" y1="20" x2="27.5" y2="27.5" fill="#3c91af" stroke="#147391" stroke-linejoin="round"/>
+  <path d="M27.5,10.689l-8,4.667v9.333L24.319,27.5h6.362L35.5,24.689V15.356Z" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="23.5 27 23.5 17.75 31.305 13.195" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="23.695 13.193 31.5 17.746 31.5 27" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <circle cx="27.5" cy="20" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="27.5" cy="24.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="19.5" cy="15.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="13.017" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="27.5" cy="15.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="27.5" cy="10.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="13" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="35.5" cy="24.668" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="17.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="22" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="19.5" cy="20" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="23.5" cy="27" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="27" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="22.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="31.5" cy="17.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="19.5" cy="24.668" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="35.5" cy="20" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <circle cx="35.5" cy="15.5" r="1" fill="#f0f0f0" stroke="#147391"/>
+  <polyline points="25.5 5.5 27.5 7.5 29.5 5.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="27.5" y1="2.5" x2="27.5" y2="7.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="17.5 10.5 19.5 12.5 21.5 10.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="35 12.5 35.5 13 36 12.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="19.5" y1="7.5" x2="19.5" y2="12.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="33.5 0.5 33.5 12.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <rect x="0.5" y="27.5" width="47" height="16" fill="#464646" stroke="#464646" stroke-miterlimit="10"/>
+  
+    <path d="M3.933,38.979V31.627h1.22v7.352Z" fill="#fff"/>
+    <path d="M10.163,38.979V36.03a1.952,1.952,0,0,0-.249-1.1.9.9,0,0,0-.8-.362,1.12,1.12,0,0,0-.89.409,1.5,1.5,0,0,0-.351,1.017v2.984H6.687v-5.25H7.871v.84h.02a1.881,1.881,0,0,1,1.7-.968,1.615,1.615,0,0,1,1.3.533,2.432,2.432,0,0,1,.459,1.62v3.225Z" fill="#fff"/>
+    <path d="M15.387,38.928a1.467,1.467,0,0,1-.382.12,2.535,2.535,0,0,1-.53.058q-1.543,0-1.543-1.661V34.683H12.06v-.954h.872v-1.21l1.189-.365v1.575h1.266v.954H14.121v2.543a1.088,1.088,0,0,0,.179.7.712.712,0,0,0,.564.207,1.041,1.041,0,0,0,.259-.043.934.934,0,0,0,.264-.116Z" fill="#fff"/>
+    <path d="M17.1,36.7a1.532,1.532,0,0,0,.436,1.092,1.607,1.607,0,0,0,1.143.375,2.588,2.588,0,0,0,.856-.142,2.728,2.728,0,0,0,.718-.361v1a2.59,2.59,0,0,1-.8.317,4.451,4.451,0,0,1-1.061.123,2.388,2.388,0,0,1-1.851-.714,2.832,2.832,0,0,1-.656-1.987,3.164,3.164,0,0,1,.325-1.471,2.417,2.417,0,0,1,.9-.982,2.391,2.391,0,0,1,1.268-.351,2.163,2.163,0,0,1,1.69.666,2.652,2.652,0,0,1,.6,1.845v.59Zm2.394-.891a1.394,1.394,0,0,0-.292-.955,1.046,1.046,0,0,0-.821-.328,1.137,1.137,0,0,0-.835.357,1.648,1.648,0,0,0-.446.926Z" fill="#fff"/>
+    <path d="M24.621,34.882a.991.991,0,0,0-.3-.123,1.516,1.516,0,0,0-.384-.056.982.982,0,0,0-.835.441,1.91,1.91,0,0,0-.319,1.148v2.687H21.6v-5.25H22.78v1.02H22.8a1.731,1.731,0,0,1,.528-.82,1.238,1.238,0,0,1,.816-.292,1.255,1.255,0,0,1,.476.071Z" fill="#fff"/>
+    <path d="M28.979,38.758a2.954,2.954,0,0,1-1.492.348,2.733,2.733,0,0,1-1.351-.328,2.3,2.3,0,0,1-.923-.932,2.773,2.773,0,0,1-.33-1.354,3.243,3.243,0,0,1,.34-1.513,2.421,2.421,0,0,1,.99-1.017,3.039,3.039,0,0,1,1.5-.361,3.375,3.375,0,0,1,.691.074,2.062,2.062,0,0,1,.57.192V34.99a2.034,2.034,0,0,0-1.21-.421,1.559,1.559,0,0,0-1.2.495,1.871,1.871,0,0,0-.459,1.321,1.8,1.8,0,0,0,.442,1.286,1.565,1.565,0,0,0,1.194.467,1.859,1.859,0,0,0,.61-.118,2.38,2.38,0,0,0,.621-.323Z" fill="#fff"/>
+    <path d="M30.825,36.7a1.532,1.532,0,0,0,.436,1.092,1.607,1.607,0,0,0,1.143.375,2.593,2.593,0,0,0,.856-.142,2.766,2.766,0,0,0,.719-.361v1a2.618,2.618,0,0,1-.8.317,4.451,4.451,0,0,1-1.061.123,2.387,2.387,0,0,1-1.851-.714,2.827,2.827,0,0,1-.657-1.987,3.164,3.164,0,0,1,.327-1.471,2.406,2.406,0,0,1,2.17-1.333,2.162,2.162,0,0,1,1.69.666,2.657,2.657,0,0,1,.6,1.845v.59Zm2.394-.891a1.394,1.394,0,0,0-.292-.955,1.044,1.044,0,0,0-.821-.328,1.137,1.137,0,0,0-.835.357,1.648,1.648,0,0,0-.446.926Z" fill="#fff"/>
+    <path d="M40.423,36.215a3.189,3.189,0,0,1-.652,2.107,2.165,2.165,0,0,1-1.763.784,1.684,1.684,0,0,1-1.482-.789h-.02v3.077H35.322V33.729h1.184v.84h.02A1.968,1.968,0,0,1,38.27,33.6a1.931,1.931,0,0,1,1.579.7A2.938,2.938,0,0,1,40.423,36.215Zm-1.231-.021A1.863,1.863,0,0,0,38.847,35a1.168,1.168,0,0,0-.967-.434,1.271,1.271,0,0,0-1,.436,1.649,1.649,0,0,0-.382,1.128v.672a1.322,1.322,0,0,0,.363.956,1.212,1.212,0,0,0,.909.377,1.233,1.233,0,0,0,1.05-.5A2.387,2.387,0,0,0,39.192,36.194Z" fill="#fff"/>
+    <path d="M44.212,38.928a1.441,1.441,0,0,1-.382.12,2.535,2.535,0,0,1-.53.058q-1.543,0-1.543-1.661V34.683h-.872v-.954h.872v-1.21l1.189-.365v1.575h1.266v.954H42.946v2.543a1.082,1.082,0,0,0,.18.7.709.709,0,0,0,.563.207,1.041,1.041,0,0,0,.259-.043.921.921,0,0,0,.264-.116Z" fill="#fff"/>
+  
+</svg>

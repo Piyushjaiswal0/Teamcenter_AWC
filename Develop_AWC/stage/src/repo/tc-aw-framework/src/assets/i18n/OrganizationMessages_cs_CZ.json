@@ -1,0 +1,11 @@
+{
+    "Organization": "Organizace",
+    "orgTreeFilterText": "Filtr",
+    "resultsText": "Výsledky",
+    "noFiltersFound": "Nebyly nalezeny žádné výsledky",
+    "noOrgTreeResultsFound": "Nebyly nalezeny žádné výsledky pro řetězec filtru \"{0}\".",
+    "orgFilterUsage": "<br>Například {0}:\"Ed Engineer\" vrací všechny uživatele pro Ed Engineer.<br>Platná pole jsou {1} a{2}.",
+    "usageMessage": "\"{0}\" není platný řetězec filtru.{1}",
+    "orgEscapeChars": "<br>Řetězce filtru obsahující uvozovky musí začínat lomítkem (\\\").{0}",
+    "advancedSearchMessage": "<br>Řetězce filtru obsahující dvojtečky musí být v uvozovkách (\" \") pokud nejsou použity k nalezení konkrétní hodnoty pole.{0}"
+}

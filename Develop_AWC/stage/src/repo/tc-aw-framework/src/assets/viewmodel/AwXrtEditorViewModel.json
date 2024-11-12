@@ -1,0 +1,284 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "props": {
+    },
+    "data": {
+        "editor": {
+        },
+        "content": "",
+        "newContent": "",
+        "datasetObject": {},
+        "datasetName": "",
+        "editing": false,
+        "datasetNameTextBox": {
+            "type": "STRING",
+            "isEditable": true,
+            "isModifiable": true,
+            "hasLov": false,
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "scopeListBox": {
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "scopeValues": {
+            "type": "STRING",
+            "dbValue": [
+                {
+                    "propDisplayValue": "Site",
+                    "dispValue": "Site",
+                    "propInternalValue": "Site"
+                },
+                {
+                    "propDisplayValue": "Group",
+                    "dispValue": "Group",
+                    "propInternalValue": "Group"
+                },
+                {
+                    "propDisplayValue": "Role",
+                    "dispValue": "Role",
+                    "propInternalValue": "Role"
+                },
+                {
+                    "propDisplayValue": "User",
+                    "dispValue": "User",
+                    "propInternalValue": "User"
+                }
+            ]
+        },
+        "objectTypeListBox": {
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "xrtTypeListBox": {
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "xrtTypeValues": {
+            "type": "STRING",
+            "dbValue": [
+                {
+                    "propDisplayValue": "Summary",
+                    "dispValue": "Summary",
+                    "propInternalValue": "Summary"
+                },
+                {
+                    "propDisplayValue": "Create",
+                    "dispValue": "Create",
+                    "propInternalValue": "Create"
+                },
+                {
+                    "propDisplayValue": "Information",
+                    "dispValue": "Information",
+                    "propInternalValue": "Information"
+                },
+                {
+                    "propDisplayValue": "Revise",
+                    "dispValue": "Revise",
+                    "propInternalValue": "Revise"
+                },
+                {
+                    "propDisplayValue": "Save As",
+                    "dispValue": "Save As",
+                    "propInternalValue": "Save As"
+                }
+            ]
+        },
+        "locationListBox": {
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "sublocationListBox": {
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awXrtEditorRenderFunction",
+            "deps": "js/AwXrtEditorService"
+        },
+        "onMount": {
+            "actionType": "JSFunction",
+            "method": "awXrtEditorOnMount",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/AwXrtEditorService"
+        },
+        "onUnMount": {
+            "actionType": "JSFunction",
+            "method": "awXrtEditorOnUnMount",
+            "inputData": {
+            },
+            "deps": "js/AwXrtEditorService"
+        },
+        "preStartEdit": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "confirmOverrideSiteXRT",
+                        "condition": "(ctx.userSession.props.group_name.dbValue !== 'dba' && data.scope !== 'User')"
+                    },
+                    {
+                        "name": "startEditXRT",
+                        "condition": "(ctx.userSession.props.group_name.dbValue === 'dba' || data.scope === 'User')"
+                    }
+                ]
+            }
+        },
+        "startEdit": {
+            "actionType": "JSFunction",
+            "method": "startEdit",
+            "inputData": {
+                "data": "{{data}}",
+                "groupName": "{{ctx.userSession.props.group_name.dbValue}}",
+                "userName": "{{ctx.userSession.props.user_id.uiValue}}"
+            },
+            "outputData": {
+                "editing": "editing",
+                "scopeListBox": "scopeListBox",
+                "datasetNameTextBox": "datasetNameTextBox",
+                "editDatasetName": "editDatasetName"
+            },
+            "deps": "js/AwXrtEditorService"
+        },
+        "cancelEdit": {
+            "actionType": "JSFunction",
+            "method": "cancelEdit",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "editing": "editing",
+                "newContent": "newContent",
+                "scopeListBox": "scopeListBox"
+            },
+            "deps": "js/AwXrtEditorService"
+        },
+        "saveEdit": {
+            "actionType": "JSFunctionAsync",
+            "method": "saveEdit",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "editing": "editing",
+                "content": "content",
+                "datasetName": "datasetName",
+                "datasetObject": "datasetObject",
+                "scope": "scope"
+            },
+            "deps": "js/AwXrtEditorService"
+        },
+        "loadXRT": {
+            "actionType": "JSFunction",
+            "method": "loadXRT",
+            "inputData": {
+                "data": "{{data}}",
+                "type": "{{data.objectTypeListBox.dbValue}}",
+                "stylesheetType": "{{data.xrtTypeListBox.dbValue}}",
+                "preferenceLocation": "{{data.scopeListBox.dbValue}}",
+                "client": "AWC",
+                "location": "{{data.locationListBox.dbValue}}",
+                "sublocation": "{{data.sublocationListBox.dbValue}}"
+            },
+            "deps": "js/AwXrtEditorService"
+        }
+    },
+    "ctx": {
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "onMount",
+        "onUnmount": "onUnMount"
+    },
+    "onEvent": [ {
+            "eventId": "startEditXRTEditor",
+            "action": "preStartEdit"
+        }, {
+            "eventId": "cancelEditXRTEditor",
+            "action": "cancelEdit"
+        }, {
+            "eventId": "saveEditXRTEditor",
+            "action": "saveEdit"
+        }, {
+            "eventId": "startEditXRT",
+            "action": "startEdit"
+        },
+        {
+            "eventId": "confirmOverrideSiteXRT",
+            "message": "confirmOverrideSiteXRTMessage"
+        }
+    ],
+    "messages": {
+        "confirmOverrideSiteXRTMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.overrideMsg}}",
+            "messageTextParams": ["{{data.datasetName}}"],
+            "navigationOptions": [ {
+                    "option": "Cancel",
+                    "text": "{{i18n.cancel}}"
+                },
+                {
+                    "option": "Override",
+                    "text": "{{i18n.override}}",
+                    "action": "startEdit"
+                }
+            ]
+        }
+    },
+    "i18n": {
+        "scopeLabel": [
+            "XRTEditorMessages"
+        ],
+        "objectTypeLabel": [
+            "XRTEditorMessages"
+        ],
+        "xrtTypeLabel": [
+            "XRTEditorMessages"
+        ],
+        "locationLabel": [
+            "XRTEditorMessages"
+        ],
+        "sublocationLabel": [
+            "XRTEditorMessages"
+        ],
+        "loadButtonText": [
+            "XRTEditorMessages"
+        ],
+        "editLabel": [
+            "XRTEditorMessages"
+        ],
+        "readOnlyLabel": [
+            "XRTEditorMessages"
+        ],
+        "overrideMsg": [
+            "XRTEditorMessages"
+        ],
+        "cancel": [
+            "XRTEditorMessages"
+        ],
+        "override": [
+            "XRTEditorMessages"
+        ]
+    }
+}

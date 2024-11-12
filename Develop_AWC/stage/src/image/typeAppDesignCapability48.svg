@@ -1,0 +1,38 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="7.256" y1="7.184" x2="39.74" y2="39.668" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="12.192" y1="12.192" x2="34.808" y2="34.809" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <path d="M46.5,26.3V20.553l-4.681-1.661a18.768,18.768,0,0,0-2.179-5.2l2.131-4.482-4.06-4.059L33.2,7.3a18.748,18.748,0,0,0-5.171-2.137L26.371.5H20.629L18.967,5.162A18.749,18.749,0,0,0,13.8,7.3L9.288,5.152,5.227,9.213,7.358,13.7a18.762,18.762,0,0,0-2.177,5.193L.5,20.553V26.3l4.637,1.646a18.767,18.767,0,0,0,2.183,5.3l-2.091,4.4L9.289,41.7l4.379-2.077a18.807,18.807,0,0,0,5.317,2.22L20.629,46.5h5.742l1.644-4.656a18.811,18.811,0,0,0,5.327-2.226l4.37,2.077,4.061-4.06-2.09-4.4a18.771,18.771,0,0,0,2.18-5.294Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <circle cx="23.5" cy="23.5" r="16" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <circle cx="14.5" cy="29.5" r="1.5" fill="#464646"/>
+  <circle cx="12.5" cy="25.5" r="1.5" fill="#464646"/>
+  <circle cx="14.5" cy="19.5" r="1.5" fill="#464646"/>
+  <polyline points="12.5 25.5 14.5 23.5 19 23.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <circle cx="32.5" cy="17.5" r="1.5" fill="#464646"/>
+  <circle cx="34.5" cy="21.5" r="1.5" fill="#464646"/>
+  <circle cx="32.5" cy="27.5" r="1.5" fill="#464646"/>
+  <polyline points="34.5 21.5 32.5 23.5 28 23.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="19.5 35.5 19.5 27.5 19.5 27.5 16.5 27.5 14.5 29.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="27.5 31.5 27.5 27.5 32.5 27.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="23.5" y1="33.5" x2="23.5" y2="28" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="27.5 11 27.5 19.5 27.5 19.5 30.5 19.5 32.5 17.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="19.5 15 19.5 19.5 15 19.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <circle cx="19.5" cy="15.5" r="1.5" fill="#464646"/>
+  <circle cx="19.5" cy="35.5" r="1.5" fill="#464646"/>
+  <circle cx="23.5" cy="33.5" r="1.5" fill="#464646"/>
+  <circle cx="27.5" cy="31.5" r="1.5" fill="#464646"/>
+  <circle cx="23.5" cy="13.5" r="1.5" fill="#464646"/>
+  <circle cx="27.5" cy="11.5" r="1.5" fill="#464646"/>
+  <line x1="23.5" y1="13.5" x2="23.5" y2="19" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

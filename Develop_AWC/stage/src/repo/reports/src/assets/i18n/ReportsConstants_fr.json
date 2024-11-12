@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Rapports",
+    "allSubLocation": "Tous",
+    "reportBuilderSubLocation": "Modèles-type",
+    "runReportTitle": "Générer le rapport",
+    "runReportOperationName": "Exécuter le rapport",
+    "doWorkOperationName": "Exécuter",
+    "execution": "Exécution",
+    "criteria": "Critères",
+    "stylesheet": "Feuille de style",
+    "dataset": "Sauvegarder vers le nom de fichier",
+    "myreportsSubLocation": "Fichiers enregistrés",
+    "loadingMsg": "Chargement...",
+    "zeroSearchResults": "Aucun résultat trouvé",
+    "reportResultsChartTitle": "Filtrer les résultats par:",
+    "AddSnapshot": "Instantanés",
+    "AddNew": "Nouveau",
+    "doQueueOperation": "Ajouter à file d'attente",
+    "runTcraReport": "Exécuter",
+    "dosnapShotViewOperation": "Afficher",
+    "myDashboard": "Mon Tableau de bord",
+    "inOpenRptCommand": "Ouverte"
+}

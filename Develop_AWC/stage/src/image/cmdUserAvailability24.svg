@@ -1,0 +1,10 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<path class="aw-theme-iconOutline" fill="#464646" d="M7.5,10C5,10,3,7,3,4.4C3,2,5,0,7.5,0S12,2,12,4.4C12,7,10,10,7.5,10z M7.5,1C5.6,1,4,2.5,4,4.4
+	C4,6.4,5.6,9,7.5,9S11,6.4,11,4.4C11,2.5,9.4,1,7.5,1z"/>
+<rect class="aw-theme-iconOutline" fill="#464646" x="3" y="17" width="1" height="5"/>
+<rect class="aw-theme-iconOutline" fill="#464646" x="13" y="23" width="11" height="1"/>
+<path class="aw-theme-iconOutline" fill="#464646" d="M13.5,11c-0.4-0.4-0.9-0.7-1.4-0.9c-0.2-0.1-0.4-0.1-0.5,0c-2.4,1.7-5.6,1.7-8,0c-0.1-0.1-0.3-0.1-0.5,0
+	C1.2,11,0,12.8,0,14.7V22h1v-7.3c0-1.4,0.9-2.8,2.3-3.6c2.6,1.7,6,1.7,8.6,0c0.2,0.1,0.5,0.3,0.7,0.5"/>
+<path class="aw-theme-iconOutline" fill="#464646" d="M24,22h-5V8h5V22z M20,21h3V9h-3V21z"/>
+<path class="aw-theme-iconOutline" fill="#464646" d="M18,22h-5v-9h5V22z M14,21h3v-7h-3V21z"/>
+</svg>

@@ -1,0 +1,72 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "initVisLogging": {
+            "actionType": "JSFunction",
+            "method": "initVisLogging",
+            "outputData": {
+                "isLoggingEnabled": ""
+            },
+            "deps": "js/aw3dViewerService"
+        },
+        "startLogging": {
+            "actionType": "JSFunction",
+            "method": "startVisLogging",
+            "outputData": {
+                "isLoggingEnabled": ""
+            },
+            "deps": "js/aw3dViewerService"
+        },
+        "stopLogging": {
+            "actionType": "JSFunction",
+            "method": "stopVisLogging",
+            "outputData": {
+                "isLoggingEnabled": ""
+            },
+            "deps": "js/aw3dViewerService"
+        }
+    },
+    "dataProviders": {
+        "visModuleValueProvider": {
+            "response": "{{data.visModuleValues}}"
+        }
+    },
+    "data": {
+        "listBoxVisModules": {
+            "displayName": "{{i18n.visModules}}",
+            "type": "STRING",
+            "isRequired": true,
+            "hasLov": "true",
+            "isEditable": "true",
+            "emptyLOVEntry": false,
+            "dataProvider": "visModuleValueProvider",
+            "uiValue": "{{i18n.svModule}}",
+            "dbValue": "STRUCTURE_VISUALIZATION"
+        },
+        "visModuleValues": [ {
+            "propDisplayValue": "{{i18n.svModule}}",
+            "propInternalValue": "STRUCTURE_VISUALIZATION"
+        } ],
+        "isLoggingEnabled": null
+    },
+    "conditions": {
+        "isVisLoggingInProgress": {
+            "expression": "data.isLoggingEnabled"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initVisLogging"
+    },
+    "i18n": {
+        "options": [ "Awv0threeDViewerMessages" ],
+        "start": [ "Awv0threeDViewerMessages" ],
+        "stop": [ "Awv0threeDViewerMessages" ],
+        "svModule": [ "Awv0threeDViewerMessages" ],
+        "visModules": [ "Awv0threeDViewerMessages" ]
+    },
+    "ctx": {
+        "visLoggingInProgress": {
+            "type": "boolean"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "Organization": "Organisation",
+    "orgTreeFilterText": "Filtre",
+    "resultsText": "Résultats",
+    "noFiltersFound": "Aucun résultat trouvé",
+    "noOrgTreeResultsFound": "Aucun résultat trouvé pour chaine de filtrage \"{0}\".",
+    "orgFilterUsage": "<br>Par exemple, {0}:\"Ed Engineer\" renvoie tous les utilisateurs pour Ed Engineer.<br>Champs valables: {1}, et {2}.",
+    "usageMessage": "\"{0}\" n'est pas une chaîne de filtre valable.{1}",
+    "orgEscapeChars": "<br>Chaînes de filtre contenant des guillemets doivent être précédées d'une barre oblique inverse (\\\").{0}",
+    "advancedSearchMessage": "<br>Chaînes de filtre contenant des deux-points (:) doivent être écrites entre guillemets (\" \") sauf si elles sont utilisées pour trouver une valeur de champ spécifique.{0}"
+}

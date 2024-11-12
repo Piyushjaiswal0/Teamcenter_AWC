@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="19.5" y1="0.5" x2="45.5" y2="26.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="14.7028" cy="144.4007" r="8.2545" gradientTransform="translate(13.3266 -107.808) scale(0.7891 0.7911)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.3654" stop-color="#539eb6"/>
+      <stop offset="1" stop-color="#147391"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="28.6422" cy="144.4007" r="8.2545" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="14.7028" cy="158.3045" r="8.2545" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="28.6422" cy="158.3045" r="8.2545" xlink:href="#radial-gradient"/>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="14.5" y1="35.5395" x2="47.5" y2="35.5395" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2284" stop-color="#fafafa"/>
+      <stop offset="0.4881" stop-color="#ededed"/>
+      <stop offset="0.7621" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4-2" x1="27.5" y1="34" x2="30.5" y2="37" xlink:href="#New_Gradient_Swatch_4"/>
+  <path d="M18.5,1.5l-12,12,12,12h28V1.5Zm-5,14a2,2,0,1,1,2-2A2,2,0,0,1,13.5,15.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <line x1="13" y1="13.5" y2="13.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M30.5,8.0007A4.5,4.5,0,1,1,26,3.5,4.5024,4.5024,0,0,1,30.5,8.0007Z" stroke="#147391" fill="url(#radial-gradient)"/>
+  <path d="M41.5,8.0007A4.5,4.5,0,1,1,37,3.5,4.5024,4.5024,0,0,1,41.5,8.0007Z" stroke="#147391" fill="url(#radial-gradient-2)"/>
+  <path d="M30.5,19.0007A4.5,4.5,0,1,1,26,14.5,4.5024,4.5024,0,0,1,30.5,19.0007Z" stroke="#147391" fill="url(#radial-gradient-3)"/>
+  <path d="M41.5,19.0007A4.5,4.5,0,1,1,37,14.5,4.5024,4.5024,0,0,1,41.5,19.0007Z" stroke="#147391" fill="url(#radial-gradient-4)"/>
+  <path d="M32,43.5H28.5a2,2,0,0,1-2-2h0a2,2,0,0,1,2-2h-1a2,2,0,0,1-2-2h0a2,2,0,0,1,2-2l-10.9915-.0172A1.9914,1.9914,0,0,1,14.5,33.4914h0A1.9914,1.9914,0,0,1,16.4914,31.5H35.3939c-4.0551-7.7672,2.6182-9.0666,2.8178-7.1129a11.5752,11.5752,0,0,0,6.01,8.846h1.3366S47.5,34.1975,47.5,39.8957s-1.1867,6.4986-1.1867,6.4986-3.1921.6105-4.3787,0C41.314,47.3342,36,47.5,36,47.5H30.5a2,2,0,0,1-2-2h0a2,2,0,0,1,2-2Z" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4)"/>
+  <line x1="26" y1="35.5" x2="32" y2="35.5" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-2)"/>
+</svg>

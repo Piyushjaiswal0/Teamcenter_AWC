@@ -1,0 +1,37 @@
+{
+    "actions": {
+
+        "updatePerformanceDisplayData": {
+            "actionType": "JSFunction",
+            "method": "updatePerformanceDisplayData",
+            "inputData": {
+                "activitytoUpdate": "{{subPanelContext.slotKey}}"
+            },
+            "outputData": {
+                "plstatsVisData": ""
+            },
+            "deps": "js/viewerPerformance.service"
+        },
+        "resetPerformanceDisplayData": {
+            "actionType": "JSFunctionAsync",
+            "method": "resetPerformanceDisplayData",
+            "inputData": {
+                "activitytoReset": "{{subPanelContext.slotKey}}"
+            },
+            "outputData": {
+                "plstatsVisData": ""
+            },
+            "deps": "js/viewerPerformance.service"
+        }
+    },
+
+    "onEvent": [ {
+            "eventId": "plStats.update",
+            "action": "updatePerformanceDisplayData"
+        },
+        {
+            "eventId": "plStats.reset",
+            "action": "resetPerformanceDisplayData"
+        }
+    ]
+}

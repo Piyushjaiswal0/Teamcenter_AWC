@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="3.5429" y1="8.4571" x2="44.4571" y2="49.3713" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="9.7929" y1="-7.6213" x2="38.2071" y2="20.7929" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M.5,11.5V45.5c0,1.1046,.8954,2,2,2H45.5c1.1046,0,2-.8954,2-2V11.5H.5Z" fill="url(#paper_gradient)"/>
+    <path d="M47.5,11.5V2.5c0-1.1046-.8954-2-2-2H2.5C1.3954,.5,.5,1.3954,.5,2.5V11.5H47.5Z" fill="url(#Dark_Blue_Grad)"/>
+    <line x1=".5" y1="11.5" x2="47.5" y2="11.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <line x1="12.5" y1="12" x2="12.5" y2="47" fill="none" stroke="#6e6e6e"/>
+    <line x1="24" y1="12" x2="24" y2="47" fill="none" stroke="#6e6e6e"/>
+    <line x1="35.5" y1="12" x2="35.5" y2="47" fill="none" stroke="#6e6e6e"/>
+    <line x1="1" y1="38.5" x2="47" y2="38.5" fill="none" stroke="#6e6e6e"/>
+    <line x1="1" y1="29.5" x2="48" y2="29.5" fill="none" stroke="#6e6e6e"/>
+    <line x1="1" y1="20.5" x2="47" y2="20.5" fill="none" stroke="#6e6e6e"/>
+    <path d="M13.5,5.9999c0,.8285-.6716,1.5001-1.5001,1.5001s-1.4999-.6715-1.4999-1.5001,.6715-1.4999,1.4999-1.4999,1.5001,.6716,1.5001,1.4999Z" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M37.5,5.9999c0,.8285-.6715,1.5001-1.4999,1.5001s-1.5001-.6715-1.5001-1.5001,.6715-1.4999,1.5001-1.4999,1.4999,.6716,1.4999,1.4999Z" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x=".5" y=".5" width="47" height="47" rx="2" ry="2" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

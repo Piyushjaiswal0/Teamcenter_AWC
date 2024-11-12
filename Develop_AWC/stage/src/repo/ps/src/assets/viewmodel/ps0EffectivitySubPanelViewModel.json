@@ -1,0 +1,361 @@
+{
+    "schemaVersion": "1.0.0",
+
+    "data": {
+        "unitRangeText": {
+            "displayName": "{{i18n.unitEffectivity}}",
+            "type": "STRING",
+            "dbValue": "{{props.subPanelContext.expEffPanelState.unitRangeText.dbValue}}",
+            "isRequired": "true",
+            "validationCriteria": [
+                {
+                    "condition": "conditions.isUnitPositive",
+                    "value": "{{i18n.invalidUnitRange}}"
+                },
+                {
+                    "condition": "conditions.isTooLarge",
+                    "value": "{{i18n.invalidUnitRange}}"
+                },
+                {
+                    "condition": "conditions.isValidUnit",
+                    "value": "{{i18n.invalidUnitRange}}"
+                },
+                {
+                    "condition": "conditions.isBadSyntax",
+                    "value": "{{i18n.invalidUnitRange}}"
+                }]
+        },
+        "dateOrUnitEffectivityTypeRadioButton": {
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "propertyRadioTrueText": "{{i18n.dateEffectivity}}",
+            "propertyRadioFalseText": "{{i18n.unitEffectivity}}",
+            "dbValue" : "{{props.subPanelContext.expEffPanelState.dateOrUnitEffectivityTypeRadioButton.dbValue}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "startDate": {
+            "dbValue": "{{props.subPanelContext.expEffPanelState.startDate.dbValue}}",
+            "uiValue": "{{props.subPanelContext.expEffPanelState.startDate.dbValue}}",
+            "type": "DATE",
+            "isRequired": "true",
+            "displayName": "{{i18n.startDate}}",
+            "validationCriteria": [ {
+                "condition": "data.endDate.dbValue !== '' && !conditions.isEndDateGreaterThanStartDate",
+                "value": "{{i18n.invalidDateRangeError}}"
+            } ]
+        },
+        "endDate": {
+            "dbValue": "{{props.subPanelContext.expEffPanelState.endDate.dbValue}}",
+            "type": "DATETIME",
+            "isRequired": "true"
+        },
+        "endDateList": {
+            "type": "STRING",
+            "dbValue": [
+                { "propDisplayValue": "{{i18n.dateEffectivity}}", "propInternalValue": "Date" },
+                { "propDisplayValue": "{{i18n.upTextValue}}", "propInternalValue": "UP" },
+                { "propDisplayValue": "{{i18n.soTextValue}}", "propInternalValue": "SO" }
+            ]
+        },
+        "endDateOptions": {
+            "type": "STRING",
+            "isRequired": "true",
+            "hasLov": true,
+            "displayName": "{{i18n.endDate}}",
+            "isEditable": "true",
+            "uiValue": "{{props.subPanelContext.expEffPanelState.endDateOptions.uiValue}}",
+            "dbValue": "{{props.subPanelContext.expEffPanelState.endDateOptions.dbValue}}"
+        },
+        "endItemLabel": {
+            "displayName": "{{i18n.endItemMessage}}",
+            "type": "STRING"
+        },
+        "endItemRequiredLabel": {
+            "displayName": "{{i18n.endItemRequired}}",
+            "type": "STRING"
+        },
+        "endItemVal": {
+            "type": "STRING",
+            "dbValue": "{{props.subPanelContext.expEffPanelState.endItemVal.dbValue}}",
+            "uiValue": "{{props.subPanelContext.expEffPanelState.endItemVal.uiValue}}",
+            "displayName": "{{i18n.endItemMessage}}"
+        },
+        "typeFilter": "ItemRevision",
+        "navigateCommand": {
+            "action": "navigateToEndItemPanelAction",
+            "iconName": "Replace",
+            "tooltip": "{{i18n.replaceBtn}}"
+        }
+    },
+    "actions":{
+        "updateDateOrUnitEffectivityAndClearFields": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateRadioDbValueOnStateAction"
+                },
+                {
+                    "action": "initializeAddPanelAction"
+                }
+            ]
+        },
+        "updateRadioDbValueOnStateAction": {
+            "actionType": "JSFunction",
+            "method": "updateRadioDbValueOnState",
+            "inputData": {
+                "par1": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "outputData": {
+                "dateOrUnitEffectivityTypeRadioButton.dbValue": ""
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+        "initializeAddPanelAction": {
+            "actionType": "JSFunction",
+            "method": "initializeAddPanel",
+            "inputData": {
+                "data":"{{data}}",
+                "subPanelContext": "{{props.subPanelContext}}"
+            },
+            "outputData":{
+                "endDateOptions.dbValue" : "endDateOptionsDbValue",
+                "endDateOptions.uiValue" : "endDateOptionsUiValue",
+                "startDate.dbValue": "startDateDbValue",
+                "endDate.dbValue": "endDateDbValue",
+                "startDate.dateApi.dateObject": "startDateDateApiDateObject",
+                "endDate.dateApi.dateObject" :"endDateDateApiDateObject",
+                "unitRangeText.dbValue":"unitRangeTextDdbValue",
+                "endItemVal":"endItemVal"
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+        "updatedbValueOnContextToDefaultAction":{
+            "actionType": "JSFunction",
+            "method": "updatedbValueOnContextToDefault",
+            "inputData": {
+                "par1": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+        "navigateToPs0DisplayandRemovePanelAction":{
+            "actionType": "JSFunction",
+            "method": "updateValueOnCtxOrState",
+            "inputData": {
+                "path": "",
+                "value": {
+                    "activeView": "ps0DisplayEffectivities"
+                },
+                "target": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/occmgmtUtils"
+        },
+        "navigateToEndItemPanelAction":{
+            "actionType": "JSFunction",
+            "method": "updateValueOnCtxOrState",
+            "inputData": {
+                "path": "",
+                "value": {
+                    "previousView": "{{props.subPanelContext.expEffPanelState.activeView}}",
+                    "activeView": "ps0EffectivityEndItemPanel"
+                },
+                "target": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/occmgmtUtils"
+        },
+        "setEffectivity": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-OccMgmt-2020-12-EffectivityManagement",
+            "method": "setEffectivity",
+            "inputData": {
+                "effectivityDataInput": {
+                    "effectivityData": [ {
+                        "inputObject": {
+                            "uid": "{{ctx.selected.uid}}",
+                            "type": "{{ctx.selected.type}}"
+                        },
+                        "effectivity": "{{function:getEffectivityDataForAddOrUpdate}}"
+                    } ]
+                }
+            },
+            "outputData": {
+                "setEffectivitySoaResponse": "",
+                "partialErrors": "partialErrors",
+                "errorMessage": "{{function:processPartialErrors}}",
+                "objectConfigured": "updated",
+                "objectUnconfigured": "deleted"
+            },
+            "events": {
+                "success": [  {
+                    "name": "navigateToPs0DisplayandRemovePanelEvent",
+                    "condition": "data.objectConfigured && data.objectConfigured.includes(ctx.selected.uid)"
+                },
+                {
+                    "name": "clearPs0EffectivityFields",
+                    "condition": "data.objectConfigured && data.objectConfigured.includes(ctx.selected.uid)"
+                } ]
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "failedToAddEffectivityMessage"
+                } ]
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+        "onUpdateEndDateBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "onUpdateEndDate",
+                    "condition": "data.startDate.dbValue!== '' && data.endDate.uiValue!== ''"
+                }
+            ]
+        },
+        "onUpdateEndDate": {
+            "actionType": "JSFunction",
+            "method": "updateField",
+            "inputData": {
+                "fields": "{{fields}}",
+                "fieldNameToValidate": "startDate"
+            },
+            "deps": "js/occmgmtUtils"
+        },
+        "onUpdateIsUnitValid": {
+            "actionType": "JSFunction",
+            "method": "updateField",
+            "inputData": {
+                "fields": "{{fields}}",
+                "fieldNameToValidate": "unitRangeText"
+            },
+            "deps": "js/occmgmtUtils"
+        },
+        "validateUnitCriteria": {
+            "actionType": "JSFunction",
+            "method": "validateUnitCriteria",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "outputData": {
+                "isUnitRangeValid": "isUnitRangeValid",
+                "isBadSyntax": "isBadSyntax",
+                "isPositiveNumber": "isPositiveNumber",
+                "isTooLarge": "isTooLarge"
+            },
+            "deps": "js/effectivityUtils"
+        },
+        "initializeAddPanelActionBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initializeAddPanelAction",
+                    "condition": "ctx.expressionEffectivity.isOnlyUnitEffectivityApplicable && props.subPanelContext.expEffPanelState.previousView !== 'ps0EffectivityEndItemPanel' && props.subPanelContext.expEffPanelState.activeView !== 'ps0EditEffectivity'"
+                }
+            ]
+        }
+    },
+    "functions": {
+        "getEffectivityDataForAddOrUpdate": {
+            "functionName": "getEffectivityDataForAddOrUpdate",
+            "parameters": [ "{{data}}", "{{props.subPanelContext}}" ]
+        },
+        "processPartialErrors": {
+            "functionName": "processPartialErrors",
+            "parameters": [ "{{setEffectivitySoaResponse}}" ]
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeAddPanelActionBatchJob",
+        "onUpdate": [  {
+            "action": "onUpdateEndDateBatchJob",
+            "observers": ["viewModel.data.endDate.dbValue", "viewModel.data.startDate.dbValue", "viewModel.data.endDateOptions.dbValue"]
+        },
+        {
+            "action": "validateUnitCriteria",
+            "observers": [ "viewModel.data.unitRangeText.dbValue" ]
+        },
+        {
+            "action": "onUpdateIsUnitValid",
+            "observers": ["viewModel.data.isUnitRangeValid", "viewModel.data.isBadSyntax", "viewModel.data.isPositiveNumber", "viewModel.data.isTooLarge"]
+        }
+
+        ]
+    },
+    "onEvent": [
+        {
+            "eventId": "clearPs0EffectivityFields",
+            "action": "initializeAddPanelAction"
+        },
+        {
+            "eventId": "clearPs0EffectivityFields",
+            "action": "updatedbValueOnContextToDefaultAction"
+        },
+        {
+            "eventId": "navigateToPs0DisplayandRemovePanelEvent",
+            "action": "navigateToPs0DisplayandRemovePanelAction"
+        },
+        {
+            "eventId": "navigateToPs0BackEvent",
+            "action": "initializeAddPanelAction"
+        },
+        {
+            "eventId": "navigateToPs0BackEvent",
+            "action": "updatedbValueOnContextToDefaultAction"
+        }
+    ],
+    "messages": {
+        "failedToAddEffectivityMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "conditions": {
+        "isUnitEffectivityApplicable": {
+            "expression": "!props.subPanelContext.expEffPanelState.dateOrUnitEffectivityTypeRadioButton.dbValue || ctx.expressionEffectivity.isOnlyUnitEffectivityApplicable"
+        },
+        "isEndDateGreaterThanStartDate": {
+            "expression": "data.endDate.dbValue > data.startDate.dbValue"
+        },
+        "isValidUnit": {
+            "expression": "!data.isUnitRangeValid"
+        },
+        "isUnitPositive": {
+            "expression": "!data.isPositiveNumber"
+        },
+        "isTooLarge": {
+            "expression": "data.isTooLarge"
+        },
+        "isBadSyntax": {
+            "expression": "data.isBadSyntax"
+        },
+        "isValidUnitRange": {
+            "expression": "conditions.isUnitEffectivityApplicable && data.unitRangeText.dbValue!=='' && !conditions.isValidUnit && !conditions.isUnitPositive && !conditions.isTooLarge && !conditions.isBadSyntax "
+        },
+        "isValidDateRange": {
+            "expression": "!conditions.isUnitEffectivityApplicable && (data.startDate.dbValue !== '' && (data.endDateOptions.dbValue !== 'Date' || (data.endDate.dbValue !== '' && conditions.isEndDateGreaterThanStartDate )))"
+        },
+        "isAddOrEditButtonVisible": {
+            "expression": "conditions.isValidUnitRange || conditions.isValidDateRange"
+        }
+    },
+    "i18n": {
+        "add": [ "PSConstants" ],
+        "dateEffectivity": [ "PSConstants" ],
+        "unitEffectivityTooltip": [ "PSConstants" ],
+        "endDate": [ "PSConstants" ],
+        "endItemMessage": [ "PSConstants" ],
+        "endItemRequired": [ "PSConstants" ],
+        "soTextValue": [ "PSConstants" ],
+        "startDate": [ "PSConstants" ],
+        "unitEffectivity": [ "PSConstants" ],
+        "upTextValue": [ "PSConstants" ],
+        "saveButtonText": [ "PSConstants" ],
+        "replaceBtn": ["PSConstants"],
+        "invalidDateRangeError": ["PSMessages"],
+        "invalidUnitRange": ["PSMessages"]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

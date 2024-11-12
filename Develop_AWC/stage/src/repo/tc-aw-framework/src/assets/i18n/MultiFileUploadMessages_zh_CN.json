@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "附件",
+    "dropHere": "放至此处",
+    "chooseFile": "选择文件",
+    "removeFileBtnTooltip": "移除文件",
+    "failureToAttachFiles": "未能添加“{0}”，因为该类型的文件不能作为附件。"
+}

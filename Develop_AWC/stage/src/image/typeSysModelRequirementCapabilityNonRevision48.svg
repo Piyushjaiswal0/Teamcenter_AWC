@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient_2" data-name="paper gradient 2" x1=".5" y1="10.5" x2="33.5" y2="43.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2191" stop-color="#f8f8f8"/>
+      <stop offset=".5359" stop-color="#e4e4e4"/>
+      <stop offset=".9105" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bdbdbd"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="32.5562" y1="20.5341" x2="42.4426" y2="30.4205" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afafaf"/>
+      <stop offset="1" stop-color="#7d7d7d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="21.2074" y1="33.3471" x2="26.8492" y2="45.8288" gradientTransform="translate(-10.959 6.9245) rotate(-20.6766)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="35.5562" y1="35.5341" x2="45.4426" y2="45.4205" xlink:href="#linear-gradient"/>
+    <linearGradient id="paper_gradient_2-2" data-name="paper gradient 2" x1="36.0865" y1="24.0865" x2="38.9135" y2="26.9135" xlink:href="#paper_gradient_2"/>
+    <linearGradient id="paper_gradient_2-3" data-name="paper gradient 2" x1="39.0865" y1="39.0865" x2="41.9135" y2="41.9135" xlink:href="#paper_gradient_2"/>
+    <linearGradient id="paper_gradient_2-4" data-name="paper gradient 2" x1="23.2439" y1="37.8036" x2="24.8913" y2="41.4483" gradientTransform="translate(-10.959 6.9245) rotate(-20.6766)" xlink:href="#paper_gradient_2"/>
+  </defs>
+  <path d="M21.2735,10.5c1.1218-.9149,1.8203-2.399,1.8203-4.0939,0-3.3549-2.7324-5.9061-6.0938-5.9061s-6.0789,2.509-6.0789,5.8639c0,1.695,.6985,3.2212,1.8203,4.1361H.5v12.629c1.1051-1.1292,2.6429-1.8346,4.3495-1.8346,3.3614,0,6.0864,2.7197,6.0864,6.0746s-2.7249,6.0746-6.0864,6.0746c-1.7066,0-3.2444-.7054-4.3495-1.8346v11.8911H33.5V10.5h-12.2265Z" fill="url(#paper_gradient_2)" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M42.1612,27.1805l2.3388-.8302v-1.7474l-2.3388-.8301c-.1667-.059-.2337-.2372-.1639-.3839l1.0634-2.2369-1.2357-1.2354-2.2371,1.0644c-.1558,.0738-.3315-.0062-.3842-.1539l-.83-2.3272h-1.7475l-.8299,2.3271c-.0524,.1465-.2345,.2236-.3843,.1523l-2.2374-1.0635-1.236,1.2358,1.0629,2.2373c.0681,.1433,.0017,.3257-.1628,.3839l-2.3388,.8302v1.7474l2.3388,.8303c.1678,.0594,.2332,.2386,.1639,.3843l-1.0634,2.2378,1.2357,1.2367,2.2371-1.0613c.1408-.0669,.3223-.0021,.3842,.1714l.83,2.3506h1.7475l.8299-2.3504c.0662-.1851,.237-.2454,.3843-.1756l2.2374,1.0634,1.236-1.2357-1.0629-2.2374c-.0687-.1446-.0008-.3259,.1628-.3838Z" fill="url(#linear-gradient)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0494"/>
+  <path d="M30.4626,35.4265l1.895-1.6025-.617-1.6348-2.4812,.0492c-.1768,.0036-.3024-.1394-.2888-.3013l.2051-2.4683-1.5923-.7195-1.7172,1.7857c-.1197,.1241-.3123,.1113-.4138-.0083l-1.5983-1.8842-1.635,.617,.0452,2.4702c.0027,.1555-.1405,.292-.3058,.2782l-2.4688-.205-.72,1.5926,1.7844,1.7179c.1143,.11,.1165,.3041-.0167,.4167l-1.895,1.6025,.617,1.6348,2.4813-.049c.1779-.0036,.3025,.1408,.289,.3017l-.2048,2.4691,1.5927,.7207,1.7183-1.7829c.1081-.1122,.3008-.1158,.4199,.0247l1.6065,1.9061,1.635-.617-.0535-2.4921c-.0034-.1966,.1351-.3133,.2975-.3l2.4688,.2049,.7201-1.5925-1.7845-1.718c-.1154-.1111-.1158-.3046,.0168-.4165Z" fill="url(#linear-gradient-2)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0494"/>
+  <path d="M45.1612,42.1805l2.3388-.8302v-1.7474l-2.3388-.8301c-.1667-.059-.2337-.2372-.1639-.3839l1.0634-2.2369-1.2357-1.2354-2.2371,1.0644c-.1558,.0738-.3315-.0062-.3842-.1539l-.83-2.3272h-1.7475l-.8299,2.3271c-.0524,.1465-.2345,.2236-.3843,.1523l-2.2374-1.0635-1.236,1.2358,1.0629,2.2373c.0681,.1433,.0017,.3257-.1628,.3839l-2.3388,.8302v1.7474l2.3388,.8303c.1678,.0594,.2332,.2386,.1639,.3843l-1.0634,2.2378,1.2357,1.2367,2.2371-1.0613c.1408-.0669,.3223-.0021,.3842,.1714l.83,2.3506h1.7475l.8299-2.3504c.0662-.1851,.237-.2454,.3843-.1756l2.2374,1.0634,1.236-1.2357-1.0629-2.2374c-.0687-.1446-.0008-.3259,.1628-.3838Z" fill="url(#linear-gradient-3)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0494"/>
+  <circle cx="37.5" cy="25.5" r="2" fill="url(#paper_gradient_2-2)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <circle cx="40.5" cy="40.5" r="2" fill="url(#paper_gradient_2-3)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <circle cx="25.55" cy="35.5" r="1.9999" fill="url(#paper_gradient_2-4)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+</svg>

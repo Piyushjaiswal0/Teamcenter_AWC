@@ -1,0 +1,21 @@
+<div id="{{subPanelContext.selectedReport.props.rd_name.uiValues[0]}}" title="{{subPanelContext.selectedReport.props.rd_name.dbValues[0]}}" class="h-12"
+    aw-class="[{'w-12': !conditions.showtheTable && !conditions.showtheChart }, {'aw-reports-tableContent': conditions.showtheTable},{'aw-reports-chartContent': conditions.showtheChart}]">
+    <div class="sw-row" aw-class="{'aw-reports-tileBottomPadding':subPanelContext.selectedReport.props.rd_type.dbValues[0]==='4'}">
+        <div class="sw-column w-11">
+            <aw-link class="aw-reports-reportTitle" prop="data.reportlink" action="goToReport"></aw-link>
+            <aw-link class="aw-reports-reportSourceName" prop="data.reportSource" action="goToSource" exist-when="conditions.showSourceLink"></aw-link>
+            <div class="aw-reports-reportTotalFound" exist-when="conditions.showtheChart || conditions.showtheTable">
+                {{data.totalObjectFound}}
+            </div>
+        </div>
+        <div class="sw-column w-1">
+            <div aw-class="{'aw-reports-tableMarginShift':conditions.showtheTable}">
+                <aw-cell-command-bar anchor="reportTileViewerCommands" alignment="HORIZONTAL" context="{...subPanelContext}"></aw-cell-command-bar>
+            </div>
+        </div>
+    </div>
+    <div class="sw-row h-9">
+        <aw-splm-table gridid="dashboardReportTable" reusable="true" selection-data="props.subPanelContext.selectionData" exist-when="conditions.showtheTable"></aw-splm-table>
+        <aw-chart chart-provider="data.chartProviders.myChartProvider" exist-when="conditions.showtheChart"></aw-chart>
+    </div>
+</div>

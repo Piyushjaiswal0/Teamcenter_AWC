@@ -1,0 +1,13 @@
+<aw-command-panel caption="i18n.Licenses">
+    <aw-command-sub-panel panel-id="Awp0AttachLicensesSub" sub-panel-context="{...subPanelContext, sharedData:data.sharedData, license:data.license}"
+       show-when="data.sharedData.activeView === 'Awp0AttachLicensesSub'">
+    </aw-command-sub-panel>
+    <aw-navigate-panel title="i18n.AttachLicense"
+        visible-when="data.sharedData.activeView === 'Awp0AttachLicense'"
+        panel-id='Awp0AttachLicense' sub-panel-context="{sharedData:data.sharedData, license:data.license}" action='backAction'>
+    </aw-navigate-panel>
+    <aw-navigate-panel title="i18n.DetachLicense"
+        visible-when="data.sharedData.activeView === 'Awp0DetachLicense'"
+        panel-id='Awp0DetachLicense' sub-panel-context="{sharedData:data.sharedData, license:data.license}" action='backAction'>
+    </aw-navigate-panel>
+</aw-command-panel>

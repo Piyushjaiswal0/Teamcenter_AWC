@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRT 编辑器",
+    "scopeLabel": "范围：",
+    "objectTypeLabel": "对象类型：",
+    "xrtTypeLabel": "XRT 类型:",
+    "locationLabel": "位置：",
+    "sublocationLabel": "子位置:",
+    "loadButtonText": "加载",
+    "editLabel": "编辑: ",
+    "readOnlyLabel": "（只读）",
+    "overrideMsg": "\"{0}\" 将在用户范围内被替代。",
+    "cancel": "取消",
+    "override": "替代"
+}

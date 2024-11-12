@@ -1,0 +1,12 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {},
+    "onEvent": [],
+    "data": {},
+    "functions": {},
+    "messages": {},
+    "conditions": {},
+    "lifecycleHooks": {},
+    "i18n": {}
+}

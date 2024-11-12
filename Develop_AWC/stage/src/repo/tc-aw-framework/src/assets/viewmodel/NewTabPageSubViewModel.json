@@ -1,0 +1,1317 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "ctx":{
+        "addObject":{
+            "type" :"object"
+        }
+    },
+    "data": {
+        "filterBox": {
+            "displayName": "{{i18n.FILTER_TEXT}}",
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "widgetProjectSectionCommands": "uiwidget_projectSectionCommands",
+        "typeListProp": {
+            "type": "STRING",
+            "hasLov": true,
+            "isEditable": true,
+            "propertyLabelDisplay": "NO_PROPERTY_LABEL"
+        },
+        "creationRelation": {
+            "displayName": "{{i18n.relation}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dataProvider": "getRelationListProvider"
+        },
+        "datasetState": {
+            "initialValues": {
+                "createdObject": "",
+                "isDatasetCreate": ""
+            },
+            "meta": {}
+        },
+        "typeListSelectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "actions": {
+        "loadCreateXRT": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadCreateXrt",
+            "inputData": {
+                "type": "CREATE",
+                "activePageTitle": "",
+                "selectedObject": "",
+                "objectType": "{{data.creationType.props.type_name.dbValues[0]}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}",
+                "creationType": "{{data.creationType}}",
+                "xrtState": "{{subPanelContext.xrtState}}"
+            },
+            "outputData": {
+                "xrtData": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "loadTypeList": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "parent_types", "type_name" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 25,
+                    "maxToReturn": 25,
+                    "providerName": "Awp0TypeSearchProvider",
+                    "searchCriteria": {
+                        "searchString": "{{data.typeListProp.filterString}}",
+                        "typeSelectorId": "{{subPanelContext.typeOverrideId}}",
+                        "listOfIncludeObjectTypes": "{{subPanelContext.includeTypes}}",
+                        "loadSubTypes": "{{subPanelContext.loadSubTypes}}"
+                    },
+                    "searchFilterFieldSortType": "Alphabetical",
+                    "searchFilterMap": {},
+                    "searchSortCriteria": [],
+                    "startIndex": "{{data.dataProviders.getTypeListProvider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "typeListTotalFound": "totalFound",
+                "typeList": "{{function:convertTypesToLovEntries}}"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "loadTypeListForPreferredType": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "parent_types", "type_name" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 25,
+                    "maxToReturn": 25,
+                    "providerName": "Awp0TypeSearchProvider",
+                    "searchCriteria": {
+                        "searchString": "{{data.typeListProp.dbValue}}",
+                        "typeSelectorId": "{{subPanelContext.typeOverrideId}}",
+                        "listOfIncludeObjectTypes": "{{subPanelContext.preferredType}}",
+                        "loadSubTypes": "false"
+                    },
+                    "searchFilterFieldSortType": "Alphabetical",
+                    "searchFilterMap": {},
+                    "searchSortCriteria": [],
+                    "startIndex": "{{data.dataProviders.getTypeListProvider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "preferredTypeSearchResults": "searchResults"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "loadTypeListForAutoSelectOnUniqueType": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "parent_types", "type_name" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 25,
+                    "maxToReturn": 25,
+                    "providerName": "Awp0TypeSearchProvider",
+                    "searchCriteria": {
+                        "searchString": "{{data.typeListProp.dbValue}}",
+                        "typeSelectorId": "{{subPanelContext.typeOverrideId}}",
+                        "listOfIncludeObjectTypes": "{{subPanelContext.includeTypes}}",
+                        "loadSubTypes": "{{subPanelContext.loadSubTypes}}"
+                    },
+                    "searchFilterFieldSortType": "Alphabetical",
+                    "searchFilterMap": {},
+                    "searchSortCriteria": [],
+                    "startIndex": "{{data.dataProviders.getTypeListProvider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "autoSelectOnUniqueTypeSearchResults": "searchResults",
+                "autoSelectOnUniqueTypeTotalFound": "totalFound"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "syncTypeSelection": {
+            "actionType": "JSFunction",
+            "method": "syncTypeSelection",
+            "inputData": {
+                "typeListProp": "{{data.typeListProp}}",
+                "creationType": "{{data.datasetState.creationType}}"
+            },
+            "outputData": {
+                "typeListProp": "typeListProp",
+                "creationType": "creationType",
+                "preferredType": "preferredType"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateCreationType": {
+            "actionType": "JSFunctionAsync",
+            "method": "onTypeSelected",
+            "inputData": {
+                "data": "{{data.typeListSelectionData}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}",
+                "datasetState": "{{fields.datasetState}}"
+            },
+            "outputData": {
+                "creationType": "creationType",
+                "isDatasetCreate": "isDatasetCreate",
+                "isProjectAssignable": "isProjectAssignable"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "onTypeSelected": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateCreationType"
+                },
+                {
+                    "action": "loadCreateXRT",
+                    "condition": "!data.isDatasetCreate"
+                },
+                {
+                    "action": "initiateCreation",
+                    "condition": "!data.isDatasetCreate"
+                },
+                {
+                    "action" : "assignUserProjects",
+                    "condition": "!data.isDatasetCreate"
+                }
+            ]
+        },
+        "initNewTabPage": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initialize"
+                },
+                {
+                    "action": "setPropertyPolicy"
+                }
+            ]
+        },
+        "destroyNewTab": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateCtxVariableFalse"
+                },
+                {
+                    "action": "unSetPropertyPolicy"
+                }
+            ]
+        },
+        "clearSelectedType": {
+            "actionType": "JSFunction",
+            "method": "clearSelectedType",
+            "inputData": {
+                "data": "{{data.clearSelectedType}}"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "loadUserProjects": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadObjects",
+            "inputData": {
+                "data": [
+                    "{{ctx.userSession.props.project.dbValues[0]}}"
+                ]
+            },
+            "deps": "soa/dataManagementService"
+        },
+        "assignUserProjects": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "condition": "ctx.userSession.props.project.dbValues[0]!=='' && ctx.hasProjects",
+                    "name": "init.assignedProjectsProvider"
+                } ]
+            }
+        },
+        "getRecentUsedTypes": {
+            "actionType": "JSFunctionAsync",
+            "method": "getRecentUsedTypes",
+            "inputData": {
+                "data": "{{data}}",
+                "filterTypesString": "{{data.includeTypes}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "getOwningProjectsAct": {
+            "actionType": "JSFunction",
+            "method": "createViewModelObjectById",
+            "inputData": {
+                "uid": "{{ctx.userSession.props.project.dbValues[0]}}",
+                "operationName": "CREATE"
+            },
+            "outputData": {
+                "owningProjects": ""
+            },
+            "deps": "js/tcViewModelObjectService"
+        },
+        "updateRecentTypes": {
+            "actionType": "JSFunction",
+            "method": "updateRecentUsedTypes",
+            "inputData": {
+                "recentTypeName": "{{data.secondaryType}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "updateRecentUsedTypes": {
+            "actionType": "JSFunction",
+            "method": "updateRecentUsedTypes",
+            "inputData": {
+                "recentTypeName": "{{data.objCreateInfo.createType}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "genericAddObjectCallSoa": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2016-09-DataManagement",
+            "method": "createAttachAndSubmitObjects",
+            "inputData": {
+                "inputs": "{{function:getCreateInput}}"
+            },
+            "policy": {
+                "types": "{{subPanelContext.policy.types}}"
+            },
+            "outputData": {
+                "createdMainObject": "output[0].objects[0]",
+                "createdObject": "{{function:getCreatedObject}}",
+                "datasetInfos": "{{function:getDatasets}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "addObject.objectcreated"
+                    },
+                    {
+                        "name": "addObject.datasetCommitted.hosting",
+                        "condition": "ctx.HostedFileNameContext.filename && data.fmsTicket",
+                        "eventData": {
+                            "createdObjects": "{{data.createdObject}}",
+                            "filename": "{{parameters.fileName}}",
+                            "ticket": "{{data.fmsTicket}}"
+                        }
+                    },
+                    {
+                        "name": "addObject.setTarget",
+                        "condition": "!data.pasteOnTargetCondition && subPanelContext.targetObject != undefined && (data.filesToBeRelated === undefined || data.filesToBeRelated && data.filesToBeRelated.length === 0)"
+                    },
+                    {
+                        "name": "addObject.toTargetSuccess",
+                        "condition": "data.pasteOnTargetCondition && subPanelContext.targetObject != undefined && (data.filesToBeRelated === undefined || data.filesToBeRelated && data.filesToBeRelated.length === 0)"
+                    },
+                    {
+                        "name": "addObject.startMultiFileUpload",
+                        "condition": "subPanelContext.targetObject != undefined && data.filesToBeRelated && data.filesToBeRelated.length > 0"
+                    },
+                    {
+                        "name": "addObject.assignProjects",
+                        "condition": "data.dataProviders.getAssignedProjectsProvider.viewModelCollection.loadedVMObjects.length>0"
+                    }
+                ],
+                "failure": [ {
+                        "name": "addObject.setTarget",
+                        "condition": "!data.pasteOnTargetCondition && data.createdObject && subPanelContext.targetObject"
+                    },
+                    {
+                        "name": "addObject.toTargetSuccess",
+                        "condition": "data.pasteOnTargetCondition && data.createdObject && subPanelContext.targetObject"
+                    },
+                    {
+                        "name": "addObject.addOprfailed"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure": [ {
+                        "condition": "errorCode.code===252106",
+                        "message": "addedObjectIsNotUnique"
+                    },
+                    {
+                        "condition": "errorCodes[0].code !== 252106",
+                        "message": "genericAddObjectFailure"
+                    }
+                ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "getDefaultRelationBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getDefaultRelation"
+                },
+                {
+                    "action": "updateRelationList"
+                },
+                {
+                    "action": "updateRecentTypes"
+                }
+            ]
+        },
+        "getDefaultRelation": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDefaultRelation",
+            "inputData": {
+                "input": [ {
+                    "primaryType": "{{subPanelContext.targetObject.type}}",
+                    "secondaryType": "{{data.isDatasetCreate ? data.creationType.props.datasettype_name.dbValues[0]: data.creationType.props.type_name.dbValues[0]}}"
+                } ]
+            },
+            "outputData": {
+                "defaultRelation": "output[0].defaultRelation",
+                "secondaryType": "output[0].secondaryType"
+            },
+            "events": {
+                "failure": [ {
+                    "name": "relations.updateRelationList"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateRelationList": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateRelationList",
+            "inputData": {
+                "creationType": "{{data.creationType}}",
+                "relationMap": "{{subPanelContext.relationMap}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "type": "{{data.eventData.selectedObjects[0].type}}",
+                "defaultRelation": "{{data.defaultRelation}}",
+                "creationRelation": "{{data.creationRelation}}",
+                "invalidObjectInfo": {
+                    "fileName": "{{data.datasetInfo.fileName}}",
+                    "objectSetSource": "{{subPanelContext.objectSource}}"
+                }
+            },
+            "outputData": {
+                "relationList": "relationList",
+                "creationRelation": "creationRelation"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "initiateCreation": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "relations.getDefaultRelation"
+                    }
+                ]
+            }
+        },
+        "addObjectToTarget": {
+            "actionType": "JSFunctionAsync",
+            "method": "execute",
+            "inputData": {
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "sourceObjects": "{{data.objToRelateBasedOnConfiguredRevRule}}",
+                "relationType": "{{data.creationRelation.dbValue}}"
+            },
+            "outputData": {},
+            "events": {
+                "success": [ {
+                    "name": "addObject.toTargetSuccess"
+                } ],
+                "failure": [ {
+                    "name": "pasteItem.commitFailed"
+                } ]
+            },
+            "deps": "js/pasteService"
+        },
+        "addObjectToTargetSuccess": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                            "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                            "relations": "",
+                            "relatedModified": [
+                                "{{subPanelContext.targetObject}}"
+                            ],
+                            "createdObjects": [
+                                "{{data.createdObject}}"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "!subPanelContext.panelPinned",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "awPanel.loadNextValues",
+                        "condition": "subPanelContext.panelPinned"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                        "condition": "data.createdObject && !data.revision__awp0ProcessTemplates.dbValue",
+                        "message": "createObjectSuccess"
+                    },
+                    {
+                        "condition": "data.createdObject && data.revision__awp0ProcessTemplates.dbValue",
+                        "message": "submitObjectSuccess"
+                    }
+                ]
+            }
+        },
+        "assignProjectsToCreatedObject": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-09-ProjectLevelSecurity",
+            "method": "assignOrRemoveObjects",
+            "inputData": {
+                "assignedOrRemovedobjects": [ {
+                    "projects": "{{data.dataProviders.getAssignedProjectsProvider.viewModelCollection.loadedVMObjects}}",
+                    "objectToAssign": [
+                        "{{data.createdMainObject}}"
+                    ],
+                    "objectToRemove": []
+                } ]
+            }
+        },
+        "generateNextValues": {
+            "actionType": "JSFunctionAsync",
+            "method": "autoAssignAllProperties",
+            "inputData": {
+                "data": "{{data}}",
+                "operationType": "CREATE",
+                "createType": "{{data.creationType.props.type_name.dbValues[0]}}",
+                "editHandler": "{{subPanelContext.editHandler}}"
+            },
+            "outputData": {},
+            "events": {
+                "success": [ {
+                    "name": "addObject.enableAddBtnForPinnedPanel"
+                } ]
+            },
+            "deps": "js/autoAssignService"
+        },
+        "autoAssignProperty": {
+            "actionType": "JSFunction",
+            "method": "autoAssignProperty",
+            "inputData": {
+                "prop": "{{data.eventData.prop}}",
+                "operationType": "CREATE",
+                "pattern": "{{data.eventData.newPattern}}",
+                "selectedObj": null,
+                "createType": "{{data.creationType.props.type_name.dbValues[0]}}",
+                "editHandler": "{{subPanelContext.editHandler}}"
+            },
+            "deps": "js/autoAssignService"
+        },
+        "updateCtxVariableFalse": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "inputData": {
+                "name": "addItemEventProgressing"
+            },
+            "deps": "js/appCtxService"
+        },
+        "createObject": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "addObject.startCreateObject"
+                } ]
+            }
+        },
+        "updateCtxVariable": {
+            "actionType": "modifyCtx",
+            "inputData": {
+                "methodType": "register",
+                "name": "addItemEventProgressing",
+                "value": true
+            }
+        },
+        "startCreateObject": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "generic.createObject",
+                        "condition": "!data.isDatasetCreate"
+                    }
+                ]
+            }
+        },
+        "fireCompleteEvent": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "gwt.CreateOrAddObjectCompleteEvent",
+                    "eventData": {
+                        "createdObjs": [
+                            "{{data.createdObject}}"
+                        ]
+                    }
+                } ]
+            }
+        },
+        "startMultiFileUpload": {
+            "actionType": "JSFunction",
+            "method": "startMultiFileUpload",
+            "inputData": {
+                "data": "{{data}}",
+                "fmsUrl": "{{Constants.fmsUrl}}"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "initNextUpload": {
+            "actionType": "JSFunction",
+            "method": "initNextUpload",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "formData": "formData",
+                "commitInput": "commitInput"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "uploadReady": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "addObject.fileUpload"
+                } ]
+            }
+        },
+        "fileUpload": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+                    "data": "{{data.formData}}"
+                }
+            },
+            "events": {
+                "success": [ {
+                    "name": "addObject.initNextUpload"
+                } ],
+                "failure": [ {
+                        "name": "addObject.commitFailed"
+                    },
+                    {
+                        "name": "addObject.initNextUpload"
+                    }
+                ]
+            }
+        },
+        "commitUploadedDataset": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-FileManagement",
+            "method": "commitDatasetFiles",
+            "inputData": {
+                "commitInput": "{{data.commitInput}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "addObject.setTarget",
+                        "condition": "!data.pasteOnTargetCondition"
+                    },
+                    {
+                        "name": "addObject.toTargetSuccess",
+                        "condition": "data.pasteOnTargetCondition"
+                    }
+                ],
+                "failure": [ {
+                        "name": "addObject.commitFailed"
+                    },
+                    {
+                        "name": "addObject.setTarget",
+                        "condition": "!data.pasteOnTargetCondition"
+                    },
+                    {
+                        "name": "addObject.toTargetSuccess",
+                        "condition": "data.pasteOnTargetCondition"
+                    }
+                ]
+            }
+        },
+        "evaluateObjsBasedOnConfiguredRevRule": {
+            "actionType": "JSFunction",
+            "method": "evaluateObjsBasedOnConfiguredRevRule",
+            "inputData": {
+                "objectToEvaluateForExactRelation": [
+                    "{{data.createdObject}}"
+                ],
+                "addObjectContext": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "objToRelateBasedOnConfiguredRevRule": ""
+            },
+            "deps": "js/awConfiguredRevService",
+            "events": {
+                "success": [ {
+                    "name": "addObject.newObjectToRelateEvaluated"
+                } ]
+            }
+        },
+        "evaluateObjsBasedOnConfiguredRevRuleForDataset": {
+            "actionType": "JSFunction",
+            "method": "evaluateObjsBasedOnConfiguredRevRule",
+            "inputData": {
+                "objectToEvaluateForExactRelation": [
+                    "{{datasetState.createdObject}}"
+                ],
+                "addObjectContext": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "objToRelateBasedOnConfiguredRevRule": ""
+            },
+            "deps": "js/awConfiguredRevService",
+            "events": {
+                "success": [ {
+                    "name": "addObject.newObjectToRelateEvaluated"
+                } ]
+            }
+        },
+        "getDatasetFileExtensions": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/addObjectUtils",
+            "method": "getDatasetFileExtensions",
+            "inputData": {
+                "0": {
+                    "relationMap": "{{subPanelContext.relationMap}}"
+                }
+            },
+            "outputData": {
+                "fileExtension": ""
+            }
+        },
+        "handleObjectCreate": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateCtxVariable",
+                    "condition": "conditions.readyToStartCreateOperation"
+                },
+                {
+                    "action": "genericAddObject",
+                    "condition": "conditions.readyToStartCreateOperation && !data.isDatasetCreate"
+                }
+            ]
+        },
+        "updateCallbackWithCreatedObject": {
+            "actionType": "JSFunction",
+            "method": "updateCallbackWithCreatedObject",
+            "inputData": {
+                "createdObject": "{{data.createdObject}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "updateCallbackWithDatasetCreatedObject": {
+            "actionType": "JSFunction",
+            "method": "updateCallbackWithCreatedObject",
+            "inputData": {
+                "createdObject": "{{datasetState.createdObject}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "initialize",
+            "inputData": {
+                "datasetState": "{{data.datasetState}}",
+                "showDataSetUploadPanel": "{{subPanelContext.addObject.showDataSetUploadPanel}}",
+                "showDataSetUploadPanelProp": "{{subPanelContext.showDataSetUploadPanel}}",
+                "preferredType": "{{subPanelContext.preferredType}}"
+            },
+            "outputData": {
+                "isDSMUsable": "isDSMUsable",
+                "datasetState": "datasetState",
+                "preferredType": "preferredType"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "setPropertyPolicy": {
+            "actionType": "JSFunction",
+            "method": "setPropertyPolicy",
+            "inputData": {},
+            "outputData": {
+                "policyId": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "unSetPropertyPolicy": {
+            "actionType": "JSFunction",
+            "method": "unSetPropertyPolicy",
+            "inputData": {
+                "policyId": "{{data.policyId}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "performPostProcessingAfterDatasetCreate": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "evaluateObjsBasedOnConfiguredRevRuleForDataset",
+                    "condition": "conditions.isObjectCreated"
+                },
+                {
+                    "action": "updateCallbackWithDatasetCreatedObject",
+                    "condition": "conditions.isObjectCreated"
+                },
+                {
+                    "action": "fireCompleteEvent",
+                    "condition": "conditions.isObjectCreated"
+                }
+            ]
+        },
+        "getObjCreateEditableProperties": {
+            "actionType": "JSFunction",
+            "method": "getObjCreateEditableProperties",
+            "inputData": {
+                "createType": "{{data.creationType.props.type_name.dbValues[0]}}",
+                "type": "CREATE",
+                "propertyNames": [ "object_name", "item_id" ],
+                "editHandler": "{{subPanelContext.editHandler}}"
+            },
+            "outputData":{
+                "object_name": "object_name",
+                "item_id": "item_id"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "genericAddObject": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getObjCreateEditableProperties"
+                },
+                {
+                    "action": "genericAddObjectCallSoa"
+                }
+            ]
+        },
+        "assignUserProjectsJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "navigateToNewTabPage",
+                    "condition": "conditions.isAssignUserProject"
+                },
+                {
+                    "action": "updateAssignedProjectsProvider",
+                    "condition": "conditions.isAssignUserProject"
+                },
+                {
+                    "action": "updateAssignTrigger",
+                    "condition": "conditions.isAssignUserProject"
+                }
+            ]
+        },
+        "updateAssignTrigger": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.projectState}}",
+                "value" : {
+                    "triggerAssign": false
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "navigateToNewTabPage": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.activeState}}",
+                "value" : {
+                    "activeView": "AddObjectPrimarySub"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateAssignedProjectsProvider": {
+            "actionType": "JSFunction",
+            "method": "updateAssignedProjectsProvider",
+            "inputData": {
+                "data": "{{data}}",
+                "selectedObjects": "{{subPanelContext.projectState.value.selectedProjects}}",
+                "removeOnly": "{{subPanelContext.projectState.value.triggerRemove}}"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "removeUserProjectsJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateAssignedProjectsProvider",
+                    "condition": "conditions.isRemoveUserProject"
+                },
+                {
+                    "action": "updateRemoveTrigger",
+                    "condition": "conditions.isRemoveUserProject"
+                }
+            ]
+        },
+        "updateRemoveTrigger": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.projectState}}",
+                "value" : {
+                    "triggerRemove": false
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "dataProviders": {
+        "getRelationListProvider": {
+            "response": "{{data.relationList}}",
+            "totalFound": "{{data.relationList.length}}"
+        },
+        "getRecentTypesProvider": {
+            "action": "getRecentUsedTypes",
+            "response": "{{data.recentUsedTypes}}",
+            "totalFound": "{{data.recentUsedTypes.length}}",
+            "selectionModelMode": "single"
+        },
+        "getAssignedProjectsProvider": {
+            "response": "{{subPanelContext.projectState.selectedProjects}}",
+            "totalFound": "{{subPanelContext.projectState.selectedProjects.length}}",
+            "preSelection": false,
+            "selectionModelMode": "single",
+            "commandsAnchor": "aw_removeProjectCellCommandAction"
+        },
+        "getOwningProjectsProvider": {
+            "action": "getOwningProjectsAct",
+            "response": [
+                "{{data.owningProjects}}"
+            ],
+            "totalFound": "{{data.owningProjects.length}}",
+            "preSelection": false,
+            "selectionModelMode": "single",
+            "commands": {
+                "Awp0ShowObjectCell": {
+                    "id": "cmdOpen",
+                    "areas": [
+                        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+                    ],
+                    "priorities": [
+                        300
+                    ],
+                    "dependencies": [
+                        "js/showObjectCommandHandler"
+                    ],
+                    "displayOption": "ON_HOVER_AND_SELECTION",
+                    "position": "TOP_RIGHT"
+                }
+            }
+        }
+    },
+    "functions": {
+        "convertTypesToLovEntries": {
+            "functionName": "convertTypesToLovEntries",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getCreateInput": {
+            "functionName": "getCreateInput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.extensionVMProps}}",
+                "",
+                "{{subPanelContext.editHandler}}"
+            ]
+        },
+        "getCreatedObject": {
+            "functionName": "getCreatedObject",
+            "parameters": [
+                "{{subPanelContext.addObject.validTypes}}"
+            ]
+        },
+        "getFileFormat": {
+            "functionName": "getFileFormat",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getDatasets": {
+            "functionName": "getDatasets",
+            "parameters": []
+        },
+        "getDatasetTypesFromTypesWithRelInfo": {
+            "functionName": "getDatasetTypesFromTypesWithRelInfo",
+            "parameters": [ "{{data}}" ]
+        }
+    },
+    "conditions": {
+        "showRelationsList": {
+            "expression": "(data.creationType || (data.sourceObjects && data.sourceObjects.length > 0)) && data.relationList.length>1"
+        },
+        "showFileUploadInput": {
+            "expression": "!ctx.HostedFileNameContext.filename"
+        },
+        "showHostUploadInput": {
+            "expression": "ctx.HostedFileNameContext.filename"
+        },
+        "showTypeselectorPanel": {
+            "expression": "!data.creationType"
+        },
+        "showDataSetUploadPanel": {
+            "expression": "!data.creationType && (subPanelContext.addObject.showDataSetUploadPanel || subPanelContext.showDataSetUploadPanel)"
+        },
+        "isDatasetCreate": {
+            "expression": "data.isDatasetCreate || subPanelContext.addPanelState.value.isDatasetCreate"
+        },
+        "isDatasetApplicable": {
+            "expression": "conditions.showDataSetUploadPanel || conditions.isDatasetCreate"
+        },
+        "showDatasetComp": {
+            "expression": "conditions.isDatasetApplicable"
+        },
+        "isRefreshRequired": {
+            "expression": "subPanelContext.addObject.refreshFlag && !subPanelContext.panelPinned"
+        },
+        "isNewTabAddButtonVisible": {
+            "expression": "data.creationType || data.isDatasetCreate"
+        },
+        "readyToStartCreateOperation": {
+            "expression": "data.creationType && subPanelContext.triggerCreate && subPanelContext.triggerCreate.dbValue && subPanelContext.addPanelState.selectedTab.tabKey === 'new'"
+        },
+        "isObjectCreated": {
+            "expression": "datasetState.createdObject"
+        },
+        "isAssignUserProject": {
+            "expression": "subPanelContext.projectState.value.triggerAssign == true"
+        },
+        "isRemoveUserProject": {
+            "expression": "subPanelContext.projectState.value.triggerRemove == true"
+        },
+        "isDatasetCreationTypeValid": {
+            "expression": "datasetState.creationType && subPanelContext.targetObject"
+        },
+        "isProjectNotSupported": {
+            "expression": "ctx.preferences.AWC_IS_PROJECT_SUPPORTED && ctx.preferences.AWC_IS_PROJECT_SUPPORTED[0] === 'false'"
+        }
+    },
+    "messages": {
+        "createObjectSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.pasteSuccessful}}",
+            "messageTextParams": [
+                "{{data.createdObject.props.object_string.dbValues[0]}}"
+            ]
+        },
+        "genericAddObjectFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        },
+        "addedObjectIsNotUnique": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.addedObjectIsNotUnique}}",
+            "messageTextParams": [
+                "{{data.object_name.dbValue}}",
+                "{{data.item_id.dbValue}}"
+            ]
+        },
+        "invalidFileUpload": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        },
+        "submitObjectSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.submitSuccessful}}",
+            "messageTextParams": [
+                "{{data.createdObject.props.object_string.dbValues[0]}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initNewTabPage",
+        "onUpdate": [
+            {
+                "action": "handleObjectCreate",
+                "observers": [ "viewModel.subPanelContext.triggerCreate" ]
+            },
+            {
+                "action": "performPostProcessingAfterDatasetCreate",
+                "observers": [ "viewModel.atomicData.datasetState.createdObject" ]
+            },
+            {
+                "action": "assignUserProjectsJob",
+                "observers": [ "viewModel.subPanelContext.projectState.triggerAssign" ]
+            },
+            {
+                "action": "removeUserProjectsJob",
+                "observers": [ "viewModel.subPanelContext.projectState.triggerRemove" ]
+            },
+            {
+                "action": "onTypeSelected",
+                "observers":[ "viewModel.atomicData.typeListSelectionData.selected[0].propInternalValue" ]
+            },
+            {
+                "action": "syncTypeSelection",
+                "observers":[ "viewModel.atomicData.datasetState.creationType"]
+            }
+        ],
+        "onUnmount": "destroyNewTab"
+    },
+    "onEvent": [ {
+            "eventId": "relationList.updated",
+            "action": "updateRecentTypes"
+        },
+        {
+            "eventId": "cdm.relatedModified",
+            "action": "updateAssignTrigger"
+        },
+        {
+            "eventId": "addObject.objectcreated",
+            "action": "fireCompleteEvent"
+        },
+        {
+            "eventId": "addObject.objectcreated",
+            "action": "updateCallbackWithCreatedObject"
+        },
+        {
+            "eventId": "addObject.enableAddBtnForPinnedPanel",
+            "action": "updateCtxVariableFalse"
+        },
+        {
+            "eventId": "addObject.addOprfailed",
+            "action": "updateCtxVariableFalse"
+        },
+        {
+            "eventId": "generic.createObject",
+            "action": "genericAddObject"
+        },
+        {
+            "eventId": "getRecentTypesProvider.selectionChangeEvent",
+            "action": "assignUserProjects"
+        },
+        {
+            "eventId": "addObject.setTarget",
+            "action": "evaluateObjsBasedOnConfiguredRevRule"
+        },
+        {
+            "eventId": "addObject.newObjectToRelateEvaluated",
+            "action": "addObjectToTarget"
+        },
+        {
+            "eventId": "addObject.toTargetSuccess",
+            "action": "addObjectToTargetSuccess"
+        },
+        {
+            "eventId": "addObject.objectcreated",
+            "action": "updateRecentUsedTypes"
+        },
+        {
+            "eventId": "addObject.assignProjects",
+            "action": "assignProjectsToCreatedObject"
+        },
+        {
+            "eventId": "addObject.assignProjects",
+            "action": "updateCtxVariableFalse"
+        },
+        {
+            "eventId": "userProjects.assignProjects",
+            "action": "getAssignedProjectsProvider"
+        },
+        {
+            "eventId": "userProjects.assignProjects",
+            "action": "navigateToNewTabPage"
+        },
+        {
+            "eventId": "getRecentTypesProvider.selectionChangeEvent",
+            "action": "initiateCreation"
+        },
+        {
+            "eventId": "dataset.initDSCreateParams",
+            "action": "initDSCreateParams",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "relations.getDefaultRelation",
+            "action": "getDefaultRelationBatchJob",
+            "condition": "subPanelContext.targetObject.type && subPanelContext.hideRelation !== 'true'"
+        },
+        {
+            "eventId": "relations.updateRelationList",
+            "condition": "subPanelContext.hideRelation !== 'true'",
+            "action": "updateRelationList"
+        },
+        {
+            "eventId": "awPanel.loadNextValues",
+            "action": "generateNextValues"
+        },
+        {
+            "eventId": "awPattern.newPatternSelected",
+            "cacheEventData": true,
+            "action": "autoAssignProperty"
+        },
+        {
+            "eventId": "init.assignedProjectsProvider",
+            "action": "getOwningProjectsProvider"
+        },
+        {
+            "eventId": "addObject.startMultiFileUpload",
+            "action": "startMultiFileUpload"
+        },
+        {
+            "eventId": "addObject.initNextUpload",
+            "action": "initNextUpload"
+        },
+        {
+            "eventId": "addObject.uploadReady",
+            "action": "uploadReady"
+        },
+        {
+            "eventId": "addObject.fileUpload",
+            "action": "fileUpload"
+        },
+        {
+            "eventId": "addObject.commitUploadedDataset",
+            "action": "commitUploadedDataset"
+        }
+    ],
+    "i18n": {
+        "addedObjectIsNotUnique": [
+            "addObjectMessages"
+        ],
+        "LOADING_TEXT": [
+            "BaseMessages"
+        ],
+        "MORE_LINK_TEXT": [
+            "BaseMessages"
+        ],
+        "objectType": [
+            "awAddDirectiveMessages"
+        ],
+        "FILTER_TEXT": [
+            "BaseMessages"
+        ],
+        "datasetType": [
+            "awAddDirectiveMessages"
+        ],
+        "recentSectionTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "otherSectionTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "ownProjectSectionTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "projectsSectionTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "pasteSuccessful": [
+            "awAddDirectiveMessages"
+        ],
+        "submitSuccessful": [
+            "awAddDirectiveMessages"
+        ],
+        "pasteSuccessfulWithTargetLocation": [
+            "awAddDirectiveMessages"
+        ],
+        "submitSuccessfulWithTargetLocation": [
+            "awAddDirectiveMessages"
+        ],
+        "fileUploadInProgress": [
+            "awAddDirectiveMessages"
+        ],
+        "fileUploadError": [
+            "awAddDirectiveMessages"
+        ],
+        "uploadFile": [
+            "awAddDirectiveMessages"
+        ],
+        "datasetName": [
+            "awAddDirectiveMessages"
+        ],
+        "datasetDesc": [
+            "awAddDirectiveMessages"
+        ],
+        "reference": [
+            "awAddDirectiveMessages"
+        ],
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ],
+        "relation": [
+            "XRTMessages"
+        ]
+    }
+}

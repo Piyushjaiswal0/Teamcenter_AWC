@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "排列",
+    "arrangeButtonTitle": "排列",
+    "arrangeAdminTitle": "管理員",
+    "arrangeNoColumnConfigs": "沒有儲存的佈置",
+    "arrangeConfigNameTitle": "佈置",
+    "arrangeNewConfigNameTitle": "名稱",
+    "arrangeNewConfigNameTitleRequired": "命名組裝安排",
+    "arrangeNewConfigTitle": "另存為新佈置",
+    "arrangeAndSaveButtonTitle": "儲存並排列",
+    "arrangeAndCreateButtonTitle": "儲存並排列",
+    "defaultNewColumnConfigName": "新建欄佈置",
+    "availableColumnsTitle": "可用的欄",
+    "tableColumnsTitle": "顯示的欄",
+    "box1Title": "帶氣球狀彈出提示的Active Workspace 指令範例",
+    "seeMorePropertiesTitle": "檢視完整資料庫..."
+}

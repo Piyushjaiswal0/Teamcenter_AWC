@@ -1,0 +1,69 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "initDSCreateParams":
+        {
+            "actionType": "JSFunction",
+            "method": "setFileParameters",
+            "inputData": {
+                "fileName": "{{parameters.fileName}}",
+                "validFile": "{{parameters.validFile}}",
+                "fileNameNoExt": "{{parameters.fileNameNoExt}}",
+                "fileExt": "{{parameters.fileExt}}",
+                "formData": "{{parameters.formData}}"
+            },
+            "outputData":{
+                "fileName": "fileName",
+                "validFile": "validFile",
+                "fileNameNoExt": "fileNameNoExt",
+                "fileExt": "fileExt",
+                "formData": "formData"
+            },
+            "deps": "js/fileUploadUtils"
+        },
+        "getFilePickerConfiguration": {
+            "actionType": "JSFunction",
+            "method": "getFilePickerConfiguration",
+            "inputData": {
+                "fileConfigRootType": "importExcelRoundTrip"
+            },
+            "outputData": {
+                "uploadFileProvider": ""
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+
+    "data": {
+        "uploadFileSelectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "conflict": {
+            "displayName": "{{i18n.conflict}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dispValue": "",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT",
+            "dbValue": true
+        }
+    },
+    "i18n": {
+        "importCmdTitle": [
+            "ExcelRoundTripMessages"
+        ],
+        "import": [
+            "ExcelRoundTripMessages"
+        ],
+        "conflict": [
+            "ExcelRoundTripMessages"
+        ]
+
+    },
+    "lifecycleHooks": {
+        "onMount": "getFilePickerConfiguration"
+    }
+
+}

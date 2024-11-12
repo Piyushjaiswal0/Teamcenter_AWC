@@ -1,0 +1,15 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <rect x="8" y="11" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="10" y="11" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="11" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="10" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="7" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="7" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="11" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="11" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="11" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M0,0V15H15V0ZM14,3.293,12.1338,5.1592h-.5823V1.9985h-.849L9.6169,3.011l.5679.6045.2418-.2181a.7551.7551,0,0,0,.1579-.2128h.0108s-.0054.1565-.0054.3077V5.1592H9.7354v.8393h1.559L10.293,7H8V1h6Zm-6,6V8H9.293ZM7,1V7H1V1ZM1,8H7v2.293L5.1224,12.1706H3.8445c.0274-.5061,1.612-.7427,1.612-1.9695a1.2269,1.2269,0,0,0-1.3421-1.205,1.5175,1.5175,0,0,0-1.3869.8471l.7153.4787s.2093-.4181.5831-.4181a.3884.3884,0,0,1,.4237.3906c0,.5667-1.7.8255-1.7,2.2779a2.4183,2.4183,0,0,0,.0438.4238H4.2969L3.293,14H1ZM14,6H13V7h1V8H13V9h1v1H13v1h1v1H13v1h1v1H13V13H12v1H11V13H10v1H9V13H8v1H7V13H6v1H5v-.293L5.707,13H6v-.293L6.707,12H7v-.293L7.707,11H8v-.293L8.707,10H9V9.707L9.707,9H10V8.707L10.707,8H11V7.707L11.707,7H12V6.707L12.707,6H13V5.707L13.707,5H14Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

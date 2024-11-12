@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="20.25" y1="18.75" x2="30.75" y2="29.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73c8a5"/>
+      <stop offset="0.188" stop-color="#6ec5a1"/>
+      <stop offset="0.402" stop-color="#61bd96"/>
+      <stop offset="0.629" stop-color="#4ab084"/>
+      <stop offset="0.863" stop-color="#2a9e6c"/>
+      <stop offset="1" stop-color="#14915a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="47.5" y1="1087.5" x2="30.5" y2="1070.5" gradientTransform="translate(48 1103) rotate(180)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="19" y1="1088" x2="1" y2="1070" gradientTransform="translate(48 1103) rotate(180)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g>
+    <ellipse cx="25.5" cy="24" rx="10.607" ry="4.243" fill="url(#linear-gradient)"/>
+    <path d="M33,21v6H18V21H33m1-1H17v8H34V20Z" fill="#14915a"/>
+  </g>
+  <g>
+    <path d="M1,15H17l4,9-4,9H1Z" fill="url(#linear-gradient-2)"/>
+    <path d="M17,15l4,9-4,9H1V15H17m.65-1H0V34H17.65l.264-.594,4-9,.18-.406-.18-.406-4-9L17.65,14Z" fill="#14915a"/>
+  </g>
+  <g>
+    <polygon points="29 15 47 15 47 33 29 33 33 24 29 15" fill="url(#linear-gradient-3)"/>
+    <path d="M47,15V33H29l4-9-4-9H47m1-1H27.461l.625,1.406L31.906,24l-3.82,8.594L27.461,34H48V14Z" class="aw-theme-iconRich" fill="#14915a"/>
+  </g>
+</svg>

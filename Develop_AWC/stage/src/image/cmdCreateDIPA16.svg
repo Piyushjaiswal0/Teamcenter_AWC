@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<path d="M13,5.607V0H7V6h.348c-.524,.368-.98,.824-1.348,1.348v-.348H0v6H5.607c.912,1.778,2.761,3,4.893,3,3.032,0,5.5-2.468,5.5-5.5,0-2.132-1.222-3.98-3-4.893Zm-5-.607V1h4V5h-4Zm-3,7H1v-4H5v4Zm5.5,3c-2.481,0-4.5-2.019-4.5-4.5s2.019-4.5,4.5-4.5,4.5,2.019,4.5,4.5-2.019,4.5-4.5,4.5Z" class="aw-theme-iconOutline" fill="#464646"/>
+<path d="M6,0H0V6H6V0Zm-1,5H1V1H5V5Z" class="aw-theme-iconOutline" fill="#464646"/>
+<polygon points="11 10 11 7 10 7 10 10 7 10 7 11 10 11 10 14 11 14 11 11 14 11 14 10 11 10" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

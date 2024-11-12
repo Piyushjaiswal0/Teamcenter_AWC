@@ -1,0 +1,13 @@
+<div class="sw-column">
+    <aw-row class="aw-search-activefolderShareRule">
+        <aw-scrollpanel>
+            <!-- sidenavMode is passed for panel to check whether mode is mobile or non mobile -->
+            <aw-organization-tree
+                selection-model="selectionModels.activeFolderShareRuleSelectionModel"
+                selection-data="data.selectionData"
+                sub-panel-context="{sidenavMode: subPanelContext.sidenavMode}"
+                search-state="fields.searchState">
+            </aw-organization-tree>
+        </aw-scrollpanel>
+    </aw-row>
+</div>

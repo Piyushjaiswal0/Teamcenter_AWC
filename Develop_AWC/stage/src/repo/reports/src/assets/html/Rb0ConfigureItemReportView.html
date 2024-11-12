@@ -1,0 +1,19 @@
+<aw-command-panel caption="{{(ctx.state.params.referenceId === 'edit') ? i18n.editReportTitle : i18n.configurePanelTitle}}" context="subPanelContext">
+    <aw-command-sub-panel panel-id="ConfigureItemReportPanel" visible-when="data.reportsContext.value.activeView ==='ConfigureItemReportPanel' || data.reportsContext.activeView ==='ConfigureItemReportPanel'" sub-panel-context="{searchState: subPanelContext.searchState, reportsContext: data.reportsContext}"></aw-command-sub-panel>
+    <div class="aw-layout-flexColumn" exist-when="data.reportsContext.value.activeView === 'Rb0RootClassSelectorSub'">
+        <aw-navigate-panel title='{{i18n.selectClass}}' pre-panel-id='ConfigureItemReportPanel' panel-id='Rb0RootClassSelectorSub' sub-panel-context='{ reportsContext: data.reportsContext }' exist-when="data.reportsContext.value.activeView === 'Rb0RootClassSelectorSub'" action="updateActiveView" active-state="data.reportsContext">
+        </aw-navigate-panel>
+    </div>
+    <div class="aw-layout-flexColumn" exist-when="data.reportsContext.value.activeView === 'Rb0RootSampleSelectorSub' || data.reportsContext.activeView === 'Rb0RootSampleSelectorSub'">
+        <aw-navigate-panel title='{{i18n.selectSample}}' pre-panel-id='ConfigureItemReportPanel' panel-id='Rb0RootSampleSelectorSub' sub-panel-context='{ reportsContext: data.reportsContext }' action="updateActiveView" active-state="data.reportsContext">
+        </aw-navigate-panel>
+    </div>
+    <div class="aw-layout-flexColumn" exist-when="data.reportsContext.value.activeView === 'Rb0SegmentsSelectorSub' || data.reportsContext.activeView === 'Rb0SegmentsSelectorSub'">
+        <aw-navigate-panel title='{{i18n.segments}}' pre-panel-id='ConfigureItemReportPanel' panel-id='Rb0SegmentsSelectorSub' sub-panel-context='{ ...subPanelContext, reportsContext: data.reportsContext }' action="updateActiveView" active-state="data.reportsContext">
+        </aw-navigate-panel>
+    </div>
+    <div class="aw-layout-flexColumn" exist-when="data.reportsContext.value.activeView === 'SetLayoutTabPage' || data.reportsContext.activeView === 'SetLayoutTabPage'">
+        <aw-navigate-panel title='{{i18n.layout}}' pre-panel-id='ConfigureItemReportPanel' panel-id='SetLayoutTabPage' sub-panel-context='{ ...subPanelContext, reportsContext: data.reportsContext }' action="updateActiveView" active-state="data.reportsContext">
+        </aw-navigate-panel>
+    </div>
+</aw-command-panel>

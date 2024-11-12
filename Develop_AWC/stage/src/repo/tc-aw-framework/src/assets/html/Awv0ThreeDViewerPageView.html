@@ -1,0 +1,13 @@
+<!-- rendered independent as 3d tab -->
+
+<aw-flex-column width="fill" >
+    <aw-full-screen class="h-12" exist-when="subPanelContext.fullScreenState === undefined"
+        include-component-name='Awv0ThreeDViewerPageInternal' header-title='{{subPanelContext.caption}}'
+        header-path='{{subPanelContext.activeTab.name ? subPanelContext.activeTab.name : subPanelContext.showObjectContext.activeTab.name}}'
+        header-context-title='{{subPanelContext.props.object_string.uiValues[0]}}' context='subPanelContext'>
+    </aw-full-screen>
+
+    <!-- rendered as viewer -->
+    <aw-include exist-when="subPanelContext.fullScreenState !== undefined " name="Awv0ThreeDViewerPageInternal"
+        sub-panel-context="subPanelContext"></aw-include>
+</aw-flex-column>

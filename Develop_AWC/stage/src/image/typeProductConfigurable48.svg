@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="3.5" y1="12.491" x2="43.4962" y2="12.491" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="-0.1463" y1="16.1367" x2="27.1444" y2="43.4274" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+  </defs>
+  <polygon points="23.498 24.056 43.496 12.492 43.496 35.51 23.498 47.074 23.498 24.056" fill="#3c91af"/>
+  <polygon points="3.5 12.49 23.464 0.926 43.496 12.492 23.498 24.056 3.5 12.49" fill="url(#New_Gradient_Swatch_1)"/>
+  <polygon points="23.498 24.056 23.498 47.074 3.5 35.508 3.5 12.49 23.498 24.056" fill="url(#New_Gradient_Swatch_2)"/>
+  <line x1="23.4981" y1="24.0557" x2="23.4981" y2="47.0738" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polyline points="43.496 12.492 23.498 24.056 3.5 12.49" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="43.5" y1="24.6317" x2="23.5019" y2="36.1958" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="3.5038" y1="24.6317" x2="23.5019" y2="36.1958" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polyline points="33.501 6.633 13.503 18.198 13.499 18.198 13.499 41.235" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polyline points="33.497 41.292 33.497 18.198 13.503 6.633" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polygon points="23.464 0.926 3.5 12.49 3.5 35.508 23.498 47.074 43.496 35.51 43.496 12.492 23.464 0.926" fill="none" stroke="#464646" stroke-linejoin="round"/>
+</svg>

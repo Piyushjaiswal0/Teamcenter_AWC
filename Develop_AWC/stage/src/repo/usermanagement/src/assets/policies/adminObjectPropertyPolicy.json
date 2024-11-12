@@ -1,0 +1,76 @@
+{
+    "types": [
+        {
+            "name": "Group",
+            "properties": [                              
+                {
+                    "name": "name"
+                },
+                {
+                    "name": "description"
+                },
+                {
+                    "name": "security"
+                },
+                {
+                    "name": "parent"
+                },
+                {
+                    "name": "privilege"
+                },
+                {
+                    "name": "volume"
+                },
+                {
+                    "name": "local_volume"
+                },
+                {
+                    "name": "is_modifiable"
+                }               
+             ]
+        },
+        {
+            "name": "Role",
+            "properties": [                              
+                {
+                    "name": "role_name"
+                },
+                {
+                    "name": "description"
+                },
+                {
+                    "name": "is_modifiable"
+                }
+             ]
+        },
+        {
+            "name": "User",
+            "properties": [                              
+                {
+                    "name": "user_name"
+                },
+                {
+                    "name": "is_modifiable"
+                }
+             ]
+        },
+        {
+            "name": "Person",
+            "properties": [
+                
+                {
+                    "name": "is_modifiable"
+                }
+             ]
+        },
+        {
+            "name": "GroupMember",
+            "properties": [
+                
+                {
+                    "name": "is_modifiable"
+                }
+             ]
+        }        
+     ]
+}

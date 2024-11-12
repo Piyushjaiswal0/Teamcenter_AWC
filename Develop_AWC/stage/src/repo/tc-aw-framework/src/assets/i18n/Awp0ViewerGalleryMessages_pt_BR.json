@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Verificação na saída",
+    "uvCheckinTitle": "Devolução",
+    "uvCancelCheckoutTitle": "Cancelar Reserva",
+    "previousButtonTitle": "Anterior",
+    "nextButtonTitle": "Avançar",
+    "noObjectSelectionMessage": "Selecione algo para exibir.",
+    "fullViewModeTitle": "Tela cheia",
+    "uvWordWrapTitle": "Qubra de linha",
+    "exitFullViewModeTitle": "Sair da tela cheia",
+    "aw_viewerRightSide": "Lado direito do visualizador",
+    "aw_universalViewerLink": "Link do visualizador universal",
+    "uvCheckoutDesc": "Reserve a seleção para evitar que outros usuários façam alterações.",
+    "fullViewModeDesc": "Alterne para a exibição em tela cheia.",
+    "uvWordWrapDesc": "Ajuste o texto longo em múltiplas linhas.",
+    "Awp0ShowObjectForUVpDesc": "Abra este arquivo na janela atual.",
+    "Awp0ViewFileForUVDesc": "Faça o download do arquivo."
+}

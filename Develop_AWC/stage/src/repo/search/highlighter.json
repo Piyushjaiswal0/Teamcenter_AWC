@@ -1,0 +1,11 @@
+{
+  "searchHighlighter": {
+    "subLocationName": "com.siemens.splm.client.search:SearchResultsSubLocation",
+    "highlightStyle": "<span class=\"aw-widgets-showCellHighlighter\">$1</span>",
+    "conditions": {
+      "highlightCondition": {
+        "expression": "true"
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<aw-panel class="sw-row h-12" visible-when="conditions.dispInstructions">
+    <aw-panel-header>
+        <div class="sw-column w-8">
+            <div class="aw-reports-instructionsLabel">{{data.instructionsTitle.uiValue}}</div>
+        </div>
+        <div class="sw-column w-4"></div>
+    </aw-panel-header>
+</aw-panel>
+<div class="sw-column w-12 h-12" visible-when="!conditions.dispInstructions">
+    <div class="sw-row" visible-when="conditions.shouldShowFilterChips">
+        <aw-chip-list dataprovider="data.dataProviders.filtersDataProvider" action="removeFilterAction" ui-icon-action="removeFilterAction"></aw-chip-list>
+    </div>
+    <aw-panel class="aw-reports-chartContainer sw-row h-7">
+        <aw-panel-header>
+            <div class="sw-row h-12">
+                <div class="sw-column w-4">
+                    <!--aw-label prop="data.totalFoundString" visible-when="conditions.totalFoundDone" id="totalFoundLabel"></aw-label-->
+                    <div class="aw-reports-totalFoundLabel" visible-when="conditions.totalFoundDone">{{data.totalFoundString.uiValue}}</div>
+                    <div class="aw-reports-requestTimeLabel" visible-when="conditions.totalFoundDone">{{data.timeOfRequest.uiValue}}</div>
+                    <!--aw-label prop="data.timeOfRequest" visible-when="conditions.totalFoundDone" id="timeOfRequestLabel"></aw-label-->
+                    <div class="aw-reports-requestTimeLabel" visible-when="conditions.showRevRule">{{data.appliedRevRule.uiValue}}</div>
+
+                    <aw-link class="aw-reports-reportSourceName" prop="data.reportSource" action="goToSource" visible-when="conditions.showSourceLink"></aw-link>
+                </div>
+                <div class="sw-column w-4">
+                    <!--aw-label class="aw-reports-titleLabel" prop="data.title" id="titleReport" visible-when="conditions.titleChosen"></aw-label-->
+                    <div class="aw-reports-titleLabel" id="titleReport" visible-when="conditions.titleChosen">{{data.title.uiValue}}</div>
+                </div>
+                <div class="sw-column w-4 aw-reports-viewerCommands" visible-when="conditions.isEditPage">
+                    <aw-command-bar anchor="reportViewerCommands" alignment="HORIZONTAL"></aw-command-bar>
+                </div>
+            </div>
+        </aw-panel-header>
+        <aw-panel-body>
+            <div class="sw-row h-12 sw-column w-12" id="OneChart" exist-when="conditions.oneCharts">
+                <div class="sw-column w-12" exist-when="conditions.dataReady1 && !data.chart1NoData" visible-when="conditions.chartReadyGen1">
+                    <aw-chart chart-provider="data.chartProviders.genericChart1" name="Chart1Section" id="Chart1Section"></aw-chart>
+                </div>
+                <div class="sw-column w-12" exist-when="conditions.dataReady2 && !data.chart2NoData" visible-when="conditions.chartReadyGen2">
+                    <aw-chart chart-provider="data.chartProviders.genericChart2" name="Chart2Section" id="Chart2Section"></aw-chart>
+                </div>
+                <div class="sw-column w-12" exist-when="conditions.dataReady3 && !data.chart3NoData" visible-when="conditions.chartReadyGen3">
+                    <aw-chart chart-provider="data.chartProviders.genericChart3" name="Chart3Section" id="Chart3Section"></aw-chart>
+                </div>
+            </div>
+            <div class="sw-row h-12 sw-column w-12" id="TwoChart" exist-when="conditions.twoCharts">
+                <div class="sw-column w-6" exist-when="conditions.dataReady1 && !data.chart1NoData" visible-when="conditions.chartReadyGen1">
+                    <aw-chart chart-provider="data.chartProviders.genericChart1" name="Chart1Section" id="Chart1Section"></aw-chart>
+                </div>
+                <div class="sw-column w-6" exist-when="conditions.dataReady2 && !data.chart2NoData" visible-when="conditions.chartReadyGen2">
+                    <aw-chart chart-provider="data.chartProviders.genericChart2" name="Chart2Section" id="Chart2Section"></aw-chart>
+                </div>
+                <div class="sw-column w-6" exist-when="conditions.dataReady3 && !data.chart3NoData" visible-when="conditions.chartReadyGen3">
+                    <aw-chart chart-provider="data.chartProviders.genericChart3" name="Chart3Section" id="Chart3Section"></aw-chart>
+                </div>
+            </div>
+            <div class="sw-row h-12 sw-column w-12" id="ThreeChart" exist-when="conditions.threeCharts">
+                <div class="sw-column w-4">
+                    <aw-chart chart-provider="data.chartProviders.genericChart1" name="Chart1Section" id="Chart1Section"></aw-chart>
+                </div>
+                <div class="sw-column w-4">
+                    <aw-chart chart-provider="data.chartProviders.genericChart2" name="Chart2Section" id="Chart2Section"></aw-chart>
+                </div>
+                <div class="sw-column w-4">
+                    <aw-chart chart-provider="data.chartProviders.genericChart3" name="Chart3Section" id="Chart3Section"></aw-chart>
+                </div>
+            </div>
+        </aw-panel-body>
+    </aw-panel>
+    <div class="sw-row h-5">
+        <aw-splm-table gridid="gridView" exist-when="(( data.dataIsReady && data.dataIsReadyTable && !data.updateTable && data.numCharts > 0) || (data.dataIsReady && data.dataIsReadyTable && !data.updateTable && data.numCharts === 0))"></aw-splm-table>
+    </div>
+</div>

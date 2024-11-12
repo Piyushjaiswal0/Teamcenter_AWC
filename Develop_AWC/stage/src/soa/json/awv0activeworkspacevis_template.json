@@ -1,0 +1,2917 @@
+{
+  "BusinessObjectInterface": [
+    {
+      "createRelease": "tc10000.1.2",
+      "description": "Interface Name for Business Object Awv0BOMIndexPSProvider",
+      "libraryName": "Awv0activeworkspacemmv",
+      "name": "Awv0BOMIndexPSProvider",
+      "namespace": "awv0activeworkspacevis",
+      "primaryInterface": "true",
+      "typeName": "Awv0BOMIndexPSProvider"
+    },
+    {
+      "createRelease": "tc9000.1.3",
+      "description": "Interface Name for Business Object Awv0BookmarkVisData",
+      "libraryName": "Awv0activeworkspacevis",
+      "name": "Awv0BookmarkVisData",
+      "namespace": "awv0activeworkspacevis",
+      "primaryInterface": "true",
+      "typeName": "Awv0BookmarkVisData"
+    },
+    {
+      "createRelease": "tc10000.1.2",
+      "description": "Interface Name for Business Object Awv0ProductStructureProvider",
+      "libraryName": "Awv0activeworkspacemmv",
+      "name": "Awv0ProductStructureProvider",
+      "namespace": "awv0activeworkspacevis",
+      "primaryInterface": "true",
+      "typeName": "Awv0ProductStructureProvider"
+    }
+  ],
+  "Date": "Thu Aug 30 12:32:32 AM 2018",
+  "ExternalDataType": [
+    {
+      "createRelease": "tc10000.1.2",
+      "declarationHeader": "Awv0activeworkspacemmv/Awv0ConfigurationDataTypes.hxx",
+      "description": "This contain the information and product and the configuration information.",
+      "name": "ProductAndConfigurationInfo",
+      "namespace": "awv0activeworkspacevis::Mmv"
+    }
+  ],
+  "Library": [
+    {
+      "DependentOn": [
+        {
+          "name": "Awv0activeworkspacevis"
+        }
+      ],
+      "createRelease": "tc9000.1.3",
+      "description": "This service library provides the services that are visualization specific in Active Workspace.",
+      "isThirdParty": "false",
+      "name": "Awv0SoaActiveWorkspaceVis",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis",
+      "serviceLibrary": "true"
+    },
+    {
+      "DependentOn": [
+        {
+          "name": "metaframework"
+        },
+        {
+          "name": "tccore"
+        },
+        {
+          "name": "tc"
+        },
+        {
+          "name": "cxpom"
+        }
+      ],
+      "createRelease": "tc10000.1.2",
+      "description": "Library to support MMV functionality.",
+      "isThirdParty": "false",
+      "name": "Awv0activeworkspacemmv",
+      "namespace": "",
+      "serviceLibrary": "false"
+    },
+    {
+      "DependentOn": [
+        {
+          "name": "metaframework"
+        },
+        {
+          "name": "tccore"
+        },
+        {
+          "name": "tc"
+        },
+        {
+          "name": "cxpom"
+        }
+      ],
+      "createRelease": "tc9000.1.3",
+      "description": "Library to support visualization in Active Workspace.",
+      "isThirdParty": "false",
+      "name": "Awv0activeworkspacevis",
+      "namespace": "",
+      "serviceLibrary": "false"
+    }
+  ],
+  "Operation": [
+    {
+      "ParameterInfo": [
+        {
+          "description": "Product and configuration information",
+          "parameterName": "productAndConfigInfo"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "This operation computes the complete or delta structure file and updates the Delta collection dataset.",
+      "exceptionCondition": "",
+      "id": "awv0GeneratePSFileAndUpdateCollection#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GeneratePSFileAndUpdateCollection",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GeneratePSFileAndUpdateCollection#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*",
+      "returnDescription": "",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "The product and configuration for which the full product information has to be generated.",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "The file location where the product structure file needs to be writen",
+          "parameterName": "fileLocation"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "The operation gets the complete product structure information serialized as MMP file.",
+      "exceptionCondition": "",
+      "id": "awv0GetCompletePSFile#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetCompletePSFile",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetCompletePSFile#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*",
+      "returnDescription": "The producture structure information is serialized as MMP file in given location.",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "The recipe Object.",
+          "parameterName": "recipeObject"
+        },
+        {
+          "description": "True if the product and configuration pointed by the recipe object is supported",
+          "parameterName": "isSupported"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "Given a recipe object like VisStructureContext or Awb0ProductContextInfo, the provider checks if it is capable of providing structure information.",
+      "exceptionCondition": "",
+      "id": "awv0IsProductAndConfigInRecipeSupported#tag_t$bool,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0IsProductAndConfigInRecipeSupported",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsProductAndConfigInRecipeSupported#tag_t$bool,*",
+      "returnDescription": "Returns true if the product and configuration pointed by the recipe object is supported",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "The product and configuration information.",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "Whether the provider supports the given product and configuration.",
+          "parameterName": "isSupported"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "Checks if the provider can provide structure information for given product and configuration.",
+      "exceptionCondition": "",
+      "id": "awv0IsProductAndConfigSupported#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$bool,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0IsProductAndConfigSupported",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsProductAndConfigSupported#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$bool,*",
+      "returnDescription": "True if the product and configuration is supported",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of Teamcenter objects and related information that need to be visualized in Teamcenter Visualization. For example, if a Dataset is launched, then information about its Item, ItemRevision and type of operation, including any additional information can be provided.",
+          "parameterName": "idInfos"
+        },
+        {
+          "description": "Server information for the viewer to connect to the server. Contains protocol, server URL, connection mode of the server and any other additional server relevant key value pair.",
+          "parameterName": "serverInfo"
+        },
+        {
+          "description": "The information about the client that initiated the launch (e.g., application name, application version, and any other additional client application relevant key value pair).",
+          "parameterName": "userDataAgentInfo"
+        },
+        {
+          "description": "The session information for the viewer to connect to the session. Includes the session discriminator and any other additional session relevant key value pair.",
+          "parameterName": "sessionInfo"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc10000.1.4",
+      "dependencies": "",
+      "description": "This service operation is an extension to the service operation with the same name located in the DataManagement Interface of the Visualization service library. This extension allows the support of launching ActiveWorkspace specific objects such as Awb0Element and Awb0ProductContextInfo.<br /><br />This service generates a VVI information which is used to launch Teamcenter Visualization viewers with selected objects from Teamcenter and preserve a two way communication link between the viewer and the server.  This operation can return the VVI information as a string buffer or as a read file ticket to a vvi/vfz file in the FMS transient file volume. The \"UseTransientVolume\" option passed into the service via the Idinfo structure controls how the VVI launch information is returned.<br /><br />Obtaining the launch information as a string might be usefule to avoid setup and use of the FMS system directly by the calling client.  It is the responsibility of the client to determine how to use the returned string buffer.  For example, the vvi string buffer(s) can be written out as a vvi or vfz file on the client and passed to visualization, or the string buffer can be passed directly to embedded visualization if using the PLMVis toolkit.  <br /><br />If returning the launch information as a FMS transient file ticket then the operation requires the Teamcenter File Management System (FMS) to be installed (including FCC and transient volumes) in order to retrieve the VVI file from the transient file volume. When operating in this mode, the operation generates the launch file (VFZ or VVI), stores it in the FMS transient volume, and returns the FMS ticket. The client that initiated this operation is responsible for downloading the transient file (VVI or VFZ) from the transient volume to a local file system using the transient ticket. The transient (VVI or VFZ) file is consumed by the Teamcenter Visualization client. The viewer establishs a server connection and loads the object(s) specified in the VVI file.  Launch on multiple objects will generate a VFZ file (zip of all the vvi files) and transient ticket of VFZ file would be sent to client.<br /><br />NOTE: VVI and VFZ files are not intended to be persisted and should be generated with each launch to Teamcenter Visualization. For example, the VVI format is not guaranteed to be supported if the server or viewer is updated. VFZ files are used if more than one object is launched at a time, while VVI files are used for single objects.<br /><br />As with the previous createLaunchInfo service operation located in the Visualization library, this service supports launch on Teamcenter persistent objects like Dataset, Item, ItemRevision, BOMViewRevision, BOMView. It also supports launch of selected BOMLines of a configured structure from Structure Manager or BOPLines from Manufacturing Process Planner, but in this case the caller must first create a VisStructureContext object and make it the launched object. However with this operation you may also launch objects of type Awb0Element and Awb0ProductContextInfo. See description of IdInfo for details.<br /><br />Valid launch object types and behavior such as priority order can be configured with the Teamcenter Preferences VMU_Datasets, VMU_FileSearchOrder and VMU_RelationSearchOrder.",
+      "exceptionCondition": "",
+      "id": "createLaunchInfo#const,std::vector<Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::IdInfo>,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::ServerInfo,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::UserAgentDataInfo,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::SessionInfo,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::DataManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "true",
+      "name": "createLaunchInfo",
+      "opTemplate": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::LaunchInfoResponse#Awv0::Soa::ActiveWorkspaceVis::DataManagement::createLaunchInfo#const,std::vector<Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::IdInfo>,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::ServerInfo,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::UserAgentDataInfo,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::SessionInfo,&",
+      "returnDescription": "VVI file data as a string buffer or FMS file ticket for the request objects. The following partial errors may be returned:<br />208031: Launch request is not valid.<br />208013: The selected object is invalid for the launch operation;<br />208012: Launch file generation failed.",
+      "useCase": "This operation supports the mechanism of visualizing Teamcenter specific objects in Teamcenter Visualization client."
+    },
+    {
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc10000.1.4",
+      "dependencies": "",
+      "description": "This operation retrieves the information about the product and configurations whose product structure information is indexed. The product and configuration information are returned only for products which have been enabled for massive model visualization(MMV).",
+      "exceptionCondition": "",
+      "id": "getIndexedProducts#",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getIndexedProducts",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetIndexedProductsResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getIndexedProducts",
+      "returnDescription": "A response that contains a list of   product and configuration for which the product structure information are indexed.<br />The following partial errors may be returned:<br />170050  - There are no products indexed for Massive Model Visualization(MMV).<br />183026 - An error was encountered while retrieving product and configuration information from <b>Awb0BOMIndexData</b>. Please report this error to your system administrator.<br />",
+      "useCase": "The Quicksilver Data server(QDS) is deployed on a LAN closer to the visualization client. The QDS serves the product structure information to visualization clients connecting to it. The QDS is configured to periodically communicate to the Tcserver and retrieve the indexed product structure information.<br />1.&nbsp;&nbsp;&nbsp;&nbsp;QDS boots and invokes getIndexedProducts and gets the indexed products.<br />2.&nbsp;&nbsp;&nbsp;&nbsp; Invokes getStructureFiles operation on each of the indexed product to get the full product structure information represented in a binary file(*.mmp).<br />3.&nbsp;&nbsp;&nbsp;&nbsp;Periodically invokes getStructureFiles operation with previous delta identifier token to retrieve the changed product structure information.<br />"
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of product and configuration information for which the full or delta product structure information need to be retrieved.",
+          "parameterName": "productAndConfigInfoInput"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc10000.1.4",
+      "dependencies": "getIndexedProducts",
+      "description": "This operation retrieves the full or delta product structure information for the given product and configuration. The ticket to the file(s) that contain the  product structure information is returned via this operation. <br />When this operation is invoked by the client to get the full product structure file, the response may contain a single complete product structure file or a single complete product structure file and a set of delta product structure files. In case a complete and a set of files containing delta changes are sent then the receiving client has to merge the delta files into the complete structure file.<br />When this operation is invoked by the client to get the delta product structure, the response may contain a set of delta product structure files or a single complete product structure file and a set of delta product structure files.  In case where only a set of delta files are returned, the client need to merge those file with its available complete structure file. When a single complete product structure file and a set of delta product structure files are returned, then this means that the delta token identifier could not be identified on the server and hence a complete product structure information has been returned.<br />The response also contains a delta identifier token. This delta identifier token has to be passed during the next call to  getStructureFiles operation in case the client needs the delta files since the previous call to  getStructureFiles operation.<br />",
+      "exceptionCondition": "",
+      "id": "getStructureFiles#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfoInput>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getStructureFiles",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetStructureFilesResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureFiles#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfoInput>,&",
+      "returnDescription": " The response  contains the  file ticket(s) to  file(s) that contains product structure information and a next delta token identifier. The next delta token is to be used to get the delta product structure changes information files during the next call to this operation.<br />The following partial errors may be returned:<br /><br />170051  - The product structure information is not available for the given product and configuration.<br />183027  - The indexed product structure for the given product and configuration is in a failed state .",
+      "useCase": "The Quicksilver Data server(QDS) is deployed on a LAN closer to the visualization client. The QDS acts as a product structure server for the visualization clients. The QDS is configured to periodically communicate to the Tcserver and retrieve the indexed product structure information.<br />1.&nbsp;&nbsp;&nbsp;&nbsp;QDS boots and invokes getIndexedProducts  and gets the products that are indexed.<br />2.&nbsp;&nbsp;&nbsp;&nbsp; Invokes getStructureFiles operation on each of the indexed product to get the full product structure  information represented in a binary file(*.mmp).<br />3.&nbsp;&nbsp;&nbsp;&nbsp;Since the product structure changes are continuously tracked and product structure file produced, the response would contain a complete product structure file along with a set of delta product structure files that were generated since the complete product structure file was produced.<br />4.&nbsp;&nbsp;&nbsp;&nbsp;If the product structure information is returned as a complete file and a set of delta files then the client merges the delta file into the complete structure to get the current complete product structure.<br />5.&nbsp;&nbsp;&nbsp;&nbsp;The QDS invokes getStructureFiles periodically to get the next delta that represents the product structure changes.<br />6.&nbsp;&nbsp;&nbsp;&nbsp;If only delta product structure file is returned then those files are merged with the complete product structure file that the client already has."
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of product and configuration information for which the product structure id has to be determined.",
+          "parameterName": "productStructureIdInput"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc10000.1.4",
+      "dependencies": "getIndexedProducts,getStructureFiles",
+      "description": "This operation retrieves the id that is used to identify a product structure information. The id is a unique identifier which gets written into the MMP file as the product Id. The Quicksilver Data server(QDS) maintains the product structure information for different product and configurations. Now when the Visualization client sends a request to QDS asking information about a product and configuration, the QDS invokes this operation to determine the id of the structure which contain information about the requested product and configuration.<br /><br />Say for example the QDS may have a product structure information with id \"UidOfBomIndexAdminData1\" that contains product structure information of product1 for <b>RevisionRule</b> as \"Latest Working\" and <b>VariantRule</b> \"vrule1\", \"vrule2\", \"vrule3\" and a product structure information with id \"UidOfBomIndexAdminData2\" that contains product structure information of product2 for <b>RevisionRule</b> as \"Latest Released\" and <b>VariantRule</b> \"vrule1\", \"vrule2\", \"vrule3\" and. Now if the Visualization client wants to display the product1 for \"Latest working\" with \"vrule2\", it contacts the QDS server with this information. The QDS in turn  invokes this operation with the given information to determine the id of the mmp file, in this case it would return \"UidOfBomIndexAdminData1\" as id in its response.<br />",
+      "exceptionCondition": "",
+      "id": "getStructureIdFromRecipe#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getStructureIdFromRecipe",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetProductStructureIdResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureIdFromRecipe#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput>,&",
+      "returnDescription": " The response contains the  id by which the  product structure information file can be identified and the configuration recipe information that needs to be applied.<br /><br />Following are some possible errors returned in the ServiceData. <br />170051  - The product structure information is not available for the given product and configuration.<br />170053  - The input product structure configuration recipe object is an invalid object.<br />",
+      "useCase": "The Quicksilver Data server(QDS) is deployed on a LAN closer to the visualization client. The QDS acts as a product structure server for the visualization clients. The QDS is configured to periodically communicate to the Tcserver and retrieve the indexed product structure information.<br />1.&nbsp;&nbsp;&nbsp;&nbsp;QDS boots and invokes getIndexedProducts  and gets the products that are indexed.<br />2.&nbsp;&nbsp;&nbsp;&nbsp; Invokes getStructureFiles operation on each of the indexed product to get the product structure information represented in a binary file(*.mmp).<br />3.&nbsp;&nbsp;&nbsp;&nbsp;If the product structure information is returned as a complete file and a set of delta files then the client merges the delta file into the complete structure to get the current complete product structure .<br />4.&nbsp;&nbsp;&nbsp;&nbsp;If only delta product structure file is returned then those files are merged with the complete file that the client already has.<br />5.&nbsp;&nbsp;&nbsp;&nbsp;A visualization client requests product structure information for a given product and configuration using a recipe object. The recipe object could be <b>Awb0ProductContextInfo</b> or <br /><b>VisStructureContext</b> etc. Now QDS invokes getStructureIdFromRecipe to determine which file contains the requested product structure information.<br />6.&nbsp;&nbsp;&nbsp;&nbsp;The spatial structure corresponding to the product structure file is then served to the visualization client for it to apply  massive model visualization algorithm.<br />"
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of product and configuration information for which the product structure id has to be determined.",
+          "parameterName": "productStructureIdInput"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "Awp04.0.0",
+      "dependencies": "getIndexedProducts,getStructureFiles",
+      "description": "This operation retrieves the id that is used to identify a product structure information. The id is a unique identifier which gets written into the MMP file as the product Id. The Quicksilver Data server(QDS) maintains the product structure information for different product and configurations. Now when the Visualization client sends a request to QDS asking information about a product and configuration, the QDS invokes this operation to determine the id of the structure which contain information about the requested product and configuration.<br /><br />Say for example the QDS may have a product structure information with id &quot;UidOfBomIndexAdminData1&quot; that contains product structure information of product1 for RevisionRule as &quot;Latest Working&quot; and VariantRule &quot;vrule1&quot;, &quot;vrule2&quot;, &quot;vrule3&quot; and a product structure information with id &quot;UidOfBomIndexAdminData2&quot; that contains product structure information of product2 for RevisionRule as &quot;Latest Released&quot; and VariantRule &quot;vrule1&quot;, &quot;vrule2&quot;, &quot;vrule3&quot; and. Now if the Visualization client wants to display the product1 for &quot;Latest working&quot; with &quot;vrule2&quot;, it contacts the QDS server with this information. The QDS in turn invokes this operation with the given information to determine the id of the mmp file, in this case it would return &quot;UidOfBomIndexAdminData1&quot; as id in its response.",
+      "exceptionCondition": "",
+      "id": "getStructureIdFromRecipe2#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getStructureIdFromRecipe2",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization::GetProductStructureIdResponse2#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureIdFromRecipe2#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput>,&",
+      "returnDescription": "The response contains the id by which the product structure information file can be identified and the configuration recipe information that needs to be applied.<br /><br />Following are some possible errors returned in the ServiceData. <br />170051 - The product structure information is not available for the given product and configuration.<br />170053 - The input product structure configuration recipe object is an invalid object.",
+      "useCase": "The Quicksilver Data server(QDS) is deployed on a LAN closer to the visualization client. The QDS acts as a product structure server for the visualization clients. The QDS is configured to periodically communicate to the Tcserver and retrieve the indexed product structure information.<br />1.    QDS boots and invokes getIndexedProducts and gets the products that are indexed.<br />2.     Invokes getStructureFiles operation on each of the indexed product to get the product structure information represented in a binary file(*.mmp).<br />3.    If the product structure information is returned as a complete file and a set of delta files then the client merges the delta file into the complete structure to get the current complete product structure .<br />4.    If only delta product structure file is returned then those files are merged with the complete file that the client already has.<br />5.    A visualization client requests product structure information for a given product and configuration using a recipe object. The recipe object could be <b>Awb0ProductContextInfo</b> or <br /><b>VisStructureContext</b> etc. Now QDS invokes getStructureIdFromRecipe to determine which file contains the requested product structure information.<br />6.    The spatial structure corresponding to the product structure file is then served to the visualization client for it to apply massive model visualization algorithm."
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of <b>Awb0ProductContextInfo</b>s for which the visualization information associated to a bookmark has to be fetched.",
+          "parameterName": "productContextInfos"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc9000.1.3",
+      "dependencies": "getOccurrencesInProduct",
+      "description": "In order to take the user to the context where he left off, viewer state information (e.g. camera, occurrence visibility, etc.) are stored to the current <b>Awb0AutoBookmark</b> for the given <b>Awb0ProductContextInfo</b>.  This operation gets the visualization information associated to the  <b>Awb0Autobookmark</b> for the given <b>Awb0ProductContextInfo</b>.",
+      "exceptionCondition": "",
+      "id": "getVisBookmarkInfo#const,std::vector<Teamcenter::Awb0ProductContextInfo>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "getVisBookmarkInfo",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::GetVisBookmarkInfoResponse#Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement::getVisBookmarkInfo#const,std::vector<Teamcenter::Awb0ProductContextInfo>,&",
+      "returnDescription": "The list of  <font face=\"courier\" height=\"10\">VisBookmarkInfo</font>  containing the  <b>Awb0ProductContextInfo</b> instances for which the <b>Awb0BookmarkVisData</b> was found. Following are some possible errors returned in <font face=\"courier\" height=\"10\">ServiceData</font>:<br /><ul><ul><li type=\"disc\">169001  The Bookmark Data was not found for the given Product Context Information. This could happen if the Product Context Information does not have an Auto-bookmark.</li><li type=\"disc\">169002 The FMS read ticket for the visualization bookmark file could not be fetched. Please report this error to your system administrator.</li></ul></ul>",
+      "useCase": "The user searches for a product clicks on the viewer tab from the Active Content  Experience(ACE) location in Active Workspace.<br /><ul><ul><li type=\"disc\">A launch file(.vvi) containing the <b>Awb0ProductContextInfo</b> information gets created. This file is uploaded to the visualization server.</li><li type=\"disc\">Viewer which is running in the visualization server reads this launch file and loads the occurrences for the given <b>Awb0ProductContextInfo</b>.</li><li type=\"disc\">Viewer invokes <font face=\"courier\" height=\"10\">getVisBookmarkInfo</font>, downloads the file containing the visualization information using the read tickets returned in <font face=\"courier\" height=\"10\">VisBookmarkInfoResponse</font>, reads the file and sets the visualization state that would take the user back to where he left off.</li></ul></ul>"
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list containing <font face=\"courier\" height=\"10\">GroupOccsByPropertyInput</font>  that represents property name and property value information to group a list of input pfuid.",
+          "parameterName": "groupOccsByPropertyInputList"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc10000.1.4",
+      "dependencies": "getStructureFiles",
+      "description": "This operation classifies <b>Awb0Element</b> objects which are identified by their PFUID (An identifier used to identify a product structure line in ACE index BOM) into groups. In the list of <font face=\"courier\" height=\"10\">GroupOccsByPropertyInput</font>, each input contains an internal property name, list of property values in <font face=\"courier\" height=\"10\">PropertyGroupingValue</font> identifying the grouping criteria and a list of PFUIDs that need to be organized into groups. Each <font face=\"courier\" height=\"10\">PropertyGroupingValue</font> input contains a start and an end value. The end value is to be used for range values if populated. <br /><br />The response contains the PFUIDs that were grouped based on the property name and values. PFUIDs that could not be grouped as per input property names and values are retuned back in a separate list.<br />",
+      "exceptionCondition": "",
+      "id": "groupOccurrencesByProperties#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GroupOccsByPropertyInput>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "groupOccurrencesByProperties",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::OccsGroupedByPropertyResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::groupOccurrencesByProperties#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GroupOccsByPropertyInput>,&",
+      "returnDescription": "A structure containing a list of PFUID which are grouped based on the property name and value. The response also contains a list of PFUID which could not be grouped based upon the input criteria. <br /><br />Following are some possible errors returned in the <font face=\"courier\" height=\"10\">ServiceData</font>:<br /><ul><ul><li type=\"disc\">170050   &nbsp;&nbsp;&nbsp;&nbsp;The input list cannot be empty.</li><li type=\"disc\">170051   &nbsp;&nbsp;&nbsp;&nbsp;The internal Property name cannot be empty.</li><li type=\"disc\">170052    &nbsp;&nbsp;&nbsp;&nbsp;Object identifier list cannot be empty.</li><li type=\"disc\">170053    &nbsp;&nbsp;&nbsp;&nbsp;Invalid property name.</li></ul></ul>",
+      "useCase": "Use case1: <br />Coloring the part assembly displayed in Active Workspace by visualization server when rendering in non-MMV(Massive Model Visualization) mode .<br />1.&nbsp;&nbsp;&nbsp;&nbsp;In the Active Workspace client, a user wants to visualize an assembly.<br />2.&nbsp;&nbsp;&nbsp;&nbsp;The color of the parts displayed in the visualization view has to match the colors on the bar chart for the objects in the search results.<br />3.&nbsp;&nbsp;&nbsp;&nbsp;The AW visualization client invokes the visualization server with the criteria that contain the color code to group the rendered objects based on the property name and property values.<br />4.&nbsp;&nbsp;&nbsp;&nbsp;The AW visualization server initially renders all the current objects it has in its view in a see through mode<br />5.&nbsp;&nbsp;&nbsp;&nbsp;The AW visualization server now invokes <font face=\"courier\" height=\"10\">Teamcenter::Soa::Query::_2014_11::Finder:: groupObjectsByProperties</font> and passes the property name, property values and the objects that it is currently displaying.<br />6.&nbsp;&nbsp;&nbsp;&nbsp;AW visualization server on receiving the objects grouped based on property names and values, renders the parts based on the colors associated to the group.<br /><br />Use case2: <br />Coloring the part assembly displayed in Active Workspace by visualization server when rendering in MMV(Massive Model Visualization) mode .<br />1.&nbsp;&nbsp;&nbsp;&nbsp;In the Active Workspace client, a user wants to visualize an assembly.<br />2.&nbsp;&nbsp;&nbsp;&nbsp;The color of the parts displayed in the visualization view has to match the colors on the bar chart for the objects in the search results.<br />3.&nbsp;&nbsp;&nbsp;&nbsp;The AW visualization client invokes the visualization server with the criteria that contain the color code to group the rendered objects based on the property name and property values.<br />4.&nbsp;&nbsp;&nbsp;&nbsp;The AW visualization server initially renders all the current objects it has in its view in a see through mode<br />5.&nbsp;&nbsp;&nbsp;&nbsp;The AW visualization server since it is rendering in MMV mode does not have Business Objects instead has the PFUID of the parts. The AW visualization server now invokes <font face=\"courier\" height=\"10\">groupOccurrencesByProperties</font> and passes the property name, property values, and the PFUID of the objects that it is currently displaying.<br />6.&nbsp;&nbsp;&nbsp;&nbsp;AW visualization server on receiving the PFUID grouped based on property names and values, renders the parts based on the colors associated to the group."
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of <font face=\"courier\" height=\"10\">SaveVisBookmarkInput</font> which contain the information about the <b>Awb0ProductContextInfo</b> and ticket to a bookmark file in the transient volume.",
+          "parameterName": "saveBookmarkInfos"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc9000.1.3",
+      "dependencies": "getOccurrencesInProduct",
+      "description": "When a user changes various visibility state (e.g. camera, occurrence visibility, etc) that state need to be saved/associated to a bookmark. This operation is used to associate the current visualization state information to the current <b>Awb0AutoBookmark</b> for the <b>Awb0ProductContextInfo</b>.",
+      "exceptionCondition": "",
+      "id": "saveVisBookmarkInfo#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInput>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "saveVisBookmarkInfo",
+      "opTemplate": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInfoResponse#Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement::saveVisBookmarkInfo#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInput>,&",
+      "returnDescription": "A a list of <font face=\"courier\" height=\"10\">VisBookmarkInfo</font> and <font face=\"courier\" height=\"10\">ServiceData</font>. <font face=\"courier\" height=\"10\">VisBookmarkInfo</font>  contains  <b>Awb0ProductContextInfo</b> instances for which the visualization state information  was saved. Following are some possible errors returned in <font face=\"courier\" height=\"10\">ServiceData</font>:<br /><ul><ul><li type=\"disc\">169003 The Visualization Bookmark File  is not found. It was either deleted or its read permission is improperly set.</li><li type=\"disc\">169004 The Visualization Bookmark Data cannot be created, because some Visualization Bookmark Data are already associated to the owning Bookmark Data.</li><li type=\"disc\">169005 The Visualization Bookmark Data cannot be created, because the owning Bookmark Data  is invalid.</li><li type=\"disc\">14150 The ticket string argument is not a valid FMS transient file ticket.</li></ul></ul>",
+      "useCase": "The user searches for a product clicks on the viewer tab from the Active Content  Experience(ACE) location in Active Workspace.<br /><ul><ul><li type=\"disc\">A launch file(.vvi) containing the <b>Awb0ProductContextInfo</b> gets created. This file is uploaded to the visualization server.</li><li type=\"disc\">Viewer which is running in the visualization server reads this launch file and loads the occurrences for the given <b>Awb0ProductContextInfo</b>.</li><li type=\"disc\">User changes occurrence visibility or camera angle, the viewer writes the changed information into a file. </li><li type=\"disc\">The file is now uploaded by viewer to the transient volume, invokes <font face=\"courier\" height=\"10\">saveVisBookmarkInfo</font> to save the changed viewer information as <b>ImanFile</b> object and associate it to the current Awb0AutoBookmark for the <b>Awb0ProductContextInfo</b>.</li></ul></ul>"
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Product and configuration information",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "Delta file path",
+          "parameterName": "deltaFileLocation"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "The operation that generates the delta product structure file.",
+      "exceptionCondition": "",
+      "id": "awv0GetDeltaPSFile#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetDeltaPSFile",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetDeltaPSFile#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*",
+      "returnDescription": "",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "A list of UpdateDeltaCollectionInput which contains the information that identifies the <b>Awv0MMPDeltaCollection</b> and the file that need to be added to it.",
+          "parameterName": "updateCollectionInput"
+        }
+      ],
+      "canOverride": "false",
+      "component": "Awv0ActiveWorkspaceVis",
+      "createRelease": "tc10000.1.4",
+      "dependencies": "processBomIndex,commitRegularFiles,getRegularFileTicketsForUpload,findObjectsByClassAndAttributes",
+      "description": "This operation updates the Awv0MMPDeltaCollection dataset with the file that contains product structure changes.",
+      "exceptionCondition": "",
+      "id": "updateDeltaCollection#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::UpdateCollectionInput>,&",
+      "interface": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "updateDeltaCollection",
+      "opTemplate": "Teamcenter::Soa::Server::ServiceData#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::updateDeltaCollection#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::UpdateCollectionInput>,&",
+      "returnDescription": "ServiceData structure that contains partial errors mapped to the input deltaCollectionIdentifier .<br />The following partial errors may be returned: <br />183051  - Unable to find <b>Awv0MMPDeltaCollection</b> dataset using the given collector  identifying object .<br />183052 - The input file could not be associated to the <b>Awv0MMPDeltaCollection</b> dataset. Please ask the system administrator to check the syslog for futher information on the failure.<br />183053 - Unable to purge the the existing delta mmp files in the <b>Awv0MMPDeltaCollection</b> dataset.",
+      "useCase": "The system administrator sets up the runTcFTSIndexer to run periodically.<br />1.&nbsp;&nbsp;&nbsp;&nbsp;The TcFtsIndexer finds all the <b>Awb0BOMIndexAdminData</b> that contains product and configuration whose product structure  need to be indexed.<br />2.&nbsp;&nbsp;&nbsp;&nbsp; Invokes processBomIndex operation which returns the product structure information in TcXML format.<br />3.&nbsp;&nbsp;&nbsp;&nbsp;TcXML file is transformed into SOLR schema and uploaded into SOLR.<br />4.&nbsp;&nbsp;&nbsp;&nbsp;TcXML file is also transformed into MMP format using the tcxml2mmp converter utility.<br />5.&nbsp;&nbsp;&nbsp;&nbsp;An upload ticket is obtained for the MMP file using the getRegularFileTicketsForUpload operation.<br />6.&nbsp;&nbsp;&nbsp;&nbsp;The file is uploaded to Teamcenter volume using FCC.<br />7.&nbsp;&nbsp;&nbsp;&nbsp;The uploaded file is committed to Teamcenter as <b>ImanFile</b> object using commitRegularFiles operation.<br />8.&nbsp;&nbsp;&nbsp;&nbsp;The <b>ImanFile</b> object is now associated to <b>Awv0MMPDeltaCollection</b> using updateDeltaCollection."
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Product and configuration information",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "Last delta identifer token",
+          "parameterName": "deltaIdentifierToken"
+        },
+        {
+          "description": "Complete file read ticket",
+          "parameterName": "completeFileReadTicket"
+        },
+        {
+          "description": "Delta file read tickets",
+          "parameterName": "deltaFileReadTickets"
+        },
+        {
+          "description": "Next delta identifer token",
+          "parameterName": "nextDeltaIdentifierToken"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "This operation retrieves the export compliant complete and delta file tickets. Nodes within complete and delta MMP files are filtered by evaluating read expressions. Each provider can have its own rules for product structure parsing within MMP file. This operation makes every provider to implement their logic of traversing MMP files and filtering the nodes based on read expression evaluation.",
+      "exceptionCondition": "",
+      "id": "awv0GetExportCompliantStructureFiles#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*$std::string,*$std::vector<std::string>,*$std::string,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetExportCompliantStructureFiles",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetExportCompliantStructureFiles#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*$std::string,*$std::vector<std::string>,*$std::string,*",
+      "returnDescription": "",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "List of product and configuration for which product structure indices exist.",
+          "parameterName": "productAndConfigInfos"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "This operation returns the product and the configuration for which the structure information has been indexed.",
+      "exceptionCondition": "",
+      "id": "awv0GetIndexedProductsAndConfigurations#std::vector<awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo>,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetIndexedProductsAndConfigurations",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetIndexedProductsAndConfigurations#std::vector<awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo>,*",
+      "returnDescription": "A list of ProductAndConfiguration information.",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Product and configuration information",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "Identifiers to be converted into teamcenter objects.",
+          "parameterName": "identifiers"
+        },
+        {
+          "description": "Teamcenter objects corresponding to the input identifiers.",
+          "parameterName": "tcObjects"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "The operation retrieves the corresponding Teamcenter objects for the MMV identifiers. Typically in cases like Index BOM, the pfuid is used to identify a node in the MMV mode. These nodes may have to be converted into their corresponding ACE objects so that features like Part coloring etc. can be supported in MMV mode.",
+      "exceptionCondition": "",
+      "id": "awv0GetObjectsForLineIdentifiers#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::vector<std::string>,*$std::vector<tag_t>,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetObjectsForLineIdentifiers",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetObjectsForLineIdentifiers#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::vector<std::string>,*$std::vector<tag_t>,*",
+      "returnDescription": "",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Product and configuration information",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "Owning User who can own the Delta collection dataset.",
+          "parameterName": "admin"
+        },
+        {
+          "description": "Users who can own the delta collection dataset and the users (user id) or business objects that control the retrieval access of the product and configuration into VDS,",
+          "parameterName": "controllers"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "Awp03.3.0",
+      "dependencies": "",
+      "description": "The operation returns the information about the user who can own the Delta collection dataset and the users(user id) or the Buiness Objects that control the retrieval access of the product and configuration into VDS.",
+      "exceptionCondition": "",
+      "id": "awv0GetPSFileAdminAndAccessControllers#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$tag_t,*$std::vector<tag_t>,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetPSFileAdminAndAccessControllers",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetPSFileAdminAndAccessControllers#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$tag_t,*$std::vector<tag_t>,*",
+      "returnDescription": "",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "The recipe object.",
+          "parameterName": "recipeObject"
+        },
+        {
+          "description": "Product and Configuration information.",
+          "parameterName": "productAndConfigInfo"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "Given a recipe object this operation retrieves the product and configuration information from it.",
+      "exceptionCondition": "",
+      "id": "awv0GetProductAndConfigFromRecipe#tag_t$awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetProductAndConfigFromRecipe",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetProductAndConfigFromRecipe#tag_t$awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*",
+      "returnDescription": "The product and configuration information.",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Product and Configuration information.",
+          "parameterName": "productAndConfigInfo"
+        },
+        {
+          "description": "The structure id for this product and configuration.",
+          "parameterName": "structureId"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "This operation provides the id by which the mmp file can be identified for the give product and configuration.",
+      "exceptionCondition": "",
+      "id": "awv0GetStructureId#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$std::string,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0GetStructureId",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetStructureId#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$std::string,*",
+      "returnDescription": "The id string which is used to identify the mmp file.",
+      "useCase": ""
+    },
+    {
+      "ParameterInfo": [
+        {
+          "description": "Delta product structure support verdict.",
+          "parameterName": "deltaSupported"
+        }
+      ],
+      "canOverride": "true",
+      "component": "",
+      "createRelease": "tc10000.1.2",
+      "dependencies": "",
+      "description": "Whether the product structure provider supports delta.",
+      "exceptionCondition": "",
+      "id": "awv0IsDeltaSupported#bool,*",
+      "interface": "awv0activeworkspacevis::Awv0ProductStructureProvider",
+      "isPostActionAllowed": "false",
+      "isPreActionAllowed": "false",
+      "isPreConditionAllowed": "false",
+      "isPublished": "false",
+      "name": "awv0IsDeltaSupported",
+      "opTemplate": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsDeltaSupported#bool,*",
+      "returnDescription": "Returns true if the provider supports delta product structure.",
+      "useCase": ""
+    }
+  ],
+  "OperationTemplate": [
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::IdInfo",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of Teamcenter objects and related information that need to be visualized in Teamcenter Visualization. For example, if a Dataset is launched, then information about its Item, ItemRevision and type of operation, including any additional information can be provided.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "idInfos"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::ServerInfo",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Server information for the viewer to connect to the server. Contains protocol, server URL, connection mode of the server and any other additional server relevant key value pair.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "serverInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::UserAgentDataInfo",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The information about the client that initiated the launch (e.g., application name, application version, and any other additional client application relevant key value pair).",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "userDataAgentInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::SessionInfo",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The session information for the viewer to connect to the session. Includes the session discriminator and any other additional session relevant key value pair.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "sessionInfo"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::LaunchInfoResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.4",
+      "description": "This service operation is an extension to the service operation with the same name located in the DataManagement Interface of the Visualization service library. This extension allows the support of launching ActiveWorkspace specific objects such as Awb0Element and Awb0ProductContextInfo.<br /><br />This service generates a VVI information which is used to launch Teamcenter Visualization viewers with selected objects from Teamcenter and preserve a two way communication link between the viewer and the server.  This operation can return the VVI information as a string buffer or as a read file ticket to a vvi/vfz file in the FMS transient file volume. The \"UseTransientVolume\" option passed into the service via the Idinfo structure controls how the VVI launch information is returned.<br /><br />Obtaining the launch information as a string might be usefule to avoid setup and use of the FMS system directly by the calling client.  It is the responsibility of the client to determine how to use the returned string buffer.  For example, the vvi string buffer(s) can be written out as a vvi or vfz file on the client and passed to visualization, or the string buffer can be passed directly to embedded visualization if using the PLMVis toolkit.  <br /><br />If returning the launch information as a FMS transient file ticket then the operation requires the Teamcenter File Management System (FMS) to be installed (including FCC and transient volumes) in order to retrieve the VVI file from the transient file volume. When operating in this mode, the operation generates the launch file (VFZ or VVI), stores it in the FMS transient volume, and returns the FMS ticket. The client that initiated this operation is responsible for downloading the transient file (VVI or VFZ) from the transient volume to a local file system using the transient ticket. The transient (VVI or VFZ) file is consumed by the Teamcenter Visualization client. The viewer establishs a server connection and loads the object(s) specified in the VVI file.  Launch on multiple objects will generate a VFZ file (zip of all the vvi files) and transient ticket of VFZ file would be sent to client.<br /><br />NOTE: VVI and VFZ files are not intended to be persisted and should be generated with each launch to Teamcenter Visualization. For example, the VVI format is not guaranteed to be supported if the server or viewer is updated. VFZ files are used if more than one object is launched at a time, while VVI files are used for single objects.<br /><br />As with the previous createLaunchInfo service operation located in the Visualization library, this service supports launch on Teamcenter persistent objects like Dataset, Item, ItemRevision, BOMViewRevision, BOMView. It also supports launch of selected BOMLines of a configured structure from Structure Manager or BOPLines from Manufacturing Process Planner, but in this case the caller must first create a VisStructureContext object and make it the launched object. However with this operation you may also launch objects of type Awb0Element and Awb0ProductContextInfo. See description of IdInfo for details.<br /><br />Valid launch object types and behavior such as priority order can be configured with the Teamcenter Preferences VMU_Datasets, VMU_FileSearchOrder and VMU_RelationSearchOrder.",
+      "id": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::LaunchInfoResponse#Awv0::Soa::ActiveWorkspaceVis::DataManagement::createLaunchInfo#const,std::vector<Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::IdInfo>,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::ServerInfo,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::UserAgentDataInfo,&$const,Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::SessionInfo,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::DataManagement::createLaunchInfo",
+      "returnConst": "false",
+      "returnDescription": "VVI file data as a string buffer or FMS file ticket for the request objects. The following partial errors may be returned:<br />208031: Launch request is not valid.<br />208013: The selected object is invalid for the launch operation;<br />208012: Launch file generation failed.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetIndexedProductsResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.4",
+      "description": "This operation retrieves the information about the product and configurations whose product structure information is indexed. The product and configuration information are returned only for products which have been enabled for massive model visualization(MMV).",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetIndexedProductsResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getIndexedProducts",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getIndexedProducts",
+      "returnConst": "false",
+      "returnDescription": "A response that contains a list of   product and configuration for which the product structure information are indexed.<br />The following partial errors may be returned:<br />170050  - There are no products indexed for Massive Model Visualization(MMV).<br />183026 - An error was encountered while retrieving product and configuration information from <b>Awb0BOMIndexData</b>. Please report this error to your system administrator.<br />",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The product and configuration for which the full product information has to be generated.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The file location where the product structure file needs to be writen",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "fileLocation"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "The operation gets the complete product structure information serialized as MMP file.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetCompletePSFile#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetCompletePSFile",
+      "returnConst": "false",
+      "returnDescription": "The producture structure information is serialized as MMP file in given location.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Product and configuration information",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Delta file path",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "deltaFileLocation"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp03.3.0",
+      "description": "The operation that generates the delta product structure file.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetDeltaPSFile#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetDeltaPSFile",
+      "returnConst": "false",
+      "returnDescription": "",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Product and configuration information",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Last delta identifer token",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "deltaIdentifierToken"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Complete file read ticket",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "completeFileReadTicket"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::vector<std::string>",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Delta file read tickets",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "deltaFileReadTickets"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Next delta identifer token",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "nextDeltaIdentifierToken"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp03.3.0",
+      "description": "This operation retrieves the export compliant complete and delta file tickets. Nodes within complete and delta MMP files are filtered by evaluating read expressions. Each provider can have its own rules for product structure parsing within MMP file. This operation makes every provider to implement their logic of traversing MMP files and filtering the nodes based on read expression evaluation.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetExportCompliantStructureFiles#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::string,*$std::string,*$std::vector<std::string>,*$std::string,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetExportCompliantStructureFiles",
+      "returnConst": "false",
+      "returnDescription": "",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "List of product and configuration for which product structure indices exist.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "productAndConfigInfos"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "This operation returns the product and the configuration for which the structure information has been indexed.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetIndexedProductsAndConfigurations#std::vector<awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo>,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetIndexedProductsAndConfigurations",
+      "returnConst": "false",
+      "returnDescription": "A list of ProductAndConfiguration information.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Product and configuration information",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::vector<std::string>",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Identifiers to be converted into teamcenter objects.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "identifiers"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::vector<tag_t>",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Teamcenter objects corresponding to the input identifiers.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "tcObjects"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp03.3.0",
+      "description": "The operation retrieves the corresponding Teamcenter objects for the MMV identifiers. Typically in cases like Index BOM, the pfuid is used to identify a node in the MMV mode. These nodes may have to be converted into their corresponding ACE objects so that features like Part coloring etc. can be supported in MMV mode.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetObjectsForLineIdentifiers#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$const,std::vector<std::string>,*$std::vector<tag_t>,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetObjectsForLineIdentifiers",
+      "returnConst": "false",
+      "returnDescription": "",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Product and configuration information",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "tag_t",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Owning User who can own the Delta collection dataset.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "admin"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::vector<tag_t>",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Users who can own the delta collection dataset and the users (user id) or business objects that control the retrieval access of the product and configuration into VDS,",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "controllers"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp03.3.0",
+      "description": "The operation returns the information about the user who can own the Delta collection dataset and the users(user id) or the Buiness Objects that control the retrieval access of the product and configuration into VDS.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetPSFileAdminAndAccessControllers#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$tag_t,*$std::vector<tag_t>,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetPSFileAdminAndAccessControllers",
+      "returnConst": "false",
+      "returnDescription": "",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "tag_t",
+              "qualifier": ""
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "The recipe object.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "recipeObject"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Product and Configuration information.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "productAndConfigInfo"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "Given a recipe object this operation retrieves the product and configuration information from it.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetProductAndConfigFromRecipe#tag_t$awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetProductAndConfigFromRecipe",
+      "returnConst": "false",
+      "returnDescription": "The product and configuration information.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Product and Configuration information.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "std::string",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "The structure id for this product and configuration.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "structureId"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "This operation provides the id by which the mmp file can be identified for the give product and configuration.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetStructureId#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$std::string,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GetStructureId",
+      "returnConst": "false",
+      "returnDescription": "The id string which is used to identify the mmp file.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "bool",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Delta product structure support verdict.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "deltaSupported"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "Whether the product structure provider supports delta.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsDeltaSupported#bool,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsDeltaSupported",
+      "returnConst": "false",
+      "returnDescription": "Returns true if the provider supports delta product structure.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "tag_t",
+              "qualifier": ""
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "The recipe Object.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "recipeObject"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "bool",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "True if the product and configuration pointed by the recipe object is supported",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "isSupported"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "Given a recipe object like VisStructureContext or Awb0ProductContextInfo, the provider checks if it is capable of providing structure information.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsProductAndConfigInRecipeSupported#tag_t$bool,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsProductAndConfigInRecipeSupported",
+      "returnConst": "false",
+      "returnDescription": "Returns true if the product and configuration pointed by the recipe object is supported",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfoInput",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of product and configuration information for which the full or delta product structure information need to be retrieved.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfoInput"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetStructureFilesResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.4",
+      "description": "This operation retrieves the full or delta product structure information for the given product and configuration. The ticket to the file(s) that contain the  product structure information is returned via this operation. <br />When this operation is invoked by the client to get the full product structure file, the response may contain a single complete product structure file or a single complete product structure file and a set of delta product structure files. In case a complete and a set of files containing delta changes are sent then the receiving client has to merge the delta files into the complete structure file.<br />When this operation is invoked by the client to get the delta product structure, the response may contain a set of delta product structure files or a single complete product structure file and a set of delta product structure files.  In case where only a set of delta files are returned, the client need to merge those file with its available complete structure file. When a single complete product structure file and a set of delta product structure files are returned, then this means that the delta token identifier could not be identified on the server and hence a complete product structure information has been returned.<br />The response also contains a delta identifier token. This delta identifier token has to be passed during the next call to  getStructureFiles operation in case the client needs the delta files since the previous call to  getStructureFiles operation.<br />",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetStructureFilesResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureFiles#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfoInput>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureFiles",
+      "returnConst": "false",
+      "returnDescription": " The response  contains the  file ticket(s) to  file(s) that contains product structure information and a next delta token identifier. The next delta token is to be used to get the delta product structure changes information files during the next call to this operation.<br />The following partial errors may be returned:<br /><br />170051  - The product structure information is not available for the given product and configuration.<br />183027  - The indexed product structure for the given product and configuration is in a failed state .",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "The product and configuration information.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        },
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "bool",
+              "qualifier": "*"
+            }
+          ],
+          "const": "false",
+          "defaultValue": "",
+          "description": "Whether the provider supports the given product and configuration.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Output",
+          "name": "isSupported"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.2",
+      "description": "Checks if the provider can provide structure information for given product and configuration.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsProductAndConfigSupported#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*$bool,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0IsProductAndConfigSupported",
+      "returnConst": "false",
+      "returnDescription": "True if the product and configuration is supported",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of product and configuration information for which the product structure id has to be determined.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productStructureIdInput"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetProductStructureIdResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.4",
+      "description": "This operation retrieves the id that is used to identify a product structure information. The id is a unique identifier which gets written into the MMP file as the product Id. The Quicksilver Data server(QDS) maintains the product structure information for different product and configurations. Now when the Visualization client sends a request to QDS asking information about a product and configuration, the QDS invokes this operation to determine the id of the structure which contain information about the requested product and configuration.<br /><br />Say for example the QDS may have a product structure information with id \"UidOfBomIndexAdminData1\" that contains product structure information of product1 for <b>RevisionRule</b> as \"Latest Working\" and <b>VariantRule</b> \"vrule1\", \"vrule2\", \"vrule3\" and a product structure information with id \"UidOfBomIndexAdminData2\" that contains product structure information of product2 for <b>RevisionRule</b> as \"Latest Released\" and <b>VariantRule</b> \"vrule1\", \"vrule2\", \"vrule3\" and. Now if the Visualization client wants to display the product1 for \"Latest working\" with \"vrule2\", it contacts the QDS server with this information. The QDS in turn  invokes this operation with the given information to determine the id of the mmp file, in this case it would return \"UidOfBomIndexAdminData1\" as id in its response.<br />",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GetProductStructureIdResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureIdFromRecipe#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureIdFromRecipe",
+      "returnConst": "false",
+      "returnDescription": " The response contains the  id by which the  product structure information file can be identified and the configuration recipe information that needs to be applied.<br /><br />Following are some possible errors returned in the ServiceData. <br />170051  - The product structure information is not available for the given product and configuration.<br />170053  - The input product structure configuration recipe object is an invalid object.<br />",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of product and configuration information for which the product structure id has to be determined.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productStructureIdInput"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization::GetProductStructureIdResponse2",
+          "qualifier": ""
+        }
+      ],
+      "const": "false",
+      "createRelease": "Awp04.0.0",
+      "description": "This operation retrieves the id that is used to identify a product structure information. The id is a unique identifier which gets written into the MMP file as the product Id. The Quicksilver Data server(QDS) maintains the product structure information for different product and configurations. Now when the Visualization client sends a request to QDS asking information about a product and configuration, the QDS invokes this operation to determine the id of the structure which contain information about the requested product and configuration.<br /><br />Say for example the QDS may have a product structure information with id &quot;UidOfBomIndexAdminData1&quot; that contains product structure information of product1 for RevisionRule as &quot;Latest Working&quot; and VariantRule &quot;vrule1&quot;, &quot;vrule2&quot;, &quot;vrule3&quot; and a product structure information with id &quot;UidOfBomIndexAdminData2&quot; that contains product structure information of product2 for RevisionRule as &quot;Latest Released&quot; and VariantRule &quot;vrule1&quot;, &quot;vrule2&quot;, &quot;vrule3&quot; and. Now if the Visualization client wants to display the product1 for &quot;Latest working&quot; with &quot;vrule2&quot;, it contacts the QDS server with this information. The QDS in turn invokes this operation with the given information to determine the id of the mmp file, in this case it would return &quot;UidOfBomIndexAdminData1&quot; as id in its response.",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization::GetProductStructureIdResponse2#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureIdFromRecipe2#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInput>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::getStructureIdFromRecipe2",
+      "returnConst": "false",
+      "returnDescription": "The response contains the id by which the product structure information file can be identified and the configuration recipe information that needs to be applied.<br /><br />Following are some possible errors returned in the ServiceData. <br />170051 - The product structure information is not available for the given product and configuration.<br />170053 - The input product structure configuration recipe object is an invalid object.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GroupOccsByPropertyInput",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list containing <font face=\"courier\" height=\"10\">GroupOccsByPropertyInput</font>  that represents property name and property value information to group a list of input pfuid.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "groupOccsByPropertyInputList"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::OccsGroupedByPropertyResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.4",
+      "description": "This operation classifies <b>Awb0Element</b> objects which are identified by their PFUID (An identifier used to identify a product structure line in ACE index BOM) into groups. In the list of <font face=\"courier\" height=\"10\">GroupOccsByPropertyInput</font>, each input contains an internal property name, list of property values in <font face=\"courier\" height=\"10\">PropertyGroupingValue</font> identifying the grouping criteria and a list of PFUIDs that need to be organized into groups. Each <font face=\"courier\" height=\"10\">PropertyGroupingValue</font> input contains a start and an end value. The end value is to be used for range values if populated. <br /><br />The response contains the PFUIDs that were grouped based on the property name and values. PFUIDs that could not be grouped as per input property names and values are retuned back in a separate list.<br />",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::OccsGroupedByPropertyResponse#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::groupOccurrencesByProperties#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::GroupOccsByPropertyInput>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::groupOccurrencesByProperties",
+      "returnConst": "false",
+      "returnDescription": "A structure containing a list of PFUID which are grouped based on the property name and value. The response also contains a list of PFUID which could not be grouped based upon the input criteria. <br /><br />Following are some possible errors returned in the <font face=\"courier\" height=\"10\">ServiceData</font>:<br /><ul><ul><li type=\"disc\">170050   &nbsp;&nbsp;&nbsp;&nbsp;The input list cannot be empty.</li><li type=\"disc\">170051   &nbsp;&nbsp;&nbsp;&nbsp;The internal Property name cannot be empty.</li><li type=\"disc\">170052    &nbsp;&nbsp;&nbsp;&nbsp;Object identifier list cannot be empty.</li><li type=\"disc\">170053    &nbsp;&nbsp;&nbsp;&nbsp;Invalid property name.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::UpdateCollectionInput",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of UpdateDeltaCollectionInput which contains the information that identifies the <b>Awv0MMPDeltaCollection</b> and the file that need to be added to it.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "updateCollectionInput"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Teamcenter::Soa::Server::ServiceData",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc10000.1.4",
+      "description": "This operation updates the Awv0MMPDeltaCollection dataset with the file that contains product structure changes.",
+      "id": "Teamcenter::Soa::Server::ServiceData#Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::updateDeltaCollection#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::UpdateCollectionInput>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization::updateDeltaCollection",
+      "returnConst": "false",
+      "returnDescription": "ServiceData structure that contains partial errors mapped to the input deltaCollectionIdentifier .<br />The following partial errors may be returned: <br />183051  - Unable to find <b>Awv0MMPDeltaCollection</b> dataset using the given collector  identifying object .<br />183052 - The input file could not be associated to the <b>Awv0MMPDeltaCollection</b> dataset. Please ask the system administrator to check the syslog for futher information on the failure.<br />183053 - Unable to purge the the existing delta mmp files in the <b>Awv0MMPDeltaCollection</b> dataset.",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::Awb0ProductContextInfo",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of <b>Awb0ProductContextInfo</b>s for which the visualization information associated to a bookmark has to be fetched.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productContextInfos"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::GetVisBookmarkInfoResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc9000.1.3",
+      "description": "In order to take the user to the context where he left off, viewer state information (e.g. camera, occurrence visibility, etc.) are stored to the current <b>Awb0AutoBookmark</b> for the given <b>Awb0ProductContextInfo</b>.  This operation gets the visualization information associated to the  <b>Awb0Autobookmark</b> for the given <b>Awb0ProductContextInfo</b>.",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::GetVisBookmarkInfoResponse#Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement::getVisBookmarkInfo#const,std::vector<Teamcenter::Awb0ProductContextInfo>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement::getVisBookmarkInfo",
+      "returnConst": "false",
+      "returnDescription": "The list of  <font face=\"courier\" height=\"10\">VisBookmarkInfo</font>  containing the  <b>Awb0ProductContextInfo</b> instances for which the <b>Awb0BookmarkVisData</b> was found. Following are some possible errors returned in <font face=\"courier\" height=\"10\">ServiceData</font>:<br /><ul><ul><li type=\"disc\">169001  The Bookmark Data was not found for the given Product Context Information. This could happen if the Product Context Information does not have an Auto-bookmark.</li><li type=\"disc\">169002 The FMS read ticket for the visualization bookmark file could not be fetched. Please report this error to your system administrator.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInput",
+                  "qualifier": ""
+                }
+              ],
+              "dataType": "std::vector",
+              "qualifier": "&"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "A list of <font face=\"courier\" height=\"10\">SaveVisBookmarkInput</font> which contain the information about the <b>Awb0ProductContextInfo</b> and ticket to a bookmark file in the transient volume.",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "saveBookmarkInfos"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInfoResponse",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "tc9000.1.3",
+      "description": "When a user changes various visibility state (e.g. camera, occurrence visibility, etc) that state need to be saved/associated to a bookmark. This operation is used to associate the current visualization state information to the current <b>Awb0AutoBookmark</b> for the <b>Awb0ProductContextInfo</b>.",
+      "id": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInfoResponse#Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement::saveVisBookmarkInfo#const,std::vector<Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::SaveVisBookmarkInput>,&",
+      "name": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement::saveVisBookmarkInfo",
+      "returnConst": "false",
+      "returnDescription": "A a list of <font face=\"courier\" height=\"10\">VisBookmarkInfo</font> and <font face=\"courier\" height=\"10\">ServiceData</font>. <font face=\"courier\" height=\"10\">VisBookmarkInfo</font>  contains  <b>Awb0ProductContextInfo</b> instances for which the visualization state information  was saved. Following are some possible errors returned in <font face=\"courier\" height=\"10\">ServiceData</font>:<br /><ul><ul><li type=\"disc\">169003 The Visualization Bookmark File  is not found. It was either deleted or its read permission is improperly set.</li><li type=\"disc\">169004 The Visualization Bookmark Data cannot be created, because some Visualization Bookmark Data are already associated to the owning Bookmark Data.</li><li type=\"disc\">169005 The Visualization Bookmark Data cannot be created, because the owning Bookmark Data  is invalid.</li><li type=\"disc\">14150 The ticket string argument is not a valid FMS transient file ticket.</li></ul></ul>",
+      "returnFreeMemory": "false",
+      "static": "false"
+    },
+    {
+      "OperationParameter": [
+        {
+          "OperationParameterDataTypeRef": [
+            {
+              "dataType": "awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo",
+              "qualifier": "*"
+            }
+          ],
+          "const": "true",
+          "defaultValue": "",
+          "description": "Product and configuration information",
+          "freeOutputMemory": "false",
+          "inputOutput": "Input",
+          "name": "productAndConfigInfo"
+        }
+      ],
+      "OperationReturnDataTypeRef": [
+        {
+          "dataType": "int",
+          "qualifier": ""
+        }
+      ],
+      "accessControl": "false",
+      "const": "false",
+      "createRelease": "Awp03.3.0",
+      "description": "This operation computes the complete or delta structure file and updates the Delta collection dataset.",
+      "id": "int#awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GeneratePSFileAndUpdateCollection#const,awv0activeworkspacevis::Mmv::ProductAndConfigurationInfo,*",
+      "name": "awv0activeworkspacevis::Awv0ProductStructureProvider::awv0GeneratePSFileAndUpdateCollection",
+      "returnConst": "false",
+      "returnDescription": "",
+      "returnFreeMemory": "false",
+      "static": "false"
+    }
+  ],
+  "ServiceInterface": [
+    {
+      "createRelease": "tc10000.1.4",
+      "dependencies": "",
+      "description": "This service interface provides operations that perform server side business logic for the visualization integrations in Active Workspace. These operations help interrogate and manipulate the Teamcenter data model for visualization data and aid with integrating visualization enabled client applications with Teamcenter in a consistent way.",
+      "libraryName": "Awv0SoaActiveWorkspaceVis",
+      "name": "DataManagement",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis",
+      "serviceLibraryRef": ""
+    },
+    {
+      "createRelease": "tc10000.1.4",
+      "dependencies": "",
+      "description": "Provides interface to retrieve product structure information that is specific to visualization client.",
+      "libraryName": "Awv0SoaActiveWorkspaceVis",
+      "name": "MassiveModelVisualization",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis",
+      "serviceLibraryRef": ""
+    },
+    {
+      "createRelease": "tc9000.1.3",
+      "dependencies": "",
+      "description": "Provides interface to occurrence management that are specific to visualization in Active Workspace.",
+      "libraryName": "Awv0SoaActiveWorkspaceVis",
+      "name": "OccurrenceManagement",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis",
+      "serviceLibraryRef": ""
+    }
+  ],
+  "Struct": [
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "int"
+            }
+          ],
+          "description": "Effective unit number.",
+          "name": "effectivityUnitNo"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::DateTime"
+            }
+          ],
+          "description": "Effective date configuration information.",
+          "name": "effectivityDate"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "Effective end item.",
+          "name": "endItem"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains  information about the effectivity configuration.<br /><b>Note</b>: If effectivityUnitNo is not to be considered then -1 has to be passed as the default value. Value  0 is considered as  a valid effectivity unit number.",
+      "isPublished": "false",
+      "name": "EffectivityInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::IndexedProductOutput"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of product and configuration for which the product structure information are indexed.",
+          "name": "indexedProductAndConfigInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData in which the partial errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the list of product and configuration for which the product structure information is indexed.",
+      "isPublished": "false",
+      "name": "GetIndexedProductsResponse",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The internal name of the property.",
+          "name": "internalPropertyName"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::PfuidToPropertyGroupIdMap"
+            }
+          ],
+          "description": "A map (string, list of strings) containing a list of <font face=\"courier\" height=\"10\">propertyGroupID</font> for each PFUID. For multi-valued properties, a single PFUID may be associated with multiple <font face=\"courier\" height=\"10\">propertyGroupIDs</font>.",
+          "name": "groupedPfuidsMap"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "std::string"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of unmatched pfuids.",
+          "name": "unmatchedPfuidList"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A structure that contains a list of PFUIDs, grouped by the property names and values.",
+      "isPublished": "false",
+      "name": "OccsGroupedByProperty",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::OccsGroupedByProperty"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of <font face=\"courier\" height=\"10\">OccGroupedByProperty</font> information.",
+          "name": "groupedOccList"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "The service data through which errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A structure that contains a list of PFUIDs, grouped by the property names and values.",
+      "isPublished": "false",
+      "name": "OccsGroupedByPropertyResponse",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The value for the given option.",
+          "name": "optionValue"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "bool"
+            }
+          ],
+          "description": "A flag indicating whether the option key/value pair should also be written into the launch file.",
+          "name": "includeInLaunchFile"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the value of the for a given launch file option and a flag indicating whether the option key name and value should be written to the launch file.",
+      "isPublished": "true",
+      "name": "OptionInfo",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "The product which is indexed. It could be an <b>ItemRevision</b>.",
+          "name": "product"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "The RevisionRule configuration applied on the product structure.",
+          "name": "revisionRule"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::EffectivityInfo"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of effectivity information for which the product structure was configured.",
+          "name": "effectivityInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::VariantRuleInfo"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of <b>VariantRule</b> applied on the product structure.",
+          "name": "variantRuleInfos"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains product and the associated configuration for which the product structure information is indexed.",
+      "isPublished": "false",
+      "name": "ProductAndConfigInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A clientId passed by the client in order to map the input to the corresponding output in the response.",
+          "name": "clientId"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Delta identifier to identify mark point from which the next set of delta need to be retrieved.",
+          "name": "deltaIdentifier"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "The BusinessObject that contains the information about the product and the configuration. For example it could be <b>Awb0ProductContextInfo</b> or <b>VisStructureContext</b>.",
+          "name": "recipeObject"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfo"
+            }
+          ],
+          "description": "The product and the configuration information for which the product structure is being retrieved.",
+          "name": "productConfigInfo"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains product and the associated configuration for which the product structure information file has to be retrieved. In case the client always needs a full structure then the deltaIdentifier can be passed as empty in which case the complete structure file along with any delta product structure files will be returned.<br />The product information for which the product structure information has to be retrieved can be provided using the recipeObject or the productConfigInfo.recipeObject if provided would take precedence over productConfigInfo.<br />",
+      "isPublished": "false",
+      "name": "ProductAndConfigInfoInput",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A clientId passed by the client in order to map the input to the corresponding output in the response.",
+          "name": "clientId"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Read ticket to file that contains the full product structure at some point in time.",
+          "name": "fullStructureFileReadTicket"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "std::string"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "Read tickets to file containing delta product structure information since the complete product structure file was generated.",
+          "name": "deltaStructureFileReadTickets"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A delta token that need to be used for identifying  the next set of delta product structure file since this request.",
+          "name": "nextDeltaIdentifierToken"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the read ticket to a file containing the complete product structure information at some point in time and a set of read tickets to files containing the delta product structure information. The order of <i>deltaStructureFileReadTickets</i> is the order in which the delta files has to be merged with the complete file to make the product structure information current.",
+      "isPublished": "false",
+      "name": "ProductStructureFileInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A clientId passed by the client in order to map the input to the corresponding output in the response.",
+          "name": "clientId"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The identifier to identify the product structure information. This identifier corresponds to the product id in the product structure(mmp file).",
+          "name": "productStrutureIdentifier"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfo"
+            }
+          ],
+          "description": "The configuration that need to be applied on the  product structure.",
+          "name": "productAndConfig"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the id of the product structure and the configuration information that need to be applied to the product structure.",
+      "isPublished": "false",
+      "name": "ProductStructureIdInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A clientId passed by the client in order to map the input to the corresponding output in the response.",
+          "name": "clientId"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The identifier to identify the product structure information. This identifier corresponds to the product id in the product structure(mmp file).",
+          "name": "productStrutureIdentifier"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfo"
+            }
+          ],
+          "description": "The configuration that need to be applied on the product structure.",
+          "name": "productAndConfig"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization::RevRuleInfo"
+            }
+          ],
+          "description": "The client revision rule information to be used for solver library inside VDS.",
+          "name": "clientRevRuleInfo"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization::RevRuleInfo"
+            }
+          ],
+          "description": "The Partition revision rule information to be used for solver library inside VDS.",
+          "name": "partitionRevRuleInfo"
+        }
+      ],
+      "createRelease": "Awp04.0.0",
+      "description": "This structure contains the id of the product structure and the configuration information that need to be applied to the product structure.",
+      "isPublished": "false",
+      "name": "ProductStructureIdInfo2",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A clientId passed by the client in order to map the input to the corresponding output in the response.",
+          "name": "clientId"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "The object that contains the configuration recipe. It could be something like <b>Awb0ProductContextInfo</b> or <b>VisStructureContext</b>.",
+          "name": "recipeObject"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfo"
+            }
+          ],
+          "description": "The product and configuration information for which the structure id has to be determined.",
+          "name": "productAndConfig"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains product and the associated configuration for which the product structure information id is to be determined. The configuration information can either be passed in a detailed format or as recipe object.",
+      "isPublished": "false",
+      "name": "ProductStructureIdInput",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Unique Identifier used by client to identify the group. The id will allow to associate the input to the output. This allows multiple types or ranges share the same color.<br />",
+          "name": "propertyGroupID"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "String representation of the value for the property. For ranges, this is the start value for the range. If the client code is dealing with specific value types (int, double, etc.) the client code can use the appropriate client APIs to convert values to a string representation e.g Property::toFloatString, Property::toIntString, Property::toDateString, etc. On the server side, they can be converted back to the appropriate value types using the corresponding APIs e.g Property::parseFloat, Property::parseInt, Property::parseDate, etc.",
+          "name": "startValue"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "String representation of the end value for the property. This is optional and is populated only for ranges. It represents the end value of the range. See the startValue description for how the client  and server code can convert from and to the specific value types.<br />",
+          "name": "endValue"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A structure containing start and end values for a specific property. The end value is used for range comparisons if populated.",
+      "isPublished": "false",
+      "name": "PropertyGroupingValue",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureIdInfo"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of product and configuration for which the product structure information are indexed. ",
+          "name": "psIdInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData by which the partial errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the information about the product structure information identifier which can be used to determine the product structure information from the catalogue of product structure information maintained at the client. The configuration that need to be applied on that product structure information is also returned via this response.",
+      "isPublished": "false",
+      "name": "GetProductStructureIdResponse",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::vector<std::string>"
+            }
+          ],
+          "description": "A list of revision rule entry names.",
+          "name": "revRuleEntryNames"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Effectivity expression string.",
+          "name": "effectivityExpr"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Variant expression string.",
+          "name": "variantExpr"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::DateTime"
+            }
+          ],
+          "description": "Revision rule Date.",
+          "name": "revRuleDate"
+        }
+      ],
+      "createRelease": "Awp04.0.0",
+      "description": "This structure contains names of revision rule entry names, effectivity expression, variant expression and revision rule date.",
+      "isPublished": "false",
+      "name": "RevRuleInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::VisBookmarkInfo"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of <font face=\"courier\" height=\"10\">VisBookmarkInfo</font> structures.",
+          "name": "visBookmarkInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "The Service Data through which the errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc9000.1.3",
+      "description": "This structure contains a list of <b>Awb0ProductContextInfo</b> instances,  <b>ImanFile</b> object and the read file ticket to the ImanFile object  that contains the visualization bookmark information that was saved.",
+      "isPublished": "false",
+      "name": "SaveVisBookmarkInfoResponse",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Awb0ProductContextInfo"
+            }
+          ],
+          "description": "<b>Awb0ProductContextInfo</b> for which the visualization bookmark information is updated.",
+          "name": "productContextInfo"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "FMS transient file ticket for a file which was uploaded to the transient volume.",
+          "name": "visBookmarkTransientFileTicket"
+        }
+      ],
+      "createRelease": "tc9000.1.3",
+      "description": "This structure contains  the  <b>Awb0ProductContextInfo</b>, and transient file ticket for the bookmark file that was uploaded to the transient volume.",
+      "isPublished": "false",
+      "name": "SaveVisBookmarkInput",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A required parameter referencing the protocol type for connection to the server. Use http for standard 4 tier connections, and iiop for 2 tier deployments.",
+          "name": "protocol"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "A required parameter referencing the URL to connect to the server.",
+          "name": "hostpath"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "int"
+            }
+          ],
+          "description": "A required parameter referencing the servermode that controls how the connection to the server is made: 2 for two tier. 4 for four tier.",
+          "name": "servermode"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::KeyValueMap"
+            }
+          ],
+          "description": "An optional parameter referencing the additional information of the server in form of key/value pair (if any).",
+          "name": "serverAdditionalInfo"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure holds the basic information for Teamcenter Visualization to connect to the server.",
+      "isPublished": "true",
+      "name": "ServerInfo",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Client/Server session discriminator to connect to existing specified session.  This allows the viewer application to share an existing server process session with the client that initiated the launch. If this is not specified, the viewer will present a login prompt.",
+          "name": "sessionDescriminator"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::OptionsMap"
+            }
+          ],
+          "description": "Map of option names to OptionInfo structures. These options are used to control the creation of the launch information in some way.<br /><br />Current options include:<br /><br />\"UseTransientVolume\" - \"True\" or \"False\"<br />   Determines how the service is to return the launch information. If \"True\" then the launch information is written to a file in the transient volume and a FMS ticket is returned in the ticket field of the LaunchInfoResponce structure. If \"False\" then the launch information is written to a string and that string is placed into the vviStrBufferOutputMap field of the LaunchInfoResponce structure. In the later case, the key name to be used is found in the \"ClientId\" option that is now required.<br />",
+          "name": "sessionOptions"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::KeyValueMap"
+            }
+          ],
+          "description": "An optional parameter referencing the additional information of the session in form of key/value pair (if any).",
+          "name": "sessionAdditionalInfo"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure holds the information about the session information of the client application from where the launch operation was initiated.",
+      "isPublished": "true",
+      "name": "SessionInfo",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The string used to uniquely identify the <b>Awv0MMPDeltaCollection</b> instance. This is an uid of of <b>Awb0BOMIndexAdminData</b> instance in cases of Active Content Experience(ACE). In other non ACE usecases this is the string by which the <b>Awb0ProductStructureProvider</b> identifies the <b>Awv0MMPDeltaCollection</b> instance. ",
+          "name": "deltaCollectionIdentifier"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::ImanFile"
+            }
+          ],
+          "description": "The file that need to be associated to the <b>Awv0MMPDeltaCollection</b> dataset.",
+          "name": "productStructureFile"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "bool"
+            }
+          ],
+          "description": "If true, the file being supplied represents the complete product structure information. If false the file being supplied represents the delta product structure information.",
+          "name": "isFull"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains  information about the file that need to be associated to the <b>Awv0MMPDeltaCollection</b> identified by the <b>deltaCollectionIdentifier</b>.",
+      "isPublished": "false",
+      "name": "UpdateCollectionInput",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "An optional parameter referencing the client who initiates the launch.",
+          "name": "userApplication"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "An optional parameter referencing the version of the client that initiated launch.",
+          "name": "userAppVersion"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::KeyValueMap"
+            }
+          ],
+          "description": "An optional parameter referencing the additional information of client application in form of key/value pair (if any).",
+          "name": "userAdditionalInfo"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure holds the information about the client application that initiated the launch.",
+      "isPublished": "true",
+      "name": "UserAgentDataInfo",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::VariantRule"
+            }
+          ],
+          "description": "The <b>VariantRule</b>  applied for configuration.",
+          "name": "variantRule"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "The object to which the <b>VariantRule</b> is associated via <b>ImanRelation</b>.",
+          "name": "variantRuleOwningObject"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains <b>VariantRule</b> object that was applied for configuration and the object to which the <b>VariantRule</b> is associated through GRM relation.",
+      "isPublished": "false",
+      "name": "VariantRuleInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Awb0ProductContextInfo"
+            }
+          ],
+          "description": "<b>Awb0ProductContextInfo</b> for which the visualization bookmark information was saved.",
+          "name": "productContextInfo"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::ImanFile"
+            }
+          ],
+          "description": "<b>ImanFile</b> object containing the visualization bookmark information that was saved.",
+          "name": "visBookmarkFile"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "FMS read ticket for the <b>ImanFile</b> object.",
+          "name": "visBookmarkFileReadTicket"
+        }
+      ],
+      "createRelease": "tc9000.1.3",
+      "description": "This structure contains  the  <b>Awb0ProductContextInfo</b>, and its visualization bookmark information. The visualization bookmark information is contained in the file for which the FMS read ticket is being returned.",
+      "isPublished": "false",
+      "name": "VisBookmarkInfo",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization::ProductStructureIdInfo2"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of product and configuration for which the product structure information are indexed.",
+          "name": "psIdInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData by which the partial errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "Awp04.0.0",
+      "description": "This structure contains the information about the product structure information identifier which can be used to determine the product structure information from the catalogue of product structure information maintained at the client. The configuration that need to be applied on that product structure information is also returned via this response.",
+      "isPublished": "false",
+      "name": "GetProductStructureIdResponse2",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2018_05::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductStructureFileInfo"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of ProductStructureFileInfo containing the read ticket to the complete and or delta product structure files.",
+          "name": "productStructureFileInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "ServiceData by which the partial errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the information about the files containing product structure information that make up a complete product structure.",
+      "isPublished": "false",
+      "name": "GetStructureFilesResponse",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement::VisBookmarkInfo"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "A list of <font face=\"courier\" height=\"10\">VisBookmarkInfo</font> structures.",
+          "name": "visBookmarkInfos"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "The Service Data through which the errors are communicated to the client.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc9000.1.3",
+      "description": "This structure contains a list of <b>Awb0ProductContextInfo</b> instances,  <b>ImanFile</b> object and the read file ticket to the <b>ImanFile</b> object  that contains the visualization bookmark information.",
+      "isPublished": "false",
+      "name": "GetVisBookmarkInfoResponse",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2014_11::OccurrenceManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::OccurrenceManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "The internal name of the property based on whose values the occurrences are to be grouped.",
+          "name": "internalPropertyName"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "std::string"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of pfuid by which the product structure line can be identified in ACE Index Bom.",
+          "name": "pfuidList"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::PropertyGroupingValue"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "List of <font face=\"courier\" height=\"10\">PropertyGroupingValue</font> information corresponding to the property.",
+          "name": "propertyValues"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A structure containing an internal property name, a list of <font face=\"courier\" height=\"10\">PFUIDs </font>that are to be grouped based upon <font face=\"courier\" height=\"10\">PropertyGroupingValue</font>.",
+      "isPublished": "false",
+      "name": "GroupOccsByPropertyInput",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::BusinessObject"
+            }
+          ],
+          "description": "The business object to be laucnhed. Launched object could be of type Item, ItemRevision, Dataset, BOMView, BOMViewRevision or Awb0ProductContextInfo. The business object will be resolved by the server in some cases (e.g. Item or ItemRevision launch) to a directly launchable visualization object (such as a DirectModel Dataset or BOMViewRevision).",
+          "name": "launchedObject"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Item"
+            }
+          ],
+          "description": "The parent or containing Item of the launched object.  If this is not provided, the server will attempt to identify the parent if it can. If the parent information cannot be identified, this will not result in an error condition. The parent Item information will simply not be passed to the visualization client, which could affect what features are available in the client.",
+          "name": "item"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::ItemRevision"
+            }
+          ],
+          "description": "The parent or containing ItemRevision of the launched object. If this is not known, the server will attempt to identify the parent if it can. If the parent information cannot be identified, this will not result in an error condition. The parent ItemRevision information will simply not be passed to the visualization client, which could affect what features are available in the client.",
+          "name": "itemRev"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "Teamcenter::BusinessObject"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "description": "The list of selected occurrences being launched. These occurrences may be of type BOMLine or Awb0Element. When this vector is non-empty then the launchedObject field of the IdInfo structure must contain an object that defines the configuration state for the occurrences. For example, the configuration object is of type Awb0ProductContextInfo when the occurrences are of type Awb0Element. The configuration object is of type BOMWindow when the occurrences are of type BOMLine.",
+          "name": "occurrencesList"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::OptionsMap"
+            }
+          ],
+          "description": "Map of option names to OptionInfo structures. These options are used to control the creation of the launch information in some way.<br /><br />Current options include:<br /><br />\"CreateVisSC\" - \"True\" or \"False\"<br />   Informs the service to create a VisStructureContext object based on the laucnhedObject and occurrenceList field of the IdInfo structure.<br /><br />\"OVERRIDE_VisDoc_Type\" - some replacement string<br />   Directs the service to replace the value of the VisDoc_Type key in the launch file with the specified string.<br /><br />\"TransientDoc\" - \"True\" or \"False\"<br />   Indicates whether the launched object is to be considered transient by the viewer. Transient objects are normally deleted when the viewer is finished with the document used to open the launched object.<br /><br />\"Operation\" - \"open\", \"insert\", \"merge\", \"interop\"<br />   Informs the viewer on what type of launch operation is being requested.<br /><br />\"OperationStructure\" - \"Dynamic\", \"Static\", \"Preference\", \"Ask\"<br />   Informs the viewer on what type of structure launch is being requested.<br /><br />\"UseTransientVolume\" - \"True\" or \"False\"<br />   Determines how the service is to return the launch information. If \"True\" then the launch information is written to a file in the transient volume and a FMS ticket is returned in the ticket field of the LaunchInfoResponce structure. If \"False\" then the launch information is written to a string and that string is placed into the vviStrBufferOutputMap field of the LaunchInfoResponce structure. In the later case, the key name to be used is found in the \"ClientId\" option that is now required.<br /><br />\"ClientId\" - a unique string used to identify this call to the service.<br />   Is a required option when the \"TransientVolume\" option is \"False\".<br /><br />\"Client\" - string used to identify the client calling this service<br />&nbsp;&nbsp;&nbsp;&nbsp;Currently the only value being recognized is \"AW\", which indicates that ActiveWorkspace is the desired client viewer.<br /><br />",
+          "name": "createOptions"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::KeyValueMap"
+            }
+          ],
+          "description": "This is a generic mechanism for putting additional key/value pairs into the output launch information. This data is considered opaque to the service and the key/value pairs are simply output into the VVI launch information.",
+          "name": "idAdditionalInfo"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure holds information about the object(s) that will be launched to the viewer. It may contain addtional option information that can affect how the VVI is to be generated.",
+      "isPublished": "true",
+      "name": "IdInfo",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization::ProductAndConfigInfo"
+            }
+          ],
+          "description": "The product and the configuration information.",
+          "name": "productConfigInfo"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "An identifier to identify this product and configuration. The structure files for this product and configuration can be identified by this identifier.",
+          "name": "productStructureIdentifier"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "This structure contains the product, associated configuration information along with an identifier that is used to indentify this product and configuration in a catalogue of structure files.",
+      "isPublished": "false",
+      "name": "IndexedProductOutput",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "StructElement": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "description": "Holds a FMS transient file ticket for the launch information written to the VVI file.<br />This member is valid only when the \"UseTransientVolume\" option from the IdInfo input structure was set to \"True\".",
+          "name": "ticket"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::VVIStringBufferOutputMap"
+            }
+          ],
+          "description": "The map of clientId string to the VVI launch information string buffer(string/string). This member is valid only when the \"UseTransientVolume\" option from the IdInfo input structure was set to \"False\". Also requires the \"ClientId\" option from the IdInfo input structure to be present and set to non-zero length string. The value of the \"ClientId\" option is used as the key to this map.",
+          "name": "vviStrBuffersOutputMap"
+        },
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "Teamcenter::Soa::Server::ServiceData"
+            }
+          ],
+          "description": "SOA Framework object containing error information. In cases where objects cannot be launched, error message, codes will be mapped to respective object id in the list of partial errors.",
+          "name": "serviceData"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "The output response structure for the createLaunchInfo () operation.",
+      "isPublished": "true",
+      "name": "LaunchInfoResponse",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    }
+  ],
+  "TcVersion": "tc12000.0.0",
+  "Typedef": [
+    {
+      "DataTypeRefParam": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            },
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "dataType": "std::map"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "Map of key-value name pairs, each of type std::string.",
+      "isPublished": "true",
+      "name": "KeyValueMap",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "DataTypeRefParam": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            },
+            {
+              "dataType": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement::OptionInfo"
+            }
+          ],
+          "dataType": "std::map"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A map of option key names to OptionInfo structures. These options are used to control the creation of the launch file in some way. <br />",
+      "isPublished": "true",
+      "name": "OptionsMap",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    },
+    {
+      "DataTypeRefParam": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            },
+            {
+              "DataTypeRefParam": [
+                {
+                  "dataType": "std::string"
+                }
+              ],
+              "dataType": "std::vector"
+            }
+          ],
+          "dataType": "std::map"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A map containing a list of <font face=\"courier\" height=\"10\">propertyGroupID</font> for each PFUID. For multi-valued properties, a single PFUID may be associated with multiple <font face=\"courier\" height=\"10\">propertyGroupIDs</font>. The id will allow to associate the input to the output. This allows multiple types or ranges share the same color.<br />",
+      "isPublished": "false",
+      "name": "PfuidToPropertyGroupIdMap",
+      "namespace": "Awv0::Soa::Internal::ActiveWorkspaceVis::_2015_03::MassiveModelVisualization",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::MassiveModelVisualization"
+    },
+    {
+      "DataTypeRefParam": [
+        {
+          "DataTypeRefParam": [
+            {
+              "dataType": "std::string"
+            },
+            {
+              "dataType": "std::string"
+            }
+          ],
+          "dataType": "std::map"
+        }
+      ],
+      "createRelease": "tc10000.1.4",
+      "description": "A map containing client ids or additional Teamcenter object UID  and vviStringBuffer as key/value pairs.",
+      "isPublished": "true",
+      "name": "VVIStringBufferOutputMap",
+      "namespace": "Awv0::Soa::ActiveWorkspaceVis::_2015_03::DataManagement",
+      "scope": "Awv0::Soa::ActiveWorkspaceVis::DataManagement"
+    }
+  ],
+  "xmlns": "http://teamcenter.com/BusinessModel/TcBusinessData"
+}

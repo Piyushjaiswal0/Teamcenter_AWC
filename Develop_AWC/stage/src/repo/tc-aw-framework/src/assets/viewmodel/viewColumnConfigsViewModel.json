@@ -1,0 +1,139 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-balloon-popup-panel.directive",
+        "js/aw-flex-column.directive",
+        "js/aw-list.directive"
+    ],
+    "data": {
+        "box1": {
+            "displayName": "{{i18n.box1Title}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "Test_Value"
+        },
+        "namedColumnConfigs": []
+    },
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "dataProviderNamedColumnConfigs"
+        },
+        "initializeNamedColumnConfigs": {
+            "actionType": "JSFunction",
+            "method": "initializeNamedColumnConfigs",
+            "inputData": {
+                "data": "{{data}}",
+                "savedColumnConfigs": "{{data.subPanelContext}}"
+            },
+            "outputData":{
+                "namedColumnConfigs": "result.namedColumnConfigs",
+                "dataProviderNamedColumnConfigs.response": "result.namedColumnConfigs",
+                "dataProviderNamedColumnConfigs.totalFound":"result.namedColumnConfigs.length"
+            },
+            "deps": "js/arrange.service"
+        },
+        "disableArrange": {
+            "actionType": "JSFunction",
+            "method": "setDisabilityOfArrange",
+            "inputData": {
+                "isDisabled": true
+            },
+            "deps": "js/arrange.service"
+        },
+        "enableArrange": {
+            "actionType": "JSFunction",
+            "method": "setDisabilityOfArrange",
+            "inputData": {
+                "isDisabled": false
+            },
+            "deps": "js/arrange.service"
+        },
+        "loadNamedColumnConfig": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-UiConfig",
+            "method": "loadNamedColumnConfig",
+            "inputData": {
+                "uid": "{{data.dataProviders.dataProviderNamedColumnConfigs.selectedObjects[0].columnConfigUid}}"
+            },
+            "outputData": {
+                "loadedColumnConfig": "{{json:namedColumnConfigsJSON}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.columnConfigLoaded",
+                        "eventData": {
+                            "loadedColumnConfig": "{{loadedColumnConfig}}"
+                        }
+                    },
+                    {
+                        "name": "hideViewColumnConfigurationsPopup"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "hideViewColumnConfigurationsPopup"
+                    },
+                    {
+                        "name": "arrangePanel.enableArrange"
+                    },
+                    {
+                        "name": "arrangePanel.namedColumnConfigDeleted",
+                        "eventData": {
+                            "data": "{{data}}"
+                        },
+                        "condition": "errorCode.code === 141344"
+                    }
+                ]
+            }
+        },
+        "hideViewColumnConfigurationsPopup": {
+            "actionType": "JSFunction",
+            "method": "close",
+            "deps": "js/popupService"
+        }
+    },
+    "dataProviders": {
+        "dataProviderNamedColumnConfigs": {
+            "action": "initializeNamedColumnConfigs",
+            "response": "{{data.namedColumnConfigs}}",
+            "totalFound": "{{data.namedColumnConfigs.length}}",
+            "noResultsFound": "{{i18n.arrangeNoColumnConfigs}}",
+            "selectionModelMode": "single",
+            "commandsAnchor": "viewColumnConfigsCommands",
+            "deps": "js/arrange.service"
+        }
+    },
+    "i18n": {
+        "arrangeAdminTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "arrangeNoColumnConfigs": [
+            "ArrangeColumnsMessages"
+        ],
+        "box1Title": [
+            "ArrangeColumnsMessages"
+        ]
+    },
+    "onEvent": [
+        {
+            "eventId": "dataProviderNamedColumnConfigs.selectionChangeEvent",
+            "action": "loadNamedColumnConfig"
+        },
+        {
+            "eventId": "dataProviderNamedColumnConfigs.selectionChangeEvent",
+            "action": "disableArrange"
+        },
+        {
+            "eventId": "arrangePanel.enableArrange",
+            "action": "enableArrange"
+        },
+        {
+            "eventId": "hideViewColumnConfigurationsPopup",
+            "action": "hideViewColumnConfigurationsPopup"
+        }
+    ]
+}

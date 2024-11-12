@@ -1,0 +1,6 @@
+{
+    "PanelBuilderCommandTitle": "パネルビルダ",
+    "commandBuilderCommandTitle": "コマンドビルダ",
+    "GoToCommandBuilderDesc": "Active Workspaceコマンドを作成して修正します。",
+    "GoToPanelBuilderDesc": "Active Workspaceパネルを作成して修正します。"
+}

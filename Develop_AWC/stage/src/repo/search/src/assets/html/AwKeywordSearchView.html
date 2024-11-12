@@ -1,0 +1,114 @@
+<div class="sw-column aw-create-fillAvailable">
+    <aw-panel-header>
+        <div aw-class="[{ 'sw-row': conditions.nonMobileMode }]">
+            <div aw-class="[{ 'w-12': conditions.nonMobileMode }]">
+                <div class="aw-search-searchContainer aw-search-globalSearchContainer">
+                    <div class="aw-search-globalSearchPreFilterWrapper">
+                        <aw-search-pre-filter
+                            exist-when="props.showPreFilter"
+                            search-pre-filters="data.atomicSearchPreFilters"
+                            options="props.options" ></aw-search-pre-filter>
+                    </div>
+                    <div class="aw-flex-column w-12">
+                        <aw-suggestive-search-box
+                            search-history-cache="{{props.searchHistoryCache}}"
+                            show-suggestions="props.showSuggestions"
+                            search-action="updateSearchState"
+                            expand="fields.expandSearchBox"
+                            exist-when="subPanelContext.searchState && !subPanelContext.searchState.immutableSearchInfo"
+                            sub-panel-context="props.subPanelContext"
+                            search-box-prop="fields.searchBox"
+                            options="props.options" ></aw-suggestive-search-box>
+                        <aw-suggestive-search-box
+                            search-history-cache="{{props.searchHistoryCache}}"
+                            show-suggestions="props.showSuggestions"
+                            search-action="updateSearchStateWithIncontentCriteria"
+                            expand="fields.expandSearchBox"
+                            exist-when="subPanelContext.searchState && subPanelContext.searchState.immutableSearchInfo"
+                            sub-panel-context="props.subPanelContext"
+                            search-box-prop="fields.inContentSearchBox"
+                            options="props.options" ></aw-suggestive-search-box>
+                    </div>
+                </div>
+            </div>
+            <aw-link
+                aw-class="[{ 'aw-layout-actionSection': conditions.isMobileMode },{ 'aw-advancedsearch-link w-6': conditions.nonMobileMode }]"
+                prop="data.advanceSearch"
+                action="toggleSearchView"
+                exist-when="props.showAdvancedSearchLink" ></aw-link>
+        </div>
+    </aw-panel-header>
+    <div class="sw-column aw-search-results-filters-tab aw-create-fillAvailable" exist-when="( conditions.isMobileMode || conditions.isTablet ) && conditions.populatedSearchString" >
+        <aw-flex-column width="3f">
+            <aw-icon-button
+                exist-when="!subPanelContext.searchState.hideFilters"
+                command="data.filterCommand"
+                aw-class="[{ 'aw-state-selected': data.activeSection === 'filter' }]" ></aw-icon-button>
+        </aw-flex-column>
+        <aw-search-breadcrumb-title crumb-title="data.crumbTitle" exist-when="data.activeSection === 'filter' && conditions.populatedSearchString" >
+        </aw-search-breadcrumb-title>
+        <aw-search-breadcrumb-chips search-object="subPanelContext.searchState" exist-when="conditions.populatedSearchString" >
+        </aw-search-breadcrumb-chips>
+        <aw-search-breadcrumb-unreadable-count
+            exist-when="data.activeSection === 'filter' && props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount.length > 0 && conditions.populatedSearchString"
+            count="props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount[0]" ></aw-search-breadcrumb-unreadable-count>
+        <div class="sw-column aw-create-fillAvailable">
+            <aw-panel-section
+                collapsed="disabled"
+                caption="{{data.resultsText}}"
+                class="aw-results-section aw-create-fillAvailable"
+                show-when="data.activeSection === 'result'"
+                include-component-name="AwSearchBreadcrumbUnreadableCount"
+                context="{{props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount[0]}}" >
+                <aw-command-bar
+                    anchor="aw_search_objects"
+                    alignment="HORIZONTAL"
+                    context="props.subPanelContext" ></aw-command-bar>
+                <aw-search-results-list sub-panel-context="subPanelContext" ></aw-search-results-list>
+            </aw-panel-section>
+            <aw-panel-section
+                collapsed="disabled"
+                caption="i18n.filters"
+                class="aw-filters-section aw-create-fillAvailable"
+                exist-when="data.activeSection === 'filter'" >
+                <aw-filter-panel-with-bulk-filtering
+                    sub-panel-context="subPanelContext" ></aw-filter-panel-with-bulk-filtering>
+            </aw-panel-section>
+        </div>
+    </div>
+    <div
+        class="sw-column aw-search-results-filters-tab aw-create-fillAvailable"
+        exist-when="conditions.nonMobileMode && conditions.populatedSearchString && conditions.isDesktop">
+        <aw-search-breadcrumb-chips
+            search-object="subPanelContext.searchState"
+            exist-when="conditions.populatedSearchString" >
+        </aw-search-breadcrumb-chips>
+        <div class="sw-row aw-create-fillAvailable">
+            <div class="sw-column w-6 flex-auto aw-filters-section aw-search-left-panel-view aw-create-fillAvailable" >
+                <aw-panel-section
+                    class="aw-create-fillAvailable"
+                    collapsed="disabled"
+                    caption="i18n.filters" >
+                    <aw-filter-panel-with-bulk-filtering
+                        sub-panel-context="subPanelContext" ></aw-filter-panel-with-bulk-filtering>
+                </aw-panel-section>
+            </div>
+            <aw-splitter></aw-splitter>
+            <div class="sw-column w-6 flex-auto aw-results-section aw-create-fillAvailable" >
+                <aw-panel-section
+                    class="aw-create-fillAvailable"
+                    collapsed="disabled"
+                    caption="{{data.resultsText}}"
+                    include-component-name="AwSearchBreadcrumbUnreadableCount"
+                    context="{{props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount[0]}}" >
+                    <aw-command-bar
+                        anchor="aw_search_objects"
+                        alignment="HORIZONTAL"
+                        context="props.subPanelContext" ></aw-command-bar>
+                    <aw-search-results-list
+                        sub-panel-context="subPanelContext" ></aw-search-results-list>
+                </aw-panel-section>
+            </div>
+        </div>
+    </div>
+</div>

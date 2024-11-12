@@ -1,0 +1,20 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="3.75" y1="41.75" x2="45.25" y2="0.25" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="30.5" y1="44.5" x2="42.5" y2="32.5" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <polyline points="33.5 0.5 9.5 0.5 9.5 47.5 45.5 47.5 45.5 12.5" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="33.5 0.5 33.5 12.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+    <path d="M27.311,33.998l-2.042-5.5532H17.5244l-2.042,5.5532H14.125l6.7363-17.8549h1.17L28.6934,33.998ZM21.4219,17.6992h-.05a11.0634,11.0634,0,0,1-.4112,1.3325l-3.0009,8.28h6.8857l-3.0132-8.2549Z" fill="#147391"/>
+    <path d="M38.58,33.998V31.4453h-.05a4.9615,4.9615,0,0,1-1.7871,2.0859,4.5669,4.5669,0,0,1-2.5708.7784,4.0532,4.0532,0,0,1-2.8453-.9961,3.3609,3.3609,0,0,1-1.0893-2.6026q0-3.3493,4.42-4.0341l3.9219-.585q0-4.1089-3.0879-4.1094a6.2933,6.2933,0,0,0-4.0967,1.6934V22.2939a6.3182,6.3182,0,0,1,1.9487-.9526,7.4336,7.4336,0,0,1,2.26-.4048,3.8509,3.8509,0,0,1,3.05,1.2144,5.22,5.22,0,0,1,1.0713,3.5547V33.998Zm-7.1348-3.3369a2.4409,2.4409,0,0,0,.7725,1.899,2.9687,2.9687,0,0,0,2.0791.7036,3.9187,3.9187,0,0,0,3.0693-1.376A5.1008,5.1008,0,0,0,38.58,28.3828V27.1377l-3.5113.51a5.957,5.957,0,0,0-2.8764.9776A2.5655,2.5655,0,0,0,31.4453,30.6611Z" fill="#147391"/>
+</svg>

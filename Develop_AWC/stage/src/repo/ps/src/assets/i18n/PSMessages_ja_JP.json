@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0}({1}の)が追加されました。<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0}({1}の)が除去されました。<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "内部エラーのために、検索結果はフィルタされませんでした。",
+    "invalidDateRangeError": "開始日は、終了日より前でなければなりません。",
+    "invalidUnitRange": "無効なユニット範囲",
+    "notificationForBaselineCreation": "\"{0}\"が保存されています。完了すると、通知されます。",
+    "notificationForBaselineCreationSync": "\"{0}\"が保存されていて、ホームフォルダで使用可能です。"
+}

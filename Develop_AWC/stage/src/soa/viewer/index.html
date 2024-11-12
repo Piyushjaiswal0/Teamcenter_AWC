@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soa Api Browser</title>
+  <script type="text/javascript" src="structure.js"></script>
+  <script type="text/javascript" src="api.js"></script>
+  <style>
+  ul {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+  body {
+    font-family: 'Segoe UI', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  }
+  .panel {
+    background-color: #eee;
+    color: #000;
+    height: inherit;
+    width: 320px;
+    max-width: 320px;
+  }
+  .navigationArea {
+    float:left;
+  }
+  .panelTitle {
+    background-color: #d7d7cd;
+    color: #000000;
+    font-size: 19px;
+    height: 27px;
+    padding: 0 10px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .panelContent {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-y: auto;
+  }
+  .filterLabel {
+    color: #006487;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+    margin-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 85%;
+  }
+  .filterNameLabel {
+    color: #006487;
+    display: block;
+    font-size: 13px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .bold {
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .searchBox {
+    margin-left: 20px;
+    width: -webkit-calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: calc(100% - 40px);
+  }
+  .sublocationContent {
+    padding-left: 10px;
+    float: left;
+    width: 320px;
+    max-width: 320px;
+  }
+  .title {
+    color: #006487;
+    font-size: 21px;
+    padding-bottom: 5px;
+  }
+  .cellListWidget {
+    list-style: none;
+    padding-left: 12px;
+  }
+  .cellListItem {
+    width: -webkit-calc(100% - 10px);
+    width: -moz-calc(100% - 10px);
+    width: calc(100% - 10px);
+    padding-bottom: 8px;
+    padding-left: 5px;
+    cursor: pointer;
+  }
+  .cellListItem:hover {
+    background-color: #cccccc;
+  }
+  .cellListItemSelected {
+    background-color: #cccccc;
+  }
+  .cellListCellTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000;
+    font-size: 19px;
+  }
+  .small {
+    font-size: 11px;
+  }
+  .cellListCellItemType {
+    color: #55a0b9;
+    fill: #55a0b9;
+    padding-bottom: 5px;
+  }
+  .operationDisplay {
+    float: left;
+    padding-left: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: -webkit-calc(100% - 670px);
+    width: -moz-calc(100% - 670px);
+    width: calc(100% - 670px);
+  }
+  .property {
+    color: #aaaa96;
+    font-size: 12px;
+    padding-bottom: 5px;
+  }
+  .keyInfoDiv{
+    font-family: 'Segoe UI', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+  }
+  #opName {
+    padding-bottom: 15px;
+  }
+  </style>
+</head>
+
+<body onload="resizeList()">
+  <div id="main">
+    <div class="panel navigationArea">
+      <div class="panelTitle">Filters</div>
+      <div class="panelContent" id="filterPanel">
+        <div class="filterLabel"
+          onclick="setSearchTerm('')"
+          id="searchTitle">
+          Search
+        </div>
+        <input type="text" class="searchBox" id="searchInput" oninput="searchInputChange(this.value)" >
+        <div class="filterLabel"
+          onclick="setLib('')"
+          id="libTitle">
+          Libraries
+        </div>
+        <ul id="libList">
+          <li class="filterNameLabel">
+            {{lib.name}}
+          </li>
+        </ul>
+        <div class="filterLabel"
+          onclick="setService('')"
+          id="svcTitle">
+          Services
+        </div>
+        <ul id="svcList">
+          <li class="filterNameLabel">
+            {{svc.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sublocationContent">
+      <div class="title"
+        onclick="updateHash('operation', ''); resetOperation()"
+        id="opTitle">
+        Operations
+      </div>
+      <ul id="opList" class="cellListWidget">
+        <li class="cellListItem"
+          id="{{op.url}}">
+          <div class="cellListCellTitle">
+            {{op.name}}
+          </div>
+          <label class="cellListCellItemType small">
+            {{op.url}}
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="operationDisplay" id="operationDisplay">
+      <div class="title" id="opName">Name: </div>
+      <div class="property" id="opDesc">Description: </div>
+      <div class="property" id="opLib">Library: </div>
+      <div class="property" id="opService">Service: </div>
+      <div class="property" id="opYear">Year: </div>
+      <div class="property" id="opUrl">Url: </div>
+      <div class="property" id="opInclude">Soa Dependency Inclusion: </div>
+      <div class="property" id="opRequest">Request: </div>
+      <div class="property" id="opResponse">Response: </div>
+    </div>
+  </div>
+</body>
+</html>

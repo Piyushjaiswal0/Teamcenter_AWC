@@ -1,0 +1,149 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-link-with-popup.directive",
+        "js/aw-list.directive",
+        "js/aw-property-label.directive",
+        "js/aw-column.directive",
+        "js/visible-when.directive"
+
+    ],
+
+    "actions":
+    {
+        "initDisplayRuleProvider":
+        {
+            "actionType": "dataProvider",
+            "method": "displayRuleProvider"
+        },
+        "setNewDisplayRule":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-12-Session",
+            "method": "setAndEvaluateIdDisplayRule",
+            "inputData":
+            {
+                "displayRule": "{{function:getCurrentDisplayRule}}",
+                "setRuleAsCurrentInDB": true
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "idDisplayRuleModified.reload"
+                    }
+                ]
+            },
+
+            "deps": "js/idDisplayRuleMgmntUtils"
+        },
+
+        "getDisplayRules":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-12-DataManagement",
+            "method": "listAlternateIdDisplayRules",
+            "inputData":
+            {
+                "input":{
+                    "users": ["{{ctx.user}}"],
+                    "currentUser": true
+                }
+            },
+
+            "outputData":
+            {
+                "userDisplayRule": "{{function:getDisplayIdsForUserIncludingEmpty}}",
+                "currentRuleInDB": "currentRuleInDB",
+                "displayRulesFound" : "userDisplayRule.length"
+            },
+
+            "deps": "js/idDisplayRuleMgmntUtils"
+        },
+
+        "reloadPage":
+        {
+            "actionType": "JSFunction",
+            "method": "reloadPage",
+            "inputData":
+            {
+            },
+            "deps": "js/workspaceService"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "displayRuleProvider.selectionChangeEvent",
+            "action": "setNewDisplayRule",
+            "condition": "data._internal.panelId === 'idDisplayRule'",
+            "cacheEventData": true
+
+        },
+        {
+            "eventId": "idDisplayRuleModified.reload",
+            "action": "reloadPage"
+        },
+        {
+            "eventId": "idDisplayRule.contentLoaded",
+            "action": "initDisplayRuleProvider"
+        }
+    ],
+
+    "dataProviders":
+    {
+        "displayRuleProvider":
+        {
+            "action": "getDisplayRules",
+            "response": "{{data.userDisplayRule}}",
+            "totalFound": "{{data.displayRulesFound}}",
+            "selectionModelMode": "single",
+            "commandsAnchor": "aw_iddisprule_cell_commands"
+        }
+    },
+
+    "data":
+    {
+        "idDisplayRule":
+        {
+            "isNull": false,
+            "propertyDisplayName": "{{i18n.idDisplayRule}}",
+            "uiValue": "{{i18n.idDisplayRule}}"
+        },
+        "emptyDisplayRule":
+        {
+            "displayName": "{{i18n.emptyDisplayRule}}",
+            "type": "STRING",
+            "dbValue": "noIdDisplayRule",
+            "dispValue": ""
+        }
+    },
+
+    "functions":
+    {
+         "getCurrentDisplayRule":
+         {
+            "functionName": "getCurrentDisplayRule",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+         }
+    },
+
+    "i18n":
+    {
+        "idDisplayRule": [ "IdDisplayRulesMessages" ],
+        "emptyDisplayRule" : [ "IdDisplayRulesMessages" ]
+    },
+    "ctxFields": [
+        "userSession.props.fnd0displayrule"
+    ],
+    "ctx": {
+        "userSession.props.fnd0displayrule": null
+    }
+}

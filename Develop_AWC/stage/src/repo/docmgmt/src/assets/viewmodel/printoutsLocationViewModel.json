@@ -1,0 +1,40 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "priority": 0,
+            "label": {
+                "source": "/i18n/DocMgmtMessages",
+                "key": "printReportsSublocation"
+            },
+            "clientScopeURI": "Awp0PrintOuts",
+            "nameToken": "Printouts",
+            "context": {
+                "search": {
+                    "provider": "Awp0SavedQuerySearchProvider",
+                    "sortType": "Alphabetical",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "criteria": {
+                        "queryName": "Dataset...",
+                        "searchId": "REPORTSDATASETSEARCH",
+                        "typeOfSearch": "ADVANCED_SEARCH",
+                        "DatasetType": "CrfOutputHtml",
+                        "lastEndIndex": "0",
+                        "totalObjectsFoundReportedToClient": "0"
+                    },
+                    "chartTitle": {
+                        "source": "/i18n/DocMgmtMessages",
+                        "key": "printResultsChartTitle"
+                    },
+                    "hideInContentSearchBox":true
+                }
+            },
+            "policy": "/policies/printObjectPropertyPolicy.json",
+            "viewBase": "printoutsLocation",
+            "breadcrumbConfig": {
+                "vm": "AwSearchBreadcrumb"
+            }
+        }
+    }
+}

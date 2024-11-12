@@ -1,0 +1,85 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awProjectSelectorRenderFunction",
+            "deps": "js/AwProjectSelectorService"
+        },
+        "initialize": {
+            "actionType": "dataProvider",
+            "method": "getUserProjectsProvider"
+        },
+        "loadProjectList": {
+            "actionType": "JSFunctionAsync",
+            "method": "getPropertiesProject",
+            "inputData": {
+                "data": "{{data}}",
+                "sortCriteria": "",
+                "startIndex": "{{data.dataProviders.getUserProjectsProvider.startIndex}}",
+                "filterVal": "{{props.value}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "unRegisterProjectSelectorDataProvider": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "inputData": {
+                "name": "getUserProjectsProvider"
+            },
+            "deps": "js/appCtxService"
+        },
+        "updateSelectedProjects": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "projectState": "{{props.projectState}}",
+                "value": {
+                    "selectedProjects": "{{data.eventData.selectedObjects}}",
+                    "triggerAssign": false
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "_timerId": null
+    },
+    "conditions": {},
+    "onEvent": [ {
+        "eventId": "getUserProjectsProvider.selectionChangeEvent",
+        "action": "updateSelectedProjects",
+        "cacheEventData": true
+    } ],
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize",
+        "onUnmount": "unRegisterProjectSelectorDataProvider"
+    },
+    "dataProviders": {
+        "getUserProjectsProvider": {
+            "action": "loadProjectList",
+            "response": "{{data.projects}}",
+            "totalFound": "{{data.totalProjectsFound}}",
+            "selectionModelMode": "multiple",
+            "commandsAnchor": "com.siemens.splm.clientfx.ui.modelObjectDataGridActionCommands",
+            "inputData": {
+                "selectionData": "{{props.selectionData}}"
+            }
+        }
+    },
+    "functions": {},
+    "i18n": {},
+    "props": {
+        "filter-prop": {
+            "type": "field"
+        },
+        "project-state": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "field"
+        }
+    }
+}

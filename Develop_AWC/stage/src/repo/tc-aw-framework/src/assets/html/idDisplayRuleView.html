@@ -1,0 +1,15 @@
+<!-- Id Display Rule -->
+<aw-column>
+    <aw-property-label prop="data.idDisplayRule"></aw-property-label>
+    <aw-link-with-popup prop="data.emptyDisplayRule" link-popup-id="aw-iddisplay-emptyrule" visible-when="ctx.userSession.props.fnd0displayrule.uiValues[0]===''">
+        <aw-list dataprovider="data.dataProviders.displayRuleProvider">
+            <div>{{item.props.object_string.uiValue}}</div>
+        </aw-list>
+    </aw-link-with-popup>
+
+    <aw-link-with-popup prop="ctx.userSession.props.fnd0displayrule" link-popup-id="aw-iddisplay-validrule" visible-when="ctx.userSession.props.fnd0displayrule.uiValues[0]!=''">
+        <aw-list dataprovider="data.dataProviders.displayRuleProvider">
+            <div>{{item.props.object_string.uiValue}}</div>
+        </aw-list>
+    </aw-link-with-popup>
+</aw-column>

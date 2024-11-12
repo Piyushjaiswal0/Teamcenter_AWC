@@ -1,0 +1,8 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="none"/>
+    <rect x="20" y="48" width="28" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="19" y="40" width="28" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="18" y="32" width="28" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="17" y="24" width="15" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M54.666,13.968A7,7,0,0,0,54.027,0h-38.4A6.761,6.761,0,0,0,8.892,6.832l3.987,43.156H6.039a1,1,0,0,0-.6.2A8.4,8.4,0,0,0,2,56.988a7,7,0,0,0,6.668,6.983A.94.94,0,0,0,8.812,64H52.36a6.747,6.747,0,0,0,6.74-6.74c0-.034,0-.068,0-.1ZM54.027,2a5,5,0,0,1,0,10H20.521a6.99,6.99,0,0,0,0-10ZM8.966,61.984a5,5,0,0,1-4.966-5,6.407,6.407,0,0,1,2.382-5h6.682l.487,5.272A4.737,4.737,0,0,1,8.966,61.984ZM52.36,62H13.586a6.838,6.838,0,0,0,1.96-4.832L10.888,6.74A4.745,4.745,0,0,1,15.627,2a5,5,0,0,1,0,10,1,1,0,0,0,0,2H52.659L57.1,57.309A4.746,4.746,0,0,1,52.36,62Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+</svg>

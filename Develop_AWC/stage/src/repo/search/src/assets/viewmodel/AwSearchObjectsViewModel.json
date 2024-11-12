@@ -1,0 +1,49 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "activeSearch": {
+            "initialValues": {
+                "name": "keyword"
+            },
+            "meta": {}
+        }
+    },
+    "conditions": {
+        "showAdvancedSearchLink": {
+            "expression": "!(props.supportsAdvancedSearch === false || props.supportsAdvancedSearch === 'false')"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "search-state-for-advanced": {
+            "type": "object"
+        },
+        "search-state-for-keyword": {
+            "type": "object"
+        },
+        "selection-model": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "supports-advanced-search": {
+            "type": "object"
+        },
+        "show-suggestions": {
+            "type": "object"
+        },
+        "search-history-cache": {
+            "type": "string"
+        },
+        "options": {
+            "type": "object"
+        },
+        "show-pre-filter": {
+            "type": "object"
+        }
+    }
+}

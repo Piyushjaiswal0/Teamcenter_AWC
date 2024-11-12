@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "PDF 檔案檢視器",
+    "ShowStreamErrorMessage": "該流必須包含資料",
+    "LoadingPDFfile": "正在載入檔案...",
+    "LoadingFileSuccess": "載入檔案成功 ...",
+    "LoadingFileFailed": "檔案載入失敗！"
+}

@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Bloquer",
+    "uvCheckinTitle": "Libérer",
+    "uvCancelCheckoutTitle": "Annuler le blocage",
+    "previousButtonTitle": "Précédent",
+    "nextButtonTitle": "Suivant",
+    "noObjectSelectionMessage": "Sélectionnez quelque chose à afficher.",
+    "fullViewModeTitle": "Plein écran",
+    "uvWordWrapTitle": "Renvoi à la ligne",
+    "exitFullViewModeTitle": "Quitter le plein écran",
+    "aw_viewerRightSide": "Côté droit de l'afficheur",
+    "aw_universalViewerLink": "Lien Afficheur universel",
+    "uvCheckoutDesc": "Réserver la sélection pour empêcher d'autres utilisateurs d'effectuer des modifications.",
+    "fullViewModeDesc": "Basculer sur la vue plein écran.",
+    "uvWordWrapDesc": "Enrouler les textes longs sur plusieurs lignes.",
+    "Awp0ShowObjectForUVpDesc": "Ouvrir ce fichier dans la fenêtre actuelle.",
+    "Awp0ViewFileForUVDesc": "Télécharger le fichier."
+}

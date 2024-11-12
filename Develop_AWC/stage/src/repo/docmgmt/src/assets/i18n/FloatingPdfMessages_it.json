@@ -1,0 +1,7 @@
+{
+    "add": "Aggiungi",
+    "cancel": "Annulla",
+    "confirmAddPdf": "\"{0}\" verrà aggiunto a \"{1}\"",
+    "addPdfError": "Impossibile aggiungere \"{0}\" a causa di un errore di sistema",
+    "deletePdfError": "Impossibile eliminare \"{0}\" a causa di un errore di sistema"
+}

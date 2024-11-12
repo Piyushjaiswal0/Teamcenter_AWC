@@ -1,0 +1,38 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerChildRenderFunction",
+            "deps": "js/AwWalkerChildService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "ctx": {
+        "extractColumnsClass": {
+            "parser": {
+                "method": "extractColumnsMemo",
+                "deps": "js/AwWalkerChildService"
+            }
+        }
+    },
+    "props": {
+        "elemdata": {
+            "type": "object"
+        },
+        "child-data": {
+            "type": "object"
+        },
+        "xrt-data": {
+            "type": "object"
+        },
+        "xrt-state": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        }
+    }
+}

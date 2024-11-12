@@ -1,0 +1,11 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<g>
+	<path fill="#006487" d="M8,16c-4.411,0-8-3.589-8-8c0-4.411,3.589-8,8-8s8,3.589,8,8C16,12.411,12.411,16,8,16z M8,0.935
+		c-3.891,0-7.057,3.17-7.057,7.065c0,3.895,3.165,7.065,7.057,7.065c3.891,0,7.057-3.17,7.057-7.065
+		C15.057,4.105,11.891,0.935,8,0.935z"/>
+</g>
+<rect x="8.972" y="3.942" fill="#006487" width="3" height="3"/>
+<rect x="3.991" y="8.947" fill="#006487" width="3" height="3"/>
+<rect x="8.972" y="8.942" fill="#006487" width="3" height="3"/>
+</svg>

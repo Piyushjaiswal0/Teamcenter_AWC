@@ -1,0 +1,19 @@
+
+<div>
+    <aw-panel-section caption="i18n.recentSectionTitle">
+        <div exist-when="!data.recentUsedTypes"></div>
+        <aw-list dataprovider="data.dataProviders.getRecentTypesProvider">
+            <aw-type-cell vmo="item"></aw-type-cell>
+        </aw-list>
+    </aw-panel-section>
+</div>
+<aw-panel-section caption="i18n.otherSectionTitle" exist-when="!conditions.moreLinkShown || data.maxRecentTypeCount>0">
+    <div visible-when="!data.searchResults">{{i18n.LOADING_TEXT}}</div>
+    <aw-flex-row height="40f">
+        <aw-panel-body scrollable="false">
+            <aw-list-filter prop="data.filterType" dataprovider="data.dataProviders.SubscribableTypeProvider">
+                <aw-type-cell vmo="item"></aw-type-cell>
+            </aw-list-filter>
+        </aw-panel-body>
+    </aw-flex-row>
+</aw-panel-section>

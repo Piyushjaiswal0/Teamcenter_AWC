@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "로그아웃",
+    "CONTINUE_TEXT": "계속",
+    "GEOGRAPHY_SECTION_TITLE" : "지역",
+    "GEOGRAPHY_SECTION_PROMPT" : "현재 작업 위치 입력",
+    "CONFIDENTIAL_SECTION_TITLE" : "비밀 유지 협약",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "동의함",
+    "GDPR_CHECKBOX_LABEL" : "동의함",
+    "INITIAL_LIST_VALUE" : "필수..."
+}

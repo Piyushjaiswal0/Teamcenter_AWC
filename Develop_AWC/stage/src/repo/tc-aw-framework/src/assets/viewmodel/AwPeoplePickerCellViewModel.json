@@ -1,0 +1,27 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "render": {
+            "method": "awPeoplePickerCellRenderFunction",
+            "deps": "js/peoplePickerCellService"
+        }
+    },
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "item": {
+            "type": "object"
+        },
+        "vmo": {
+            "type": "object"
+        },
+        "hideoverlay": {
+            "type": "string"
+        }
+    }
+}
+

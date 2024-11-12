@@ -1,0 +1,48 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="3.75" y1="41.75" x2="45.25" y2="0.25" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="17.292" y1="6.31" x2="22.708" y2="15.69" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.228" stop-color="#fafafa"/>
+      <stop offset="0.488" stop-color="#ededed"/>
+      <stop offset="0.762" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2-2" x1="32.292" y1="9.31" x2="37.708" y2="18.69" xlink:href="#New_Gradient_Swatch_2"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="28.542" y1="11.475" x2="31.458" y2="16.525" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="13.542" y1="8.475" x2="16.458" y2="13.525" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="New_Gradient_Swatch_2-3" x1="17.292" y1="20.31" x2="22.708" y2="29.69" xlink:href="#New_Gradient_Swatch_2"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="13.542" y1="22.475" x2="16.458" y2="27.525" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="30.5" y1="44.5" x2="42.5" y2="32.5" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <polygon points="33.5 0.5 9.5 0.5 9.5 47.5 45.5 47.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="18.781 13.5 13.5 13.5 13.5 8.5 26.5 8.5 26.5 13.5 21.219 13.5 18.781 13.5" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_2)"/>
+  <polyline points="35.5 17 35.5 18.5 19.5 18.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="19.5" y1="13" x2="19.5" y2="22" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polygon points="34.35 16.5 28.5 16.5 28.5 11.5 41.5 11.5 41.5 16.5 35.65 16.5 34.35 16.5" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_2-2)"/>
+  <rect x="28.5" y="11.5" width="3" height="5" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="13.5" y="8.5" width="3" height="5" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <polygon points="21.219 22.5 26.5 22.5 26.5 27.5 13.5 27.5 13.5 22.5 18.781 22.5 21.219 22.5" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_2-3)"/>
+  <rect x="13.5" y="22.5" width="3" height="5" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-3)"/>
+  <polygon points="33.5 0.5 33.5 12.5 45.5 12.5 33.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <rect x="0.5" y="27.5" width="47" height="16" fill="#7168a0" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M8.183,36.943a1.923,1.923,0,0,1-.725,1.592,3.171,3.171,0,0,1-2.025.578,4.188,4.188,0,0,1-1.031-.14,2.748,2.748,0,0,1-.806-.311v-1.4a2.8,2.8,0,0,0,.892.537,2.912,2.912,0,0,0,1.085.22,1.481,1.481,0,0,0,.915-.244.839.839,0,0,0,.32-.712,1.042,1.042,0,0,0-.317-.735,5.015,5.015,0,0,0-1.2-.806,4.073,4.073,0,0,1-1.294-.98A1.917,1.917,0,0,1,3.569,33.3a1.979,1.979,0,0,1,.323-1.109,2.134,2.134,0,0,1,.923-.768,3.238,3.238,0,0,1,1.365-.277,5.041,5.041,0,0,1,.983.1,3.024,3.024,0,0,1,.687.2v1.343a2.28,2.28,0,0,0-.754-.4,2.87,2.87,0,0,0-.906-.148,1.442,1.442,0,0,0-.916.268.85.85,0,0,0-.34.7,1.1,1.1,0,0,0,.112.515,1.327,1.327,0,0,0,.355.408,6.084,6.084,0,0,0,.875.527A4.755,4.755,0,0,1,7.74,35.721,1.861,1.861,0,0,1,8.183,36.943Z" fill="#fff"/>
+    <path d="M16.438,38.979v-4.9q0-.56.065-1.655h-.022a4.772,4.772,0,0,1-.22.86l-2.331,5.7H13.1L10.75,33.333c-.061-.189-.134-.494-.22-.913H10.5q.017.145.035.758c.012.408.019.76.019,1.058v4.743H9.365v-7.7h1.826l1.96,4.867a6.58,6.58,0,0,1,.349,1.063h.033l.408-1.074,2.014-4.856h1.751v7.7Z" fill="#fff"/>
+    <path d="M26.912,38.979H25.4l-1.45-5.366a4.217,4.217,0,0,1-.123-.817h-.022a4.177,4.177,0,0,1-.056.454c-.031.178-.055.3-.073.363L22.24,38.979H20.709l-2.17-7.7h1.4l1.434,5.581a4.457,4.457,0,0,1,.107.832h.032a5.546,5.546,0,0,1,.145-.843l1.553-5.57h1.364l1.472,5.635a4.353,4.353,0,0,1,.123.768h.022a5.4,5.4,0,0,1,.107-.8l1.386-5.6h1.342Z" fill="#fff"/>
+</svg>

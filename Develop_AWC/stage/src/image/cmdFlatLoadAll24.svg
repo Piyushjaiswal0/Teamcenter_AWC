@@ -1,0 +1,10 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+	 
+<path class="aw-theme-iconOutline" fill="#464646"  d="M1.1,1.5v21h15v-21H1.1z M15.1,2.5v3h-13v-3H15.1z M2.1,13.5v-3h13v3H2.1z M15.1,14.5v3h-13v-3H15.1z M2.1,9.5
+	v-3h13v3H2.1z M2.1,21.5v-3h13v3H2.1z"/>
+<polygon class="aw-theme-iconOutline" fill="#464646" points="20.3,16 22.9,20.5 17.7,20.5 "/>
+<polygon class="aw-theme-iconOutline" fill="#464646"  points="20.3,8 17.7,3.5 22.9,3.5 "/>
+<rect class="aw-theme-iconOutline" fill="#464646" x="17.7" y="1.5"  width="5.2" height="1"/>
+<rect class="aw-theme-iconOutline" fill="#464646" x="17.7" y="21.5"  width="5.2" height="1"/>
+</svg>

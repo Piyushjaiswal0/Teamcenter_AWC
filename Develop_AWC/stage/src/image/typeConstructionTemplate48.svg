@@ -1,0 +1,49 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="41.501" x2="42" y2="0.001" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45" data-name="front -45" x1="14.974" y1="19.974" x2="30.026" y2="35.026" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="17" y1="22" x2="28" y2="33" gradientTransform="translate(26.036 -7.855) rotate(45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="26.25" y1="3.75" x2="39.25" y2="16.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Light_Blue_Grad-2" x1="32.75" y1="-2.75" x2="45.75" y2="10.25" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#Light_Blue_Grad"/>
+    <linearGradient id="paper_gradient-2" x1="29.5" y1="47.501" x2="42.5" y2="34.501" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" xlink:href="#paper_gradient"/>
+  <polygon points="29.5 0.499 6.5 0.499 6.5 47.499 42.5 47.499 42.5 13.499 29.5 0.499" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="20.5 14.5 9.5 25.447 10.5 26.5 12.5 26.5 23.5 37.5 23.5 39.5 24.553 40.5 35.5 29.553 34.5 28.5 32.5 28.5 21.5 17.5 21.5 15.5 20.5 14.5" fill="url(#front_-45)"/>
+  <rect x="16.136" y="19.722" width="12.728" height="15.556" transform="translate(-12.855 23.964) rotate(-45)" fill="url(#Light_Blue_Grad)"/>
+  <polygon points="20.5 14.5 9.5 25.447 10.5 26.5 12.5 26.5 23.5 37.5 23.5 39.5 24.553 40.5 35.5 29.553 34.5 28.5 32.5 28.5 21.5 17.5 21.5 15.5 20.5 14.5" fill="none" stroke="#147391"/>
+  <polygon points="29.5 13.5 42.5 13.5 29.5 0.5 29.5 13.5" fill="url(#paper_gradient)"/>
+  <polygon points="42.5 13.5 42.5 0.5 29.5 0.5 42.5 13.5" fill="url(#Light_Blue_Grad-2)"/>
+  <line x1="42.5" y1="13.499" x2="29.5" y2="0.499" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <rect x="29.5" y="0.5" width="13" height="13" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="22" y1="18" x2="13" y2="27" fill="none" stroke="#147391"/>
+  <line x1="24.5" y1="20.5" x2="15.491" y2="29.491" fill="none" stroke="#147391"/>
+  <line x1="27.5" y1="23.5" x2="18.5" y2="32.5" fill="none" stroke="#147391"/>
+  <line x1="28.932" y1="24.761" x2="19.386" y2="34.307" fill="none" stroke="#147391"/>
+  <line x1="31.5" y1="27.5" x2="22.5" y2="36.5" fill="none" stroke="#147391"/>
+  <path d="M9.5,44.193,36.469,15.934a1.4,1.4,0,0,1,2.008-.036h0a1.4,1.4,0,0,1-.036,2.008L10.182,44.875H9.5Z" fill="#dcdcdc"/>
+  <path d="M36.925,19.471a4,4,0,0,1-.785,4.546L34.667,25.49" fill="none" stroke="#147391"/>
+  <path d="M35.47,17.461H37.4a.483.483,0,0,1,.483.483v0a.484.484,0,0,1-.484.484H35.471a.484.484,0,0,1-.484-.484v0a.483.483,0,0,1,.483-.483Z" transform="translate(-2.018 31.018) rotate(-45)" fill="#6e6e6e"/>
+  <path d="M9.5,44.193,36.469,15.934a1.4,1.4,0,0,1,2.008-.036h0a1.4,1.4,0,0,1-.036,2.008L10.182,44.875H9.5Z" fill="none" stroke="#147391"/>
+  <path d="M13.761,28.225a2.492,2.492,0,1,0,3.506,3.543l-.018-.018L30.5,18.5a4,4,0,0,1,5.656,0l.184.185" fill="none" stroke="#147391"/>
+  <line x1="23" y1="19" x2="14" y2="28" fill="none" stroke="#147391"/>
+</svg>

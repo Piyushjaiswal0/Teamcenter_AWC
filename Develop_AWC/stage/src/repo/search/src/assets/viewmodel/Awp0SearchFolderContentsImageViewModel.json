@@ -1,0 +1,138 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "actions": {
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "updateSelectAll": {
+            "actionType": "JSFunction",
+            "method": "updateSelectAll",
+            "inputData": {
+                "searchFolder": "{{subPanelContext.searchFolder}}"
+            },
+            "deps": "js/Awp0SearchFolderOverviewService"
+        },
+        "updateMultiSelect": {
+            "actionType": "JSFunction",
+            "method": "updateMultiSelectEnabled",
+            "inputData": {
+                "searchFolder": "{{subPanelContext.searchFolder}}"
+            },
+            "deps": "js/Awp0SearchFolderOverviewService"
+        },
+        "loadData":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData":
+            {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0MyActiveFolders",
+                    "operationType": "union"
+                },
+                "searchInput":
+                {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "Awp0ObjectSetRowProvider",
+                    "searchCriteria": {
+                        "objectSet": "contents.WorkspaceObject",
+                        "parentUid": "{{data.uid}}",
+                        "returnTargetObjs": "true"
+                    },
+                    "searchFilterFieldSortType" : "Alphabetical",
+                    "searchSortCriteria": "{{ctx.sublocation.sortCriteria}}",
+                    "startIndex": "{{data.dataProviders.listDataProvider.startIndex}}"
+                },
+                "inflateProperties": false
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "BusinessObject",
+                        "properties":
+                        [
+                            {
+                                "name": "awp0CellProperties"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "dataProviders.listDataProvider.columnConfig": "columnConfig",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/Awp0SearchFolderOverviewService"
+        }
+    },
+    "dataProviders":
+    {
+        "listDataProvider":
+        {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "selectionModel": {
+                "multiSelectEnabled": true
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "data": {
+        "uid": "{{subPanelContext.selected.uid}}"
+    },
+
+    "functions": {
+        "processOutput": {
+            "functionName": "processOutput2",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchFolder}}"
+            ]
+        },
+        "getDefaultPageSize":
+        {
+            "functionName": "getDefaultPageSize",
+            "parameters":
+            [
+                 "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "listDataProvider.selectAll",
+            "action": "updateSelectAll"
+        },
+        {
+            "eventId": "listDataProvider.selectNone",
+            "action": "updateSelectAll"
+        },
+        {
+            "eventId": "Awp0SearchFolderContentsTable.refreshTable",
+            "action": "updateMultiSelect"
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}
+

@@ -1,0 +1,5 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <rect x="6.257" y="4.257" width="7.485" height="7.485" transform="translate(-2.728 9.414) rotate(-45)" fill="#73b4cb"/>
+  <rect x="2.257" y="4.257" width="7.485" height="7.485" transform="translate(-3.899 6.586) rotate(-45)" fill="#fff"/>
+  <path d="M10,2,8,4,6,2,0,8l6,6,2-2,2,2,6-6ZM7.293,11.293,6,12.586,1.414,8,6,3.414,7.293,4.707,8,5.414,10.586,8,8,10.586Zm1.414,0L12,8,8.707,4.707,10,3.414,14.586,8,10,12.586Z" fill="#464646"/>
+</svg>

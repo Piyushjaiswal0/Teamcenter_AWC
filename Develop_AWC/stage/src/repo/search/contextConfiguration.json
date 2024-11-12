@@ -1,0 +1,14 @@
+{
+  "contexts": {
+    "revisionRuleContext": {
+      "view": "revisionRuleContext"
+    }
+  },
+  "placements": {
+    "revisionPlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "revisionRuleContext",
+      "priority": 60
+    }
+  }
+}

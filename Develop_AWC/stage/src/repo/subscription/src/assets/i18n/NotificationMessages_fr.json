@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Alertes",
+    "subManAppLabel": "Flux d’actualités",
+    "clear": "Effacer",
+    "noNotificationMsg": "Pas de nouvelle notification",
+    "multipleObjectsMsg": "\"{0}\" et \"{1}\" en plus",
+    "aw_globalToolbar": "Barre d'outils Global",
+    "Awp0ShowAlertWithBubbleDesc": "Afficher vos nouvelles alertes."
+}

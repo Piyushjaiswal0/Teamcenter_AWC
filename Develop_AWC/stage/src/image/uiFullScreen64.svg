@@ -1,0 +1,8 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g>
+    <polygon points="9 9 19 9 19 4 4 4 4 19 9 19 9 9" fill="#fff"/>
+    <polygon points="54 19 59 19 59 4 44 4 44 9 54 9 54 19" fill="#fff"/>
+    <polygon points="55 45 55 55 45 55 45 60 60 60 60 45 55 45" fill="#fff"/>
+    <polygon points="10 45 5 45 5 60 20 60 20 55 10 55 10 45" class="aw-theme-iconOutline" fill="#fff"/>
+  </g>
+</svg>

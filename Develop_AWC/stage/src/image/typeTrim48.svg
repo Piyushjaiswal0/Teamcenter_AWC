@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="front_-45" data-name="front -45" x1="18.5" y1="1.5" x2="29.5" y2="12.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="Stroke_-45" data-name="Stroke -45" x1="19" y1="7" x2="29" y2="7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4c4c4c"/>
+      <stop offset="1" stop-color="#333"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="16.928" y1="14.813" x2="31.053" y2="28.938" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Stroke_-45-2" x1="15.396" y1="22" x2="32.584" y2="22" xlink:href="#Stroke_-45"/>
+    <linearGradient id="Dark_Blue_Grad-2" x1="14.846" y1="31.049" x2="32.64" y2="43.705" gradientTransform="translate(6.71 -3.638) rotate(9.578)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Stroke_-45-3" x1="17.234" y1="37" x2="30.747" y2="37" xlink:href="#Stroke_-45"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="19.629" y1="19.129" x2="28.371" y2="27.871" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="21.963" y1="40.551" x2="26.037" y2="43.449" xlink:href="#Dark_Blue_Grad"/>
+  <rect width="48" height="48" fill="none"/>
+  <rect x="19.5" y="0.5" width="9" height="13" stroke-miterlimit="10" fill="url(#front_-45)" stroke="url(#Stroke_-45)"/>
+  <polyline points="22.5 13 22.5 11.5 25.5 11.5 25.5 8.5 22.5 8.5 22.5 5.5 25.5 5.5 25.5 2.5 22.5 2.5 22.5 1" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <path d="M15.98,18.307,18.49,30.5h11L32,18.307A4,4,0,0,0,28.083,13.5H19.9A4,4,0,0,0,15.98,18.307Z" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)" stroke="url(#Stroke_-45-2)"/>
+  <path d="M28.184,47.5H19.8a2,2,0,0,1-1.98-2.283L19.5,26.5h9l1.664,18.717A2,2,0,0,1,28.184,47.5Z" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)" stroke="url(#Stroke_-45-3)"/>
+  <rect x="20.5" y="16.5" width="7" height="14" rx="3" ry="3" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+  <circle cx="24" cy="42" r="2.5" stroke="#147391" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-4)"/>
+</svg>

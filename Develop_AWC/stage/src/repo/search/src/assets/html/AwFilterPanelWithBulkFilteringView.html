@@ -1,0 +1,7 @@
+<aw-panel-header exist-when="conditions.showAutoUpdateToggleButton">
+    <aw-togglebutton prop="data.autoApply" action="toggleAutoUpdate"></aw-togglebutton>
+</aw-panel-header>
+<aw-filter-panel sub-panel-context="subPanelContext"></aw-filter-panel>
+<aw-panel-footer class="sw-column" visible-when="conditions.showApplyAllButton">
+    <aw-button size='auto' action="applyBulkFilters" size="auto">{{i18n.ApplyAll}}</aw-button>
+</aw-panel-footer>

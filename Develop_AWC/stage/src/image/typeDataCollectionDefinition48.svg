@@ -1,0 +1,47 @@
+<svg id="Image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-14.359" y1="-635.664" x2="16.241" y2="-678.488" gradientTransform="matrix(1.055, 0, 0, -1.056, 15.438, -669.724)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="9.332" y1="728.832" x2="29.234" y2="748.438" gradientTransform="translate(13.482 -765.226) scale(1.055 1.056)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="26.535" y1="725.822" x2="31.398" y2="733.058" gradientTransform="translate(13.482 -765.226) scale(1.055 1.056)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="5.254" y1="745.577" x2="12.254" y2="752.624" gradientTransform="translate(13.482 -765.226) scale(1.055 1.056)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <g id="g914">
+    <path id="polygon13" d="M20.571.528H.528V46.972H32.176V.528Z" stroke="#464646" stroke-miterlimit="10" stroke-width="1.055" fill="url(#linear-gradient)"/>
+    <rect id="rect28" x="3.654" y="12.037" width="25.518" height="4.222" fill="none" stroke="#6e6e6e" stroke-width="1.055"/>
+    <rect id="rect30" x="3.654" y="4.649" width="25.518" height="4.222" fill="none" stroke="#6e6e6e" stroke-width="1.055"/>
+    <rect id="rect32" x="3.654" y="19.426" width="25.442" height="4.222" fill="none" stroke="#6e6e6e" stroke-width="1.055"/>
+    <rect id="rect32-5" x="3.655" y="26.999" width="25.442" height="4.222" fill="none" stroke="#6e6e6e" stroke-width="1.055"/>
+    <polygon id="polygon78" points="44.308 8.051 27.429 24.94 23.209 20.717 40.088 3.828 44.308 8.051" fill="url(#linear-gradient-2)"/>
+    <polygon id="polygon85" points="44.308 8.051 40.088 3.828 43.26 0.662 47.472 4.884 44.308 8.051" fill="url(#linear-gradient-3)"/>
+    <line id="line92" x1="44.308" y1="8.051" x2="40.088" y2="3.828" fill="none" stroke="#147391" stroke-linejoin="round" stroke-width="1.055"/>
+    <polygon id="polygon105" points="20.044 28.106 23.209 20.717 27.429 24.94 20.044 28.106" fill="url(#linear-gradient-4)"/>
+    <rect id="rect1095-8" x="4.914" y="21" width="16.307" height="1.056" fill="#177491"/>
+    <polygon id="polygon107" points="43.26 0.662 23.209 20.717 20.044 28.106 27.429 24.94 47.472 4.884 43.26 0.662" fill="none" stroke="#464646" stroke-linejoin="round" stroke-width="1.055"/>
+    <polygon id="polygon109" points="23.736 26.523 21.626 24.412 20.044 28.106 23.736 26.523" fill="#464646"/>
+    <rect id="rect1093" x="5.275" y="6.333" width="21.099" height="1.056" fill="#177491"/>
+    <rect id="rect1095" x="5.275" y="13.722" width="21.086" height="1.056" fill="#177491"/>
+    <rect id="rect1095-2" x="5.275" y="28.5" width="13.714" height="1.056" fill="#177491"/>
+    <rect id="rect32-1" x="3.655" y="34.662" width="25.442" height="4.222" fill="none" stroke="#6e6e6e" stroke-width="1.055"/>
+  </g>
+</svg>

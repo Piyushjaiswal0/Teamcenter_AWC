@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "Nombre de usuario",
+    "PASSWORD_PLACEHOLDER": "Contraseña",
+    "SIGN_IN_TEXT": "Iniciar la sesión",
+    "LOGIN_TEXT": "Inicio de sesión",
+    "LOGGING_IN_TEXT": "Iniciando la sesión",
+    "UNABLE_TO_CONNECT": "No se inició la sesión debido a un error interno.",
+    "VERSION_TEXT": "Versión",
+    "COPYRIGHT_DATE_TEXT": "Trabajo no publicado.",
+    "COPYRIGHT_MESSAGE": "Este material contiene secretos comerciales o información confidencial de Siemens Industry Software Inc. o de sus empresas afiliadas (colectivamente, \"Siemens\" o sus licenciantes). El acceso a esta información y al uso de esta información está estrictamente limitado según lo establecido en los acuerdos aplicables por el Cliente con Siemens."
+}

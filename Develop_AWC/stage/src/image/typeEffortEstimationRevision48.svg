@@ -1,0 +1,35 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="-1246.5" x2="47.5" y2="-1293.5" gradientTransform="matrix(1, 0, 0, -1, 0, -1246)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="7.6263" y1="30.3381" x2="11.3737" y2="34.0855" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="7.6263" y1="9.3381" x2="11.3737" y2="13.0855" xlink:href="#linear-gradient-2"/>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <path d="M12,32c0,1.3807-1.1193,3.2143-2.5,3.2143S7,33.3807,7,32a2.5,2.5,0,0,1,5,0Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+    <path d="M14.5,39.5a3.6046,3.6046,0,0,0-2.0024-3.1192,5.09,5.09,0,0,1-5.9952,0A3.6046,3.6046,0,0,0,4.5,39.5v3h10Z" fill="#3c91af" stroke="#147391" stroke-miterlimit="10"/>
+    <path d="M12,11c0,1.3807-1.1193,3.2143-2.5,3.2143S7,12.3807,7,11a2.5,2.5,0,0,1,5,0Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+    <path d="M14.5,18.5a3.6046,3.6046,0,0,0-2.0024-3.1192,5.09,5.09,0,0,1-5.9952,0A3.6046,3.6046,0,0,0,4.5,18.5v3h10Z" fill="#3c91af" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="17" y1="21.5" x2="44" y2="21.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="17" y1="16.5" x2="44" y2="16.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="17" y1="11.5" x2="44" y2="11.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="17" y1="6.5" x2="44" y2="6.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <rect x="20" y="18.0002" width="3.0001" height="3.9997" transform="translate(1.4999 41.5002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <rect x="24" y="16.0002" width="7.0001" height="3.9997" transform="translate(9.4999 45.5002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <rect x="27" y="13.0002" width="13.0001" height="3.9997" transform="translate(18.4999 48.5002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <rect x="35.5" y="15.5002" width="8.0001" height="3.9997" transform="translate(21.9999 57.0002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <line x1="17" y1="42.5" x2="44" y2="42.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="17" y1="37.5" x2="44" y2="37.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="17" y1="32.5" x2="44" y2="32.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="17" y1="27.5" x2="44" y2="27.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <rect x="17.5" y="36.5002" width="8.0001" height="3.9997" transform="translate(-17.0001 60.0002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <rect x="24" y="37.0002" width="7.0001" height="3.9997" transform="translate(-11.5001 66.5002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <rect x="26" y="33.0002" width="15.0001" height="3.9997" transform="translate(-1.5001 68.5002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+  <rect x="34" y="35.0002" width="11.0001" height="3.9997" transform="translate(2.4999 76.5002) rotate(-90)" fill="#3c91af" stroke="#147391"/>
+</svg>

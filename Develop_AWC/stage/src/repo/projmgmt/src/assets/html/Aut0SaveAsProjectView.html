@@ -1,0 +1,16 @@
+<aw-command-panel caption="i18n.saveAsProjectTitle" context="subPanelContext">
+    <aw-guidance-message message="infoMessage" closable="false" banner-style="true" show-icon="true" show-type="false"> </aw-guidance-message>
+    <aw-panel-body>
+        <aw-panel-section caption="i18n.propertiesSection">
+            <aw-textbox prop="data.ProjectId"></aw-textbox>
+            <aw-textbox prop="data.ProjectName"></aw-textbox>
+            <aw-widget prop="data.ProjectDesc" ></aw-widget>
+            <aw-widget prop="data.ProjectCategory"></aw-widget>
+            <aw-radiobutton class="sw-column" prop = "data.useProgramSecurity" ></aw-radiobutton>
+            <aw-checkbox prop="data.deepCopy"></aw-checkbox>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="saveAsProject" visible-when="formProp.attributes.valid"><aw-i18n>i18n.saveAsButton</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

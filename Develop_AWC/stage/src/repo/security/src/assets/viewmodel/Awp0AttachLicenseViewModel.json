@@ -1,0 +1,414 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "JSFunction",
+            "method": "initialize",
+            "inputData":
+            {
+                "data" : "{{data}}",
+                "fields" : "{{fields}}",
+                "licenses" : "{{subPanelContext.sharedData.licenses}}"
+            },
+            "outputData":
+            {
+                "itarEditMode" : "itarEditMode",
+                "enableEdit" : "enableEdit"
+            },
+            "deps": "js/licenseMgmtService"
+        },
+
+        "callDataProvider":
+        {
+            "actionType": "dataProvider",
+            "method": "availableLicenses"
+        },
+
+        "getLicense":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Security-2017-12-AwLicensing",
+            "method": "getLicensesWithTypes",
+            "inputData":
+            {
+                "licenseInputs":
+                {
+                    "selectedObjects": "{{subPanelContext.license.adaptedObjects}}",
+                    "paginationInfo":
+                    {
+                        "startIndex": "{{data.dataProviders.availableLicenses.startIndex}}",
+                        "maxToReturn": 50
+                    },
+                    "filterInfo": {
+                      "licenseId" : "{{data.filterBox.dbValue}}",
+                      "licenseType": "{{function:getFilterLicenseType}}"
+                    },
+                    "isAceContext": "{{function:isACEContext}}",
+                    "isAssigned": true
+                }
+            },
+
+            "outputData":
+            {
+                "searchResults": "licensesOutput.availableLicenseList",
+                "attachedLicenseList": "licensesOutput.commonAssignedLicenseList",
+                "availableLicenseTypes": "{{function:getAvailableLicenseTypeList}}",
+                "allLicenseTypes": "licensesOutput.availableLicenseTypes",
+                "applyToRawList": "licenseOptions.ApplyTo",
+                "levelRawList": "licenseOptions.Level",
+                "entireBOM": "licenseOptions.EntireBOM",
+                "totalFound": "totalFound",
+                "endIndex": "endIndex"
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "ITAR_License",
+                        "properties":
+                        [
+                            {
+                                "name": "ead_paragraph"
+
+                            }
+                        ]
+                    }
+                ]
+            },
+            "deps": "js/licenseMgmtUtils"
+        },
+
+        "attach":
+        {
+            "actionType": "JSFunction",
+            "method": "getSelectedLicensesforAttach",
+            "inputData":
+            {
+                "data" : "{{data}}"
+            },
+            "outputData":
+            {
+                "containsItarLicense" : "containsItarLicense",
+                "authPara":"authPara",
+                "licenseName":"licenseName",
+                "confirmAttach":"confirmAttach"
+            },
+            "deps": "js/licenseMgmtService",
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "condition": "!data.confirmAttach",
+                        "name": "awp0Security.attach"
+                    }
+                ]
+            },
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "condition": "data.confirmAttach",
+                        "message": "confirmOverwrite"
+                    }
+                ]
+            }
+        },
+
+        "selectLicense":
+        {
+            "actionType": "JSFunction",
+            "method": "addToSelectedLicenses",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "vmo" : "{{eventData.vmo}}"
+            },
+            "outputData":
+            {
+                "eventData.vmo.selected" : "selected",
+                "itarEditMode" : "itarEditMode"
+            },
+            "deps": "js/licenseMgmtService"
+        },
+
+        "unselectLicense":
+        {
+            "actionType": "JSFunction",
+            "method": "addToAvailableLicenses",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "vmo" : "{{eventData.vmo}}"
+            },
+
+            "deps": "js/licenseMgmtService"
+        },
+
+        "submit":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "AuthorizedDataAccess-2017-05-LicenseManagement",
+            "method": "attachOrDetachLicensesFromObjects",
+            "inputData":
+            {
+                "licenseAttachOrDetachInput": "{{function:attachInput}}"
+            },
+            "outputData":
+            {
+                "partialErrors": "partialErrors",
+                "errorMessage": "{{function:processPartialErrors}}"
+            },
+
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "message": "multipleAttachSuccess"
+                    }
+                ],
+                "failure":
+                [
+                    {
+                        "condition": "ctx.mselected",
+                        "message": "attachDetachMultiError"
+                    }
+                ]
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "deps":"js/licenseMgmtUtils"
+        },
+        "batchAction": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "reveal"
+                },
+                {
+                    "action": "callDataProvider"
+                }
+            ]
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "awp0Security.selectLicense",
+            "cacheEventData": true,
+            "action": "selectLicense"
+        },
+        {
+            "eventId": "awp0Security.unselectLicense",
+            "cacheEventData": true,
+            "action": "unselectLicense"
+        },
+        {
+            "eventId": "awp0Security.attach",
+            "action": "submit"
+        }
+    ],
+
+    "lifecycleHooks": {
+        "onMount": "batchAction"
+    },
+
+    "conditions":
+    {
+        "isACEContext":
+        {
+            "expression": "ctx.sublocation.nameToken==='com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation'"
+        },
+        "is4GObject":
+        {
+            "expression": "data.applyToRawList.length>0"
+        },
+         "isValidToShowLevel":
+        {
+            "expression": "data.structure.dbValue===false"
+        },
+        "isValidToShowBOMStructure":
+        {
+            "expression": "data.levelRawList.length>0 && data.entireBOM.length>0"
+        }
+    },
+
+    "data":
+    {
+        "filterBox":
+        {
+            "displayName": "",
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "licenseType" :
+        {
+            "displayName":"{{i18n.LicenseTypesTitle}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "{{i18n.AllLicenses}}",
+            "dispValue": "{{i18n.AllLicenses}}"
+        },
+        "attachSelectedLabel":
+        {
+            "displayName": "{{i18n.attachSelectedLabel}}",
+            "type": "STRING",
+            "labelPosition": "PROPERTY_LABEL_AT_LEFT"
+        },
+        "applyToAttach":
+        {
+            "displayName": "{{i18n.attachSelectedLabel}}",
+            "type": "BOOLEAN",
+            "propertyRadioTrueText": "{{i18n.SingleRevision}}",
+            "propertyRadioFalseText": "{{i18n.AllRevisions}}",
+            "dbValue": true
+        },
+        "structure":
+        {
+            "displayName": "{{i18n.applySelectedLabel}}",
+            "type": "BOOLEAN",
+            "propertyRadioFalseText": "{{i18n.Level}}",
+            "propertyRadioTrueText": "{{i18n.Structure}}",
+            "dbValue": false
+        },
+        "level":
+        {
+            "type": "INTEGER",
+            "dbValue": 0
+        },
+        "selectedLicensesUid":[]
+    },
+
+    "functions":
+    {
+        "getAvailableLicenseTypeList": {
+            "functionName": "getAvailableLicenseTypeList",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getFilterLicenseType": {
+            "functionName": "getFilterLicenseType",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "attachInput": {
+            "functionName": "attachInput",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        },
+        "isACEContext":
+        {
+            "functionName": "isACEContext",
+            "parameters":
+            [
+
+            ]
+        }
+    },
+
+    "dataProviders":
+    {
+
+        "availableLicenses":
+        {
+            "action": "getLicense",
+            "selectionModelMode": "single",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "totalLoaded": "{{data.endIndex}}",
+            "commandsAnchor":"awp0_selectLicenseCommands"
+        },
+        "selectedLicenses":
+        {
+            "commandsAnchor":"awp0_unselectLicenseCommands",
+            "selectionModelMode": "none"
+
+        }
+    },
+
+    "messages":
+    {
+        "attachDetachMultiError":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.attachDetachMultiError}}",
+            "messageTextParams":
+            [
+                "{{data.errorMessage}}"
+            ]
+        },
+        "multipleAttachSuccess":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.multipleAttachSuccess}}"
+        },
+        "confirmOverwrite":
+        {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.confirmOverwrite}}",
+            "navigationOptions":
+            [
+                {
+                    "option": "Cancel",
+                    "text": "{{i18n.CancelText}}"
+                },
+                {
+                    "option": "Overwrite",
+                    "text": "{{i18n.OverwriteText}}",
+                    "action": "submit"
+                }
+            ]
+        }
+    },
+
+    "i18n":
+    {
+        "attachDetachMultiError": [ "SecurityMessages" ],
+        "applySelectedLabel": ["SecurityMessages"],
+        "attachSelectedLabel": ["SecurityMessages"],
+        "AllRevisions": ["SecurityMessages"],
+        "AllLicenses": ["SecurityMessages"],
+        "Attached": ["SecurityMessages"],
+        "AttachLicense": ["SecurityMessages"],
+        "AttachedLicense": ["SecurityMessages"],
+        "AttachLicenseButtonText": ["SecurityMessages"],
+        "AttachedSectionTitle":["SecurityMessages"],
+        "AvailableSectionTitle":["SecurityMessages"],
+        "CancelText": ["SecurityMessages"],
+        "OverwriteText": ["SecurityMessages"],
+        "confirmOverwrite": ["SecurityMessages"],
+        "DetachLicense": ["SecurityMessages"],
+        "Level": ["SecurityMessages"],
+        "Licenses": ["SecurityMessages"],
+        "multipleAttachSuccess": [ "SecurityMessages" ],
+        "SingleRevision": ["SecurityMessages"],
+        "SelectedSectionTitle":["SecurityMessages"],
+        "Structure": ["SecurityMessages"],
+        "LicenseTypesTitle":["SecurityMessages"]
+    }
+}

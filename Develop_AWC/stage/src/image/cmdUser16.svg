@@ -1,0 +1,7 @@
+<svg version="1.1" id="Artwork" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	  viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+  <path d="M8,7C6.354,7,5.029,4.88,5.029,3.125A3.055,3.055,0,0,1,8,0a3.055,3.055,0,0,1,2.971,3.125C10.971,4.88,9.646,7,8,7ZM8,1A2.055,2.055,0,0,0,6.029,3.125C6.029,4.38,6.985,6,8,6S9.971,4.38,9.971,3.125A2.055,2.055,0,0,0,8,1Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M14,16H2V10.422A3.836,3.836,0,0,1,4.5,7.043l.246-.109.227.145a5.521,5.521,0,0,0,6.054,0l.227-.145.246.109A3.836,3.836,0,0,1,14,10.422ZM3,15H13V10.422a2.777,2.777,0,0,0-1.673-2.354,6.5,6.5,0,0,1-6.654,0A2.777,2.777,0,0,0,3,10.422Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="4" y="11" width="1" height="4.167" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="11" y="11" width="1" height="4.167" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

@@ -1,0 +1,25 @@
+<div class="aw-base-scrollPanel" exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded">
+    <aw-empty-workarea
+        image="graEmptySearchList128"
+        title="{{ subPanelContext.searchState.criteria.searchString ? i18n.noPartsFound : i18n.nothingFound}}"
+        hint="{{ subPanelContext.searchState.criteria.searchString ? i18n.noPartsSearchAreaHint : i18n.emptySearchAreaShapeHint}}"
+        action="actions.shapeSearchLinkCommand"
+        link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+        link-text="i18n.SS1Shapes">
+    </aw-empty-workarea>
+</div>
+<span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+    exist-when="data.totalFound===0 && !(subPanelContext.searchState.searchData.criteria.thresholdExceeded === 'true')">{{i18n.noFiltersFound}}</span>
+<span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+    exist-when="data.totalFound===0 && subPanelContext.searchState.searchData.criteria.thresholdExceeded === 'true'">{{ctx.searchInfo.noResultsFound}}</span>
+<!--  At some point of time ctx.search.totalFound becomes undefined hence the list gets hidden from DOM,
+    due to visible when!-->
+<!-- <aw-scrollpanel visible-when="ctx.search.totalFound>0"> -->
+<aw-list dataprovider="data.dataProviders.searchListDataProvider" has-floating-cell-commands="true" show-decorators="true"
+    exist-when="subPanelContext.searchState.criteria.searchString !== undefined
+        && subPanelContext.searchState.criteria.searchString !== ''" show-context-menu="true"
+    show-check-box="subPanelContext.showCheckBox">
+    <aw-default-cell vmo="item"></aw-default-cell>
+    <aw-search-snippets vmo="item"></aw-search-snippets>
+</aw-list>
+<!-- </aw-scrollpanel> -->

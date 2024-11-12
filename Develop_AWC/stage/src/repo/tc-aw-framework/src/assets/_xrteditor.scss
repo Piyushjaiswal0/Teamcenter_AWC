@@ -1,0 +1,39 @@
+/*
+@<COPYRIGHT>@
+==================================================
+Copyright 2022.
+Siemens Product Lifecycle Management Software Inc.
+All Rights Reserved.
+==================================================
+@<COPYRIGHT>@
+*/
+
+.aw-xrteditor-listbox {
+    padding-right: $padding_xlarge
+}
+
+.aw-xrteditor-listboxLabel {
+    margin-top: $margin_normal;
+    padding-left: $padding_normal;
+    padding-right: $padding_small;
+}
+
+.aw-xrteditor-textboxLabel {
+    margin-top: $margin_large;
+    padding-right: $padding_small;
+}
+
+.aw-xrteditor-textbox {
+    margin-bottom: $margin_normal;
+    margin-left: $margin_normal;
+    width: 15%;
+}
+
+.aw-xrteditor {
+    width: 100%
+}
+
+.aw-xrteditor-header {
+    padding-top: $padding_normal;
+    padding-bottom: $padding_normal;
+}

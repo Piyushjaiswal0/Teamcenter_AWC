@@ -1,0 +1,15 @@
+// Copyright 2022 Siemens Product Lifecycle Management Software Inc.
+
+.aw-floatpdf-commands {
+    margin: $margin_normal;
+}
+
+.aw-floatpdf-panel {
+    border: $command_panel_border;
+    width: 100%;
+    height: 100%;
+}
+
+.aw-floatpdf-panel .guidance-container-fullWidth {
+    border: none;
+}

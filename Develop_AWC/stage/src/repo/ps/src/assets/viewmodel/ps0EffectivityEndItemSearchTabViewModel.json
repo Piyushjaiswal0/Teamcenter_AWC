@@ -1,0 +1,154 @@
+{
+    "schemaVersion": "1.0.0",
+
+    "actions": {
+        "search": {
+            "actionType": "JSFunction",
+            "method": "fetchSubBOTypesAndDoSearch",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/effectivityUtils"
+        },
+
+        "doSearch": {
+            "actionType": "dataProvider",
+            "method": "searchEndItems"
+        },
+
+        "fetchSubBOTypes": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-04-DataManagement",
+            "method": "findDisplayableSubBusinessObjectsWithDisplayNames",
+            "inputData": {
+                "input": [ {
+                    "boTypeName": "ItemRevision",
+                    "exclusionBOTypeNames": []
+                } ]
+            },
+            "outputData": {
+                "subBusinessObjects": "{{function:processSoaResponseForBOTypes}}"
+            },
+            "deps": "js/effectivityUtils",
+            "events": {
+                "success": [ {
+                    "name": "searchEndItems.doSearch"
+                } ],
+                "failure": [ {
+                    "name": "searchEndItems.doSearch"
+                } ]
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "errorInGettingSubtypesOfEndItem"
+                } ]
+            }
+        },
+
+        "searchForEndItems": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0SavedQuerySearchProvider",
+                    "searchCriteria": {
+                        "queryName": "Quick",
+                        "searchID": "",
+                        "ItemID": "{{data.searchString.dbValue}}",
+                        "Name": "{{data.searchString.dbValue}}",
+                        "totalObjectsFoundReportedToClient": "",
+                        "typeOfSearch": "ADVANCED_SEARCH",
+                        "utcOffset": "0",
+                        "lastEndIndex": "0"
+                    },
+                    "searchFilterFieldSortType": "Priority",
+                    "searchFilterMap": { "WorkspaceObject.object_type": "{{data.subBusinessObjects}}" },
+                    "searchSortCriteria": [],
+                    "startIndex": "{{data.dataProviders.searchEndItems.startIndex}}"
+                }
+
+            },
+            "outputData": {
+                "endItemsFound": "searchResults",
+                "endItemsTotalFound": "totalFound"
+            }
+        },
+        "setEndItemAndNavigateToMainPanel": {
+            "actionType": "JSFunction",
+            "method": "setEndItemAndNavigateToMainPanel",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{props.subPanelContext}}"
+            },
+            "deps": "js/expressionEffectivityEndItemPanelService"
+        }
+    },
+
+    "data": {
+        "searchString": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        }
+    },
+
+    "dataProviders": {
+        "searchEndItems": {
+            "action": "searchForEndItems",
+            "response": "{{data.endItemsFound}}",
+            "totalFound": "{{data.endItemsTotalFound}}",
+            "selectionModelMode": "single"
+        }
+    },
+
+    "onEvent": [ {
+            "eventId": "searchEndItems.doSearch",
+            "action": "doSearch"
+        },
+        {
+            "eventId": "searchEndItems.fetchSubBOTypes",
+            "action": "fetchSubBOTypes"
+        },
+        {
+            "eventId": "searchEndItems.selectionChangeEvent",
+            "action": "setEndItemAndNavigateToMainPanel"
+        }
+    ],
+
+    "messages": {
+        "errorInGettingSubtypesOfEndItem": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.errorInGettingSubtypesOfEndItem}}"
+        }
+    },
+
+    "i18n": {
+        "errorInGettingSubtypesOfEndItem": [ "PSMessages" ],
+        "endItemMessage": [ "PSConstants" ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

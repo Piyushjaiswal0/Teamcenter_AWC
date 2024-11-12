@@ -1,0 +1,63 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "icon": {
+            "dbValue": "graEmptyReportSummary128"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "actions": {
+        "loadPanel": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "openPanel",
+                "condition": "!conditions.nullSearchCriteria"
+            } ]
+        },
+        "openPanel": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Rb0ConfigureSearchData",
+                "location": "aw_toolsAndInfo"
+            }
+        }
+    },
+    "functions": {
+    },
+    "lifecycleHooks": {
+        "onMount": "loadPanel"
+    },
+    "conditions": {
+        "nullSearchCriteria":{
+            "expression": "ctx.state.params.searchCriteria || ctx.state.params.reportId"
+        },
+        "summaryReport":{
+            "expression": "ctx.state.params.reportType === '4'"
+        }
+    },
+    "i18n": {
+        "noChartData": [ "ReportChartMessages" ],
+        "dataTabName": [
+            "ReportChartMessages"
+        ],
+        "searchItemContext":[
+            "ReportChartMessages"
+        ],
+        "searchItem":[
+            "ReportChartMessages"
+        ],
+        "searchDataContext":[
+            "ReportChartMessages"
+        ],
+        "noItemAvailable":[
+            "ReportChartMessages"
+        ]
+    }
+}

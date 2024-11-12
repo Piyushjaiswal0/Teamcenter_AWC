@@ -1,0 +1,234 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "commandDisplayEffectivity": "ps0_commandDisplayEffectivity"
+    },
+    "dataProviders": {
+        "getEffectivity": {
+            "action": "searchEffectivities",
+            "response": "{{data.effectivities}}",
+            "totalFound": "{{data.effectivities.length}}",
+            "selectionModelMode": "multiple",
+            "commandsAnchor": "ps0_effectivity_cell_commands"
+        }
+    },
+    "actions": {
+        "searchEffectivities": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-OccMgmt-2020-12-EffectivityManagement",
+            "method": "getEffectivity",
+            "inputData": {
+                "inputObjects": [ {
+                    "uid": "{{ctx.selected.uid}}",
+                    "type": "{{ctx.selected.type}}"
+                } ]
+            },
+            "outputData": {
+                "effectivities": "{{function:getEffectivityDataForDisplay}}"
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+        "getEffectivityAction": {
+            "actionType": "dataProvider",
+            "method": "getEffectivity"
+        },
+        "removeEffectivities": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-OccMgmt-2020-12-EffectivityManagement",
+            "method": "setEffectivity",
+            "inputData": {
+                "effectivityDataInput": {
+                    "effectivityData": [ {
+                        "inputObject": {
+                            "uid": "{{ctx.selected.uid}}",
+                            "type": "{{ctx.selected.type}}"
+                        },
+                        "effectivity": "{{function:getEffectivityDataForRemove}}"
+                    } ]
+                }
+            },
+            "outputData": {
+                "setEffectivitySoaResponse": "",
+                "partialErrors": "partialErrors",
+                "errorMessage": "{{function:processPartialErrors}}",
+                "objectConfigured": "updated",
+                "objectUnconfigured": "deleted"
+            },
+            "events": {
+                "success": [ {
+                    "name": "ps0DisplayEffectivities.effectivitiesRemovedSuccessfully",
+                    "eventData": {
+                        "configured": "{{data.objectConfigured}}"
+                    },
+                    "condition": "data.objectConfigured && data.objectConfigured.includes(ctx.selected.uid)"
+                } ]
+
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "condition": "errorCode.code==126225",
+                    "message": "failedToRemoveEffectivityMessage"
+                } ]
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+        "loadUnderlyingObjectProps":{
+            "actionType": "JSFunctionAsync",
+            "method": "getProperties",
+            "deps": "soa/dataManagementService",
+            "inputData": {
+                "uid": {
+                    "$adapt": ["{{ctx.selected}}"],
+                    "path": "uid"
+                }
+                ,
+                "propNames": [
+                    "release_status_list"
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "ps0UnderlyingPropsUpdated"
+                    }
+                ]
+            }
+        },
+        "setUnderlyingObjectPropsLoadedFlag":{
+            "actionType": "JSFunction",
+            "method": "setUnderlyingObjectPropsLoadedFlag",
+            "deps": "js/expressionEffectivityEditCommandHandler",
+            "inputData": {
+                "ctx": "{{ctx}}"
+            }
+        },
+        "resetUnderlyingObjectPropsLoadedFlag":{
+            "actionType": "JSFunction",
+            "method": "resetUnderlyingObjectPropsLoadedFlag",
+            "deps": "js/expressionEffectivityEditCommandHandler",
+            "inputData": {
+                "ctx": "{{ctx}}"
+            }
+        },
+        "unregisterUnderlyingObjectPropsLoadedFlag":{
+            "actionType": "JSFunction",
+            "method": "unregisterUnderlyingObjectPropsLoadedFlag",
+            "deps": "js/expressionEffectivityEditCommandHandler",
+            "inputData": {}
+        },
+        "getEffectivityBatchAction": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "resetUnderlyingObjectPropsLoadedFlag"
+                },
+                {
+                    "action": "loadUnderlyingObjectProps"
+                },
+                {
+                    "action": "getEffectivityAction"
+                }
+            ]
+        },
+        "navigateToPs0EditEffPanelAction": {
+            "actionType": "JSFunction",
+            "method": "updateValueOnCtxOrState",
+            "inputData": {
+                "path": "",
+                "value": {
+                    "activeView": "ps0EditEffectivity"
+                },
+                "target": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/occmgmtUtils"
+        },
+        "initializeEditPanelAction": {
+            "actionType": "JSFunction",
+            "method": "initializeEditPanel",
+            "inputData": {
+                "data": "{{data.eventData}}",
+                "subPanelContext" : "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/expressionEffectivityService"
+        },
+
+        "setPreviousSelected":{
+            "actionType": "JSFunction",
+            "method": "updateValueOnCtxOrState",
+            "inputData": {
+                "path": "",
+                "value": {
+                    "previousSelectionUid": "{{ctx.selected.uid}}"
+                },
+                "target": "{{props.subPanelContext.expEffPanelState}}"
+            },
+            "deps": "js/occmgmtUtils"
+        }
+    },
+    "functions": {
+        "getEffectivityDataForDisplay": {
+            "functionName": "getEffectivityDataForDisplay",
+            "parameters": [ "{{props.subPanelContext.expEffPanelState}}" ]
+        },
+        "getEffectivityDataForRemove": {
+            "functionName": "getEffectivityDataForRemove",
+            "parameters": [ "{{data.dataProviders.getEffectivity.viewModelCollection.loadedVMObjects}}" ]
+        },
+        "processPartialErrors": {
+            "functionName": "processPartialErrors",
+            "parameters": [ "{{setEffectivitySoaResponse}}" ]
+        }
+    },
+    "messages": {
+        "failedToRemoveEffectivityMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "ps0DisplayEffectivities.effectivitiesRemovedSuccessfully",
+            "action": "getEffectivityAction"
+        },
+        {
+            "eventId": "removeEffectivitiesEvent",
+            "cacheEventData": true,
+            "action": "removeEffectivities"
+        },
+        {
+            "eventId":"ps0UnderlyingPropsUpdated",
+            "action": "setUnderlyingObjectPropsLoadedFlag"
+        },
+        {
+            "eventId": "navigateToPs0EditEffPanel",
+            "action": "navigateToPs0EditEffPanelAction"
+        },
+        {
+            "eventId":"navigateToPs0EditEffPanel",
+            "cacheEventData": true,
+            "action": "initializeEditPanelAction"
+        }
+    ],
+    "lifecycleHooks": {
+        "onUnmount": "unregisterUnderlyingObjectPropsLoadedFlag",
+        "onInit": "loadUnderlyingObjectProps",
+        "onUpdate": [ {
+            "action": "getEffectivityAction",
+            "observers": [ "props.subPanelContext.occContext.selectedModelObjects" ]
+        },
+        {
+        "action": "setPreviousSelected",
+        "observers": [ "props.subPanelContext.occContext.selectedModelObjects" ]
+        }]
+    },
+    "i18n": {
+        "ps0ElementEffectivities": [ "PSConstants" ],
+        "endItemMessage": [ "PSConstants" ],
+        "unitEffectivity": [ "PSConstants" ],
+        "startEditButtonText": [ "TCUICommandPanelsMessages" ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

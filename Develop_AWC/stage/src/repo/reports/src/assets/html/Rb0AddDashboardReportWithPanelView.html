@@ -1,0 +1,12 @@
+<aw-command-panel caption="i18n.addDashboardReportWithPanelTitle" context="subPanelContext">
+    <aw-command-sub-panel  panel-id="AddReportsTabPage" visible-when="data.reportsContext.value.activeView ==='AddReportsTabPage' || data.reportsContext.activeView ==='AddReportsTabPage'" sub-panel-context="{MydashboardState: props.subPanelContext.searchState, searchState: data.searchState, reportsContext: data.reportsContext, selectionData: props.subPanelContext.selectionData, preference:ctx.panelContext.dashboardListPreference}"></aw-command-sub-panel>
+    <div class="aw-layout-flexColumn" exist-when="data.reportsContext.value.activeView === 'SearchDataTabPage'">
+        <aw-navigate-panel title='{{i18n.addItem}}' pre-panel-id='AddReportsTabPage' panel-id='SearchDataTabPage' sub-panel-context='{ searchState: data.searchState, selectionData: props.subPanelContext.selectionData, typeFilter: data.reportsContext.selectedReport.reportdefinition.props.rd_class.dbValues[0] }' exist-when="data.reportsContext.value.activeView === 'SearchDataTabPage'" action="updateActiveView" active-state="data.searchState">
+        </aw-navigate-panel>
+        <aw-panel-footer>
+            <aw-button action="addItemSelected" enable-when="conditions.isSelected" size="auto">
+                <aw-i18n>i18n.addDashboardReportWithPanel</aw-i18n>
+            </aw-button>
+        </aw-panel-footer>
+    </div>
+</aw-command-panel>

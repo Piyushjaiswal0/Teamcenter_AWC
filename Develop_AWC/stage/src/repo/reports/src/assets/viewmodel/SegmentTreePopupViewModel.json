@@ -1,0 +1,8 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "sub-panel-context":{
+            "type": "object"
+        }
+    }
+}

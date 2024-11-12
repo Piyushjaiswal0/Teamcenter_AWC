@@ -1,0 +1,16 @@
+{
+  "typeHTMLReport48": [
+    "ReportDefinition",
+    "CrfOutputText"
+  ],
+  "typeMsExcel48": [
+    "CrfExcelStylesheet",
+    "CrfOutputExcel"
+  ],
+  "typeHtmlDataset48": [
+    "CrfOutputHtml"
+  ],
+  "homeReports64": [
+    "homeTileReport"
+  ]
+}

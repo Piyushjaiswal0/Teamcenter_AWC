@@ -1,0 +1,13 @@
+<aw-panel-body>
+    <aw-panel-section>
+        <div aw-repeat="item : data.allColumns">
+            <aw-checkbox prop="item" action="updateAllColumnsAfterColumnsCheckedOrUnchecked"></aw-checkbox>
+        </div>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="addNewPropertiesAsColumn">
+        <aw-i18n>i18n.Add</aw-i18n>
+    </aw-button>
+</aw-panel-footer>
+

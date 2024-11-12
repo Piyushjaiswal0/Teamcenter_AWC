@@ -1,0 +1,239 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "dataProviders": {},
+    "data": {
+        "expandSearchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true"
+        },
+        "searchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "requiredText": "{{i18n.searchBtn}}"
+        },
+        "inContentSearchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "dbValue": "",
+            "requiredText": "{{i18n.inContentSearchPlaceHolder}}"
+        },
+        "advanceSearch": {
+            "displayName": "{{i18n.advancedSearch}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "propertyLabelDisplay": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "filterCommand": {
+            "action": "toggleFilterView",
+            "iconName": "cmdFilterActive",
+            "tooltip": "{{i18n.filters}}"
+        },
+        "activeSection": "result"
+    },
+    "actions": {
+        "updateSearchState": {
+            "actionType": "JSFunction",
+            "method": "updateSearchState",
+            "inputData": {
+                "searchString": "{{data.searchBox.dbValue}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "categoryPrefilter": "{{data.selectPrefilter2.dbValue}}",
+                "showPrefilter": "{{props.showPreFilter}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "updateSearchStateWithIncontentCriteria": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateWithIncontentCriteria",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.searchState}}",
+                "inContentSearchBoxString": "{{data.inContentSearchBox.dbValue}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "updateSearchStateAfterFilterAction": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateAfterFilterAction",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "showPrefilter": "{{props.showPreFilter}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "constructBreadCrumbTitle": {
+            "actionType": "JSFunctionAsync",
+            "method": "buildTitle",
+            "inputData": {
+                "searchObject": "{{props.subPanelContext.searchState}}"
+            },
+            "outputData": {
+                "crumbTitle": ""
+            },
+            "deps": "js/AwSearchBreadcrumbUtils"
+        },
+        "toggleSearchView": {
+            "actionType": "JSFunction",
+            "method": "toggleSearchView",
+            "inputData": {
+                "activeView": "advanced",
+                "activeViewState": "{{props.activeSearch}}",
+                "selectionModel": "{{props.subPanelContext.selectionModel}}",
+                "searchState": "{{props.subPanelContext.searchState}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "toggleFilterView": {
+            "actionType": "JSFunction",
+            "method": "toggleFilterView",
+            "inputData": {
+                "activeSection": "{{data.activeSection}}"
+            },
+            "outputData": {
+                "activeSection": ""
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "updateResultsCaption": {
+            "actionType": "JSFunction",
+            "method": "updateResultsCaption",
+            "inputData": {
+                "resultsText": "{{i18n.resultsText}}",
+                "searchState": "{{subPanelContext.searchState}}",
+                "customResultsCount": "{{subPanelContext.searchState.customResultsCount}}"
+            },
+            "outputData": {
+                "resultsText": "resultsText"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "resetSearchState": {
+            "actionType": "JSFunction",
+            "method": "resetSearchState",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.searchState}}",
+                "selectionModel": "{{props.subPanelContext.selectionModel}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "updateSearchString":{
+            "actionType": "JSFunction",
+            "method": "updateSearchString",
+            "inputData": {
+                "searchBox": "{{fields.searchBox}}",
+                "subPanelContext": "{{props.subPanelContext}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "resetInContextSearchBoxCriteria": {
+            "actionType": "JSFunction",
+            "method": "resetInContextSearchBoxCriteria",
+            "inputData": {
+                "inContentSearchBoxString": "{{data.inContentSearchBox}}"
+            },
+            "outputData": {
+                "inContentSearchBox": ""
+            },
+            "deps": "js/searchCommonUtils"
+        }
+    },
+    "onEvent": [],
+    "functions": {},
+    "conditions": {
+        "populatedSearchString": {
+            "expression": "subPanelContext.searchState.criteria && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.criteria.searchString.length > 0"
+        },
+        "isMobileMode": {
+            "expression": "!subPanelContext.preFilterContext.sidenavMode || subPanelContext.preFilterContext.sidenavMode === 'mobile'"
+        },
+        "nonMobileMode": {
+            "expression": "subPanelContext.preFilterContext.sidenavMode && subPanelContext.preFilterContext.sidenavMode !=='mobile'"
+        },
+        "isTablet": {
+            "expression": "subPanelContext.preFilterContext.sidenavMode && subPanelContext.preFilterContext.sidenavMode ==='tablet'"
+        },
+        "isDesktop": {
+            "expression": "subPanelContext.preFilterContext.sidenavMode && subPanelContext.preFilterContext.sidenavMode ==='desktop'"
+        }
+    },
+    "messages": {},
+    "props": {
+        "options": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "active-search": {
+            "type": "object"
+        },
+        "show-advanced-search-link": {
+            "type": "object"
+        },
+        "show-suggestions": {
+            "type": "object"
+        },
+        "search-history-cache": {
+            "type": "string"
+        },
+        "show-pre-filter": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+                "action": "updateSearchStateAfterFilterAction",
+                "observers": [
+                    "props.subPanelContext.searchState"
+                ]
+            },
+            {
+                "action": "constructBreadCrumbTitle",
+                "observers": [
+                    "props.subPanelContext.searchState"
+                ]
+            },
+            {
+                "action": "updateResultsCaption",
+                "observers": [
+                    "props.subPanelContext.searchState.cursorInfoString"
+                ]
+            },
+            {
+                "action": "resetSearchState",
+                "observers": [
+                    "props.subPanelContext.searchState.resetSearchState"
+                ]
+            },
+            {
+                "action": "resetInContextSearchBoxCriteria",
+                "observers": [
+                    "props.subPanelContext.searchState.resetInContextSearchCriteria"
+                ]
+            },
+            {
+                "action": "updateSearchString",
+                "observers": [ "props.subPanelContext.searchState.criteria.searchString" ]
+            }
+        ]
+    },
+    "i18n": {
+        "resultsText": [
+            "SearchMessages"
+        ],
+        "filters": [
+            "SearchMessages"
+        ],
+        "advancedSearch": [
+            "SearchMessages"
+        ],
+        "searchBtn": [
+            "SearchMessages"
+        ],
+        "inContentSearchPlaceHolder": [
+            "SearchMessages"
+        ]
+    }
+}

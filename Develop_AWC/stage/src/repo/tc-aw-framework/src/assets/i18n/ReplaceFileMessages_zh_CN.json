@@ -1,0 +1,14 @@
+{
+    "replace": "替换",
+    "upload": "上传",
+    "chooseFromSystem": "从系统选择文件",
+    "replaceFileError": "请将文件替换为与先前在该零组件上的文件相同的扩展名",
+    "replaceSuccessWithFileName": "\"{0}\" 已替换。",
+    "replaceFailureWithFileName": "无法将导入文件按命名的引用添加到数据集，因为文件扩展名无效",
+    "replaceNoValidTarget": "“{0}”没有可替换的有效文件。",
+    "replaceFileCommandTitle": "替换文件",
+    "InvalidSelectedObject": "为生成 PLMD 文件所提供的数据集或卷文件对象无效。请使用有效的数据集或卷文件对象重试。",
+    "AsynUploadInProgress": "当前正在将文件异步上传到 Teamcenter 卷。",
+    "PlatformNotSupported": "此平台不支持异步替换操作：正在切换为同步替换",
+    "Awp0ReplaceDatasetDesc": "将选定的文件替换为您设备上的一个新文件。"
+}

@@ -1,0 +1,293 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "loadData":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "performRelatedObjectSearch",
+                "condition": "!subPanelContext.reportsState.reportParameters.ReportDefProps.ReportSegmentParams.length || subPanelContext.reportsState.segments.length >= subPanelContext.reportsState.reportParameters.ReportDefProps.ReportSegmentParams.length"
+            } ]
+        },
+        "performRelatedObjectSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "object_name", "object_desc", "object_type" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Rb0ReportsDataProvider",
+                    "searchCriteria": {
+                        "sourceObject": "{{subPanelContext.reportsState.rootClassSampleObject[0].uid}}",
+                        "relationsPath": "{{function:getTraversalPath}}"
+                    },
+                    "startIndex": "{{data.dataProviders.traversedObjectProvider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "updateState": {
+            "actionType": "JSFunction",
+            "method": "getTraversalPath",
+            "inputData": {
+                "repContext": "{{subPanelContext.reportsState}}"
+            },
+            "outputData": {
+                "relationsPath": ""
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "updateAtomicDataValue": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.reportsState}}",
+                "value": {
+                    "segmentTree": "{{data.dataforSegmentTree}}",
+                    "relationsPath": "{{data.relationsPath}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "verifyTraversal": {
+            "actionType": "dataProvider",
+            "method": "traversedObjectProvider"
+        },
+        "initiateSegmentActions":{
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initiateSegmentsRetreival"
+                },
+                {
+                    "action": "processAndAddNewSegment"
+                }
+            ]
+        },
+        "addSegmentActions":{
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initiateSegmentsRetreival"
+                },
+                {
+                    "action": "processAndAddNewSegment"
+                },
+                {
+                    "action": "initiateVerifyTraversal",
+                    "condition": "subPanelContext.reportsState.segments && subPanelContext.reportsState.segments.length > 0"
+                }
+            ]
+        },
+        "initiateSegmentsRetreival": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "input": [ {
+                    "businessObjectType": "Fnd0TraversalSegment",
+                    "businessObject": {
+                        "uid": "AAAAAAAAAAAAAA",
+                        "type": "Fnd0TraversalSegment"
+                    },
+                    "styleSheetLastModDate": "",
+                    "styleSheetType": "CREATE",
+                    "targetPage": "",
+                    "clientContext": {
+                        "ActiveWorkspace:Location": "com.siemens.splm.client.logicalobject.configurationLocation",
+                        "ActiveWorkspace:SubLocation": "com.siemens.splm.client.logicalobject:logicalObjectsSubLocation"
+                    }
+                } ],
+                "processEntireXRT": true
+            },
+            "outputData": {
+                "segment": "{{dataParseDefinitions:convertNvObject}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "processAndAddNewSegment": {
+            "actionType": "JSFunction",
+            "method": "processAndAddNewSegment",
+            "inputData": {
+                "data": "{{data}}",
+                "repContext": "{{subPanelContext.reportsState}}"
+            },
+            "outputData":{
+                "segments": "segments",
+                "totalFound": "totalFound",
+                "bomExpansionCheckbox": "bomExpansionCheckbox"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "initiateVerifyTraversal":{
+            "actionType": "JSFunction",
+            "method": "initiateVerifyTraversal",
+            "inputData": {
+                "data": "{{props.subPanelContext.reportsState}}"
+            },
+            "outputData":{
+                "totalFound": ""
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "updateSelectedLovEntries":{
+            "actionType": "JSFunction",
+            "method": "updateSelectedLovEntries",
+            "inputData": {
+                "eventData": "{{data.eventData}}",
+                "segments": "{{props.subPanelContext.reportsState}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "ValidateSegments":{
+            "actionType": "JSFunction",
+            "method": "ValidateSegments",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}",
+                "totalFound": "{{data.totalFound}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "updateSelectedNode":{
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.reportsState}}",
+                "value": {
+                    "selectedNode": "{{data.eventData.node}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "bomExpansionCheckbox": {
+            "displayName": "{{i18n.expandStructureLabel}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "dispValue": "{{i18n.expandStructureLabel}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "rb0RemoveSegmentCommands": "rb0_removeSegmentCommands"
+    },
+    "dataProviders": {
+        "traversedObjectProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "single",
+            "noResultsFound": "{{i18n.noTraversedObject}}"
+        }
+    },
+    "dataParseDefinitions": {
+        "convertNvObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "ServiceData.plain[0]",
+            "operationType": "CREATE"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "segmentree.treeNodeSelected",
+            "action": "updateSelectedNode",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "rb0SegmentSelector.processSegment",
+            "action": "initiateSegmentActions"
+        },
+        {
+            "eventId": "rb0segmentselector.addNewSegment",
+            "action": "addSegmentActions",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "fnd0RelationOrReference.lovValueChanged",
+            "action": "initiateVerifyTraversal"
+        },
+        {
+            "eventId": "fnd0DestinationType.lovValueChanged",
+            "action": "initiateVerifyTraversal"
+        },
+        {
+            "eventId":"rb0SegmentSelector.verifyTraversal",
+            "action": "verifyTraversal"
+        },
+        {
+            "eventId": "tcDataprovider.validSelectionEvent",
+            "action": "updateSelectedLovEntries",
+            "cacheEventData": true
+        }
+    ],
+    "conditions": {
+        "canAddNewSegment":{
+            "expression": "data.totalFound !== undefined && data.totalFound > 0"
+        },
+        "removeSegment":{
+            "expression": "props.subPanelContext.reportsState.segmentTree[0].children.length>0"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initiateSegmentActions",
+        "onUnmount": "ValidateSegments"
+    },
+    "i18n": {
+        "addChartCommand":["ReportChartMessages"],
+        "segment": [ "ReportChartMessages" ],
+        "preview": [ "ReportChartMessages" ],
+        "noTraversedObject": [ "ReportChartMessages" ],
+        "verify": [ "ReportChartMessages" ],
+        "forward": [ "ReportChartMessages" ],
+        "backward": [ "ReportChartMessages" ],
+        "addSegment":[ "ReportChartMessages" ],
+        "removeSegment":[ "ReportChartMessages" ],
+        "parentSource":[ "ReportChartMessages" ],
+        "expandStructureLabel":[ "ReportChartMessages" ],
+        "structure": [ "ReportChartMessages" ],
+        "relations": [ "ReportChartMessages" ],
+        "chooseRelation": [ "ReportChartMessages" ],
+        "addRelationFailureMsg": ["ReportChartMessages"]
+    },
+    "functions": {
+        "getTraversalPath": {
+            "functionName": "getTraversalPath",
+            "parameters": [
+                "{{props.subPanelContext.reportsState}}"
+            ]
+        },
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{props.subPanelContext.reportsState}}"
+            ]
+        }
+    },
+    "messages": {
+        "infoMessage": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.addRelationFailureMsg}"
+        }
+    }
+}

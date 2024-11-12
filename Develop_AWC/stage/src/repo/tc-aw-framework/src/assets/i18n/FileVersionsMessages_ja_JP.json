@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "バージョン",
+    "FileVersionsPanelHeader": "データセットバージョン",
+    "DownloadVersionButton": "ダウンロードバージョン",
+    "RestoreVersionButton": "復元バージョン",
+    "RestoreFailureMessage": "以前のデータセットバージョンの復元に失敗しました。",
+    "UnsavedEditWarning": "{0}には未保存の変更があります。 以前のバージョンのデータセットを復元すると、進行中の変更を除去することになります。",
+    "ConfirmButtonLabel": "継続",
+    "CancelButtonLabel": "キャンセル"
+}

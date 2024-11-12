@@ -1,0 +1,5 @@
+{
+  "postInit": [
+    "import('js/eventBus').then(function(eventBus){eventBus.subscribe('sessionInfo.updated',function(){import('js/notification.polling.service').then(function(notificationPollingService){notificationPollingService.init();});});});"
+  ]
+}

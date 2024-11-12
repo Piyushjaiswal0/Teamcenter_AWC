@@ -1,0 +1,43 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" y1="5" x2="43" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="8.5" y1="26.5" x2="39.5" y2="26.5" xlink:href="#New_Gradient_Swatch_1"/>
+  <polygon points="47.5 14.5 37.5 4.5 0.5 4.5 0.5 43.5 47.5 43.5 47.5 14.5" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+  <polyline points="4.5 15 4.5 12.5 7 12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="7 39.5 4.5 39.5 4.5 37" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="43.5 37 43.5 39.5 41 39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="9" y1="12.5" x2="11" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="25" x2="4.5" y2="27" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="31" x2="4.5" y2="29" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="35" x2="4.5" y2="33" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="25" x2="43.5" y2="27" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="21" x2="4.5" y2="23" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="21" x2="43.5" y2="23" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="17" x2="4.5" y2="19" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="17" x2="43.5" y2="19" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="31" x2="43.5" y2="29" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="35" x2="43.5" y2="33" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="13" y1="12.5" x2="15" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="17" y1="12.5" x2="19" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="21" y1="12.5" x2="23" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="25" y1="12.5" x2="27" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="29" y1="12.5" x2="31" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="29" y1="39.5" x2="31" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="33" y1="12.5" x2="35" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="33" y1="39.5" x2="35" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="9" y1="39.5" x2="11" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="13" y1="39.5" x2="15" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="17" y1="39.5" x2="19" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="21" y1="39.5" x2="23" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="25" y1="39.5" x2="27" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <polyline points="37.5 4.5 37.5 14.5 47.5 14.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="37" y1="39.5" x2="39" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="8.5" y="16.5" width="31" height="20" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-2)"/>
+  <circle cx="14.5" cy="22.5" r="3" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="11.5 36.5 23.5 24.5 26.5 27.5 32.5 21.5 39.5 28.5 39.5 36.5 11.5 36.5" fill="#969696" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+</svg>

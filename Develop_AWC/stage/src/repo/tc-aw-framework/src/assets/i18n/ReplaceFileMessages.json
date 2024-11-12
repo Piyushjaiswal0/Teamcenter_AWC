@@ -1,0 +1,14 @@
+{
+    "replace": "Replace",
+    "upload": "Upload",
+    "chooseFromSystem": "Choose File from System",
+    "replaceFileError": "Please update the file with same extension as previous file present on the item",
+    "replaceSuccessWithFileName": "\"{0}\" was replaced.",
+    "replaceFailureWithFileName": "Cannot add import file as named reference to dataset because of invalid file extension",
+    "replaceNoValidTarget": "\"{0}\" does not have a valid file to replace.",
+    "replaceFileCommandTitle": "Replace File",
+    "InvalidSelectedObject": "An invalid dataset or volume file object was provided in order to generate a PLMD file. Please try again with a valid dataset or volume file object.",
+    "AsynUploadInProgress": "The asynchronous upload of the file to the Teamcenter volume is currently in progress.",
+    "PlatformNotSupported": "The asynchronous replace operation is not supported on this platform: Switching to synchronous replace",
+    "Awp0ReplaceDatasetDesc": "Replace the selected file with a new one from your device."
+}

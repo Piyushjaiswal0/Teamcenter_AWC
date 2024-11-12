@@ -1,0 +1,22 @@
+<aw-scrollpanel class="aw-reports-dashboardTileContent">
+    <div class="aw-reports-lastUpdated" exist-when="data.showLastUpdateTime">
+        <div class="aw-reports-lastUpdateLabel">
+            {{i18n.dashboardLastRefresh}}
+        </div>
+        <div class="aw-reports-lastUpdateLabelValue">
+            {{data.dashboardLastRefresh.uiValue}}
+        </div>
+    </div>
+    <aw-empty-workarea exist-when="data.totalFound === 0"
+        image="graEmptyReportSummary128"
+        title="i18n.noReports"
+        hint="i18n.reportsDashboardHint"
+        action="actions.addReport"
+        link-visibility="true"
+        link-text="i18n.addDashboardReportWithPanelTitle">
+    </aw-empty-workarea>
+    <aw-list class="aw-reports-dashboardTileList" exist-when="data.totalFound>0" dataprovider="data.dataProviders.imageDataProvider" loading-style="sw-imageCell-skeleton">
+        <dashboard-report-tile id="{{item.props.rd_name.dbValues[0]}}" sub-panel-context="{selectedReport:item, ...subPanelContext}" exist-when="item.props.rd_source.dbValues[0] === 'Active Workspace'"></dashboard-report-tile>
+        <dashboard-tcra-report-tile id="{{item.props.rd_name.dbValues[0]}}" name="DashboardTcRAReportTile" sub-panel-context="{selectedReport:item}" exist-when="item.props.rd_source.dbValues[0] === 'TcRA'"></dashboard-tcra-report-tile>
+    </aw-list>
+</aw-scrollpanel>

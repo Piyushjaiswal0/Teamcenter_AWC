@@ -1,0 +1,165 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+    ],
+
+    "actions":
+    {
+        "createRole":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2008-06-DataManagement",
+            "method": "createObjects",
+            "inputData":
+            {
+                "input":
+                [
+                    {
+                        "clientId": "{{data.modelProperty.props.role_name.uiValue}}",
+                        "data":
+                        {
+                            "boName": "Role",
+                            "stringProps":
+                            {
+                               "role_name": "{{data.modelProperty.props.role_name.uiValue}}",
+                               "description": "{{data.modelProperty.props.description.uiValue}}"
+                            }
+                        }
+                    }
+                ]
+
+            },
+            "outputData":
+            {
+                "createdObjectUid": "output[0].objects[0].uid",
+                "createdObject":"output[0].objects[0]",
+                "partialErrors": "ServiceData.partialErrors"
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "registerCreatedObject",
+                        "eventData":
+                        {
+
+                        }
+                    },
+                    {
+                        "name": "usermanagement.newlyCreatedRoleObject",
+                        "eventData":
+                        {
+                            "uid": "{{data.createdObjectUid}}"
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                      "name": "primaryWorkarea.reset"
+                    }
+                ]
+            },
+
+            "actionMessages": {
+                "failure": [
+                    {
+                        "message": "createRoleFailure"
+                    }
+                ]
+            },
+            "deps": "js/Um0CreateUserService"
+        },
+
+        "getStyleSheetForRole": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "processEntireXRT": true,
+                "input": [
+                    {
+                        "businessObjectType": "Role",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": "Role"
+                        },
+                        "styleSheetType": "CREATE",
+                        "styleSheetLastModDate": "",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.client.usermanagement.peoplelocation",
+                            "ActiveWorkspace:SubLocation": "com.siemens.splm.client.usermanagement:rolesublocation"
+                        }
+                    }
+
+                ]
+
+            },
+
+             "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "CreateInput",
+                        "modifiers":
+                        [
+                            {
+                                "name": "includeIsModifiable",
+                                "Value": "true"
+                            }
+                        ]
+                     }
+                ]
+            },
+
+            "outputData":
+            {
+                "modelProperty": "{{dataParseDefinitions:convertNvObject}}"
+            }
+        }
+    },
+
+     "dataParseDefinitions": {
+        "convertNvObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "ServiceData.plain[0]",
+            "operationType": "CREATE"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onMount": "getStyleSheetForRole"
+    },
+
+    "messages": {
+
+        "createRoleFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{partialErrors[0].errorValues[0].message}}"
+        }
+    },
+
+    "conditions":
+    {
+        "isValidToCreateRole":
+        {
+            "expression": "data.modelProperty.props.role_name.uiValue.length>0"
+        }
+    },
+
+    "i18n":
+    {
+        "AddTitle": [ "UsermanagementCommandPanelMessages" ],
+        "NewTab": [ "UsermanagementCommandPanelMessages" ],
+        "AddButton": [ "UsermanagementCommandPanelMessages" ]
+    }
+}

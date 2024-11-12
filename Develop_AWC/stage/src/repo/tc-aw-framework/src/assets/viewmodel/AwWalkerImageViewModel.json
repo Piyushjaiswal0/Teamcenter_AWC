@@ -1,0 +1,24 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerImageRenderFunction",
+            "deps": "js/AwWalkerImageService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "imgdata": {
+            "type": "object"
+        },
+        "xrt-data":{
+            "type": "object"
+        },
+        "view-model": {
+            "type": "object"
+        }
+    }
+}

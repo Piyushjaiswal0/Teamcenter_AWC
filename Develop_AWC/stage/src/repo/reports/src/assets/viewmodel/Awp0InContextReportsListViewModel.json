@@ -1,0 +1,62 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-tab-set.directive",
+        "js/aw-widget.directive",
+        "js/aw-include.directive"
+    ],
+    "actions": {
+
+    },
+
+    "data": {
+        "tabsModel": {
+            "isArray": "true",
+            "dbValue": [ {
+                    "tabKey": "Awp0InContextTCReportsList",
+                    "name": "{{i18n.reportsTabName}}",
+                    "visibleWhen": {
+                        "condition": "conditions.showReportsTab"
+                    }
+                },
+                {
+                    "tabKey": "Awp0InContextTcRAReportsList",
+                    "name": "{{i18n.analyticsTabName}}",
+                    "visibleWhen": {
+                        "condition": "conditions.showAnalyticsTab"
+                    }
+                }
+            ]
+        },
+        "NoReportsFound": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "uiValue": "No Report Definition found for currently selected Object type.",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        }
+    },
+
+    "functions": {
+
+    },
+
+    "messages": {
+
+    },
+
+    "i18n": {
+        "inContextReportPanelTitle": [ "ReportMessages" ],
+        "reportsTabName": [ "ReportMessages" ],
+        "analyticsTabName": [ "ReportMessages" ]
+    },
+    "conditions": {
+        "showReportsTab": {
+            "expression": "props.subPanelContext.tcReportsAvailable.dbValue"
+        },
+        "showAnalyticsTab": {
+            "expression": "props.subPanelContext.tcraReportsAvailable.dbValue"
+        }
+    }
+}

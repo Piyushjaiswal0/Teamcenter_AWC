@@ -1,0 +1,24 @@
+<aw-panel-body>
+    <aw-panel-section>
+        <aw-label prop="data.revisionOf"></aw-label>
+        <aw-xrt type="SAVEAS" vmo="ctx.panelContext.SelectedObjects[0]" xrt-state="data.xrtState"
+          revise-saveas-info="subPanelContext.reviseSaveAsInfo"
+          active-state="subPanelContext.activeState">
+        </aw-xrt>
+        <aw-panel-section caption="i18n.ownProjectSectionTitle" visible-when="!conditions.isProjectNotSupported">
+            <aw-list dataprovider="data.dataProviders.getOwningProjectsProvider" exist-when="ctx.userSession.props.project.dbValues[0] !== ''">
+                    <aw-default-cell vmo="item"></aw-default-cell>
+            </aw-list>
+        </aw-panel-section>
+        <aw-command-panel-section anchor="data.widgetProjectSectionCommands" caption="i18n.projectsSectionTitle" visible-when="!conditions.isProjectNotSupported" context="subPanelContext.activeState">
+            <aw-list dataprovider="data.dataProviders.getAssignedProjectsProvider" command-context="subPanelContext.projectState" has-floating-cell-commands="false">
+                <aw-default-cell vmo="item"></aw-default-cell>
+            </aw-list>
+        </aw-command-panel-section>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button size="auto" action="saveas">
+        <aw-i18n>i18n.save</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

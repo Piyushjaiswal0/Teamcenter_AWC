@@ -1,0 +1,49 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "onRender": {
+            "actionType": "JSFunction",
+            "method": "awPdfViewerOnRenderFn",
+            "deps": "js/AwPdfViewerService"
+        },
+        "onMount":{
+            "actionType": "JSFunction",
+            "method": "awPdfViewerOnMountFn",
+            "inputData": {
+                "viewerData": "{{props.data}}",
+                "viewModel": "{{data}}"
+            },
+            "outputData": {
+                "data": ""
+            },
+            "deps": "js/AwPdfViewerService"
+        },
+        "onUnmount": {
+            "actionType": "JSFunction",
+            "method": "awPdfViewerOnUnmountFn",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/AwPdfViewerService"
+        }
+    },
+    "onEvent": [],
+    "functions": {
+    },
+    "messages": {
+    },
+    "conditions": {
+    },
+    "lifecycleHooks": {
+        "render": "onRender",
+        "onMount": "onMount",
+        "onUnmount": "onUnmount"
+    },
+    "i18n": {},
+    "props": {
+        "data": {
+            "type": "object"
+        }
+    }
+}

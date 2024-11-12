@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "Výchozí",
+    "tcAuthorWorkspaceName": "Autor",
+    "tcConsumerWorkspaceName": "Zákazník",
+    "tcActiveAdminWorkspaceName": "Aktivní správce",
+    "tcActiveArchitectWorkspaceName": "Aktivní architekt",
+    "mbmWorkspaceName":"Správce MBOM"
+}

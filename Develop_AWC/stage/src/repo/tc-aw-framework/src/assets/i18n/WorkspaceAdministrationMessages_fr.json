@@ -1,0 +1,8 @@
+{
+    "appDisplayName": "Configuration client",
+    "workspaceTitle" : "Espaces de travail",
+    "commandsTitle": "Commandes",
+    "pagesTitle": "Pages", 
+    "Open" : "Ouvrir",
+    "Download" : "Exporter"
+}

@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "デフォルト",
+    "tcAuthorWorkspaceName": "オーサー",
+    "tcConsumerWorkspaceName": "コンシューマ",
+    "tcActiveAdminWorkspaceName": "アクティブな管理者",
+    "tcActiveArchitectWorkspaceName": "アクティブアーキテクト",
+    "mbmWorkspaceName":"MBOMマネージャ"
+}

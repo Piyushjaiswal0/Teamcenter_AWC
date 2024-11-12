@@ -1,0 +1,118 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "savedQuery": {
+            "displayName": "{{i18n.savedQuery}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{subPanelContext.savedSearch.props.savedsearch_query.uiValue}}",
+            "uiValue":"{{subPanelContext.savedSearch.props.savedsearch_query.uiValue}}",
+            "dispValue": "{{subPanelContext.savedSearch.props.savedsearch_query.uiValue}}"
+        },
+        "savedSearchName": {
+        },
+        "savedSearchCriteria": {
+            "displayName": "{{i18n.searchFiltersTitle}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "shareSavedSearch": {
+        },
+        "pinSavedSearch": {
+        }
+    },
+    "actions": {
+        "executeAdvancedSavedSearchBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getAttributeModelObjectForSavedQuery"
+                },
+                {
+                    "action": "updateAttributesAdvancedSavedSearch",
+                    "condition": "data.advSavedSearchViewModelObject"
+                },
+                {
+                    "action": "getSavedSearchObjectParams",
+                    "condition": "data.advSavedSearchViewModelObject && data.advSavedSearchViewModelObject.props"
+                },
+                {
+                    "action": "doAdvancedSearch"
+                }
+            ]
+        },
+        "getAttributeModelObjectForSavedQuery": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-AdvancedSearch",
+            "method": "getSelectedQueryCriteria",
+            "inputData": {
+                "selectedQuery": {
+                    "uid": "{{subPanelContext.savedSearch.props.savedsearch_query.dbValue}}",
+                    "type": "ImanQuery"
+                }
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": "{{function:updateSearchAttributesWithSelectedQuery}}"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "updateAttributesAdvancedSavedSearch": {
+            "actionType": "JSFunction",
+            "method": "updateAttributesAdvSavedSearch",
+            "inputData": {
+                "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "savedSearchObject": "{{subPanelContext.savedSearch}}"
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": ""
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "doAdvancedSearch": {
+            "actionType": "JSFunction",
+            "method": "doAdvancedSearch",
+            "inputData": {
+                "vmo": "{{subPanelContext.savedSearch.props.savedsearch_query}}",
+                "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "searchState": "{{subPanelContext.searchState}}",
+                "skipUrl": true
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "getSavedSearchObjectParams": {
+            "actionType": "JSFunction",
+            "method": "getSavedSearchObjectParams",
+            "inputData": {
+                "savedSearchObject": "{{subPanelContext.savedSearch}}",
+                "advSavedSearchModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "savedSearchName": "savedSearchName",
+                "savedSearchCriteria": "savedSearchCriteria",
+                "shareSavedSearch": "shareSavedSearch"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "executeAdvancedSavedSearchBatchJob"
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n":
+    {
+        "savedQuery": [ "SearchMessages" ],
+        "searchFiltersTitle": [ "SearchMessages" ],
+        "savedSearchCriteria": [ "SearchMessages" ],
+        "referencingSavedQuery": [ "SearchMessages" ]
+    }
+}
+

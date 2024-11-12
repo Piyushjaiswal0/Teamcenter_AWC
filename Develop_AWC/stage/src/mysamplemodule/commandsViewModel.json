@@ -1,0 +1,60 @@
+{
+    "commands": {
+        "Develop": {
+            "iconId": "cmdSettings",
+            "title": "{{i18n.DevelopTitle}}"
+        }
+    },
+    "commandHandlers": {
+        "DevelopHandler": {
+            "id": "Develop",
+            "action": "setDevelop",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isDevelop"
+            },
+            "selectWhen": {
+                "condition": "conditions.isDevelopTheme"
+            }
+        }
+    },
+    "commandPlacements": {
+        "mysamplemodule_Awp0ShowLightThemePlacement": {
+            "id": "Awp0ShowLightTheme",
+            "priority": 1,
+            "parentGroupId": "Awp0ChangeTheme"
+        },
+        "DevelopPlacement": {
+            "id": "Develop",
+            "uiAnchor": "aw_globalToolbar",
+            "priority": 2,
+            "parentGroupId": "Awp0ChangeTheme"
+        }
+    },
+    "actions": {
+        "setDevelop": {
+            "actionType": "JSFunction",
+            "method": "setTheme",
+            "inputData": {
+                "0": "ui-Develop"
+            },
+            "deps": "js/theme.service"
+        }
+    },
+    "conditions": {
+        "supportsDevelop": {
+            "expression": "ctx.changeThemeDisabled"
+        },
+        "isDevelop": {
+            "expression": "ctx.workspace.workspaceId === 'Develop'"
+        },
+        "isDevelopTheme": {
+            "expression": "ctx.theme === 'ui-Develop'"
+        }
+    },
+    "i18n": {
+        "DevelopTitle": [
+            "mysamplemoduleMessages"
+        ]
+    }
+}

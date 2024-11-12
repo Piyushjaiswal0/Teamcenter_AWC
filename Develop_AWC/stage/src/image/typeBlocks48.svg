@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.5" y1="0.5" x2="11.5" y2="11.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="18.5" y1="13.5" x2="29.5" y2="24.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="18.5" y1="27.5" x2="29.5" y2="38.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="27.75" y1="30.25" x2="46.25" y2="48.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2284" stop-color="#fafafa"/>
+      <stop offset="0.4881" stop-color="#ededed"/>
+      <stop offset="0.7621" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+  <polyline points="6 11 6 33 18.5 33" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="0.5" y="0.5" width="11" height="11" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <line x1="6" y1="19" x2="18.5" y2="19" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="18.5" y="13.5" width="11" height="11" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <rect x="18.5" y="27.5" width="11" height="11" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="26.5" y="31.5" width="21" height="16" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4)"/>
+  <path d="M39.3835,40.6681a2.09,2.09,0,0,1-.7724,1.6908A3.0219,3.0219,0,0,1,36.6165,43H34V35h2.5272a2.96,2.96,0,0,1,1.8131.497,1.59,1.59,0,0,1,.6639,1.344,1.8023,1.8023,0,0,1-.3961,1.1492,2.0764,2.0764,0,0,1-1.0432.703v.0223a2.1371,2.1371,0,0,1,1.3363.6309A1.8639,1.8639,0,0,1,39.3835,40.6681Zm-1.7852-3.5755a.857.857,0,0,0-.3545-.7344A1.7731,1.7731,0,0,0,36.1925,36.1h-.8647v2.2143h.8535a1.5659,1.5659,0,0,0,1.0463-.3154A1.1237,1.1237,0,0,0,37.5983,37.0926Zm.3794,3.542a1.0761,1.0761,0,0,0-.4128-.8977,1.9742,1.9742,0,0,0-1.233-.3236H35.3278v2.4882h1.1213a1.6836,1.6836,0,0,0,1.1213-.3439A1.1432,1.1432,0,0,0,37.9777,40.6346Z" fill="#6e6e6e"/>
+</svg>

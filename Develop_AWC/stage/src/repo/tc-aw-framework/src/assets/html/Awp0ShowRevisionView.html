@@ -1,0 +1,24 @@
+<aw-command-panel caption="i18n.revise">
+    <div class="aw-layout-flexColumn" show-when="data.activeState.value.activeView ==='Awp0ShowRevision'">
+        <div class="aw-layout-flexColumn">
+            <save-as-revision sub-panel-context="{ ...subPanelContext, activeState: data.activeState, projectState: data.projectState, reviseSaveAsInfo: ctx.panelContext }"></save-as-revision>
+        </div>
+    </div>
+
+    <div class="aw-layout-flexColumn" exist-when="data.activeState.value.activeView==='AssignProjectSub'">
+        <aw-navigate-panel title="i18n.BACK_BUTTON_TITLE" pre-panel-id="Awp0ShowRevision"
+          panel-id="AssignProjectSub" action="updateActiveView"
+          sub-panel-context="{ ...subPanelContext, projectState: data.projectState }"
+          active-state="data.activeState">
+        </aw-navigate-panel>
+    </div>
+
+    <!-- Dynamic rendering of panel-->
+    <div class="aw-layout-flexColumn" exist-when="data.activeState.value.dynamicPanelId && data.activeState.value.activeView===data.activeState.value.dynamicPanelId">
+        <aw-navigate-panel title="{{data.activeState.value.dynamicPanelTitle}}" pre-panel-id="Awp0ShowRevision"
+          panel-id="{{data.activeState.value.activeView}}" action="updateActiveView"
+          sub-panel-context="{ ...subPanelContext }"
+          active-state="data.activeState">
+        </aw-navigate-panel>
+    </div>
+</aw-command-panel>

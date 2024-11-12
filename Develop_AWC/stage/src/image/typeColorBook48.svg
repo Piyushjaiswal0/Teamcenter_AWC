@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect x="3.5" y="35.5" width="41" height="11" fill="#147391" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="3.332" y="32.326" width="41" height="11" transform="translate(7.168 -3.66) rotate(10.328)" fill="#2c819c" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="3.76" y="29.078" width="41" height="11" transform="translate(13.98 -6.391) rotate(20.967)" fill="#438fa7" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="4.946" y="25.593" width="41" height="11" transform="translate(20.993 -8.837) rotate(32.933)" fill="#5b9db2" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="6.858" y="22.393" width="41" height="11" transform="translate(27.736 -11.175) rotate(45)" fill="#72abbd" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="8.884" y="20.127" width="41" height="11" transform="translate(33.43 -13.151) rotate(54.864)" fill="#89b9c8" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="11.87" y="17.862" width="41" height="11" transform="translate(41.251 -15.558) rotate(67.035)" fill="#a1c7d3" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="15.13" y="16.325" width="41" height="11" transform="translate(50.076 -17.382) rotate(78.738)" fill="#b8d5de" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="18.5" y="15.499" width="41" height="11" transform="translate(59.999 -18) rotate(90)" fill="#b8d5de" stroke="#147391" stroke-miterlimit="10"/>
+  <circle cx="41.5" cy="38.5" r="1" transform="translate(-14.599 46.078) rotate(-50.546)" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <polygon points="45.405 38.837 45.742 38.5 45.336 38.094 45.642 37.622 45.165 37.313 45.371 36.778 44.894 36.595 44.986 36.09 44.5 36.001 44.5 0.499 33.5 0.499 33.5 1.346 26.233 2.794 26.399 3.628 19.307 6.633 19.64 7.417 13.088 12.028 13.56 12.699 8.973 17.287 9.574 17.888 5.25 24.564 5.966 25.028 3.149 32.378 3.933 32.678 2.679 39.561 3.5 39.711 3.5 46.5 39.115 46.5 39.661 46.854 39.891 46.5 40.002 46.5 41.434 47.049 41.587 46.652 43.014 46.912 43.089 46.5 44.5 46.5 44.5 41.499 44.5 41.499 44.5 40.961 45.028 40.856 44.919 40.309 45.432 40.091 45.207 39.559 45.68 39.227 45.405 38.837" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

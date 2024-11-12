@@ -1,0 +1,183 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [ ],
+    "actions": {
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "setBrowsertitle"
+                },
+                {
+                    "action": "initializeData"
+                },
+                {
+                    "action": "intializeDataProvider"
+                }
+            ]
+        },
+        "intializeDataProvider": {
+            "actionType": "dataProvider",
+            "method": "localeList"
+        },
+        "initializeData": {
+            "actionType": "JSFunctionAsync",
+            "method": "initializeData",
+            "inputData": {
+                "localeTextLink": "{{data.localeTextLink}}",
+                "username": "{{data.username}}",
+                "password": "{{data.password}}",
+                "browserTitle": "{{data.browserTitle}}"
+            },
+            "outputData": {
+                "brandName": "brandName",
+                "productName": "productName",
+                "productVersion": "productVersion",
+                "companyName": "companyName",
+                "copyright": "copyright",
+                "localeTextLink": "localeTextLink",
+                "localeListTotalFound": "totalFound",
+                "localeList": "localeList"
+            },
+            "deps": "js/loginUtils"
+        },
+        "loginAction": {
+            "actionType": "JSFunctionAsync",
+            "method": "signIn",
+            "inputData": {
+                "username": "{{data.username.dbValue}}",
+                "password": "{{data.password.dbValue}}"
+            },
+            "outputData": {
+                "loginInfo": "response",
+                "loginError": "error"
+            },
+            "deps": "js/loginUtils"
+        },
+        "setBrowsertitle": {
+            "actionType": "JSFunctionAsync",
+            "method": "getBrowserTitle",
+            "outputData": {
+                "browserTitle": ""
+            },
+            "deps": "js/AwPageService"
+        },
+        "setSpinnerStatus": {
+            "actionType": "JSFunction",
+            "method": "setSpinnerStatus",
+            "inputData": {
+                "spinnerStatus": "{{data.spinnerStatus}}"
+            },
+            "outputData": {
+                "spinnerStatus": "spinnerStatus",
+                "buttonClicked": true
+            },
+            "deps": "js/loginUtils"
+        },
+        "updateLocale": {
+            "actionType": "JSFunction",
+            "method": "updateLocale",
+            "inputData": {
+                "localeValue": "{{data.localeTextLink}}"
+            },
+            "deps": "js/loginUtils"
+        }
+    },
+    "dataProviders": {
+        "localeList": {
+            "dataProviderType": "Static",
+            "response": "{{data.localeList}}",
+            "totalFound": "{{data.localeListTotalFound}}"
+        }
+    },
+    "data": {
+        "username": {
+            "displayName": "{{i18n.USER_NAME_PLACEHOLDER}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true",
+            "uiValue": "",
+            "dbValue": "",
+            "requiredText": "{{i18n.USER_NAME_PLACEHOLDER}}",
+            "autofocus": true
+        },
+        "password": {
+            "displayName": "{{i18n.PASSWORD_PLACEHOLDER}}",
+            "isRequired": true,
+            "uiValue": "",
+            "dbValue": "",
+            "requiredText": "{{i18n.PASSWORD_PLACEHOLDER}}",
+            "type": "STRING"
+        },
+        "localeTextLink": {
+            "displayName": "English",
+            "type": "STRING",
+            "isRequired": "true",
+            "displayValues": []
+        },
+        "loginText": {
+            "displayName": "{{i18n.LOGIN_TEXT}}",
+            "type": "STRING"
+        },
+        "loggingInText": {
+            "displayName": "{{i18n.LOGGING_IN_TEXT}}",
+            "type": "STRING"
+        },
+        "noLoginError": {
+            "status": "conditions.noLoginError"
+        }
+    },
+    "messages": {
+        "loginError": {
+            "messageType": "ERROR",
+            "messageText": "{{data.loginError}}"
+        }
+    },
+    "conditions": {
+        "isLoginButtonEnabled": {
+            "expression": "data.username.dbValue != '' && data.password.dbValue != ''"
+        },
+        "noLoginError": {
+            "expression": "data.setSpinnerStatus || (data.buttonClicked && !data.loginError)"
+        }
+    },
+    "onEvent": [ {
+            "eventId": "progress.start",
+            "action": "setSpinnerStatus"
+        },
+        {
+            "eventId": "progress.end",
+            "action": "setSpinnerStatus"
+        }
+    ],
+    "i18n": {
+        "USER_NAME_PLACEHOLDER": [
+            "LoginMessages"
+        ],
+        "PASSWORD_PLACEHOLDER": [
+            "LoginMessages"
+        ],
+        "LOGIN_TEXT": [
+            "LoginMessages"
+        ],
+        "LOGGING_IN_TEXT": [
+            "LoginMessages"
+        ],
+        "VERSION_TEXT": [
+            "LoginMessages"
+        ],
+        "COPYRIGHT_DATE_TEXT": [
+            "LoginMessages"
+        ],
+        "COPYRIGHT_MESSAGE": [
+            "LoginMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUpdate": {
+            "action": "updateLocale",
+            "observers": [ "viewModel.data.localeTextLink" ]
+        }
+    }
+}

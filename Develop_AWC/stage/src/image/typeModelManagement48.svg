@@ -1,0 +1,42 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-14.883" y1="-12.1231" x2="-4.9835" y2="-12.1231" gradientTransform="translate(-2.1231 23.9332) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="-2.8622" y1="-0.1023" x2="7.0373" y2="-0.1023" gradientTransform="translate(9.8977 28.9124) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="9.1586" y1="-12.1231" x2="19.0581" y2="-12.1231" gradientTransform="translate(14.8769 16.8916) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="-2.8622" y1="-24.1439" x2="7.0373" y2="-24.1439" gradientTransform="translate(2.8561 11.9124) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="linear-gradient" x1="34.4999" y1="21.5" x2="47.4999" y2="8.5" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="42.5" y1="22.5" x2="46.5" y2="18.5" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <line y1="14" x2="37" y2="14" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line y1="31" x2="37" y2="31" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="10" y1="4" x2="10" y2="41" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="27" y1="4" x2="27" y2="41" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <rect x="5.0503" y="9.0503" width="9.8995" height="9.8995" transform="translate(-6.9706 11.1716) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="5.0503" y="26.0503" width="9.8995" height="9.8995" transform="translate(-18.9914 16.1508) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <rect x="22.0503" y="26.0503" width="9.8995" height="9.8995" transform="translate(-14.0122 28.1716) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+  <rect x="22.0503" y="9.0503" width="9.8995" height="9.8995" transform="translate(-1.9914 23.1924) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-4)"/>
+  <polygon points="43.5 24.5 36.5 24.5 36.5 39.5 47.5 39.5 47.5 28.5 43.5 24.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="43.5 24.5 43.5 28.5 47.5 28.5 43.5 24.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <line x1="39" y1="34.5" x2="45" y2="34.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="39" y1="36.5" x2="45" y2="36.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="39" y1="32.5" x2="45" y2="32.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="39" y1="30.5" x2="45" y2="30.5" fill="none" stroke="#6e6e6e"/>
+</svg>

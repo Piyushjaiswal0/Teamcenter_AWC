@@ -1,0 +1,30 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "getUserDetailsFromClientDataModel": {
+            "actionType": "JSFunctionAsync",
+            "method": "getUserDetailsFromClientDataModel",
+            "inputData": {
+                "prop": "{{props}}"
+            },
+            "outputData": {
+                "username": "result.username",
+                "emailaddress": "result.emailaddress",
+                "phonenumber": "result.phonenumber"
+            },
+            "deps": "js/AwChangeownerCellContentService"
+        }
+    },
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "onMount": "getUserDetailsFromClientDataModel"
+    },
+    "props": {
+        "vmo": {
+            "type": "object"
+        }
+    }
+}

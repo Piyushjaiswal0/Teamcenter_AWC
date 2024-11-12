@@ -1,0 +1,135 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "setSliderValues": {
+            "actionType": "JSFunction",
+            "method": "setSliderValues",
+            "inputData": {
+                "subPanelContext": "{{props.context}}",
+                "sliderProp1": "{{data.sliderProp1}}",
+                "sliderProp2": "{{data.sliderProp2}}"
+            },
+            "outputData": {
+                "sliderProp1": "sliderProp1",
+                "sliderProp2": "sliderProp2"
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "handleSS1ShapeSliderChangeEvent": {
+            "actionType": "JSFunction",
+            "method": "handleSS1ShapeSliderChangeEvent",
+            "inputData": {
+                "sliderValue": "{{data.sliderProp1.dbValue[0].sliderOption.value}}",
+                "sliderProp1": "{{data.sliderProp1}}",
+                "sliderProp2": "{{data.sliderProp2}}"
+            },
+            "outputData": {
+                "sliderProp1": ""
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "handleSS1SizeSliderChangeEvent": {
+            "actionType": "JSFunction",
+            "method": "handleSS1SizeSliderChangeEvent",
+            "inputData": {
+                "sliderValues": "{{data.sliderProp2.dbValue[0].sliderOption.values}}",
+                "sliderProp2": "{{data.sliderProp2}}"
+            },
+            "outputData": {
+                "sliderProp2": ""
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        }
+    },
+    "functions": {
+        "getSS1ShapeValue": {
+            "functionName": "getSS1ShapeValue",
+            "parameters": [
+                "{{props.context.searchState.searchFilterMap}}"
+            ]
+        },
+        "getSS1SizeMinValue": {
+            "functionName": "getSS1SizeMinValue",
+            "parameters": [
+                "{{props.context.searchState.searchFilterMap}}"
+            ]
+        },
+        "getSS1SizeMaxValue": {
+            "functionName": "getSS1SizeMaxValue",
+            "parameters": [
+                "{{props.context.searchState.searchFilterMap}}"
+            ]
+        },
+        "getSS1SizeArrayValues": {
+            "functionName": "getSS1SizeArrayValues",
+            "parameters": [
+                "{{props.context.searchState.searchFilterMap}}"
+            ]
+        },
+        "getSS1SizeLowerLimit": {
+            "functionName": "getSS1SizeLowerLimit",
+            "parameters": [
+                "{{props.context.searchState.searchFilterMap}}"
+            ]
+        },
+        "getSS1SizeUpperLimit": {
+            "functionName": "getSS1SizeUpperLimit",
+            "parameters": [
+                "{{props.context.searchState.searchFilterMap}}"
+            ]
+        }
+    },
+    "data": {
+        "sliderProp1": {
+            "isArray": "true",
+            "dbValue": [ {
+                "sliderOption": {
+                    "disabled": false,
+                    "min": 1,
+                    "max": 10,
+                    "step": 1,
+                    "value": 5,
+                    "orientation": "horizontal",
+                    "range": "min"
+                },
+                "showIncrementButtons": true,
+                "showSliderDisplayValueLabel": false,
+                "sliderStopEventAction": "handleSS1ShapeSliderChangeEvent"
+            } ]
+        },
+        "sliderProp2": {
+            "isArray": "true",
+            "dbValue": [ {
+                "sliderOption": {
+                    "disabled": false,
+                    "min": 20,
+                    "max": 400,
+                    "step": 10,
+                    "value": 70,
+                    "values": [ 70, 130 ],
+                    "orientation": "horizontal",
+                    "range": true
+                },
+                "showIncrementButtons": false,
+                "showSliderDisplayValueLabel": true,
+                "labelValueSuffix": "%",
+                "sliderStopEventAction": "handleSS1SizeSliderChangeEvent"
+            } ]
+        }
+    },
+    "messages": {},
+    "conditions": {},
+    "i18n": {},
+    "props": {
+        "context": {
+            "type": "object"
+        },
+        "category": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "setSliderValues"
+    }
+}

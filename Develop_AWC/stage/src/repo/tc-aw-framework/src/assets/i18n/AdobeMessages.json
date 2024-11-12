@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Digital Assets",
+    "imagePanelTitle": "Images and Colors",
+    "updatesSectionTitle": "Updates in Teamcenter",
+    "digitalAssetsInUseSectionTitle": "Digital Assets in \"{0}\"",
+    "imageInUseSectionTitle": "Images and Colors in \"{0}\"",
+    "adobeFile": "Adobe File",
+    "typeLabel": "Type",
+    "revisionLabel": "Revision",
+    "quantityLabel": "Quantity",
+    "expectedLabel": "Expected",
+    "cmdReplaceDigitalAsset": "Replace",
+    "showObjectCell": "Open",
+    "cmdDeleteDigitalAsset": "Delete",
+    "adobe_cell_commands_updatesList": "Cell Commands Updates List",
+    "adobe_cell_commands_inUseList": "Cell Commands In Use List",
+    "DigitalAssetsPanelDesc": "View the digital assets associated with the artwork.",
+    "ImagePanelDesc": "View the images and colors associated with the 2D CAD.",
+    "cmdReplaceDigitalAssetDesc": "Replace the digital asset opened in the Adobe application with the one updated in Teamcenter.",
+    "cmdDeleteDigitalAssetDesc": "Remove the selected digital asset from the artwork.",
+    "showObjectCellDesc": "Open the selection."
+}

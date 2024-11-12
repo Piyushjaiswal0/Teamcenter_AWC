@@ -1,0 +1,15 @@
+<aw-command-panel caption="i18n.Awp0CreateDispRuleTitle" context="{...data,...subPanelContext}">
+    <aw-panel-body>
+        <aw-panel-section  caption="i18n.Properties">
+            <aw-textbox prop="data.name"></aw-textbox>
+            <aw-widget prop="data.contexts"></aw-widget>
+            <aw-checkbox prop="data.useDefault"></aw-checkbox>
+            <aw-checkbox prop="data.setCurrent"></aw-checkbox>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="CreateDispRule" visible-when="conditions.isCreateButtonVisible">
+            <aw-i18n>i18n.Create</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

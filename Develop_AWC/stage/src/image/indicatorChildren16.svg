@@ -1,0 +1,7 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <rect x="10.9995" y="8" width="5" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="10.9995" y="10" width="5" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="8.9995" y="6" width="7" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M7,5H1A1,1,0,0,0,.1425,6.5145l3,5a1,1,0,0,0,1.715,0l3-5A1,1,0,0,0,7,5ZM7,7H7Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <polyline points="7 6 4 11 1 6 7 6" fill="#55a0b9"/>
+</svg>

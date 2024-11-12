@@ -1,0 +1,76 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-multi-file-upload.directive"
+    ],
+    "actions": {
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "addHtmlPanelInDataSource",
+            "inputData": {
+                "data": "{{data}}",
+                "type": "{{data.subPanelContext.xrtType}}",
+                "panelID": "Awp0MultiFileUpload"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateSelectedFileInfo": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "dataset.updateSelectedFileInfo",
+                        "eventData": {
+                            "fileName": "{{parameters.fileName}}",
+                            "fileNameNoExt": "{{parameters.fileNameNoExt}}",
+                            "fileExt": "{{parameters.fileExt}}",
+                            "formData": "{{parameters.formData}}"
+                        }
+                    }
+                ]
+            }
+        },
+        "updateSelectedFileInfoAction": {
+            "actionType": "JSFunction",
+            "method": "getSelectedFileInfo",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "dataToBeRelated": "dataToBeRelated",
+                "fileInputForms": "fileInputForms"
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUpdate": {
+            "action": "initialize",
+            "observers": [ "viewModel.data" ]
+        }
+    },
+    "onEvent": [
+        {
+
+            "eventId": "dataset.updateSelectedFileInfo",
+            "action": "updateSelectedFileInfoAction",
+            "cacheEventData": true
+        }
+    ],
+    "data": {},
+    "messages": {},
+    "preferences": [],
+    "functions": {},
+    "conditions": {},
+    "i18n": {
+        "fileAttachTitle": [
+            "UIElementsMessages"
+        ],
+        "removeFileBtnTooltip": [
+            "UIElementsMessages"
+        ]
+    }
+}

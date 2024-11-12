@@ -1,0 +1,24 @@
+<aw-scrollpanel>
+    <div class="aw-geography-mainView">
+        <div class="aw-geography-pagesHeader">
+            <h2>{{i18n.BRAND_NAME}}</h2>
+        </div>
+        <div class="aw-geography-logoImage">
+            <aw-logo></aw-logo>
+        </div>
+        <div class ="aw-layout-subLocation afx-content-background aw-flex-row aw-layout-flexbox afx-base-parentElement aw-geography-cornerRadius">
+            <aw-form name="myForm">
+                <div class="aw-consent-section">
+                    <div id="ConsentStatement" class="aw-consent-statement aw-base-scrollPanel"></div>
+                </div>
+                <div class="aw-layout-panelFooter aw-geographyFooter-buttons">
+                    <div class="aw-geography-checkbox">
+                        <aw-checkbox prop="data.agreeCheck"></aw-checkbox>
+                    </div>
+                    <aw-button enable-when="data.listBox.dbValue !== '' && data.agreeCheck.dbValue===true" action ="continueSignin" >{{i18n.CONTINUE_TEXT}}</aw-button>
+                    <aw-button action = "signOut">{{i18n.SIGN_OUT_TEXT}}</aw-button>
+                </div>
+            </aw-form>
+        </div>
+    </div>
+</aw-scrollpanel>

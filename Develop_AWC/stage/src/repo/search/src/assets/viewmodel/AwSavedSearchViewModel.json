@@ -1,0 +1,43 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "search",
+                "vm" : "AwSearchBreadcrumb",
+                "noUpdate": true,
+                "popuplist": "/html/defaultbreadcrumblist.html" ,
+                "overflowIndex": 0
+            },
+            "priority": 200,
+            "label": {
+                "source": "/i18n/SearchMessages",
+                "key": "searchesText"
+            },
+            "clientScopeURI": "Awp0SavedSearch",
+            "nameToken": "com.siemens.splm.client.search:SavedSearchSubLocation",
+            "selectionMode": "single",
+            "viewModes": {
+                "SummaryView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": true
+                },
+                "ListView": {
+                    "primaryWorkArea": "list",
+                    "secondaryWorkArea": false
+                }
+            },
+            "context": {
+                "search": {
+                    "loadDataAction": "searchSavedSearches",
+                    "hideInContentSearchBox": true,
+                    "criteria": {
+                        "searchFromLocation": "global"
+                    },
+                    "showLoadingText": true
+                }
+            },
+            "viewBase": "AwSavedSearch"
+        }
+    }
+}

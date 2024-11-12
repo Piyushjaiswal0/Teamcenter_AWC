@@ -1,0 +1,173 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "savedQuery": {
+            "displayName": "{{i18n.savedQuery}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dispValue": ""
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "initialize",
+            "observers": [
+                "props.subPanelContext.searchState.pwaSelection[0].uid",
+                "props.savedSearchObject.uid"
+            ]
+        }
+    },
+    "actions": {
+        "setContext": {
+            "actionType": "JSFunction",
+            "method": "setContext",
+            "inputData": {
+                "savedSearchObject": "{{props.savedSearchObject}}",
+                "executeAdvancedSavedSearch": "{{props.executeAdvancedSavedSearch}}"
+            },
+            "outputData": {
+                "isSavedSearchObjectFromParent": "isSavedSearchObjectFromParent",
+                "executeAdvancedSavedSearch": "executeAdvancedSavedSearch"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "setContext"
+                },
+                {
+                    "action": "initializeReviewAndExecuteSavedQueryInSavedSearchLocation",
+                    "condition": "!data.isSavedSearchObjectFromParent"
+                },
+                {
+                    "action": "initializeReviewAndExecuteSavedQueryForParentSavedSearchObject",
+                    "condition": "data.isSavedSearchObjectFromParent"
+                },
+                {
+                    "action": "getAttributeModelObjectForReviewAndExecuteSavedQuery"
+                },
+                {
+                    "action": "updateAttributesAdvSavedSearch",
+                    "condition": "data.advSavedSearchViewModelObject"
+                },
+                {
+                    "action": "reviewAndExecuteAdvancedSavedSearch",
+                    "condition": "data.executeAdvancedSavedSearch"
+                }
+            ]
+        },
+        "initializeReviewAndExecuteSavedQueryInSavedSearchLocation": {
+            "actionType": "JSFunction",
+            "method": "initializeReviewAndExecuteSavedQuery",
+            "inputData": {
+                "savedSearchObject": "{{subPanelContext.searchState.pwaSelection[0]}}",
+                "savedQuery": "{{data.savedQuery}}",
+                "updateSavedSearchAttributeValues": true
+            },
+            "outputData": {
+                "savedQuery": "savedQuery",
+                "savedSearchObject": "savedSearchObject"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        },
+        "initializeReviewAndExecuteSavedQueryForParentSavedSearchObject": {
+            "actionType": "JSFunction",
+            "method": "initializeReviewAndExecuteSavedQuery",
+            "inputData": {
+                "savedSearchObject": "{{props.savedSearchObject}}",
+                "savedQuery": "{{data.savedQuery}}",
+                "updateSavedSearchAttributeValues": "{{subPanelContext.searchState.updateSavedSearchAttributeValues}}"
+            },
+            "outputData": {
+                "savedQuery": "savedQuery",
+                "savedSearchObject": "savedSearchObject"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        },
+        "getAttributeModelObjectForReviewAndExecuteSavedQuery": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-AdvancedSearch",
+            "method": "getSelectedQueryCriteria",
+            "inputData": {
+                "selectedQuery": {
+                    "uid": "{{data.savedSearchObject.props.savedsearch_query.dbValue}}",
+                    "type": "ImanQuery"
+                }
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": "{{function:updateSearchAttributesWithSelectedQuery}}"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "reviewAndExecuteAdvancedSavedSearch": {
+            "actionType": "JSFunction",
+            "method": "reviewAndExecuteAdvancedSavedSearch",
+            "inputData": {
+                "savedQuery": "{{data.savedQuery}}",
+                "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "executeAdvancedSavedSearch": "{{data.executeAdvancedSavedSearch}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        },
+        "updateAttributesAdvSavedSearch": {
+            "actionType": "JSFunction",
+            "method": "updateAttributesAdvSavedSearch",
+            "inputData": {
+                "advSavedSearchViewModelObject": "{{data.advSavedSearchViewModelObject}}",
+                "savedSearchObject": "{{data.savedSearchObject}}"
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": ""
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "clearAll": {
+            "actionType": "JSFunction",
+            "method": "clearAllAction",
+            "inputData": {
+                "attributes": "{{data.advSavedSearchViewModelObject}}"
+            },
+            "outputData": {
+                "advSavedSearchViewModelObject": ""
+            },
+            "deps": "js/advancedSearchUtils"
+        }
+    },
+    "onEvent": [],
+    "conditions": {
+        "showExecuteAdvancedSavedSearchButton": {
+            "expression": "data.advSavedSearchViewModelObject && data.advSavedSearchViewModelObject.props"
+        },
+        "showAdvancedSavedSearchAttributes": {
+            "expression": "props.subPanelContext.searchState.pwaSelection[0].type === 'SavedSearch' || props.savedSearchObject.type === 'SavedSearch'"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "hide-title": {
+            "type": "BOOLEAN"
+        },
+        "saved-search-object": {
+            "type": "object"
+        },
+        "execute-advanced-saved-search": {
+            "type": "BOOLEAN"
+        }
+    },
+    "i18n": {
+        "advancedSearch": [ "SearchMessages" ],
+        "reviewAndExecuteAdvancedSavedSearch": [ "SearchMessages" ],
+        "executeBtn": [ "SearchMessages" ],
+        "searchString": [ "SearchMessages" ],
+        "advancedSearchClearAll": [ "SearchMessages" ],
+        "savedQuery": [ "SearchMessages" ]
+    }
+
+}

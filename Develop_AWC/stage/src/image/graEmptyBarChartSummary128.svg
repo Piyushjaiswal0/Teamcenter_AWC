@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-2.4301" y1="61.6298" x2="51.4844" y2="115.5443" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#edf6f8"/>
+      <stop offset="1" stop-color="#cfe2e8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="40.5705" y1="76.6299" x2="84.4844" y2="120.5438" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#e5f1f4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="67.717" y1="43.4835" x2="133.3386" y2="109.1051" xlink:href="#linear-gradient"/>
+  </defs>
+  <line x1="128.0013" y1="17.5013" x2=".5" y2="17.5011" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <line x1="128.0013" y1="39.5027" x2=".5" y2="39.5025" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <line x1="128.0013" y1="61.5041" x2=".5" y2="61.5039" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <line x1="128.0013" y1="83.5055" x2=".5" y2="83.5053" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <line x1="128.0013" y1="105.5069" x2=".5" y2="105.5066" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <polyline points=".5001 0 .5001 127.5011 128.0013 127.5016" fill="none" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <path d="m11.5272,48.5009h25.9999c1.1038,0,2,.8962,2,2v77.0006H9.5272V50.5009c0-1.1038.8962-2,2-2Z" fill="url(#linear-gradient)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+  <path d="m49.5275,68.5014h25.9999c1.1038,0,2,.8962,2,2v56.9994h-29.9999v-56.9994c0-1.1038.8962-2,2-2Z" fill="url(#linear-gradient-2)" stroke="#bfd8e2" stroke-linejoin="round"/>
+  <path d="m87.5278,24.5011h25.9999c1.1038,0,2,.8962,2,2v100.0006c0,.5519-.4481,1-1,1h-27.9999c-.5519,0-1-.4481-1-1V26.5011c0-1.1038.8962-2,2-2Z" fill="url(#linear-gradient-3)" stroke="#bfd8e2" stroke-miterlimit="10"/>
+</svg>

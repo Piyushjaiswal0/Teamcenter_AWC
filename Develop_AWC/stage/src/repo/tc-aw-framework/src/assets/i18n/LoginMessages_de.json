@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "Benutzername",
+    "PASSWORD_PLACEHOLDER": "Kennwort",
+    "SIGN_IN_TEXT": "Anmelden",
+    "LOGIN_TEXT": "Anmelden",
+    "LOGGING_IN_TEXT": "Anmeldung",
+    "UNABLE_TO_CONNECT": "Sie wurden wegen eines internen Fehlers nicht angemeldet.",
+    "VERSION_TEXT": "Version",
+    "COPYRIGHT_DATE_TEXT": "Unveröffentlichte Arbeit.",
+    "COPYRIGHT_MESSAGE": "Diese Dokumentation enthält Geschäftsgeheimnisse oder anderweitig vertrauliche Informationen, die Eigentum von Siemens Industry Software Inc., seinen verbundenen Unternehmen (zusammen \"Siemens\") oder seinen Lizenzgebern sind. Der Zugang zu diesen Informationen und deren Nutzung sind streng begrenzt, wie in den geltenden Vereinbarungen des Kunden mit Siemens dargelegt."
+}

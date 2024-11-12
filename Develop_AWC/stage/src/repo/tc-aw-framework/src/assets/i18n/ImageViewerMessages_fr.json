@@ -1,0 +1,6 @@
+{
+    "rotateClockwise": "Pivoter vers la droite",
+    "rotateCounterclockwise": "Pivoter vers gauche",
+    "rotateCWDesc": "Pivoter le fichier en sens horaire de 90°.",
+    "rotateCCWDesc": "Pivoter le fichier en sens anti-horaire de 90°."
+}

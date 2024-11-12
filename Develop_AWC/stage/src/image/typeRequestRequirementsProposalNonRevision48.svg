@@ -1,0 +1,39 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="-1" y1="2" x2="38" y2="41" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ebebeb"/>
+      <stop offset="0.2214" stop-color="#e8e8e8"/>
+      <stop offset="0.5419" stop-color="#e1e1e1"/>
+      <stop offset="0.9212" stop-color="#d5d5d5"/>
+      <stop offset="1" stop-color="#d2d2d2"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_3" data-name="Dark Blue Grad 3" x1="-8.75" y1="9.75" x2="14.75" y2="33.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c6c6c6"/>
+      <stop offset="0.1774" stop-color="#c1c1c1"/>
+      <stop offset="0.4638" stop-color="#b3b3b3"/>
+      <stop offset="0.8215" stop-color="#9c9c9c"/>
+      <stop offset="1" stop-color="#8f8f8f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="23.8325" y1="27.709" x2="39.9495" y2="43.826" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="36" height="42" fill="url(#New_Gradient_Swatch_1)"/>
+  <line x1="21" y1="9.5" x2="32" y2="9.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="21" y1="20.5" x2="32" y2="20.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="21" y1="31.5" x2="32" y2="31.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <rect x="0.5" y="0.5" width="5" height="42" fill="url(#Dark_Blue_Grad_3)"/>
+  <line x1="5.5" y1="0.5" x2="5.5" y2="42.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <rect x="0.5" y="0.5" width="36" height="42" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="1"/>
+  <path d="M14.9065,29.5a1.2418,1.2418,0,0,0,.3861-.93,1.2911,1.2911,0,1,0-2.196.93H10.5v2.6451a1.2986,1.2986,0,1,1,0,1.8128V36.5h7v-7Z" fill="#ffffff" stroke="#919191" stroke-linejoin="round"/>
+  <path d="M14.9065,18.5a1.2418,1.2418,0,0,0,.3861-.93,1.2911,1.2911,0,1,0-2.196.93H10.5v2.6451a1.2986,1.2986,0,1,1,0,1.8128V25.5h7v-7Z" fill="#ffffff" stroke="#919191" stroke-linejoin="round"/>
+  <path d="M14.9065,7.5a1.2418,1.2418,0,0,0,.3861-.93,1.2911,1.2911,0,1,0-2.196.93H10.5v2.6451a1.2986,1.2986,0,1,1,0,1.8128V14.5h7v-7Z" fill="#ffffff" stroke="#919191" stroke-linejoin="round"/>
+    <path d="M44.1831,31.7687c.0169-.0206,2.0308-2.9339,2.0308-2.9339,1.1438-1.6065-.9854-4.1037-2.9574-2.0148-.279.3541-.571.7314-.866,1.1147a1.492,1.492,0,0,0,.1387-.9376c-.2-1.3822-1.6938-2.225-3.2015-.6325-1.3086,1.6616-4.2168,5.4912-5.9068,7.6861l-2.64.9469s-.9685-2.085-4.8443-2.085a12.7652,12.7652,0,0,0-6.7832,2.085l-1.4008-.7551a.4442.4442,0,0,0-.65.3077c-.3394,1.8434-1.2255,7.4731.116,9.829a2.3809,2.3809,0,0,0,1.938,1.0389s5.4382,1.95,7.5485,2.0783a2.7109,2.7109,0,0,0,.4128-.0117,41.1427,41.1427,0,0,0,11.6711-2.8122,2.9091,2.9091,0,0,0,1.1964-.9151c4.4947-5.7857,6.3358-7.9279,7.2715-9.8749C48.2249,31.8677,46.121,29.68,44.1831,31.7687Z" fill="url(#linear-gradient)"/>
+      <path d="M44.1831,31.7687l2.0308-2.9339c1.1438-1.6065-.9854-4.1037-2.9574-2.0148-.279.3541-.571.7314-.866,1.1147a2.0861,2.0861,0,0,0,.1387-.9376c-.0476-1.3381-1.6938-2.225-3.2015-.6325-1.3086,1.6616-5.9068,7.6861-5.9068,7.6861" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+      <path d="M26.9048,41.2513l4.247-1.8267a2.7157,2.7157,0,0,1,1.0575-.23c.85-.009,2.9014-.2712,6.324-2.1119,1.9379-1.043.9685-5.2118-1.9389-4.17l-5.8138,2.0849s-.9685-2.0849-4.8443-2.0849a12.766,12.766,0,0,0-6.7832,2.0849l-1.403-.7562a.4423.4423,0,0,0-.6475.3062c-.3391,1.8408-1.2266,7.4747.1155,9.8317a2.3813,2.3813,0,0,0,1.938,1.039,61.1673,61.1673,0,0,0,6.335,1.8963,7.2707,7.2707,0,0,0,2.2376.11,41.14,41.14,0,0,0,11.2177-2.8164,2.2951,2.2951,0,0,0,.9345-.7173c4.57-5.8866,6.4326-8.0468,7.3756-10.0087.9684-2.0148-1.1355-4.2027-3.0734-2.1138-2.8485,3.8035-4.2521,5.7271-4.9965,6.628a2.0779,2.0779,0,0,1-1.6768.6155l-4.3327.0953" fill="none" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+      <path d="M43.2566,26.82c-1.71,2.17-3.8579,5.0977-4.7423,6.1867" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

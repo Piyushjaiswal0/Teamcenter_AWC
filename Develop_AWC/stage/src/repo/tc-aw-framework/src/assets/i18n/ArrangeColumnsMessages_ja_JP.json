@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "整列",
+    "arrangeButtonTitle": "整列",
+    "arrangeAdminTitle": "管理",
+    "arrangeNoColumnConfigs": "保存済みアレンジメントがありません",
+    "arrangeConfigNameTitle": "アレンジメント",
+    "arrangeNewConfigNameTitle": "名前",
+    "arrangeNewConfigNameTitleRequired": "アレンジメントに名前を付ける",
+    "arrangeNewConfigTitle": "新規アレンジメントとして保存",
+    "arrangeAndSaveButtonTitle": "保存および整列",
+    "arrangeAndCreateButtonTitle": "保存および整列",
+    "defaultNewColumnConfigName": "新規列アレンジメント",
+    "availableColumnsTitle": "使用可能な列",
+    "tableColumnsTitle": "表示されている列",
+    "box1Title": "バルーンポップアップを用いたActive Workspaceコマンドの例",
+    "seeMorePropertiesTitle": "フルデータベースを表示..."
+}

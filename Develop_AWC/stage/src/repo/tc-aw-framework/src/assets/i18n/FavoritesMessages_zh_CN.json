@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "收藏夹",
+    "myFavorites": "我的收藏夹",
+    "myRecentViewedObjects": "最近",
+    "addToFavoritesCommandTitle": "添加到收藏夹",
+    "addToFavoritesConfirmation": "选定的对象已成功添加到收藏夹",
+    "addToFavoritesFailed": "添加到收藏夹失败",
+    "removeFromFavoritesCommandTitle": "从收藏夹中移除",
+    "removeFromFavoritesConfirmation": "已从收藏夹中成功移除选定的对象",
+    "removeFromFavoritesFailed": "添加到收藏夹失败",
+    "Awp0AddToFavoritesDesc": "将选定对象添加到收藏夹列表。",
+    "Awp0RemoveFromFavoritesDesc": "从收藏夹列表中移除选定对象。",
+    "noFavoritesFound": "此处没有收藏夹",
+    "noFavoritesFoundHint": "要将对象添加到收藏夹，选择对象并使用“添加到收藏夹”命令。",
+    "noRecentsFound": "无最近活动",
+    "noRecentsFoundHint": "当前没有要显示的项。",
+    "nothingSelected": "未选定任何对象",
+    "nothingSelectedSWAHint": "选择列表中某项以查看详细信息。"
+}

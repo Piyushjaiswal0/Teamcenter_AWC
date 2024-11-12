@@ -1,0 +1,93 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="10.7497" y1="1.8209" x2="31.2503" y2="22.3216" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45" data-name="front -45" x1="-1.5728" y1="14.1434" x2="23.0728" y2="38.789" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.6296" stop-color="#c7c7c7"/>
+      <stop offset="0.7792" stop-color="#b9b9b9"/>
+      <stop offset="0.9383" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="21" y1="32.408" x2="21" y2="32.408" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="32.8066" y1="20.6562" x2="36.1934" y2="24.043" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="36.8066" y1="18.1819" x2="40.1934" y2="21.5687" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="New_Gradient_Swatch_5" data-name="New Gradient Swatch 5" x1="13.1181" y1="30.7982" x2="17.8819" y2="35.5621" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0b0b0"/>
+      <stop offset="1" stop-color="#7e7e7e"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="24.3755" y1="30.6941" x2="43.6245" y2="49.9431" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+      <polygon points="21 23.954 41.5 12.072 41.5 28.98 21 40.862 21 23.954" fill="#888"/>
+      <path d="M.5,12.0706,19.9629.77A2,2,0,0,1,21.9688.769L41.5,12.0719,21,23.9542Z" fill="url(#paper_gradient)"/>
+      <polygon points="21 23.954 21 40.862 0.5 28.978 0.5 12.071 21 23.954" fill="url(#front_-45)"/>
+      <line x1="21" y1="23.9542" x2="21" y2="40.8618" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#linear-gradient)"/>
+      <polyline points="41.5 12.072 21 23.954 0.5 12.071" fill="none" stroke="#6e6e6e" stroke-linejoin="round"/>
+      <path d="M19.9629.77,1.4958,11.4924A2,2,0,0,0,.5,13.222V27.8258a2,2,0,0,0,.997,1.73L19.997,40.28a2,2,0,0,0,2.006,0l18.5-10.723a2,2,0,0,0,.9971-1.73V13.2252a2,2,0,0,0-.9982-1.731L21.9689.769A2,2,0,0,0,19.9629.77Z" fill="none" stroke="#464646" stroke-linejoin="round"/>
+      <line x1="3.5532" y1="18.7873" x2="3.5532" y2="18.7873" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="4.9489" y1="19.5904" x2="4.9489" y2="19.5904" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="6.3447" y1="20.3934" x2="6.3447" y2="20.3934" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="7.7404" y1="21.1964" x2="7.7404" y2="21.1964" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="9.1362" y1="21.9995" x2="9.1362" y2="21.9995" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="10.5319" y1="22.8025" x2="10.5319" y2="22.8025" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="3.5532" y1="20.2971" x2="3.5532" y2="20.2971" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="4.9489" y1="21.1001" x2="4.9489" y2="21.1001" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="6.3447" y1="21.9032" x2="6.3447" y2="21.9032" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="7.7404" y1="22.7062" x2="7.7404" y2="22.7062" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="9.1362" y1="23.5092" x2="9.1362" y2="23.5092" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="10.5319" y1="24.3122" x2="10.5319" y2="24.3122" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="3.5532" y1="21.8069" x2="3.5532" y2="21.8069" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="4.9489" y1="22.6099" x2="4.9489" y2="22.6099" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="6.3447" y1="23.4129" x2="6.3447" y2="23.4129" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="7.7404" y1="24.2159" x2="7.7404" y2="24.2159" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="9.1362" y1="25.019" x2="9.1362" y2="25.019" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="10.5319" y1="25.822" x2="10.5319" y2="25.822" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="3.5532" y1="23.3166" x2="3.5532" y2="23.3166" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="4.9489" y1="24.1196" x2="4.9489" y2="24.1196" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="6.3447" y1="24.9227" x2="6.3447" y2="24.9227" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="7.7404" y1="25.7257" x2="7.7404" y2="25.7257" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="9.1362" y1="26.5287" x2="9.1362" y2="26.5287" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="10.5319" y1="27.3318" x2="10.5319" y2="27.3318" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="3.5532" y1="24.8264" x2="3.5532" y2="24.8264" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="4.9489" y1="25.6294" x2="4.9489" y2="25.6294" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="6.3447" y1="26.4324" x2="6.3447" y2="26.4324" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="7.7404" y1="27.2355" x2="7.7404" y2="27.2355" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="9.1362" y1="28.0385" x2="9.1362" y2="28.0385" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="10.5319" y1="28.8415" x2="10.5319" y2="28.8415" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="3.5532" y1="26.3361" x2="3.5532" y2="26.3361" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="4.9489" y1="27.1391" x2="4.9489" y2="27.1391" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="6.3447" y1="27.9422" x2="6.3447" y2="27.9422" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="7.7404" y1="28.7452" x2="7.7404" y2="28.7452" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="9.1362" y1="29.5482" x2="9.1362" y2="29.5482" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="10.5319" y1="30.3513" x2="10.5319" y2="30.3513" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+    <path d="M35.4039,24.8234l-1.6127.9408a.1936.1936,0,0,1-.2912-.1673V20.043a.1937.1937,0,0,1,.0961-.1673l1.6127-.9408a.1936.1936,0,0,1,.2912.1673v5.5539A.1937.1937,0,0,1,35.4039,24.8234Z" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+    <path d="M39.4039,22.3492l-1.6127.9407a.1936.1936,0,0,1-.2912-.1672v-5.554a.1938.1938,0,0,1,.0961-.1673l1.6127-.9407a.1936.1936,0,0,1,.2912.1673v5.5539A.1937.1937,0,0,1,39.4039,22.3492Z" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-2)"/>
+    <polygon points="17.5 35.944 13.5 33.616 13.5 30.416 17.5 32.744 17.5 35.944" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_5)"/>
+    <path d="M31.85,23.3705,20.7954,43.9a2.4424,2.4424,0,0,0,2.1505,3.6H45.0541a2.4424,2.4424,0,0,0,2.1505-3.6L36.1505,23.3705A2.4424,2.4424,0,0,0,31.85,23.3705Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0494" fill="url(#Dark_Blue_Grad)"/>
+      <path d="M29,45.5a.5.5,0,0,1-.4595-.6973L31.2417,38.5H29a.5.5,0,0,1-.4595-.6973l3-7A.5.5,0,0,1,32,30.5h5a.5.5,0,0,1,.4.8L35,34.5h3a.5005.5005,0,0,1,.3716.835l-9,10A.4994.4994,0,0,1,29,45.5Z" fill="#fff"/>
+      <path d="M37,31l-3,4h4L29,45l3-7H29l3-7h5m0-1H32a1,1,0,0,0-.9192.6061l-3,7A1,1,0,0,0,29,39h1.4835l-2.4027,5.6061a1,1,0,0,0,1.6625,1.0628l9-10A1,1,0,0,0,38,34H36l1.8-2.4A1,1,0,0,0,37,30Z" fill="#147391"/>
+  <polygon points="28.938 9.751 24.626 7.303 20.938 9.432 17.249 7.303 12.938 9.751 16.631 11.917 13.095 13.957 17.488 16.467 20.938 14.443 24.387 16.467 28.78 13.957 25.244 11.917 28.938 9.751" fill="#fff" stroke="#6e6e6e" stroke-miterlimit="10"/>
+</svg>

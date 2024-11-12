@@ -1,0 +1,523 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+
+    "actions": {
+        "getStyleSheet": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "ics.getStyleSheetCreateNewRoleInGroup",
+                        "condition": "!conditions.isAllowToCreateUser"
+                    },
+                    {
+                        "name": "getStyleSheetForUserEvent",
+                        "condition": "conditions.isAllowToCreateUser"
+                    }
+                ]
+            }
+        },
+        "getStyleSheetCreateNewRoleInGroup": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "processEntireXRT": true,
+                "input": [ {
+                        "businessObjectType": "Role",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": "Role"
+                        },
+                        "styleSheetType": "CREATE",
+                        "styleSheetLastModDate": "",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.client.usermanagement.peoplelocation",
+                            "ActiveWorkspace:SubLocation": "com.siemens.splm.client.usermanagement:groupsublocation"
+                        }
+                    }
+
+                ]
+
+            },
+
+            "policy": {
+                "types": [ {
+                    "name": "CreateInput",
+                    "modifiers": [ {
+                        "name": "includeIsModifiable",
+                        "Value": "true"
+                    } ]
+                } ]
+            },
+
+            "outputData": {
+                "modelPropRole": "{{dataParseDefinitions:convertNvObject}}"
+            }
+        },
+
+        "createRoleInGroup": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2017-05-RoleManagement",
+            "method": "addRolesToGroup",
+            "inputData": {
+                "roleGroupStructs": [ {
+                    "clientId": "{{data.modelPropRole.props.role_name.uiValue}}",
+                    "rolesToCreateAndAdd": [ {
+                        "roleName": "{{data.modelPropRole.props.role_name.uiValue}}",
+                        "roleDescription": "{{data.modelPropRole.props.description.uiValue}}"
+                    } ],
+
+                    "grp": "{{ctx.mselected[0]}}"
+                } ]
+
+            },
+
+            "outputData": {
+                "clientId": "output[0].objects[0].uid",
+                "roleId": "created[0]",
+                "partialErrors": "partialErrors"
+            },
+
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "relatedModified": [ "{{ctx.mselected[0]}}" ],
+                            "refreshLocationFlag": false
+                        }
+                    },
+                    {
+                        "name": "OrgTree.reloadOrgTree",
+                        "eventData": {
+                            "uid": "{{data.roleId}}"
+                        }
+                    }
+                ]
+
+            },
+
+            "actionMessages": {
+                "success": [ {
+                    "message": "createRoleInGroupSuccessMessage"
+                } ],
+                "failure": [ {
+                    "message": "createRoleInGroupFailure"
+                } ]
+            }
+        },
+
+        "getStyleSheetForUserInOrg": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "processEntireXRT": true,
+                "input": [ {
+                        "businessObjectType": "User",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": "User"
+                        },
+                        "styleSheetType": "CREATE",
+                        "styleSheetLastModDate": "",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.client.usermanagement.peoplelocation",
+                            "ActiveWorkspace:SubLocation": "com.siemens.splm.client.usermanagement:usersublocation"
+                        }
+                    }
+
+                ]
+
+            },
+
+            "policy": {
+                "types": [ {
+                    "name": "CreateInput",
+                    "modifiers": [ {
+                        "name": "includeIsModifiable",
+                        "Value": "true"
+                    } ]
+                } ]
+            },
+
+            "outputData": {
+                "serviceData": "ServiceData"
+            },
+
+            "events": {
+                "success": [ {
+                        "name": "updateLicenseBundleProp"
+                    },
+                    {
+                        "name": "CompleteGetStylesheet2ForUser",
+                        "eventData": {}
+                    }
+                ]
+            },
+
+            "deps": "js/Um0CreateUserService"
+        },
+
+        "getStyleSheetForPerson": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "processEntireXRT": true,
+                "input": [ {
+                        "businessObjectType": "Person",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": "Person"
+                        },
+                        "styleSheetType": "CREATE",
+                        "styleSheetLastModDate": "",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.client.usermanagement.peoplelocation",
+                            "ActiveWorkspace:SubLocation": "com.siemens.splm.client.usermanagement:usersublocation"
+                        }
+                    }
+
+                ]
+
+            },
+
+            "policy": {
+                "types": [ {
+                    "name": "CreateInput",
+                    "modifiers": [ {
+                        "name": "includeIsModifiable",
+                        "Value": "true"
+                    } ]
+                } ]
+            },
+
+            "outputData": {
+                "modelPropPerson": "{{dataParseDefinitions:convertNvObject}}"
+            }
+        },
+
+        "createPersonObject": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2008-06-DataManagement",
+            "method": "createObjects",
+            "inputData": {
+                "input": [ {
+                    "clientId": "{{data.user_name.uiValue}}",
+                    "data": {
+                        "boName": "Person",
+                        "stringProps": {
+                            "user_name": "{{data.user_name.uiValue}}",
+                            "PA1": "{{data.modelPropPerson.props.PA1.uiValue}}",
+                            "PA2": "{{data.modelPropPerson.props.PA2.uiValue}}",
+                            "PA3": "{{data.modelPropPerson.props.PA3.uiValue}}",
+                            "PA4": "{{data.modelPropPerson.props.PA4.uiValue}}",
+                            "PA5": "{{data.modelPropPerson.props.PA5.uiValue}}",
+                            "PA6": "{{data.modelPropPerson.props.PA6.uiValue}}",
+                            "PA7": "{{data.modelPropPerson.props.PA7.uiValue}}",
+                            "PA8": "{{data.modelPropPerson.props.PA8.uiValue}}",
+                            "PA9": "{{data.modelPropPerson.props.PA9.uiValue}}",
+                            "PA10": "{{data.modelPropPerson.props.PA10.uiValue}}",
+                            "locale": "{{data.modelPropPerson.props.locale.uiValue}}",
+                            "timezone": "{{data.modelPropPerson.props.timezone.uiValue}}"
+                        }
+                    }
+                } ]
+            },
+
+            "outputData": {
+                "createdPersonUid": "output[0].objects[0].uid",
+                "createdPerson": "output[0].objects[0]",
+                "partialErrors": "ServiceData.partialErrors"
+            },
+
+            "events": {
+                "success": [
+
+                    {
+                        "name": "personCreatedInOrg"
+                    }
+                ]
+
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "createPersonObjectFailure"
+                } ]
+            }
+        },
+
+        "createUserInSelectedRole": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2017-05-UserManagement",
+            "method": "addUsersAsGroupMembers",
+            "inputData": {
+                "userRoleGroupStructs": [ {
+                    "clientId": "{{data.modelProperty.props.name.uiValue}}",
+                    "usersToCreateAndAdd": [ {
+                        "user": {
+                            "userId": "{{data.user_id.uiValue}}",
+                            "person": "{{data.user_name.uiValue}}",
+                            "defaultGroup": "{{data.modelPropUser.props.default_group.uiValue}}",
+                            "userPropertyMap": {
+                                "user_name": [ "{{data.user_name.uiValue}}" ],
+                                "os_username": [ "{{data.modelPropUser.props.os_username.uiValue}}" ],
+                                "geography": [ "{{data.modelPropUser.props.geography.uiValue}}" ],
+                                "nationality": [ "{{data.modelPropUser.props.nationality.uiValue}}" ],
+                                "volume": [ "{{data.modelPropUser.props.volume.uiValue}}" ],
+                                "local_volume": [ "{{data.modelPropUser.props.local_volume.uiValue}}" ],
+                                "fnd0LicenseServer": [ "{{data.modelPropUser.props.nationality.uiValue}}" ],
+                                "status": [ "{{data.modelPropUser.props.status.uiValue}}" ],
+                                "license_level": [ "{{data.modelPropUser.props.license_level.uiValue}}" ],
+                                "fnd0license_bundles": [ "{{data.modelPropUser.props.fnd0license_bundles.uiValue}}" ],
+                                "fnd0citizenships": [ "{{data.modelPropUser.props.fnd0citizenships.uiValue}}" ]
+                            }
+                        }
+
+                    } ],
+                    "grp": "{{ctx.lastSelectedGroupObject}}",
+                    "role": "{{ctx.lastSelectedObject}}"
+                } ]
+            },
+
+            "outputData": {
+                "clientId": "{{ctx.lastSelectedObject.uid}}",
+                "partialErrors": "partialErrors",
+                "newlyCreatedUserId": "created[0]"
+            },
+
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "relatedModified": [ "{{ctx.lastSelectedObject}}" ],
+                            "refreshLocationFlag": false
+                        }
+                    },
+                    {
+                        "name": "OrgTree.reloadOrgTree",
+                        "eventData": {
+                            "uid": "{{data.newlyCreatedUserId}}"
+                        }
+                    }
+                ],
+                "failure": [ {
+                    "name": "failToCreateUserObj"
+                } ]
+
+            },
+
+            "actionMessages": {
+                "success": [ {
+                    "message": "createUsersAsGroupMembersSuccessMessage"
+                } ],
+                "failure": [ {
+                    "message": "addUsersAsGroupMembersFailure"
+                } ]
+            },
+
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+        "failToCreateUserObj": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "deleteObjects",
+            "inputData": {
+                "objects": [
+                    "{{data.createdPerson}}"
+                ]
+            }
+        },
+        "add": {
+            "actionType": "JSFunction",
+            "method": "addAdminObjects",
+            "inputData": {
+                "selectedPanelId": "SecondaryWorkAreaNewTab",
+                "isGroupRadioButtonSelected": false
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+        "updateLicenseBundleProp": {
+            "actionType": "JSFunction",
+            "method": "modifyResponse",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "modelPropUser": "{{dataParseDefinitions:convertNvObjectForUser}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "updateUserProperties",
+                        "eventData": {
+                            "modelPropUser": "{{data.modelPropUser}}"
+                        }
+                    },
+                    {
+                        "name": "setDefaultGroupPropEvent"
+                    }
+                ]
+
+            },
+            "deps": "js/Um0CreateUserService"
+        },
+        "setDefaultGroupPropAction": {
+            "actionType": "JSFunction",
+            "method": "setDefaultGroupProp",
+            "inputData": {
+                "data": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "outputData": {
+                "modelPropUser.props.default_group": ""
+            },
+            "deps": "js/Um0CreateUserService"
+        }
+    },
+
+    "data": {
+        "addRoleOrUserSelection": {
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "propertyRadioTrueText": "{{i18n.RoleName}}",
+            "propertyRadioFalseText": "{{i18n.UserName}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT",
+            "dbValue": true
+        },
+        "user_name": {
+            "displayName": "{{i18n.CreateName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "user_id": {
+            "displayName": "{{i18n.CreateUserId}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        }
+    },
+
+    "dataParseDefinitions": {
+        "convertNvObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "ServiceData.plain[0]",
+            "operationType": "CREATE"
+        },
+        "convertNvObjectForUser": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "data.serviceData.plain[0]",
+            "operationType": "CREATE"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "getStyleSheet"
+    },
+    "onEvent": [ {
+            "eventId": "ics.getStyleSheetCreateNewRoleInGroup",
+            "action": "getStyleSheetCreateNewRoleInGroup"
+        },
+        {
+            "eventId": "ics.createRoleInGroup",
+            "action": "createRoleInGroup"
+        },
+        {
+            "eventId": "CompleteGetStylesheet2ForUser",
+            "action": "getStyleSheetForPerson"
+        },
+        {
+            "eventId": "getStyleSheetForUserEvent",
+            "action": "getStyleSheetForUserInOrg"
+        },
+        {
+            "eventId": "ics.createPersonObject",
+            "action": "createPersonObject"
+        },
+        {
+            "eventId": "personCreatedInOrg",
+            "action": "createUserInSelectedRole"
+        },
+        {
+            "eventId": "failToCreateUserObj",
+            "action": "failToCreateUserObj"
+        },
+        {
+            "eventId": "updateLicenseBundleProp",
+            "action": "updateLicenseBundleProp"
+        },
+        {
+            "eventId": "setDefaultGroupPropEvent",
+            "action": "setDefaultGroupPropAction"
+        }
+    ],
+
+    "messages": {
+
+        "createRoleInGroupFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{partialErrors[0].errorValues[0].message}}"
+        },
+        "createPersonObjectFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{partialErrors[0].errorValues[0].message}}"
+        },
+        "addUsersAsGroupMembersFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{partialErrors[0].errorValues[0].message}}"
+        },
+        "createRoleInGroupSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.createRoleInGroupSuccess}}",
+            "messageTextParams": [
+                "{{data.modelPropRole.props.role_name.uiValue}}"
+            ]
+        },
+        "createUsersAsGroupMembersSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.createUsersAsGroupMembersSuccess}}",
+            "messageTextParams": [
+                "{{data.user_name.uiValue}}"
+            ]
+        }
+    },
+
+    "conditions": {
+        "isAllowToCreateUser": {
+            "expression": "ctx.lastSelectedObject.type==\"Role\""
+        },
+        "isValidToAddAdminObjects": {
+            "expression": "((data.modelPropRole.props.role_name.uiValue.length>0) || (data.user_name.uiValue.length>0 && data.user_id.uiValue.length>0 && data.modelPropUser.props.os_username.uiValue.length>0 && data.modelPropUser.props.default_group.uiValue.length>0 && data.modelPropUser.props.status.uiValue.length>0 && data.modelPropUser.props.license_level.uiValue.length>0)) "
+        }
+    },
+
+    "i18n": {
+        "GroupName": [ "UsermanagementCommandPanelMessages" ],
+        "RoleName": [ "UsermanagementCommandPanelMessages" ],
+        "UserName": [ "UsermanagementCommandPanelMessages" ],
+        "UserProperties": [ "UsermanagementCommandPanelMessages" ],
+        "PersonProperties": [ "UsermanagementCommandPanelMessages" ],
+        "AddButton": [ "UsermanagementCommandPanelMessages" ],
+        "CreateName": [ "UsermanagementCommandPanelMessages" ],
+        "CreateUserId": [ "UsermanagementCommandPanelMessages" ],
+        "createRoleInGroupSuccess": [ "UsermanagementCommandPanelMessages" ],
+        "createUsersAsGroupMembersSuccess": [ "UsermanagementCommandPanelMessages" ]
+    }
+}

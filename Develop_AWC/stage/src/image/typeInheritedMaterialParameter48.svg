@@ -1,0 +1,43 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.5" y1="0.5" x2="44.5" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="3.5" y1="3.5" x2="47.5" y2="47.5" xlink:href="#paper_gradient"/>
+    <radialGradient id="radial-gradient" cx="33.544" cy="16.165" r="6.863" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.355" stop-color="#e2e2e2"/>
+      <stop offset="0.76" stop-color="#c8c8c8"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="24.544" cy="25.165" r="6.863" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="14.372" cy="-66.08" r="7.625" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="6.594" cy="-41.635" r="7.625" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <linearGradient id="Light_Blue_Grad_2" data-name="Light Blue Grad 2" x1="25.866" y1="27.946" x2="42.15" y2="44.23" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="32.586" y1="34.586" x2="35.414" y2="37.414" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient-5" cx="14.055" cy="18.581" r="8.578" xlink:href="#radial-gradient"/>
+  <rect x="0.5" y="0.5" width="44" height="44" stroke="#464646" stroke-miterlimit="10" stroke-width="0.997" fill="url(#paper_gradient)"/>
+  <rect x="3.5" y="3.5" width="44" height="44" stroke="#464646" stroke-miterlimit="10" stroke-width="0.997" fill="url(#paper_gradient-2)"/>
+  <polyline points="16.5 21.5 26.5 27.5 35.5 18.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M39.5,18.5a4,4,0,1,1-4-4A4,4,0,0,1,39.5,18.5Z" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient)"/>
+  <path d="M30.5,27.5a4,4,0,1,1-4-4A4,4,0,0,1,30.5,27.5Z" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-2)"/>
+  <path d="M20.5,9.5a4,4,0,1,1-4-4A4,4,0,0,1,20.5,9.5Z" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-3)"/>
+  <path d="M13.354,30.4a4,4,0,1,1-2.761-2.759A3.933,3.933,0,0,1,13.354,30.4Z" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-4)"/>
+  <path d="M26.766,45.074,30.5,41.5h7l3.735,3.575A11.939,11.939,0,0,0,45.5,36.007a11.5,11.5,0,1,0-23,.081A11.762,11.762,0,0,0,26.766,45.074Z" stroke="#147391" stroke-linejoin="round" fill="url(#Light_Blue_Grad_2)"/>
+  <line x1="32.789" y1="34.847" x2="29" y2="31" fill="none" stroke="#147391"/>
+  <circle cx="34" cy="36" r="2" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polyline points="16.5 13.5 16.5 21.5 11.801 28.213" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <path d="M21.5,21.5a5,5,0,1,1-5-5A5,5,0,0,1,21.5,21.5Z" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-5)"/>
+</svg>

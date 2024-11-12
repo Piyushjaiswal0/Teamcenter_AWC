@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "정렬",
+    "arrangeButtonTitle": "정렬",
+    "arrangeAdminTitle": "관리자",
+    "arrangeNoColumnConfigs": "저장된 정렬 없음",
+    "arrangeConfigNameTitle": "정렬",
+    "arrangeNewConfigNameTitle": "이름",
+    "arrangeNewConfigNameTitleRequired": "정렬 이름 지정",
+    "arrangeNewConfigTitle": "새 정렬로 저장",
+    "arrangeAndSaveButtonTitle": "저장 및 정렬",
+    "arrangeAndCreateButtonTitle": "저장 및 정렬",
+    "defaultNewColumnConfigName": "새 열 정렬",
+    "availableColumnsTitle": "사용 가능한 열",
+    "tableColumnsTitle": "표시된 열",
+    "box1Title": "풍선 팝업이 있는 Active Workspace 명령의 예제",
+    "seeMorePropertiesTitle": "전체 데이터 베이스 보기..."
+}

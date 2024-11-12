@@ -1,0 +1,74 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awTextViewerRenderFn",
+            "deps": "js/Awp0TextViewerService"
+        },
+        "onMount": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initUV"
+                },
+                {
+                    "action": "initTextViewer"
+                }
+            ]
+        },
+        "initUV": {
+            "actionType": "JSFunction",
+            "method": "awTextViewerOnMount",
+            "inputData": {
+                "viewerData": "{{subPanelContext}}",
+                "viewModel": "{{data}}"
+            },
+            "outputData" : {
+                "data": ""
+            },
+            "deps": "js/Awp0TextViewerService"
+        },
+        "initTextViewer": {
+            "actionType": "JSFunction",
+            "method": "initTextViewer",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0TextViewerService"
+        },
+        "onUnMount": {
+            "actionType": "JSFunction",
+            "method": "awTextViewerOnUnMount",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0TextViewerService"
+        },
+        "updateEncoding": {
+            "actionType": "JSFunction",
+            "method": "updateEncoding",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0TextViewerService"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "textEditor.encodingChanged",
+            "action": "updateEncoding",
+            "cacheEventData": true
+        }
+    ],
+    "functions": {},
+    "messages": {},
+    "conditions": {},
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "onMount",
+        "onUnmount": "onUnMount"
+    },
+    "i18n": {},
+    "props": {}
+}

@@ -1,0 +1,37 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+ viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="22.5001" y1="9.4997" x2="36.5001" y2="23.4997">
+	<stop  offset="0" style="stop-color:#CDE6EB"/>
+	<stop  offset="0.2214" style="stop-color:#C6E2E8"/>
+	<stop  offset="0.5419" style="stop-color:#B3D8E1"/>
+	<stop  offset="0.9212" style="stop-color:#93C7D5"/>
+	<stop  offset="1" style="stop-color:#8CC3D2"/>
+</linearGradient>
+<polygon fill="url(#SVGID_1_)" points="43.5,16.5 29.5,8.5 15.5,16.5 29.5,24.5 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="13.0001" y1="18.9997" x2="32.0001" y2="37.9997">
+	<stop  offset="0" style="stop-color:#AFD7E1"/>
+	<stop  offset="0.1588" style="stop-color:#A4D0DC"/>
+	<stop  offset="0.7059" style="stop-color:#80BCCE"/>
+	<stop  offset="1" style="stop-color:#73B4C8"/>
+</linearGradient>
+<polygon fill="url(#SVGID_2_)" points="15.5,16.5 15.5,32.5 29.5,40.5 29.5,24.5 "/>
+<polygon fill="#3C91AF" points="29.5,24.5 29.5,40.5 43.5,32.5 43.5,16.5 "/>
+<polyline fill="none" stroke="#147391" points="15.5,16.5 29.5,24.5 43.5,16.5 "/>
+<line fill="#3C91AF" stroke="#147391" stroke-linejoin="round" stroke-miterlimit="10" x1="29.5" y1="24.5" x2="29.5" y2="40.5"/>
+<path fill="none" stroke="#464646" stroke-linejoin="round" stroke-miterlimit="10" d="M29.5,8.5l-14,8v16l14,8l14-8v-16L29.5,8.5z"
+	/>
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="12.8922" y1="25.716" x2="34.1738" y2="46.9976">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.2284" style="stop-color:#FAFAFA"/>
+		<stop  offset="0.4881" style="stop-color:#EDEDED"/>
+		<stop  offset="0.7621" style="stop-color:#D7D6D6"/>
+		<stop  offset="1" style="stop-color:#BDBCBC"/>
+	</linearGradient>
+	<path fill="url(#SVGID_3_)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" d="M34.172,37.178l3.065-1.391
+		c0.181-0.082,0.355-0.178,0.521-0.286l4.47-2.929c2.849-1.605,4.573,2.407,2.047,4.272c-1.837,1.372-3.551,2.578-4.915,3.203
+		c-7.476,3.429-7.421,3.452-11.642,3.452c-2.894,0-7.179-0.454-12.664-2.877c-1.716-0.758-5.012,0.467-9.012,1.478
+		c-1.256,0.318-2.54-0.42-2.887-1.66c-0.116-0.415-0.359-1.483-0.585-2.505c-0.299-1.348,0.389-2.827,1.718-3.203
+		c1.525-0.431,3.799-0.789,6.115-1.663c3.415-1.288,6.046-2.127,11.202-0.27c0.154,0.056,3.514,1.703,4.403,2.148
+		c0.233,0.116,0.479,0.191,0.737,0.226l5.701,0.768c2.916,0.471,1.765,4.81-1.339,4.538l-5.299-0.723
+		c-0.57-0.078-1.124-0.244-1.642-0.493l-4.205-2.017"/>
+</svg>

@@ -1,0 +1,150 @@
+{
+    "types": [
+        {
+            "name": "ImanType",
+            "properties": [
+                {
+                    "name": "type_name"
+                },
+                {
+                    "name": "fnd0InternalName"
+                },
+                {
+                    "name": "object_string"
+                }
+            ]
+        },
+        {
+            "name": "POM_object",
+            "properties": [ {
+                "name": "awp0CellProperties"
+            } ]
+        },
+
+        {
+            "name": "ReportDefinition",
+            "properties": [ {
+                    "name": "rd_name"
+                },
+
+                {
+                    "name": "rd_description"
+                },
+
+                {
+                    "name": "rd_source"
+                },
+
+                {
+                    "name": "rd_id"
+                },
+
+                {
+                    "name": "rd_type"
+                },
+                {
+                    "name": "fnd0IsAsync"
+                },
+                {
+                    "name": "rd_class"
+                },
+                {
+                    "name": "rd_query_source",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+
+                {
+                    "name": "rd_style_sheets",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+
+                {
+                    "name": "rd_parameters",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+
+                {
+                    "name": "rd_param_values",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "owning_user"
+                }
+            ]
+        },
+        {
+            "name": "CrfQuerySource",
+            "properties": [ {
+                "name": "qry_src_tc_qry",
+                "modifiers": [ {
+                    "name": "withProperties",
+                    "Value": "true"
+                } ]
+            } ]
+        },
+
+        {
+            "name": "CrfOutputHtml",
+            "properties": [ {
+                "name": "ref_list",
+                "modifiers": [ {
+                    "name": "withProperties",
+                    "Value": "true"
+                } ]
+            } ]
+        },
+        {
+            "name": "CrfOutputExcel",
+            "properties": [ {
+                "name": "ref_list",
+                "modifiers": [ {
+                    "name": "withProperties",
+                    "Value": "true"
+                } ]
+            } ]
+        },
+        {
+            "name": "CrfOutputText",
+            "properties": [ {
+                "name": "ref_list",
+                "modifiers": [ {
+                    "name": "withProperties",
+                    "Value": "true"
+                } ]
+            } ]
+        },
+        {
+            "name": "EPMTask",
+            "properties": [ {
+                "name": "fnd0TaskExecutionStatus"
+            },
+            {
+                "name": "late_flag"
+            },
+            {
+                "name": "fnd0TaskExecutionErrors"
+            } ]
+        },
+        {
+            "name": "EPMJob",
+            "properties": [ {
+                "name": "fnd0Late"
+            },
+            {
+                "name": "fnd0ErrorTasks"
+            } ]
+        }
+    ]
+}

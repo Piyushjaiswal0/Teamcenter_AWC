@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Ordenar",
+    "arrangeButtonTitle": "Ordenar",
+    "arrangeAdminTitle": "Administrador",
+    "arrangeNoColumnConfigs": "Sin ordenamientos guardados",
+    "arrangeConfigNameTitle": "Ordenamiento",
+    "arrangeNewConfigNameTitle": "Nombre",
+    "arrangeNewConfigNameTitleRequired": "Denominar el ordenamiento",
+    "arrangeNewConfigTitle": "Guardar como ordenamiento nuevo",
+    "arrangeAndSaveButtonTitle": "Guardar y ordenar",
+    "arrangeAndCreateButtonTitle": "Guardar y ordenar",
+    "defaultNewColumnConfigName": "Ordenamiento de columnas nuevo",
+    "availableColumnsTitle": "Columnas disponibles",
+    "tableColumnsTitle": "Columnas visualizadas",
+    "box1Title": "Ejemplo del comando de Active Workspace con un menú desplegable tipo globo",
+    "seeMorePropertiesTitle": "Ver la base de datos completa..."
+}

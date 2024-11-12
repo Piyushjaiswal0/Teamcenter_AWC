@@ -1,0 +1,42 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="front_-45" data-name="front -45" x1="1.355" y1="7.2589" x2="26.6421" y2="32.546" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#cccccc"/>
+      <stop offset="0.6296" stop-color="#c7c7c7"/>
+      <stop offset="0.7792" stop-color="#b9b9b9"/>
+      <stop offset="0.9383" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999999"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="6.2398" y1="0.352" x2="21.7603" y2="15.8726" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="41.5439" cy="28.1646" r="6.8625" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cccccc"/>
+      <stop offset="0.1949" stop-color="#bdbdbd"/>
+      <stop offset="0.554" stop-color="#a5a5a5"/>
+      <stop offset="0.8345" stop-color="#979797"/>
+      <stop offset="1" stop-color="#919191"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="34.5439" cy="39.1646" r="6.8625" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="22.7993" cy="32.3727" r="7.7203" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="24.0877" cy="-50.7555" r="6.6719" gradientTransform="translate(1.6095 66.6365) scale(0.9)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-5" cx="16.3099" cy="-27.4222" r="6.6719" gradientTransform="translate(1.6095 66.6365) scale(0.9)" xlink:href="#radial-gradient"/>
+  </defs>
+    <path d="M27.5,8.114V29.5507c-.0056,2.0307-1.36,4.06-3.9692,5.61-5.2473,3.1173-13.787,3.1174-19.0513.01C1.8217,33.6022.4943,31.5424.5,29.4858V8.114" fill="url(#front_-45)"/>
+    <path d="M23.5283,2.7309c5.2741,2.9649,5.302,7.79.045,10.7648s-13.8124,2.9747-19.0865.01c-5.2913-2.9746-5.3192-7.8-.0622-10.7745S18.2369-.2437,23.5283,2.7309Z" fill="url(#paper_gradient)"/>
+    <path d="M27.5,8.11c.0091,1.9487-1.2982,3.8987-3.9267,5.386-5.2569,2.9747-13.8124,2.9747-19.0865.01C1.8412,12.0182.5114,10.0683.5,8.1183" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <path d="M23.5283,2.7309C18.2369-.2437,9.6815-.2436,4.4245,2.731,1.798,4.2173.4912,6.1654.5,8.114l0,21.3718c-.0057,2.0566,1.3217,4.1164,3.98,5.6851,5.2644,3.1072,13.8041,3.1071,19.0513-.01,2.6088-1.55,3.9635-3.5793,3.9692-5.61V8.114C27.4928,6.1637,26.1673,4.2144,23.5283,2.7309Z" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <polyline points="25 24 25 34.885 17.958 44.042" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+    <line x1="25" y1="24" x2="25" y2="34" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="2"/>
+    <polyline points="25.035 34.916 36.517 41.472 43.544 30.568" fill="none" stroke="#969696" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path d="M47.5,30.5008A4,4,0,1,1,43.4992,26.5,4,4,0,0,1,47.5,30.5008Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient)"/>
+    <path d="M40.5,41.5008A4,4,0,1,1,36.4992,37.5,4,4,0,0,1,40.5,41.5008Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-2)"/>
+    <path d="M29.5,35.0009A4.5,4.5,0,1,1,24.9991,30.5,4.5,4.5,0,0,1,29.5,35.0009Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-3)"/>
+    <path d="M28.5,23.0007A3.5,3.5,0,1,1,24.9993,19.5,3.5,3.5,0,0,1,28.5,23.0007Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-4)"/>
+    <path d="M21.5,44.0007A3.5,3.5,0,1,1,17.9993,40.5,3.5,3.5,0,0,1,21.5,44.0007Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-5)"/>
+</svg>

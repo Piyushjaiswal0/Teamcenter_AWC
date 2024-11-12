@@ -1,0 +1,10 @@
+// Copyright 2022 Siemens Product Lifecycle Management Software Inc.
+/* people picker */
+
+.aw-people-picker-section .sw-section-content {
+    height: calc( 100% - 40px );
+}
+
+details.aw-people-picker-section.sw-section {
+    max-height: 100%;
+}

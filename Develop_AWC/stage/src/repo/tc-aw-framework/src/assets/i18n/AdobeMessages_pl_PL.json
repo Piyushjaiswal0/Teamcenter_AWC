@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Składniki cyfrowe",
+    "imagePanelTitle": "Obrazy i kolory",
+    "updatesSectionTitle": "Aktualizacje w programie Teamcenter",
+    "digitalAssetsInUseSectionTitle": "Składniki cyfrowe w \"{0}\"",
+    "imageInUseSectionTitle": "Obrazy i kolory w \"{0}\"",
+    "adobeFile": "Plik Adobe",
+    "typeLabel": "Typ",
+    "revisionLabel": "Rewizja",
+    "quantityLabel": "Ilość",
+    "expectedLabel": "Oczekiwane",
+    "cmdReplaceDigitalAsset": "Zamień",
+    "showObjectCell": "Otwórz",
+    "cmdDeleteDigitalAsset": "Usuń",
+    "adobe_cell_commands_updatesList": "Lista aktualizacji poleceń komórek",
+    "adobe_cell_commands_inUseList": "Lista używanych poleceń komórek",
+    "DigitalAssetsPanelDesc": "Wyświetl składniki cyfrowe powiązane z tą grafiką.",
+    "ImagePanelDesc": "Wyświetl obrazy i kolory powiązane z 2D CAD.",
+    "cmdReplaceDigitalAssetDesc": "Zastąp składnik cyfrowy otwarty w aplikacji Adobe na zaktualizowany w programie Teamcenter.",
+    "cmdDeleteDigitalAssetDesc": "Usuń wybrany składnik cyfrowy z grafiki.",
+    "showObjectCellDesc": "Otwórz wybór."
+}

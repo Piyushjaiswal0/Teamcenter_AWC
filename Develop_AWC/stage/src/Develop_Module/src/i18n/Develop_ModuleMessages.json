@@ -1,0 +1,21 @@
+{
+    "header": "Header",
+    "body": "Body",
+    "footer": "Footer",
+    "checkBoxName": "Enable the OK button in footer",
+    "save": "Ok",
+    "textValue": "Contents here",
+    "CustomCommandsTitle": "Custom",
+    "CustomCommandsDescription": "All custom commands developed by developer.",
+    "DevelopCommandTitle": "Develop",
+    "DevelopCommandDescription": "Shows a alert pop up with action message.",
+    "PreferencesTitle": "Google",
+    "PreferencesDescription": "Google website will open in a new tab.",
+    "checkoutTitle": "Checkout",
+    "checkoutDescription": "Checkout the selected object.",
+    "CheckoutSuccess": "\"{0}\" is successfully checked out",
+    "EditPropertyTitle": "Edit Property",
+    "EditPropertyDescription": "You can edit any property value of selected object",
+    "EditPropertyPanelTitle": "Edit Property",
+    "PropertySuccessMessage": "On object \"{0}\" property \"{1}\" value changed to \"{2}\""
+}

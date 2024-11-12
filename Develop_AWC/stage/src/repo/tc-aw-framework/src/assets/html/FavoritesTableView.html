@@ -1,0 +1,15 @@
+<div class="aw-base-scrollPanel" exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded && subPanelContext.searchState.provider === 'Awp0FavoritesProvider'" >
+  <aw-empty-workarea
+      image="graNoFavoritesList"
+      title="i18n.noFavoritesFound"
+      hint="i18n.noFavoritesFoundHint">
+  </aw-empty-workarea>
+</div>
+<div class="aw-base-scrollPanel" exist-when="subPanelContext.searchState.totalFound==0 && !subPanelContext.searchState.totalLoaded && subPanelContext.searchState.provider === 'Awp0RecentObjectsProvider'">
+  <aw-empty-workarea
+      image="graNoFavoritesList"
+      title="i18n.noRecentsFound"
+      hint="i18n.noRecentsFoundHint">
+  </aw-empty-workarea>
+</div>
+<aw-splm-table gridid="gridView" show-context-menu="true" show-check-box="subPanelContext.showCheckBox" show-when="subPanelContext.searchState.totalFound>0"></aw-splm-table>

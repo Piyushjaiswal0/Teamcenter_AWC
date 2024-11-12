@@ -1,0 +1,40 @@
+<aw-panel-body>
+    <aw-panel-section caption="i18n.titlePanel" collapsed="false" name="ReportTitleSection" id="ReportTitleSection">
+        <aw-widget prop="data.titleText"></aw-widget>
+        <aw-listbox prop="data.titleColor" list="subPanelContext.reportsContext.colorPropList"></aw-listbox>
+        <aw-listbox prop="data.titleFont" list="subPanelContext.reportsContext.fontPropList"></aw-listbox>
+    </aw-panel-section>
+    <aw-command-panel-section caption="i18n.charts" anchor="data.setLayoutTabPageAddChartCommand" collapsed="false" name="ChartsCollection" context="data" id="ChartsCollection">
+        <!-- <TODO> We may need to modularise this using aw-repeat-->
+        <aw-command-panel-section caption="i18n.chart1Label" visible-when="conditions.addChart1" anchor="data.setLayoutTabPageChart1Commands" context="data" collapsed="false" name="ReportsChart1" id="ReportsChart1">
+            <aw-widget prop="data.chart1Title"></aw-widget>
+            <aw-listbox prop="data.chart1Type" list="subPanelContext.reportsContext.chartTypeList"></aw-listbox>
+            <aw-listbox prop="data.chart1ByProperty" list="subPanelContext.reportsContext.searchFilterChartProps"></aw-listbox>
+            <aw-checkbox prop="data.chart1Thumbnail" action="setChart1AsThumbnail"></aw-checkbox>
+        </aw-command-panel-section>
+        <aw-command-panel-section caption="i18n.chart2Label" visible-when="conditions.addChart2" anchor="data.setLayoutTabPageChart2Commands" context="data" collapsed="false" name="ReportsChart2" id="ReportsChart2">
+            <aw-widget prop="data.chart2Title" ></aw-widget>
+            <aw-listbox prop="data.chart2Type" list="subPanelContext.reportsContext.chartTypeList"></aw-listbox>
+            <aw-listbox prop="data.chart2ByProperty" list="subPanelContext.reportsContext.searchFilterChartProps"></aw-listbox>
+            <aw-checkbox prop="data.chart2Thumbnail" action="setChart2AsThumbnail"></aw-checkbox>
+        </aw-command-panel-section>
+        <aw-command-panel-section caption="i18n.chart3Label" visible-when="conditions.addChart3" anchor="data.setLayoutTabPageChart3Commands" context="data" collapsed="false" name="ReportsChart3" id="ReportsChart3">
+            <aw-widget prop="data.chart3Title"></aw-widget>
+            <aw-listbox prop="data.chart3Type" list="subPanelContext.reportsContext.chartTypeList"></aw-listbox>
+            <aw-listbox prop="data.chart3ByProperty" list="subPanelContext.reportsContext.searchFilterChartProps"></aw-listbox>
+            <aw-checkbox prop="data.chart3Thumbnail" action="setChart3AsThumbnail"></aw-checkbox>
+        </aw-command-panel-section>
+    </aw-command-panel-section>
+    <aw-panel-section caption="i18n.tablePanel" collapsed="false" name="ReportTable1" id="ReportTable1">
+        <aw-widget prop="data.tableColumnList"></aw-widget>
+        <aw-checkbox prop="data.table1Thumbnail" action="setTable1AsThumbnail"></aw-checkbox>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer visible-when="ctx.state.params.configure === 'true'">
+    <aw-button class='base-button' action="showConfiguredReportPreviewAction" size="auto">
+        <aw-i18n>i18n.showReportPreview</aw-i18n>
+    </aw-button>
+    <aw-button action="saveConfiguredReportAction" size="auto">
+        <aw-i18n>i18n.saveReport</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

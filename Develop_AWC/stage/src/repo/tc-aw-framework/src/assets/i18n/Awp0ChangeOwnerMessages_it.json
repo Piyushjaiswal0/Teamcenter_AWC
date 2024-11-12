@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "Modifica proprietario",
+ "change" : "Modifica",
+ "user" : "Utente",
+ "EmailAddress" : "Indirizzo email:",
+ "PhoneNumber" : "Numero telefonico:",
+ "singleObjectChangeOwnershipSuccess": "\"{0}\" è stato modificato.",
+ "multipleObjectsChangeOwnershipSuccess": "Sono state modificate {0} selezioni su {1}.", 
+ "changeOwnershipForObjectFailure": "\"{0}\" non è stato modificato perché l'utente non dispone dell'autorizzazione. "
+}

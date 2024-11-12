@@ -1,0 +1,17 @@
+<aw-panel-body>
+    <aw-search-objects
+        search-state-for-keyword="fields.searchState"
+        supports-advanced-search="false"
+        selection-model="selectionModels.searchSelectionModel"
+        selection-data="fields.selectionData"
+        sub-panel-context="{...props.subPanelContext, showCheckBox: false, isCustomSearchFilterPresent: true, preFilterContext: subPanelContext}">
+    </aw-search-objects>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button class='base-button' action="closePanel" size="auto">
+        <aw-i18n>i18n.CancelButtonLabel</aw-i18n>
+    </aw-button>
+    <aw-button action="saveCriteriaAndClose" enable-when="conditions.enableSaveButton" size="auto">
+        <aw-i18n>i18n.saveReport</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

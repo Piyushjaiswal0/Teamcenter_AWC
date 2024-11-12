@@ -1,0 +1,713 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+
+    ],
+
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "JSFunctionAsync",
+            "method": "getAdaptedObjects",
+            "inputData": {
+                "sourceObjects": "{{ctx.mselected}}"
+            },
+            "outputData": {
+                "adaptedObjects": ""
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "awp0AssignProjects.selectedObjectsAdapted"
+                    }
+                ]
+            },
+            "deps": "js/adapterService"
+        },
+        "getProjectsForAssignOrRemove":
+        {
+            "actionType": "dataProvider",
+            "method": "availableProjects"
+        },
+
+        "getProjects":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2017-05-ProjectLevelSecurity",
+            "method": "getProjectsForAssignOrRemove",
+            "inputData":
+            {
+                "projectsInput":
+                [
+                    {
+                        "user": "{{ctx.user}}",
+                        "selectedObjects": "{{data.adaptedObjects}}",
+                        "assignedObjects": "{{function:getAssignedProjects}}",
+                        "filterText": "{{data.filterBox.dbValue}}",
+                        "isAceContext": "{{function:isACEContext}}",
+                        "paginationInfo":
+                        {
+                            "startIndexForAvailableProjects": "{{data.dataProviders.availableProjects.startIndex}}",
+                            "maxToReturnForAvailableProjects": 50
+                        }
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "memberOfList": "{{function:getMemberOfList}}",
+                "availableProjects": "availableProjectList",
+                "totalFound": "totalFound",
+                "endIndex": "endIndex",
+                "applyToRawList": "projectOptions.ApplyTo",
+                "levelRawList": "projectOptions.Level",
+                "entireBOM": "projectOptions.EntireBOM",
+                "owningProgramAvailableList": "{{function:getOwningProgramAvailableList}}"
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "condition": "isACEContext",
+                        "name": "awp0AssignProjects.callDataProvider"
+                    },
+                    {
+                        "condition": "isACEContext",
+                        "name":"awp0AssignProjects.callOwningProjDataProvider"
+                    },
+                    {
+                        "condition": "isACEContext",
+                        "name": "property.generateAppyToList"
+                    },
+
+                    {
+                        "condition": "isACEContext",
+                        "name": "property.generateLevelList"
+                    }
+                ]
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "TC_Project",
+                        "properties":
+                        [
+                            {
+                                "name": "project_id"
+                            },
+
+                            {
+                                "name": "project_name"
+                            },
+
+                            {
+                                "name": "object_string"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "deps": "js/Awp0AssignProjects"
+        },
+
+        "getOwningFilterProjects":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2017-05-ProjectLevelSecurity",
+            "method": "getProjectsForAssignOrRemove",
+            "inputData":
+            {
+                "projectsInput":
+                [
+                    {
+                        "user": "{{ctx.user}}",
+                        "selectedObjects": "{{data.adaptedObjects}}",
+                        "assignedObjects": "{{function:getAssignedProjects}}",
+                        "filterText": "{{data.filterBox.dbValue}}",
+                        "isAceContext": "{{function:isACEContext}}",
+                        "paginationInfo":
+                        {
+                            "startIndexForAvailableProjects": "{{data.dataProviders.availableProjects.startIndex}}",
+                            "maxToReturnForAvailableProjects": 50
+                        }
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "owningProgramAvailableList": "{{function:getOwningProgramAvailableList}}"
+            },
+
+            "deps": "js/Awp0AssignProjects"
+        },
+
+        "setTypeOption":
+        {
+            "actionType": "JSFunction",
+            "method": "setTypeOption",
+            "inputData":
+            {
+                "data": "{{data}}"
+            },
+
+            "deps": "js/Awp0AssignProjects"
+        },
+
+        "convertLevelList":
+        {
+            "actionType": "JSFunction",
+            "method": "createListModelObjects",
+            "inputData":
+            {
+                "input": "{{data.levelRawList}}",
+                "propName": "displayValue"
+            },
+
+            "outputData":
+            {
+                "lovLevelListArray": ""
+            },
+
+            "deps": "js/listBoxService"
+        },
+        "save":{
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "callChangeOwningProjectAndMemberOf",
+                        "condition": "data.isOwningProjectUpdated"
+                    },
+                    {
+                        "name": "callAssignOrRemoveProjects",
+                        "condition": "!data.isOwningProjectUpdated"
+                    }
+                ]
+            }
+        },
+        "changeOwningProject":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2018-11-ProjectLevelSecurity",
+            "method": "changeOwningProgram",
+            "inputData":
+            {
+                "chgOwnProgramInput": [{
+                    "owningProgram":"{{ctx.owningProject}}",
+                    "inputObjects":"{{ctx.mselected}}"
+                }]
+            },
+            "outputData":
+            {
+                "changeOwningPartialErrors": "partialErrors"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "callAssignOrRemoveProjects"
+                    }
+                ],
+                "failure":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "condition": "ctx.mselected.length==1",
+                        "message": "singleChangeOwningProjectSuccess"
+                    },
+
+                    {
+                        "condition": "ctx.mselected.length>1",
+                        "message": "multipleChangeOwningProjectSuccess"
+                    }
+                ],
+                "failure":
+                [
+                    {
+                        "message": "changeOwningProjectFailure"
+                    }
+                ]
+            }
+        },
+        "assignOrRemoveProjects":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2017-05-ProjectLevelSecurity",
+            "method": "assignOrRemoveObjectsFromProjects",
+            "inputData":
+            {
+                "assignOrRemoveInput": "{{function:assignOrRemoveInput}}"
+            },
+            "policy": {
+                "types": [ {
+                    "name": "Awb0Element",
+                    "properties": [
+                        {
+                            "name": "awb0ProjectList"
+                        }
+                    ]
+                },
+                {
+                    "name": "WorkspaceObject",
+                    "properties": [
+                        {
+                            "name": "projects_list"
+                        }
+                    ]
+                }
+             ]
+            },
+            "outputData":
+            {
+                "partialErrors": "partialErrors",
+                "errorMessage": "{{function:processPartialErrors}}"
+            },
+            "deps": "js/Awp0AssignProjects",
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "condition": "data.adaptedObjects.length==1",
+                        "message": "singleAssignToProjectSuccess"
+                    },
+
+                    {
+                        "condition": "data.adaptedObjects.length>1",
+                        "message": "multipleAssignToProjectSuccess"
+                    }
+                ],
+                "failure":
+                [
+                    {
+                        "condition": "ctx.mselected",
+                        "message": "assignRemoveProjectsMultiError"
+                    }
+                ]
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+
+        },
+        "addProjects":
+        {
+            "actionType": "JSFunction",
+            "method": "addToMemberOfProjects",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "vmo" : "{{eventData.vmo}}"
+            },
+
+            "deps": "js/AssignProjectsService"
+        },
+
+        "removeProjects":
+        {
+            "actionType": "JSFunction",
+            "method": "addToAvailableProjects",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "vmo" : "{{eventData.vmo}}"
+            },
+            "outputData":
+            {
+                "isOwningProjectUpdated" : ""
+            },
+            "deps": "js/AssignProjectsService"
+        },
+
+        "callDataProvider":
+        {
+            "actionType": "dataProvider",
+            "methods":
+            [
+                "memberOfProjectList"
+            ]
+        },
+        "callOwningProjDataProvider":{
+            "actionType": "dataProvider",
+            "methods":
+            [
+                "availableOwningProgram"
+            ]
+        },
+        "replaceOwningProjects":
+        {
+            "actionType": "JSFunction",
+            "method": "replaceOwningProject",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "vmo" : "{{eventData.vmo}}"
+            },
+            "outputData":
+            {
+                "isOwningProjectUpdated" : ""
+            },
+            "deps": "js/AssignProjectsService"
+        }
+    },
+
+    "messages":
+    {
+        "assignRemoveProjectsMultiError":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.assignRemoveProjectsMultiError}}",
+            "messageTextParams":
+            [
+                "{{data.errorMessage}}"
+            ]
+        },
+
+        "singleAssignToProjectSuccess":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.singleAssignToProjectSuccess}}",
+            "messageTextParams":
+            [
+                "{{data.adaptedObjects}}"
+            ]
+        },
+
+        "multipleAssignToProjectSuccess":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.multipleAssignToProjectSuccess}}",
+            "messageTextParams":
+            [
+                "{{data.adaptedObjects.length}}"
+            ]
+        },
+        "singleChangeOwningProjectSuccess":{
+            "messageType": "INFO",
+            "messageText": "{{i18n.singleChangeOwningProjectSuccess}}",
+            "messageTextParams":
+            [
+                "{{ctx.mselected}}"
+            ]
+        },
+        "multipleChangeOwningProjectSuccess":{
+            "messageType": "INFO",
+            "messageText": "{{i18n.multipleChangeOwningProjectSuccess}}",
+            "messageTextParams":
+            [
+                "{{ctx.mselected.length}}"
+            ]
+        },
+        "changeOwningProjectFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "awp0AssignProjects.addProjects",
+            "cacheEventData": true,
+            "action": "addProjects"
+        },
+        {
+            "eventId": "awp0AssignProjects.callDataProvider",
+            "action": "callDataProvider"
+        },
+        {
+            "eventId": "awp0AssignProjects.callOwningProjDataProvider",
+            "action": "callOwningProjDataProvider"
+        },
+        {
+            "eventId": "awp0AssignProjects.removeProjects",
+            "cacheEventData": true,
+            "action": "removeProjects"
+        },
+        {
+            "eventId":"awp0AssignProjects.replaceProject",
+            "cacheEventData": true,
+            "action":"replaceOwningProjects"
+        },
+        {
+            "eventId": "property.generateAppyToList",
+            "action": "setTypeOption"
+        },
+        {
+            "eventId": "property.generateLevelList",
+            "action": "convertLevelList"
+        },
+        {
+            "eventId": "awp0AssignProjects.selectedObjectsAdapted",
+            "action": "getProjectsForAssignOrRemove"
+        },
+        {
+            "eventId": "callAssignOrRemoveProjects",
+            "action": "assignOrRemoveProjects"
+        },
+        {
+            "eventId": "callChangeOwningProjectAndMemberOf",
+            "action": "changeOwningProject"
+        }
+    ],
+
+    "data":
+    {
+        "tabModels": [
+            {
+                "name": "{{i18n.memberOfSectionTitle}}",
+                "tabKey": "memberOfPage"
+            },
+            {
+                "name": "{{i18n.OwningProgramTabTitle}}",
+                "tabKey": "owningProgramPage",
+                "visibleWhen": {
+                    "condition": "conditions.showOwningTab"
+                }
+            }
+        ],
+        "filterBox":
+        {
+            "displayName": "",
+            "type": "STRING",
+            "dbValue": ""
+        },
+        "applyTo":
+        {
+            "displayName": "{{i18n.ApplyTo}}",
+            "type": "BOOLEAN",
+            "propertyRadioTrueText": "{{i18n.SingleRevision}}",
+            "propertyRadioFalseText": "{{i18n.AllRevisions}}",
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE"
+        },
+        "level":
+        {
+            "displayName":"{{i18n.Level}}",
+            "type": "INTEGER",
+            "dbValue": 0
+        },
+        "structure":
+        {
+            "displayName": "{{i18n.ApplyTo}}",
+            "type": "BOOLEAN",
+            "propertyRadioFalseText": "{{i18n.Level}}",
+            "propertyRadioTrueText": "{{i18n.Structure}}",
+            "dbValue": false
+        },
+        "assignedProjectsUid"   : [],
+        "removeProjectsUid"     : [],
+        "removeProjectSoaInput" : [],
+        "isOwningProjectUpdated" : false
+    },
+
+    "functions":
+    {
+        "getAssignedProjects":
+        {
+            "functionName": "getAssignedProjects",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        },
+        "isACEContext":
+        {
+            "functionName": "isACEContext",
+            "parameters":
+            [
+
+            ]
+        },
+        "assignOrRemoveInput":
+        {
+            "functionName": "assignOrRemoveInput",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        },
+        "getMemberOfList":
+        {
+            "functionName": "getMemberOfList",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        },
+        "getOwningProgramAvailableList":
+        {
+            "functionName": "getOwningProgramAvailableList",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        }
+    },
+
+    "i18n":
+    {
+        "updateProjectsTitle":
+        [
+            "ProjmgmtConstants"
+        ],
+        "memberOfSectionTitle":
+        [
+            "ProjmgmtConstants"
+        ],
+        "OwningProgramTabTitle":[
+            "ProjmgmtConstants"
+        ],
+        "availableSectionTitle":
+        [
+            "ProjmgmtConstants"
+        ],
+        "AllRevisions":
+        [
+            "ProjmgmtConstants"
+        ],
+        "AssignButtonText":
+        [
+            "ProjmgmtConstants"
+        ],
+        "singleAssignToProjectSuccess":
+        [
+            "ProjmgmtConstants"
+        ],
+        "assignRemoveProjectsMultiError":
+        [
+            "ProjmgmtConstants"
+        ],
+        "multipleAssignToProjectSuccess":
+        [
+            "ProjmgmtConstants"
+        ],
+        "ApplyTo":
+        [
+            "ProjmgmtConstants"
+        ],
+        "SingleRevision":
+        [
+            "ProjmgmtConstants"
+        ],
+        "Structure":
+        [
+            "ProjmgmtConstants"
+        ],
+        "Level":
+        [
+            "ProjmgmtConstants"
+        ],
+        "multipleChangeOwningProjectSuccess":[
+            "ProjmgmtConstants"
+        ],
+        "singleChangeOwningProjectSuccess":[
+            "ProjmgmtConstants"
+        ]
+    },
+
+    "conditions":
+    {
+        "isValidToShowAssignButton":
+        {
+            "expression": "data.removeProjectSoaInput.length > 0 || data.assignedProjectsUid.length > 0"
+        },
+
+        "showOwningTab": {
+            "expression": "ctx.preferences.AWC_Project_showOwningProgramTab[0] === 'true'"
+        },
+
+        "isValidToShowLevel":
+        {
+            "expression": "data.structure.dbValue===false"
+        },
+
+        "is4GObject":
+        {
+            "expression": " data.applyToRawList.length>0 && data.dataProviders.availableProjects.viewModelCollection.loadedVMObjects.length > 0"
+        },
+
+        "isACEContext":
+        {
+            "expression": "ctx.sublocation.nameToken==='com.siemens.splm.client.occmgmt:OccurrenceManagementSubLocation'"
+        },
+
+        "isValidToShowBOMStructure":
+        {
+            "expression": "data.levelRawList.length>0 && data.entireBOM.length>0"
+        },
+        "showMemberOfTab": {
+            "expression": "data.selectedTab.tabKey === 'memberOfPage'"
+        },
+        "showOwningProgramTab": {
+            "expression": "data.selectedTab.tabKey === 'owningProgramPage'"
+        },
+        "hideMemberOfTab": {
+            "expression": "data.selectedTab.tabKey !== 'memberOfPage'"
+        },
+        "hideOwningProgramTab": {
+            "expression": "data.selectedTab.tabKey !== 'owningProgramPage'"
+        },
+        "showOwningProgram": {
+            "expression": "ctx.owningProject"
+        }
+    },
+
+    "dataProviders":
+    {
+        "availableProjects":
+        {
+            "action": "getProjects",
+            "commandsAnchor":"aw_addProjectsCellCommandAction",
+            "response": "{{data.availableProjects}}",
+            "totalFound": "{{data.totalFound}}"
+        },
+
+        "memberOfProjectList":
+        {
+            "commandsAnchor": "aw_removeMemberProjectsCellCmdAction",
+            "response": "{{data.memberOfList}}"
+        },
+
+        "availableOwningProgram":{
+            "action" : "getOwningFilterProjects",
+            "commandsAnchor": "aw_replaceOwningProjectsCellCommandAction",
+            "response": "{{data.owningProgramAvailableList.list}}"
+        }
+    }
+}

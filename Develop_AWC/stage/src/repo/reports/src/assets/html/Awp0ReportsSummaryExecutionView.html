@@ -1,0 +1,21 @@
+<aw-panel-body>
+    <aw-panel-section caption="i18n.summaryPanel" visible-when="conditions.showForSummary">
+        <aw-widget prop="attribute" aw-repeat="attribute : data.rb0ReportQueryAttributes.props"></aw-widget>
+    </aw-panel-section>
+
+    <aw-panel-section caption="i18n.customPanel" visible-when="!conditions.showForSummary" exist-when="data.customProps != undefined" collapsed="disabled">
+        <aw-widget prop="property" aw-repeat="property : data.customProps"></aw-widget>
+    </aw-panel-section>
+    <aw-panel-section caption="i18n.additionalParams" collapsed="disabled">
+        <aw-listbox prop="data.selectStyleSheet" list="data.reportStylesheets"></aw-listbox>
+        <aw-listbox prop="data.displayLocale" list="data.languageList" visible-when="conditions.showifSourceIsTc"></aw-listbox>
+        <aw-textbox prop="data.saveToDataSet" visible-when="conditions.showifSourceIsTc"></aw-textbox>
+        <aw-checkbox prop="data.doLiveIntegration" visible-when="conditions.showforOfficeTemplate"></aw-checkbox>
+        <aw-checkbox prop="data.runReportAsync" visible-when="conditions.showifSourceIsTc"></aw-checkbox>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="callGenerateReport" size="auto">
+        <aw-i18n>i18n.generateReport</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

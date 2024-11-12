@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M6,12V11a1.0013,1.0013,0,0,0,1-1H8A2.002,2.002,0,0,1,6,12Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M8,6H7A1.0013,1.0013,0,0,0,6,5V4A2.002,2.002,0,0,1,8,6Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M1,6H0A2.002,2.002,0,0,1,2,4V5A1.0013,1.0013,0,0,0,1,6Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M2,12a2.002,2.002,0,0,1-2-2H1a1.0013,1.0013,0,0,0,1,1Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="7" y="7" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="4" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect y="7" width="1" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="11" width="2" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="9" y="6" width="7" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="9" y="9" width="7" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "Připojené soubory",
+    "dropHere": "Pusťte zde",
+    "chooseFile": "Vyberte soubor",
+    "removeFileBtnTooltip": "Odebrat soubor",
+    "failureToAttachFiles": "Položka \"{0}\" nebyla přidána, protože daný typ souboru není povolen jako příloha."
+}

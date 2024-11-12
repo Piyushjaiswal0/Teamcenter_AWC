@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="28.5" y1="3.5" x2="41.5" y2="16.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c7c7c7"/>
+      <stop offset="0.177" stop-color="#c2c2c2"/>
+      <stop offset="0.464" stop-color="#b4b4b4"/>
+      <stop offset="0.822" stop-color="#9d9d9d"/>
+      <stop offset="1" stop-color="#909090"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="6.5" y1="3.501" x2="19.5" y2="16.501" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="28.5" y1="17.5" x2="41.5" y2="30.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="28.5" y1="31.5" x2="41.5" y2="44.5" xlink:href="#paper_gradient"/>
+  <line x1="13" x2="13" y2="5.499" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="13" y1="14.501" x2="13" y2="24" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="35" y1="14.5" x2="35" y2="19.5" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="35" y1="28.501" x2="35" y2="33.501" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="35" y1="42.502" x2="35" y2="48.002" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="21.5" y1="10" x2="26.499" y2="10" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="26.5" y="5.5" width="17" height="9" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+  <rect x="4.5" y="5.501" width="17" height="9" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <rect x="26.5" y="19.5" width="17" height="9" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <rect x="26.5" y="33.5" width="17" height="9" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+</svg>

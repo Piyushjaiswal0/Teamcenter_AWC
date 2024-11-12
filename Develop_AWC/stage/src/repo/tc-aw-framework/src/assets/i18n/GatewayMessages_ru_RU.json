@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Главная",
+    "pinObjectCommandTitle": "Закрепить на главной странице",
+    "unPinObjectCommandTitle": "Открепить с главной страницы",
+    "pinObjectFailed": "Ошибка прикрепления.",
+    "unPinObjectFailed": "Не удалось открепить.",
+    "tileUpdateFailedMsg": "Ошибка обновления плитки.",
+    "pinObjectFailedNoGateway": "Проблема доступа к главной странице.",
+    "pinObjectMultipleObjectError": "Только один объект может быть прикреплен за один раз. Дополнительные объекты будут проигнорированы.",
+    "unpinTileFailed": "Не удалось открепить.",
+    "homeFolderTitle": "Папки",
+    "Awp0ShowHomeFolderDesc": "Открыть папку Рабочая область.",
+    "Awp0PinObjectDesc": "Добавьте выбранное на главную страницу в качестве плитки."
+}

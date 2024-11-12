@@ -1,0 +1,89 @@
+<%
+        if( vmo.props && vmo.props[ propName ] )
+        {
+            var release_status_uids = vmo.props[ propName ].dbValues ;
+            _.forEach( release_status_uids, function( release_status_uid ) {
+                var releaseStatusBO = dependentServices[ 0 ].getObject( release_status_uid );
+                var releaseStatusName = releaseStatusBO.props.object_name ? releaseStatusBO.props.object_name.dbValues[ 0 ] : '';
+                var releaseStatusToolTip = '';
+                if( tooltipProps ){
+                    _.forEach( tooltipProps, function( tooltipPropName ){
+                        var toolTipPropVal =  releaseStatusBO.props[ tooltipPropName ] ? releaseStatusBO.props[ tooltipPropName ].uiValues[0] : '';
+                        if( toolTipPropVal ){
+                            releaseStatusToolTip += toolTipPropVal + '\n'
+                        }
+                    });
+                }
+                var imagePath = basePath +'/image/';
+                switch( releaseStatusName ){
+                    case "Created":
+                        imagePath += "indicatorFlagWhite16.svg"
+                        break
+                    case "Vm0Created":
+                        imagePath += "indicatorFlagWhite16.svg"
+                        break
+                    case "Approved":
+                        imagePath += "indicatorReleasedApproved16.svg"
+                        break
+                    case "TCM Released":
+                        imagePath += "indicatorReleasedTCMReleased16.svg"
+                        break
+                    case "Pending":
+                        imagePath += "indicatorReleasedPending16.svg"
+                        break
+                    case "Approval Pending":
+                        imagePath += "indicatorReleasedPending16.svg"
+                        break
+                    case "Vm0ApprovalPending":
+                        imagePath += "indicatorReleasedPending16.svg"
+                        break
+                    case "Obsolete":
+                        imagePath += "indicatorReleasedObsolete16.svg"
+                        break
+                    case "Rejected":
+                        imagePath += "indicatorReleasedRejected16.svg"
+                        break
+                    case "PlanningSyncState":
+                        imagePath += "indicatorReleasedPlanningSyncState16.svg"
+                        break
+                    case "TC Baselined":
+                        imagePath += "indicatorReleasedTCBaselined16.svg"
+                        break
+                    case "Validation":
+                        imagePath += "indicatorReleasedValidation16.svg"
+                        break
+                    case "0":
+                        imagePath += "indicatorStatus0Flag16.svg"
+                        break
+                    case "10":
+                        imagePath += "indicatorStatus10Flag16.svg"
+                        break
+                    case "20":
+                        imagePath += "indicatorStatus20Flag16.svg"
+                        break
+                    case "30":
+                        imagePath += "indicatorStatus30Flag16.svg"
+                        break
+                    case "40":
+                        imagePath += "indicatorStatus40Flag16.svg"
+                        break
+                    case "50":
+                        imagePath += "indicatorStatus50Flag16.svg"
+                        break
+                    case "60":
+                        imagePath += "indicatorStatus60Flag16.svg"
+                        break
+                    case "70":
+                        imagePath += "indicatorStatus70Flag16.svg"
+                        break
+                    case "80":
+                        imagePath += "indicatorStatus80Flag16.svg"
+                        break
+                    case "90":
+                        imagePath += "indicatorStatus90Flag16.svg"
+                        break
+                    default:
+                        imagePath += "indicatorReleased16.svg"
+                }%>
+                <img src ="<%=imagePath%>" title="<%=releaseStatusToolTip%>" alt="<%=releaseStatusToolTip%>" class="aw-visual-indicator">
+<%      } ); } %>

@@ -1,0 +1,40 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.5" y1="-202.5" x2="47.5" y2="-249.5" gradientTransform="matrix(1, 0, 0, -1, 0, -202)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <polyline points="17.5 35.5 12.5 35.5 12.5 20.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="17.5" y1="26.5" x2="12.5" y2="26.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="9.5" y="14.5" width="6" height="6" transform="translate(-5 30) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <rect x="17.5031" y="23.4999" width="6" height="6" transform="translate(-5.9967 47.003) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <rect x="17.5031" y="32.5004" width="6" height="6" transform="translate(-14.9973 56.0036) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <polyline points="32.5 30.5 27.5 30.5 27.5 15.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="32.5" y1="21.5" x2="27.5" y2="21.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="24.5" y="9.499" width="6" height="6" transform="translate(15.001 39.999) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <rect x="24.5" y="9.5" width="6" height="6" transform="translate(15 40) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <rect x="32.5" y="18.5" width="6" height="6" transform="translate(14 57) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <rect x="32.5" y="27.5" width="6" height="6" transform="translate(5 66) rotate(-90)" fill="#a6a6a6" stroke="#6e6e6e"/>
+  <polyline points="4.5 9 4.5 4.5 9 4.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="18" x2="4.5" y2="12" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="27" x2="4.5" y2="21" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="9.003 43.5 4.503 43.5 4.503 39" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="9 43.5 4.5 43.5 4.5 39" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="18" y1="43.5" x2="12" y2="43.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="36" y1="43.5" x2="30" y2="43.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="27" y1="43.5" x2="21" y2="43.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="43.5 39 43.5 43.5 39 43.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="21" x2="43.5" y2="27" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="4.5" y1="36" x2="4.5" y2="30" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="30" x2="43.5" y2="36" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="43.5" y1="12" x2="43.5" y2="18" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="1"/>
+  <polyline points="39 4.5 43.5 4.5 43.5 9" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="30" y1="4.5" x2="36" y2="4.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="1"/>
+  <line x1="21" y1="4.5" x2="27" y2="4.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="12" y1="4.5" x2="18" y2="4.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="1"/>
+</svg>

@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "字符编码",
+    "uvCheckoutTitle": "签出",
+    "uvCheckoutDesc": "保留选择以防止其他用户更改。",
+    "cancelCheckoutTitle": "取消签出",
+    "Awp0CancelCheckoutDesc": "取消签出并还原任何更改。",
+    "uvCheckinTitle": "签入",
+    "Awp0CheckinDesc": "签入对象并保存更改。",
+    "uvCodeWordWrapTitle": "自动换行",
+    "uvCodeWordWrapDesc": "将长文本换成多行。"
+}

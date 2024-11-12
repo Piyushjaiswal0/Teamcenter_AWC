@@ -1,0 +1,73 @@
+{
+    "types": [{
+        "name": "Awp0Tile",
+        "properties": [{
+            "name": "awp0ContentValues"
+        }, {
+            "name": "awp0DisplayName"
+        }, {
+            "name": "awp0Params"
+        }, {
+            "name": "awp0Style"
+        }, {
+            "name": "awp0ObjectRef",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }, {
+            "name": "awp0TileTemplate",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }]
+    }, {
+        "name": "Awp0TileTemplate",
+        "properties": [{
+            "name": "awp0Action"
+        }, {
+            "name": "awp0ActionType"
+        }, {
+            "name": "awp0ContentNames"
+        }, {
+            "name": "awp0Icon"
+        }, {
+            "name": "awp0ThemeIndex"
+        }, {
+            "name": "awp0Sizes"
+        }, {
+            "name": "awp0IconSource",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }]
+    }, {
+        "name": "ImanRelation",
+        "properties": [{
+            "name": "primary_object"
+        }, {
+            "name": "secondary_object"
+        }, {
+            "name": "relation_type",
+            "modifiers": [{
+                "name": "withProperties",
+                "Value": "true"
+            }]
+        }]
+    }, {
+        "name": "Awp0GatewayTileRel",
+        "properties": [{
+            "name": "awp0Size"
+        }, {
+            "name": "awp0OrderNo"
+        }, {
+            "name": "awp0Group"
+        }, {
+            "name": "awp0SourceCollection"
+        }, {
+            "name": "awp0Protected"
+        }]
+    }]
+}

@@ -1,0 +1,178 @@
+{
+    "schemaVersion" : "1.0.0",
+    "actions":
+    {
+        "lifecycleHooks": {
+            "render": "render"
+        },
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "inUseList"
+        },
+        "getInUseList":
+        {
+            "actionType": "JSFunctionAsync",
+            "method": "createInUseList",
+            "inputData": {
+                "declModel": "{{data}}",
+                "selection": "{{ctx.selected}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "inUseListGenerated"
+                    }
+                ]
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Pka0DigitalAssetRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0ColorBookRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0GraphicAssetRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0SymbolRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0BarCodeRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0LogoRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0CopyAssetRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pka0PanelRevision",
+                        "properties": [
+                            {
+                                "name": "item_revision_id"
+                            },
+                            {
+                                "name": "revision_list"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "deps": "js/digitalAssetPanelService"
+        },
+        "checkForUpdates":
+        {
+            "actionType": "JSFunctionAsync",
+            "method": "checkForUpdates",
+            "inputData": {
+                "declModel": "{{data}}"
+            },
+            "deps": "js/digitalAssetPanelService"
+        }
+    },
+    "dataProviders": {
+        "inUseList": {
+            "action": "getInUseList",
+            "response": "{{data.inUse}}",
+            "commandsAnchor": "adobe_cell_commands_inUseList"
+        },
+        "updatesList": {
+            "action": "checkForUpdates",
+            "response": "{{data.updatesList}}",
+            "commandsAnchor": "adobe_cell_commands_updatesList"
+        }
+    },
+    "onEvent":
+    [
+        {
+            "eventId": "inUseListGenerated",
+            "action": "checkForUpdates"
+        }
+    ],
+    "i18n": {
+        "digitalAssetsInUseSectionTitle": [
+            "AdobeMessages"
+        ],
+        "imageInUseSectionTitle": [
+            "AdobeMessages"
+        ],
+        "adobeFile": [
+            "AdobeMessages"
+        ],
+        "digitalAssetsPanelTitle":
+        [
+            "AdobeMessages"
+        ],
+        "imagePanelTitle":
+        [
+            "AdobeMessages"
+        ],
+        "updatesSectionTitle":
+        [
+            "AdobeMessages"
+        ]
+    }
+}

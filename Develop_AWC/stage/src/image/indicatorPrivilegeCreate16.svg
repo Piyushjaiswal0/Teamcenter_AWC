@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <g>
+    <rect width="16" height="16" fill="#464646"/>
+    <rect x="1" y="1" width="14" height="14" fill="#fff"/>
+  </g>
+  <rect x="7.5" y="2" width="1" height="4" fill="#464646"/>
+  <rect x="7.5" y="10" width="1" height="4" fill="#464646"/>
+  <rect x="10" y="7.5" width="4" height="1" fill="#464646"/>
+  <rect x="2" y="7.5" width="4" height="1" fill="#464646"/>
+  <rect x="8.9374" y="4.3001" width="4.5251" height=".9999" transform="translate(-.1138 9.3255) rotate(-45)" fill="#464646"/>
+  <rect x="2.5375" y="10.7" width="4.5251" height=".9999" transform="translate(-6.5137 6.6745) rotate(-45)" fill="#464646"/>
+  <rect x="10.7" y="8.9374" width=".9999" height="4.5251" transform="translate(-4.6392 11.2) rotate(-45)" fill="#464646"/>
+  <rect x="4.3001" y="2.5375" width=".9999" height="4.5251" transform="translate(-1.9882 4.8) rotate(-45)" fill="#464646"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M58,12h-6V2H12v10H8c-3.8,0-8,3-8,7v27h8v-2H2V19c0-2.8,3.3-5,6-5h50c2.9,0,4,2.6,4,5v25h-6v2h8V19
+	C64,14.8,61.6,12,58,12z M14,4h36v8H14V4z"/>
+<rect x="48" y="21" class="aw-theme-iconHomeOutline" fill="#464646" width="8" height="2"/>
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M52,62H12V30h40V62z M14,60h36V32H14V60z"/>
+</svg>

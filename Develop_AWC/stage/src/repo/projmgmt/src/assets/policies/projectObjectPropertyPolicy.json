@@ -1,0 +1,61 @@
+{
+    "types": [{
+        "name": "POM_member",
+        "properties": [{
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "user"
+        }]
+    },{
+        "name": "GroupMember",
+        "properties": [
+            {
+                "name": "status"
+            }
+        ]
+    },{
+        "name": "User",
+        "properties": [
+            {
+                "name": "status"
+            }
+        ]
+    },{
+        "name": "Role",
+        "properties": [{
+            "name": "role_name"
+        }]
+    }, {
+        "name": "Group",
+        "properties": [{
+            "name": "name"
+        }]
+    }, {
+        "name": "TC_Project",
+        "properties": [{
+            "name": "project_id"
+        },{
+            "name": "object_name"
+        },{
+            "name": "project_desc"
+        },{        
+            "name" : "fnd0ProjectCategory"
+        },{
+            "name" : "is_active"
+        },{
+            "name" : "is_visible"
+        },{
+            "name" : "use_program_security"
+        },{
+            "name": "last_mod_date"
+        },{
+            "name": "creation_date"
+        },{
+            "name": "owning_user"
+        },{
+            "name": "is_modifiable"
+        }]
+    }]
+}

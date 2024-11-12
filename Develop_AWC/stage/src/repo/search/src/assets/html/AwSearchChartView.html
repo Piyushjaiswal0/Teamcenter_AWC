@@ -1,0 +1,19 @@
+<div class="aw-search-searchResultsChart">
+    <div class="aw-search-searchResultsChartTitle"
+        show-when="conditions.showChartByTitle">
+        {{subPanelContext.context.searchState.chartProvider.chartTitleString}}
+    </div>
+    <div class="aw-search-searchResultsChartSelector"
+        exist-when="conditions.showChartByDropDown">
+        <aw-listbox prop="data.chartListboxPropData"
+            list="subPanelContext.context.searchState.chartProvider.chartListboxListData.dbValue"
+            action="triggerSelectCategoryHeaderEvent"></aw-listbox>
+    </div>
+    <aw-column-chart class="aw-search-columnChart"
+        exist-when="conditions.defaultCategoryType && conditions.showChartsForCategory"
+        chart-provider="subPanelContext.context.searchState.chartProvider"></aw-column-chart>
+    <aw-include exist-when="!conditions.defaultCategoryType && conditions.showChartsForCategory" 
+        name="{{'AwSearchChart'+subPanelContext.context.searchState.chartProvider.category.type}}"
+        sub-panel-context="subPanelContext"
+    ></aw-include>
+</div>

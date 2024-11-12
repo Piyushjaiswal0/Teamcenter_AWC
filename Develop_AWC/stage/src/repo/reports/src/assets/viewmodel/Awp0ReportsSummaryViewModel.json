@@ -1,0 +1,23 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-command-sub-panel.directive",
+        "js/visible-when.directive",
+        "js/aw-init.directive"
+    ],
+    "actions": {
+
+    },
+    "data": {
+        "activeView": "Awp0ReportsSummaryExecution"
+    },
+    "onEvent": [
+
+    ],
+    "i18n": {
+        "inContextReportPanelTitle": [
+            "ReportMessages"
+        ]
+    }
+}

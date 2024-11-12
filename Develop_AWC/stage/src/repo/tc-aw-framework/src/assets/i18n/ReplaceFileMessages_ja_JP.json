@@ -1,0 +1,14 @@
+{
+    "replace": "置換",
+    "upload": "アップロード",
+    "chooseFromSystem": "システムからファイルを選択",
+    "replaceFileError": "以前のファイルが同じアイテムに存在するように、ファイルを同じ拡張子を用いて更新してください",
+    "replaceSuccessWithFileName": "\"{0}\"は置換されました。",
+    "replaceFailureWithFileName": "無効なファイル拡張子のため、名前付き参照としてデータセットにインポートファイルを追加できません",
+    "replaceNoValidTarget": "\"{0}\"には、置換する有効なファイルがありません。",
+    "replaceFileCommandTitle": "ファイルの置換",
+    "InvalidSelectedObject": "PLMDファイルを生成するために無効なデータセットまたはボリュームファイルオブジェクトが指定されました。有効なデータセットまたはボリュームファイルオブジェクトで再試行してください。",
+    "AsynUploadInProgress": "Teamcenterボリュームへのファイルの非同期アップロードは現在実行中です。",
+    "PlatformNotSupported": "このプラットフォームで、非同期の置換オペレーションはサポートされていません: 同期に切替えて、置換してください",
+    "Awp0ReplaceDatasetDesc": "選択したファイルをデバイスからの新しいもので置換します。"
+}

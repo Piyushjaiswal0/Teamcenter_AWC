@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "홈",
+    "pinObjectCommandTitle": "홈에 고정",
+    "unPinObjectCommandTitle": "홈에서 고정 해제",
+    "pinObjectFailed": "고정 실패.",
+    "unPinObjectFailed": "고정 해제가 실패했습니다.",
+    "tileUpdateFailedMsg": "타일 업데이트에 실패했습니다.",
+    "pinObjectFailedNoGateway": "홈 액세스에 문제가 있습니다.",
+    "pinObjectMultipleObjectError": "한 번에 하나의 개체만 고정할 수 있습니다. 추가 개체는 무시됩니다.",
+    "unpinTileFailed": "고정 해제가 실패했습니다.",
+    "homeFolderTitle": "폴더",
+    "Awp0ShowHomeFolderDesc": "홈 폴더를 엽니다.",
+    "Awp0PinObjectDesc": "선택 항목을 홈 페이지에 타일로 추가합니다."
+}

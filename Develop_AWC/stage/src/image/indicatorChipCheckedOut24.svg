@@ -1,0 +1,6 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+   <circle cx="12" cy="12" r="11.5" fill="#f1f0ef" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="14.473 8.5 17.5 8.5 17.5 17.5 6.5 17.5 6.5 8.5 9.431 8.5" fill="none" stroke="#464646" stroke-linecap="square" stroke-miterlimit="10"/>
+  <line x1="12" y1="3.805" x2="12" y2="11.995" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="9.989 5.537 12.032 3.707 14.011 5.537" fill="none" stroke="#464646" stroke-linecap="square" stroke-miterlimit="10"/>
+</svg>

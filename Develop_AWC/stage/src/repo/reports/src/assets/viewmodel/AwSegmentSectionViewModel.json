@@ -1,0 +1,73 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "checkboxEnableProp": {
+            "dbValue": true
+        },
+        "bomExpansionCheckbox": {
+            "displayName": "{{i18n.expandStructureLabel}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "dbValue": "false",
+            "dispValue": "{{i18n.expandStructureLabel}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awSegmentSectionRenderFunction",
+            "deps": "js/AwSegmentSectionService"
+        },
+        "actionClearRelationSegment": {
+            "actionType": "JSFunction",
+            "method": "clearRelationSegment",
+            "inputData": {
+                "seg": "{{props.traverseSegment}}",
+                "repContext": "{{subPanelContext.reportsState}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "populateSegmentDataWithBomInfo": {
+            "actionType": "JSFunction",
+            "method": "populateSegmentDataWithBomInfo",
+            "inputData": {
+                "reportsState": "{{props.subPanelContext.reportsState}}",
+                "checked": "{{props.traverseSegment.props.bomExpansionCheckbox.value}}"
+            },
+            "deps": "js/configureItemReportService"
+        }
+    },
+    "i18n": {
+        "expandStructureLabel":[ "ReportChartMessages" ]
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "traverse-segment": {
+            "type": "object"
+        },
+        "traverse-direction": {
+            "type": "object"
+        },
+        "traverse-relation": {
+            "type": "object"
+        },
+        "traverse-destination": {
+            "type": "object"
+        }
+    },
+    "messages": {},
+    "conditions": {
+        "addBomExpansionValid": {
+            "expression": "props.traverse-segment.props.fnd0Direction.dbValue && data.checkboxEnableProp.dbValue"
+        },
+        "bomExpansionCheckboxNotChecked": {
+            "expression": "!data.bomExpansionCheckbox.dbValue"
+        }
+    }
+}

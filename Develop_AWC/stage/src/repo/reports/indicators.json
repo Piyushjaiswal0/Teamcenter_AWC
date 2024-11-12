@@ -1,0 +1,19 @@
+{
+  "fx_reportdefinition_required": {
+    "iconName": "Shared",
+    "tooltip": {
+      "showPropDisplayName": true,
+      "propNames": [
+        "Fnd0reports_SharedWith"
+      ]
+    },
+    "modelTypes": [
+      "ReportDefinition"
+    ],
+    "conditions": {
+      "Fnd0Applicable_Assignment": {
+        "$notNull": true
+      }
+    }
+  }
+}

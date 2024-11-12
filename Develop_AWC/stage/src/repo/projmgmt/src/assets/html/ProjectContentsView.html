@@ -1,0 +1,13 @@
+<aw-show-object-page header-title="subPanelContext.showObjectContext.displayName" browser-sub-title="subPanelContext.showObjectContext.displayName">
+    <aw-show-object-header headerVMO="subPanelContext.openedObject"
+        header-data="subPanelContext.headerData"
+        header-props="subPanelContext.showObjectContext.xrtViewModel.data._headers">
+        <h1 data-locator='aw-layout-locationTitle' class='aw-layout-locationTitle aw-layout-flexRow'>{{subPanelContext.showObjectContext.displayName}}</h1>
+        <aw-global-search></aw-global-search>
+        <aw-logo></aw-logo>
+    </aw-show-object-header>
+    <aw-tab-container tab-container-model="subPanelContext.showObjectContext.subLocationTabs"
+        callback="subPanelContext.showObjectContext.api" tab-set-id="primary">
+    </aw-tab-container>
+    <aw-standard-sublocation sub-panel-context="data._sublocation" search-state="data.searchState" provider="data._sublocation"></aw-standard-sublocation>
+</aw-show-object-page>

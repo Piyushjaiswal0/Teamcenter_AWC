@@ -1,0 +1,22 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "clearSessionStorage":{
+            "actionType": "JSFunction",
+            "method": "updateSessionStorage",
+            "inputData": {
+                "selectedReport": "null"
+            },
+            "deps": "js/showReportBuilderReportsService"
+        }
+    },
+    "data": {},
+    "dataProviders": {},
+    "functions": {},
+    "preferences": [],
+    "lifecycleHooks": {
+        "onMount" : "clearSessionStorage"
+    },
+    "onEvent": [ ],
+    "i18n": {}
+}

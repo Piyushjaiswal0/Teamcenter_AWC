@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "簽出",
+    "uvCheckinTitle": "簽入",
+    "uvCancelCheckoutTitle": "取消簽出",
+    "previousButtonTitle": "上一個",
+    "nextButtonTitle": "下一個",
+    "noObjectSelectionMessage": "選取要檢視的物件。",
+    "fullViewModeTitle": "全屏",
+    "uvWordWrapTitle": "自動換列",
+    "exitFullViewModeTitle": "離開全屏",
+    "aw_viewerRightSide": "檢視器右側",
+    "aw_universalViewerLink": "通用檢視器連結",
+    "uvCheckoutDesc": "保留選取以防止其他使用者變更。",
+    "fullViewModeDesc": "切換到全屏視圖。",
+    "uvWordWrapDesc": "將長文字換成多列。",
+    "Awp0ShowObjectForUVpDesc": "在目前視窗中開啟該檔案。",
+    "Awp0ViewFileForUVDesc": "下載檔案。"
+}

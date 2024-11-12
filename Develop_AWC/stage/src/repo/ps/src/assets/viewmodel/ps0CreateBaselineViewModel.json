@@ -1,0 +1,255 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "initial": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getBaselineTemplateList"
+                },
+                {
+                    "action": "updateHeaderDataForBaselinePanel"
+                }
+            ]
+        },
+        "createBaseline": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateRunInBackgroundFlag"
+                },
+                {
+                    "action": "saveAsBaseline"
+                }
+            ]
+        },
+        "getBaselineTemplateList": {
+            "actionType": "JSFunction",
+            "method": "getBaselineTemplateList",
+            "inputData": {
+                "input": "{{ctx.preferences.Baseline_release_procedures}}"
+            },
+            "outputData": {
+                "baselineTemplateList": ""
+            },
+            "deps": "js/createBaselineCommandPanel"
+        },
+        "saveAsBaseline": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2017-06-RequirementsManagement",
+            "method": "createBaseline",
+            "inputData": {
+                "input": [ {
+                    "objectToBaseline": {
+                        "uid": "{{ctx.selected.uid}}",
+                        "type": "{{ctx.selected.type}}"
+                    },
+                    "baselineRevisionId": "",
+                    "baselineDescription": "{{data.baselineDescription.dbValue}}",
+                    "baselineReleaseProcedureName": "{{data.baselineTemplate.dbValue}}",
+                    "baselineJobName": "BaselineJobName",
+                    "baselineLabelName": "",
+                    "baselineJobDescription": "baselineJobDescription",
+                    "isDryRun": false,
+                    "isPreciseBaseline": "{{data.baselinePrecise.dbValue}}"
+                } ]
+            },
+            "outputData": {
+                "newObject": "{{dataParseDefinitions:convertBaselinedObject}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "primaryWorkarea.reset",
+                        "condition": "!data.runInBackground.dbValue && ctx.sublocation.clientScopeURI === 'Awp0ObjectNavigation'"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                        "message": "notificationForBaselineCreationMsg",
+                        "condition": "data.runInBackground.dbValue"
+                    },
+
+                    {
+                        "message": "notificationForBaselineCreationSyncMsg",
+                        "condition": "!data.runInBackground.dbValue"
+                    }
+                ],
+                "failure": [ {
+                    "message": "createBaselineFailure"
+                } ]
+            },
+            "deps": "js/createBaselineCommandPanel"
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "condition": "!data.isDestroyed()",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        },
+
+        "updateRunInBackgroundFlag": {
+            "actionType": "JSFunction",
+            "method": "updatePartialCtx",
+            "inputData": {
+                "name": "preferences.Create_baseline_in_sync_mode",
+                "value": [ "{{(!data.runInBackground.dbValue).toString()}}" ]
+            },
+            "deps": "js/appCtxService"
+        },
+        "updateHeaderDataForBaselinePanel": {
+            "actionType": "JSFunction",
+            "method": "updateHeaderDataForBaselinePanel",
+            "inputData": {
+                "occContext": "{{props.subPanelContext.occContext}}"
+            },
+            "outputData": {
+                "fromString": ""
+            },
+            "deps": "js/createBaselineCommandPanel"
+        },
+        "updatePreciseBaselineFields": {
+            "actionType": "JSFunction",
+            "method": "updatePreciseBaselineFields",
+            "inputData": {
+                "input": "{{data.baselinePrecise}}"
+            },
+            "outputData": {
+                "baselinePrecise": ""
+            },
+            "deps": "js/createBaselineCommandPanel"
+        },
+        "updateRunInBackgroundField": {
+            "actionType": "JSFunction",
+            "method": "updateRunInBackgroundField",
+            "inputData": {
+                "input": "{{data.runInBackground}}"
+            },
+            "outputData": {
+                "runInBackground": ""
+            },
+            "deps": "js/createBaselineCommandPanel"
+        }
+
+    },
+
+    "data": {
+        "baselineTemplate": {
+            "displayName": "{{i18n.baselineTemplate}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "hasLov": true
+        },
+        "baselineDescription": {
+            "type": "STRING",
+            "displayName": "{{i18n.datasetDesc}}"
+        },
+        "baselinePrecise": {
+            "type": "BOOLEAN",
+            "displayName": "{{i18n.preciseBaseline}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "runInBackground": {
+            "type": "BOOLEAN",
+            "displayName": "{{i18n.runInBackground}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        }
+    },
+    "dataParseDefinitions": {
+        "convertBaselinedObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "created[0]",
+            "operationType": "CREATE"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onMount": "initial",
+        "onUpdate": [ {
+                "action": "updatePreciseBaselineFields",
+                "observers": [ "viewModel.ctx.preferences.Baseline_precise_bvr" ]
+            },
+            {
+                "action": "updateRunInBackgroundField",
+                "observers": [ "viewModel.ctx.preferences.Create_baseline_in_sync_mode" ]
+            }
+        ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "onEvent": [ {
+        "eventId": "primaryWorkArea.selectionChangeEvent",
+        "action": "closePanel"
+    } ],
+    "messages": {
+        "notificationForBaselineCreationMsg": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.notificationForBaselineCreation}}",
+            "messageTextParams": [
+                "{{data.fromString}}"
+            ]
+        },
+        "notificationForBaselineCreationSyncMsg": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.notificationForBaselineCreationSync}}",
+            "messageTextParams": [
+                "{{data.newObject.props.object_string.uiValues[0]}}"
+            ]
+        },
+        "createBaselineFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "conditions": {
+        "isBaselineTemplateSelected": {
+            "expression": "data.baselineTemplate.dbValue.length > 0"
+        },
+        "isClientDispatcherInstalled": {
+            "expression": "ctx.preferences.DISPATCHER_CLIENT_INSTALLED && ctx.preferences.DISPATCHER_CLIENT_INSTALLED[0] !== 'false'"
+        }
+    },
+    "i18n": {
+        "revisionFrom": [
+            "PSConstants"
+        ],
+        "baselineTemplate": [
+            "PSConstants"
+        ],
+        "datasetDesc": [
+            "awAddDirectiveMessages"
+        ],
+        "preciseBaseline": [
+            "PSConstants"
+        ],
+        "notificationForBaselineCreation": [
+            "PSMessages"
+        ],
+        "notificationForBaselineCreationSync": [
+            "PSMessages"
+        ],
+        "ps0CreateBaseline": [
+            "PSConstants"
+        ],
+        "ps0CreateBaselineButtonTitle": [
+            "PSConstants"
+        ],
+        "runInBackground": [
+            "PSConstants"
+        ]
+    }
+}

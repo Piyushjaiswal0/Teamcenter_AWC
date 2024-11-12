@@ -1,0 +1,42 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "board",
+                "noBreadCrumb": true
+            },
+            "priority": 0,
+            "label": "{{ctx.state.params.title}}",
+            "clientScopeURI": "Awp0ReportBuilder",
+            "nameToken": "com.siemens.splm.reports:showReport",
+            "viewModes": {
+                "ImageView": {
+                    "primaryWorkArea": "image",
+                    "secondaryWorkArea": false
+                }
+            },
+            "viewBase": "showReport",
+            "defaultDisplayMode": "ImageView",
+            "context": {
+                "search":{
+                    "hideInContentSearchBox":true
+                }
+            }
+        },
+        "reportsContext": {
+            "initialValues": {
+                "sourceObjects": ""
+            },
+            "meta": {
+                "sourceObjects": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        },
+        "headertitleValue": "{{ctx.state.params.title}}"
+    },
+    "actions":{
+    }
+}

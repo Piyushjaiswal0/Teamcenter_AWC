@@ -1,0 +1,122 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-checkbox.directive",
+        "js/aw-button.directive",
+        "js/aw-form.directive",
+        "js/aw-logo.directive",
+        "js/aw-scrollpanel.directive"    
+    ],
+
+    "actions":
+    {
+        "NextPage": {
+            "actionType": "JSFunction",
+            "method": "continueToNextPage",
+            "deps": "js/geographyData.service",
+            "events": {
+                
+            }
+        },
+        "signOut": {
+            "actionType": "JSFunction",
+            "method": "terminateSession",
+            "deps": "js/sessionManager.service",
+            "events": {
+            }
+        },
+        "continueSignin": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2018-11-OrganizationManagement",
+            "method": "recordUserConsent",
+            "inputData":{
+                "userConsent":"{{data.agreeCheck.dbValue}}"
+            },
+            "events":{
+                "success":
+                [
+                    {
+                        "name":"nextPage"
+                    }
+                ]
+            }
+            
+        },
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2018-11-OrganizationManagement",
+            "method": "getUserConsentStatement",
+            "headerState": {
+                "unloadObjects": true
+            },
+            "inputData":{
+            },
+            "outputData": {
+                "userConsentStatement":"{{function:setConsentStatement}}"
+            },
+            "events": {
+                
+            },
+            "deps": "js/gdprConsentData.service"
+        }
+
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    },
+
+    "functions":
+    {
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "nextPage",
+            "action": "NextPage"
+        }
+    ],
+
+    "data":
+    {
+        "consentStatement":{},
+        "agreeCheck": {
+            "displayName": "{{i18n.GDPR_CHECKBOX_LABEL}}",
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "dbValue": "false",
+            "dispValue": "{{i18n.GDPR_CHECKBOX_LABEL}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        }
+        
+    },
+
+     "messages":
+    {
+        
+    },
+
+    "conditions":
+    {
+        
+    },
+
+    "i18n":
+    {
+        "BRAND_NAME":["geographyMessages"],
+        "SIGN_OUT_TEXT": ["geographyMessages"],
+        "CONTINUE_TEXT": ["geographyMessages"],
+        "GEOGRAPHY_SECTION_TITLE" : ["geographyMessages"],
+        "GEOGRAPHY_SECTION_PROMPT" : ["geographyMessages"],
+        "CONFIDENTIAL_SECTION_TITLE" : ["geographyMessages"],
+        "CONFIDENTIAL_CHECKBOX_LABEL" : ["geographyMessages"],
+        "GDPR_CHECKBOX_LABEL" : ["geographyMessages"],
+        "INITIAL_LIST_VALUE" : ["geographyMessages"]
+    },
+
+     "dataProviders":
+    {
+
+    }
+}

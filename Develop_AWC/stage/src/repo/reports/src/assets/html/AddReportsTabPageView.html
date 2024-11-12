@@ -1,0 +1,15 @@
+<aw-panel-body>
+    <aw-panel-section caption="i18n.reportTemplates" collapsed="disabled">
+        <aw-widget prop="data.reportsList"></aw-widget>
+    </aw-panel-section>
+    <aw-command-panel-section caption="i18n.item" anchor="data.itemCommands" context="{data: data, searchState: props.subPanelContext.searchState, reportsContext: props.subPanelContext.reportsContext, selectedObjects: props.subPanelContext.reportsContext.selectedObjects}" visible-when="conditions.sourceItemAdd" collapsed="disabled">
+        <aw-list dataprovider="data.dataProviders.itemProvider">
+            <aw-default-cell vmo="item"></aw-default-cell>
+        </aw-list>
+    </aw-command-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="addSelectedReportToDashboard" enable-when="conditions.isAddEnabled" size="auto">
+        <aw-i18n>i18n.addDashboardReportWithPanel</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

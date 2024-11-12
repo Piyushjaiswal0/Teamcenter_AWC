@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Codage de caractères",
+    "uvCheckoutTitle": "Bloquer",
+    "uvCheckoutDesc": "Réserver la sélection pour empêcher d'autres utilisateurs d'effectuer des modifications.",
+    "cancelCheckoutTitle": "Annuler le blocage",
+    "Awp0CancelCheckoutDesc": "Annuler le blocage et rétablir les modifications éventuelles.",
+    "uvCheckinTitle": "Libérer",
+    "Awp0CheckinDesc": "Libérer l'objet et sauvegarder les modifications.",
+    "uvCodeWordWrapTitle": "Renvoi à la ligne",
+    "uvCodeWordWrapDesc": "Enrouler les textes longs sur plusieurs lignes."
+}

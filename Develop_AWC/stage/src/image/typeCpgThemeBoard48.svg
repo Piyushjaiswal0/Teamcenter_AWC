@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="0.5" y1="0.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.228" stop-color="#fafafa"/>
+      <stop offset="0.488" stop-color="#ededed"/>
+      <stop offset="0.762" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="3.864" fill="url(#New_Gradient_Swatch_2)"/>
+  <rect x="17.5" y="2.5" width="28" height="9" fill="#fff"/>
+  <rect x="17.5" y="2.5" width="7" height="6.5" fill="#8cc3d2"/>
+  <rect x="31.5" y="2.5" width="7" height="6.5" fill="#828282"/>
+  <rect x="24.5" y="2.5" width="7" height="6.5" fill="#3c91af"/>
+  <rect x="38.5" y="2.5" width="7" height="6.5" fill="#bebebe"/>
+  <rect x="17.5" y="2.5" width="7" height="9" fill="none" stroke="#6e6e6e"/>
+  <rect x="31.5" y="2.5" width="7" height="9" fill="none" stroke="#6e6e6e"/>
+  <rect x="24.5" y="2.5" width="7" height="9" fill="none" stroke="#6e6e6e"/>
+  <rect x="38.5" y="2.5" width="7" height="9" fill="none" stroke="#6e6e6e"/>
+  <polyline points="25.5 20.5 27.5 14.5 29.5 20.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="26.5" y1="18.512" x2="28.5" y2="18.512" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31.5,14.5H33A1.5,1.5,0,0,1,34.5,16v0A1.5,1.5,0,0,1,33,17.5H31.5a0,0,0,0,1,0,0v-3A0,0,0,0,1,31.5,14.5Z" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31.5,17.5H33A1.5,1.5,0,0,1,34.5,19v0A1.5,1.5,0,0,1,33,20.5H31.5a0,0,0,0,1,0,0v-3a0,0,0,0,1,0,0Z" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M39.5,19h0A1.5,1.5,0,0,1,38,20.5h0A1.5,1.5,0,0,1,36.5,19V16A1.5,1.5,0,0,1,38,14.5h0A1.5,1.5,0,0,1,39.5,16h0" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="25.5" y1="23.5" x2="44.5" y2="23.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="25.5" y1="25.5" x2="44.5" y2="25.5" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="3.5" y1="6" x2="14.5" y2="6" fill="none" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="3.5" y="28.5" width="14" height="16" transform="translate(21 73) rotate(180)" fill="#fff" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="5" y="30" width="11" height="12" transform="translate(21 72) rotate(180)" fill="#828282"/>
+  <rect x="17.5" y="28.5" width="14" height="16" transform="translate(44.332 75.732) rotate(-172.946)" fill="#fff" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="19.061" y="30.004" width="11" height="12" transform="translate(44.516 74.751) rotate(-172.946)" fill="#8cc3d2"/>
+  <rect x="5.5" y="15.5" width="14" height="16" transform="translate(31.227 42.416) rotate(163.297)" fill="#fff" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="6.856" y="17.021" width="11" height="12" transform="translate(30.808 41.52) rotate(163.297)" fill="#3c91af"/>
+</svg>

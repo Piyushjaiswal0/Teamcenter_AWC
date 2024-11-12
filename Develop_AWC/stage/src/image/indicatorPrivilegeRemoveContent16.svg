@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M14,7.7618V0H0V14H7.7618c.8083,1.2047,2.1815,2,3.7382,2,2.4814,0,4.5-2.0186,4.5-4.5,0-1.5567-.7953-2.9299-2-3.7382Z" fill="#464646"/>
+  <circle cx="11.5" cy="11.5" r="3.5" fill="#fff"/>
+  <rect x="10" y="5" width="3" height="2" fill="#dcdcdc"/>
+  <rect x="6" y="5" width="3" height="2" fill="#dcdcdc"/>
+  <rect x="1" y="5" width="4" height="2" fill="#dcdcdc"/>
+  <rect x="1" y="8" width="4" height="2" fill="#dcdcdc"/>
+  <path d="M6,8h2.7065c-.6479,.5184-1.1462,1.2039-1.4301,2h-1.2764v-2Z" fill="#dcdcdc"/>
+  <rect x="1" y="1" width="12" height="3" fill="#fff"/>
+  <rect x="1" y="11" width="4" height="2" fill="#dcdcdc"/>
+  <path d="M6,13v-2h1.0505c-.0187,.1663-.0505,.3288-.0505,.5,0,.5285,.1083,1.0285,.2764,1.5h-1.2764Z" fill="#dcdcdc"/>
+  <rect x="9" y="11" width="5" height="1" fill="#464646"/>
+</svg>

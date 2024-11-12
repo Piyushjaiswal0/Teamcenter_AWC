@@ -1,0 +1,19 @@
+<aw-command-panel caption="i18n.ps0CreateBaseline">
+    <aw-panel-header>
+        <aw-panel-header-section header-section-label="i18n.revisionFrom" header-section-element="{{data.fromString}}"></aw-panel-header-section>
+    </aw-panel-header>
+
+    <aw-panel-body>
+        <aw-break></aw-break>
+        <aw-listbox prop="data.baselineTemplate" list="data.baselineTemplateList" exist-when="data.baselineTemplateList"></aw-listbox>
+        <aw-widget prop="data.baselineDescription"></aw-widget>
+        <aw-checkbox prop="data.baselinePrecise"></aw-checkbox>
+        <aw-checkbox prop="data.runInBackground" visible-when="conditions.isClientDispatcherInstalled"></aw-checkbox>
+    </aw-panel-body>
+
+    <aw-panel-footer>
+        <aw-button size="auto" action="createBaseline" visible-when="conditions.isBaselineTemplateSelected">
+            <aw-i18n>i18n.ps0CreateBaselineButtonTitle</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

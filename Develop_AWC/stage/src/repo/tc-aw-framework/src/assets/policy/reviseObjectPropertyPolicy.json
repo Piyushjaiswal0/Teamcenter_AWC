@@ -1,0 +1,50 @@
+{
+    "types": 
+    [
+        {
+            "name": "WorkspaceObject",
+            "properties": 
+            [
+                {
+                    "name": "object_desc"
+                },
+
+                {
+                    "name": "object_name"
+                }
+            ]
+        },
+
+        {
+            "name": "ItemRevision",
+            "properties": 
+            [
+                {
+                    "name": "items_tag",
+                    "modifiers": 
+                    [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                },
+
+                {
+                    "name": "item_revision_id"
+                }
+            ]
+        },
+
+        {
+            "name": "ItemRevisionRevI",
+            "modifiers": 
+            [
+                {
+                    "name": "includeIsModifiable",
+                    "Value": "true"
+                }
+            ]
+        }
+    ]
+}

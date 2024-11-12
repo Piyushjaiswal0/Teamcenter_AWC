@@ -1,0 +1,117 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "savedQuery": {
+            "displayName": "{{props.subPanelContext.selected.props.savedsearch_query.uiValue}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "criteriaLabel": {
+            "propertyDisplayName": "{{i18n.savedQuery}}",
+            "renderingHint": "objectlink"
+        },
+        "savedSearchName": {
+        },
+        "savedSearchCriteria": {
+            "displayName": "{{i18n.searchFiltersTitle}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "searchFiltersLabel": {
+            "propertyDisplayName": "{{i18n.searchFiltersTitle}}",
+            "renderingHint": "objectlink"
+        },
+        "shareSavedSearch": {
+        }
+    },
+    "actions": {
+        "initializeSavedQuery": {
+            "actionType": "JSFunction",
+            "method": "initializeReviewAndExecuteSavedQuery",
+            "inputData": {
+                "savedSearchObject": "{{ctx.selected}}",
+                "savedQuery": "{{data.savedQuery}}",
+                "updateSavedSearchAttributeValues": true
+            },
+            "outputData": {
+                "savedQuery": "savedQuery",
+                "savedSearchObject": "savedSearchObject"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        },
+        "getAttributeModelObjectForSavedQuery": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-AdvancedSearch",
+            "method": "getSelectedQueryCriteria",
+            "inputData": {
+                "selectedQuery": {
+                    "uid": "{{ctx.selected.props.savedsearch_query.dbValue}}",
+                    "type": "ImanQuery"
+                }
+            },
+            "outputData": {
+                "advSavedSearchModelObject": "{{function:updateSearchAttributesWithSelectedQuery}}"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "getSavedSearchObjectParams": {
+            "actionType": "JSFunction",
+            "method": "getSavedSearchObjectParams",
+            "inputData": {
+                "savedSearchObject": "{{ctx.selected}}",
+                "advSavedSearchModelObject": "{{data.advSavedSearchModelObject}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "savedSearchName": "savedSearchName",
+                "savedSearchCriteria": "savedSearchCriteria",
+                "shareSavedSearch": "shareSavedSearch"
+            },
+            "deps": "js/Awp0SaveSearchService"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initializeSavedQuery"
+                },
+                {
+                    "action": "getAttributeModelObjectForSavedQuery"
+                },
+                {
+                    "action": "getSavedSearchObjectParams",
+                    "condition": "data.advSavedSearchModelObject && data.advSavedSearchModelObject.props"
+                }
+            ]
+        },
+        "changeTab": {
+            "actionType": "JSFunction",
+            "method": "changeTab",
+            "inputData": {
+                "0": "secondary",
+                "1": "tc_xrt_SearchFolderRule"
+            },
+            "deps": "js/tabRegistry.service"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "initialize",
+            "observers": [
+                "props.subPanelContext.selected.uid"
+            ]
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n":
+    {
+        "savedQuery": [ "SearchMessages" ],
+        "searchFiltersTitle": [ "SearchMessages" ],
+        "savedSearchCriteria": [ "SearchMessages" ],
+        "referencingSavedQuery": [ "SearchMessages" ]
+    }
+}
+

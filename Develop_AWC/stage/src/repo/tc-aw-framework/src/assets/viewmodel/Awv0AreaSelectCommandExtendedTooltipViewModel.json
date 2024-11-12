@@ -1,0 +1,25 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "commandTitle": {
+            "dispValue": "{{i18n.AreaSelectTitle}}"
+        },
+        "commandDesc1": {
+            "dispValue": "{{i18n.Awv0AreaSelectDesc1}}"
+        },
+        "commandDesc2": {
+            "dispValue": "{{i18n.Awv0AreaSelectDesc2}}"
+        }
+    },
+    "i18n": {
+        "AreaSelectTitle": [
+            "Awv0threeDViewerMessages"
+        ],
+        "Awv0AreaSelectDesc1": [
+            "Awv0threeDViewerMessages"
+        ],
+        "Awv0AreaSelectDesc2": [
+            "Awv0threeDViewerMessages"
+        ]
+    }
+}

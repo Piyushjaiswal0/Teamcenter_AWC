@@ -1,0 +1,133 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "searchState": {
+            "initialValues": {
+                "autoApplyFilters": true,
+                "criteria": {
+                    "searchString": ""
+                },
+                "label": {
+                    "source": "/i18n/SearchMessages",
+                    "key": "resultsText"
+                },
+                "provider": "Awp0OrgTreeProvider",
+                "hideFilters":true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+
+                } ]
+            }
+        }
+    },
+    "selectionModels": {
+        "orgTreeSelectionModel": {
+            "selectionMode": "single"
+        }
+    },
+    "actions": {
+        "handleSelectionChange": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateDuidsParamOnSelection"
+                },
+                {
+                    "action": "closePanel"
+                }
+            ]
+        },
+        "updateDuidsParamOnSelection": {
+            "actionType": "JSFunction",
+            "method": "updateDuidsParamOnSelection",
+            "inputData": {
+                "context": "{{props.subPanelContext}}"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "clearSelection": {
+            "actionType": "JSFunction",
+            "method": "clearSelection",
+            "inputData": {
+                "selectionData": "{{props.subPanelContext.selectionModel}}"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "setSelectionOnLoad": {
+            "actionType": "JSFunction",
+            "method": "setSelectionOnLoad",
+            "inputData": {
+                "selectionData": "{{props.subPanelContext.selectionData}}",
+                "selectionModel": "{{props.subPanelContext.selectionModel}}"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "reloadOrgTree": {
+            "actionType": "JSFunction",
+            "method": "reloadOrgTree",
+            "inputData": {
+                "selectionData": "{{props.subPanelContext.selectionData}}",
+                "eventData": "{{data.eventData}}",
+                "selectionModel": "{{props.subPanelContext.selectionModel}}"
+            },
+            "outputData":{
+                "treeNode":""
+            },
+            "events":{
+                "success":[
+                    {
+
+                        "name": "awOrgTree.treeNodeCreated",
+                        "eventData": {
+                            "treeNodeSelection": "{{data.treeNode}}"
+                        }
+
+                    }
+                ]
+            },
+            "deps": "js/userMgmtService"
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "OrgTree.reloadOrgTree",
+            "cacheEventData": true,
+            "action": "reloadOrgTree"
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "setSelectionOnLoad",
+        "onUpdate": [
+            {
+                "action": "handleSelectionChange",
+                "observers": [
+                    "props.subPanelContext.selectionData"
+                ]
+            }
+        ],
+        "onUnmount": "clearSelection"
+    }
+}

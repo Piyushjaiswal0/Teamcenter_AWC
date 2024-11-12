@@ -1,0 +1,30 @@
+{
+    "ctx": {
+        "objectNavContext": {
+            "parser": {
+                "method": "getObjectNavContext",
+                "deps": "js/objectNavigationService"
+            }
+        }
+    },
+    "props": {
+        "parent-sub-panel-context": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "obj-nav-state": {
+            "type": "object"
+        },
+        "base-selection": {
+            "type": "object"
+        },
+        "selection-model": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        }
+    }
+}

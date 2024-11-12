@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.5" y1="0.5" x2="13.5" y2="13.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="12.5" y1="16.5" x2="25.5" y2="29.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="18.5" y1="32.5" x2="31.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="26.161" y1="26.161" x2="43.839" y2="43.839" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset="0.177" stop-color="#6badc2"/>
+      <stop offset="0.464" stop-color="#539db4"/>
+      <stop offset="0.822" stop-color="#2d839d"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+  <polyline points="7 13.5 7 39 18.5 39" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="0.5" y="0.5" width="13" height="13" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <line x1="7" y1="23" x2="12.5" y2="23" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="12.5" y="16.5" width="13" height="13" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <rect x="18.5" y="32.5" width="13" height="13" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+  <circle cx="35" cy="35" r="12.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+  <path d="M35,43.5A7.508,7.508,0,0,1,27.5,36V34a7.5,7.5,0,0,1,15,0v2.5H30.528A4.5,4.5,0,0,0,39.1,37.85l2.734,1.233A7.5,7.5,0,0,1,35,43.5Zm-4.472-10h8.944a4.5,4.5,0,0,0-8.944,0Z" fill="#fff" stroke="#147391"/>
+</svg>

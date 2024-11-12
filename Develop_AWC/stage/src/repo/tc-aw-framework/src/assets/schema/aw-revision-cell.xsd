@@ -1,0 +1,10 @@
+<declUI:schema xmlns:declUI="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns:xsB="decl-schema-common"  >
+  <declUI:import namespace="decl-schema-common" schemaLocation="decl-schema-common.xsd"/>
+  <declUI:element name="aw-revision-cell">
+    <declUI:complexType mixed="true">
+      <declUI:group ref="xsB:addElement"/>
+      <declUI:attribute name="vmo" type="declUI:string" use="required"/>
+      <declUI:attribute name="i18n" type="declUI:string" use="optional"/>
+    </declUI:complexType>
+  </declUI:element>
+</declUI:schema>

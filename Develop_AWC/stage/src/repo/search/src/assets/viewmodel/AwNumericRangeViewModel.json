@@ -1,0 +1,73 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "startValue": {
+            "displayName": "",
+            "type": "DOUBLE",
+            "isRequired": "false",
+            "isEditable": "true",
+            "requiredText": "Start",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "endValue": {
+            "displayName": "",
+            "type": "DOUBLE",
+            "isRequired": "false",
+            "isEditable": "true",
+            "requiredText": "End",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awNumericRangeRenderFunction",
+            "deps": "js/AwNumericRangeService"
+        },
+        "initializeDefaultNumericRangeValues": {
+            "actionType": "JSFunction",
+            "method": "initializeDefaultNumericRangeValues",
+            "inputData": {
+                "defaultStartValue": "{{props.defaultStartValue}}",
+                "startValue": "{{data.startValue}}",
+                "defaultEndValue": "{{props.defaultEndValue}}",
+                "endValue": "{{data.endValue}}"
+            },
+            "outputData": {
+                "startValue": "startValue",
+                "endValue": "endValue"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "i18n": {
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initializeDefaultNumericRangeValues"
+    },
+    "props": {
+        "numericRangeAction": {
+            "type": "object"
+        },
+        "iconId": {
+            "type": "object"
+        },
+        "iconClass": {
+            "type": "object"
+        },
+        "separatorClass": {
+            "type": "object"
+        },
+        "defaultStartValue": {
+            "type": "object"
+        },
+        "defaultEndValue": {
+            "type": "object"
+        }
+    },
+    "messages": {},
+    "conditions": {}
+}

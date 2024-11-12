@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="19.5" y1="10.5" x2="45.5" y2="36.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="14.7028" cy="157.0405" r="8.2545" gradientTransform="translate(13.3266 -107.808) scale(0.7891 0.7911)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.3654" stop-color="#539eb6"/>
+      <stop offset="1" stop-color="#147391"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="28.6422" cy="157.0405" r="8.2545" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="14.7028" cy="170.9444" r="8.2545" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="28.6422" cy="170.9444" r="8.2545" xlink:href="#radial-gradient"/>
+  <path d="M18.5,11.5l-12,12,12,12h28v-24Zm-5,14a2,2,0,1,1,2-2A2,2,0,0,1,13.5,25.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <line x1="13" y1="23.5" y2="23.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M30.5,18.0007A4.5,4.5,0,1,1,26,13.5,4.5024,4.5024,0,0,1,30.5,18.0007Z" stroke="#147391" fill="url(#radial-gradient)"/>
+  <path d="M41.5,18.0007A4.5,4.5,0,1,1,37,13.5,4.5024,4.5024,0,0,1,41.5,18.0007Z" stroke="#147391" fill="url(#radial-gradient-2)"/>
+  <path d="M30.5,29.0007A4.5,4.5,0,1,1,26,24.5,4.5024,4.5024,0,0,1,30.5,29.0007Z" stroke="#147391" fill="url(#radial-gradient-3)"/>
+  <path d="M41.5,29.0007A4.5,4.5,0,1,1,37,24.5,4.5024,4.5024,0,0,1,41.5,29.0007Z" stroke="#147391" fill="url(#radial-gradient-4)"/>
+</svg>

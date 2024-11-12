@@ -1,0 +1,7 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <polygon points="23.5 18.5 9.436 18.5 5.5 22.5 5.5 18.5 0.5 18.5 0.5 0.5 23.5 0.5 23.5 18.5" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <rect x="1" y="1" width="3" height="17" fill="#fa142d"/>
+  <path d="M6.6816,13.14A1.6018,1.6018,0,0,0,8.0041,15.5H18.9959a1.6018,1.6018,0,0,0,1.3225-2.36L15.0043,3.4028a1.7046,1.7046,0,0,0-3.0086,0Z" fill="#fa142d" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="11.5" y1="8.5" x2="15.5" y2="12.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="11.5" y1="12.5" x2="15.5" y2="8.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

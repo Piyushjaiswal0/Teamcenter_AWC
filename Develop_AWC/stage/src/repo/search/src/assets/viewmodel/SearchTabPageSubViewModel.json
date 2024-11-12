@@ -1,0 +1,422 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "data": {
+        "creationRelation": {
+            "displayName": "{{i18n.relation}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dataProvider": "getRelationListProvider"
+        },
+        "searchStateForKeyword": {
+            "initialValues": {},
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "searchStateForAdvanced": {
+            "initialValues": {
+                "provider" : "Awp0SavedQuerySearchProvider"
+            },
+            "meta": {}
+        }
+    },
+    "selectionModels": {
+        "resultTabModel": {
+            "selectionMode": "multiple"
+        }
+    },
+    "actions": {
+        "findApplicableTypes": {
+            "actionType": "JSFunction",
+            "method": "findSubBusinessObjectsAndInvokeSearch",
+            "inputData": {
+                "input": "{{data}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "outputData": {
+                "showSearchFilter": "showSearchFilter",
+                "selectedSearchFilters": "selectedSearchFilters",
+                "sourceSearchFilterMap": "searchFilterMap"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "handleSearchSelectionBatchJob": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "evalConditionForDefaultRelation"
+                },
+                {
+                    "action": "handleSearchSelection"
+                }
+            ]
+        },
+        "handleSearchSelection": {
+            "actionType": "JSFunction",
+            "method": "handleSearchSelection",
+            "inputData": {
+                "context": "{{data.selectionData}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "relationMap": "{{subPanelContext.relationMap}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "sourceObjects": "sourceObjects",
+                "sourceModelObjects": "sourceModelObjects",
+                "targetModelObjects": "targetModelObjects"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "evalConditionForDefaultRelation": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "getDefaultRelationforSearch",
+                    "condition": "subPanelContext.targetObject"
+                } ]
+            }
+        },
+        "getDefaultRelationforSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDefaultRelation",
+            "inputData": {
+                "input": [ {
+                    "primaryType": "{{subPanelContext.targetObject.type}}",
+                    "secondaryType": "{{data.selectionData.selected[0].type}}"
+                } ]
+            },
+            "outputData": {
+                "defaultRelation": "output[0].defaultRelation"
+            },
+            "events": {
+                "success": [ {
+                    "name": "relations.updateRelationList2"
+                } ],
+                "failure": [ {
+                    "name": "relations.updateRelationList2"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateRelationList": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateRelationList",
+            "inputData": {
+                "creationType": "{{data.creationType}}",
+                "relationMap": "{{subPanelContext.relationMap}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "type": "{{data.selectionData.selected[0].type}}",
+                "defaultRelation": "{{data.defaultRelation}}",
+                "creationRelation": "{{data.creationRelation}}",
+                "invalidObjectInfo": {
+                    "fileName": "{{data.datasetInfo.fileName}}",
+                    "objectSetSource": "{{ctx.panelContext.objectSetSource}}"
+                },
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "relationList": "relationList",
+                "creationRelation": "creationRelation"
+            },
+            "events": {
+                "success": [ {
+                    "name": "relationList.updated2"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateRecentTypes": {
+            "actionType": "JSFunction",
+            "method": "updateRecentUsedTypes",
+            "inputData": {
+                "recentTypeName": "{{data.secondaryType}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "createRelationForPaletteOrSearch": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "addObject.startCreateRelation"
+                } ]
+            }
+        },
+        "evalObjBasedOnConfigRevRulePaletteSearch": {
+            "actionType": "JSFunction",
+            "method": "evaluateObjsBasedOnConfiguredRevRule",
+            "inputData": {
+                "objectToEvaluateForExactRelation": "{{data.sourceObjects}}",
+                "addObjectContext": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "objToRelateBasedOnConfiguredRevRule": ""
+            },
+            "deps": "js/awConfiguredRevService",
+            "events": {
+                "success": [ {
+                    "name": "addObject.existingObjToRelateEvaluated"
+                } ]
+            }
+        },
+        "createRelations": {
+            "actionType": "JSFunctionAsync",
+            "method": "execute",
+            "inputData": {
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "sourceObjects": "{{data.objToRelateBasedOnConfiguredRevRule}}",
+                "relationName": "{{data.creationRelation.dbValue}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "gwt.CreateOrAddObjectCompleteEvent",
+                        "eventData": {
+                            "createdObjs": "{{data.sourceModelObjects}}"
+                        }
+                    },
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                            "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                            "relations": "{{data.creationRelation}}",
+                            "relatedModified": "{{data.targetModelObjects}}",
+                            "createdObjects": "{{data.sourceModelObjects}}"
+                        }
+                    },
+                    {
+                        "name": "addObject.objectCreatedWithRelation"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "!subPanelContext.panelPinned",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                "failure": [ {
+                    "name": "cdm.relatedModified",
+                    "condition": {
+                        "$source": "errorCodes",
+                        "$query": {
+                            "$all": {
+                                "$source": "code",
+                                "$query": {
+                                    "$eq": 6007
+                                }
+                            }
+                        }
+                    },
+                    "eventData": {
+                        "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                        "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                        "relations": "{{data.creationRelation}}",
+                        "relatedModified": "{{data.targetModelObjects}}",
+                        "createdObjects": "{{data.sourceModelObjects}}"
+                    }
+                } ]
+            },
+            "actionMessages": {
+                "success": [ {
+                        "condition": "data.sourceObjects.length == 1",
+                        "message": "paletteObjectSuccess"
+                    },
+                    {
+                        "condition": "data.sourceObjects.length > 1",
+                        "message": "paletteRelationSuccess"
+                    }
+                ]
+            },
+            "deps": "js/pasteService"
+        },
+        "updateCallbackWithRelatedObject": {
+            "actionType": "JSFunction",
+            "method": "updateCallbackWithCreatedObject",
+            "inputData": {
+                "createdObject": "{{data.sourceModelObjects}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        },
+        "handleObjectCreate": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "createRelationForPaletteOrSearch",
+                    "condition": "conditions.readyToStartCreateOperation"
+                }
+            ]
+        },
+        "initializeSearchState": {
+            "actionType": "JSFunction",
+            "method": "initializeSearchState",
+            "inputData": {
+                "searchStateForKeyword": "{{data.searchStateForKeyword}}",
+                "sourceSearchFilterMap": "{{data.sourceSearchFilterMap}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "outputData": {
+                "searchStateForKeyword": ""
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "initializeSelectionModel": {
+            "actionType": "JSFunction",
+            "method": "initializeSelectionModel",
+            "inputData": {
+                "selectionMode": "{{subPanelContext.selectionMode}}",
+                "selectionModels": "{{selectionModels}}"
+            },
+            "outputData": {
+                "selectionModels": ""
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "initializeSearchTab": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "findApplicableTypes"
+                },
+                {
+                    "action": "initializeSearchState"
+                }
+            ]
+        },
+        "clearSearchContext": {
+            "actionType": "JSFunction",
+            "deps": "js/appCtxService",
+            "method": "unRegisterCtx",
+            "inputData": {
+                "0": "highlighter"
+            }
+        }
+    },
+    "dataProviders": {
+        "getRelationListProvider": {
+            "response": "{{data.relationList}}",
+            "totalFound": "{{data.relationList.length}}"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "getDefaultRelationforSearch",
+            "condition": "subPanelContext.hideRelation !== 'true'",
+            "action": "getDefaultRelationforSearch"
+        },
+        {
+            "eventId": "relations.updateRelationList2",
+            "condition": "subPanelContext.hideRelation !== 'true'",
+            "action": "updateRelationList"
+        },
+        {
+            "eventId": "relationList.updated2",
+            "action": "updateRecentTypes"
+        },
+        {
+            "eventId": "addObject.startCreateRelation",
+            "condition": "data.sourceObjects.length > 0",
+            "action": "evalObjBasedOnConfigRevRulePaletteSearch"
+        },
+        {
+            "eventId": "addObject.existingObjToRelateEvaluated",
+            "action": "createRelations"
+        },
+        {
+            "eventId": "addObject.objectCreatedWithRelation",
+            "action": "updateCallbackWithRelatedObject"
+        }
+    ],
+    "functions": {
+        "findSubBusinessObjectsAndInvokeSearch": {
+            "functionName": "findSubBusinessObjectsAndInvokeSearch",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "conditions": {
+        "showSearchFilterPanel": {
+            "expression": "data.showSearchFilter != undefined && data.showSearchFilter == true"
+        },
+        "isPaletteSearchTabAddButtonVisible": {
+            "expression": "data.sourceObjects.length > 0"
+        },
+        "showRelationsList": {
+            "expression": "(data.creationType || data.sourceObjects.length > 0) && data.relationList && data.relationList.length>1"
+        },
+        "readyToStartCreateOperation": {
+            "expression": "subPanelContext.triggerCreate && subPanelContext.triggerCreate.dbValue && subPanelContext.addPanelState.selectedTab.tabKey === 'search' && data.sourceObjects.length > 0"
+        }
+    },
+    "messages": {
+        "paletteObjectSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.pasteSuccessful}}",
+            "messageTextParams": [
+                "{{data.sourceObjects[0].props.object_string.dbValues[0]}}"
+            ]
+        },
+        "paletteRelationSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.mutiRelationObject}}",
+            "messageTextParams": [
+                "{{data.sourceObjects.length}}"
+            ]
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeSearchTab",
+        "onUnmount": "clearSearchContext",
+        "onUpdate": [
+            {
+                "action": "handleObjectCreate",
+                "observers": [ "viewModel.subPanelContext.triggerCreate" ]
+            },
+            {
+                "action": "handleSearchSelectionBatchJob",
+                "observers": ["viewModel.atomicData.selectionData"]
+            },
+            {
+                "action": "initializeSelectionModel",
+                "observers": [ "props.subPanelContext.selectionMode" ]
+            }
+        ]
+    },
+    "i18n": {
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ],
+        "pasteSuccessful": [
+            "awAddDirectiveMessages"
+        ],
+        "mutiRelationObject": [
+            "awAddDirectiveMessages"
+        ],
+        "relation": [
+            "XRTMessages"
+        ]
+    }
+}

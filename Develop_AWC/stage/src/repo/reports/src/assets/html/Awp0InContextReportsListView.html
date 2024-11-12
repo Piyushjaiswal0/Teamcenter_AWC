@@ -1,0 +1,5 @@
+<aw-widget prop="data.NoReportsFound" exist-when="(ctx.awp0Reports.tcRAReportsAvailable !== undefined && ctx.awp0Reports.tcReportsAvailable !== undefined) && !ctx.awp0Reports.tcRAReportsAvailable && !ctx.awp0Reports.tcReportsAvailable"></aw-widget>
+<aw-tab-set tabs="data.tabsModel.dbValue" >
+    <aw-include exist-when="data.selectedTab.tabKey=='Awp0InContextTCReportsList'" name="Awp0InContextTCReportsList" sub-panel-context="subPanelContext"> </aw-include>
+    <aw-include exist-when="data.selectedTab.tabKey=='Awp0InContextTcRAReportsList'" name="Awp0InContextTcRAReportsList" sub-panel-context="subPanelContext"> </aw-include>
+</aw-tab-set>

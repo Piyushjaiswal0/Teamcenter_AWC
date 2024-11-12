@@ -1,0 +1,172 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":[],
+
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "imageDataProvider"
+        },
+        "updatePrimarySelection":{
+            "actionType": "JSFunction",
+            "method": "addProjectToProvider",
+            "inputData": {
+                "eventData": "{{data.eventData}}",
+                "dataProvider": "{{data.dataProviders.imageDataProvider}}"
+            },
+            "deps": "js/Aut0AddProjectCommandService"
+        },
+        "loadData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData":
+            {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "searchInput":
+                {
+                    "attributesToInflate": "{{subPanelContext.searchState.tableViewProperties}}",
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType" : "{{subPanelContext.searchState.sortType}}",
+                    "startIndex": "{{data.dataProviders.imageDataProvider.startIndex}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}"
+                },
+                "inflateProperties": false
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "BusinessObject",
+                        "properties":
+                        [
+                            {
+                                "name": "awp0CellProperties"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "output": "{{function:processOutput}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "registerSignOutListener",
+                        "eventData": {
+                            "data": "{{data}}"
+                        }
+                    }
+                ]
+            },
+            "deps": "js/awSearchService"
+        },
+        "registerSignOutListener": {
+            "actionType": "JSFunction",
+            "method": "registerSignOutListener",
+            "inputData": {},
+            "deps": "js/projMgmtService"
+        },
+        "changeSelection":{
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2020-01-ProjectLevelSecurity",
+            "method": "getPrivilegeInProjects",
+            "inputData": {
+                    "projects": "{{subPanelContext.selectionData.selected}}"
+            },
+            "outputData": {
+                "projectPrivilege": "{{function:isProjectPrivilege}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSearchStateEvent",
+                        "eventData": {
+                            "searchState": "{{subPanelContext.searchState}}",
+                            "value" : { "projectsPrivileged": "{{data.projectPrivilege}}" }
+                        }
+                    }
+                ]
+            },
+            "deps": "js/projMgmtService"
+        },
+        "updateSearchState":{
+            "actionType": "JSFunction",
+            "method": "updateSearchState",
+            "inputData": {
+                "eventData":"{{data.eventData}}"
+            },
+            "deps": "js/projMgmtService"
+        }
+    },
+    "dataProviders":
+    {
+        "imageDataProvider":
+        {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "functions": {
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "isProjectPrivilege": {
+            "functionName": "isProjectPrivilege",
+            "parameters": [
+                "{{subPanelContext.selectionData.selected}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "reveal",
+            "observers": [ "props.subPanelContext.searchState.criteria.searchString" ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "registerSignOutListener",
+            "cacheEventData": true,
+            "action": "registerSignOutListener"
+        },
+        {
+            "eventId": "addProject.projectCreated",
+            "cacheEventData": true,
+            "action": "updatePrimarySelection"
+        },
+        {
+            "eventId": "imageDataProvider.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "changeSelection"
+        },
+        {
+            "eventId":  "updateSearchStateEvent",
+            "cacheEventData": true,
+            "action": "updateSearchState"
+        }
+    ]
+}

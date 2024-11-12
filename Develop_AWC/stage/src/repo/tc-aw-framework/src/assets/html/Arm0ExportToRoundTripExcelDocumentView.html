@@ -1,0 +1,8 @@
+<aw-command-panel caption="i18n.exportCmdTitle" context="subPanelContext">
+    <aw-command-sub-panel panel-id="Arm0ExportToRoundTripExcelDocumentSub"  sub-panel-context="{...subPanelContext, excelTemplatesList:data.excelTemplatesList, sharedData:fields.sharedData}"
+    show-when="data.sharedData.activeView==='Arm0ExportToRoundTripExcelDocumentSub'">
+    </aw-command-sub-panel>
+    <aw-navigate-panel title="i18n.addProperties" sub-panel-context="{sharedData:fields.sharedData}"
+       exist-when="data.sharedData.activeView==='Arm0ExportAddPropertiesSub'" panel-id="Arm0ExportAddPropertiesSub" action="backAction">
+    </aw-navigate-panel>
+</aw-command-panel>

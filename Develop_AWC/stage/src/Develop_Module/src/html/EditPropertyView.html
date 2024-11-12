@@ -1,0 +1,15 @@
+<aw-command-panel caption="i18n.EditPropertyPanelTitle">
+    <aw-panel-body>
+        <aw-panel-section>
+            <aw-listbox prop="data.propertyName" list="data.propertyList.dbValue"></aw-listbox>
+            <aw-textarea prop="data.propertyValue"></aw-textarea>
+        </aw-panel-section>
+    </aw-panel-body>
+    
+    <aw-panel-footer>
+        <aw-panel-section>
+            <aw-button action="EditValue" enable-when="conditions.Validate">
+                <aw-i18n>i18n.save</aw-i18n>
+        </aw-panel-section>
+    </aw-panel-footer>
+</aw-command-panel>

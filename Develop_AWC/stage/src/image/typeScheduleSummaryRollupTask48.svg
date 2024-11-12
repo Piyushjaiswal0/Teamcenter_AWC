@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="8.5858" y1="1.5858" x2="28.4142" y2="21.4142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="24.798" y1="19.0993" x2="35.5993" y2="29.9007" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad_4" data-name="Dark Blue Grad 4" x1="26.7493" y1="23.2507" x2="49.0653" y2="45.5666" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75b2c5"/>
+      <stop offset="0.1774" stop-color="#6cacc0"/>
+      <stop offset="0.4638" stop-color="#549cb2"/>
+      <stop offset="0.8215" stop-color="#2e839b"/>
+      <stop offset="1" stop-color="#18748e"/>
+    </linearGradient>
+    <linearGradient id="_1_Generic-_Outer_Stroke_2" data-name="1 Generic- Outer Stroke 2" x1="26.2493" y1="22.7507" x2="49.554" y2="46.0554" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4d4c4c"/>
+      <stop offset="1" stop-color="#333"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="36" height="36" fill="#dcdcdc" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="4" y="1" width="15" height="35" fill="#bebebe"/>
+  <rect x="2.5" y="6.5" width="32" height="10" rx="2" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M36,29.5H25.0319A1.532,1.532,0,0,1,23.5,27.9681V21.0319A1.532,1.532,0,0,1,25.0319,19.5H36" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <path d="M34.71,24.4858,40.5,33.119v1.1239L33.0165,44.51h8.9214a4.5166,4.5166,0,0,0,2.7414-1.2861c.5378-.5567.492-1.9716.8207-3.724h2l-.3682,8H28.5v-.9333l8.828-11.7334-8.828-12.4V21.5H47.4974l.0026,6h-2a3.2839,3.2839,0,0,0-.942-2.2281,3.3635,3.3635,0,0,0-2.5509-.7861Z" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_4)" stroke="url(#_1_Generic-_Outer_Stroke_2)"/>
+</svg>

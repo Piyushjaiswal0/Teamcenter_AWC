@@ -1,0 +1,29 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="4" y1="43" x2="44" y2="3" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="8.75" y1="1.25" x2="21.25" y2="13.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="13.5" y1="17.5" x2="19.5" y2="23.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="13.5" y1="27.5" x2="19.5" y2="33.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="13.5" y1="37.5" x2="19.5" y2="43.5" xlink:href="#Dark_Blue_Grad"/>
+  </defs>
+  <rect x="6.5" y="2.5" width="35" height="45" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <polygon points="20.5 14.5 15 9 9.5 14.5 9.5 0.5 20.5 0.5 20.5 14.5" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="23" y="40" width="13" height="1" fill="#5a5a5a"/>
+  <rect x="23" y="30" width="13" height="1" fill="#5a5a5a"/>
+  <rect x="23" y="20" width="13" height="1" fill="#5a5a5a"/>
+  <path d="M17.277,17.5a1.1358,1.1358,0,0,0,.331-.8025,1.1067,1.1067,0,0,0-2.2133,0,1.1358,1.1358,0,0,0,.331.8025H13.5v2.2132a1.1067,1.1067,0,1,1,0,1.5448V23.5h6v-6Z" stroke="#147391" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <path d="M17.277,27.5a1.1358,1.1358,0,0,0,.331-.8025,1.1067,1.1067,0,0,0-2.2133,0,1.1358,1.1358,0,0,0,.331.8025H13.5v2.2132a1.1067,1.1067,0,1,1,0,1.5448V33.5h6v-6Z" stroke="#147391" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+  <path d="M17.277,37.5a1.1358,1.1358,0,0,0,.331-.8025,1.1067,1.1067,0,0,0-2.2133,0,1.1358,1.1358,0,0,0,.331.8025H13.5v2.2132a1.1067,1.1067,0,1,1,0,1.5448V43.5h6v-6Z" stroke="#147391" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-4)"/>
+</svg>

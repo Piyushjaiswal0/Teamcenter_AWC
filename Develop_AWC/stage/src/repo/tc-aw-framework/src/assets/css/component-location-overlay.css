@@ -1,0 +1,8 @@
+/* Copyright 2019 Siemens Product Lifecycle Management Software Inc. */
+
+/* (e.g. right-side trim padding) */
+.awRoot .aw-layout-locationPanel,
+aw-page .aw-layout-locationPanel,
+aw-showobject-page .aw-layout-locationPanel {
+    padding-right: 0px;
+}

@@ -1,0 +1,44 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-command-sub-panel.directive",
+        "js/visible-when.directive",
+        "js/aw-init.directive",
+        "js/aw-command-panel-section.directive"
+    ],
+
+    "actions": {
+        "unRegisterCmdContext":{
+            "actionType": "JSFunction",
+            "method": "unRegisterCmdContext",
+            "deps": "js/exportToFile"
+        },
+        "registerCmdContext":{
+            "actionType": "JSFunction",
+            "method": "registerCmdContext",
+            "deps": "js/exportToFile"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onMount": "registerCmdContext",
+        "onUnmount": "unRegisterCmdContext"
+    },
+
+    "data": {
+        "activeView": "Awp0ExportToExcelSub"
+    },
+
+    "functions": {},
+
+    "conditions": {},
+
+    "messages": {},
+
+    "i18n": {
+        "exportCmdTitle": [
+            "Awp0ExportToExcelMessages"
+        ]
+    }
+}

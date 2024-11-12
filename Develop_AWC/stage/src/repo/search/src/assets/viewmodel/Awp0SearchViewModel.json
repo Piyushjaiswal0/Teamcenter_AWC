@@ -1,0 +1,18 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "actions": {
+    },
+    "data": {
+        "showsearchbox": {
+            "dbValue": true,
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true"
+        }
+    },
+    "i18n": {
+        "Awp0SearchTitle": [ "SearchMessages" ]
+    }
+}

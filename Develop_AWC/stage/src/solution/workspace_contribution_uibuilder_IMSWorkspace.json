@@ -1,0 +1,9 @@
+{
+    "schemaVersion": "1.0.0",
+    "workspaceId": "IMSWorkspace",
+    "excludedCommands": [
+        "GoToPanelBuilder",
+        "GoToCommandBuilder"
+    ]
+}
+

@@ -1,0 +1,92 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "formExampleRenderFunction",
+            "deps": "js/FormExampleService"
+        },
+        "submitAction": {
+            "actionType": "JSFunction",
+            "method": "asyncAlert",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/awformExampleUtils",
+            "actionMessages": {
+                "success": [ {
+                    "message": "sucessResetMesssage"
+                } ]
+            }
+        }
+    },
+    "data": {
+        "email": {
+            "displayName": "Email",
+            "uiValue": "",
+            "dbValue": "",
+            "type": "STRING"
+        },
+        "firstName": {
+            "displayName": "First Name",
+            "isRequired": true,
+            "uiValue": "",
+            "dbValue": "",
+            "type": "STRING"
+        },
+        "lastName": {
+            "displayName": "Last Name",
+            "uiValue": "",
+            "dbValue": "",
+            "type": "STRING"
+        },
+        "age": {
+            "displayName": "Age",
+            "isRequired": true,
+            "uiValue": "",
+            "dbValue": "",
+            "type": "INTEGER"
+        },
+        "height": {
+            "displayName": "Height In Feet",
+            "isRequired": true,
+            "uiValue": "",
+            "dbValue": "",
+            "type": "DOUBLE"
+        },
+        "department": {
+            "displayName": "Department (Disabled)",
+            "uiValue": "LCS",
+            "dbValue": "LCS",
+            "type": "STRING",
+            "isEnabled": "false"
+        },
+        "feedback": {
+            "displayName": "Wants feedback",
+            "uiValue": "",
+            "dbValue": "true",
+            "type": "BOOLEAN"
+        },
+        "hireDate": {
+            "displayName": "Date of hire",
+            "uiValue": "",
+            "type": "DATE"
+        }
+    },
+    "conditions": {},
+    "onEvent": [],
+    "i18n": {
+        "baseMsg": [
+            "BaseMessages"
+        ]
+    },
+    "messages": {
+        "sucessResetMesssage": {
+            "messageType": "INFO",
+            "messageText": "Form is reset to default values"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    }
+}

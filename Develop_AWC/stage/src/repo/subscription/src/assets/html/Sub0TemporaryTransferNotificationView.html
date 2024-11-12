@@ -1,0 +1,8 @@
+
+<aw-command-panel caption="i18n.transferNotification">
+    <aw-command-sub-panel  panel-id="Sub0TemporaryTransferNotificationSub" show-when="data.activeState.value.activeView=='Sub0TemporaryTransferNotificationSub'"
+    sub-panel-context="{ ...subPanelContext, userObject: subPanelContext.openedObject, addUserPanelState : data.addUserPanelState, activeState : data.activeState }"></aw-command-sub-panel>
+    <aw-navigate-panel title="i18n.user" exist-when="data.activeState.value.activeView === 'AwPeoplePicker'"
+        pre-panel-id="Sub0TemporaryTransferNotificationSub" panel-id="AwPeoplePicker" active-state="data.activeState" action="actions.setActiveView"
+        sub-panel-context="{ ...subPanelContext, addUserPanelState : data.addUserPanelState }"></aw-navigate-panel>
+</aw-command-panel> 

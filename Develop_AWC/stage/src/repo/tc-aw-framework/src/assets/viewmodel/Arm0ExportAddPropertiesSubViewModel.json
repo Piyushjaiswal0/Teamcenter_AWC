@@ -1,0 +1,109 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "revealAddPropertiesPanel": {
+            "actionType": "JSFunction",
+            "method": "setColumns",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "allProperties": "allProperties",
+                "areAllPropertiesDeselected": "areAllPropertiesDeselected"
+            },
+            "events": {
+                "success": [ {
+                    "name": "exportExcelColumns.refreshDataProviderForProperties"
+                } ]
+            },
+
+            "deps": "js/ExcelExportToOfficeApp"
+        },
+        "setSelectionVariable": {
+            "actionType": "JSFunction",
+            "method": "setSelectionVariable",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/ExcelExportToOfficeApp"
+        },
+        "refreshDataProviderForProperties": {
+            "actionType": "dataProvider",
+            "method": "dataProviderForProperties"
+        },
+        "addNewPropertiesAsColumn":{
+            "actionType": "JSFunction",
+            "method": "addColumns",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "exportExcelColumns.refreshDataProviderForProperties"
+                },
+                {
+                    "name": "exportExcelColumns.updateSharedData"
+                } ]
+            },
+            "deps": "js/ExcelExportToOfficeApp"
+        },
+        "changeColumnSelectionForProperties":{
+            "actionType": "JSFunction",
+            "method": "changeColumnSelectionForProperties",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "areAllPropertiesDeselected": "areAllPropertiesDeselected"
+            },
+            "deps": "js/ExcelExportToOfficeApp"
+        },
+        "updateSharedDataState":{
+            "actionType": "JSFunction",
+            "method": "updateSharedDataState",
+            "inputData": {
+                "state": "{{subPanelContext.sharedData}}",
+                "newValue": {
+                    "activeView": "Arm0ExportToRoundTripExcelDocumentSub"
+                }
+            },
+            "deps": "js/ExcelExportToOfficeApp"
+        }
+    },
+
+    "data": {
+        "allProperties":"",
+        "areAllPropertiesDeselected": false
+    },
+
+    "dataProviders": {
+        "dataProviderForProperties": {
+            "response": "{{data.allProperties}}",
+            "totalFound": "{{data.allProperties.length}}"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onMount":"revealAddPropertiesPanel"
+    },
+
+    "onEvent": [ {
+            "eventId": "exportExcelColumns.refreshDataProviderForProperties",
+            "action": "refreshDataProviderForProperties"
+        },
+        {
+            "eventId": "exportExcelColumns.updateSharedData",
+            "action": "updateSharedDataState"
+        }
+    ],
+
+    "conditions": {
+
+    },
+
+    "i18n": {
+        "addPanelTitle": [
+            "TCUICommandPanelsMessages"
+        ]
+    }
+}

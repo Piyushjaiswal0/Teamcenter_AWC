@@ -1,0 +1,49 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "searchStateForKeyword": {
+            "initialValues": {
+                "provider": "Awp0FullTextSearchProvider",
+                "additionalCriteria": { "test": "test" },
+                "propertyPolicy" :  [ {
+                    "name": "TestObjForExample",
+                    "properties": [ {
+                        "name": "TestPropertyForExample"
+                    } ]
+                } ],
+                "label": {
+                    "source" : "/i18n/SearchMessages",
+                    "key": "resultsText"
+                },
+                "autoApplyFilters": true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "searchStateForAdvanced": {
+            "initialValues": {
+                "provider": "Awp0SavedQuerySearchProvider",
+                "propertyPolicy": [ {
+                    "name": "TestObjForExample",
+                    "properties": [ {
+                        "name": "TestPropertyForExample"
+                    } ]
+                } ]
+            },
+            "meta": {}
+        }
+    },
+    "selectionModels": {
+        "searchSelectionModel": {
+            "selectionMode": "multiple"
+        }
+    }
+}

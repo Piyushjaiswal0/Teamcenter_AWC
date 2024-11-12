@@ -1,0 +1,14 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "commandTitle": {
+            "dispValue": "{{subPanelContext.title}}"
+        },
+        "commandDesc": {
+            "dispValue": "{{i18n.removeAnalysisResult}}"
+        }
+    },
+    "i18n": {
+        "removeAnalysisResult": [ "Awv0threeDViewerTooltipMessages"]
+    }
+}

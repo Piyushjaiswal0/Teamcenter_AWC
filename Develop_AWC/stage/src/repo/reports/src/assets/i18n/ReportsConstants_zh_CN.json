@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "报告",
+    "allSubLocation": "全部",
+    "reportBuilderSubLocation": "模板",
+    "runReportTitle": "生成报告",
+    "runReportOperationName": "运行报告",
+    "doWorkOperationName": "运行",
+    "execution": "执行",
+    "criteria": "准则",
+    "stylesheet": "样式表",
+    "dataset": "保存到文件名",
+    "myreportsSubLocation": "保存的文件",
+    "loadingMsg": "正在加载...",
+    "zeroSearchResults": "未找到结果",
+    "reportResultsChartTitle": "按以下依据过滤结果：",
+    "AddSnapshot": "快照",
+    "AddNew": "新建",
+    "doQueueOperation": "添加到队列",
+    "runTcraReport": "运行",
+    "dosnapShotViewOperation": "查看",
+    "myDashboard": "我的仪表板",
+    "inOpenRptCommand": "打开"
+}

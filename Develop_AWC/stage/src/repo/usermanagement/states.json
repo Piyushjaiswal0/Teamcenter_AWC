@@ -1,0 +1,103 @@
+{
+  "com_siemens_splm_client_usermanagement_peoplelocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/UsermanagementMessages",
+        "key": "peopleTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/UsermanagementMessages",
+        "key": "peopleTitle"
+      }
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "organization": {
+    "controller": "OrgSubLocationCtrl",
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "/i18n/UsermanagementMessages",
+        "key": "organizationTitle"
+      }
+    },
+    "params": {
+      "d_uids": null,
+      "s_uid": null
+    },
+    "parent": "com_siemens_splm_client_usermanagement_peoplelocation",
+    "view": "AwOrganizationPage",
+    "url": "/organization"
+  },
+  "groups": {
+    "data": {
+      "priority": 1,
+      "label": {
+        "source": "/i18n/UsermanagementMessages",
+        "key": "groupTitle"
+      }
+    },
+    "params": {
+      "s_uid": null
+    },
+    "parent": "com_siemens_splm_client_usermanagement_peoplelocation",
+    "view": "AwOrganizationGroupsPage",
+    "url": "/groups"
+  },
+  "roles": {
+    "data": {
+      "priority": 2,
+      "label": {
+        "source": "/i18n/UsermanagementMessages",
+        "key": "roleTitle"
+      }
+    },
+    "params": {
+      "s_uid": null
+    },
+    "parent": "com_siemens_splm_client_usermanagement_peoplelocation",
+    "view": "AwOrganizationRolesPage",
+    "url": "/roles"
+  },
+  "users": {
+    "data": {
+      "priority": 3,
+      "label": {
+        "source": "/i18n/UsermanagementMessages",
+        "key": "userTitle"
+      }
+    },
+    "params": {
+      "s_uid": null
+    },
+    "parent": "com_siemens_splm_client_usermanagement_peoplelocation",
+    "view": "AwOrganizationUsersPage",
+    "url": "/users"
+  },
+  "baseCalendars": {
+    "data": {
+      "priority": 4,
+      "label": {
+        "source": "/i18n/CalendarManagementMessages",
+        "key": "baseCalendars"
+      }
+    },
+    "params": {
+      "searchCriteria": null,
+      "filter": null
+    },
+    "parent": "com_siemens_splm_client_usermanagement_peoplelocation",
+    "view": "AwBaseCalendarsPage",
+    "url": "/baseCalendars"
+  },
+  "pickGeography": {
+    "view": "geographyPicker"
+  },
+  "confidentialityAgreement": {
+    "view": "confidentialityAgreement"
+  },
+  "gdprConsent": {
+    "view": "gdprConsent"
+  }
+}

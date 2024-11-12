@@ -1,0 +1,37 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "priority": 2,
+            "label": {
+                "source": "/i18n/ProjmgmtConstants",
+                "key": "myProjectListTitle"
+            },
+            "clientScopeURI": "Aut0MyProjectList",
+            "nameToken": "com.siemens.splm.client.projmgmt:myProjectListSubLocation",
+            "context": {
+                "search": {
+                    "provider": "Aut0ProjectProvider",
+                    "sortType": "Alphabetical",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "tableViewProperties": ["relation", "awp0Relationship"],
+                    "criteria":
+                    {
+                        "activeProjectsOnly" : "true",
+                        "clientId": "ProjectContext",
+                        "privilegedProjectsOnly" : "false",
+                        "programsOnly" : ""
+                    },
+                    "showLoadingText": true
+                }
+            },
+            "breadcrumbConfig": {
+                "type": "search",
+                "vm": "AwSearchBreadcrumb"
+            },
+            "policy": "/policies/projectObjectPropertyPolicy.json",
+            "viewBase": "myProjectList"
+        }
+    }
+}

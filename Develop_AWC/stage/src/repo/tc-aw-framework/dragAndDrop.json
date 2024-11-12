@@ -1,0 +1,154 @@
+{
+  "actions": {
+    "swf_tileCanvasdragStartFn": {
+      "actionType": "syncFunction",
+      "method": "dragStartFn",
+      "inputData": {},
+      "deps": "js/tileDragService"
+    },
+    "swf_tileCanvasdragEndFn": {
+      "actionType": "syncFunction",
+      "method": "dragEndFn",
+      "inputData": {},
+      "deps": "js/tileDragService"
+    },
+    "swf_tileCanvasdragOverFn": {
+      "actionType": "syncFunction",
+      "method": "dragOverFn",
+      "inputData": {},
+      "deps": "js/tileDragService"
+    },
+    "swf_tileCanvasdragEnterFn": {
+      "actionType": "syncFunction",
+      "method": "dragEnterFn",
+      "inputData": {},
+      "deps": "js/tileDragService"
+    },
+    "swf_tileCanvasdragLeaveFn": {
+      "actionType": "syncFunction",
+      "method": "dragLeaveFn",
+      "inputData": {},
+      "deps": "js/tileDragService"
+    },
+    "swf_tileCanvasdropFn": {
+      "actionType": "syncFunction",
+      "method": "dropFn",
+      "inputData": {
+        "propertyName": "tileGroups"
+      },
+      "deps": "js/tileDragService"
+    },
+    "dragStartAction": {
+      "actionType": "syncFunction",
+      "method": "dragStart",
+      "deps": "js/awDragAndDropService"
+    },
+    "dragEndAction": {
+      "actionType": "syncFunction",
+      "method": "dragEnd",
+      "deps": "js/awDragAndDropService"
+    },
+    "dragEnterAction": {
+      "actionType": "syncFunction",
+      "method": "dragEnter",
+      "inputData": {
+        "props": "{{props}}"
+      },
+      "deps": "js/awDragAndDropService"
+    },
+    "dragLeaveAction": {
+      "actionType": "syncFunction",
+      "method": "dragLeave",
+      "deps": "js/awDragAndDropService"
+    },
+    "dragOverAction": {
+      "actionType": "syncFunction",
+      "method": "dragOver",
+      "inputData": {
+        "props": "{{props}}"
+      },
+      "deps": "js/awDragAndDropService"
+    },
+    "dropAction": {
+      "actionType": "syncFunction",
+      "method": "drop",
+      "inputData": {
+        "props": "{{props}}"
+      },
+      "deps": "js/awDragAndDropService"
+    },
+    "objNavdropAction": {
+      "actionType": "syncFunction",
+      "method": "processDropOnTree",
+      "deps": "js/objectNavigationTreeService"
+    }
+  },
+  "dragHandlers": {
+    "awDefaultDragHandler": {
+      "activeWhen": {
+        "condition": "conditions.hasListAndTable"
+      },
+      "views": [
+        "*"
+      ],
+      "dragActions": {
+        "dragStart": "dragStartAction",
+        "dragEnd": "dragEndAction"
+      }
+    },
+    "swf_tileCanvasDragHandlers": {
+      "activeWhen": true,
+      "views": [
+        "Gateway"
+      ],
+      "dragActions": {
+        "dragStart": "swf_tileCanvasdragStartFn",
+        "dragEnd": "swf_tileCanvasdragEndFn"
+      }
+    }
+  },
+  "dropHandlers": {
+    "swf_tileCanvasDropHandlers": {
+      "activeWhen": true,
+      "views": [
+        "Gateway"
+      ],
+      "dropActions": {
+        "dragOver": "swf_tileCanvasdragOverFn",
+        "dragEnter": "swf_tileCanvasdragEnterFn",
+        "dragLeave": "swf_tileCanvasdragLeaveFn",
+        "drop": "swf_tileCanvasdropFn"
+      }
+    },
+    "awDefaultDropHandler": {
+      "activeWhen": {
+        "condition": "conditions.hasListAndTable"
+      },
+      "views": [
+        "*"
+      ],
+      "dropActions": {
+        "dragEnter": "dragEnterAction",
+        "dragLeave": "dragLeaveAction",
+        "dragOver": "dragOverAction",
+        "drop": "dropAction"
+      }
+    },
+    "objNavTreeDropHandler": {
+      "views": [
+        "objectNavigationTree"
+      ],
+      "dropActions": {
+        "dragEnter": "dragEnterAction",
+        "dragLeave": "dragLeaveAction",
+        "dragOver": "dragOverAction",
+        "drop": "objNavdropAction"
+      }
+    }
+  },
+  "conditions": {
+    "hasListAndTable": {
+      "expression": "data.dataProviders"
+    }
+  }
+}

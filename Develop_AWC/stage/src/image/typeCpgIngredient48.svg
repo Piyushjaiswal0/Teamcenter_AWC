@@ -1,0 +1,58 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="8.279" y1="20.183" x2="29.525" y2="41.429" gradientTransform="translate(13.487 -6.028) rotate(19.814)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.228" stop-color="#fafafa"/>
+      <stop offset="0.488" stop-color="#ededed"/>
+      <stop offset="0.762" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="44.086" y1="44.086" x2="46.914" y2="46.914" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="44.086" y1="36.086" x2="46.914" y2="38.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="41.086" y1="26.086" x2="43.914" y2="28.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="35.086" y1="27.086" x2="37.914" y2="29.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-5" x1="29.086" y1="26.086" x2="31.914" y2="28.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-6" x1="32.086" y1="21.086" x2="34.914" y2="23.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-7" x1="38.086" y1="21.086" x2="40.914" y2="23.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-8" x1="35.086" y1="16.086" x2="37.914" y2="18.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-9" x1="24.086" y1="23.086" x2="26.914" y2="25.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-10" x1="20.086" y1="19.095" x2="22.914" y2="21.924" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-11" x1="15.086" y1="16.086" x2="17.914" y2="18.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-12" x1="9.093" y1="16.086" x2="11.921" y2="18.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-13" x1="27.086" y1="3.086" x2="29.914" y2="5.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-14" x1="21.086" y1="6.086" x2="23.914" y2="8.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-15" x1="26.086" y1="9.086" x2="28.914" y2="11.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-16" x1="32.086" y1="7.086" x2="34.914" y2="9.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-17" x1="30.086" y1="13.086" x2="32.914" y2="15.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-18" x1="23.086" y1="14.086" x2="25.914" y2="16.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-19" x1="27.086" y1="18.086" x2="29.914" y2="20.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-20" x1="18.086" y1="11.086" x2="20.914" y2="13.914" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-21" x1="12.086" y1="11.086" x2="14.914" y2="13.914" xlink:href="#Dark_Blue_Grad"/>
+  <path d="M30.716,33.638l3.355-.27a3.864,3.864,0,0,0,.587-.093l5.2-1.24c3.224-.544,3.487,3.815.477,4.713a30.963,30.963,0,0,1-5.71,1.347c-8.2.691-8.152.733-12.123-.7a30.8,30.8,0,0,1-10.939-7C10.2,29.1,7.624,29.618,3.5,29.5c-1.458-.042-3-.458-3-2v-4c0-1.75,1.619-1.979,3-1.958,1.733.026,3.6-.047,6-.042,3.65.007,6.656.264,10.877,3.759.126.1,2.728,2.793,3.415,3.513a2.334,2.334,0,0,0,.617.462l5.1,2.655c2.583,1.431.03,5.123-2.8,3.816l-4.74-2.476a5.521,5.521,0,0,1-1.378-1.02l-3.272-3.323" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_2)"/>
+  <circle cx="45.5" cy="45.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <circle cx="45.5" cy="37.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+  <circle cx="42.5" cy="27.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-3)"/>
+  <circle cx="36.5" cy="28.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-4)"/>
+  <circle cx="30.5" cy="27.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-5)"/>
+  <circle cx="33.5" cy="22.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-6)"/>
+  <circle cx="39.5" cy="22.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-7)"/>
+  <circle cx="36.5" cy="17.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-8)"/>
+  <circle cx="25.5" cy="24.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-9)"/>
+  <circle cx="21.5" cy="20.509" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-10)"/>
+  <circle cx="16.5" cy="17.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-11)"/>
+  <circle cx="10.507" cy="17.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-12)"/>
+  <circle cx="28.5" cy="4.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-13)"/>
+  <circle cx="22.5" cy="7.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-14)"/>
+  <circle cx="27.5" cy="10.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-15)"/>
+  <circle cx="33.5" cy="8.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-16)"/>
+  <circle cx="31.5" cy="14.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-17)"/>
+  <circle cx="24.5" cy="15.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-18)"/>
+  <circle cx="28.5" cy="19.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-19)"/>
+  <circle cx="19.5" cy="12.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-20)"/>
+  <circle cx="13.5" cy="12.5" r="2" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-21)"/>
+</svg>

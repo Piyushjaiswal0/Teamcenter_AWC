@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Codificación de caracteres",
+    "uvCheckoutTitle": "Desprotección",
+    "uvCheckoutDesc": "Reserva la selección para evitar que otros usuarios hagan cambios.",
+    "cancelCheckoutTitle": "Cancelar la desprotección",
+    "Awp0CancelCheckoutDesc": "Cancela la desprotección y revierte los cambios.",
+    "uvCheckinTitle": "Proteger",
+    "Awp0CheckinDesc": "Protege el objeto y guarda los cambios.",
+    "uvCodeWordWrapTitle": "Ajuste de línea",
+    "uvCodeWordWrapDesc": "Continúa el texto largo en múltiples líneas."
+}

@@ -1,0 +1,230 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-textbox.directive",
+        "js/aw-break.directive",
+        "js/aw-textarea.directive",
+        "js/visible-when.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-widget.directive",
+        "js/depend-on.directive"
+    ],
+    "onEvent": [ {
+        "eventId": "closePanelDialog",
+        "action": "closePanelDialog"
+    } ],
+    "actions": {
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        },
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-DataManagement",
+            "method": "getIdContexts",
+            "inputData": {
+                "inputObjs": [
+                    {
+                        "uid": "AAAAAAAAAAAAAA"
+                    }
+                ]
+            },
+            "outputData": {
+                "idContexts": "{{function:processContexts}}"
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        },
+        "getIdentifierTypes": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-DataManagement",
+            "method": "getIdentifierTypes",
+            "inputData": {
+                "identifierTypesIn": [
+                    {
+                        "inputItemOrRev": {
+                            "uid": "AAAAAAAAAAAAAA"
+                        },
+                        "idContext": {
+                            "uid": "{{data.context.dbValue}}",
+                            "type": ""
+                        }
+                    }
+                ]
+            },
+            "outputData": {
+                "identifierTypes": "{{function:processIdentifierTypes}}"
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        },
+        "createAlternateId": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2015-07-DataManagement",
+            "method": "createRelateAndSubmitObjects2",
+            "inputData": {
+                "createInputs": [
+                    {
+                        "createData": {
+                            "boName": "{{function:findSelectedBO}}",
+                            "propertyNameValues": {
+                                "idcontext": [
+                                    "{{data.context.dbValue}}"
+                                ],
+                                "awp0IdentifierId": [
+                                    "{{data.id.dbValue}}"
+                                ],
+                                "object_name": [
+                                    "{{data.name.dbValue}}"
+                                ],
+                                "object_desc": [
+                                    "{{data.description.dbValue}}"
+                                ],
+                                "suppl_context": [
+                                    "AAAAAAAAAAAAAA"
+                                ],
+                                "altid_of": [
+                                    "AAAAAAAAAAAAAA"
+                                ],
+                                "isAlternateID": [
+                                    "false"
+                                ]
+                            }
+                        },
+                        "targetObject": "{{ctx.xrtSummaryContextObject}}",
+                        "pasteProp": "IMAN_aliasid"
+                    }
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "relatedModified": [
+                                "{{ctx.selected}}"
+                            ],
+                            "refreshLocationFlag": true
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closePanelDialog"
+                    }
+
+                ]
+            },
+            "actionMessages": {
+                "failure": [
+                    {
+                        "message": "displayErrorCode"
+                    }
+                ]
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        }
+    },
+    "functions": {
+        "findSelectedBO": {
+            "functionName": "findSelectedBO",
+            "parameters": [
+                "{{data.identifierType.dbValue}}"
+            ]
+        }
+    },
+    "data": {
+        "context": {
+            "displayName": "{{i18n.idContext}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "contextProvider",
+            "uiValue": "",
+            "dbValue": "",
+            "emptyLOVEntry": false
+        },
+        "identifierType": {
+            "displayName": "{{i18n.objectType}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "identifierProvider",
+            "uiValue": "",
+            "dbValue": "",
+            "emptyLOVEntry": false
+        },
+        "id": {
+            "displayName": "{{i18n.id}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dbValue": ""
+        },
+        "name": {
+            "displayName": "{{i18n.datasetName}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dbValue": ""
+        },
+        "description": {
+            "displayName": "{{i18n.datasetDesc}}",
+            "type": "STRING",
+            "dbValue": ""
+        }
+    },
+    "dataProviders": {
+        "contextProvider": {
+            "response": "{{data.idContexts}}"
+        },
+        "identifierProvider": {
+            "response": "{{data.identifierTypes}}"
+        }
+    },
+    "conditions": {
+        "isCreateButtonVisible": {
+            "expression": "data.context.dbValue && data.identifierType.dbValue && data.id.dbValue && data.name.dbValue"
+        }
+    },
+    "i18n": {
+        "Awp0CreateAliasIdTitle": [
+            "ZeroCompileCommandMessages"
+        ],
+        "Properties": [
+            "NameValuePanelsMessages"
+        ],
+        "idContext": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "Create": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "id": [
+            "TCUICommandPanelsMessages"
+        ],
+        "objectType": [
+            "awAddDirectiveMessages"
+        ],
+        "datasetName": [
+            "awAddDirectiveMessages"
+        ],
+        "datasetDesc": [
+            "awAddDirectiveMessages"
+        ]
+    },
+    "messages": {
+        "displayErrorCode": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    }
+}

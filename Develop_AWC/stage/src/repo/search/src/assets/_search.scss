@@ -1,0 +1,1950 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+
+$breadcrumb_component_height: rem-calc(18);
+
+.aw-ui-hideColorFiltering {
+
+    .aw-charts-chartColor1.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor2.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor3.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor4.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor5.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor6.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor7.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor8.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor9.aw-widgets-gridCellColorIndicator,
+    .aw-charts-chartColor10.aw-widgets-gridCellColorIndicator {
+        visibility: hidden;
+    }
+}
+
+.aw-charts-chartColor1.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor2.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor3.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor4.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor5.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor6.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor7.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor8.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor9.aw-widgets-gridCellColorIndicator,
+.aw-charts-chartColor10.aw-widgets-gridCellColorIndicator {
+    visibility: visible;
+}
+
+.aw-ui-hideColorFiltering .aw-widgets-showCellDecorator,
+.aw-ui-hideColorFiltering .aw-widgets-gridCellColorIndicator {
+    border-left: 0;
+}
+
+.aw-ui-hideColorFiltering span.aw-search-colorBar {
+    visibility: hidden;
+}
+
+.aw-search-breadcrumb-chipsPanel {
+    width: 100%;
+    max-height: rem-calc(500);
+    overflow-wrap: normal;
+}
+
+.aw-search-breadcrumb-chip {
+    width: fit-content;
+}
+
+.aw-search-breadcrumb {
+    height: inherit;
+    align-items: center;
+    width: 100%;
+}
+
+div.aw-layout-breadCrumbs {
+    width: fit-content;
+}
+
+.aw-search-searchContainer {
+    display: inline-block;
+}
+
+.aw-widgets-chipListPanel {
+    flex-flow: wrap;
+}
+
+.aw-category-toggle {
+    padding: rem-calc(4);
+
+    &.sw-property.sw-row {
+        margin-bottom: 0;
+    }
+
+    .sw-toggle-val {
+        margin: 0;
+    }
+
+    &.sw-property.sw-row .sw-property-name {
+        width: auto;
+    }
+
+    .sw-property-name {
+        width: auto;
+        min-width: auto;
+    }
+}
+
+button.sw-button.chromeless {
+    &.aw-search-clearAll {
+        width: fit-content;
+        box-shadow: none;
+        align-items: center;
+        align-self: center;
+        min-inline-size: unset;
+        min-block-size: auto;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: rem-calc(12);
+        margin: rem-calc(4);
+    }
+
+    &.sw-chip-overflowButton {
+        box-shadow: none;
+        align-items: center;
+        align-self: center;
+        width: max-content;
+        text-decoration-line: underline;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: rem-calc(12);
+        min-height: fit-content;
+    }
+
+    &.sw-chip-overflowButtonPanel {
+        box-shadow: none;
+        align-items: center;
+        align-self: center;
+        width: max-content;
+        text-decoration-line: underline;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: rem-calc(12);
+        min-height: fit-content;
+    }
+}
+
+.sw-chip-overflowContainer {
+    align-self: center;
+    max-width: 6rem;
+}
+
+.sw-chip-overflowContainerPanel {
+    align-self: center;
+}
+
+.aw-results-section .aw-layout-unReadable {
+    align-self: normal;
+}
+
+.aw-results-section .aw-layout-unReadable button.sw-button-iconContainer {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.aw-search-results-filters-tab .aw-layout-unReadable .sw-button-iconContainer .sw-button-icon {
+    height: rem-calc(12);
+}
+
+.aw-search-results-filters-tab .aw-results-section .sw-column.sw-sectionTitle {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.aw-search-breadcrumb-chip .aw-widgets-chipIcon+.aw-widgets-chipLabel,
+.aw-widgets-chipLabel+.aw-widgets-chipUIIcon,
+.aw-search-breadcrumb-chip .aw-widgets-chipCheckmark {
+    margin-left: $margin_normal;
+    margin-top: 0;
+    align-items: center;
+}
+
+.aw-search-breadcrumb-chip .sw-button-iconContainer.aw-widgets-chipUIIcon {
+    width: rem-calc(12);
+    height: rem-calc(12);
+}
+
+.aw-search-breadcrumb-chip .sw-button-iconContainer .sw-button-icon {
+    height: rem-calc(12);
+    width: rem-calc(12);
+}
+
+.aw-search-breadcrumb-chip.aw-widgets-chip {
+    max-height: $breadcrumb_component_height;
+    align-self: center;
+}
+
+.aw-search-blankSpaceHolder {
+    height: $breadcrumb_component_height;
+}
+
+.aw-advanced-search-breadcrumb {
+    align-items: center;
+    height: $breadcrumb_component_height;
+}
+
+.aw-search-globalSearchBoxContainer.aw-layout-flexRowContainer {
+    align-items: flex-start;
+}
+
+.aw-search-globalSearchWidgetContainer .aw-search-searchPanelToggleIconContainer {
+    display: none;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-globalSearchWidgetContainer .aw-search-searchPanelToggleIconContainer {
+    display: none;
+}
+
+/* LIST SKELETON  */
+.aw-search-results-filters-tab .aw-jswidgets-loading {
+    margin: auto;
+    width: 500px;
+    height: 1280px;
+    /* change height to see repeat-y behavior */
+
+
+    background-repeat: repeat-y;
+
+    background-size:
+        64px 64px,
+        /* highlight */
+        48px 64px,
+        /* icon */
+        195px 64px,
+        /* title */
+        98px 64px,
+        /* subtitle */
+        125px 64px;
+    /* property */
+
+    background-position:
+        -64px 0,
+        /* highlight */
+        8px 8px,
+        /* icon */
+        64px 8px,
+        /* title */
+        64px 26px,
+        /* subtitle */
+        64px 44px;
+    /* property */
+
+    animation: list-shine 2s infinite;
+}
+
+@media all and (max-width: 63.75em) {
+
+    /** Hide the global search box container**/
+    .aw-search-globalSearchWidgetContainer .aw-search-globalSearchBoxContainer {
+        display: none;
+    }
+
+    /** Display the search panel toggle icon **/
+    .aw-search-globalSearchWidgetContainer .aw-search-searchPanelToggleIconContainer {
+        display: inherit;
+        margin-top: rem-calc(6);
+    }
+
+    /** Display the narrow mode search box container **/
+    .aw-search-narrowModeSearchContainer .aw-search-globalSearchWidgetContainer .aw-search-globalSearchBoxContainer {
+        display: inherit;
+    }
+}
+
+/*
+* Display the aw-layout-headerSubTitle inside search pre-filter panel
+* This will un-hide the search pre-filters in narrow mode
+*/
+@media (max-width: $narrowMode_max_width) {
+    .aw-search-searchPreFilterPanel .aw-layout-headerSubTitle {
+        display: inline-block;
+    }
+}
+
+/*
+*Changing to 63.76 because it is exclusive, at exactly 63.75 both searchContainer and searchCommand are hidden.
+*/
+@media all and (min-width: 63.76em) {
+
+    .aw-search-searchCommandButton,
+    .aw-commandId-Awp0Search {
+        /* gwt assigned id for nav panel search button */
+        display: none;
+    }
+}
+
+.aw-search-quickSearchValue {
+    margin-bottom: rem-calc(5);
+    width: 92%;
+}
+
+.aw-search-simpleSearch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    height: 32px;
+    padding: 0;
+    width: -webkit-calc(100%);
+    width: -moz-calc(100%);
+    width: calc(100%);
+}
+
+.aw-search-searchPreFilterPanel,
+.aw-search-advancedSearchLink {
+    /* ct 042915 */
+    text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.aw-search-dateRangeBox .sw-date-container {
+    width: 100%;
+}
+
+.aw-search-rangeSearchIcon {
+    margin-top: $padding_xsmall;
+}
+
+.aw-search-colorBar {
+    margin-top: $padding_small;
+    margin-bottom: $padding_small;
+}
+
+.aw-search-rangeSeparator {
+    margin-top: $padding_large;
+}
+
+.aw-search-advancedSearchLink {
+    padding-top: rem-calc(2);
+    margin-top: rem-calc(2);
+    padding-bottom: rem-calc(1);
+}
+
+.aw-search-searchPreFilterPanel {
+    margin-bottom: rem-calc(2);
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.aw-search-searchPreFilterTextPanel {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.aw-search-searchContainer .aw-search-searchFilters {
+    width: 100%;
+    text-align: left;
+    padding-bottom: rem-calc(5);
+    list-style: none;
+    position: relative;
+    display: inline-table;
+}
+
+.aw-search-searchFilters .aw-search-searchFilterContainer {
+    float: left;
+    width: 49%;
+}
+
+.aw-search-searchBoxViewContainer input,
+.aw-search-createTraceLinkSearch input[type="text"],
+.aw-search-addObjectSearch input[type="text"],
+.aw-search-referencePropertySearch input[type="text"],
+.aw-search-updateSearchPanel .aw-search-dropDownSearchBox {
+    float: left;
+    margin: 0;
+    padding: 0 8px 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: calc(100% - 24px);
+    height: 25px;
+    -webkit-transition: background-color 0.2s ease-in, background-position 0.2s ease-in, box-shadow 0.3s ease-in;
+    -moz-transition: background-color 0.2s ease-in, background-position 0.2s ease-in, box-shadow 0.3s ease-in;
+    -o-transition: background-color 0.2s ease-in, background-position 0.2s ease-in, box-shadow 0.3s ease-in;
+    -ms-transition: background-color 0.2s ease-in, background-position 0.2s ease-in, box-shadow 0.3s ease-in;
+    transition: background-color 0.2s ease-in, background-position 0.2s ease-in, box-shadow 0.3s ease-in;
+    outline: none;
+}
+
+.aw-search-searchBoxViewContainer input {
+    padding: rem-calc(5);
+}
+
+.aw-search-searchBoxViewContainer .aw-search-searchBox {
+    width: rem-calc(320);
+}
+
+.aw-search-SuggestBoxPopup {
+    margin: 28px 0 0 0;
+    text-align: left;
+    font: inherit;
+    display: inline-block;
+    width: calc(100% - 8px);
+    max-width: 304px;
+    position: absolute;
+    z-index: 1000;
+    overflow: visible;
+}
+
+.aw-search-SuggestBoxPopup .item {
+    padding: rem-calc(5);
+    font-size: $fontsize_normal;
+}
+
+.aw-search-SuggestBoxPopup .item:hover {
+    cursor: pointer;
+}
+
+.aw-search-PopupLayout {
+    border: rem-calc(2) Solid;
+}
+
+.aw-search-noSuggestions {
+    padding: 5px;
+    font: inherit;
+}
+
+.aw-search-searchButton {
+    /* ct 042915 */
+    height: 24px;
+    width: 24px;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    padding-left: 0;
+    float: left;
+}
+
+.aw-search-quickSearchButton {
+    height: 31px;
+    width: 31px;
+    margin-top: 3px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+    padding-left: 3px;
+    float: left;
+}
+
+
+.aw-search-filterCategory .aw-search-searchButton,
+.aw-search-addObjectSearch .aw-search-filterCategory .aw-search-searchButton {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+.aw-search-filterCategory .aw-search-searchButton {
+    margin-top: 3px;
+    height: 31px;
+    width: 31px;
+}
+
+.aw-search-addObjectSearch .aw-search-filterCategory .aw-search-searchButton {
+    margin-top: 2px;
+}
+
+.aw-search-advancedSearchSection {
+    display: inline-block;
+}
+
+.aw-search-fullTextHighlightStyle {
+    font-weight: 600;
+}
+
+.aw-search-fullTextViewEndRow {
+    border-bottom: 1px solid;
+}
+
+.aw-search-fullTextViewRepeatingRow {
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.aw-search-updateSearchDropDown {
+    padding: 5px;
+    height: 98%;
+    width: calc(100% - 2px);
+    border-style: solid;
+    border-width: 1px;
+    overflow: auto;
+    z-index: 9999;
+    position: relative;
+}
+
+.aw-search-hiddenBreadcrumbsDropDown,
+.aw-search-filtersDropDown {
+    padding: 5px;
+    height: 98%;
+    width: 260px;
+    border-style: solid;
+    border-width: 1px;
+    max-height: 200px;
+    overflow: hidden;
+    z-index: 9999;
+    position: relative;
+}
+
+aw-search-breadcrumb .aw-layout-breadCrumbs,
+.aw-search-resultsCountArea {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: visible;
+}
+
+.aw-search-resultsCountArea span {
+    overflow: hidden;
+    width: fit-content;
+    max-width: rem-calc(500);
+    text-overflow: ellipsis;
+}
+
+.aw-search-resultsCountArea a {
+    display: inherit;
+    width: fit-content;
+}
+
+.aw-search-dropDownFilterNameLink {
+    font-size: $fontsize_normal;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 3px;
+}
+
+.aw-search-dropDownFilterCategoryLabel {
+    cursor: pointer;
+    display: block;
+    font-size: $fontsize_large;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    max-width: 243px;
+    word-wrap: break-word;
+}
+
+.aw-search-filtersPanel {
+    overflow: auto;
+}
+
+.aw-search-dropDownPanelLineItem {
+    width: 250px;
+    margin-bottom: 3px;
+}
+
+.aw-search-updateSearchTitle {
+    display: block;
+    font-size: $fontsize_2x_large;
+    font-weight: 600;
+    margin-bottom: 13px;
+    margin-left: 7px;
+}
+
+.aw-search-updateSearchPanel {
+    display: block;
+    width: 100%;
+    height: 31px;
+    margin: 4px 4px 9.333px 4px;
+}
+
+.aw-search-dropDownSearchBox input[type="text"] {
+    width: 277px;
+    text-align: center;
+}
+
+.aw-search-clearFiltersLink {
+    display: inline;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 1px;
+    margin-left: 4px;
+    text-decoration: none;
+}
+
+aw-chart-search-view {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    overflow: hidden;
+}
+
+aw-chart-search-view .aw-charts-columnChart {
+    overflow-y: auto;
+}
+
+.aw-search-searchResultsChart {
+    width: 100%;
+    height: 100%;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.aw-search-searchResultsChart aw-column-chart {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+
+    overflow: hidden;
+}
+
+.aw-search-searchResultsChartTitle {
+    font-size: $fontsize_x_large;
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.aw-search-searchResultsChartSelector {
+    width: 300px;
+}
+
+@media all and (max-width: $narrowMode_max_width) {
+    .aw-search-searchBoxViewContainer {
+        margin: 0;
+    }
+}
+
+@media all and (max-width: $narrowMode_max_width) {
+    .aw-search-absolutePositionWrapper {
+        padding: 4px;
+    }
+}
+
+.aw-search-absolutePositionWrapper {
+    width: inherit;
+    max-width: 328px;
+    padding: 0 4px;
+}
+
+.aw-search-searchBoxViewContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -ms-box-direction: normal;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.aw-search-filterCategoryLabel {
+    /* CT 081115 */
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: $fontsize_large;
+    padding-top: 16px;
+    padding-bottom: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 85%;
+}
+
+.aw-search-filterCategoryLabel.inactive {
+    /* ct 042915 */
+    font-weight: normal;
+}
+
+.aw-search-filterCategoryLabelEnabled {
+    font-weight: 700;
+}
+
+.aw-search-filterInBetweenSpace {
+    padding-bottom: $padding_xsmall;
+}
+
+.aw-search-filterNameLabelMore .sw-aria-border {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: $fontsize_normal;
+}
+
+.aw-search-showAllfilterCategories .sw-aria-border {
+    text-decoration: underline;
+    font-weight: bold;
+    padding-right: $padding_xlarge;
+    float: right;
+}
+
+.aw-search-filterNameLabel,
+.aw-search-filterNameLabelDrilldown1,
+.aw-search-filterNameLabelDrilldown2,
+.aw-search-filterNameLabelDrilldown3,
+.aw-search-filterNameLabelDrilldown4,
+.aw-search-filterNameLabelSelected,
+.aw-search-filterNameLabelSelectedDrilldown1,
+.aw-search-filterNameLabelSelectedDrilldown2,
+.aw-search-filterNameLabelSelectedDrilldown3,
+.aw-search-filterNameLabelSelectedDrilldown4 {
+    /* ct 091015 */
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+.aw-search-filterValue {
+    font-size: $fontsize_normal;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+
+.aw-search-filterNameLabel,
+.aw-search-filterNameLabelDrilldown1,
+.aw-search-filterNameLabelDrilldown2,
+.aw-search-filterNameLabelDrilldown3,
+.aw-search-filterNameLabelDrilldown4,
+.aw-search-filterCategory .aw-uiwidgets-navWidgetContainer {
+    margin-left: 22px;
+}
+
+.aw-search-filterNameLabelSpace {
+    padding-left: 15px;
+}
+
+.aw-search-filterNameLabelSelected:before,
+.aw-search-filterNameLabelSelectedDrilldown1:before,
+.aw-search-filterNameLabelSelectedDrilldown2:before,
+.aw-search-filterNameLabelSelectedDrilldown3:before,
+.aw-search-filterNameLabelSelectedDrilldown4:before {
+    content: "\2713\0010";
+    margin-left: 4px;
+    margin-right: 8px;
+    display: inline-block;
+    width: 10px;
+    height: 2px;
+}
+
+.aw-search-filterNameLabelSelectedDrilldown1 {
+    position: relative;
+    left: 10px;
+}
+
+.aw-search-filterNameLabelSelectedDrilldown2 {
+    position: relative;
+    left: 20px;
+}
+
+.aw-search-filterNameLabelSelectedDrilldown3 {
+    position: relative;
+    left: 30px;
+}
+
+.aw-search-filterNameLabelSelectedDrilldown4 {
+    position: relative;
+    left: 40px;
+}
+
+.aw-search-filterNameLabel:hover {
+    text-decoration: underline;
+}
+
+.aw-search-filterNameLabelDrilldown1 {
+    position: relative;
+    left: 10px;
+}
+
+.aw-search-filterNameLabelDrilldown2 {
+    position: relative;
+    left: 20px;
+}
+
+.aw-search-filterNameLabelDrilldown3 {
+    position: relative;
+    left: 30px;
+}
+
+.aw-search-filterNameLabelDrilldown4 {
+    position: relative;
+    left: 40px;
+}
+
+.aw-search-savedSearchPanel {
+    margin: 0 0 27px 0;
+    height: 100%;
+    width: 440px;
+}
+
+.aw-search-savedSearchTable {
+    width: 333px;
+}
+
+.aw-search-savedSearchPrimaryWorkArea {
+    overflow: auto;
+}
+
+.aw-search-saveSearchPanel {
+    float: left;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.aw-search-resultsAndFiltersPanel {
+    margin-top: 5px;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-cellListCellImage,
+.aw-search-visualNavigationContent .aw-widgets-cellListCellImage .aw-base-large-thumbnail,
+.aw-search-visualNavigationContent .aw-widgets-modelObjectThumbnail,
+.aw-search-visualNavigationContent .aw-widgets-modelObjectThumbnail .aw-base-icon {
+    width: 75px;
+    max-width: 200px;
+    height: 75px;
+    max-height: 200px;
+}
+
+
+.aw-search-visualNavigationContent .aw-widgets-cellListCellImage .aw-base-large-thumbnail>img.aw-base-icon {
+    display: none;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-cellListItem {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    border: 2px solid;
+    padding: 15px;
+    margin: 15px;
+
+    /* Making VNCs fixed size */
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
+    height: 152px;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-cellListCellContent {
+    width: 100%;
+    float: none;
+    max-width: 260px;
+
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-modelObjectThumbnailContainer {
+    margin: 0;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-cellListCellCommands {
+    display: none;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-modelObjectTypeIconOverlay {
+    display: none;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-cellListWidget {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+
+.aw-search-visualNavigationContent .aw-widgets-cellListCellImage {
+    float: none;
+    margin: 0;
+    margin-left: 10px;
+
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+.aw-search-visualNavigationContent .aw-widgets-cellListCellTitle {
+    font-size: $fontsize_x_large;
+    letter-spacing: .5px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.aw-search-visualNavigationTitle {
+    text-align: center;
+    font-size: $fontsize_x_large;
+    width: 100%;
+}
+
+.aw-search-visualNavigationContent {
+    width: 100%;
+    height: calc(100% - 111px);
+}
+
+.aw-search-visualNavigationContent .aw-layout-panelBody {
+    height: 100%;
+}
+
+.aw-search-visualNavigationContent li {
+    cursor: pointer;
+}
+
+
+.aw-search-filterRangeSeparator {
+    padding: 4px 2px;
+}
+
+.aw-search-addObjectSearch .aw-search-filterRangeSeparator {
+    padding: 3px 2px;
+}
+
+.aw-search-filterDateRangeWidget,
+.aw-search-addObjectSearch .aw-search-filterDateRangeWidget input[type="text"] {
+    width: 100%;
+}
+
+.aw-search-filterSearchSpace {
+    margin-left: 20px;
+}
+
+.aw-search-filterCategorySearchBoxWidget {
+    margin-left: 22px;
+    padding: 5px 0;
+}
+
+.aw-search-filterCategorySearchBoxWrapper {
+    width: 100%;
+    height: 26px;
+    margin-bottom: 3px;
+}
+
+.aw-search-filterCategorySearchBoxWrapper input[type="text"] {
+    border: 0;
+    width: 100%;
+    height: 26px;
+    padding-right: 26px;
+}
+
+.aw-search-filterCategorySearchBoxReset {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    font-weight: 900;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: transparent;
+    transition: background 0.4s;
+    z-index: 1;
+    padding: 0;
+    margin-left: -26px;
+}
+
+.aw-search-dropDownPanelLineItem .aw-base-icon {
+    margin-right: 4px;
+    margin-left: 7px;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    float: right;
+    cursor: pointer;
+}
+
+.aw-search-searchButton .aw-base-icon {
+    height: 18px;
+    width: 18px;
+    display: block;
+    margin-left: 3px;
+}
+
+.aw-search-quickSearchButton .aw-base-icon,
+.aw-search-filterCategory .aw-search-searchButton .aw-base-icon {
+    height: 24px;
+    width: 24px;
+    vertical-align: top;
+}
+
+.aw-search-filterCategoryLabelCollapse .aw-base-icon,
+.aw-search-filterCategoryLabelExpand .aw-base-icon {
+    height: 18px;
+    width: 12px;
+}
+
+.aw-search-refineLabel {
+    font-size: $fontsize_large;
+    border-top: solid 1px;
+    margin-top: 10px;
+    padding-top: 8px;
+}
+
+.aw-search-advancedSearchTitle {
+    font-size: $fontsize_normal;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    height: auto;
+    width: 100%;
+    line-height: 30px;
+}
+
+.aw-search-recentSearchBoxHeader {
+    margin-top: $margin_small;
+    padding-left: $padding_small;
+    padding-right: $padding_small;
+    align-items: center;
+}
+
+.aw-search-recentSearchBoxFooter {
+    padding: 0 5px 3px;
+}
+
+.aw-search-recentSearchBoxTitle {
+    font-size: $fontsize_normal;
+    font-weight: bold;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.aw-search-recentSearchBoxCommand {
+    text-align: right;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.aw-search-recentSearchBoxCommand .sw-aria-border {
+    font-weight: normal;
+}
+
+.aw-search-recentSearchBoxItem {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 15px;
+    cursor: pointer;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.aw-search-searchSuggestionsBreak {
+    height: 2px;
+    width: 95%;
+    border-top: 1px solid;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.aw-search-searchIconViewContainer {
+    display: flex;
+    margin: 5px 4px 2px 0;
+}
+
+.aw-search-globalSearchBoxContainer aw-search-box .aw-uiwidgets-searchBoxContainer {
+
+    .aw-uiwidgets-searchBoxIcon,
+    .aw-uiwidgets-searchResetIcon {
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+    }
+}
+
+.aw-search-searchIconViewContainer {
+
+    .aw-uiwidgets-searchBoxIcon,
+    .aw-uiwidgets-searchResetIcon {
+        padding: $padding_xsmall;
+        height: rem-calc(20);
+        width: rem-calc(20);
+    }
+}
+
+.aw-search-searchContainer .aw-search-searchIconViewContainer {
+    margin-top: 0;
+}
+
+@media (max-width: $narrowMode_max_width) {
+    .aw-search-searchIconViewContainer {
+        margin: 0;
+    }
+
+    .aw-search-searchIconViewContainer {
+
+        .aw-uiwidgets-searchBoxIcon,
+        .aw-uiwidgets-searchResetIcon {
+            padding: 2px 0;
+        }
+    }
+}
+
+/**
+New global search box
+**/
+.aw-search-globalSearchWidgetContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-radius: 0;
+}
+
+.aw-search-narrowModeSearchContainer {
+    margin: 0 auto;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-globalSearchWidgetContainer {
+    width: 310px;
+    padding: 4px;
+}
+
+.aw-search-globalSearchContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.aw-search-globalSearchContainerAnim {
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+@keyframes resizeSearchBox {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        max-width: 0;
+        width: 0;
+    }
+}
+
+.aw-search-globalSearchContainer.aw-search-slideRight {
+    transform: translate(700px, 0);
+    display: block;
+    animation: resizeSearchBox 0s ease-in 0.5s forwards;
+}
+
+.aw-search-globalSearchElementsContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-globalSearchElementsContainer {
+    flex-direction: column;
+}
+
+.aw-search-globalSearchPreFilterWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.aw-search-globalSearchPreFilterWrapper .aw-widgets-propertyContainer,
+.aw-search-globalSearchPreFilterWrapper .aw-widgets-propertyValContainer {
+    height: 32px;
+}
+
+.aw-search-inContentSearchBox {
+    width: 100%;
+    padding: $padding_xlarge;
+}
+
+aw-filter-category-string-filter div.aw-search-inContentSearchBox {
+    width: 255px;
+    padding: 2px 0px 0px 0px;
+    margin-left: 22px
+}
+
+.aw-search-globalSearchPreFilterWrapper input {
+    height: 32px;
+}
+
+.aw-search-globalSearchPreFilterWrapper input,
+.aw-search-globalSearchPreFilterWrapper .aw-widgets-cellListCellText {
+    font-size: $fontsize_normal;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-globalSearchPreFilterWrapper {
+    width: 304px;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-searchPreFilterPanel1 {
+    margin-right: auto;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-searchPreFilterPanel2 {
+    margin-left: auto;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-searchPreFilterPanel3 {
+    margin-left: auto;
+}
+
+.aw-search-searchPreFilterPanel1,
+.aw-search-searchPreFilterPanel2 {
+    padding: 0;
+    width: 120px;
+}
+
+.aw-search-searchPreFilterPanel3 {
+    padding: 0;
+    width: rem-calc(120);
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-searchPreFilterPanel1,
+.aw-search-narrowModeSearchContainer .aw-search-searchPreFilterPanel2 {
+    width: 150px;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-searchPreFilterPanel3 {
+    width: rem-calc(150);
+}
+
+.aw-search-searchPreFilterPanel1 a,
+.aw-search-searchPreFilterPanel2 a,
+.aw-search-searchPreFilterPanel1 li,
+.aw-search-searchPreFilterPanel2 li,
+.aw-search-globalSearchLinksPanel2 a,
+.aw-search-globalSearchLinksPanel2 li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: rem-calc(150);
+}
+
+.aw-search-searchPreFilterPanel3 a,
+.aw-search-searchPreFilterPanel3 li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aw-search-globalSearchWrapper {
+    padding: 0;
+}
+
+.aw-search-globalSearchLinksContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+}
+
+.aw-search-globalSearchLinksContainer2 {
+    width: 304px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $padding_small;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-globalSearchLinksContainer2 {
+    padding: 0;
+}
+
+.aw-search-globalSearchLinksPadding {
+    width: 240px;
+}
+
+.aw-search-narrowModeSearchContainer .aw-search-globalSearchLinksPadding {
+    width: 0;
+    max-width: 0;
+}
+
+.aw-search-globalSearchContainer .aw-seperator-style {
+    display: none;
+}
+
+.aw-search-globalSearchWrapper aw-search-box .aw-uiwidgets-searchBoxContainer {
+    width: 304px;
+    height: 32px;
+    border: none;
+    align-items: center;
+    display: flex;
+    border-radius: 0;
+}
+
+.aw-search-globalSearchWrapper aw-search-box .aw-uiwidgets-searchBoxContainer input.aw-uiwidgets-searchBox,
+.aw-search-inContentSearchBox aw-in-content-search-box .aw-uiwidgets-searchBoxContainer input.aw-uiwidgets-searchBox {
+    height: 24px;
+    width: 248px;
+    padding: 4px 10px;
+    border-radius: 0;
+    align-self: center;
+}
+
+.aw-search-globalSearchContainer .aw-layout-popup {
+    border-radius: 0;
+    border: none;
+}
+
+.aw-search-globalSearchWrapper aw-search-box .aw-uiwidgets-searchBoxContainer aw-icon,
+.aw-search-inContentSearchBox aw-in-content-search-box .aw-uiwidgets-searchBoxContainer aw-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.aw-search-globalSearchWidgetContainer .aw-base-icon,
+.aw-search-inContentSearchBox .aw-base-icon {
+    width: rem-calc(16);
+    height: rem-calc(16);
+}
+
+.aw-search-globalSearchLinksPanel1 .aw-layout-headerSubTitle,
+.aw-search-globalSearchLinksPanel2 .aw-layout-headerSubTitle {
+    padding-left: rem-calc(10);
+}
+
+.aw-search-globalSearchLinksPanel1 .aw-link {
+    margin-top: rem-calc(2);
+}
+
+.aw-search-globalSearchSavedLink .aw-layout-headerSubTitle,
+.aw-search-globalSearchLinksPanel2 .aw-layout-headerSubTitle {
+    padding-left: rem-calc(10);
+}
+
+.aw-search-globalSearchSavedLink .aw-link {
+    margin-top: $padding_xsmall;
+}
+
+.aw-search-globalSearchWrapper ::-webkit-input-placeholder,
+.aw-search-inContentSearchBox ::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: $fontsize_normal;
+}
+
+.aw-search-globalSearchWrapper ::-moz-placeholder,
+.aw-search-inContentSearchBox ::-moz-placeholder {
+    font-style: italic;
+    font-size: $fontsize_normal;
+}
+
+.aw-search-globalSearchWrapper ::-ms-input-placeholder,
+.aw-search-inContentSearchBox ::-ms-input-placeholder {
+    font-style: italic;
+    font-size: $fontsize_normal;
+}
+
+.aw-search-globalSearchWrapper ::placeholder,
+.aw-search-inContentSearchBox ::placeholder {
+    font-style: italic;
+    font-size: $fontsize_normal;
+}
+
+.aw-search-shapeSearch {
+    padding-bottom: 32px;
+}
+
+.aw-search-shapeSearchSimilarity,
+.aw-search-shapeSearchSize {
+    display: flex;
+    justify-content: space-between;
+    font-size: $fontsize_normal;
+    margin: rem-calc(0 16);
+    width: rem-calc(280);
+
+    .sw-slider-mainContainer {
+        width: 100%;
+    }
+}
+
+.aw-search-shapeSearchSimilarityText {
+    padding-bottom: $margin_normal;
+}
+
+.aw-search-shapeSearchSize .aw-widgets-sliderWithResetPanel {
+    padding-top: 10px;
+}
+
+.aw-search-shapeSearchSize .sw-slider-mainContainerslider {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.aw-search-shapeSearchSize .sw-slider-mainContainerslider .aw-widgets-sliderWithResetPanel {
+    margin-top: 14px;
+}
+
+.aw-search-shapeFilterCategoryLabel {
+    margin: 0 5px 12px 5px;
+}
+
+.aw-search-searchResultsChartSelector .aw-widgets-propertyContainer {
+    height: 68px;
+}
+
+.aw-search-advancedSearchClearAll .aw-link {
+    float: right;
+}
+
+.aw-search-cell .aw-widgets-cellListCellProperties {
+    margin: 0 8px 0 8px;
+}
+
+.aw-search-cell .aw-widgets-cellListCellProperties .aw-widgets-propertyValue {
+    white-space: normal;
+}
+
+.aw-search-filterCategoryLabelExpand .aw-base-icon,
+.aw-search-filterCategoryLabelCollapse .aw-base-icon {
+    height: 12px;
+    width: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.aw-search-settings .afx-checkbox.afx-checkbox-label-right {
+    margin-left: 0;
+}
+
+.aw-search-settings .afx-checkbox {
+    padding-left: 0;
+}
+
+.aw-search-settings .aw-search-checkboxWithReset {
+    display: flex;
+}
+
+.aw-search-settings .aw-search-resetIcon {
+    margin-left: auto;
+}
+
+.aw-search-settings .aw-search-resetIcon .aw-base-icon {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.aw-search-settingsDisabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: .95;
+}
+
+.aw-search-ruleSection {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.aw-search-rulesTabHeader {
+    height: 34px;
+}
+
+.aw-search-rulesTabHeaderBox {
+    margin-top: rem-calc(2);
+    width: rem-calc(200);
+}
+
+.aw-search-rulesTabContent {
+    height: calc(100% - 34px);
+}
+
+.aw-search-searchFolderButtons {
+    min-width: auto;
+    margin-left: auto;
+}
+
+.aw-search-searchFolderButtons .aw-commandBars {
+    width: 100%;
+    display: inline;
+}
+
+.aw-search-searchFolderButtons .aw-toolbar-layout.aw-toolbar-horizontal {
+    box-shadow: none;
+    width: auto;
+    font-weight: normal;
+    border-style: none;
+}
+
+.aw-search-searchFolderButtons .aw-toolbar-layout {
+    border-style: none;
+}
+
+.aw-search-folderColumn {
+    margin-top: rem-calc(5);
+    width: rem-calc(200);
+}
+
+.aw-search-folderColumn .sw-command-panel {
+    height: 100%;
+}
+
+.aw-search-folderColumn .aw-layout-panelSectionTitle {
+    height: rem-calc(31);
+}
+
+.aw-search-folderCount {
+    font-weight: normal;
+}
+
+.aw-search-folderSectionSpace {
+    margin-left: rem-calc(6);
+    margin-right: rem-calc(6);
+    width: rem-calc(4);
+}
+
+.aw-search-searchFolderAccessor {
+    padding-top: rem-calc(160);
+}
+
+.aw-search-searchFolderAvailableTable {
+    width: 40%;
+    padding-left: 0;
+    box-sizing: border-box;
+    float: left;
+}
+
+.aw-search-searchFolderSharedWithTable {
+    width: 40%;
+    float: left;
+}
+
+.aw-search-searchFolderSharedWithTableContent {
+    padding-top: rem-calc(40);
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.aw-search-searchFolderSharingTab {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    float: left;
+}
+
+.aw-search-accessorsValue {
+    padding: 8px;
+}
+
+.aw-search-folder {
+    .aw-search-folderFilter {
+        padding-left: 8px;
+    }
+
+    .aw-ui-filterInFiltersSearchBox {
+        padding: 0;
+    }
+
+    .aw-ui-filterInFiltersSearchBox input[type="text"] {
+        padding-left: 16px;
+    }
+
+    .aw-tcWidgets-inContextSearchRecipeLabel,
+    .aw-tcWidgets-inContextSearchHiddenRecipeLabel {
+        padding-left: 10px;
+    }
+
+    .aw-tcWidgets-inContextSearchRecipeContainer {
+        padding-top: 1px;
+    }
+}
+
+.aw-search-globalSearchContainer {
+    .aw-search-globalSearchElementsContainer {
+        .aw-search-globalSearchWrapper {
+            .aw-uiwidgets-searchBoxContainer {
+                width: 304px;
+                height: 32px;
+                border: none;
+                align-items: center;
+                display: flex;
+                border-radius: 0;
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+                background-color: #ffffff;
+
+                .aw-uiwidgets-searchBox {
+                    height: 24px;
+                    width: 275px;
+                    padding: 4px 10px;
+                    border-radius: 0;
+                    border: none;
+                }
+
+                .aw-uiwidgets-searchBoxIcon,
+                .aw-uiwidgets-searchResetIcon {
+                    width: 24px;
+                    height: 24px;
+                    padding: 4px;
+
+                    .aw-theme-iconOutline {
+                        fill: #464646;
+                    }
+                }
+
+                .aw-uiwidgets-searchBoxIcon:hover,
+                .aw-uiwidgets-searchResetIcon:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .aw-search-globalSearchPreFilterWrapper {
+        .sw-property-name {
+            display: none;
+        }
+
+        // TODO fix anti-patterns
+        //   - colors should be in theme file
+        //   - colors should be specified using variables from the approved palette
+        //   - nice to have: background should be set using a standard background class
+        input.sw-property-val {
+            background-color: #006487; //https://app.zeplin.io/project/5ace78465621757fb04b19c6/screen/5ad49312b707daac7e8bc78d
+            border-color: #3296b9;
+            color: #ffffff;
+
+            &:hover {
+                cursor: pointer;
+                border-color: #3296b9;
+            }
+
+            &[dirty='true'] {
+                background-color: #dc6914;
+                border-color: #dc6914;
+                color: #ffffff;
+
+                &:hover {
+                    cursor: pointer;
+                    border-color: #dc6914;
+                }
+            }
+        }
+
+        .aw-theme-iconOutline {
+            fill: #ffffff;
+        }
+
+    }
+}
+
+.aw-search-sectionCountBlock {
+    margin-left: 7px;
+}
+
+.aw-search-filterLabelDrilldown1 {
+    margin-left: $margin_normal;
+}
+
+.aw-search-filterLabelDrilldown2 {
+    margin-left: $margin_large;
+}
+
+.aw-search-filterLabelDrilldown3 {
+    margin-left: $margin_x_large;
+}
+
+.aw-search-filterLabelDrilldown4 {
+    margin-left: 2 * $margin_large;
+}
+
+.aw-search-filterInBetweenSpace .sw-property.sw-row {
+    margin-bottom: 0;
+}
+
+.aw-search-dateRangeSearchIcon {
+    margin-top: 0;
+}
+
+.aw-search-bulkStringFilterIcon {
+    margin-top: rem-calc(3);
+}
+
+.sw-flex-column.aw-search-filterCategoryTextBox {
+    width: 90%;
+}
+
+.sw-flex-column.aw-search-nonTypeAheadStringFacetSearch {
+    margin-top: rem-calc(-2);
+}
+
+.aw-search-filterCategoryShowSuffixIconContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.aw-search-filterCategoryShowSuffixIcon {
+    height: rem-calc(16);
+    width: rem-calc(16);
+}
+
+/*
+Animated skeleton screen using CSS.
+Create shapes using gradients that simulate solids.
+Use `:empty` pseduo-class to show skeleton screen background only while container has no content (ex: for the "loading" state). When content is added to the container element, the pseudo-class selector won't match anymore and the skeleton screen will be removed automatically; no need to toggle a separate class on the container.
+See: https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
+
+Animating one layer of the background which is a tilted linear gradient with white in the middle to achieve shine effect.
+*/
+
+.aw-search-filterSkeleton:empty {
+    margin: auto;
+    width: 328px;
+    height: 800px;
+    /* change height to see repeat-y behavior */
+
+    background-repeat: repeat-y;
+
+    background-size:
+        64px 168px,
+        296px 168px,
+        16px 168px,
+        16px 168px,
+        16px 168px,
+        16px 168px,
+        16px 168px,
+        100px 168px,
+        150px 168px,
+        175px 168px,
+        125px 168px,
+        200px 168px;
+
+    background-position:
+        -64px 0,
+        16px 8px,
+        16px 48px,
+        16px 72px,
+        16px 96px,
+        16px 120px,
+        16px 144px,
+        40px 48px,
+        40px 72px,
+        40px 96px,
+        40px 120px,
+        40px 144px;
+
+    animation: filter-shine 2s infinite;
+}
+
+@keyframes filter-shine {
+    to {
+        background-position:
+            328px 0,
+            16px 8px,
+            16px 48px,
+            16px 72px,
+            16px 96px,
+            16px 120px,
+            16px 144px,
+            40px 48px,
+            40px 72px,
+            40px 96px,
+            40px 120px,
+            40px 144px;
+    }
+}
+
+.aw-search-activefolderContents {
+    height: calc(100vh - 40rem);
+}
+
+.aw-input-section,
+.aw-filters-section,
+.aw-results-section {
+    .sw-section-content {
+        height: calc(100% - 48px);
+    }
+}
+
+// QT doesn't support list-style-type which makes this overflow property QT specific
+@supports not(list-style-type: disclosure-closed) {
+
+    .aw-advanced-search .aw-input-section,
+    .aw-advanced-search .aw-results-section,
+    .aw-search-results-filters-tab .aw-filters-section,
+    .aw-search-results-filters-tab .aw-results-section {
+        overflow-y: auto;
+    }
+}
+
+.aw-search-advanced {
+    height: rem-calc(500);
+}
+
+details.aw-input-section.sw-section,
+details.aw-filters-section.sw-section,
+details.aw-results-section.sw-section {
+    max-height: 100%;
+}
+
+details.aw-search-left-panel-view {
+    width: calc(50% - 14px);
+}
+
+.aw-advanced-search.aw-panel.sw-command-panel .sw-command-panelContent {
+    border-width: 0;
+}
+
+.aw-advancedsearch-link,
+.aw-keywordsearch-link {
+    align-self: end;
+    padding-bottom: $padding_xsmall;
+    padding-left: $padding_normal;
+}
+
+.aw-search-fileNameSnippetIcon {
+    float: left;
+    padding-right: rem-calc(5);
+    height: rem-calc(21);
+    width: rem-calc(21);
+}
+
+.aw-search-padding {
+    padding-top: rem-calc(5);
+}
+
+.aw-search-globalSearchWrapper .aw-in-content-search-box .aw-uiwidgets-searchBoxContainer .sw-search-iconContainer,
+.aw-search-globalSearchWrapper .aw-in-content-search-box .aw-uiwidgets-searchBoxContainer .sw-search-resetContainer {
+    position: static;
+}
+
+.aw-search-activefolderShareRule {
+    height: calc(100vh - 30rem);
+}
+
+.aw-search-advancedsearchButton {
+    position: absolute;
+    bottom: 0;
+}
+
+.aw-advanced-search .aw-panel-header .sw-component {
+    margin-bottom: rem-calc(4);
+}
+
+.aw-search-globalSearchBoxSpacer{
+    height: rem-calc(50);
+}
+
+.sw-popup .aw-base-scrollPanel .aw-widgets-cellListWidget .aw-widgets-cellListItem{
+    padding-bottom: $padding_xsmall;
+    padding-top: $padding_xsmall;
+}
+
+.aw-saved-search-propertiesLink .aw-link a {
+    word-break: break-word;
+    font-weight: normal;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.aw-searchFilterDisplay-settings .sw-property.sw-component.sw-nonText.sw-autoSize{
+    margin-bottom: $margin_small;
+}
+.aw-saved-search-propertiesLink .sw-row > .sw-component {
+    margin: 0;
+    margin-bottom: rem-calc(10);
+    width: calc(40% - 2rem);
+}

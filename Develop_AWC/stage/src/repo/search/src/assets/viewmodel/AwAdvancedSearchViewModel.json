@@ -1,0 +1,85 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "search",
+                "vm" : "AwAdvancedSearchBreadcrumb",
+                "noBreadCrumb" : "true",
+                "contextName" : "advancedSearch",
+                "noCriteriaSpecifiedMessage": {
+                    "source": "/i18n/SearchMessages",
+                    "key": "advancedSearchPWADefaultMessage"
+                } ,
+                "noResultsFoundMessage": {
+                    "source": "/i18n/SearchMessages",
+                    "key": "advancedSearchNoResultsFound"
+                } ,
+                "resultsFoundMessage": {
+                    "source": "/i18n/SearchMessages",
+                    "key": "advancedSearchResultsFound"
+                }
+            } ,
+            "source": "primaryWorkArea",
+            "searchPrompt":{
+                "source": "/i18n/SearchMessages",
+                "key": "advancedSearchPWADefaultMessage"
+            },
+            "clientScopeURI": "Awp0AdvancedSearch",
+            "nameToken": "com.siemens.splm.client.search:AdvancedSearchSubLocation",
+            "context": {
+                "search": {
+                    "chartTitle": {
+                        "source": "/i18n/SearchMessages",
+                        "key": "SearchResultsChartTitle"
+                    },
+                    "hideInContentSearchBox": true
+                }
+            },
+            "viewBase": "AwAdvancedSearch"
+        },
+        "searchState": {
+            "initialValues": {
+                "provider" : "Awp0SavedQuerySearchProvider",
+                "advancedSearchCriteria": "",
+                "savedQuery":{
+                    "name": "",
+                    "value": ""
+                }
+            },
+            "meta": {
+            }
+        }
+    },
+    "actions": {
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initializeSearchState"
+                },
+                {
+                    "action": "activateAdvancedSearchAction"
+                }
+            ]
+        },
+        "initializeSearchState": {
+            "actionType": "JSFunction",
+            "method": "createStateFromUrl",
+            "inputData": {
+                "searchState": "{{data.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "activateAdvancedSearchAction": {
+            "actionType": "activateCommandPanel",
+            "inputData": {
+                "commandId": "Awp0AdvancedSearch",
+                "location": "aw_navigation"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize"
+    }
+}

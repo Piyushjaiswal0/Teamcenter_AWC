@@ -1,0 +1,21 @@
+<div class="aw-layout-flexColumn" exist-when="props.activeState.value.activeView==='AddReferenceSub'">
+    <aw-navigate-panel title="i18n.BACK_BUTTON_TITLE" pre-panel-id="AddObjectPrimarySub"
+      panel-id="AddReferenceSub" action="props.action"
+      sub-panel-context="props.activeState.value.context"
+      active-state="props.activeState">
+    </aw-navigate-panel>
+</div>
+<div class="aw-layout-flexColumn" exist-when="props.activeState.value.activeView==='AssignProjectSub'">
+    <aw-navigate-panel title="i18n.addProjectButtonTitle" pre-panel-id="AddObjectPrimarySub"
+      panel-id="AssignProjectSub" action="props.action"
+      sub-panel-context="{ ...subPanelContext, projectState: props.projectState }"
+      active-state="props.activeState">
+    </aw-navigate-panel>
+</div>
+<!-- Dynamic rendering of panel-->
+<div class="aw-layout-flexColumn" exist-when="props.activeState.value.dynamicPanelId && props.activeState.value.activeView===props.activeState.value.dynamicPanelId">
+    <aw-navigate-panel title="{{props.activeState.value.dynamicPanelTitle}}" pre-panel-id="AddObjectPrimarySub"
+      panel-id="{{props.activeState.value.activeView}}" action="props.action"
+      sub-panel-context="{ ...subPanelContext }" active-state="props.activeState">
+    </aw-navigate-panel>
+</div>

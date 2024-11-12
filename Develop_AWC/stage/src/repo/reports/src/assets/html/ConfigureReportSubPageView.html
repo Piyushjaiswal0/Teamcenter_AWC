@@ -1,0 +1,12 @@
+<div class="sw-column aw-search-results-filters-tab">
+    <aw-tab-set tabs="data.reportConfigureDataTabs.dbValue">
+        <div class="sw-column" show-when="data.selectedTab.tabKey === 'searchData'">
+            <aw-keyword-search sub-panel-context="{searchState: data.searchState}"></aw-keyword-search>
+        </div>
+        <div class="sw-column" exist-when="data.selectedTab.tabKey === 'setLayout'">
+            <set-layout-tab-page sub-panel-context="{searchState: data.searchState, reportsContext: subPanelContext.reportsContext}"></set-layout-tab-page>
+        </div>
+    </aw-tab-set>
+</div>
+<!--aw-include exist-when="data.selectedTab.tabKey=='SearchDataTabPage'" name="SearchDataTabPage" sub-panel-context="{searchState: data.searchState}"> </aw-include>
+    <aw-include exist-when="data.selectedTab.tabKey=='SetLayoutTabPage'" name="SetLayoutTabPage" sub-panel-context="subPanelContext"> </aw-include-->

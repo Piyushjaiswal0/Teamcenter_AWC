@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M1.5.5h21a1,1,0,0,1,1,1v22a0,0,0,0,1,0,0H.5a0,0,0,0,1,0,0V1.5a1,1,0,0,1,1-1Z" fill="#dce1e6" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <path d="M.5,4.5v-3a1,1,0,0,1,1-1h21a1,1,0,0,1,1,1v3Z" fill="#f0f0f0" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <circle cx="17.5" cy="2.5" r="0.5" fill="#464646"/>
+  <circle cx="19.5" cy="2.5" r="0.5" fill="#464646"/>
+  <circle cx="21.5" cy="2.5" r="0.5" fill="#464646"/>
+    <path d="M4.5,7.5h15a1,1,0,0,1,1,1v10a0,0,0,0,1,0,0H3.5a0,0,0,0,1,0,0V8.5A1,1,0,0,1,4.5,7.5Z" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+    <path d="M3.5,11.5v-3a1,1,0,0,1,1-1h15a1,1,0,0,1,1,1v3Z" fill="#8cc3d2" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+    <circle cx="18.5" cy="9.5" r="0.5" fill="#464646"/>
+  <rect x="5" y="14" width="6" height="2" fill="#3caf82"/>
+  <rect x="13" y="14" width="6" height="2" fill="#c34673"/>
+</svg>

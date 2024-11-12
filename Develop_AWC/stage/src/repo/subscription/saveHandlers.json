@@ -1,0 +1,40 @@
+[
+  {
+    "conditions": {
+      "$and": [
+        {
+          "editInProgress": {
+            "$eq": true
+          }
+        },
+        {
+          "$or": [
+            {
+              "selected.modelType.typeHierarchyArray": {
+                "$in": [
+                  "ImanSubscription"
+                ]
+              }
+            },
+            {
+              "pselected.modelType.typeHierarchyArray": {
+                "$in": [
+                  "ImanSubscription"
+                ]
+              }
+            },
+            {
+              "locationContext['ActiveWorkspace:SubLocation']": {
+                "$eq": "com.siemens.splm.client.subscription.follow.Subscriptions"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "target": {
+      "method": "getSaveHandler",
+      "deps": "js/subscriptionService"
+    }
+  }
+]

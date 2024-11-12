@@ -1,0 +1,146 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "transfer": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Notification-2015-03-SubscriptionManagement",
+            "method": "transferNotifications",
+            "inputData": {
+
+                "input": {
+                    "subscriptions": "{{ctx.mselected}}",
+                    "notifier": {
+                        "type": "{{addUserPanelState.selectedUsers[0].type}}",
+                        "uid": "{{addUserPanelState.selectedUsers[0].uid}}"
+                    },
+                    "notificationDateRange": {
+                        "fromDate": "",
+                        "toDate": ""
+                    }
+                }
+            },
+            "outputData": {
+                "transferPartialErrors": "ServiceData.partialErrors"
+            },
+            "events": {
+                "success": [ {
+                        "name": "primaryWorkarea.reset"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                "failure": [ {
+                        "name": "primaryWorkarea.reset"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure": [ {
+                        "message": "failureChangeOwnerMessage",
+                        "condition": "(ctx.mselected && ctx.mselected.length === 1)"
+
+                    },
+                    {
+                        "message": "multipleFailureChangeOwnerMessage",
+                        "condition": "(ctx.mselected && ctx.mselected.length > 1)"
+                    }
+                ],
+                "success": [ {
+                        "message": "successfulChangeOwnerMessage",
+                        "condition": "(ctx.mselected && ctx.mselected.length === 1)"
+
+                    },
+                    {
+                        "message": "multipleSuccessfulChangeOwnerMessage",
+                        "condition": "(ctx.mselected && ctx.mselected.length > 1)"
+
+                    }
+                ]
+            }
+        }
+    },
+    "data": {
+        "addUserPanelState": {
+            "initialValues": {
+                "provider": "Awp0PeoplePickerProvider",
+                "selectionModelMode": "single",
+                "criteria": {
+                    "providerContentType": "User",
+                    "searchString": ""
+                },
+                "selectedUsers": ""
+            },
+            "meta": {
+                "selectedUsers": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        }
+    },
+    "messages": {
+        "successfulChangeOwnerMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.successfulTransferNotification}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{addUserPanelState.selectedUsers[0].props.user_id.uiValues[0]}}"
+            ]
+        },
+        "multipleSuccessfulChangeOwnerMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.multipleSubscriptionTransferNotification}}",
+            "messageTextParams": [
+                "{{ctx.mselected.length}}",
+                "{{ctx.mselected.length}}"
+            ]
+        },
+        "failureChangeOwnerMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.errorTransferNotification}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{addUserPanelState.selectedUsers[0].props.user_id.uiValues[0]}}"
+            ]
+        },
+        "multipleFailureChangeOwnerMessage": {
+            "expression": {
+                "successCount": "ctx.mselected.length - data.transferPartialErrors.length"
+            },
+            "messageType": "ERROR",
+            "messageText": "{{i18n.multipleSubscriptionTransferNotification}}",
+            "messageTextParams": [
+                "{{expression.successCount}}",
+                "{{ctx.mselected.length}}"
+            ],
+            "messageData": {
+                "partialErrors": "{{data.transferPartialErrors}}"
+            }
+        }
+    },
+
+    "conditions": {
+        "isValidSubTransfer": {
+            "expression": "addUserPanelState.selectedUsers.length > 0"
+        }
+    },
+    "i18n": {
+        "user": [ "SubscriptionMessages" ],
+        "transferButtonTitle": [ "SubscriptionMessages" ],
+        "Sub0ChangeOwner": [ "SubscriptionMessages" ],
+        "successfulTransferNotification": [ "SubscriptionMessages" ],
+        "errorTransferNotification": [ "SubscriptionMessages" ],
+        "multipleSubscriptionTransferNotification": [ "SubscriptionMessages" ]
+    }
+}

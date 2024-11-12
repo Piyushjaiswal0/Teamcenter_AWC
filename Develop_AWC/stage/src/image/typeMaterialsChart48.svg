@@ -1,0 +1,30 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <radialGradient id="radial-gradient" cx="32.799" cy="12.373" r="7.72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.355" stop-color="#e2e2e2"/>
+      <stop offset="0.76" stop-color="#c8c8c8"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="23.799" cy="24.373" r="7.72" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="10.31" cy="15.789" r="9.436" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="10.211" cy="-71.404" r="8.578" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-5" cx="1.322" cy="-43.626" r="8.578" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <linearGradient id="linear-gradient" x1="21" y1="24" x2="46" y2="49" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <polyline points="13 7 13 19 5 30" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="13 19 26 27 34.878 15.067" fill="none" stroke="#969696" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M39.5,15A4.5,4.5,0,1,1,35,10.5,4.5,4.5,0,0,1,39.5,15Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient)"/>
+  <path d="M30.5,27A4.5,4.5,0,1,1,26,22.5,4.5,4.5,0,0,1,30.5,27Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-2)"/>
+  <path d="M18.5,19A5.5,5.5,0,1,1,13,13.5,5.5,5.5,0,0,1,18.5,19Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-3)"/>
+  <path d="M17.5,5A4.5,4.5,0,1,1,13,.5,4.5,4.5,0,0,1,17.5,5Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-4)"/>
+  <path d="M9.5,30A4.5,4.5,0,1,1,5,25.5,4.5,4.5,0,0,1,9.5,30Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-5)"/>
+  <rect x="19.5" y="25.5" width="28" height="22" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="21.5" y="40.5" width="6" height="5" fill="#3c91af" stroke="#147391"/>
+  <rect x="30.5" y="37.5" width="6" height="8" fill="#3c91af" stroke="#147391"/>
+  <rect x="39.5" y="32.5" width="6" height="13" fill="#3c91af" stroke="#147391"/>
+</svg>

@@ -1,0 +1,38 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "viewBase": "AwStandardObjectNavigation",
+        "clientScopeURI": "Awp0ObjectNavigation",
+        "viewModes": {
+            "SummaryView": {
+                "primaryWorkArea": "list",
+                "secondaryWorkArea": true
+            },
+            "TableSummaryView": {
+                "primaryWorkArea": "table",
+                "secondaryWorkArea": true
+            },
+            "ListView": {
+                "primaryWorkArea": "list",
+                "secondaryWorkArea": false
+            },
+            "TableView": {
+                "primaryWorkArea": "table",
+                "secondaryWorkArea": false
+            },
+            "ImageView": {
+                "primaryWorkArea": "image",
+                "secondaryWorkArea": false
+            },
+            "TreeView": {
+                "primaryWorkArea": "tree",
+                "secondaryWorkArea": false
+            },
+            "TreeSummaryView": {
+                "primaryWorkArea": "tree",
+                "secondaryWorkArea": true
+            }
+        }
+    }
+}

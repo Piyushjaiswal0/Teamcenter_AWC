@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <rect x="11" y="9" width="1" height="1.5" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="11" y="12.5" width="1" height="1.5" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12.5" y="11" width="1.5" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="11" width="1.5" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M13,10.5a.4981.4981,0,0,0,.3535-.1465l.5-.5a.5.5,0,0,0-.707-.707l-.5.5A.5.5,0,0,0,13,10.5Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M9.5,14a.4981.4981,0,0,0,.3535-.1465l.5-.5a.5.5,0,0,0-.707-.707l-.5.5A.5.5,0,0,0,9.5,14Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M13.1465,13.8535a.5.5,0,0,0,.707-.707l-.5-.5a.5.5,0,0,0-.707.707Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M9.6465,10.3535a.5.5,0,0,0,.707-.707l-.5-.5a.5.5,0,0,0-.707.707Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M7,7v9h9V7Zm8,8H8V8h7Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M6,4.8853V4H8v.8853l2.5,1.4433L13,4.8853V4h2V3H13V1.999L11,.8444V0H10V.8444L8,1.999V3H6V1.999L4,.8444V0H3V.8444L1,1.999V3H0V4H1v.8853L3,6.04V7.902L1,9.0566V10H0v1H1v.9434L3,13.098V15H4V13.098l2-1.1546V9.0566L4,7.902V6.04ZM9,2.5762,10.5,1.71l1.5.8662V4.3081l-1.5.8662L9,4.3081Zm-7,0L3.5,1.71,5,2.5762V4.3081l-1.5.8662L2,4.3081Zm3,8.79-1.5.8662L2,11.3662V9.6338l1.5-.8662L5,9.6338Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

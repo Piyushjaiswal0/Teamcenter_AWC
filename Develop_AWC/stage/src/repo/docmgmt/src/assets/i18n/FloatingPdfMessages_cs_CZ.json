@@ -1,0 +1,7 @@
+{
+    "add": "Přidat",
+    "cancel": "Storno",
+    "confirmAddPdf": "\"{0}\" bude přidáno do \"{1}\"",
+    "addPdfError": "\"{0}\" nebylo přidáno kvůli systémové chybě",
+    "deletePdfError": "\"{0}\" nebylo odstraněno kvůli systémové chybě"
+}

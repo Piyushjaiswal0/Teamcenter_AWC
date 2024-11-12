@@ -1,0 +1,31 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "priority": 3,
+            "label": {
+                "source": "/i18n/ReportsConstants",
+                "key": "myreportsSubLocation"
+            },
+            "clientScopeURI": "Fnd0Report",
+            "nameToken": "com.siemens.splm.reports:showMyReports",
+            "viewBase": "showMyReports",
+            "propertyPolicy": "/policies/ReportDatasetPropertyPolicy.json",
+            "context": {
+                "search": {
+                    "hideInContentSearchBox":true
+                }
+            }
+        },
+        "searchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "{{ctx.awp0SummaryReports.reportFilter}}",
+            "dispValue": "{{ctx.awp0SummaryReports.reportFilter}}"
+        }
+    }
+}

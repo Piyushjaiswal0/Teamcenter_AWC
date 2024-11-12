@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="3.5" y1="41.5" x2="45" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="29.25" y1="44.25" x2="42.25" y2="31.25" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+  <polygon points="32.5 0.5 9.5 0.5 9.5 47.5 45.5 47.5 45.5 13.5 32.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="32.5 0.5 32.5 13.5 45.5 13.5 32.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <rect x="0.5" y="26.5" width="47" height="16" fill="#c12736" stroke="#464646" stroke-miterlimit="10"/>
+  <g>
+    <path d="M11.051,37.9v-4.9q0-.559.065-1.655h-.022a4.859,4.859,0,0,1-.22.86L8.543,37.9H7.71L5.363,32.25c-.061-.189-.134-.494-.22-.913H5.111c.011.1.022.35.035.758s.019.76.019,1.058V37.9H3.978v-7.7H5.8l1.96,4.867a6.58,6.58,0,0,1,.349,1.063h.033l.408-1.074,2.014-4.856h1.751v7.7Z" fill="#fff"/>
+    <path d="M14.263,37.9v-7.7h4.168v1.1H15.542v2.17h2.685v1.1H15.542v2.234h3.066v1.1Z" fill="#fff"/>
+    <path d="M22.637,31.294v6.6H21.348v-6.6H19.14v-1.1h5.71v1.1Z" fill="#fff"/>
+    <path d="M30.908,37.9l-.7-1.945H27.122L26.45,37.9h-1.4l2.916-7.7h1.418l2.927,7.7Zm-2.234-6.548h-.032a2.863,2.863,0,0,1-.114.553l-1.052,2.971h2.363L28.781,31.9A2.875,2.875,0,0,1,28.674,31.348Z" fill="#fff"/>
+  </g>
+</svg>

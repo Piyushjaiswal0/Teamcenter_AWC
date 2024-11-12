@@ -1,0 +1,11 @@
+{
+  "executeViewOrientationCommand": {
+    "actionType": "JSFunction",
+    "method": "executeViewOrientationCommand",
+    "deps": "js/viewerContext.service",
+    "inputData": {
+      "viewerContextNamespace": "{{inputData.viewerContextNamespace}}",
+      "cameraOrientation": "{{inputData.cameraOrientation}}"
+    }
+  }
+}

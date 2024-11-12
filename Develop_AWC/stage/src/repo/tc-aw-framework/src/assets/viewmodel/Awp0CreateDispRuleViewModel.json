@@ -1,0 +1,146 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-textbox.directive",
+        "js/visible-when.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-widget.directive",
+        "js/aw-checkbox.directive"
+    ],
+    "actions": {
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-DataManagement",
+            "method": "getIdContexts",
+            "inputData": {
+                "inputObjs": []
+            },
+            "outputData": {
+                "idContexts": "{{function:processContexts}}"
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        },
+        "CreateDispRule": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-DataManagement",
+            "method": "createIdDisplayRules",
+            "inputData": {
+                "idDispRuleCreIns": [{
+                    "ruleName": "{{data.name.dbValue}}",
+                    "idContexts": "{{function:createContextObjs}}",
+                    "useDefault": "{{data.useDefault.dbValue}}",
+                    "setCurrent": "{{data.setCurrent.dbValue}}"
+                }]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "idDisplayRuleAdded.reload"
+                    }
+                ]
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        },
+        "reloadPage":
+        {
+            "actionType": "JSFunction",
+            "method": "reloadPage",
+            "inputData":
+            {
+            },
+            "deps": "js/workspaceService"
+        }
+    },
+    "data": {
+        "name": {
+            "displayName": "{{i18n.name}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dbValue": ""
+        },
+        "contexts": {
+            "displayName": "{{i18n.Contexts}}",
+            "type": "STRINGARRAY",
+            "isArray": true,
+            "isRequired": true,
+            "dataProvider": "contextProvider",
+            "emptyLOVEntry": false
+        },
+        "useDefault":
+        {
+            "displayName": "{{i18n.useDefault}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "setCurrent":
+        {
+            "displayName": "{{i18n.setCurrent}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        }
+    },
+    "dataProviders": {
+        "contextProvider": {
+            "response": "{{data.idContexts}}",
+            "moreValuesExist": false
+        }
+    },
+    "conditions": {
+        "isCreateButtonVisible":
+        {
+            "expression": "data.name.uiValue.length > 0 && data.contexts.uiValue.length > 0"
+        }
+    },
+    "functions":
+    {
+        "createContextObjs":
+        {
+            "functionName": "createContextObjs",
+            "parameters":
+            [
+                "{{data}}"
+            ]
+        }
+    },
+    "onEvent":
+    [
+        {
+            "eventId": "idDisplayRuleAdded.reload",
+            "action": "reloadPage"
+        }
+    ],
+    "i18n": {
+        "Awp0CreateDispRuleTitle": [
+            "ZeroCompileCommandMessages"
+        ],
+        "Create": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "Contexts": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "useDefault": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "setCurrent": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "Properties": [
+            "NameValuePanelsMessages"
+        ],
+        "name": [
+            "TCUICommandPanelsMessages"
+        ]
+    }
+}

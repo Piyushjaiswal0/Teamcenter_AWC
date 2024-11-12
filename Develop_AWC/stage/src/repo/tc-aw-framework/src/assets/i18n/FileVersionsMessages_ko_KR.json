@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "버전",
+    "FileVersionsPanelHeader": "데이터 집합 버전",
+    "DownloadVersionButton": "다운로드 버전",
+    "RestoreVersionButton": "복원 버전",
+    "RestoreFailureMessage": "이전 데이터 집합 버전을 복원하지 못했습니다.",
+    "UnsavedEditWarning": "{0}에 저장되지 않은 변경 사항이 있습니다. 이전 버전의 데이터 집합을 복원하면 진행 중인 변경 사항이 제거됩니다.",
+    "ConfirmButtonLabel": "계속",
+    "CancelButtonLabel": "취소"
+}

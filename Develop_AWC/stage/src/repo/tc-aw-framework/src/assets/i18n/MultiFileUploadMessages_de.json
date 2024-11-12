@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "Dateianhänge",
+    "dropHere": "Hier ablegen",
+    "chooseFile": "Datei auswählen",
+    "removeFileBtnTooltip": "Datei entfernen",
+    "failureToAttachFiles": "\"{0}\" wurde nicht hinzugefügt, weil eine Datei dieses Typs nicht als Anhang zulässig ist."
+}

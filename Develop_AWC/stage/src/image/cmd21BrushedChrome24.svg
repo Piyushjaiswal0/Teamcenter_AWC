@@ -1,0 +1,35 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<circle fill="#2B2B2B" cx="12" cy="12" r="12"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="8.6191" y1="1.5737" x2="15.7155" y2="23.4581">
+	<stop  offset="0.4534" style="stop-color:#373838;stop-opacity:0"/>
+	<stop  offset="0.4894" style="stop-color:#585959;stop-opacity:6.586951e-02"/>
+	<stop  offset="0.539" style="stop-color:#7E7F7F;stop-opacity:0.1567"/>
+	<stop  offset="0.5926" style="stop-color:#9F9FA0;stop-opacity:0.2547"/>
+	<stop  offset="0.6498" style="stop-color:#BABABB;stop-opacity:0.3594"/>
+	<stop  offset="0.7122" style="stop-color:#CECECF;stop-opacity:0.4734"/>
+	<stop  offset="0.782" style="stop-color:#DDDDDE;stop-opacity:0.6013"/>
+	<stop  offset="0.8658" style="stop-color:#E5E5E6;stop-opacity:0.7544"/>
+	<stop  offset="1" style="stop-color:#E8E8E9"/>
+</linearGradient>
+<circle fill="url(#SVGID_1_)" cx="12" cy="12" r="11.5"/>
+<radialGradient id="SVGID_2_" cx="12" cy="12" r="6.7749" gradientUnits="userSpaceOnUse">
+	<stop  offset="6.447893e-02" style="stop-color:#2B2B2B;stop-opacity:0.6"/>
+	<stop  offset="1" style="stop-color:#2B2B2B;stop-opacity:0"/>
+</radialGradient>
+<circle fill="url(#SVGID_2_)" cx="12" cy="12" r="6.8"/>
+<radialGradient id="SVGID_3_" cx="6.3632" cy="14.7849" r="11.0145" gradientTransform="matrix(0.8797 -0.2843 0.1188 0.5602 3.0585 -0.2224)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.3867" style="stop-color:#FDFDFD;stop-opacity:0.6133"/>
+	<stop  offset="0.526" style="stop-color:#F6F6F6;stop-opacity:0.474"/>
+	<stop  offset="0.6254" style="stop-color:#EBEBEB;stop-opacity:0.3746"/>
+	<stop  offset="0.7057" style="stop-color:#DADADA;stop-opacity:0.2943"/>
+	<stop  offset="0.7744" style="stop-color:#C4C4C4;stop-opacity:0.2256"/>
+	<stop  offset="0.8353" style="stop-color:#A8A8A8;stop-opacity:0.1647"/>
+	<stop  offset="0.8904" style="stop-color:#888888;stop-opacity:0.1096"/>
+	<stop  offset="0.941" style="stop-color:#626262;stop-opacity:5.897558e-02"/>
+	<stop  offset="0.9861" style="stop-color:#393939;stop-opacity:1.386660e-02"/>
+	<stop  offset="1" style="stop-color:#2B2B2B;stop-opacity:0"/>
+</radialGradient>
+<path fill="url(#SVGID_3_)" d="M20.2,4.5c0.3,3-3.5,6.9-9,8.3S0.9,12.2,0.6,9.2S4,1.9,9.4,0.5S19.9,1.5,20.2,4.5z"/>
+</svg>

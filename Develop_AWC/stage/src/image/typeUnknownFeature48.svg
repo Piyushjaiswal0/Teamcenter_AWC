@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="4.2535" y1="-1.2499" x2="35.7535" y2="30.2501" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45_2" data-name="front -45 2" x1="9.0325" y1="9.9685" x2="14.8889" y2="15.825" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset=".5" stop-color="#cacac9"/>
+      <stop offset=".6282" stop-color="#c5c5c4"/>
+      <stop offset=".7762" stop-color="#b7b7b6"/>
+      <stop offset=".9335" stop-color="#a0a09f"/>
+      <stop offset=".99" stop-color="#969696"/>
+    </linearGradient>
+  </defs>
+  <rect x=".5035" y="2.5001" width="39" height="24" fill="url(#paper_gradient)" stroke="#464646"/>
+  <line x1="22.0035" y1="21.0001" x2="35.0035" y2="21.0106" fill="none" stroke="#a9a9a9" stroke-width="2"/>
+  <line x1="22.0035" y1="15.0001" x2="35.0035" y2="15.0106" fill="none" stroke="#6e6e6e" stroke-width="2"/>
+  <line x1="22.0035" y1="9.0001" x2="35.0035" y2="9.0106" fill="none" stroke="#a9a9a9" stroke-width="2"/>
+  <g>
+    <polygon points="3.9756 15.0254 6.0737 13.2959 9.2783 17.126 17.1948 7.3838 19.3154 9.0869 9.3066 21.4072 3.9756 15.0254" fill="url(#front_-45_2)"/>
+    <path d="m17.2697,8.0852l1.341,1.0768-9.3093,11.4589-4.6193-5.5297,1.3267-1.0944,3.2749,3.9153,7.986-9.827m-.1491-1.4022l-.627.7715-7.2211,8.8857-2.4968-2.985-.6372-.7618-.7662.632-1.3267,1.0944-.7762.6403.6451.7722,4.6193,5.5297.7782.9316.7654-.9421,9.3093-11.4589.6341-.7806-.7842-.6297-1.341-1.0768-.7752-.6224h0Z" fill="#6e6e6e"/>
+  </g>
+  <g>
+    <rect x="23.814" y="23.814" width="20.372" height="20.372" rx="2.1853" ry="2.1853" transform="translate(34 -14.0833) rotate(45)" fill="#3c91af" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="m34.005,38.1614v-1.5894c0-1.0384.598-1.9861,1.5406-2.4219,1.4454-.6684,2.3829-2.2483,2.075-4.0021-.2594-1.4776-1.4719-2.6901-2.9497-2.9494-2.3226-.4076-4.3401,1.3682-4.3401,3.6153" fill="none" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.5"/>
+    <path d="m34.005,38.1614v-1.5894c0-1.0384.598-1.9861,1.5406-2.4219,1.4454-.6684,2.3829-2.2483,2.075-4.0021-.2594-1.4776-1.4719-2.6901-2.9497-2.9494-2.3226-.4076-4.3401,1.3682-4.3401,3.6153" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+    <g>
+      <circle cx="34.0049" cy="41.835" r="1.75" fill="#fff"/>
+      <path d="m34.005,40.5854c.6904,0,1.25.5596,1.25,1.25s-.5596,1.25-1.25,1.25-1.25-.5596-1.25-1.25.5596-1.25,1.25-1.25m0-1c-1.2406,0-2.25,1.0093-2.25,2.25s1.0094,2.25,2.25,2.25,2.25-1.0093,2.25-2.25-1.0094-2.25-2.25-2.25h0Z" fill="#147391"/>
+    </g>
+  </g>
+</svg>

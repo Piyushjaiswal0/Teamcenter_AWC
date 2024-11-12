@@ -1,0 +1,6 @@
+<aw-panel-body>
+    <aw-search-box prop="data.searchString" action="search"></aw-search-box>
+    <aw-list exist-when="data.endItemsTotalFound > 0" dataprovider="data.dataProviders.searchEndItems">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+</aw-panel-body>

@@ -1,0 +1,13 @@
+<aw-popup2>
+    <aw-panel-body class="aw-floatpdf-panel">
+        <aw-guidance-message message="pdfInfo" closable="false" banner-style="false" show-icon="false" show-type="false">
+            <div class="aw-floatpdf-commands">
+                <aw-button button-type="base" action="cancelAction" size="auto">{{i18n.cancel}}</aw-button>
+                <aw-button action="addToAction" size="auto">{{i18n.add}}</aw-button>
+            </div>
+        </aw-guidance-message>
+        <div class="aw-pdfjs-pdfPane">
+            <iframe class="aw-pdfjs-pdfViewerIFrame"></iframe>
+        </div>
+    </aw-panel-body>
+</aw-popup2>

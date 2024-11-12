@@ -1,0 +1,143 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-link-with-popup-menu.directive",
+        "js/aw-property-label.directive",
+        "js/aw-column.directive"
+    ],
+
+    "actions":
+    {
+        "groupRoleChange":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionStateWithoutDefaults",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "groupMember",
+                        "value": "{{data.eventData.property.dbValue.uid}}"
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+        "roleAction":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-Session",
+            "method": "getGroupMembership",
+            "inputData":
+            {
+
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Group",
+                        "properties":
+                        [
+                            {
+                                "name": "object_full_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "Role",
+                        "properties":
+                        [
+                            {
+                                "name": "role_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "GroupMember",
+                        "properties":
+                        [
+                            {
+                                "name": "status"
+                            },
+
+                            {
+                                "name": "group"
+                            },
+
+                            {
+                                "name": "role"
+                            },
+
+                            {
+                                "name": "default_role"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "uniqueRoles": "{{function:getRoles}}",
+                "roleOutput": "groupMembers",
+                "rolesFound": "uniqueRoles.length"
+            },
+
+            "deps": "js/groupRoleUtils"
+        }
+    },
+
+    "conditions":
+    {
+        "isGroupRoleSel":
+        {
+            "expression": "property.dbValue.type && property.dbValue.type === 'GroupMember' && property.propertyName === 'role'"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "awlinkPopup.selected",
+            "condition": "conditions.isGroupRoleSel",
+            "cacheEventData": true,
+            "action": "groupRoleChange"
+        }
+    ],
+
+    "dataProviders":
+    {
+        "roleLink":
+        {
+            "dataProviderType": "Action",
+            "action": "roleAction",
+            "response": "{{data.uniqueRoles}}",
+            "totalFound": "{{data.rolesFound}}"
+        }
+    },
+    "data":
+    {
+        "role":
+        {
+            "isNull": false,
+            "propertyDisplayName": "{{i18n.role}}",
+            "uiValue": "{{i18n.role}}"
+        }
+    },
+    "i18n":
+    {
+        "role": [ "HeaderMessages", "UsermanagementMessages"]
+    },
+    "ctxFields": [
+        "userSession.props.role"
+    ]
+}

@@ -1,0 +1,153 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-link-with-popup-menu.directive",
+        "js/aw-context-separator.directive",
+        "js/aw-property-label.directive",
+        "js/aw-column.directive"
+    ],
+
+    "actions":
+    {
+
+        "getAvailableWorkspaces":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2017-12-DataManagement",
+            "method": "getAvailableWorkspaces",
+            "inputData":
+            {
+                "filterParams":
+                {
+                    "scope": "session"
+                }
+            },
+            "outputData": {
+                "workspaces": "{{function:getFilteredWorkspaces}}"
+            },
+
+            "deps": "js/workspaceService"
+        },
+
+        "updateLastUsedWorkspace":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-PreferenceManagement",
+            "method": "setPreferences2",
+            "inputData":
+            {
+                "preferenceInput":
+                [{
+                    "preferenceName": "AWC_LastUsed_Workspace",
+                    "values": ["{{data.eventData.property.dbValue.uid}}"]
+                }
+                ]
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "headerContext.lastUsedWorkspaceUpdated"
+                    }
+                ]
+            }
+        },
+
+       "setLastUsedWorkspace":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-PreferenceManagement",
+            "method": "setPreferences2",
+            "inputData":
+            {
+                "preferenceInput":
+                [{
+                    "preferenceName": "AWC_LastUsed_Workspace",
+                    "values": ["{{ctx.workspace.workspaceId}}"]
+                }
+                ]
+            }
+        },
+
+        "reloadPage":
+        {
+            "actionType": "JSFunction",
+            "method": "reloadPage",
+            "inputData":
+            {
+            },
+            "deps": "js/workspaceService"
+        }
+    },
+
+    "data":
+    {
+        "active_workspace":
+        {
+            "displayName": "{{i18n.active_workspace}}",
+            "type": "STRING",
+            "dbValue": "{{ctx.workspace.workspaceId}}",
+            "dispValue": "{{ctx.workspace.workspaceName}}"
+        },
+        "workspace":
+        {
+            "isNull": false,
+            "propertyDisplayName": "{{i18n.workspace}}",
+            "uiValue": "{{i18n.workspace}}"
+        }
+    },
+    "i18n":
+    {
+        "workspace": ["HeaderMessages"],
+        "active_workspace": ["HeaderMessages"]
+    },
+
+    "dataProviders":
+    {
+
+        "availableWorkspace":{
+            "dataProviderType":"Action",
+            "action": "getAvailableWorkspaces",
+            "response": "{{data.workspaces.workspaceList}}",
+            "totalFound": "{{data.workspaces.workspaceCount}}"
+        }
+
+    },
+
+     "conditions":
+    {
+        "isWorkspaceLinkVisible":
+        {
+            "expression": "data.active_workspace.dbValue!='' && ctx.totalWorkspaceCount > 1"
+        }
+
+    },
+
+    "onEvent":
+        [
+
+            {
+                "eventId": "awlinkPopup.selected",
+                "criteria": {
+                    "property.propertyName": "active_workspace"
+                },
+                "cacheEventData": true,
+                "action": "updateLastUsedWorkspace"
+            },
+            {
+                "eventId": "headerContext.lastUsedWorkspaceUpdated",
+                "action": "reloadPage"
+            },
+            {
+                "eventId": "appCtx.register",
+                "criteria": {
+                    "name": "workspace"
+                },
+                "action": "setLastUsedWorkspace"
+            }
+
+        ]
+
+}

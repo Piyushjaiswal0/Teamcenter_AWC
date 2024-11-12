@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Alerts",
+    "subManAppLabel": "News Feed",
+    "clear": "Clear",
+    "noNotificationMsg": "No New Notifications",
+    "multipleObjectsMsg": "\"{0}\" and \"{1}\" more",
+    "aw_globalToolbar": "Global Toolbar",
+    "Awp0ShowAlertWithBubbleDesc": "View your new alerts."
+}

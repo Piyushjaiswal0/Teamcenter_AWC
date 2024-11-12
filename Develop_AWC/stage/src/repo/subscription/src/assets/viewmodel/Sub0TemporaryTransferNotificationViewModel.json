@@ -1,0 +1,93 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "i18n": {
+        "startDateText": [
+            "SubscriptionMessages"
+        ],
+        "endDateText": [
+            "SubscriptionMessages"
+        ],
+        "transferButtonTitle": [
+            "SubscriptionMessages"
+        ],
+        "temporaryNotifier": [
+            "SubscriptionMessages"
+        ],
+        "transferNotification": [
+            "SubscriptionMessages"
+        ],
+        "EmailAddress": [
+            "SubscriptionMessages"
+        ],
+        "PhoneNumber": [
+            "SubscriptionMessages"
+        ],
+        "successfulTransferNotification": [
+            "SubscriptionMessages"
+        ],
+        "errorTransferNotification": [
+            "SubscriptionMessages"
+        ],
+        "user": [
+            "SubscriptionMessages"
+        ]
+      
+    },
+    "actions": {
+        "setActiveView": {
+            "actionType": "JSFunction",
+            "method": "resetActiveView",
+            "inputData": {
+                "stateName": "activeState",
+                "destPanelId": "Sub0TemporaryTransferNotificationSub"
+            },
+            "outputData": {
+                "activeState": "activeState"
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "activeView": "Sub0TemporaryTransferNotificationSub",
+        "addUserPanelState": {
+            "initialValues": {
+                "provider": "Awp0PeoplePickerProvider",
+                "selectionModelMode": "single",
+                "isAddButtonNeeded": true,
+                "criteria": {
+                    "providerContentType": "User",
+                    "searchString": ""
+                },
+                "selectedUsers": ""
+            },
+            "meta": {
+                "selectedUsers": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        },
+        "activeState": {
+            "initialValues": {
+                "activeView": "Sub0TemporaryTransferNotificationSub",
+                "context": {}
+            },
+            "meta": {
+                "activeView": {
+                    "field": "true",
+                    "type": "STRING"
+                },
+                "context": {
+                    "field": "true",
+                    "type": "OBJECT"
+                }
+            }
+        }
+    },
+    "props":{
+        "sub-panel-context":{
+            "type":"object"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "viewBase": "AwStandardObjectNavigation",
+        "defaultDisplayMode": "TreeSummaryView",
+        "clientScopeURI": "Awp0MyActiveFolders",
+        "viewModes": {
+            "TreeView": {
+                "primaryWorkArea": "tree",
+                "secondaryWorkArea": false
+            },
+            "TreeSummaryView": {
+                "primaryWorkArea": "tree",
+                "secondaryWorkArea": true
+            }
+        }
+    }
+}

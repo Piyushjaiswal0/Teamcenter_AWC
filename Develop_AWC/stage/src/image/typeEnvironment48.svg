@@ -1,0 +1,51 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="16" y1="1448" x2="2" y2="1434" gradientTransform="translate(48 1463) rotate(180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="front_-45" data-name="front -45" x1="13.75" y1="1452.25" x2="4.25" y2="1442.75" gradientTransform="translate(30 -1432)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="32" y1="1431" x2="18" y2="1417" xlink:href="#linear-gradient"/>
+    <linearGradient id="front_-45-2" x1="29.75" y1="1435.25" x2="20.25" y2="1425.75" gradientTransform="translate(-2 -1398)" xlink:href="#front_-45"/>
+    <linearGradient id="linear-gradient-3" x1="46" y1="1454" x2="32" y2="1440" xlink:href="#linear-gradient"/>
+    <linearGradient id="front_-45-3" x1="43.75" y1="1458.25" x2="34.25" y2="1448.75" gradientTransform="translate(-30 -1444)" xlink:href="#front_-45"/>
+  <path d="M12.349,35.721a17.969,17.969,0,0,1-6.23-11.641" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M40.053,30.152a18.083,18.083,0,0,1-6.067,6.826" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M16.65,5.564a18.018,18.018,0,0,1,22.276,6.372" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <polyline points="47.5 16.5 47.5 27.5 30.5 27.5 30.5 16.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="30.5" y="14.5" width="17" height="2" transform="translate(78 31) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45)"/>
+  <line x1="32" y1="19.5" x2="41" y2="19.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="32" y1="21.5" x2="39" y2="21.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="32" y1="23.5" x2="37" y2="23.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="32" y1="25.5" x2="41" y2="25.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="45" y="15" width="1" height="1" fill="#6e6e6e"/>
+  <rect x="43" y="15" width="1" height="1" fill="#6e6e6e"/>
+  <rect x="41" y="15" width="1" height="1" fill="#6e6e6e"/>
+  <polyline points="31.5 33.5 31.5 44.5 14.5 44.5 14.5 33.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <rect x="14.5" y="31.5" width="17" height="2" transform="translate(46 65) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45-2)"/>
+  <line x1="16" y1="36.5" x2="25" y2="36.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="38.5" x2="23" y2="38.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="40.5" x2="21" y2="40.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="42.5" x2="25" y2="42.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="29" y="32" width="1" height="1" fill="#6e6e6e"/>
+  <rect x="27" y="32" width="1" height="1" fill="#6e6e6e"/>
+  <rect x="25" y="32" width="1" height="1" fill="#6e6e6e"/>
+  <polyline points="17.5 10.5 17.5 21.5 0.5 21.5 0.5 10.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <rect x="0.5" y="8.5" width="17" height="2" transform="translate(18 19) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45-3)"/>
+  <line x1="2" y1="13.5" x2="11" y2="13.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="2" y1="15.5" x2="9" y2="15.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="2" y1="17.5" x2="7" y2="17.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="2" y1="19.5" x2="11" y2="19.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="15" y="9" width="1" height="1" fill="#6e6e6e"/>
+  <rect x="13" y="9" width="1" height="1" fill="#6e6e6e"/>
+  <rect x="11" y="9" width="1" height="1" fill="#6e6e6e"/>
+</svg>

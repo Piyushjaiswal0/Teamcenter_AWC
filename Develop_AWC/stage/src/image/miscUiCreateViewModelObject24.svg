@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="4.5" y1="1.0714" x2="12.5" y2="9.0714" gradientUnits="userSpaceOnUse">
+      <stop offset=".0018" stop-color="#eef6f8"/>
+      <stop offset="1" stop-color="#d1e6ec"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <polygon points="16.5 5.0714 8.5001 .5 .5 5.0714 8.5 9.6429 16.5 5.0714" fill="url(#linear-gradient)"/>
+    <polygon points=".5 5.0714 .5 14.2143 8.5 18.7857 8.5 9.6429 .5 5.0714" fill="#8cc3d2"/>
+    <polygon points="8.5 9.6429 8.5 18.7857 16.5 14.2143 16.5 5.0714 8.5 9.6429" fill="#55a0b9"/>
+    <polyline points=".5 5.0714 8.5 9.6429 16.5 5.0714" fill="none" stroke="#464646" stroke-linejoin="round"/>
+    <line x1="8.5" y1="9.6429" x2="8.5" y2="18.7857" fill="none" stroke="#464646" stroke-linejoin="round"/>
+    <path d="m8.5001.5L.5,5.0714v9.1429l8,4.5714,8-4.5714V5.0714L8.5001.5Z" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  </g>
+  <rect x="11.5" y="11.5" width="12" height="12" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <line x1="14" y1="14.5" x2="15" y2="14.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="16" y1="14.5" x2="21" y2="14.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="14" y1="17.5" x2="15" y2="17.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="16" y1="17.5" x2="21" y2="17.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="14" y1="20.5" x2="15" y2="20.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="16" y1="20.5" x2="21" y2="20.5" fill="#fff" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

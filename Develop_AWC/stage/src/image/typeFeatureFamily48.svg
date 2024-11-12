@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="8.25" y1="7.75" x2="39.75" y2="39.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  </defs>
+    <path d="M34,1h7a6,6,0,0,1,6,6V41a6,6,0,0,1-6,6H34" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+    <path d="M14,47H7a6,6,0,0,1-6-6V7A6,6,0,0,1,7,1h7" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="4.5" y="11.5" width="39" height="24" stroke="#464646" fill="url(#paper_gradient)"/>
+  <line x1="26" y1="29.9947" x2="39" y2="30.0053" fill="none" stroke="#969696" stroke-width="2"/>
+  <line x1="26" y1="23.9947" x2="39" y2="24.0053" fill="none" stroke="#6e6e6e" stroke-width="2"/>
+  <line x1="26" y1="17.9947" x2="39" y2="18.0053" fill="none" stroke="#969696" stroke-width="2"/>
+    <polygon points="7.973 24.026 10.07 22.295 13.275 26.126 21.191 16.384 23.312 18.087 13.303 30.407 7.973 24.026" fill="#969696"/>
+    <path d="M21.2662,17.0851l1.3409,1.0768L13.2978,29.6208l-4.6192-5.53,1.3266-1.0944,3.275,3.9153,7.986-9.827m-.1491-1.4022-.627.7715L13.2691,25.34l-2.4968-2.985-.6372-.7618-.7662.632L8.0422,23.32l-.7762.64.6451.7723,4.6193,5.53.7782.9316.7654-.9421,9.3093-11.459.6341-.78-.7841-.63-1.341-1.0768-.7752-.6225Z" fill="#6e6e6e"/>
+</svg>

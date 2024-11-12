@@ -1,0 +1,109 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "render": {
+            "method": "awDefaultBreadCrumbListRenderFn",
+            "deps": "js/AwDefaultBreadCrumbListService"
+        },
+        "onMount": {
+            "actionType": "dataProvider",
+            "method": "objectNavBreadcrumbChevronDataProvider"
+        },
+        "onChevronPopupObjSelected": {
+            "actionType": "JSFunction",
+            "method": "navigateToFolder",
+            "inputData": {
+                "selected": "{{data.objectNavBreadcrumbListSelection.dbValue.selected[0]}}",
+                "currentCrumb": "{{props.selectedCrumb}}",
+                "uid": "{{ctx.state.params.uid}}",
+                "d_uids": "{{ctx.state.params.d_uids}}",
+                "chevronPopup": "{{props}}"
+            },
+            "deps": "js/aw.navigateBreadCrumbService"
+        },
+        "onSelect": {
+            "actionType": "JSFunction",
+            "method": "onSelectCrumb",
+            "inputData": {
+                "currentCrumb": "{{props.selectedCrumb}}"
+            },
+            "deps": "js/aw.navigateBreadCrumbService"
+        },
+
+        "getChildren": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-Finder",
+            "method": "performSearch",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0ObjectNavigation",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": ""
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [],
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0ObjectSetRowProvider",
+                    "searchCriteria": {
+                        "objectSet": "contents.Folder",
+                        "parentUid": "{{props.selectedCrumb.scopedUid}}"
+                    },
+                    "searchFilterFieldSortType": "Alphabetical",
+                    "searchFilterMap": {},
+                    "startIndex": 0
+                }
+            },
+            "policy": {
+                "types": [ {
+                    "name": "BusinessObject",
+                    "properties": [ {
+                        "name": "awp0CellProperties"
+                    } ]
+                } ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults"
+            }
+        }
+
+    },
+    "data": {
+        "objectNavBreadcrumbListSelection": {
+            "dbValue": {},
+            "type": "OBJECT"
+        }
+    },
+    "conditions": {},
+    "onEvent": [],
+    "dataProviders": {
+        "objectNavBreadcrumbChevronDataProvider": {
+            "action": "getChildren",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectNavigationBreadCrumbCellListActionCommands",
+            "inputData": {
+                "selectionData": "{{fields.objectNavBreadcrumbListSelection}}"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": [ {
+            "action": "onChevronPopupObjSelected",
+            "observers": [ "viewModel.data.objectNavBreadcrumbListSelection.dbValue" ]
+        } ],
+        "onMount": "onMount"
+    }
+}

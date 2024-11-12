@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "Wyloguj",
+    "CONTINUE_TEXT": "Kontynuuj",
+    "GEOGRAPHY_SECTION_TITLE" : "Geografia",
+    "GEOGRAPHY_SECTION_PROMPT" : "Wprowadź bieżącą lokalizację roboczą",
+    "CONFIDENTIAL_SECTION_TITLE" : "Umowa dotycząca poufności",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "Zgadzam się",
+    "GDPR_CHECKBOX_LABEL" : "Zgadzam się",
+    "INITIAL_LIST_VALUE" : "Wymagane..."
+}

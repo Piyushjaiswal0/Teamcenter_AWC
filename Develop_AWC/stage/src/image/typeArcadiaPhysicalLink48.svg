@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="21" y1="21" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c87873"/>
+      <stop offset="0.188" stop-color="#c5736e"/>
+      <stop offset="0.402" stop-color="#bd6661"/>
+      <stop offset="0.629" stop-color="#b04f4a"/>
+      <stop offset="0.863" stop-color="#9e2f2a"/>
+      <stop offset="1" stop-color="#911914"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="47" y1="1088" x2="29" y2="1070" gradientTransform="translate(-28 -1055)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff09b"/>
+      <stop offset="0.215" stop-color="#ffee96"/>
+      <stop offset="0.458" stop-color="#ffe789"/>
+      <stop offset="0.717" stop-color="#ffdd72"/>
+      <stop offset="0.984" stop-color="#ffce52"/>
+      <stop offset="1" stop-color="#ffcd50"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="19" y1="1088" x2="1" y2="1070" gradientTransform="translate(28 -1055)" xlink:href="#linear-gradient-2"/>
+  </defs>
+  <g>
+    <ellipse cx="24" cy="24" rx="5.657" ry="2.828" fill="url(#linear-gradient)"/>
+    <path d="M28,22v4H20V22h8m1-1H19v6H29V21Z" fill="#911914"/>
+  </g>
+  <g>
+    <rect x="1" y="15" width="18" height="18" transform="translate(20 48) rotate(180)" fill="url(#linear-gradient-2)"/>
+    <path d="M19,15V33H1V15H19m1-1H0V34H20V14Z" fill="#ffcd50"/>
+  </g>
+  <g>
+    <rect x="29" y="15" width="18" height="18" transform="translate(76 48) rotate(180)" fill="url(#linear-gradient-3)"/>
+    <path d="M47,15V33H29V15H47m1-1H28V34H48V14Z" class="aw-theme-iconRich" fill="#ffcd50"/>
+  </g>
+</svg>

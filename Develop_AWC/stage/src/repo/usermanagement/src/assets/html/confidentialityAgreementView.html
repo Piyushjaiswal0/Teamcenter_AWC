@@ -1,0 +1,31 @@
+<aw-scrollpanel>
+    <div class="aw-geography-mainView">
+        <div class="aw-geography-pagesHeader">
+            <h2>{{i18n.BRAND_NAME}}</h2>
+        </div>
+        <div class="aw-geography-logoImage">
+            <aw-logo></aw-logo>
+        </div>
+        <div class ="aw-layout-subLocation afx-content-background aw-flex-row aw-layout-flexbox afx-base-parentElement aw-geography-cornerRadius">
+            <aw-form name="myForm">
+                <div class="aw-confidentiality-section">
+                    <div class="aw-layout-panelSectionTitle aw-base-tabTitle aw-confidentialityAgreement-sectionTitle">{{i18n.CONFIDENTIAL_SECTION_TITLE}}</div>
+                    <div id="ConfidentialityAgreement" class="aw-confidentialityAgreement-statementSection aw-base-scrollPanel"></div>
+                </div>
+                <div class="aw-layout-panelFooter aw-geographyFooter-buttons">
+                    <div class="aw-geography-checkbox">
+                        <aw-checkbox prop="data.agreeCheck"></aw-checkbox>
+                    </div>
+                    <div class='sw-row sw-button-wrapper sw-button-group justify-left'>
+                        <div class="sw-column justify-center">
+                            <aw-button class='small' button-type='base' action = "signOut">{{i18n.SIGN_OUT_TEXT}}</aw-button>
+                        </div>
+                        <div class="sw-column justify-center">
+                            <aw-button class='small' enable-when="data.listBox.dbValue !== '' && data.agreeCheck.dbValue===true" action ="continueSignin" >{{i18n.CONTINUE_TEXT}}</aw-button>
+                        </div>
+                    </div>
+                </div>
+            </aw-form>
+        </div>
+    </div>
+</aw-scrollpanel>

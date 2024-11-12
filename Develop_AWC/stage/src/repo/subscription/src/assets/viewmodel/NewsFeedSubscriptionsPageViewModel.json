@@ -1,0 +1,38 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "_provider": {
+            "breadcrumbConfig": {
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "priority": 0,
+            "label": {
+                "source": "/i18n/SubscriptionMessages",
+                "key": "inboxNewsFeedTitle"
+            },
+            "clientScopeURI": "fnd0MySubscriptionMessages",
+            "nameToken": "com.siemens.splm.client.subscription.follow.internal:myNewsFeedSubLocation",
+            "context": {
+                "search": {
+                    "hideInContentSearchBox": true,
+                    "provider": "Sub0NotificationProvider",
+                    "criteria": {
+                        "Fnd0Message": "*",
+                        "searchFromLocation": "global"
+                    },
+                    "sortType": "Alphabetical",
+                    "sortCriteria": [ {
+                        "fieldName": "fnd0SentDate",
+                        "sortDirection": "DESC"
+                    } ],
+                    "maxToLoad": 50,
+                    "maxToReturn": 200,
+                    "tableViewProperties": [ "fnd0Subject", "fnd0TargetObject", "fnd0SentDate", "fnd0Priority", "fnd0EventType" ],
+                    "hideRange": true,
+                    "showLoadingText": true
+                }
+            },
+            "viewBase": "newsFeed"
+        }
+    }
+}

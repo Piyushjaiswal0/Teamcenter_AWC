@@ -1,0 +1,18 @@
+<div>
+    <aw-flex-row>
+        <aw-flex-column width="fill">
+            <aw-label class="aw-ps-labelAlignmentInPanelHeader" prop="data.headerSectionElement" visible-when="data.headerSectionElement.propertyDisplayName && data.headerSectionElement.uiValue"></aw-label>
+        </aw-flex-column>
+        <aw-flex-column width="2" visible-when="props.headerSectionElementArray">
+            <aw-link prop="data.moreLink" action="toggleShowMoreFlagForHeaderSectionElementsAction" visible-when="data.showMoreFlag"></aw-link>
+            <aw-link prop="data.lessLink" action="toggleShowMoreFlagForHeaderSectionElementsAction" visible-when="!data.showMoreFlag"></aw-link>
+        </aw-flex-column>
+    </aw-flex-row>
+    <aw-flex-row height="{{props.headerSectionElementArray.length > 15 ? '20f' : 'fill'}}" show-when="props.headerSectionElementArray && data.headerSectionElements && !data.showMoreFlag">
+        <aw-scrollpanel>
+            <aw-label class="aw-ps-labelAlignmentInPanelHeaderForMultipleElements" prop="vmProperty" aw-repeat="vmProperty: data.headerSectionElements" ></aw-label>
+        </aw-scrollpanel>
+    </aw-flex-row>
+    <aw-widget class="aw-ps-hintAlignmentInPanelHeader" prop="data.headerSectionHintProperty" visible-when="data.headerSectionHintProperty.uiValue"></aw-widget>
+    <aw-separator class="aw-ps-separatorAlignmentInPanelHeader"></aw-separator>
+</div>

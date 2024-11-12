@@ -1,0 +1,470 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "i18n": {
+
+        "followCommandTitle": [
+            "SubscriptionMessages"
+        ],
+        "followTypeCommandTitle": [
+            "SubscriptionMessages"
+        ],
+        "name": [
+            "SubscriptionMessages"
+        ],
+        "event": [
+            "SubscriptionMessages"
+        ],
+        "selectEventType": [
+            "SubscriptionMessages"
+        ],
+        "frequency": [
+            "SubscriptionMessages"
+        ],
+        "priority": [
+            "SubscriptionMessages"
+        ],
+        "noEventsToSubscribe": [
+            "SubscriptionMessages"
+        ],
+        "user": [
+            "SubscriptionMessages"
+        ],
+
+        "userEventsConfigTitle":["SubscriptionMessages"]
+    },
+    "props":{
+        "sub-panel-context":{
+            "type":"object"
+        }
+    },
+    "data": {
+        "sharedData": {
+            "initialValues": {
+                "activeView": "Sub0CreateSubscription",
+                "subscriptions":[],
+                "subscriptionCtx":"",
+                "prePanelId":"",
+                "selectedFollowType": ""
+            },
+            "meta": {}
+        },
+        "addUserPanelState": {
+            "initialValues": {
+                "provider": "Awp0PeoplePickerProvider",
+                "selectionModelMode": "multiple",
+                "isAddButtonNeeded": true,
+                "criteria": {
+                    "providerContentType": "User",
+                    "searchString": ""
+                },
+                "selectedUsers": ""
+            },
+            "meta": {
+                "selectedUsers": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        }
+    },
+    "actions":
+    {
+        "backAction": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "state": "{{fields.sharedData}}",
+                "newValue": {
+                    "activeView": "Sub0CreateSubscriptionSub",
+                    "prePanelId": "Sub0UserEventsConfig"
+                }
+            },
+            "deps":"js/addObjectUtils"
+        },
+        "backActionFromAddFollower": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "state": "{{fields.sharedData}}",
+                "newValue": {
+                    "activeView": "Sub0CreateSubscriptionSub",
+                    "prePanelId": "AwPeoplePicker"
+                }
+            },
+            "deps":"js/addObjectUtils"
+        },
+        "onReveal":{
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateActiveViewSub0SubscribeType",
+                    "condition": "conditions.isSub0SubscribeType"
+                },
+                {
+                    "action": "getFindSubscriptionsInput",
+                    "condition": "!conditions.isFollowSubLocation && ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription'"
+                }
+
+            ]
+        },
+        "getFindSubscriptionsInput": {
+            "actionType": "JSFunction",
+            "method": "getObjectOrTypes",
+            "deps": "js/Sub0SubscribeCommandPanelService",
+            "inputData": {
+            },
+            "outputData": {
+                "target": ""
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "subscribeSingleObjectEvent",
+                        "condition": "ctx.mselected.length === 1 && data.target.length === 1"
+                    },
+                    {
+                        "name": "subscribeMultiObjectEvent",
+                        "condition": "ctx.mselected.length > 1 && ctx.mselected.length <= ctx.preferences.AWC_followMultiObject_max && data.target.length > 1"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "multiObjectSelectionLimitErrorMessage",
+                        "condition": "ctx.mselected.length > ctx.preferences.AWC_followMultiObject_max"
+                    },
+                    {
+                        "message": "invalidTargetErrorMessage",
+                        "condition": "data.target.length === 0"
+                    }
+                ]
+            }
+        },
+        "subscribeSingleObject": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Notification-2015-03-SubscriptionManagement",
+            "method": "findSubscriptions",
+            "deps": "js/Sub0SubscribeCommandPanelService",
+            "inputData": {
+                "input": {
+                    "subscriber": "{{ctx.user}}",
+                    "target": "{{data.target[0]}}"
+                }
+            },
+            "outputData": {
+                "subscriptions": "subscriptions",
+                "subscriptionCtx": "{{function:loadSubscriptionCtx}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "condition": "!conditions.isFollowSubLocation && ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription' && !data.subscriptions",
+                        "name": "updateActiveViewSub0CreateSubscriptionSubEvent"
+                    },
+                    {
+                        "condition": "!conditions.isFollowSubLocation && ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription' && data.subscriptions.length > 0",
+                        "name": "updateSubscriptionsListEvent"
+                    }
+                ]
+            }
+        },
+        "updateSubscriptionsList": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.sharedData}}",
+                "value" : {
+                    "activeView":"Sub0SubscribeSub",
+                    "subscriptions": "{{data.subscriptions}}",
+                    "subscriptionCtx":"{{data.subscriptionCtx}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateActiveViewSub0CreateSubscriptionSub": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.sharedData}}",
+                "value" : {
+                    "activeView":"Sub0CreateSubscriptionSub",
+                    "prePanelId":"Sub0CreateSubscriptionSub",
+                    "subscriptionCtx":"{{data.subscriptionCtx}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "Sub0CreateSubscriptionSub.updateTitleLink"
+                    }
+                ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateActiveViewSub0SubscribeType": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.sharedData}}",
+                "value" : {
+                    "activeView":"Sub0SubscribeType",
+                    "prePanelId": ""
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        },
+        "subscribeMultiObject": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Subscription-2018-12-SubscriptionManagement",
+            "method": "validateSubscribableTypes",
+            "deps": "js/Sub0SubscribeCommandPanelService",
+            "inputData": {
+                "objectsOrTypes": "{{data.target}}"
+            },
+            "outputData": {
+                "subscriptions": "subscriptions",
+                "subscriptionCtx": "{{function:loadSubscriptionCtx}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "condition": "data.subscriptionCtx.nonSubscribableObjects.length===0 && data.subscriptionCtx.subscribableObjects.uids.length > 0",
+                        "name": "getCommonEventTypesEvent"
+                    },
+                    {
+                        "condition": "!conditions.isFollowSubLocation && ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription' && !data.subscriptions",
+                        "name": "updateActiveViewSub0CreateSubscriptionSubEvent"
+                    },
+                    {
+                        "condition": "!conditions.isFollowSubLocation && ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription' && data.subscriptions.length > 0",
+                        "name": "updateSubscriptionsListEvent"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "condition": "data.subscriptionCtx.nonSubscribableObjects.length > 0 && data.subscriptionCtx.subscribableObjects.uids.length>0",
+                        "message": "confirmMultiObjectSubscriptionCreateEvent"
+                    },
+                    {
+                        "condition": "data.subscriptionCtx.nonSubscribableObjects.length > 0 && data.subscriptionCtx.subscribableObjects.uids.length===0",
+                        "message": "NoObjectsToFollowErrorMessage"
+                    }
+                ],
+                "failure": [
+                    {
+                        "condition": "data.subscriptionCtx.nonSubscribableObjects.length > 0 && data.subscriptionCtx.subscribableObjects.uids.length>0",
+                        "message": "confirmMultiObjectSubscriptionCreateEvent"
+                    }
+                ]
+            }
+        },
+        "getCommonEventTypes": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Subscription-2018-12-SubscriptionManagement",
+            "method": "getApplicableCommonEventTypes",
+            "inputData": {
+                "objectsOrTypes": "{{data.subscriptionCtx.subscribableObjects.uids}}"
+            },
+            "outputData": {
+                "subscriptionCtx.eventTypeList": "{{function:processEventTypes}}"
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "ImanEventType",
+                        "properties": [
+                            {
+                                "name": "eventtype_id"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "updateSubscriptionCtxEventList"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "updateSubscriptionCtxEventList"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "condition": "data.subscriptionCtx.eventTypeList.length < 1",
+                        "message": "NoEventsToSubscribe"
+                    }
+                ],
+                "failure": [
+                    {
+                        "condition": "data.subscriptionCtx.eventTypeList.length < 1",
+                        "message": "NoEventsToSubscribe"
+                    }
+                ]
+            },
+            "deps": "js/Sub0SubscribeCommandPanelService"
+        },
+        "updateSubscriptionCtxEventList": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.sharedData}}",
+                "value" : {
+                    "subscriptionCtx.eventTypeList":"{{data.subscriptionCtx.eventTypeList}}"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "onReveal"
+    },
+    "onEvent": [
+        {
+            "eventId": "updateSubscriptionCtxEventList",
+            "action": "updateSubscriptionCtxEventList"
+        },
+        {
+            "eventId": "subscribeSingleObjectEvent",
+            "action": "subscribeSingleObject"
+        },
+        {
+            "eventId": "subscribeMultiObjectEvent",
+            "action": "subscribeMultiObject"
+        },
+        {
+            "eventId": "getCommonEventTypesEvent",
+            "action": "getCommonEventTypes"
+        },
+        {
+            "eventId": "updateSubscriptionsListEvent",
+            "action": "updateSubscriptionsList"
+        },
+        {
+            "eventId": "updateActiveViewSub0CreateSubscriptionSubEvent",
+            "action": "updateActiveViewSub0CreateSubscriptionSub"
+        },
+        {
+            "eventId": "updateActiveViewSub0SubscribeTypeEvent",
+            "action": "updateActiveViewSub0SubscribeType"
+        },
+        {
+            "eventId": "primaryWorkArea.selectionChangeEvent",
+            "condition": "!conditions.isSub0SubscribeType",
+            "action": "closePanel"
+        }
+    ],
+    "messages": {
+        "multiObjectSelectionLimitErrorMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.multiObjectSelectionLimit}}",
+            "messageTextParams": [
+                "{{ctx.preferences.AWC_followMultiObject_max}}"
+            ]
+        },
+        "invalidTargetErrorMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.invalidTargetErrorMessage}}"
+        },
+        "confirmMultiObjectSubscriptionCreateEvent": {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.createMultiObjectSubscriptionConfirmation}}",
+            "messageTextParams": [
+                "{{data.subscriptionCtx.subscribableObjects.uids.length}}",
+                "{{ctx.mselected.length}}",
+                "{{data.subscriptionCtx.error}}"
+            ],
+            "navigationOptions": [
+                {
+                    "option": "Cancel",
+                    "text": "{{i18n.cancel}}"
+                },
+                {
+                    "option": "Proceed",
+                    "text": "{{i18n.proceed}}",
+                    "action": "getCommonEventTypes"
+                }
+            ]
+        },
+        "NoObjectsToFollowErrorMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.createMultiObjectSubscriptionConfirmation}}",
+            "messageTextParams": [
+                "{{data.subscriptionCtx.subscribableObjects.uids.length}}",
+                "{{ctx.mselected.length}}",
+                "{{data.subscriptionCtx.error}}"
+            ]
+        },
+        "NoEventsToSubscribe": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.noEventsToSubscribe}}"
+        }
+    },
+    "ctx": {
+        "selected":{
+            "type":"object"
+        },
+        "mselected":{
+            "type":"object"
+        },
+        "myEventCheckboxDefaultSelection": {
+            "type":"boolean"
+        },
+        "activeToolsAndInfoCommand":{
+            "type":"object"
+        }
+    },
+    "conditions": {
+
+        "isSub0CreateSubscriptionSub":{
+            "expression":"ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription' && (data.sharedData.subscriptions.length === 0 || data.sharedData.prePanelId !=='')"
+        },
+        "isSub0SubscribeSub":{
+            "expression":"ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription'"
+        },
+        "isFollowSubLocation": {
+            "expression": "ctx.locationContext['ActiveWorkspace:SubLocation'] === 'com.siemens.splm.client.subscription.follow.Subscriptions'"
+        },
+        "isSub0SubscribeType":{
+            "expression":"ctx.activeToolsAndInfoCommand.commandId==='Sub0CreateSubscription' && conditions.isFollowSubLocation"
+        }
+    },
+    "functions": {
+        "loadSubscriptionCtx": {
+            "functionName": "loadSubscriptionCtx",
+            "parameters": [
+                "{{data.sharedData}}"
+            ]
+        },
+        "processEventTypes": {
+            "functionName": "processEventTypes",
+            "parameters": [
+                "{{fields.eventType}}"
+            ]
+        }
+    }
+
+}
+

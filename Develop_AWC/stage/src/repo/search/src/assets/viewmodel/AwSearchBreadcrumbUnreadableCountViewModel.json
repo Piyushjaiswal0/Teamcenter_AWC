@@ -1,0 +1,39 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "buildUnreadableTooltip": {
+            "actionType": "JSFunctionAsync",
+            "method": "buildUnreadableTooltip",
+            "inputData": {
+                "count": "{{props.count}}",
+                "subPanelContextCount": "{{props}}"
+            },
+            "outputData": {
+                "data.tooltip.extendedTooltipContent": ""
+            },
+            "deps": "js/AwSearchBreadcrumbUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "buildUnreadableTooltip",
+        "onUpdate": {
+            "action": "buildUnreadableTooltip",
+            "observers": ["props" ]
+        }
+    },
+    "data": {
+        "buttonCommand": {
+            "iconName": "indicatorPrivate16"
+        },
+        "tooltip": {
+            "extendedTooltipContent": ""
+        }
+    },
+    "conditions": {},
+    "onEvent": [],
+    "props": {
+        "count": {
+            "type": "object"
+        }
+    }
+}

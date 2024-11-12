@@ -1,0 +1,98 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+
+    "actions": {
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "getAdaptedObjects",
+            "inputData": {
+                "sourceObjects": "{{ctx.mselected}}"
+            },
+            "outputData": {
+                "license.adaptedObjects": ""
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "awp0AssignLicense.selectedObjectsAdapted"
+                    }
+                ]
+            },
+            "deps": "js/licenseMgmtService"
+        },
+        "loadAuthPara": {
+            "actionType": "JSFunction",
+            "method": "loadAuthPara",
+            "inputData": {
+                "attributes": [
+                    "ead_paragraph",
+                    "license_list"
+                ],
+                "objects": "{{data.license.adaptedObjects}}"
+            },
+            "deps": "js/licenseMgmtService"
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        },
+        "backAction": {
+            "actionType": "JSFunction",
+            "method": "updateSharedDataState",
+            "inputData": {
+                "state": "{{fields.sharedData}}",
+                "newValue": {
+                    "activeView": "Awp0AttachLicensesSub"
+                }
+            },
+            "deps": "js/licenseMgmtService"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "awp0AssignLicense.selectedObjectsAdapted",
+            "action": "loadAuthPara"
+        },
+        {
+            "eventId": "primaryWorkArea.selectionChangeEvent",
+            "action": "closePanel"
+        }
+    ],
+    "data": {
+        "sharedData": {
+            "initialValues": {
+                "activeView": "Awp0AttachLicensesSub",
+                "licenses": ""
+            },
+            "meta": {}
+        }
+    },
+    "props":{
+        "sub-panel-context":{
+            "type":"object"
+        }
+    },
+    "dataProviders": {},
+    "i18n": {
+        "Licenses": [
+            "SecurityMessages"
+        ],
+        "AttachLicense": [
+            "SecurityMessages"
+        ],
+        "DetachLicense": [
+            "SecurityMessages"
+        ]
+    }
+}

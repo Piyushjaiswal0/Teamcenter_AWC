@@ -1,0 +1,391 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "deleteRelations": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "deleteRelations",
+            "deps": "js/ShareTemplateService",
+            "inputData": {
+                "input": "{{function:prepareInputForDeleteRelations}}"
+            }
+        },
+        "loadObjects": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-09-DataManagement",
+            "method": "loadObjects",
+            "deps": "js/ShareTemplateService",
+            "inputData": {
+                "uids": [
+                    "{{subPanelContext.rb0ShareState.selectedReport.uid}}"
+                ]
+            },
+            "outputData": {
+                "selectedReport": "{{function:updateSelectedReportForPublic}}"
+            }
+        },
+        "createRelations": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "createRelations",
+            "inputData": {
+                "input": "{{function:prepareInputForCreateRelations}}"
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [
+                        {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        },
+                        {
+                            "name":"rd_description"
+                        }
+                    ]
+                } ]
+            },
+            "outputData":{
+                "output": "{{function:processReportTemplate}}"
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "createRelationsForNone": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "createRelations",
+            "inputData": {
+                "input": [
+                    {
+                        "primaryObject": {
+                            "type": "{{subPanelContext.rb0ShareState.selectedReport.type}}",
+                            "uid": "{{subPanelContext.rb0ShareState.selectedReport.uid}}"
+                        },
+                        "secondaryObject": {
+                            "uid": "{{ctx.userSession.props.fnd0groupmember.dbValue}}"
+                        },
+                        "relationType": "Fnd0Applicable_Assignment",
+                        "clientId": ""
+                    }
+                ]
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [
+                        {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        },
+                        {
+                            "name":"rd_description"
+                        }
+                    ]
+                } ]
+            },
+            "outputData":{
+                "output": "{{function:processReportTemplate}}"
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "initiateCreateRelations":{
+            "actionType": "batchJob",
+            "steps": [{
+                "action": "deleteRelations"
+            }, {
+                "action": "loadObjects",
+                "condition": "conditions.isPublic"
+            }, {
+                "action": "createRelations",
+                "condition": "conditions.isCustom"
+            }, {
+                "action": "createRelationsForNone",
+                "condition": "conditions.isPrivate"
+            }, {
+                "action": "updatePrimaryWorkArea"
+            }, {
+                "action": "closePanel"
+            }]
+        },
+        "updatePrimaryWorkArea":{
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "dataProvider.reset"
+                    }
+                ]
+            }
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "condition": "data.sharedWith.dbValue!=='private'",
+                        "message": "sharedReportSuccessMessage"
+                    },
+                    {
+                        "condition": "data.sharedWith.dbValue === 'private'",
+                        "message": "privatelySharedReportSuccessMessage"
+                    }
+                ]
+            }
+        },
+        "clearSharedWithList": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.rb0ShareState}}",
+                "value": {
+                    "sharedWithList": []
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateSharedWith":{
+            "actionType":"JSFunction",
+            "method": "updateSharedWith",
+            "inputData": {
+                "rb0ShareState":"{{subPanelContext.rb0ShareState}}"
+            },
+            "outputData":{
+                "sharedWith.dbValue":""
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "onUnmountAction":{
+            "actionType":"batchJob",
+            "steps":[
+                {
+                    "action":"clearSharedWithList"
+                }
+            ]
+        }
+    },
+    "data": {
+        "sharedWithTitleLabel": {
+            "propertyDisplayName": "{{i18n.sharedWith}}"
+        },
+        "sharedWith": {
+            "type": "STRING",
+            "isEditable": "true",
+            "dbValue": "",
+            "vertical": true
+        },
+        "sharedWithValues": {
+            "type": "STRING",
+            "dbValue": [
+                {
+                    "propDisplayValue": "{{i18n.private}}",
+                    "propInternalValue": "private"
+                },
+                {
+                    "propDisplayValue": "{{i18n.public}}",
+                    "propInternalValue": "public"
+                },
+                {
+                    "propDisplayValue": "{{i18n.custom}}",
+                    "propInternalValue": "custom"
+                }
+            ]
+        },
+        "searchFolderShareRuleOption": {
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": true,
+            "propertyRadioTrueText": "{{i18n.organization}}",
+            "propertyRadioFalseText": "{{i18n.projects}}",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "shareReportState": {
+            "initialValues": {
+                "disableAddButton": true,
+                "disableRemoveButton": true
+            },
+            "meta": {
+            }
+        },
+        "showAddRemoveButtons":true
+    },
+    "functions": {
+        "prepareInputForDeleteRelations":{
+            "functionName": "prepareInputForDeleteRelations",
+            "parameters":
+            [
+                "{{subPanelContext.rb0ShareState.selectedReport}}",
+                "{{subPanelContext.rb0ShareState.sharedWithList}}",
+                "{{data.sharedWith.dbValue}}"
+            ]
+        },
+        "prepareInputForCreateRelations": {
+            "functionName": "prepareInputForCreateRelations",
+            "parameters":
+            [
+                "{{subPanelContext.rb0ShareState.selectedReport}}",
+                "{{subPanelContext.rb0ShareState.sharedWithList}}"
+            ]
+        },
+        "processReportTemplate":{
+            "functionName": "processReportTemplate",
+            "parameters": [
+                "{{subPanelContext.rb0ShareState}}"
+            ]
+        },
+        "updateSelectedReportForPublic":{
+            "functionName": "updateSelectedReportForPublic",
+            "parameters":[
+                "{{subPanelContext.rb0ShareState}}"
+            ]
+        }
+    },
+    "messages":{
+        "sharedReportSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.sharedReportSuccessMessage}}",
+            "messageTextParams": [
+                "{{subPanelContext.rb0ShareState.selectedReport.props.rd_name.dbValues[0]}}"
+            ]
+        },
+        "privatelySharedReportSuccessMessage":{
+            "messageType": "INFO",
+            "messageText": "{{i18n.privatelySharedReportSuccessMessage}}",
+            "messageTextParams": [
+                "{{subPanelContext.rb0ShareState.selectedReport.props.rd_name.dbValues[0]}}"
+            ]
+        }
+    },
+    "conditions":
+    {
+        "isCustom": {
+            "expression": "data.sharedWith.dbValue ==='custom'"
+        },
+        "isPrivate": {
+            "expression": "data.sharedWith.dbValue ==='private'"
+        },
+        "isPublic":{
+            "expression": "data.sharedWith.dbValue ==='public'"
+        },
+        "isMobileMode": {
+            "expression": "!subPanelContext.sidenavMode || subPanelContext.sidenavMode === 'mobile'"
+        },
+        "isAddUpdated":{
+            "expression": "data.shareReportState.add === true || data.shareReportState.add === false"
+        },
+        "enableSaveButton": {
+            "expression": "data.shareReportState.changedSharedWith === true"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "updateSharedWith",
+        "onUnmount": "onUnmountAction"
+    },
+    "i18n": {
+        "saveReport": [ "ReportChartMessages" ],
+        "organization": [
+            "SearchMessages"
+        ],
+        "projects": [
+            "SearchMessages"
+        ],
+        "availableTable": [
+            "SearchMessages"
+        ],
+        "sharedWithTable": [
+            "SearchMessages"
+        ],
+        "private": [
+            "ReportChartMessages"
+        ],
+        "public": [
+            "ReportChartMessages"
+        ],
+        "custom": [
+            "ReportChartMessages"
+        ],
+        "sharedWith": [
+            "ReportChartMessages"
+        ],
+        "sharedReportSuccessMessage":[
+            "ReportChartMessages"
+        ],
+        "privatelySharedReportSuccessMessage":[
+            "ReportChartMessages"
+        ]
+    }
+}

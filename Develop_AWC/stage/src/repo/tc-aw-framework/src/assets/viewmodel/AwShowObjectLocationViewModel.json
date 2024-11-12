@@ -1,0 +1,157 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "primaryActiveTabId": {
+            "dbValue": "",
+            "type": "OBJECT"
+        }
+    },
+    "actions": {
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "cleanCdmCache"
+                }, {
+                    "action": "initializeShowObjLoc"
+                }
+            ]
+        },
+        "initializeShowObjLoc": {
+            "actionType": "JSFunctionAsync",
+            "method": "initialize",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "showObjContext": "showObjContext",
+                "viewModelObject": "viewModelObject",
+                "xrtState": "xrtState"
+            },
+            "deps": "js/AwShowObjectLocationService"
+        },
+        "cleanUp": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "unmount"
+                }
+            ]
+        },
+        "unmount": {
+            "actionType": "JSFunction",
+            "method": "unmount",
+            "deps": "js/AwShowObjectLocationService"
+        },
+        "handleStateChange": {
+            "actionType": "JSFunctionAsync",
+            "method": "handleStateChange",
+            "inputData": {
+                "showObjContext": "{{data.showObjContext}}",
+                "viewModelObject": "{{data.viewModelObject}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "showObjContext": "showObjContext",
+                "viewModelObject": "viewModelObject",
+                "xrtState": "xrtState"
+            },
+            "deps": "js/AwShowObjectLocationService"
+        },
+        "cleanCdmCache": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "cdm.cleanCache",
+                    "eventData": {}
+                } ]
+            }
+        },
+        "syncOpenedObjectOnCdmModified": {
+            "actionType": "JSFunctionAsync",
+            "method": "syncOpenedObject",
+            "inputData": {
+                "0": "{{data.viewModelObject}}",
+                "1": "{{data.eventMap['cdm.modified']}}"
+            },
+            "outputData": {
+                "viewModelObject": "viewModelObject",
+                "showObjContext.displayName": "displayName"
+            },
+            "deps": "js/AwShowObjectLocationService"
+        },
+        "syncOpenedObjectonRelatedModifed": {
+            "actionType": "JSFunctionAsync",
+            "method": "syncOpenedObject",
+            "inputData": {
+                "0": "{{data.viewModelObject}}",
+                "1": "{{data.eventMap['cdm.relatedModified']}}"
+            },
+            "outputData": {
+                "viewModelObject": "viewModelObject",
+                "showObjContext.displayName": "displayName"
+            },
+            "deps": "js/AwShowObjectLocationService"
+        },
+        "activateTab": {
+            "actionType": "JSFunctionAsync",
+            "method": "activateTab",
+            "inputData": {
+                "0": "{{data.primaryActiveTabId.dbValue}}",
+                "1": "{{data.showObjContext.subLocationTabs}}"
+            },
+            "deps": "js/AwShowObjectLocationService"
+        },
+        "handleObjectDeletedEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "handleObjectDeletedEvent",
+            "inputData": {
+                "0": "{{data.viewModelObject}}",
+                "1": "{{data.showObjContext}}",
+                "2": "{{data.eventData}}"
+            },
+            "outputData": {
+                "showObjContext": "showObjContext"
+            },
+            "deps": "js/AwShowObjectLocationService"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUnmount": "cleanUp",
+        "onUpdate": [ {
+                "action": "activateTab",
+                "observers": [ "viewModel.data.primaryActiveTabId" ]
+            }
+        ]
+    },
+    "i18n": {
+        "ShowObjectLocationTitle": [ "XRTMessages" ]
+    },
+    "onEvent": [ {
+        "eventId": "stateChangeSuccess",
+        "action": "handleStateChange"
+    },
+    {
+        "eventId": "cdm.modified",
+        "action": "syncOpenedObjectOnCdmModified",
+        "cacheEventData": true
+    },
+    {
+        "eventId": "cdm.relatedModified",
+        "action": "syncOpenedObjectonRelatedModifed",
+        "cacheEventData": true
+    },
+    {
+        "eventId": "cdm.deleted",
+        "action": "handleObjectDeletedEvent",
+        "cacheEventData": true
+    } ],
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

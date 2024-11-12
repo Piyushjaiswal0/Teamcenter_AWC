@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_8" data-name="New Gradient Swatch 8" x1="42.8568" y1="9.2842" x2="79.0351" y2="45.4624" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef6f8"/>
+      <stop offset="1" stop-color="#d1e6ec"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_11" data-name="New Gradient Swatch 11" x1="51.9535" y1="54.3953" x2="69.7442" y2="72.186" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".4889" stop-color="#4695ae"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_10" data-name="New Gradient Swatch 10" x1="22.2511" y1="50.4594" x2="66.794" y2="95.0023" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4eb"/>
+      <stop offset=".6517" stop-color="#87b8c8"/>
+      <stop offset="1" stop-color="#68a4b8"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="63.5445" y1="109.4545" x2="70.5419" y2="116.4519" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset=".1774" stop-color="#6badc1"/>
+      <stop offset=".4638" stop-color="#539cb3"/>
+      <stop offset=".8215" stop-color="#2c829c"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_10-2" data-name="New Gradient Swatch 10" x1="78.8475" y1="60.8475" x2="119.1526" y2="101.1526" xlink:href="#New_Gradient_Swatch_10"/>
+    <linearGradient id="linear-gradient" x1="80.9689" y1="62.9688" x2="117.0313" y2="99.0312" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef6f8"/>
+      <stop offset=".6236" stop-color="#edf6f8"/>
+      <stop offset="1" stop-color="#d1e6ec"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_11-2" data-name="New Gradient Swatch 11" x1="73.0001" y1="81" x2="125" y2="81" xlink:href="#New_Gradient_Swatch_11"/>
+    <linearGradient id="New_Gradient_Swatch_11-3" data-name="New Gradient Swatch 11" x1="88.2373" y1="70.2367" x2="109.7638" y2="91.7632" xlink:href="#New_Gradient_Swatch_11"/>
+  </defs>
+  <g>
+    <path d="m69.2232,55.2743c0-5.9591,6.3435-14.5896,6.3435-14.5896,4.4519-5.1775,7.2589-12.195,7.2589-18.5617,0-11.9421-9.8394-21.623-21.9774-21.623s-21.9761,9.6809-21.9761,21.623c0,6.3786,2.818,13.4094,7.2824,18.591l-.0132.0148s6.4141,8.2787,6.4141,14.2378" fill="url(#New_Gradient_Swatch_8)" stroke="#16748f" stroke-miterlimit="10"/>
+    <polygon points="70.2674 54.9186 51.4302 54.9186 51.4302 71.6628 55.2085 71.6628 58.4367 75.8488 63.4224 75.8488 66.6516 71.6628 70.2674 71.6628 70.2674 54.9186" fill="url(#New_Gradient_Swatch_11)" stroke="#16748f" stroke-linejoin="round"/>
+  </g>
+  <path d="m66.7895,74.4501l6.4148-2.9112c.378-.1716.7423-.372,1.0895-.5995l9.3567-6.1297c5.9629-3.3588,9.572,5.0377,4.2838,8.9414-3.8449,2.8725-7.4323,5.395-10.2867,6.704-15.6485,7.1765-15.5321,7.226-24.3668,7.226-6.0566,0-15.025-.95-26.507-6.0226-3.592-1.5865-10.4895.9767-18.8619,3.0929-2.629.6664-5.3167-.8793-6.042-3.4752-.2426-.8686-.7513-3.1038-1.2254-5.243-.6255-2.8221.8152-5.9173,3.5968-6.7034,3.1914-.9019,7.9504-1.6513,12.7999-3.4798,7.1478-2.6951,12.6551-4.4527,23.446-.5655.3226.1162,7.3543,3.5647,9.2164,4.4949.4881.2438,1.0019.3998,1.5426.4727l11.933,1.6075c6.1024.9855,3.6948,10.0668-2.802,9.499l-11.0901-1.5125c-1.1923-.1626-2.3518-.5105-3.4368-1.031l-8.8007-4.2223" fill="url(#New_Gradient_Swatch_10)" stroke="#16748f" stroke-miterlimit="10"/>
+  <g>
+    <path d="m76.5239,96.4751l-22.6583,22.6655c-1.8208,1.8208-1.8208,4.7729,0,6.5938l.4.4c1.8208,1.8208,4.773,1.8208,6.5938,0l22.6502-22.656" fill="url(#Dark_Blue_Grad_2)" stroke="#16748f" stroke-miterlimit="10"/>
+    <circle cx="99.0001" cy="81" r="28.5" fill="url(#New_Gradient_Swatch_10-2)" stroke="#16748f" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="99.0001" cy="81" r="25.5" fill="url(#linear-gradient)" stroke="url(#New_Gradient_Swatch_11-2)" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="111.5005 71.9735 108.0269 68.4999 99.0005 77.5263 89.9741 68.4999 86.5005 71.9735 95.5269 80.9999 86.5005 90.0263 89.9741 93.5 99.0005 84.4736 108.0269 93.5 111.5005 90.0263 102.4741 80.9999 111.5005 71.9735" fill="url(#New_Gradient_Swatch_11-3)" stroke="#16748f" stroke-linejoin="round"/>
+  </g>
+</svg>

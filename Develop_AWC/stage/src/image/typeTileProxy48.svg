@@ -1,0 +1,17 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<rect id="XMLID_206_" x="3" y="3" fill="#2882A0" width="33" height="33"/>
+<rect id="XMLID_204_" x="38" y="3" fill="#969696" width="9" height="25"/>
+<rect id="XMLID_191_" x="3" y="38" fill="#BEBEBE" width="25" height="9"/>
+<rect id="XMLID_187_" x="0.5" y="0.5" fill="none" stroke="#464646" stroke-miterlimit="10" width="47" height="47"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="27.5" y1="27.5" x2="47.5" y2="47.5">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<rect x="27.5" y="27.5" fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" width="20" height="20"/>
+<path fill="#3C91AF" stroke="#147391" d="M37,33l2.5-2.5h-9v9L33,37c0,0,4.7,1.9,6,4c1.8,2.8-0.5,3.2-0.5,3.2v0.5
+	c0,0,0.4,0.4,1.4,0.3c0.3,0,0.7-0.2,1.1-0.5c0.4-0.3,0.7-0.8,0.8-1.4C42.7,38.5,37,33,37,33z"/>
+</svg>

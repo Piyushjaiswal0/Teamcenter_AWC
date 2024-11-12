@@ -1,0 +1,13 @@
+<aw-panel>
+    <aw-add visible-tabs="palette,search"
+      max-recent-count="5"
+      type-filter = "{{subPanelContext.filterTypes}}"
+      search-filter="{{subPanelContext.searchFilter}}"
+      add-panel-state="fields.addPanelState"
+      sub-panel-context="{selectionMode: subPanelContext.selectionMode}"></aw-add>
+    <aw-panel-footer>
+        <aw-button action="setTypeReference" visible-when="fields.addPanelState.sourceObjects.length > 0">
+            <aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-panel>

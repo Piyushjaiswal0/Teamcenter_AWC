@@ -1,0 +1,163 @@
+{
+    "imports": [
+        "js/aw-include.directive",
+        "js/aw-button.directive",
+        "js/aw-command-panel.directive",
+        "js/aw-i18n.directive",
+        "js/aw-panel-footer.directive",
+        "js/enable-when.directive"
+    ],
+    "actions": {
+        "downloadFile": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/command.service",
+            "method": "executeCommand",
+            "inputData": {
+                "0": "Awp0ShowObjectCellDataset",
+                "1": "",
+                "2": "",
+                "3": {
+                    "vmo": "{{data.subPanelContext.selected}}"
+                },
+                "4": "{{parameters.commandActionExecutor.runActionWithViewModel}}"
+            }
+        },
+        "restoreVersionHandler": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "restoreVersion"
+            }, {
+                "action": "notifyVmoChange"
+            } ]
+        },
+        "restoreVersion": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/fileVersion.service",
+            "method": "restoreFileVersion",
+            "inputData": {
+                "0": {
+                    "target": "{{subPanelContext.selectionData.selected[0]}}",
+                    "parent": "{{subPanelContext.selectionData.pselected}}",
+                    "version": "{{data.subPanelContext.selected}}"
+                }
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "restoreFailureMessage"
+                } ]
+            }
+        },
+        "onTableSelectionChange": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updateSubPanelContext"
+            } ]
+        },
+        "onSelectionChange": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updatePanelContext"
+            }, {
+                "action": "updateSubPanelContext"
+            }, {
+                "action": "notifyVmoChange"
+            } ]
+        },
+        "updatePanelContext": {
+            "actionType": "JSFunction",
+            "deps": "js/appCtxService",
+            "method": "updatePartialCtx",
+            "inputData": {
+                "0": "panelContext",
+                "1": {
+                    "vmo": "{{subPanelContext.selectionData.selected[0]}}",
+                    "parent": "{{subPanelContext.subPanelContext.selectionData.pselected}}"
+                }
+            }
+        },
+        "updateSubPanelContext": {
+            "actionType": "JSFunction",
+            "deps": "js/fileVersion.service",
+            "method": "updateSelectedSubPanelContext",
+            "inputData": {
+                "ctxSelected": "{{subPanelContext.selectionData.selected[0]}}",
+                "eventSelection": "{{data.eventData}}"
+            },
+            "outputData": {
+                "subPanelContext.selected": ""
+            }
+        },
+        "notifyVmoChange": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "datasetVersionsToRenderUpdate",
+                    "excludeLocalDataCtx": true,
+                    "eventData": {}
+                } ]
+            }
+        },
+        "resetFileUploadState":{
+            "actionType": "JSFunction",
+            "method": "resetFileUploadState",
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "subPanelContext": {
+            "vmo": "{{subPanelContext.selectionData.selected[0]}}",
+            "selected": ""
+        }
+    },
+    "i18n": {
+        "DownloadVersionButton": [
+            "FileVersionsMessages"
+        ],
+        "RestoreVersionButton": [
+            "FileVersionsMessages"
+        ],
+        "FileVersionsPanelHeader": [
+            "FileVersionsMessages"
+        ],
+        "RestoreFailureMessage": [
+            "FileVersionsMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "resetFileUploadState",
+        "onUpdate": {
+            "action": "onSelectionChange",
+            "observers": [ "props.subPanelContext.selectionData.selected[0].uid" ]
+        }
+    },
+    "onEvent": [ {
+        "eventId": "appCtx.register",
+        "condition": "name === 'mselected'",
+        "action": "onSelectionChange"
+    }, {
+        "eventId": "gridDataProviderDHWS.selectionChangeEvent",
+        "action": "onTableSelectionChange",
+        "cacheEventData": true
+    }, {
+        "eventId": "refreshObjectSet",
+        "action": "refreshObjectSetCustom",
+        "cacheEventData": true
+    } ],
+    "messages": {
+        "restoreFailureMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.RestoreFailureMessage}}",
+            "messageTextParams": []
+        }
+    },
+    "conditions": {
+        "isPanelObjectModifiable": {
+            "expression": "!subPanelContext.selectionData.selected[0].props.checked_out_user.dbValue || subPanelContext.selectionData.selected[0].props.checked_out_user.dbValue === ctx.user.uid"
+        },
+        "isPreviousRevisionSelected": {
+            "expression": "data.subPanelContext.selected && data.subPanelContext.selected.props.revision_number.dbValue !== data.subPanelContext.vmo.props.revision_number.dbValue"
+        }
+    },
+    "schemaVersion": "1.0.0"
+}

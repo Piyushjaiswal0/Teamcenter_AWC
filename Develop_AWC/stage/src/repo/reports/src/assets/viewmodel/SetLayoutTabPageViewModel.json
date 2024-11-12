@@ -1,0 +1,602 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-widget.directive",
+        "js/aw-listbox.directive",
+        "js/aw-command-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-checkbox.directive"
+    ],
+    "actions": {
+        "revealLayoutPanel": {
+            "actionType": "JSFunction",
+            "method": "setupLayoutPanelProperties",
+            "inputData": {
+                "data": "{{data}}",
+                "titleText": "{{data.titleText}}"
+            },
+            "outputData":{
+                "titleText": "titleText",
+                "addChart1": "addChart1",
+                "removeChart1": "removeChart1",
+                "addChart2": "addChart2",
+                "removeChart2": "removeChart2",
+                "addChart3": "addChart3",
+                "removeChart3": "removeChart3"
+            },
+            "deps": "js/configureReportService"
+        },
+        "showConfiguredReportPreviewAction": {
+            "actionType": "JSFunction",
+            "method": "setupReportxContext",
+            "inputData": {
+                "data": "{{data}}",
+                "subPnlCtx": "{{props.subPanelContext}}"
+            },
+            "deps": "js/configureReportService"
+        },
+        "saveConfiguredReportAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+            "method": "setProperties",
+            "inputData": {
+                "info": [ {
+                    "object": "{{ctx.ReportsContext.selected}}",
+                    "timestamp": "",
+                    "vecNameVal": "{{function:getReportParameterAndValues}}"
+                } ]
+            },
+            "actionMessages": {
+                "success": [ {
+                    "message": "reportSaveSuccessMessage",
+                    "condition": "data.totalFound !== 0"
+                } ],
+                "failure": [ {
+                    "message": "reportSaveFailedMessage",
+                    "condition": "errorCode.code === 515035"
+                } ]
+            },
+            "events": {
+                "success": [ {
+                    "name": "complete",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    },
+                    "condition": "!subPanelContext.panelPinned"
+                },
+                {
+                    "name": "SetLayoutTab.saveConfiguredReportSuccessful"
+                }  ]
+            },
+            "deps": "js/configureReportService"
+        },
+        "getFileterPropColumnList": {
+            "actionType": "JSFunction",
+            "method": "populateFilterrColumnPropList",
+            "inputData": {
+                "schemaFormat": "ALL",
+                "scope": "ALL",
+                "filter": "{{data.tableColumnList.filterString}}",
+                "data": "{{data}}",
+                "reportsContext": "{{props.subPanelContext.reportsContext}}"
+            },
+            "outputData": {
+                "filterColumnProps": "filterColumnProps"
+            },
+            "deps": "js/configureReportService"
+        },
+        "setLayoutAddNewChart":{
+            "actionType": "JSFunction",
+            "method": "setLayoutAddNewChart",
+            "inputData": {
+                "data": "{{data.eventData.pnlData}}"
+            },
+            "deps": "js/configureReportService"
+        },
+        "setRemoveChart1ReportParameter": {
+            "actionType": "JSFunction",
+            "method": "removeChartAction",
+            "inputData": {
+                "addChart1": "{{data.addChart1}}",
+                "removeChart1": "{{data.removeChart1}}",
+                "chart1ByProperty": "{{data.chart1ByProperty}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "chartVisible": "chart1Visible"
+            },
+            "outputData":{
+                "addChart1": "addChart",
+                "removeChart1": "removeChart",
+                "chart1ByProperty": "chartByProp"
+            },
+            "deps": "js/reportChartService"
+        },
+        "setRemoveChart2ReportParameter": {
+            "actionType": "JSFunction",
+            "method": "removeChartAction",
+            "inputData": {
+                "addChart2": "{{data.addChart2}}",
+                "removeChart2": "{{data.removeChart2}}",
+                "chart2ByProperty": "{{data.chart2ByProperty}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "chartVisible": "chart2Visible"
+            },
+            "outputData":{
+                "addChart2": "addChart",
+                "removeChart2": "removeChart",
+                "chart2ByProperty": "chartByProp"
+            },
+            "deps": "js/reportChartService"
+        },
+        "setRemoveChart3ReportParameter": {
+            "actionType": "JSFunction",
+            "method": "removeChartAction",
+            "inputData": {
+                "addChart3": "{{data.addChart3}}",
+                "removeChart3": "{{data.removeChart3}}",
+                "chart3ByProperty": "{{data.chart3ByProperty}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "chartVisible": "chart3Visible"
+            },
+            "outputData":{
+                "addChart3": "addChart",
+                "removeChart3": "removeChart",
+                "chart3ByProperty": "chartByProp"
+            },
+            "deps": "js/reportChartService"
+        },
+        "setChart1AsThumbnail":{
+            "actionType": "JSFunction",
+            "method": "setChartThumbnailValue",
+            "inputData": {
+                "chartProp": "{{data.chart1Thumbnail}}",
+                "selectedChart": "ReportChart1",
+                "prop1": "{{data.chart2Thumbnail}}",
+                "prop2": "{{data.chart3Thumbnail}}",
+                "prop3": "{{data.table1Thumbnail}}",
+                "subPanelContext":"{{subPanelContext}}"
+            },
+            "outputData":{
+                "chart1Thumbnail": "chartProp",
+                "chart2Thumbnail": "prop1",
+                "chart3Thumbnail": "prop2",
+                "table1Thumbnail": "prop3"
+            },
+            "deps": "js/configureReportService"
+        },
+        "setChart2AsThumbnail":{
+            "actionType": "JSFunction",
+            "method": "setChartThumbnailValue",
+            "inputData": {
+                "chartProp": "{{data.chart2Thumbnail}}",
+                "selectedChart": "ReportChart2",
+                "prop1": "{{data.chart1Thumbnail}}",
+                "prop2": "{{data.chart3Thumbnail}}",
+                "prop3": "{{data.table1Thumbnail}}",
+                "subPanelContext":"{{subPanelContext}}"
+            },
+            "outputData":{
+                "chart2Thumbnail": "chartProp",
+                "chart1Thumbnail": "prop1",
+                "chart3Thumbnail": "prop2",
+                "table1Thumbnail": "prop3"
+            },
+            "deps": "js/configureReportService"
+        },
+        "setChart3AsThumbnail":{
+            "actionType": "JSFunction",
+            "method": "setChartThumbnailValue",
+            "inputData": {
+                "chartProp": "{{data.chart3Thumbnail}}",
+                "selectedChart": "ReportChart3",
+                "prop1": "{{data.chart1Thumbnail}}",
+                "prop2": "{{data.chart2Thumbnail}}",
+                "prop3": "{{data.table1Thumbnail}}",
+                "subPanelContext":"{{subPanelContext}}"
+            },
+            "outputData":{
+                "chart3Thumbnail": "chartProp",
+                "chart1Thumbnail": "prop1",
+                "chart2Thumbnail": "prop2",
+                "table1Thumbnail": "prop3"
+            },
+            "deps": "js/configureReportService"
+        },
+        "setTable1AsThumbnail":{
+            "actionType": "JSFunction",
+            "method": "setChartThumbnailValue",
+            "inputData": {
+                "chartProp": "{{data.table1Thumbnail}}",
+                "selectedChart": "ReportTable1",
+                "prop1": "{{data.chart1Thumbnail}}",
+                "prop2": "{{data.chart2Thumbnail}}",
+                "prop3": "{{data.chart3Thumbnail}}",
+                "subPanelContext":"{{subPanelContext}}"
+            },
+            "outputData":{
+                "table1Thumbnail": "chartProp",
+                "chart1Thumbnail": "prop1",
+                "chart2Thumbnail": "prop2",
+                "chart3Thumbnail": "prop3"
+            },
+            "deps": "js/configureReportService"
+        },
+        "addChart1Action":{
+            "actionType": "JSFunction",
+            "method": "addNewChartAction",
+            "inputData": {
+                "chart1Title": "{{data.chart1Title}}",
+                "addChart": "{{data.addChart1}}",
+                "removeChart": "{{data.removeChart1}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "chartVisible": "chart1Visible",
+                "thumbnailElem": "{{data.chart1Thumbnail}}"
+            },
+            "outputData":{
+                "chart1Title": "chartTitle",
+                "addChart1": "addChart",
+                "removeChart1": "removeChart",
+                "chart1Thumbnail": "thumbnailElem"
+            },
+            "deps": "js/reportChartService"
+        },
+        "addChart2Action":{
+            "actionType": "JSFunction",
+            "method": "addNewChartAction",
+            "inputData": {
+                "chartTitle": "{{data.chart2Title}}",
+                "addChart": "{{data.addChart2}}",
+                "removeChart": "{{data.removeChart2}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "chartVisible": "chart2Visible"
+            },
+            "outputData":{
+                "chart2Title": "chartTitle",
+                "addChart2": "addChart",
+                "removeChart2": "removeChart"
+            },
+            "deps": "js/reportChartService"
+        },
+        "addChart3Action":{
+            "actionType": "JSFunction",
+            "method": "addNewChartAction",
+            "inputData": {
+                "chartTitle": "{{data.chart3Title}}",
+                "addChart": "{{data.addChart3}}",
+                "removeChart": "{{data.removeChart3}}",
+                "subPanelContext": "{{subPanelContext}}",
+                "chartVisible": "chart3Visible"
+            },
+            "outputData":{
+                "chart3Title": "chartTitle",
+                "addChart3": "addChart",
+                "removeChart3": "removeChart"
+            },
+            "deps": "js/reportChartService"
+        },
+        "setLayoutTabSaveActionCompleteInContext": {
+            "actionType": "JSFunction",
+            "method": "setSaveActionCompleteInContext",
+            "deps": "js/configureItemReportService"
+        }
+    },
+    "ctx": {
+        "ReportsContext": {
+                "type": "object"
+        },
+        "state":{
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "revealLayoutPanel"
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "dataProviders": {
+        "FilterPropListProvider": {
+            "initializeAction": "getFileterPropColumnList",
+            "nextAction": "getFileterPropColumnList",
+            "response": "{{data.filterColumnProps}}"
+        }
+    },
+
+    "data": {
+        "setLayoutTabPageChart1Commands": "setLayoutTabPage_chart1Commands",
+        "setLayoutTabPageChart2Commands": "setLayoutTabPage_chart2Commands",
+        "setLayoutTabPageChart3Commands": "setLayoutTabPage_chart3Commands",
+        "setLayoutTabPageAddChartCommand": "setLayoutTabPage_addChartCommand",
+        "titleText": {
+            "displayName": "{{i18n.titleText}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportTitle.TitleText}}"
+        },
+        "titleColor": {
+            "displayName": "{{i18n.titleColor}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportTitle.TitleColor}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportTitle.TitleDispColor}}"
+        },
+        "titleFont": {
+            "displayName": "{{i18n.titleFont}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportTitle.TitleFont}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportTitle.TitleDispFont}}"
+        },
+        "tableColumnList": {
+            "displayName": "{{i18n.tableColumnName}}",
+            "type": "STRINGARRAY",
+            "isArray": true,
+            "dataProvider": "FilterPropListProvider"
+        },
+        "chart1Label": {
+            "displayName": "{{i18n.chart1Label}}",
+            "type": "STRING",
+            "isEditable": "true"
+        },
+        "chart1Title": {
+            "displayName": "{{i18n.chartTitle}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartTitle}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartTitle}}"
+        },
+        "chart1Type": {
+            "displayName": "{{i18n.chartType}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartTpIntName}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartType}}"
+        },
+        "chart1ByProperty": {
+            "displayName": "{{i18n.chartByProperty}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartPropInternalName}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartPropName}}"
+        },
+        "addChart1": {
+            "type": "BOOLEAN",
+            "dbValue": true
+        },
+        "removeChart1": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "chart1Thumbnail":{
+            "displayName": "{{i18n.isThumbnail}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "dispValue": "{{i18n.isThumbnail}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "chart2Label": {
+            "displayName": "{{i18n.chart1Label}}",
+            "type": "STRING",
+            "isEditable": "true"
+        },
+        "chart2Title": {
+            "displayName": "{{i18n.chartTitle}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartTitle}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartTitle}}"
+        },
+        "chart2Type": {
+            "displayName": "{{i18n.chartType}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartTpIntName}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartType}}"
+        },
+        "chart2ByProperty": {
+            "displayName": "{{i18n.chartByProperty}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartPropInternalName}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartPropName}}"
+        },
+        "addChart2": {
+            "type": "BOOLEAN",
+            "dbValue": true
+        },
+        "removeChart2": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "chart2Thumbnail":{
+            "displayName": "{{i18n.isThumbnail}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "dispValue": "{{i18n.isThumbnail}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "chart3Label": {
+            "displayName": "{{i18n.chart3Label}}",
+            "type": "STRING",
+            "isEditable": "true"
+        },
+        "chart3Title": {
+            "displayName": "{{i18n.chartTitle}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartTitle}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartTitle}}"
+        },
+        "chart3Type": {
+            "displayName": "{{i18n.chartType}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartTpIntName}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartType}}"
+        },
+        "chart3ByProperty": {
+            "displayName": "{{i18n.chartByProperty}}",
+            "type": "STRING",
+            "isEditable": "true",
+            "hasLov": true,
+            "dbValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartPropInternalName}}",
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartPropName}}"
+        },
+        "addChart3": {
+            "type": "BOOLEAN",
+            "dbValue": true
+        },
+        "removeChart3": {
+            "type": "BOOLEAN",
+            "dbValue": false
+        },
+        "chart3Thumbnail":{
+            "displayName": "{{i18n.isThumbnail}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "dispValue": "{{i18n.isThumbnail}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "table1Thumbnail":{
+            "displayName": "{{i18n.isThumbnail}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "dispValue": "{{i18n.isThumbnail}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "setLayoutTabPageCommand.addCharts",
+            "action": "setLayoutAddNewChart",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "setLayoutTabPageCommand.removeChart1",
+            "action": "setRemoveChart1ReportParameter"
+        },
+        {
+            "eventId": "setLayoutTabPageCommand.removeChart2",
+            "action": "setRemoveChart2ReportParameter"
+        },
+        {
+            "eventId": "setLayoutTabPageCommand.removeChart3",
+            "action": "setRemoveChart3ReportParameter"
+        },
+        {
+            "eventId": "configureReport.addChart1",
+            "action": "addChart1Action"
+        },
+        {
+            "eventId": "configureReport.addChart2",
+            "action": "addChart2Action"
+        },
+        {
+            "eventId": "configureReport.addChart3",
+            "action": "addChart3Action"
+        },
+        {
+            "eventId": "SetLayoutTab.saveConfiguredReportSuccessful",
+            "action": "setLayoutTabSaveActionCompleteInContext"
+        }
+    ],
+    "conditions": {
+        "addChart1": {
+            "expression": "subPanelContext.reportsContext.chartVisibility.chart1Visible"
+        },
+        "addChart2": {
+            "expression": "subPanelContext.reportsContext.chartVisibility.chart2Visible"
+        },
+        "addChart3": {
+            "expression": "subPanelContext.reportsContext.chartVisibility.chart3Visible"
+        }
+    },
+
+    "messages": {
+        "showSearchNotRunMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.showSearchNotRunMessage}}"
+        },
+        "showSearchNotRunColumnMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.showSearchNotRunColumnMessage}}"
+        },
+        "reportSaveSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.reportSaveSuccessMessage}}",
+            "messageTextParams": [
+                "{{ctx.state.params.title}}"
+            ]
+        },
+        "reportSaveFailedMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.reportSaveFailedMessage}}",
+            "messageTextParams": [
+                "{{ctx.state.params.title}}"
+            ]
+        },
+        "previewFailedNoObjectMessage":{
+            "messageType": "ERROR",
+            "messageText": "{{i18n.previewFailedNoObjectMessage}}"
+        },
+        "saveFailedNoObjectMessage":{
+            "messageType": "ERROR",
+            "messageText": "{{i18n.saveFailedNoObjectMessage}}"
+        }
+    },
+
+    "i18n": {
+        "isThumbnail":["ReportChartMessages"],
+        "titlePanel": [ "ReportChartMessages" ],
+        "titleText": [ "ReportChartMessages" ],
+        "titleColor": [ "ReportChartMessages" ],
+        "titleFont": [ "ReportChartMessages" ],
+        "tablePanel": [ "ReportChartMessages" ],
+        "tableColumnName": [ "ReportChartMessages" ],
+        "charts": [ "ReportChartMessages" ],
+        "chart1Label": [ "ReportChartMessages" ],
+        "chart2Label": [ "ReportChartMessages" ],
+        "chart3Label": [ "ReportChartMessages" ],
+        "chartType": [ "ReportChartMessages" ],
+        "chartTitle": [ "ReportChartMessages" ],
+        "chartByProperty": [ "ReportChartMessages" ],
+        "showSearchNotRunMessage": [ "ReportChartMessages" ],
+        "reportSaveSuccessMessage": [ "ReportChartMessages" ],
+        "reportSaveFailedMessage": [ "ReportChartMessages" ],
+        "showReportPreview": [ "ReportChartMessages" ],
+        "saveReport": [ "ReportChartMessages" ],
+        "saveFailedNoObjectMessage":[ "ReportChartMessages" ],
+        "previewFailedNoObjectMessage":[ "ReportChartMessages" ],
+        "showSearchNotRunColumnMessage":[ "ReportChartMessages" ]
+    },
+
+    "functions": {
+        "getReportParameterAndValues": {
+            "functionName": "getReportParameterAndValues",
+            "parameters": [
+                "{{data}}",
+                "{{props.subPanelContext}}"
+            ]
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "默认",
+    "tcAuthorWorkspaceName": "作者",
+    "tcConsumerWorkspaceName": "客户",
+    "tcActiveAdminWorkspaceName": "Active Admin",
+    "tcActiveArchitectWorkspaceName": "Active Architect",
+    "mbmWorkspaceName":"MBOM 管理器"
+}

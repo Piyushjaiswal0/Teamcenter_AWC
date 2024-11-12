@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "提醒",
+    "subManAppLabel": "动态消息",
+    "clear": "清除",
+    "noNotificationMsg": "没有新通知",
+    "multipleObjectsMsg": "{0} 及其他 {1} 个",
+    "aw_globalToolbar": "全局工具条",
+    "Awp0ShowAlertWithBubbleDesc": "查看您新的提醒。"
+}

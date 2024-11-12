@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.5" y1="10.5" x2="33.5" y2="43.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="23.75" y1="26.25" x2="46.25" y2="48.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+  </defs>
+  <path d="M21.273,10.5a5.23,5.23,0,0,0,1.821-4.094A5.946,5.946,0,0,0,17,.5a5.9,5.9,0,0,0-6.079,5.864,5.321,5.321,0,0,0,1.82,4.136H.5V23.129a6.075,6.075,0,1,1,0,8.48V43.5h33v-33Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <rect x="22.5" y="27.5" width="25" height="20" stroke="#464646" fill="url(#New_Gradient_Swatch_1)"/>
+  <line x1="27.5" y1="47" x2="27.5" y2="28" fill="none" stroke="#147391"/>
+  <line x1="37.5" y1="47" x2="37.5" y2="28" fill="none" stroke="#147391"/>
+  <line x1="23" y1="37.5" x2="47" y2="37.5" fill="none" stroke="#147391"/>
+  <line x1="23" y1="32.5" x2="47" y2="32.5" fill="none" stroke="#147391"/>
+  <line x1="23" y1="42.5" x2="47" y2="42.5" fill="none" stroke="#147391"/>
+</svg>

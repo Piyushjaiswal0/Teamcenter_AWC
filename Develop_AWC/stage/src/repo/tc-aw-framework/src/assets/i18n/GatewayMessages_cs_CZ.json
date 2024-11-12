@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Domů",
+    "pinObjectCommandTitle": "Připnout ke stránce Domů",
+    "unPinObjectCommandTitle": "Odepnout ze stránky Domů",
+    "pinObjectFailed": "Přichycení se nezdařilo.",
+    "unPinObjectFailed": "Odepnutí se nezdařilo.",
+    "tileUpdateFailedMsg": "Aktualizace dlaždic se nezdařila.",
+    "pinObjectFailedNoGateway": "Při přístupu ke stránce Domů nastal problém.",
+    "pinObjectMultipleObjectError": "Objekty je možné připnout pouze jednotlivě. Další objekty budou ignorovány.",
+    "unpinTileFailed": "Odepnutí se nezdařilo.",
+    "homeFolderTitle": "Složky",
+    "Awp0ShowHomeFolderDesc": "Otevřete domovskou složku.",
+    "Awp0PinObjectDesc": "Přidejte výběr na domovskou stránku jako dlaždici."
+}

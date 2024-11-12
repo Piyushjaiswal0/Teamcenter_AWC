@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Add to {0}",
+    "revRuleNotAvailable": "Selected Revision Rule is not available in loaded Revision Rules",
+    "revRuleChangeFailed": "Revision Rule Change Failed",
+    "revRuleChangeSucess": "Revision Rule Changed",
+    "sendToCommandTitle": "Open in {0}",
+    "sendToNewViewCommandTitle": "Open in new {0} view",
+    "Awp0AddComponentHostedDesc": "Add the selected component to the active work part.",
+    "Awp0OpenHostedDesc": "Open the selection.",
+    "HostingSetRevisionRule": "Hosting Set Revision Rule",
+    "HostingTimeoutAuthRequestSuccessful": "The browser page is refreshing to reestablish the session.",
+    "HostingTimeoutAuthRequestFailure": "The session cannot be reestablished due to authentication failure from the host application. \nClose and reopen the host application.",
+    "HostingFileUploadSvcUploadError": "Save file {0} failed with error {1}."
+}

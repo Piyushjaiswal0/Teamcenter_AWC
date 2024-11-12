@@ -1,0 +1,10 @@
+<aw-showobject-page headerViewModel="viewModelObject" headerTitle="headerTitle" browserTitle="browserTitle"
+  subLocationTabs="subLocationTabs" api="api">
+    <aw-xrt-sublocation provider="showObjectProvider" ng-if="xrtViewModel && activeTab && !activeTab.view"
+      base-selection="subPanelContext.modelObject" xrt-view-model="xrtViewModel"
+      sub-location-tabs="subLocationTabs" api="api">
+    </aw-xrt-sublocation>
+    <aw-include ng-if="activeTab && activeTab.view" name="{{activeTab.view}}" sub-panel-context="subPanelContext"></aw-include>
+    <div ng-show="errorMessage">{{errorMessage}}</div>
+    <div ng-show="loading" class="aw-layout-contentLabel">{{xrtMessages.LoadingSummary}}</div>
+</aw-showobject-page>

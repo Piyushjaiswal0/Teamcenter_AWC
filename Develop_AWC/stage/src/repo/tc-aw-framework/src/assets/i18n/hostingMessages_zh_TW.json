@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "新增到 {0}",
+    "revRuleNotAvailable": "選定版本規則在載入的版本規則中不存在",
+    "revRuleChangeFailed": "版本規則變更失敗",
+    "revRuleChangeSucess": "版本規則已變更",
+    "sendToCommandTitle": "開啟環境 {0}",
+    "sendToNewViewCommandTitle": "在新 {0} 視圖中開啟。",
+    "Awp0AddComponentHostedDesc": "將選定元件新增到使用中工作零件。",
+    "Awp0OpenHostedDesc": "開啟選定物件。",
+    "HostingSetRevisionRule": "託管集版本規則",
+    "HostingTimeoutAuthRequestSuccessful": "瀏覽器頁面正在重新整理以重新建立階段作業。",
+    "HostingTimeoutAuthRequestFailure": "由於主機應用程式的身份驗證失敗，因此無法重新建立階段作業。\n 關閉並重新開啟主機應用程式。",
+    "HostingFileUploadSvcUploadError": "儲存檔案 {0} 失敗，錯誤為 {1}。"
+}

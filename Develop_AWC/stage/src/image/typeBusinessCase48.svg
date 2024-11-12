@@ -1,0 +1,50 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="-1.25" y1="2.25" x2="37.25" y2="40.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="18.3819" y1="21.3819" x2="44.6181" y2="47.6181" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c8c8"/>
+      <stop offset="0.1747" stop-color="#c3c3c3"/>
+      <stop offset="0.4567" stop-color="#b5b5b5"/>
+      <stop offset="0.8089" stop-color="#9f9f9f"/>
+      <stop offset="1" stop-color="#919191"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="19" y1="47.5" x2="22" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="41" x2="44" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="30" y1="21.5" x2="33" y2="21.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="New_Gradient_Swatch_5" data-name="New Gradient Swatch 5" x1="24.5" y1="19" x2="39.5" y2="19" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0b0b0"/>
+      <stop offset="1" stop-color="#7e7e7e"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="35.0001" height="42" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="4.5" y="14.5003" width="3" height="3.9997" fill="#afafaf" stroke="#919191"/>
+  <rect x="9.5" y="11.5" width="3" height="7" fill="#afafaf" stroke="#919191"/>
+  <rect x="14.5" y="9.5" width="3" height="9" fill="#afafaf" stroke="#919191"/>
+  <rect x="19.5" y="5.5" width="3" height="13" fill="#afafaf" stroke="#919191"/>
+  <line x1="4" y1="20.5" x2="23" y2="20.5" fill="#afafaf" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="13" y1="27.5" x2="4" y2="27.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="13" y1="24.5" x2="4" y2="24.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="32" y1="6.5" x2="25" y2="6.5" fill="#afafaf" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="32" y1="9.5" x2="25" y2="9.5" fill="#afafaf" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="32" y1="12.5" x2="25" y2="12.5" fill="#afafaf" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="13" y1="30.5" x2="4" y2="30.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="13" y1="33.5" x2="4" y2="33.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="13" y1="36.5" x2="4" y2="36.5" fill="none" stroke="#6e6e6e"/>
+    <path d="M44.4778,22.5H18.5222a3.0111,3.0111,0,0,0-3.0222,3v18a3.0111,3.0111,0,0,0,3.0222,3H44.4778a3.0111,3.0111,0,0,0,3.0222-3v-18A3.0111,3.0111,0,0,0,44.4778,22.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+    <path d="M29.5,44.5h14a2.0353,2.0353,0,0,0,2-2.069V34.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+    <line x1="19" y1="47.5" x2="22" y2="47.5" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+    <line x1="41" y1="47.5" x2="44" y2="47.5" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+    <line x1="30" y1="21.5" x2="33" y2="21.5" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+    <path d="M39.5,22.5h-2V18.9934a1.5,1.5,0,0,0-1.4933-1.5l-8-.04a1.5,1.5,0,0,0-1.5067,1.5V22.5h-2V18.8461A3.3881,3.3881,0,0,1,27.9285,15.5l8.143.0523A3.3881,3.3881,0,0,1,39.5,18.8984Z" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_5)"/>
+    <path d="M35,24.5H18.9974A1.4974,1.4974,0,0,0,17.5,25.9974V34" fill="none" stroke="#999999" stroke-miterlimit="10"/>
+</svg>

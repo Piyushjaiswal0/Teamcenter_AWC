@@ -1,0 +1,41 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="front_-45" data-name="front -45" x1="40" y1="1470" x2="20" y2="1450" gradientTransform="translate(-12 -1457)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="45" y1="1460" x2="15" y2="1430" gradientTransform="translate(-12 -1427)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="16" y1="31" x2="47" y2="0" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" xlink:href="#linear-gradient"/>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="35" y1="33" x2="45" y2="23" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="35" height="5" transform="translate(36 6) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45)"/>
+  <rect x="0.5" y="5.5" width="35" height="25" transform="translate(36 36) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="5" y1="10.5" x2="23" y2="10.5" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="5" y1="15.5" x2="19" y2="15.5" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="5" y1="25.5" x2="20.5" y2="25.5" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <rect x="32" y="2" width="2" height="2" fill="#6e6e6e"/>
+  <rect x="28" y="2" width="2" height="2" fill="#6e6e6e"/>
+  <rect x="24" y="2" width="2" height="2" fill="#6e6e6e"/>
+  <line x1="1" y1="5.5" x2="35" y2="5.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="5" y1="20.5" x2="17" y2="20.5" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <polygon points="37.5 12.5 20.5 12.5 20.5 47.5 47.5 47.5 47.5 22.5 37.5 12.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <polygon points="37.5 12.5 37.5 22.5 47.5 22.5 37.5 12.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <line x1="25" y1="37.5" x2="43" y2="37.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="25" y1="32.5" x2="43" y2="32.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="25" y1="27.5" x2="43" y2="27.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="25" y1="42.5" x2="43" y2="42.5" fill="none" stroke="#5a5a5a"/>
+</svg>

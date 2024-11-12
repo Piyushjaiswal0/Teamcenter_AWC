@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "Добавлено {0} из {1}.<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "Удалено {0} из {1}.<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "Не удалось применить фильтр к результатам поиска, поскольку возникла внутренняя ошибка.",
+    "invalidDateRangeError": "The start date must be earlier than the end date.",
+    "invalidUnitRange": "Недопустимый диапазон единиц",
+    "notificationForBaselineCreation": "Выполняется сохранение \"{0}\". Вы получите уведомление о завершении.",
+    "notificationForBaselineCreationSync": "\"{0}\" is saved and available in Home folder."
+}

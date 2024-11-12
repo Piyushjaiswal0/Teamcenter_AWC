@@ -1,0 +1,77 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "initializeRadioList": {
+            "actionType": "JSFunction",
+            "method": "initializeRadioList",
+            "inputData": {
+                "category": "{{props.category}}",
+                "radioFilterList": "{{data.radioFilterList}}"
+            },
+            "outputData": {
+                "radioFilterList": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "initializeRadioButton": {
+            "actionType": "JSFunction",
+            "method": "initializeRadioButton",
+            "inputData": {
+                "category": "{{props.category}}",
+                "radioButton": "{{data.radioButton}}"
+            },
+            "outputData": {
+                "radioButton": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "changeRadioSelection": {
+            "actionType": "JSFunction",
+            "method": "changeRadioSelection",
+            "inputData": {
+                "category": "{{props.category}}",
+                "radioButton": "{{data.radioButton}}",
+                "radioAction": "{{props.radioAction}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initializeRadioList"
+                },
+                {
+                    "action": "initializeRadioButton"
+                }
+            ]
+        }
+    },
+    "data": {
+        "radioButton": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "radioFilterList": {
+            "type": "STRING"
+        }
+    },
+    "i18n": {},
+    "conditions": {},
+    "onEvent": [],
+    "props": {
+        "category": {
+            "type": "object"
+        },
+        "radioAction": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize"
+    }
+}

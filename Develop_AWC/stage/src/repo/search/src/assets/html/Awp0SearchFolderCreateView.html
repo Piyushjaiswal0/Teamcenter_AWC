@@ -1,0 +1,11 @@
+<aw-command-panel caption="i18n.addActiveFolder" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section caption="i18n.properties">
+            <aw-widget  prop="data.searchFolderName" hint="textarea" aria-label='{{i18n.Name}}'></aw-widget>
+            <aw-widget  prop="data.searchFolderDesp" hint="textarea" aria-label='{{i18n.Description}}'></aw-widget>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button size='auto' action="save" visible-when="conditions.isValidToSave"><aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

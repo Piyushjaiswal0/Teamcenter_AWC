@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Upozornění",
+    "subManAppLabel": "Kanál novinek",
+    "clear": "Smazat",
+    "noNotificationMsg": "Nemáte žádná nová upozornění",
+    "multipleObjectsMsg": "\"{0}\" a {1} další",
+    "aw_globalToolbar": "Globální panel nástrojů",
+    "Awp0ShowAlertWithBubbleDesc": "Zobrazte nová upozornění."
+}

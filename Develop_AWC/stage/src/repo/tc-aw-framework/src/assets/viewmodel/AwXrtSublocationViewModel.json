@@ -1,0 +1,29 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "actions": {
+        "handleSelectionChange": {
+            "actionType": "JSFunction",
+            "method": "handleSelectionChange",
+            "inputData": {
+                "localSelectionData": "{{fields.selectionData}}",
+                "baseSelection": "{{subPanelContext.openedObject}}"
+            },
+            "deps": "js/AwXrtSublocationService"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": [
+            {
+                "action": "handleSelectionChange",
+                "observers": [ "viewModel.atomicData.selectionData" ]
+            }
+        ]
+    }
+}

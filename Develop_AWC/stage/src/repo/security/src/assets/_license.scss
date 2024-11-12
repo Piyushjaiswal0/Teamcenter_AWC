@@ -1,0 +1,24 @@
+/*
+   @<COPYRIGHT>@
+   ==================================================
+   Copyright 2016.
+   Siemens Product Lifecycle Management Software Inc.
+   All Rights Reserved.
+   ==================================================
+   @<COPYRIGHT>@
+*/
+
+.aw-licensemgmt-eadParagraph {
+    position: relative;
+    float: left;
+    min-width: 250px;
+}
+.aw-licensemgmt-eadParagraph .aw-jswidgets-editableGridCell {
+    padding: 0;
+}
+
+/* override for aw-widgets-cellListCellContent for custom license edit cell */
+.aw-licensemgmt-cellListCellContent {
+    float: left;
+    width: 100%;
+}

@@ -1,0 +1,21 @@
+<div class="aw-base-scrollPanel" exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded">
+    <aw-empty-workarea
+        image="graEmptySearchList128"
+        title="{{ subPanelContext.searchState.criteria.searchString ? i18n.noPartsFound : i18n.nothingFound}}"
+        hint="{{ subPanelContext.searchState.criteria.searchString ? i18n.noPartsSearchAreaHint : i18n.emptySearchAreaShapeHint}}"
+        action="actions.shapeSearchLinkCommand"
+        link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+        link-text="i18n.SS1Shapes">
+    </aw-empty-workarea>
+</div>
+<span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+    exist-when="data.totalFound===0 && !(subPanelContext.searchState.thresholdExceeded === 'true') && !subPanelContext.pwaSelectionModel">{{i18n.noFiltersFound}}</span>
+<span class="aw-widgets-propertyNonEditValue aw-search-inContentSearchBox"
+    exist-when="data.totalFound===0 && subPanelContext.searchState.thresholdExceeded === 'true'">{{ctx.searchInfo.noResultsFound}}</span>
+<!-- <aw-scrollpanel visible-when="data.totalFound>0"> -->
+<aw-list dataprovider="data.dataProviders.imageDataProvider" show-decorators="true"
+    exist-when="subPanelContext.searchState.criteria !== undefined && subPanelContext.searchState.criteria.searchString !== ''"
+    show-context-menu="true" show-check-box="subPanelContext.showCheckBox">
+    <aw-image-cell vmo="item"></aw-image-cell>
+</aw-list>
+<!-- </aw-scrollpanel> -->

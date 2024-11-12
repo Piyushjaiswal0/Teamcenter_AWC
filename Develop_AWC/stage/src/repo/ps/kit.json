@@ -1,0 +1,12 @@
+{
+  "name": "ps",
+  "description": "",
+  "modules": [
+    "ps"
+  ],
+  "version": "6.3.1",
+  "OOTB": true,
+  "soaDeps": [
+    "Teamcenter.Soa.Core"
+  ]
+}

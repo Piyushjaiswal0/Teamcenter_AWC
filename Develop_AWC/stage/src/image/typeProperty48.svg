@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_6" data-name="New Gradient Swatch 6" x1="0.5" y1="0.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4e9"/>
+      <stop offset="0.2032" stop-color="#badae2"/>
+      <stop offset="0.7554" stop-color="#8bc1cf"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_6)"/>
+  <rect x="7.5" y="10.5" width="4" height="4" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="7.5" y="18.5" width="4" height="4" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="7.5" y="26.5" width="4" height="4" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="7.5" y="34.5" width="4" height="4" fill="#fff" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="12.5" x2="40" y2="12.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="20.5" x2="40" y2="20.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="28.5" x2="40" y2="28.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="16" y1="36.5" x2="40" y2="36.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

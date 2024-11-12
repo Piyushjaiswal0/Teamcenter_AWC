@@ -1,0 +1,13 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="24.1685" y1="12.8429" x2="46.4826" y2="35.1571" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2-2" x1="406.3159" y1="12.843" x2="384.0019" y2="35.157" gradientTransform="matrix(-1, 0, 0, 1, 407.8333, 0)" xlink:href="#New_Gradient_Swatch_2"/>
+  </defs>
+  <polygon points="5.5 32.5 14 24 5.5 15.5 5.5 20.5 0.5 20.5 0.5 27.5 5.5 27.5 5.5 32.5" fill="#147391" stroke="#464646" stroke-linejoin="round"/>
+  <polygon points="42.5 32.5 34 24 42.5 15.5 42.5 20.5 47.5 20.5 47.5 27.5 42.5 27.5 42.5 32.5" fill="#147391" stroke="#464646" stroke-linejoin="round"/>
+  <path d="M30.5,24A34.8306,34.8306,0,0,1,37.14,3.5H33.5114a37.96,37.96,0,0,0,0,41H37.14A34.8309,34.8309,0,0,1,30.5,24Z" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_2)"/>
+  <path d="M17.5,24A34.8306,34.8306,0,0,0,10.86,3.5h3.6281A37.8071,37.8071,0,0,1,20.5,24a37.8079,37.8079,0,0,1-6.0115,20.5H10.86A34.8309,34.8309,0,0,0,17.5,24Z" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_2-2)"/>
+</svg>

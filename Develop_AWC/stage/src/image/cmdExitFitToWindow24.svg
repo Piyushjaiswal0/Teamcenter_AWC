@@ -1,0 +1,8 @@
+<svg version="1.1" id="Artwork" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<polygon class="aw-theme-iconOutline" fill="#464646" points="8,3 8,7.3 2.9,2.1 2.1,2.9 7.3,8 3,8 3,9 9,9 9,3 "/>
+<polygon class="aw-theme-iconOutline" fill="#464646" points="21.9,2.9 21.1,2.1 16,7.3 16,3 15,3 15,9 21,9 21,8 16.7,8 "/>
+<polygon class="aw-theme-iconOutline" fill="#464646" points="21.9,21.1 16.7,16 21,16 21,15 15,15 15,21 16,21 16,16.7 21.1,21.9 "/>
+<polygon class="aw-theme-iconOutline" fill="#464646" points="3,15 3,16 7.3,16 2.1,21.1 2.9,21.9 8,16.7 8,21 9,21 9,15 "/>
+<path class="aw-theme-iconOutline" fill="#464646" d="M24,24H0V0h24V24z M1,23h22V1H1V23z"/>
+</svg>

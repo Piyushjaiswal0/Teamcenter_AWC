@@ -1,0 +1,359 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "initPanel": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "registerPropPolicy",
+                    "condition": "!data.isDestroyed()"
+                },
+                {
+                    "action": "initializeSearchState",
+                    "condition": "!data.isDestroyed()"
+                }
+            ]
+        },
+        "registerPropPolicy": {
+            "actionType": "JSFunction",
+            "method": "registerPropPolicy",
+            "inputData": {
+                "policy": "{{data.policy}}"
+            },
+            "outputData": {
+                "policyId": ""
+            },
+            "deps": "js/peoplePickerService"
+        },
+        "unRegisterPropPolicy": {
+            "actionType": "JSFunction",
+
+            "method": "unRegisterPropPolicy",
+            "inputData": {
+                "policyId": "{{data.policyId}}"
+            },
+            "deps": "js/peoplePickerService"
+        },
+        "initializeSearchState": {
+            "actionType": "JSFunctionAsync",
+            "method": "initializeSearchState",
+            "inputData": {
+                "searchState": "{{data.searchState}}",
+                "addUserPanelState": "{{props.subPanelContext.addUserPanelState}}"
+            },
+            "outputData": {
+                "searchState": "searchState",
+                "isSearchDataInit": "isSearchDataInit"
+            },
+            "deps": "js/peoplePickerService"
+        },
+        "updateSelection": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateSelectedUserState",
+                    "condition": "!conditions.isAddButtonNeedToShown"
+                }
+            ]
+        },
+        "updateSelectedUserState": {
+            "actionType": "JSFunction",
+            "method": "updateSelectedUserState",
+            "inputData": {
+                "sourceObjects": "{{data.selectionData.selected}}",
+                "searchState": "{{data.searchState}}",
+                "addUserPanelState": "{{props.subPanelContext.addUserPanelState}}"
+            },
+            "deps": "js/peoplePickerService"
+        },
+        "addObjects": {
+            "actionType": "JSFunction",
+            "method": "addUserObject",
+            "inputData": {
+                "multiSelectEnabled":"{{function:getMultiSelectMode}}",
+                "selection": "{{data.selectionData.selected}}",
+                "searchState": "{{data.searchState}}",
+                "subPanelContext": "{{props.subPanelContext.addUserPanelState}}"
+            },
+            "deps": "js/peoplePickerService"
+        },
+        "updateSearchCriteriaState": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initializeSearchState",
+                    "condition": "props.subPanelContext.addUserPanelState.triggerUpdateSearchCriteria"
+                },
+                {
+                    "action": "resetSearchUpdateCriteria",
+                    "condition": "props.subPanelContext.addUserPanelState.triggerUpdateSearchCriteria"
+                }
+            ]
+        },
+        "resetSearchUpdateCriteria": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{props.subPanelContext.addUserPanelState}}",
+                "value" : {
+                    "triggerUpdateSearchCriteria": false
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "initializeSelectionModel": {
+            "actionType": "JSFunction",
+            "method": "initializeSelectionModel",
+            "inputData": {
+                "selectionMode": "{{props.subPanelContext.addUserPanelState.selectionModelMode}}",
+                "selectionModels": "{{selectionModels}}"
+            },
+            "outputData": {
+                "selectionModels": ""
+            },
+            "deps": "js/peoplePickerUtils"
+        },
+        "resetSearchSelection": {
+            "actionType": "JSFunction",
+            "method": "resetSearchSelection",
+            "inputData": {
+                "selectionModel": "{{data.selectionModels.searchSelectionModel}}"
+            },
+            "deps": "js/peoplePickerUtils"
+        }
+    },
+    "data": {
+        "searchState": {
+            "initialValues": {
+                "criteria": {
+                    "searchString": "*",
+                    "searchFromLocation": "addPanel"
+                },
+                "immutableSearchInfo": {
+                    "immutableSearchString": "*"
+                },
+                "provider": "Awp0PeoplePickerProvider",
+                "label": {
+                    "source": "/i18n/SearchMessages",
+                    "key": "resultsText"
+                },
+                "bulkFiltering": true,
+                "autoApplyFilters": true,
+                "baseActiveFiltersStructure": {}
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "policy": {
+            "types":
+            [
+                {
+                    "name": "Group",
+                    "properties":
+                    [
+                        {
+                            "name": "object_full_name"
+                        },
+                        {
+                            "name": "name"
+                        }
+                    ]
+                },
+                {
+                    "name": "Role",
+                    "properties":
+                    [
+                        {
+                            "name": "role_name"
+                        }
+                    ]
+                },
+                {
+                    "name": "POM_member",
+                    "properties":
+                    [
+                        {
+                            "name": "user",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "GroupMember",
+                    "properties":
+                    [
+                        {
+                            "name": "group",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "role",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "userName"
+                        }
+                    ]
+                },
+                {
+                    "name": "ResourcePool",
+                    "properties":
+                    [
+                        {
+                            "name": "group",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "role",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "User",
+                    "properties":
+                    [
+                        {
+                            "name": "person",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "user_name"
+                        },
+                        {
+                            "name": "user_id"
+                        },
+                        {
+                            "name": "default_group",
+                            "modifiers":
+                            [
+                                {
+                                    "name": "withProperties",
+                                    "Value": "true"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Person",
+                    "properties":
+                    [
+                        {
+                            "name": "user_name"
+                        },
+
+                        {
+                            "name": "PA9"
+                        },
+
+                        {
+                            "name": "PA10"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "selectionModels": {
+        "searchSelectionModel": {
+            "selectionMode": "multiple"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initPanel",
+        "onUpdate": [
+            {
+                "action": "updateSearchCriteriaState",
+                "observers": [ "props.subPanelContext.addUserPanelState.triggerUpdateSearchCriteria" ]
+            },
+            {
+                "action": "updateSelection",
+                "observers": [ "viewModel.atomicData.selectionData.selected" ]
+            },
+            {
+                "action": "initializeSelectionModel",
+                "observers": [ "props.subPanelContext.addUserPanelState.selectionModelMode" ]
+            },
+            {
+                "action": "resetSearchSelection",
+                "observers": [ "props.subPanelContext.addUserPanelState.resetSearchSelection" ]
+            }
+        ]
+    },
+    "functions": {
+        "getMultiSelectMode":
+        {
+            "functionName": "getMultiSelectMode",
+            "parameters":
+            [
+                "{{props.subPanelContext.addUserPanelState.selectionModelMode}}"
+            ],
+            "deps": "js/peoplePickerService"
+        }
+    },
+    "props": {
+        "sub-panel-context":{
+            "type": "object"
+        }
+    },
+    "conditions": {
+        "isValidToAdd": {
+            "expression": "conditions.isAddButtonNeedToShown && selectionData.selected.length > 0"
+        },
+        "isAddButtonNeedToShown": {
+            "expression": "subPanelContext.addUserPanelState && subPanelContext.addUserPanelState.isAddButtonNeeded"
+        }
+    },
+    "onEvent": [
+    ],
+    "i18n": {
+        "Add_Title": [ "WorkflowCommandPanelsMessages" ]
+    }
+}

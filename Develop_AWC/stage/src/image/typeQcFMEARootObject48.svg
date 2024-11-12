@@ -1,0 +1,21 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="62.266" y1="13.504" x2="67.125" y2="-4.39" gradientTransform="matrix(0.935, -0.498, -0.48, -0.974, -44.555, 50.011)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="62.266" y1="13.504" x2="67.125" y2="-4.39" gradientTransform="matrix(0.935, -0.498, -0.48, -0.974, -22.555, 50.011)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="62.266" y1="13.504" x2="67.125" y2="-4.39" gradientTransform="matrix(0.935, -0.498, -0.48, -0.974, -44.555, 73.011)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="62.266" y1="13.504" x2="67.125" y2="-4.39" gradientTransform="matrix(0.935, -0.498, -0.48, -0.974, -22.555, 73.011)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="g1009">
+    <path id="path2" d="M48,13V11H35.415V0h-2V11h-20V0h-2V11H0v2H11.415V34H0v2H11.415V48h2V36h20V48h2V36H48V34H35.415V13ZM33.415,34h-20V13h20Z" fill="#969696"/>
+    <path id="path967-7" d="M20.3,16.631l-7.865,4.7-7.857-4.75.007-9.45,7.865-4.7L20.3,7.181Z" stroke="#464646" stroke-linecap="round" stroke-width="1.147" fill="url(#linear-gradient)"/>
+    <path id="path967-7-5" d="M42.3,16.631l-7.865,4.7-7.857-4.75.007-9.45,7.865-4.7L42.3,7.181Z" stroke="#464646" stroke-linecap="round" stroke-width="1.147" fill="url(#linear-gradient-2)"/>
+    <path id="path967-7-8" d="M20.3,39.631l-7.865,4.7-7.857-4.75.007-9.45,7.865-4.7,7.858,4.75Z" stroke="#464646" stroke-linecap="round" stroke-width="1.147" fill="url(#linear-gradient-3)"/>
+    <path id="path967-7-3" d="M42.3,39.631l-7.865,4.7-7.857-4.75.007-9.45,7.865-4.7,7.858,4.75Z" stroke="#464646" stroke-linecap="round" stroke-width="1.147" fill="url(#linear-gradient-4)"/>
+  </g>
+</svg>

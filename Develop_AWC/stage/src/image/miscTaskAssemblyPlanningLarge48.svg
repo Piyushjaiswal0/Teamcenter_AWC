@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" fill="#85ae80"/>
+  <polyline points="27.312 18.21 24 21.522 20.688 18.21" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polygon points="24 24.449 10.685 17.052 24 9.655 37.315 17.052 24 24.449" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polygon points="25.56 39.514 38.513 32.501 39.442 19.571 26.447 26.979 25.56 39.514" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <line x1="24" y1="13.021" x2="24" y2="21.067" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <path d="M40.512,35.046s-1.07-5.521-11.017-5.521" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polyline points="32.183 33.45 29.495 29.577 33.368 26.889" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polygon points="22.384 39.514 9.431 32.501 8.503 19.571 21.498 26.979 22.384 39.514" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <path d="M7.432,35.046S8.5,29.525,18.449,29.525" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polyline points="15.762 33.45 18.449 29.577 14.576 26.889" fill="none" stroke="#fff" stroke-linejoin="round"/>
+</svg>

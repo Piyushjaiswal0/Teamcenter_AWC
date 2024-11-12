@@ -1,0 +1,11 @@
+<aw-panel-body>
+    <aw-search-box prop="data.searchString" action="search" visible-when="conditions.isAllowedShowTabSet"></aw-search-box>
+    <aw-list dataprovider="data.dataProviders.doSearchForGroupsTab">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="add" visible-when="conditions.isValidToAddAdminObjects">
+        <aw-i18n>i18n.AddButton</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

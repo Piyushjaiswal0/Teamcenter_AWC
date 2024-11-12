@@ -1,0 +1,24 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="3.5" y1="3.5" x2="44.5" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="5.5" y1="23.5" x2="22.5" y2="23.5" xlink:href="#New_Gradient_Swatch_1"/>
+  <rect width="48" height="48" fill="none"/>
+  <rect x="0.5" y="6.5" width="47" height="35" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+  <polyline points="45.5 33.5 25.5 33.5 25.5 39.521" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="32.5" y1="33.5" x2="32.5" y2="39.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="2.5" y="8.5" width="43" height="31" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+    <rect x="5.5" y="17.5" width="17" height="12" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-2)"/>
+      <circle cx="9" cy="21" r="1.5" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+      <polygon points="6.5 29.5 13.5 22.5 15.5 24.5 19.5 20.5 22.5 23.5 22.5 29.5 6.5 29.5" fill="#969696" stroke="#6e6e6e" stroke-linecap="round" stroke-miterlimit="10"/>
+  <rect x="5.5" y="32.5" width="17" height="4" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="25.5" y="17.5" width="11" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="25.5" y="22.5" width="11" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="25.5" y="27.5" width="11" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="10.5" y="11.5" width="23" height="3" rx="1" ry="1" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="25.5" y1="36.5" x2="45.5" y2="36.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

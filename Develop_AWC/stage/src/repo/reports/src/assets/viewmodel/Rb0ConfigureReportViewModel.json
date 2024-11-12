@@ -1,0 +1,152 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-command-sub-panel.directive"
+    ],
+    "actions": {
+        "revealPanel": {
+            "actionType": "JSFunction",
+            "method": "populateReportsContext",
+            "inputData": {
+                "data": "{{data}}",
+                "i18nData": "{{i18n}}",
+                "reportsContext": "{{data.reportsContext}}"
+            },
+            "outputData":{
+                "reportsContext": ""
+            },
+            "deps": "js/configureReportService"
+        }
+    },
+    "data": {
+        "colorInternalNameList": [
+            "#000000",
+            "#1E1E1E",
+            "#787878",
+            "#BEBEBE",
+            "#005F87",
+            "#50BED7",
+            "#EB780A",
+            "#FFB900"
+        ],
+        "fontInternalNameList": [
+            "Segoe UI",
+            "Arial",
+            "Arial Black",
+            "Courier New",
+            "Helvetica",
+            "Helvetica Neue",
+            "Georgia",
+            "Lucida Sans Unicode",
+            "Tahoma",
+            "Times New Roman",
+            "Trebuchet MS",
+            "Verdana"
+        ],
+        "activeView": "ConfigureReportSubPage",
+        "reportsContext": {
+            "initialValues": {
+                "chartVisibility": {
+                    "chart1Visible": false,
+                    "chart2Visible": false,
+                    "chart3Visible": false
+                }
+            },
+            "meta": {
+                "chartVisibility":{}
+            }
+        }
+    },
+    "onEvent": [
+
+    ],
+    "preferences": [
+        "WORKSPACEOBJECT_object_columns_shown",
+        "WORKSPACEOBJECT_object_columns_hidden",
+        "REPORT_AW_ObjectType_Properties"
+    ],
+    "i18n": {
+        "objectStrColumnName": [
+            "ReportChartMessages"
+        ],
+        "SegoeUI": [
+            "ReportChartMessages"
+        ],
+        "Arial": [
+            "ReportChartMessages"
+        ],
+        "ArialBlack": [
+            "ReportChartMessages"
+        ],
+        "CourierNew": [
+            "ReportChartMessages"
+        ],
+        "Helvetica": [
+            "ReportChartMessages"
+        ],
+        "HelveticaNeue": [
+            "ReportChartMessages"
+        ],
+        "Georgia": [
+            "ReportChartMessages"
+        ],
+        "LucidaSansUnicode": [
+            "ReportChartMessages"
+        ],
+        "Tahoma": [
+            "ReportChartMessages"
+        ],
+        "TimesNewRoman": [
+            "ReportChartMessages"
+        ],
+        "TrebuchetMS": [
+            "ReportChartMessages"
+        ],
+        "Verdana": [
+            "ReportChartMessages"
+        ],
+        "Column": [
+            "ReportChartMessages"
+        ],
+        "Line": [
+            "ReportChartMessages"
+        ],
+        "Pie": [
+            "ReportChartMessages"
+        ],
+        "configurePanelTitle": [
+            "ReportChartMessages"
+        ],
+        "Black": [
+            "ReportChartMessages"
+        ],
+        "DarkGray": [
+            "ReportChartMessages"
+        ],
+        "Gray": [
+            "ReportChartMessages"
+        ],
+        "LightGray": [
+            "ReportChartMessages"
+        ],
+        "Blue": [
+            "ReportChartMessages"
+        ],
+        "LightBlue": [
+            "ReportChartMessages"
+        ],
+        "Orange": [
+            "ReportChartMessages"
+        ],
+        "Yellow": [
+            "ReportChartMessages"
+        ],
+        "editReportTitle": [
+            "ReportChartMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "revealPanel"
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-tab-container.directive",
+        "js/aw-tab.directive",
+        "js/aw-command-sub-panel.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-listbox.directive",
+        "js/visible-when.directive",
+        "js/exist-when.directive"
+    ],
+    "actions": {
+        "initialize": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadAddPanelTabs",
+            "inputData": {
+                "tabs": "{{subPanelContext.addPanelTabModels}}",
+                "data": "{{data}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "activeTab": "activeTab",
+                "tabModels": "visibleTabs",
+                "tabApiCallback": "api"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateTargetObject": {
+            "actionType": "JSFunction",
+            "method": "updateTargetObject",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "messages": {
+    },
+    "onEvent": [
+        {
+            "eventId": "breadcrumb.navigation",
+            "action": "updateTargetObject",
+            "cacheEventData": true
+        }
+    ],
+    "data": {
+        "creationRelation": {
+            "displayName": "{{i18n.relation}}",
+            "type": "STRING",
+            "hasLov": true
+        }
+    },
+    "conditions": {
+        "showRelationsList": {
+            "expression": "(data.creationType || data.sourceObjects.length > 0) && data.relationList.length>1"
+        },
+        "isRefreshRequired": {
+            "expression": "subPanelContext.addObject.refreshFlag && !subPanelContext.panelPinned"
+        },
+        "isMobileMode": {
+            "expression": "!subPanelContext.sidenavMode || subPanelContext.sidenavMode === 'mobile'"
+        },
+        "nonMobileMode": {
+            "expression": "subPanelContext.sidenavMode && subPanelContext.sidenavMode !=='mobile'"
+        },
+        "isAddACopy": {
+            "expression": "subPanelContext.addPanelState.isAddACopy && subPanelContext.addPanelState.sourceObjects.length>0"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUpdate": [
+            {
+                "action": "initialize",
+                "observers": [ "props.subPanelContext.addPanelTabModels" ]
+            }
+        ]
+    },
+    "i18n": {
+        "newTabTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "paletteTabTitle": [
+            "awAddDirectiveMessages"
+        ],
+        "searchText": [
+            "UIMessages"
+        ],
+        "mutiRelationObject": [
+            "awAddDirectiveMessages"
+        ],
+        "pasteSuccessful": [
+            "awAddDirectiveMessages"
+        ],
+        "relation": [
+            "XRTMessages"
+        ]
+    }
+}

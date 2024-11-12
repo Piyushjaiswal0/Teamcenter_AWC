@@ -1,0 +1,12 @@
+<div class="aw-widgets-propertyContainer">
+    <aw-widget prop="data.savedSearchesListProp"></aw-widget>
+</div>
+<div exist-when="conditions.fullTextSavedSearchType">
+    <aw-widget prop="data.fullTextCriteria"></aw-widget>
+    <aw-search-breadcrumb-chips search-object="subPanelContext.searchState" exist-when="conditions.populatedSearchString">
+    </aw-search-breadcrumb-chips>
+    <awp0-search-filter exist-when="subPanelContext.searchState.categories && subPanelContext.searchState.categories.length > 0" hide-title="true" sub-panel-context="{'searchState':subPanelContext.searchState}"></awp0-search-filter>
+</div>
+<div exist-when="conditions.advancedSavedSearchType">
+    <awp0-review-and-execute-advanced-saved-search saved-search-object="subPanelContext.searchState.savedSearchObject" execute-advanced-saved-search="true" sub-panel-context="{...subPanelContext, 'searchState':subPanelContext.searchState}" hide-title="true"></awp0-review-and-execute-advanced-saved-search>
+</div>

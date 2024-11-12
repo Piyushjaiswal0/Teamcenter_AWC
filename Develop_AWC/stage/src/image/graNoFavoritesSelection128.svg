@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="67.2346" y1="26.061" x2="108.4832" y2="67.3095" gradientTransform="translate(-1.1745 -10.8824) rotate(-.185) scale(.9698) skewX(-.3684)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset=".1774" stop-color="#6badc1"/>
+      <stop offset=".4638" stop-color="#539cb3"/>
+      <stop offset=".8215" stop-color="#2c829c"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_10" data-name="New Gradient Swatch 10" x1="11.9364" y1="39.0973" x2="53.1849" y2="80.3459" gradientTransform="translate(-1.1745 -10.8824) rotate(-.185) scale(.9698) skewX(-.3684)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4eb"/>
+      <stop offset=".6517" stop-color="#87b8c8"/>
+      <stop offset="1" stop-color="#68a4b8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_8" data-name="New Gradient Swatch 8" x1="42.0558" y1="85.283" x2="83.3044" y2="126.5316" gradientTransform="translate(-1.1745 -10.8824) rotate(-.185) scale(.9698) skewX(-.3684)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef6f8"/>
+      <stop offset="1" stop-color="#d1e6ec"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_8-2" data-name="New Gradient Swatch 8" x1="78.8475" y1="78.8475" x2="119.1525" y2="119.1525" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#New_Gradient_Swatch_8"/>
+    <linearGradient id="Dark_Blue_Grad_2-2" data-name="Dark Blue Grad 2" x1="85.331" y1="87.9689" x2="110.4198" y2="113.0576" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#Dark_Blue_Grad_2"/>
+  </defs>
+  <polygon points="72.6295 34.9835 55.1687 22.6522 76.4242 21.3448 83.9892 1.5 91.4251 21.2963 112.6725 22.4665 95.131 34.9108 101.3127 55.95 83.852 43.6183 66.3105 56.063 72.6295 34.9835" fill="url(#Dark_Blue_Grad_2)" stroke="#16748f" stroke-miterlimit="10"/>
+  <polygon points="18.9608 47.685 1.5 35.3537 22.7554 34.0463 30.3205 14.2015 37.7564 33.9978 59.0037 35.168 41.4622 47.6123 47.644 68.6515 30.1832 56.3198 12.6417 68.7645 18.9608 47.685" fill="url(#New_Gradient_Swatch_10)" stroke="#16748f" stroke-miterlimit="10"/>
+  <polygon points="48.0258 91.9765 30.565 79.6452 51.8205 78.3378 59.3855 58.493 66.8214 78.2893 88.0688 79.4595 70.5273 91.9038 76.709 112.943 59.2483 100.6113 41.7068 113.056 48.0258 91.9765" fill="url(#New_Gradient_Swatch_8)" stroke="#16748f" stroke-miterlimit="10"/>
+  <circle cx="99" cy="99" r="28.5" fill="url(#New_Gradient_Swatch_8-2)" stroke="#16748f" stroke-linejoin="round"/>
+  <path d="m111.545,100.7989l-18.7451-20.2989-2.3449,27.5306,7.3403-5.6866,5.2052,15.156,4.4646-1.4876-5.2204-15.1992,9.3003-.0143Z" fill="url(#Dark_Blue_Grad_2-2)" stroke="#16748f" stroke-miterlimit="10"/>
+</svg>

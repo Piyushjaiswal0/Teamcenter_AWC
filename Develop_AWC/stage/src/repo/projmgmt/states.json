@@ -1,0 +1,41 @@
+{
+  "ProjectLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/ProjmgmtConstants",
+        "key": "myProjectListTitle"
+      },
+      "headerTitle": {
+        "source": "/i18n/ProjmgmtConstants",
+        "key": "myProjectListTitle"
+      },
+      "propertyPolicy": "/policies/projectObjectPropertyPolicy.json"
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "myProjectSublocation": {
+    "data": {
+      "priority": 2,
+      "label": {
+        "source": "/i18n/ProjmgmtConstants",
+        "key": "myProjectListTitle"
+      }
+    },
+    "parent": "ProjectLocation",
+    "view": "myProjectList",
+    "url": "/myProjects"
+  },
+  "myProjectList": {
+    "data": {
+      "priority": 2,
+      "label": {
+        "source": "/i18n/ProjmgmtConstants",
+        "key": "myProjectListTitle"
+      }
+    },
+    "parent": "com_siemens_splm_client_favorites_favoritesLocation",
+    "view": "myFavProjectList",
+    "url": "/myProjectList"
+  }
+}

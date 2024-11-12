@@ -1,0 +1,40 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="3.494" y1="3.506" x2="44.494" y2="44.506" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="front_-45" data-name="front -45" x1="-4.25" y1="11.25" x2="21.25" y2="36.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="19.028" y1="22.583" x2="31.972" y2="35.527" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.228" stop-color="#fafafa"/>
+      <stop offset="0.488" stop-color="#ededed"/>
+      <stop offset="0.762" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_3" data-name="New Gradient Swatch 3" x1="23" y1="39" x2="28" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b1b1b1"/>
+      <stop offset="1" stop-color="#7d7d7d"/>
+    </linearGradient>
+  </defs>
+  <polygon points="41.5 47.5 6.5 47.5 6.5 0.5 41.474 0.5 41.5 47.5" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="6.5" y="0.5" width="4" height="47" stroke="#147391" stroke-miterlimit="10" fill="url(#front_-45)"/>
+  <rect x="15.5" y="8.5" width="20" height="9" rx="1" ry="1" fill="#fff" stroke="#147391"/>
+  <line x1="29" y1="14.5" x2="17" y2="14.5" fill="none" stroke="#147391"/>
+  <line x1="32" y1="11.5" x2="17" y2="11.5" fill="none" stroke="#147391"/>
+  <polygon points="41.5 47.5 6.5 47.5 6.5 0.5 41.474 0.5 41.5 47.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <g>
+    <path d="M28.5,39c0-2.136,2.358-5.1,2.358-5.1A10.574,10.574,0,0,0,33.5,27.248a8,8,0,0,0-16,0,10.582,10.582,0,0,0,2.651,6.662l0,.005S22.5,36.864,22.5,39" stroke="#5a5a5a" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_2)"/>
+    <polygon points="28.5 39.5 22.5 39.5 22.5 43.5 23.5 43.5 24.5 45.5 26.5 45.5 27.5 43.5 28.5 43.5 28.5 39.5" stroke="#5a5a5a" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_3)"/>
+  </g>
+</svg>

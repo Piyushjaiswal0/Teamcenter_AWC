@@ -1,0 +1,83 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awClipboardRenderFunction",
+            "deps": "js/AwClipboardService"
+        },
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "getClipboardProvider"
+        },
+        "getClipboardData": {
+            "actionType": "JSFunction",
+            "method": "getClipboardContents",
+            "deps": "js/AwClipboardService",
+            "inputData": {
+                "filterTypes": "{{props.filterTypes}}",
+                "isIncludeSubTypes": "{{props.isIncludeSubTypes}}",
+                "addObject": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "totalFound": "clipboardResultLength",
+                "searchResults": "clipboardResults"
+            }
+        },
+        "updateClipboardSelection": {
+            "actionType": "JSFunction",
+            "method": "updateClipboardSelection",
+            "inputData": {
+                "context": "{{parameters.eventData}}",
+                "dataProviderId": "{{data.dataProviders}}",
+                "shouldClipboardObjsBeSelectedOnLoad": "{{props.subPanelContext}}"
+            },
+            "deps": "js/AwClipboardService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "reveal",
+        "onUpdate": [ {
+            "action": "reveal",
+            "observers": [ "props.filterTypes" ]
+        } ]
+    },
+    "dataProviders": {
+        "getClipboardProvider": {
+            "action": "getClipboardData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}",
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "i18n": {
+        "Clipboard": [ "CaptionMessages" ]
+    },
+    "onEvent": [ {
+        "eventId": "getClipboardProvider.modelObjectsUpdated",
+        "action": "updateClipboardSelection",
+        "inputArgs": {
+            "eventData": "{{eventData}}"
+        }
+    } ],
+    "props": {
+        "filter-types": {
+            "type": "string"
+        },
+        "selection-mode": {
+            "type": "string"
+        },
+        "is-include-sub-types": {
+            "type": "string"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "criteriaProp": {
+            "displayName": "{{props.subPanelContext.selected.props.awp0search_string.uiValue}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "searchFiltersProp": {
+            "displayName": "{{props.subPanelContext.selected.props.awp0SearchFilterArray.uiValue}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "chartOnProperty": {
+            "displayName": "{{props.subPanelContext.selected.props.awp0ChartOn.uiValue}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "dbValue": "{{props.subPanelContext.selected.props.awp0ChartOn.dbValue}}"
+        },
+        "criteriaLabel": {
+            "propertyDisplayName": "{{i18n.searchCriteria}}",
+            "renderingHint": "objectlink"
+        },
+        "searchFiltersLabel": {
+            "propertyDisplayName": "{{i18n.searchFiltersTitle}}",
+            "renderingHint": "objectlink"
+        },
+        "chartByLabel": {
+            "propertyDisplayName": "{{i18n.ChartBy}}",
+            "renderingHint": "objectlink"
+        },
+        "pinSavedSearch": {
+            "displayName": "{{i18n.pinSearch}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": ""
+        }
+    },
+    "actions": {
+        "getPinSearchValue": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-UiConfig",
+            "method": "getVisibleCommands",
+            "inputData": {
+                "getVisibleCommandsInfo": [ {
+                    "clientScopeURI": "Awp0SavedSearch",
+                    "commandInfo": [
+                        {
+                            "commandCollectionId": "",
+                            "commandId": "Awp0PinSearch"
+                        },
+                        {
+                            "commandCollectionId": "",
+                            "commandId": "Awp0UnpinSearch"
+                        }
+                    ],
+                    "selectionInfo": [
+                        {
+                            "contextName": "",
+                            "parentSelectionIndex": -1,
+                            "selectedObjects": [
+                                {
+                                    "uid": "{{ctx.selected.uid}}",
+                                    "type": "{{ctx.selected.type}}"
+                                }
+                            ]
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "pinToHome": "{{function:setPinToHome}}"
+            },
+            "deps": "js/Awp0SaveSearchUtils"
+        },
+        "getChartByDisplayValue": {
+            "actionType": "JSFunction",
+            "method": "getChartByDisplayValue",
+            "inputData": {
+                "chartOnProperty": "{{data.chartOnProperty}}"
+            },
+            "outputData": {
+                "chartByProp": ""
+            },
+            "deps": "js/savedSearchService"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getPinSearchValue"
+                },
+                {
+                    "action": "getChartByDisplayValue"
+                }
+            ]
+        },
+        "changeTab": {
+            "actionType": "JSFunction",
+            "method": "changeTab",
+            "inputData": {
+                "0": "secondary",
+                "1": "tc_xrt_SearchFolderRule"
+            },
+            "deps": "js/tabRegistry.service"
+        }
+    },
+    "functions": {
+        "setPinToHome": {
+            "functionName": "setPinToHome",
+            "parameters": [
+                "{{data.pinSavedSearch}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "initialize",
+            "observers": [
+                "props.subPanelContext.selected.uid"
+            ]
+        }
+    },
+    "i18n":
+    {
+        "searchCriteria": [ "SearchMessages" ],
+        "searchFiltersTitle": [ "SearchMessages" ],
+        "ChartBy": [ "SearchMessages" ],
+        "pinSearch": [ "SearchMessages" ]
+    }
+}

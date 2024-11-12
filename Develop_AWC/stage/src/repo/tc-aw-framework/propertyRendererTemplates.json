@@ -1,0 +1,48 @@
+{
+  "release_status_template": {
+    "grids": [],
+    "columns": [
+      "release_status_list"
+    ],
+    "tooltip": [
+      "object_name",
+      "date_released"
+    ],
+    "template": "",
+    "templateUrl": "/propRenderTemplates/releaseStatusRenderer.html",
+    "renderFunction": "",
+    "dependentServices": [
+      "soa/kernel/clientDataModel"
+    ]
+  },
+  "release_status_with_custom_fn": {
+    "grids": [
+      "customGrid"
+    ],
+    "columns": [
+      "release_status_list"
+    ],
+    "template": "",
+    "templateUrl": "",
+    "renderFunction": "releaseStatusRendererFn",
+    "deps": "propRenderTemplates/generateReleaseStatus",
+    "dependentServices": []
+  },
+  "checked_out_template": {
+    "grids": [],
+    "columns": [
+      "checked_out"
+    ],
+    "tooltip": [
+      "checked_out_user",
+      "checked_out_date"
+    ],
+    "template": "",
+    "templateUrl": "/propRenderTemplates/checkedOutStatusRenderer.html",
+    "renderFunction": "",
+    "deps": "",
+    "dependentServices": [
+      "soa/kernel/clientDataModel"
+    ]
+  }
+}

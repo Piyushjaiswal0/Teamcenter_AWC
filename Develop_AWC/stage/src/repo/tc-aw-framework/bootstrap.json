@@ -1,0 +1,16 @@
+{
+  "postInit": [
+    "import('js/browserUtils').then(function(browserUtils){var urlAttrs=browserUtils.getWindowLocationAttributes();if(urlAttrs.ah?urlAttrs.ah.trim().toLowerCase()==='true':false){import('js/hosting/hostSupportService').then(function(hostSupportService){hostSupportService.postInit();});}});",
+    "import('js/layout.service').then(function(layoutService){layoutService.init();});",
+    "import('js/eventBus').then(function(eventBus){import('js/browserUtils').then(function(browserUtils){if(browserUtils.isNonEdgeIE){eventBus.subscribe('sessionInfo.updated',function(){import('js/hardReload.service').then(function(hardReloadService){hardReloadService.init();});});}});});",
+    "import('js/autoSaveContextPreferenceService').then(function(autoSaveContextPreferenceService){autoSaveContextPreferenceService.init();});"
+  ],
+  "import": [
+    "js/typeDisplayName.service"
+  ],
+  "config": {
+    "provides": {
+      "THREE": "three-js/three"
+    }
+  }
+}

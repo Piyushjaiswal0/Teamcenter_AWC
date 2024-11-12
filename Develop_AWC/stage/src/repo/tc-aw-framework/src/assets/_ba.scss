@@ -1,0 +1,327 @@
+// Copyright (c) 2023 Siemens
+
+/* login */
+
+.aw-login-loginViewPanel {
+
+    h1,
+    h2,
+    h3,
+    input,
+    button,
+    div {
+        font-family: "Segoe UI", "Open Sans", Verdana, Arial, Helvetica, sans-serif;
+    }
+}
+
+.aw-login-loginViewPanel,
+.aw-login-tcLoginView {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aw-login-tcLoginView {
+    background-image: url(~image/X_graphic.svg);
+    background-position: right rem-calc(-145) bottom rem-calc(-100); /*Positioning*/
+    background-repeat: no-repeat; /*Prevent showing multiple background images*/
+    background-size: rem-calc(800);
+}
+
+.aw-login-signInParent {
+    width: 100%;
+    display: block;
+    place-items: center;
+    align-content: center;
+
+    z-index: 100;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: rem-calc(-212.5);
+    margin-top: rem-calc(-227.4);
+    width: rem-calc(425);
+    height: rem-calc(379);
+}
+
+.aw-login-signIn {
+    padding: rem-calc(24) rem-calc(16);
+    width: 100%;
+    border-radius: 4px
+}
+
+.aw-login-signInContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem-calc(24);
+}
+
+.aw-login-signInButton {
+    width: 100%;
+    justify-content: right;
+    display: flex;
+}
+
+.aw-login-username {
+    margin-top: rem-calc(16);
+}
+
+.aw-login-locale {
+    justify-content: center;
+    align-items: center;
+}
+
+.aw-login-companyLogoParent {
+    width: 40%;
+}
+
+.aw-login-companyLogo {
+    background-image: url(~image/Siemens_logo.svg);
+    background-repeat: no-repeat;
+    width: rem-calc(360);
+    height: rem-calc(36);
+    left: rem-calc(36);
+    display: flex;
+    position: relative;
+    background-size: contain;
+    top: rem-calc(36);
+}
+
+.aw-login-signIn .aw-layout-linkWithPopupContainer {
+    margin: 0;
+    min-height: 100%;
+    bottom: 0;
+}
+
+.aw-login-signIn input {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+.loading {
+    display: inline;
+}
+  
+@keyframes dotty {
+    0%   { content: ''; padding-right: 0.78rem; }
+    25%  { content: '.'; padding-right: 0.52rem; }
+    50%  { content: '..'; padding-right: 0.26rem; }
+    75%  { content: '...'; padding-right: 0; }
+    100% { content: ''; padding-right: 0.78rem; }
+}
+
+.dot1 {
+    animation: visibility 3s linear infinite;
+}
+
+@keyframes visibility {
+    0% {opacity: 1;}
+    65% {opacity: 1;}
+    66% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.dot2 {
+    animation: visibility2 3s linear infinite;
+}
+
+@keyframes visibility2 {
+    0% {opacity: 0;}
+    21% {opacity: 0;}
+    22% {opacity: 1;}
+    65% {opacity: 1;}
+    66% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.dot3 {
+    animation: visibility3 3s linear infinite;
+}
+
+@keyframes visibility3 {
+    0% {opacity: 0;}
+    43% {opacity: 0;}
+    44% {opacity: 1;}
+    65% {opacity: 1;}
+    66% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+.aw-login-errorMessage {
+    padding-top: rem-calc(8);
+}
+
+.sw-guidanceMessage.guidance-container-type-information.guidance-container-banner {
+    width: 100%;
+}
+
+.sw-guidanceMessage.guidance-container-type-error.guidance-container-banner {
+    width: 100%;
+}
+
+.aw-login-brandPanel {
+    display: inline-block;
+}
+
+.aw-login-brandText {
+    padding-left: rem-calc(72);
+    text-align: left;
+    opacity: 1;
+}
+
+.aw-login-productName {
+    font-size: $fontsize_5x_large;
+    line-height: rem-calc(36);
+    letter-spacing: -0.02px;
+    font-weight: 700;
+}
+
+.aw-login-companyName {
+    font-size: $fontsize_x_large;
+    line-height: rem-calc(22);
+    letter-spacing: 0;
+    font-weight: 700;
+}
+
+.aw-login-brandLogo {
+    background-image: url(~image/AW_product_icon_64px.svg);
+    background-repeat: no-repeat;
+    width: rem-calc(64);
+    height: rem-calc(64);
+    float: left;
+}
+
+.aw-login-copyright {
+    width: rem-calc(700);
+    position: absolute;
+    padding: rem-calc(36);
+    bottom: 0;
+
+    text-align: left;
+    font-size: $fontsize_normal;
+    line-height: rem-calc(25);
+    letter-spacing: 0;
+}
+
+.aw-login-copyrightTitle {
+    font-size: $fontsize_4x_large;
+    line-height: rem-calc(16);
+    padding-bottom: rem-calc(16);
+}
+
+.aw-login-copyrightMessage {
+    line-height: 1.2rem;
+}
+
+.aw-login-copyrightBase {
+    font-size: $fontsize_2x_large;
+    line-height: rem-calc(25);
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*@media all and (max-width: 47.5em) {*/
+
+@media all and (max-width: 768px) {
+    .aw-login-tcLoginView {
+        background-position: right rem-calc(-145) bottom 0; /*Positioning*/
+        background-size: rem-calc(784);
+    }
+
+    .aw-login-copyright {
+        width: 100%;
+        min-height: rem-calc(100);
+        padding: rem-calc(24);
+        position: absolute;
+        bottom: 0;
+        overflow-wrap: break-word;
+        overflow: hidden;
+      }
+
+}
+
+@media all and (max-width: $narrowMode_max_width) {
+    .aw-login-signInParent {
+        width: 100%;
+        display: block;
+        place-items: center;
+        align-content: center;
+    
+        z-index: 100;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin-left: rem-calc(-164);
+        margin-top: rem-calc(-324);
+        width: rem-calc(328);
+        height: rem-calc(443);
+    }
+
+    .aw-login-progress {
+        left: rem-calc(170);
+    }
+
+    .aw-login-tcLoginView {
+        background-position: right rem-calc(-60) bottom 75%; /*Positioning*/
+        background-size: rem-calc(332);
+    }
+    
+    .aw-login-signIn .aw-layout-headerSubTitle {
+        display: flex;
+    }
+
+    .aw-login-copyright {
+        width: 100%;
+        min-height: rem-calc(100);
+        padding: rem-calc(24);
+        position: absolute;
+        bottom: 0;
+        overflow-wrap: break-word;
+        overflow: hidden;
+      }
+}
+
+@media all and (max-width: 768px) and (orientation:landscape) {
+    .aw-login-tcLoginView {
+        background-position: right rem-calc(-145) bottom 0; /*Positioning*/
+        background-size: rem-calc(784);
+    }
+
+    .aw-login-signIn h1 {
+        font-size: $fontsize_3x_large;
+    }
+
+    .aw-login-signIn h2 {
+        font-size: $fontsize_x_large;
+    }
+
+    .aw-login-signIn h3 {
+        font-size: $fontsize_large;
+    }
+
+    .normal {
+        font-size: $fontsize_large;
+    }
+
+    .aw-login-signIn .aw-layout-headerSubTitle {
+        display: flex;
+    }
+
+    .aw-login-copyright {
+        width: 100%;
+        min-height: rem-calc(100);
+        padding: rem-calc(24);
+        position: absolute;
+        bottom: 0;
+        overflow-wrap: break-word;
+        overflow: hidden;
+      }
+}

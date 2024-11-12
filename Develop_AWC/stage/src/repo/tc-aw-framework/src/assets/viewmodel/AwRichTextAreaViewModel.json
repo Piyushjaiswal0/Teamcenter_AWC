@@ -1,0 +1,21 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awRichTextAreaRenderFunction",
+            "deps": "js/AwRichTextAreaService"
+        }
+    },
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "prop": {
+            "type": "field"
+        }
+    }
+}

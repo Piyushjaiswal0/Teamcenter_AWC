@@ -1,0 +1,35 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="front_-45" data-name="front -45" x1="45.75" y1="1464.25" x2="4.25" y2="1422.75" gradientTransform="translate(-2 -1424)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="41.5" y1="1457.5" x2="8.5" y2="1424.5" gradientTransform="translate(-2 -1419)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="26.161" y1="26.161" x2="43.838" y2="43.838" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="45" height="38" transform="translate(46 39) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45)"/>
+  <rect x="3.5" y="8.5" width="39" height="27" transform="translate(46 44) rotate(180)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="32.5" y="2.5" width="4" height="4" fill="#73b4c8" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="26.5" y="2.5" width="4" height="4" fill="#73b4c8" stroke="#147391" stroke-miterlimit="10"/>
+  <line x1="38.5" y1="2.5" x2="42.5" y2="6.5" fill="#73b4c8" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10"/>
+  <line x1="42.5" y1="2.5" x2="38.5" y2="6.5" fill="#73b4c8" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10"/>
+  <circle cx="34.999" cy="35" r="12.5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.049" fill="url(#Dark_Blue_Grad)"/>
+    <circle cx="34.999" cy="28.5" r="2" fill="#fff"/>
+    <path d="M35,27a1.5,1.5,0,1,1-1.5,1.5A1.5,1.5,0,0,1,35,27m0-1a2.5,2.5,0,1,0,2.5,2.5A2.5,2.5,0,0,0,35,26Z" fill="#147391"/>
+    <rect x="33.499" y="32.5" width="3" height="11" fill="#fff"/>
+    <path d="M36,33V43H34V33h2m1-1H33V44h4V32Z" fill="#147391"/>
+</svg>

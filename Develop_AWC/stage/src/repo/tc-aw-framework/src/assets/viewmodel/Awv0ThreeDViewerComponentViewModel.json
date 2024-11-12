@@ -1,0 +1,37 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+
+    "actions": {
+        "threeDViewerComponentRendered": {
+            "method": "threeDViewerComponentRendered",
+            "options": {
+                "elementRefList": [ "awthreeDViewer" ]
+            },
+            "deps": "js/threeDViewerDataService"
+        },
+        "threeDViewerComponentMounted": {
+            "actionType": "JSFunction",
+            "method": "threeDViewerComponentMounted",
+            "inputData": {
+                "elementRefList": "{{parameters.elementRefList}}",
+                "prop": "{{subPanelContext}}"
+            },
+            "deps": "js/threeDViewerDataService"
+        }
+    },
+
+    "messages": {
+
+    },
+    "onEvent": [],
+    "lifecycleHooks": {
+        "onMount": "threeDViewerComponentMounted",
+        "render": "threeDViewerComponentRendered"
+    },
+    "props":{
+        "sub-panel-context":{
+            "type":"object"
+        }
+    }
+}

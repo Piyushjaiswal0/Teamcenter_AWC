@@ -1,0 +1,8 @@
+[
+  {
+    "name": "",
+    "priority": 10,
+    "view": "PrintOutsEmptyState",
+    "visibleWhen": "selection.length === 0 && (context.clientScopeURI === 'Awp0PrintOuts')"
+  }
+]

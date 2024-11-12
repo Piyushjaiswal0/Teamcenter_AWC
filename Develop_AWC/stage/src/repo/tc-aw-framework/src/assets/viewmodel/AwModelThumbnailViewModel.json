@@ -1,0 +1,21 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awModelThumbnailRenderFunction",
+            "deps": "js/AwModelThumbnailService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "vmo": {
+            "type": "object"
+        },
+        "image-ticket": {
+            "type": "object"
+        }
+    }
+}

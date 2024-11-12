@@ -1,0 +1,45 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "render": {
+            "method": "awWalkerHtmlPanelRenderFunction",
+            "options": {
+                "elementRefList": [
+                    "panelRef"
+                ]
+            },
+            "deps": "js/AwWalkerHtmlPanelService"
+        },
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "initialize",
+            "inputData": {
+                "enableResizeCallback": "{{props.enableResizeCallback}}",
+                "htmlpaneldata": "{{props.htmlpaneldata}}"
+            },
+            "deps": "js/AwWalkerHtmlPanelService"
+        },
+        "onUnmount": {
+            "actionType": "JSFunction",
+            "method": "onUnmount",
+            "inputData": {
+                "props": "{{props}}",
+                "getViewModelCollection": "{{data.getViewModelCollection}}"
+            },
+            "deps": "js/AwWalkerHtmlPanelService"
+        }
+    },
+    "ctx": {
+        "userSession": null
+    },
+    "props": {
+        "xrt-state": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "render": "render",
+        "onUnmount": "onUnmount"
+    }
+}

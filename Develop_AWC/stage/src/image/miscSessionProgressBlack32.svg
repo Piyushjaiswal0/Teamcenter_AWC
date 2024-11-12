@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0 200,200" preserveAspectRatio="xMinYMid">
+    <defs>
+        <clipPath id="ring">
+            <path d="M 200, 100
+                     A 100, 100, 0, 1, 1, 197.81, 79.21
+                     L 178.2518, 83.3671
+                     A 80, 80, 0, 1, 0, 180, 100 z"/>
+        </clipPath>
+        <filter id="blur" x="0" y="0">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+        <path id="p" d="M 250, 100
+                        A 150, 150, 0, 0, 1, 246.72, 131.19
+                        L 100, 100
+                        A 0, 0, 0, 0, 0, 100, 100 z" fill="black"/>
+    </defs>
+    <g clip-path="url(#ring)">
+        <g filter="url(#blur)" transform="rotate(-6 100 100)">
+            <use xlink:href="#p" fill-opacity="0"    transform="rotate(  0 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.03" transform="rotate( 12 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.07" transform="rotate( 24 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.1"  transform="rotate( 36 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.14" transform="rotate( 48 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.17" transform="rotate( 60 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.2"  transform="rotate( 72 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.24" transform="rotate( 84 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.28" transform="rotate( 96 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.31" transform="rotate(108 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.34" transform="rotate(120 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.38" transform="rotate(132 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.41" transform="rotate(144 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.45" transform="rotate(156 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.48" transform="rotate(168 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.52" transform="rotate(180 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.55" transform="rotate(192 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.59" transform="rotate(204 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.62" transform="rotate(216 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.66" transform="rotate(228 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.69" transform="rotate(240 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.7"  transform="rotate(252 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.72" transform="rotate(264 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.76" transform="rotate(276 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.79" transform="rotate(288 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.83" transform="rotate(300 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.86" transform="rotate(312 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.93" transform="rotate(324 100 100)"/>
+            <use xlink:href="#p" fill-opacity="0.97" transform="rotate(336 100 100)"/>
+            <use xlink:href="#p" fill-opacity="1"    transform="rotate(348 100 100)"/>
+        </g>
+    </g>
+</svg>

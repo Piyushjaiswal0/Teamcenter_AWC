@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Disposer",
+    "arrangeButtonTitle": "Disposer",
+    "arrangeAdminTitle": "Administration",
+    "arrangeNoColumnConfigs": "Pas d'arrangements sauvegardés",
+    "arrangeConfigNameTitle": "Arrangement",
+    "arrangeNewConfigNameTitle": "Nom",
+    "arrangeNewConfigNameTitleRequired": "Nommer votre arrangement",
+    "arrangeNewConfigTitle": "Sauvegarder sous un nouvel arrangement",
+    "arrangeAndSaveButtonTitle": "Sauvegarder et disposer",
+    "arrangeAndCreateButtonTitle": "Sauvegarder et disposer",
+    "defaultNewColumnConfigName": "Nouvel arrangement de colonnes",
+    "availableColumnsTitle": "Colonnes disponibles",
+    "tableColumnsTitle": "Colonnes affichées",
+    "box1Title": "Exemple pour la commande Active Workspace avec la popup Bulle",
+    "seeMorePropertiesTitle": "Afficher l'intégralité de la base de données..."
+}

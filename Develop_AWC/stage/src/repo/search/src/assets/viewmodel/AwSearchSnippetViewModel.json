@@ -1,0 +1,35 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "snippets": {
+            "type": "object"
+        },
+        "vmo": {
+            "type": "object"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awSearchSnippetServiceRenderFunction",
+            "deps": "js/AwSearchSnippetService"
+        }
+    },
+    "functions": {
+    },
+    "data": {
+    },
+
+    "messages": {
+    },
+    "conditions": {
+    },
+
+    "i18n": {
+        "fileNameSnippetMessage": [ "SearchMessages" ],
+        "attachmentNameSnippetMessage": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    }
+}

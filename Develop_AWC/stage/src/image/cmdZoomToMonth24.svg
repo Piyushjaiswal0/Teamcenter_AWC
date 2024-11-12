@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <rect x="9" y="10" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="10" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="10" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="18" y="10" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="13" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="13" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="13" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" y="13" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="13" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="18" y="13" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="16" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="16" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="16" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" y="16" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="16" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="18" y="16" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="19" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="19" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="19" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" y="19" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="19" width="2" height="2" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M6,5A1,1,0,1,0,5,4,1,1,0,0,0,6,5Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M18,5a1,1,0,1,0-1-1A1,1,0,0,0,18,5Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M21.2,0H2.8A2.8029,2.8029,0,0,0,0,2.8V21.2A2.8029,2.8029,0,0,0,2.8,24H21.2A2.8032,2.8032,0,0,0,24,21.2V2.8A2.8032,2.8032,0,0,0,21.2,0ZM2.8,1H21.2A1.8022,1.8022,0,0,1,23,2.8V7H1V2.8A1.8021,1.8021,0,0,1,2.8,1ZM21.2,23H2.8A1.8021,1.8021,0,0,1,1,21.2V8H23V21.2A1.8022,1.8022,0,0,1,21.2,23Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

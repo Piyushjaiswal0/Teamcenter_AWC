@@ -1,0 +1,64 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awImageViewerRenderFn",
+            "deps": "js/Awp0ImageViewerService"
+        },
+        "onMount": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initUV"
+                },
+                {
+                    "action": "initImgViewer"
+                }
+            ]
+        },
+        "initUV": {
+            "actionType": "JSFunction",
+            "method": "awImageViewerOnMount",
+            "inputData": {
+                "viewerData": "{{subPanelContext}}",
+                "viewModel": "{{data}}"
+            },
+            "outputData": {
+                "data": ""
+            },
+            "deps": "js/Awp0ImageViewerService"
+        },
+        "initImgViewer": {
+            "actionType": "JSFunction",
+            "method": "initImageViewer",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0ImageViewerService"
+        },
+        "onUnMount": {
+            "actionType": "JSFunction",
+            "method": "awImageViewerOnUnMount",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0ImageViewerService"
+        }
+    },
+    "onEvent": [],
+    "functions": {},
+    "messages": {},
+    "conditions": {},
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "onMount",
+        "onUnmount": "onUnMount"
+    },
+    "i18n": {},
+    "props": {
+        "data": {
+            "type": "object"
+        }
+    }
+}

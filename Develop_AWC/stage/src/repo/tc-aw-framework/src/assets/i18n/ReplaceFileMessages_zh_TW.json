@@ -1,0 +1,14 @@
+{
+    "replace": "取代",
+    "upload": "上傳",
+    "chooseFromSystem": "從系統選取檔案",
+    "replaceFileError": "請將檔案取代為與先前在該項目上的檔案相同的副檔名",
+    "replaceSuccessWithFileName": "\"{0}\" 已取代。",
+    "replaceFailureWithFileName": "無法將匯入檔案按具名參考新增到資料集，因為副檔名無效",
+    "replaceNoValidTarget": "「{0}」沒有可取代的有效檔案。",
+    "replaceFileCommandTitle": "取代檔案",
+    "InvalidSelectedObject": "為產生 PLMD 檔案所提供的資料集或磁碟區檔案物件無效。請使用有效的資料集或磁碟區檔案物件重試。",
+    "AsynUploadInProgress": "目前正在將檔案非同步上傳到 Teamcenter 磁碟區。",
+    "PlatformNotSupported": "此平臺不支援非同步取代作業：正在切換為同步取代",
+    "Awp0ReplaceDatasetDesc": "將選定的檔案取代為您設備上的一個新檔案。"
+}

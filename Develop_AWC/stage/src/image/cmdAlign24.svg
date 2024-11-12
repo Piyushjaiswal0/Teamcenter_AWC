@@ -1,0 +1,8 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <rect x="11" width="1" height="24" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M9,11H3V2H9ZM4,10H8V3H4Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M9,22H0V13H9ZM1,21H8V14H1Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="11" width="1" height="24" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M20,11H14V2h6Zm-5-1h4V3H15Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M23,22H14V13h9Zm-8-1h7V14H15Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

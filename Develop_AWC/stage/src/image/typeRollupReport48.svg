@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="25.3076" y1="25.3076" x2="43.6924" y2="43.6924" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="_4_Generic_-_Left_Blend" data-name="4 Generic - Left Blend" x1="-2.5" y1="3.5" x2="30.3836" y2="36.3836" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="0.2193" stop-color="#ededed"/>
+      <stop offset="0.4465" stop-color="#e1e0e0"/>
+      <stop offset="0.6774" stop-color="#ccc"/>
+      <stop offset="0.9094" stop-color="#b0afaf"/>
+      <stop offset="0.99" stop-color="#a4a3a3"/>
+    </linearGradient>
+    <circle cx="34.5" cy="34.5" r="13" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+    <polyline points="26.978 33.981 30.999 28.993 34.962 32.983 40.005 28.023" fill="none" stroke="#147391"/>
+      <circle cx="26.978" cy="33.9814" r="1.4001" fill="#fff"/>
+      <path d="M26.9783,32.981a1,1,0,1,1-1,1,1,1,0,0,1,1-1m0-.8a1.8,1.8,0,1,0,1.8,1.8,1.802,1.802,0,0,0-1.8-1.8Z" fill="#147391"/>
+      <circle cx="30.999" cy="28.9932" r="1.4001" fill="#fff"/>
+      <path d="M30.9988,27.9929a1,1,0,1,1-1,1,1,1,0,0,1,1-1m0-.8a1.8,1.8,0,1,0,1.8,1.8,1.8021,1.8021,0,0,0-1.8-1.8Z" fill="#147391"/>
+      <circle cx="40.0054" cy="28.0225" r="1.4001" fill="#fff"/>
+      <path d="M40.0052,27.0229a1,1,0,1,1-1,1,1,1,0,0,1,1-1m0-.8a1.8,1.8,0,1,0,1.8,1.8,1.802,1.802,0,0,0-1.8-1.8Z" fill="#147391"/>
+      <circle cx="34.9614" cy="32.9834" r="1.4001" fill="#fff"/>
+      <path d="M34.9616,31.9833a1,1,0,1,1-1,1,1,1,0,0,1,1-1m0-.8a1.8,1.8,0,1,0,1.8,1.8,1.8021,1.8021,0,0,0-1.8-1.8Z" fill="#147391"/>
+      <rect x="27.5" y="39.5" width="4" height="3" fill="#fff" stroke="#147391" stroke-width="1.0119"/>
+      <rect x="32.5" y="37.5" width="4" height="5" fill="#fff" stroke="#147391" stroke-width="1.0328"/>
+      <rect x="37.5" y="34.5" width="4" height="8" fill="#fff" stroke="#147391" stroke-width="1.0248"/>
+  <path d="M21.8618,37.5l-.0137,0H8L20.5,21.0846V19.2692L10,4.5H21.5c1.73,0,3.18.2854,4.0986,1.27S27.1735,8.1979,28.04,11.5H30.5V.5H.5V2.0077L14.6842,22.0385.5,40.9923V42.5H24.2673A12.9332,12.9332,0,0,1,21.8618,37.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#_4_Generic_-_Left_Blend)"/>
+</svg>

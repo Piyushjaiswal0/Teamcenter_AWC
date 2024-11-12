@@ -1,0 +1,30 @@
+<aw-command-panel caption="i18n.searchSettings" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section caption="i18n.filterPanelRelated" collapsed="false">
+            <div class="aw-search-settings">
+                <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Hide_Unassigned_FacetCategories" extended-tooltip="data.AWC_Hide_Unassigned_FacetCategories_Description"></aw-widget>
+                <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Search_Filter_Values_Sort_Order" extended-tooltip="data.AWC_Search_Filter_Values_Sort_Order_Description"></aw-widget>
+                <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Search_Show_Auto_Update_Filters"></aw-widget>
+                <aw-widget action="doAddToChangedPreferences" prop="data.AW_Search_Auto_Open_Filter_Panel"></aw-widget>
+                <aw-widget action="doAddToChangedPreferences" prop="data.AWC_search_filter_wildcard"></aw-widget>
+                <div class="aw-searchFilterDisplay-settings">
+                    <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Search_Filter_Categories_Display_Mode" extended-tooltip="data.AWC_Search_Filter_Categories_Display_Mode_Description"></aw-widget>
+                    <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Limited_Filter_Categories_Enabled" visible-when="conditions.showListOption" extended-tooltip="data.AWC_Limited_Filter_Categories_Enabled_Description"></aw-widget>
+                    <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Limited_Filter_Categories_Expanded" visible-when="conditions.showExpandedValue"></aw-widget>
+                    <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Search_Filter_Panel_Expand_Selected_Groups" visible-when="conditions.showGroupOption" extended-tooltip="data.AWC_Search_Filter_Panel_Expand_Selected_Groups_Description"></aw-widget>
+                    <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Search_Filter_Panel_Groups_Expanded" visible-when="conditions.showExpandedGroupValue"></aw-widget>    
+                </div>
+                <aw-widget action="doAddToChangedPreferences" prop="data.AW_DisableTypeAheadFacetSearch" extended-tooltip="data.AW_DisableTypeAheadFacetSearch_Description"></aw-widget>
+            </div>
+        </aw-panel-section>
+        <aw-panel-section caption="i18n.generalSearchRelated" collapsed="false">
+            <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Include_Results_From_Files" exist-when="data.getStoredDatasetFieldsConstantValue" extended-tooltip="data.AWC_Include_Results_From_Files_Description"></aw-widget>
+            <aw-widget action="doAddToChangedPreferences" prop="data.AWC_Search_Enable_Snippets" enable-when="conditions.enableCheckBoxWhen" extended-tooltip="data.AWC_Search_Enable_Snippets_Description"></aw-widget>
+            <aw-widget action="doAddToChangedPreferences" prop="data.AWC_select_firstobject_inSearchLocation" extended-tooltip="data.AWC_select_firstobject_onSearch_Description"></aw-widget>
+        </aw-panel-section>
+
+    </aw-panel-body>
+    <aw-panel-footer>
+            <aw-button size='auto' action="saveSettings" visible-when="conditions.isValidToSave"><aw-i18n>i18n.Save</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

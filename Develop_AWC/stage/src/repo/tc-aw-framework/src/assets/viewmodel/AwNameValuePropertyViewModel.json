@@ -1,0 +1,30 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awNameValuePropertyRenderFunction",
+            "deps": "js/AwNameValuePropertyService"
+        }
+    },
+    "ctx": {
+        "userSession": null,
+        "dynamicTable": {
+            "parser": {
+                "method": "createNameValuePropertyComponent",
+                "deps": "js/AwNameValuePropertyService"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "selection-data": {
+            "type": "object"
+        },
+        "edit-context-key": {
+            "type": "string"
+        }
+    }
+}

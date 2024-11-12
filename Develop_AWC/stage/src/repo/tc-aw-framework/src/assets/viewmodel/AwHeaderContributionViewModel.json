@@ -1,0 +1,22 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awHeaderContributionRenderFunction",
+            "deps": "js/AwHeaderContributionService"
+        }
+    },
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "ctx": {},
+    "props": {
+        "children": {
+            "type": "object"
+        }
+    }
+}

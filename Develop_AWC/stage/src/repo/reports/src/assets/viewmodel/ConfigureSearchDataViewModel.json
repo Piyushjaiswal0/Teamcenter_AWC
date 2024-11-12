@@ -1,0 +1,222 @@
+{
+    "schemaVersion": "1.0.0",
+    "selectionModels": {
+        "searchSelectionModel": {
+            "selectionMode": "single"
+        }
+    },
+    "data": {
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        },
+        "searchState": {
+            "initialValues": {
+                "autoApplyFilters": true,
+                "provider": "Awp0FullTextSearchProvider",
+                "label" : {
+                    "source" : "/i18n/SearchMessages",
+                    "key": "resultsText"
+                }
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        }
+    },
+    "actions": {
+        "initializeSearchState":{
+            "actionType": "JSFunction",
+            "deps": "js/AwConfigureReportViewerService",
+            "method": "initializeSearchState",
+            "inputData": {
+                "searchState": "{{fields.searchState}}",
+                "searchCriteria": "{{function:getConfigureSearchCriteria}}",
+                "filter": "{{function:getConfigureFilterString}}"
+            },
+            "outputData": {
+                "searchState": ""
+            }
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        },
+        "updateSourceObject":{
+            "actionType": "JSFunction",
+            "deps": "js/AwConfigureReportViewerService",
+            "method": "updateSourceObject",
+            "inputData": {
+                "selectionData": "{{fields.selectionData.selected[0]}}",
+                "reportsState": "{{props.reportsState}}",
+                "i18n": "{{i18n}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "sourceObjectView.plTable.reload"
+                    }
+                ]
+            }
+        },
+        "modifySearchData":{
+            "actionType": "JSFunction",
+            "method": "updateReportSearchInfo",
+            "inputData": {
+                "searchState": "{{data.searchState}}",
+                "reportsState": "{{props.reportsState}}"
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "saveCriteriaAndClose": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getFilterString",
+                    "condition": "conditions.isSummaryReport"
+                },{
+                    "action": "updateSourceObject",
+                    "condition": "!conditions.isSummaryReport"
+                },{
+                    "action": "modifySearchData",
+                    "condition": "conditions.isSummaryReport && ctx.state.params.reportId"
+                },{
+                    "action": "saveForSummaryReport",
+                    "condition": "conditions.isSummaryReport && !ctx.state.params.reportId"
+                },{
+                    "action": "getSearchCriteriaForItemReport",
+                    "condition": "!conditions.isSummaryReport"
+                },{
+                    "action": "saveForItemReport",
+                    "condition": "!ctx.state.params.reportId && !conditions.isSummaryReport"
+                },{
+                    "action": "updateTableRefreshTrue",
+                    "condition": "ctx.state.params.reportId && !conditions.isSummaryReport"
+                },{
+                    "action": "updateSegmentTree",
+                    "condition": "ctx.state.params.reportId && !conditions.isSummaryReport"
+                },{
+                    "action": "closePanel"
+                }
+            ]
+        },
+        "getFilterString":{
+            "actionType": "JSFunction",
+            "deps": "js/AwConfigureReportViewerService",
+            "method": "getFilterString",
+            "inputData": {
+                "searchState": "{{data.searchState}}"
+            },
+            "outputData": {
+                "activeFilterMapString": ""
+            }
+        },
+        "saveForSummaryReport": {
+            "actionType": "Navigate",
+            "navigateTo": "createReportTemplate",
+            "navigationParams": {
+                "searchCriteria": "{{data.searchState.criteria.searchString}}",
+                "filter": "{{data.activeFilterMapString}}",
+                "previewMode":"{{ctx.state.params.previewMode}}",
+                "reportType": "{{ctx.state.params.reportType}}"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "getSearchCriteriaForItemReport":{
+            "actionType": "JSFunction",
+            "deps": "js/AwConfigureReportViewerService",
+            "method": "getSearchCriteriaForItemReport",
+            "inputData": {
+                "selected": "{{fields.selectionData.selected[0].uid}}"
+            },
+            "outputData": {
+                "criteria": ""
+            }
+        },
+        "saveForItemReport": {
+            "actionType": "Navigate",
+            "navigateTo": "createReportTemplate",
+            "navigationParams": {
+                "searchCriteria": "{{data.criteria}}",
+                "previewMode":"{{ctx.state.params.previewMode}}",
+                "reportType": "{{ctx.state.params.reportType}}"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "updateTableRefreshTrue": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{props.reportsState}}",
+                "value": {
+                    "tableRefresh": true
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateSegmentTree": {
+            "actionType": "JSFunction",
+            "deps": "js/configureItemReportService",
+            "method": "callUpdateSegmentTree",
+            "inputData": {
+                "reportsState": "{{props.reportsState}}"
+            }
+        }
+    },
+    "i18n": {
+        "CancelButtonLabel":["FileVersionsMessages"],
+        "saveReport": [ "ReportChartMessages" ],
+        "parentSource": [ "ReportChartMessages" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeSearchState"
+    },
+    "conditions": {
+        "enableSaveButton": {
+            "expression": "(conditions.isSummaryReport && data.searchState.criteria.searchString.length>0 && data.searchState.totalFound>0)|| (!conditions.isSummaryReport && data.selectionData.selected.length>0)"
+        },
+        "isSummaryReport":{
+            "expression": "ctx.state.params.reportType==='4'"
+        }
+    },
+    "functions": {
+        "getConfigureSearchCriteria": {
+            "functionName": "getConfigureSearchCriteria",
+            "parameters": [
+                "{{props.reportsState.reportParameters.ReportDefProps.ReportSearchInfo.SearchCriteria}}"
+            ]
+        },
+        "getConfigureFilterString": {
+            "functionName": "getConfigureFilterString",
+            "parameters": [
+                "{{props.reportsState.reportParameters.ReportDefProps.ReportSearchInfo.activeFilterMap}}"
+            ]
+        },
+        "getSearchCriteriaForItemReport":{
+            "functionName": "getSearchCriteriaForItemReport",
+            "parameters": [
+                "{{fields.selectionData.selected[0].uid}}"
+            ]
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="12" y1="24" x2="12" y2="0">
+	<stop  offset="0" style="stop-color:#373838"/>
+	<stop  offset="1" style="stop-color:#606262"/>
+</linearGradient>
+<circle fill="url(#SVGID_1_)" cx="12" cy="12" r="12"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="8.3299" y1="1.6485" x2="16.0179" y2="23.3322">
+	<stop  offset="0.3506" style="stop-color:#373838;stop-opacity:0"/>
+	<stop  offset="0.4065" style="stop-color:#535454;stop-opacity:8.599055e-02"/>
+	<stop  offset="0.5068" style="stop-color:#808181;stop-opacity:0.2405"/>
+	<stop  offset="0.6079" style="stop-color:#A6A6A7;stop-opacity:0.3962"/>
+	<stop  offset="0.7082" style="stop-color:#C3C3C4;stop-opacity:0.5507"/>
+	<stop  offset="0.8075" style="stop-color:#D7D8D8;stop-opacity:0.7036"/>
+	<stop  offset="0.9053" style="stop-color:#E4E4E5;stop-opacity:0.8542"/>
+	<stop  offset="1" style="stop-color:#E8E8E9"/>
+</linearGradient>
+<circle fill="url(#SVGID_2_)" cx="12" cy="12" r="11.5"/>
+<radialGradient id="SVGID_3_" cx="9.4142" cy="14.1429" r="9.9229" gradientTransform="matrix(0.8881 -0.2425 9.379891e-02 0.4994 0.7453 2.0766)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2489" style="stop-color:#FCFCFC;stop-opacity:0.7511"/>
+	<stop  offset="0.4021" style="stop-color:#F4F4F4;stop-opacity:0.5979"/>
+	<stop  offset="0.5294" style="stop-color:#E5E6E6;stop-opacity:0.4706"/>
+	<stop  offset="0.6426" style="stop-color:#D1D1D1;stop-opacity:0.3574"/>
+	<stop  offset="0.7463" style="stop-color:#B6B7B7;stop-opacity:0.2537"/>
+	<stop  offset="0.8432" style="stop-color:#969696;stop-opacity:0.1568"/>
+	<stop  offset="0.9329" style="stop-color:#707171;stop-opacity:6.708014e-02"/>
+	<stop  offset="1" style="stop-color:#4E4F4F;stop-opacity:0"/>
+</radialGradient>
+<path fill="url(#SVGID_3_)" d="M20.2,4.5c0.3,3-3.8,6.4-9.3,7.8s-10.1,0-10.4-3s3.8-6.4,9.3-7.8S19.9,1.5,20.2,4.5z"/>
+<radialGradient id="SVGID_4_" cx="12" cy="12" r="6.7749" gradientUnits="userSpaceOnUse">
+	<stop  offset="6.447893e-02" style="stop-color:#4E4F4F;stop-opacity:0.8"/>
+	<stop  offset="0.5032" style="stop-color:#535454;stop-opacity:0.4248"/>
+	<stop  offset="1" style="stop-color:#606262;stop-opacity:0"/>
+</radialGradient>
+<circle fill="url(#SVGID_4_)" cx="12" cy="12" r="6.8"/>
+</svg>

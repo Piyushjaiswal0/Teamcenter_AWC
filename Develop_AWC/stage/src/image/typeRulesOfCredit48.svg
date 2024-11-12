@@ -1,0 +1,51 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="front_-45" data-name="front -45" x1="2.3499" y1="36.0571" x2="8.1518" y2="41.859" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.6296" stop-color="#c7c7c7"/>
+      <stop offset="0.7792" stop-color="#b9b9b9"/>
+      <stop offset="0.9383" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="19.5726" y1="0.5" x2="19.5726" y2="43.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0.0031" stop-color="#999"/>
+      <stop offset="0.287" stop-color="#f2f2f2"/>
+      <stop offset="0.5495" stop-color="#f2f2f2"/>
+      <stop offset="0.6449" stop-color="#eee"/>
+      <stop offset="0.744" stop-color="#e1e1e1"/>
+      <stop offset="0.8447" stop-color="#cdcdcd"/>
+      <stop offset="0.8472" stop-color="#ccc"/>
+      <stop offset="0.885" stop-color="#c7c7c7"/>
+      <stop offset="0.9286" stop-color="#b9b9b9"/>
+      <stop offset="0.9749" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="9.6297" y1="-4.0916" x2="26.8103" y2="13.089" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="27.0147" y1="27.0147" x2="43.9853" y2="43.9853" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <path d="M8.3079,35.5H2.97a5,5,0,0,0-1.9685,3.9982,3.8842,3.8842,0,0,0,3.8863,3.9982,4.29,4.29,0,0,0,4.1159-3.9115A39.4819,39.4819,0,0,0,8.3079,35.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#front_-45)"/>
+  <path d="M30.1943,8.75l1.4632,5.7838,3.8,12.1984,3.0966,12.222a3.7031,3.7031,0,0,1-3.85,4.5463H4.4134c2.2048,0,4.4391-1.9116,4.4391-4.071C8.8525,35.3358.5,7.9039.5,4.4807A3.9773,3.9773,0,0,1,4.4921.5l6.01.0085" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="28.5" y1="20.5" x2="10" y2="20.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <path d="M29.8308.5H5.038a4.0352,4.0352,0,0,1,3.9884,4,4.0307,4.0307,0,0,1-3.983,4H29.8308a3.9384,3.9384,0,0,0,3.8739-4A3.9384,3.9384,0,0,0,29.8308.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <line x1="27" y1="14.5" x2="8" y2="14.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="28.5" y1="26.5" x2="11" y2="26.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <line x1="24" y1="32.5" x2="13" y2="32.5" fill="none" stroke="silver" stroke-miterlimit="10"/>
+  <circle cx="35.5" cy="35.5" r="12" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <circle cx="32" cy="32" r="3" fill="#147391" stroke="#147391" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M39.0566,29.459a1.0705,1.0705,0,0,1,.9346-.4575h.3662c.6592,0,.86.4214.4571.934l-8.899,11.6084a1.0681,1.0681,0,0,1-.9336.4581h-.3847c-.6407,0-.8423-.4209-.44-.9336Z" fill="#147391" stroke="#147391" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M39,36a3,3,0,1,1,0,6,3,3,0,0,1,0-6Z" fill="#147391" stroke="#147391" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M29,32a3,3,0,1,1,3,3A3.0037,3.0037,0,0,1,29,32Zm10.0566-2.541a1.0705,1.0705,0,0,1,.9346-.4575h.3662c.6592,0,.86.4214.4571.934l-8.899,11.6084a1.0681,1.0681,0,0,1-.9336.4581h-.3847c-.6407,0-.8423-.4209-.44-.9336ZM33.25,32a1.2606,1.2606,0,0,0-1.2595-1.25A1.25,1.25,0,1,0,33.25,32ZM39,36a3,3,0,1,1,0,6,3,3,0,0,1,0-6Zm-.01,4.25A1.25,1.25,0,1,0,37.75,39,1.2327,1.2327,0,0,0,38.99,40.25Z" fill="#fff"/>
+</svg>

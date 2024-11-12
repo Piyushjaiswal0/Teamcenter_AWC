@@ -1,0 +1,7 @@
+<aw-command-panel caption="i18n.filterString">
+    <aw-filter-panel visible-when="subPanelContext.searchState.totalFound > 0" sub-panel-context="{searchState: subPanelContext.searchState}"></aw-filter-panel>
+    <aw-panel-footer>
+        <aw-button action="saveFilterSelection" visible-when="subPanelContext.searchState.saveFilterSelectionVisibility === true"><aw-i18n>i18n.saveFilterSelection</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

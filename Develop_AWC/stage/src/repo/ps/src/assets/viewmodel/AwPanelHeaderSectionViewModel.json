@@ -1,0 +1,96 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "header-section-label": {
+            "type": "string"
+        },
+        "header-section-element": {
+            "type": "string"
+        },
+        "header-section-hint-display-name": {
+            "type": "string"
+        },
+        "header-section-hint-value": {
+            "type": "string"
+        },
+        "header-section-element-array": {
+            "type":"STRINGARRAY"
+        }
+    },
+    "data": {
+        "headerSectionElement": {
+            "displayName": "{{props.headerSectionLabel}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dispValue": "{{props.headerSectionElement}}"
+        },
+        "headerSectionHintProperty": {
+            "displayName": "{{props.headerSectionHintDisplayName}}",
+            "type": "STRING",
+            "dispValue": "{{props.headerSectionHintValue}}",
+            "renderingHint": "label",
+            "isEditable": "false",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "moreLink": {
+            "displayName": "{{i18n.MORE_LINK_TEXT}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "lessLink": {
+            "displayName": "{{i18n.LESS_LINK_TEXT}}",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "showMoreFlag": true
+    },
+    "lifecycleHooks": {
+        "onUpdate":{
+            "action": "updateHeaderSectionData",
+            "observers": [ "props.headerSectionLabel", "props.headerSectionElement", "props.headerSectionHintDisplayName", "props.headerSectionHintValue" ]
+        }
+    },
+    "actions": {
+        "updateHeaderSectionData": {
+            "actionType": "JSFunction",
+            "method": "updateDataFromProps",
+            "inputData": {
+                "headerLabelToUpdate": "{{props.headerSectionLabel}}",
+                "headerElementToUpdate": "{{props.headerSectionElement}}",
+                "headerHintDisplayNameToUpdate": "{{props.headerSectionHintDisplayName}}",
+                "headerHintValueToUpdate": "{{props.headerSectionHintValue}}"
+            },
+            "outputData": {
+                "headerSectionElement.propertyDisplayName": "result.headerLabel",
+                "headerSectionElement.uiValue": "result.headerElement",
+                "headerSectionHintProperty.propertyDisplayName": "result.headerHintDispName",
+                "headerSectionHintProperty.uiValue": "result.headerHintValue",
+                "headerSectionHintProperty.propertyLabelDisplay": "result.headerHintLabelDisplay"
+            },
+            "deps": "js/awPanelHeaderSectionService"
+        },
+        "toggleShowMoreFlagForHeaderSectionElementsAction": {
+            "actionType": "JSFunction",
+            "method": "toggleShowMoreFlagForHeaderSectionElements",
+            "inputData": {
+                "headerElementArray": "{{props.headerSectionElementArray}}",
+                "showMoreFlag": "{{data.showMoreFlag}}",
+                "populatedHeaderSectionElements": "{{data.headerSectionElements}}"
+            },
+            "outputData": {
+                "headerSectionElements": "result.updatedHeaderSectionElements",
+                "showMoreFlag": "result.updatedShowMoreFlag"
+            },
+            "deps": "js/awPanelHeaderSectionService"
+        }
+    },
+    "i18n": {
+        "MORE_LINK_TEXT": [
+            "BaseMessages"
+        ],
+        "LESS_LINK_TEXT": [
+            "BaseMessages"
+        ]
+    }
+}

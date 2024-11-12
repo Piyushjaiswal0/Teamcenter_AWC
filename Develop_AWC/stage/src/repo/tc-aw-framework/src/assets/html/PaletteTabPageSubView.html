@@ -1,0 +1,21 @@
+<aw-panel-body>
+    <aw-clipboard filter-types="{{props.subPanelContext.typeFilter}}"
+        selection-mode="{{props.subPanelContext.selectionMode}}"
+        is-include-sub-types="{{props.subPanelContext.isIncludeSubTypes}}"
+        sub-panel-context="{ selectionModel: selectionModels.clipboardSelectionModel, selectionData: data.selectionData, shouldClipboardObjsBeSelectedOnLoad: props.subPanelContext.shouldClipboardObjsBeSelectedOnLoad, addObject: props.subPanelContext.addObject }">
+    </aw-clipboard>
+    <aw-favorite filter-types="{{props.subPanelContext.typeFilter}}"
+        selection-mode="{{props.subPanelContext.selectionMode}}"
+        is-include-sub-types="{{props.subPanelContext.isIncludeSubTypes}}"
+        sub-panel-context="{ selectionModel: selectionModels.favoritesSelectionModel, selectionData: data.selectionData }">
+    </aw-favorite>
+    <aw-history filter-types="{{props.subPanelContext.typeFilter}}"
+        selection-mode="{{props.subPanelContext.selectionMode}}"
+        is-include-sub-types="{{props.subPanelContext.isIncludeSubTypes}}"
+        sub-panel-context="{ selectionModel: selectionModels.historySelectionModel, selectionData: data.selectionData, addObject: props.subPanelContext.addObject }">
+    </aw-history>
+</aw-panel-body>
+
+<aw-panel-footer class="sw-column" visible-when="subPanelContext.hideRelation !== 'true'">
+    <aw-widget prop="data.creationRelation" show-when="conditions.showRelationsList"></aw-widget>
+</aw-panel-footer>

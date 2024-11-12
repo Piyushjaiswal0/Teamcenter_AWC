@@ -1,0 +1,25 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="6.5002" y1="4.5001" x2="45.5129" y2="43.5128">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<polygon fill="url(#SVGID_1_)" points="41.5,47.5 10.5,47.5 10.5,0.5 41.5,0.5 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-4.25" y1="11.25" x2="21.25" y2="36.75">
+	<stop  offset="0" style="stop-color:#F2F2F2"/>
+	<stop  offset="0.5" style="stop-color:#CCCCCC"/>
+	<stop  offset="0.6296" style="stop-color:#C7C7C7"/>
+	<stop  offset="0.7792" style="stop-color:#B9B9B9"/>
+	<stop  offset="0.9383" style="stop-color:#A2A2A2"/>
+	<stop  offset="0.99" style="stop-color:#999999"/>
+</linearGradient>
+<rect x="6.5" y="0.5" fill="url(#SVGID_2_)" stroke="#5A5A5A" stroke-miterlimit="10" width="4" height="47"/>
+<path fill="#FFFFFF" stroke="#5A5A5A" d="M34.5,17.5h-18c-0.6,0-1-0.4-1-1v-7c0-0.6,0.4-1,1-1h18c0.6,0,1,0.4,1,1v7
+	C35.5,17.1,35.1,17.5,34.5,17.5z"/>
+<line fill="none" stroke="#5A5A5A" x1="29" y1="14.5" x2="17" y2="14.5"/>
+<line fill="none" stroke="#5A5A5A" x1="32" y1="11.5" x2="17" y2="11.5"/>
+<polygon fill="none" stroke="#464646" stroke-miterlimit="10" points="41.5,47.5 6.5,47.5 6.5,0.5 41.5,0.5 "/>
+</svg>

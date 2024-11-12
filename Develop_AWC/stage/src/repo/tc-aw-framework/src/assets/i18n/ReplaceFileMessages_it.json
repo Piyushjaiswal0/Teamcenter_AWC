@@ -1,0 +1,14 @@
+{
+    "replace": "Sostituisci",
+    "upload": "Carica",
+    "chooseFromSystem": "Scegli file dal sistema",
+    "replaceFileError": "Aggiornare il file con la stessa estensione del precedente file presente nell'item",
+    "replaceSuccessWithFileName": "\"{0}\" è stato sostituito.",
+    "replaceFailureWithFileName": "Impossibile aggiungere un file importato come riferimento denominato al set di dati perché l'estensione non è valida",
+    "replaceNoValidTarget": "\"{0}\" non contiene alcun file valido da sostituire.",
+    "replaceFileCommandTitle": "Sostituisci file",
+    "InvalidSelectedObject": "L'oggetto file volume o set di dati fornito per generare il file PLMD non è valido. Riprovare con un oggetto file volume o set di dati valido.",
+    "AsynUploadInProgress": "È attualmente in corso il caricamento asincrono del file nel volume di Teamcenter.",
+    "PlatformNotSupported": "L'operazione di sostituzione asincrona non è supportata dalla piattaforma corrente. Si passa alla sostituzione sincrona",
+    "Awp0ReplaceDatasetDesc": "Sostituire il file selezionato con uno nuovo dal dispositivo."
+}

@@ -1,0 +1,49 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-scrollpanel.directive"
+    ],
+
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "getAvailablePages",
+             "outputData": {
+                "pageCount": "pageCount",
+                "pageList": "pageList",
+                "ctx.search.totalFound": "pageCount"
+            },
+            "deps": "js/workspaceService"
+        }
+     },
+
+    "dataProviders":
+    {
+        "listDataProvider":
+        {
+            "dataProviderType":"Action",
+            "action": "loadData",
+            "response": "{{data.pageList}}",
+            "totalFound": "{{data.pageCount}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectObjectNavigationCellListActionCommands"
+
+        }
+    },
+    "onEvent": [{
+        "eventId": "pageList.contentLoaded",
+        "action": "reveal"
+    }]
+
+}

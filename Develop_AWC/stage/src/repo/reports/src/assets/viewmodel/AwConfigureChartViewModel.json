@@ -1,0 +1,103 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "reports-state": {
+            "type": "object"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awConfigureChartRenderFunction",
+            "deps": "js/AwConfigureChartService"
+        },
+        "updateChartProperties": {
+            "actionType": "JSFunction",
+            "method": "updateChartProperties",
+            "inputData": {
+                "reportsState": "{{props.reportsState}}",
+                "chartTypeList": "{{data.chartTypeList}}",
+                "id": "{{props.id}}",
+                "chartTypeListValues": "{{data.chartTypeListValues}}"
+            },
+            "outputData":{
+                "chartTypeList":""
+            },
+            "deps": "js/AwConfigureChartService"
+        },
+        "openAddRelationPanel": {
+            "actionType": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Rb0AddRelationPanel",
+                "location": "aw_toolsAndInfo",
+                "config": {
+                    "isPinUnpinEnabled": true
+                }
+            }
+        }
+    },
+    "data": {
+        "chartTypeList": {
+            "type": "STRING",
+            "dataProvider": "chartTypeProvider",
+            "dbValue": "{{props.chartConfig.ChartType}}",
+            "uiValue": "{{props.chartConfig.ChartTypeName}}",
+            "iconName": "{{props.chartConfig.ChartIconName}}"
+        },
+        "chartTypeListValues": [
+            {
+                "propDisplayValue": "{{i18n.barChart}}",
+                "propInternalValue": "column",
+                "iconName": "cmdBarChart"
+            },
+            {
+                "propDisplayValue": "{{i18n.pieChart}}",
+                "propInternalValue": "pie",
+                "iconName": "cmdPieChart"
+            },
+            {
+                "propDisplayValue": "{{i18n.lineChart}}",
+                "propInternalValue": "line",
+                "iconName": "cmdLineChart"
+            }
+        ]
+    },
+    "dataProviders": {
+        "chartTypeProvider": {
+            "response": "{{data.chartTypeListValues}}"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": [{
+            "action": "updateChartProperties",
+            "observers": [
+                "viewModel.data.chartTypeList.dbValue",
+                "props.chartConfig.ChartType",
+                "props.reportsState.reportParameters.ReportDefProps.allChartsList.length",
+                "props.chartConfig.ChartTitle",
+                "props.chartConfig.ChartName"
+            ]
+        }]
+    },
+    "i18n": {
+        "barChart": [ "ReportChartMessages" ],
+        "pieChart": [ "ReportChartMessages" ],
+        "lineChart": [ "ReportChartMessages" ],
+        "defaultChartViewText":["ReportChartMessages"],
+        "noRelationsAvailable": ["ReportChartMessages"],
+        "addRelationContext": ["ReportChartMessages"],
+        "addRelations": ["ReportChartMessages"]
+    },
+    "conditions":{
+        "isSummaryReport": {
+            "expression": "ctx.state.params.reportType === '4'"
+        },
+        "addRelationContextView": {
+            "expression": "!conditions.isSummaryReport && !props.reportsState.relationsPath && !(props.reportsState.segmentTree[0].children.length > 0)"
+        },
+        "renderCondition": {
+            "expression": "conditions.isSummaryReport || !conditions.addRelationContextView"
+        }
+    }
+}

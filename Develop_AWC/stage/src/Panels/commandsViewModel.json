@@ -1,0 +1,50 @@
+{
+    "commands": {
+        "FirstPanel": {
+            "iconId": "cmdWalk",
+            "title": "{{i18n.FirstPanelTitle}}",
+            "description": "{{i18n.FirstPanelDescription}}"
+        }
+    },
+    "commandHandlers": {
+        "FirstPanelHandler": {
+            "id": "FirstPanel",
+            "action": "activateFirstPanel",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        }
+    },
+    "commandPlacements": {
+        "FirstPanelaw_toolsAndInfo": {
+            "id": "FirstPanel",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        }
+    },
+    "actions": {
+        "activateFirstPanel": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "FirstPanel",
+                "location": "aw_toolsAndInfo"
+            }
+        }
+    },
+    "conditions": {
+        "objectIsSelected": {
+            "expression": "ctx.selected"
+        }
+    },
+    "i18n": {
+        "FirstPanelTitle": [
+            "PanelsMessages"
+        ],
+        "FirstPanelDescription": [
+            "PanelsMessages"
+        ]
+    }
+}

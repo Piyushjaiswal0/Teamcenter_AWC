@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Kódování znaků",
+    "uvCheckoutTitle": "Rezervovat",
+    "uvCheckoutDesc": "Rezervujte výběr, abyste zabránili ostatním uživatelům v provádění změn.",
+    "cancelCheckoutTitle": "Zrušit rezervaci",
+    "Awp0CancelCheckoutDesc": "Zrušte rezervaci a vraťte změny zpět.",
+    "uvCheckinTitle": "Uvolnit",
+    "Awp0CheckinDesc": "Uvolněte objekt a uložte změny.",
+    "uvCodeWordWrapTitle": "Zalamování",
+    "uvCodeWordWrapDesc": "Rozdělte dlouhý text do více řádků."
+}

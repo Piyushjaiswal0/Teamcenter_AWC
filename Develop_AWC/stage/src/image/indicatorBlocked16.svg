@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <circle cx="8.0001" cy="8" r="8" class="aw-theme-iconOutline" fill="#464646"/>
+  <circle cx="8.0001" cy="8" r="7" fill="#ff8000"/>
+  <g>
+    <path d="m10.7544,3.8316c-.7903-.5233-1.7355-.8316-2.7543-.8316-2.7614,0-5,2.2386-5,5,0,1.0188.3083,1.9641.8316,2.7543l6.9227-6.9227Z" fill="#fff" fill-rule="evenodd"/>
+    <path d="m12.1685,5.2457l-6.9227,6.9227c.7903.5233,1.7355.8316,2.7543.8316,2.7614,0,5-2.2386,5-5,0-1.0188-.3083-1.9641-.8316-2.7543Z" fill="#fff" fill-rule="evenodd"/>
+  </g>
+</svg>

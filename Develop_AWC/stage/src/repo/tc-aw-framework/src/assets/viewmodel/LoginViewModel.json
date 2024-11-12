@@ -1,0 +1,18 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "loginRenderFunction",
+            "deps": "js/LoginService"
+        }
+    },
+    "dataProviders": {},
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "i18n": {},
+    "lifecycleHooks": {
+        "render": "render"
+    }
+}

@@ -1,0 +1,14 @@
+<aw-command-panel caption="{{i18n.FileVersionsPanelHeader}}" context="subPanelContext">
+    <div class="aw-layout-flexColumn" exist-when="ctx.showFileUploadPanel===true">
+        <aw-navigate-panel title="i18n.BACK_BUTTON_TITLE" pre-panel-id="DatasetHistoryWithSummary" panel-id="Awp0ReplaceDataset" action="resetFileUploadState" sub-panel-context="{upload:true}" active-state="data.activeState"></aw-navigate-panel>
+    </div>
+    <aw-include name="DatasetHistoryWithSummary" sub-panel-context="data.subPanelContext" exist-when="ctx.showFileUploadPanel===undefined"></aw-include>
+    <aw-panel-footer exist-when="ctx.showFileUploadPanel===undefined">
+        <aw-button button-type="base" action="downloadFile" enable-when="data.subPanelContext.selected">
+            <aw-i18n>i18n.DownloadVersionButton</aw-i18n>
+        </aw-button>
+        <aw-button action="restoreVersionHandler" enable-when="conditions.isPanelObjectModifiable && conditions.isPreviousRevisionSelected">
+            <aw-i18n>i18n.RestoreVersionButton</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

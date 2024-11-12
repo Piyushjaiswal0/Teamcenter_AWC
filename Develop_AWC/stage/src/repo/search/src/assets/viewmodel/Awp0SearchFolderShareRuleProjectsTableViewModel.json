@@ -1,0 +1,167 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "data": {
+        "projectsTableSearchBox": {
+            "displayName": "{{i18n.filterPanelCategoryFilterPlaceholderText}}",
+            "type": "STRING",
+            "requiredText": "{{i18n.filterPanelCategoryFilterPlaceholderText}}"
+        }
+    },
+    "actions": {
+        "loadData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2017-05-ProjectLevelSecurity",
+            "method": "getProjectsForAssignOrRemove",
+            "inputData": {
+                "projectsInput": [ {
+                    "user": "{{ctx.user}}",
+                    "selectedObjects": [ {
+                        "uid": "{{ctx.xrtSummaryContextObject.uid}}",
+                        "type": "{{ctx.xrtSummaryContextObject.type}}"
+                    } ],
+                    "assignedObjects": [],
+                    "filterText": "{{data.projectsTableSearchBox.dbValue}}",
+                    "isAceContext": false,
+                    "paginationInfo": {
+                        "startIndexForAvailableProjects": "{{data.dataProviders.gridDataProvider.startIndex}}",
+                        "maxToReturnForAvailableProjects": "{{function:getDefaultPageSize}}"
+                    }
+                } ]
+            },
+            "outputData": {
+                "projects": "availableProjectList"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "searchFolderShareRuleProjectList.refresh"
+                    }
+                ]
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "TC_Project",
+                        "properties":
+                        [
+                            {
+                                "name": "project_id"
+                            },
+
+                            {
+                                "name": "project_name"
+                            },
+                            {
+                                "name": "icon"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "gridDataProvider"
+        },
+        "updateSharedWithStateWithAddAndRemoveButtonVisibility": {
+            "actionType": "JSFunction",
+            "method": "disableButton",
+            "inputData": {
+                "buttonName": "remove",
+                "dataProvider": "{{data.dataProviders.gridDataProvider}}",
+                "currentSearchFolderAccessors": [],
+                "searchFolderShareRuleState": "{{props.searchFolderShareRuleState}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "removeSelection": {
+            "actionType": "JSFunction",
+            "method": "removeSelectionsFromSearchFolderShareRule",
+            "inputData": {
+                "searchFolderShareRuleState": "{{props.searchFolderShareRuleState}}",
+                "dataProvider": "{{data.dataProviders.gridDataProvider}}"
+            },
+            "deps": "js/Awp0SearchFolderShareRuleService"
+        },
+        "removeSelectionBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "removeSelection"
+                }
+            ]
+        }
+    },
+    "dataProviders": {
+        "gridDataProvider": {
+            "action": "loadData",
+            "response": "{{data.projects}}",
+            "totalFound": "{{data.projects.length}}",
+            "selectionModelMode": "multiple"
+        }
+    },
+    "columnProviders": {
+        "clientScopeUI": {
+            "columns": [
+                {
+                    "name": "project_name",
+                    "width": 160,
+                    "displayName": "{{i18n.projectName}}",
+                    "enableColumnHiding": false
+                },
+                {
+                    "name": "project_id",
+                    "displayName": "{{i18n.projectId}}",
+                    "enableColumnHiding": false
+                }
+            ],
+            "sortCriteria": "{{ctx.sublocation.sortCriteria}}"
+        }
+    },
+    "grids": {
+        "gridProjectsView": {
+            "dataProvider": "gridDataProvider",
+            "columnProvider": "clientScopeUI",
+            "gridOptions": {
+                "enableGridMenu": false,
+                "enablePinning": false
+            }
+        }
+    },
+    "props": {
+        "search-folder-share-rule-state": {
+            "type": "object"
+        }
+    },
+    "functions": {
+        "getDefaultPageSize":
+        {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "gridDataProvider.selectionChangeEvent",
+            "action": "updateSharedWithStateWithAddAndRemoveButtonVisibility"
+        }
+    ],
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "removeSelectionBatchJob",
+            "observers": [ "props.searchFolderShareRuleState" ]
+        }
+    },
+    "i18n": {
+        "filterPanelCategoryFilterPlaceholderText": [ "SearchMessages" ],
+        "projectName": [ "SearchMessages" ],
+        "projectId": [ "SearchMessages" ]
+    }
+}

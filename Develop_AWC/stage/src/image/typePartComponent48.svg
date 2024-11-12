@@ -1,0 +1,24 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="14.4997" y1="4.6406" x2="32.5003" y2="22.6412" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="2.218" y1="16.9223" x2="26.782" y2="41.4864" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2-2" x1="18.3811" y1="29.169" x2="28.6189" y2="39.4068" xlink:href="#New_Gradient_Swatch_2"/>
+  </defs>
+    <polygon points="23.5 24.05 41.5 13.641 41.5 34.36 23.5 44.768 23.5 24.05" fill="#3c91af"/>
+    <polygon points="5.5 13.64 23.47 3.232 41.5 13.641 23.5 24.05 5.5 13.64" fill="url(#New_Gradient_Swatch_1)"/>
+    <polygon points="23.5 24.05 23.5 44.768 5.5 34.359 5.5 13.64 23.5 24.05" fill="url(#New_Gradient_Swatch_2)"/>
+    <line x1="23.5" y1="24.0501" x2="23.5" y2="44.5257" stroke="#147391" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_2-2)"/>
+  <polyline points="41.5 13.641 23.5 24.05 5.5 13.64" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polygon points="23.47 3.232 5.5 13.64 5.5 34.359 23.5 44.768 41.5 34.36 41.5 13.641 23.47 3.232" fill="none" stroke="#464646" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<path d="M14.973,8.67h.015V0H-.021V11H6v-1H.979V1H7v7h1V1h5.987V7.753c-.713-.474-1.567-.753-2.487-.753-2.485,0-4.5,2.015-4.5,4.5s2.015,4.5,4.5,4.5,4.5-2.015,4.5-4.5c0-1.078-.395-2.055-1.027-2.83Zm-3.473,6.43c-1.985,0-3.6-1.615-3.6-3.6s1.615-3.6,3.6-3.6,3.6,1.615,3.6,3.6-1.615,3.6-3.6,3.6Z" fill="#464646"/>
+<path d="M11.854,9.854l-.707-.707-1.93,1.929c-.234,.234-.234,.615,0,.849l1.93,1.929,.707-.707-1.146-1.146h3.293v-1h-3.293l1.146-1.146Z" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="6 2 2 2 2 3 6 3" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="6 4 2 4 2 5 6 5" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="13 2 9 2 9 3 13 3" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="13 4 9 4 9 5 13 5" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="13 6 9 6 9 7 11.5 7 13 7" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="6 6 2 6 2 7 6 7" class="aw-theme-iconOutline" fill="#464646"/>
+<polyline points="5 8 2 8 2 9 5 9" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

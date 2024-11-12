@@ -1,0 +1,11 @@
+<aw-search-box prop="data.rootClass" placeholder="data.searchTip.dbValue" action="rootClassUpdate"></aw-search-box>
+<aw-panel-body>
+    <aw-list dataprovider="data.dataProviders.rootClassListProvider">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="rootClassAdd" enable-when="data.dataProviders.rootClassListProvider.selectedObjects.length > 0" size="auto">
+        <aw-i18n>i18n.addChartCommand</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

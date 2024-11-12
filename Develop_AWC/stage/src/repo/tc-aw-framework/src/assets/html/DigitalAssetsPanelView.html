@@ -1,0 +1,14 @@
+<aw-command-panel caption="{{data.dataProviders.inUseList.assetPanelTitle}}" context="subPanelContext">
+    <aw-panel-body>
+         <aw-panel-section caption="{{data.inUseSectionTitle}}">
+             <aw-list props="data.inUse" dataprovider="data.dataProviders.inUseList" i18n="i18n" >
+                <aw-revision-cell vmo="{{item}}" i18n="i18n"></aw-revision-cell>
+             </aw-list>
+        </aw-panel-section>
+         <aw-panel-section caption="i18n.updatesSectionTitle">
+             <aw-list props="data.updatesList" dataprovider="data.dataProviders.updatesList" i18n="i18n">
+                <aw-revision-cell vmo="{{item}}" i18n="i18n"></aw-revision-cell>
+             </aw-list>
+        </aw-panel-section>
+    </aw-panel-body>
+</aw-command-panel>

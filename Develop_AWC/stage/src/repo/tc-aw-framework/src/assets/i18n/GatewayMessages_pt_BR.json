@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Início",
+    "pinObjectCommandTitle": "Fixar ao Início",
+    "unPinObjectCommandTitle": "Remover do Início",
+    "pinObjectFailed": "Falha ao anexar.",
+    "unPinObjectFailed": "Falha ao desafixar.",
+    "tileUpdateFailedMsg": "Falha na atualização do Bloco.",
+    "pinObjectFailedNoGateway": "Ocorreu um problema ao acessar seu início.",
+    "pinObjectMultipleObjectError": "Somente um objeto pode ser fixado por vez. Os objetos adicionais serão ignorados.",
+    "unpinTileFailed": "Falha ao desafixar.",
+    "homeFolderTitle": "Pastas",
+    "Awp0ShowHomeFolderDesc": "Abra sua pasta de Início",
+    "Awp0PinObjectDesc": "Adicione a seleção à sua página inicial como um bloco."
+}

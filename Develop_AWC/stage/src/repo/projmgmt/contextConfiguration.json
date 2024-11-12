@@ -1,0 +1,22 @@
+{
+  "contexts": {
+    "projectContext": {
+      "view": "projectContext"
+    },
+    "locationContext": {
+      "view": "locationContext"
+    }
+  },
+  "placements": {
+    "projectPlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "projectContext",
+      "priority": 20
+    },
+    "locationPlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "locationContext",
+      "priority": 50
+    }
+  }
+}

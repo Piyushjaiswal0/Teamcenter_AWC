@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "お気に入り",
+    "myFavorites": "お気に入り",
+    "myRecentViewedObjects": "最近使用したお気に入り",
+    "addToFavoritesCommandTitle": "お気に入りに追加",
+    "addToFavoritesConfirmation": "選択したオブジェクトは、お気に入りに追加されました",
+    "addToFavoritesFailed": "お気に入りへの追加に失敗しました",
+    "removeFromFavoritesCommandTitle": "お気に入りから除去",
+    "removeFromFavoritesConfirmation": "選択したオブジェクトは、お気に入りから除去されました",
+    "removeFromFavoritesFailed": "お気に入りへの追加に失敗しました",
+    "Awp0AddToFavoritesDesc": "選択内容をお気に入りリストに追加します。",
+    "Awp0RemoveFromFavoritesDesc": "お気に入りリストから選択を除去します。",
+    "noFavoritesFound": "ここにお気に入りはありません",
+    "noFavoritesFoundHint": "お気に入りにオブジェクトを追加するには、オブジェクトを選択して、お気に入りに追加コマンドを使用します。",
+    "noRecentsFound": "最近のアクティビティがありません",
+    "noRecentsFoundHint": "現在、表示するアイテムはありません。",
+    "nothingSelected": "何も選択されていません。",
+    "nothingSelectedSWAHint": "リスト内のアイテムを選択して、詳細を表示します。"
+}

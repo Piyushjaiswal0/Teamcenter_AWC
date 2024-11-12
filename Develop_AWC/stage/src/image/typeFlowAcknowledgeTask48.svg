@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <path d="M28.793,38.5l6-6H18.9463A12.46,12.46,0,0,1,6.5,20.0542V8.5h5V20.0141A7.495,7.495,0,0,0,18.9868,27.5H34.793l-6-6L32,18.2934,43.707,30,32,41.7075Z" fill="#3c91af"/>
+    <path d="M11,9V20.0138A7.9867,7.9867,0,0,0,18.9867,28H36l-6.5-6.5L32,19,43,30,32,41l-2.5-2.5L36,32H18.9464A11.9463,11.9463,0,0,1,7,20.0541V9h4m1-1H6V20.0541A12.961,12.961,0,0,0,18.9464,33H33.5858l-4.7929,4.7929-.7071.7071.7071.7072,2.5,2.5L32,42.4147l.7071-.7071,11-11L44.4142,30l-.7071-.7071-11-11L32,17.5862l-.7071.7071-2.5,2.5-.7071.7071.7071.7072L33.5858,27H18.9867A6.9945,6.9945,0,0,1,12,20.0138V8Z" fill="#147391"/>
+</svg>

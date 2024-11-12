@@ -1,0 +1,214 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "createReport":{
+            "actionType": "Navigate",
+            "navigateTo": "createReportTemplate",
+            "navigationParams": {
+                "searchCriteria": "{{props.subPanelContext.searchState.criteria.searchString}}",
+                "filter": "{{ctx.state.params.filter}}",
+                "previewMode": "false",
+                "reportType": "4"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "revealAction": {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "checkForDashboardConfigCommand": {
+            "actionType": "JSFunction",
+            "method": "checkForDashboardConfigCommand",
+            "inputData": {
+                "data": "{{data.dataProviders.listDataProvider.selectedObjects[0]}}"
+            },
+            "deps": "js/reportsCommonService"
+        },
+        "updateDataProvider": {
+            "actionType": "JSFunction",
+            "method": "updateDataProvider",
+            "inputData": {
+                "searchData": "{{props.subPanelContext.searchState}}",
+                "searchResults": "{{data.searchResults}}",
+                "data": "{{data.dataProviders.listDataProvider}}"
+            },
+            "deps": "js/showReportBuilderReportsService"
+        },
+        "getreportdefinitionList":{
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "deps": "js/showReportBuilderReportsService",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "attributesToInflate": [ "rd_name", "rd_type" ],
+                    "maxToLoad": -1,
+                    "maxToReturn": -1,
+                    "providerName": "Rb0ReportsDataProvider",
+                    "searchCriteria": "{{function:getReportDefSearchCriteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.provider.context.search.sortType}}",
+                    "startIndex": "{{data.dataProviders.listDataProvider.startIndex}}",
+                    "searchFilterMap6": "",
+                    "searchSortCriteria": ""
+                },
+
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0ReportBuilder"
+                }
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [ {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "{{function:getReportDefinitionValList}}"
+            }
+        },
+        "performSelectionAndRunReport": {
+            "actionType": "JSFunction",
+            "method": "performSelectionAndRunReport",
+            "deps": "js/showReportBuilderReportsService",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.listDataProvider.selectionModel}}",
+                "selectedReport": "{{data.eventData.selectedReport}}",
+                "ctx": "{{ctx}}"
+            }
+        },
+        "resetDataProviderAndSelectFirstItem": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "resetDataProvider"
+            }, {
+                "action": "selectFirstItem"
+            }]
+        },
+        "resetDataProvider": {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.listDataProvider.selectionModel}}",
+                "newSelection": "{{props.subPanelContext.searchState.saveAsReportUID}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "updateSelection":{
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.listDataProvider.selectionModel}}",
+                "newSelection": "{{props.subPanelContext.searchState.previousSelectedReport}}"
+            },
+            "deps": "js/selectionModelFactory"
+        }
+    },
+    "dataProviders": {
+        "listDataProvider": {
+            "action": "getreportdefinitionList",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{selectionModels.listSelectionModel}}",
+                "selectionData": "{{props.subPanelContext.selectionData}}"
+            },
+            "commandsAnchor": "reportdefinition_cell_commands"
+        }
+    },
+    "selectionModels": {
+        "listSelectionModel": {
+            "selectionMode": "single"
+        }
+    },
+    "functions": {
+        "getReportDefinitionValList": {
+            "functionName": "getReportDefinitionValList",
+            "parameters": [
+                "{{subPanelContext.searchState}}",
+                "{{data.preferenceName}}",
+                "{{i18n}}"
+            ]
+        },
+        "getReportDefSearchCriteria":{
+            "functionName": "getReportDefSearchCriteria",
+            "parameters":[]
+        }
+    },
+    "onEvent": [ {
+            "eventId": "dataProvider.reset",
+            "action": "revealAction"
+        },
+        {
+            "eventId": "selectReportAndDisplayGenerateReportPanel",
+            "action": "performSelectionAndRunReport",
+            "cacheEventData": true
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount" : "revealAction",
+        "onUpdate": [{
+            "action": "updateDataProvider",
+            "observers": [
+                "props.subPanelContext.searchState.criteria.searchString",
+                "props.subPanelContext.searchState.filterString"
+            ]
+        },{
+            "action": "checkForDashboardConfigCommand",
+            "observers": ["props.subPanelContext.selectionData.selected"]
+        }, {
+            "action": "resetDataProviderAndSelectFirstItem",
+            "observers": ["props.subPanelContext.searchState.saveAsReportUID"]
+        },{
+            "action": "updateSelection",
+            "observers": ["props.subPanelContext.searchState.previousSelectedReport"]
+        }]
+    },
+    "i18n":{
+        "sharedWith":["ReportChartMessages"],
+        "noReportTemplates": ["ReportChartMessages"],
+        "emptyReportAreaHint": ["ReportChartMessages"],
+        "createReport": ["ReportChartMessages"]
+    }
+}

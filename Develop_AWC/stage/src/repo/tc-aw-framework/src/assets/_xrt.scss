@@ -1,0 +1,519 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+.aw-xrt-sectionRenderingContent {
+    height: 100%;
+    width: 100%;
+}
+
+.aw-xrt-headerPanel {
+    float: left;
+    padding-bottom: 27px;
+}
+
+.aw-xrt-sectionTabTitleContainer {
+    float: left;
+    margin: 0 13px 0 0;
+    padding: 0 13px 0 0;
+    display: block;
+    max-height: 43px;
+    max-width: 611px;
+    min-width: 400px;
+}
+
+.aw-xrt-sectionTabTitle {
+    float: left;
+    margin-right: 27px;
+    font-weight: 200;
+    font-size: $fontsize_2x_large;
+    text-decoration: none;
+}
+
+.aw-xrt-sectionTabTitle:link,
+.aw-xrt-sectionTabTitle:visited {
+    text-decoration: none;
+}
+
+.aw-xrt-sectionTabTitle:hover {
+    text-decoration: none;
+}
+
+.aw-xrt-sectionTabTitleSelected {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 1px 3px;
+}
+
+.aw-xrt-sectionTabTitleSelected:link,
+.aw-xrt-sectionTabTitleSelected:visited,
+.aw-xrt-sectionTabTitleSelected:hover {
+    text-decoration: none;
+}
+
+.aw-xrt-sectionTabContainer {
+    margin-bottom: 7px;
+}
+
+.aw-xrt-sectionTabContainerForGallery {
+    float: left;
+    margin-bottom: 7px;
+    width: 624px;
+    height: 429px;
+    overflow: hidden;
+}
+
+.aw-xrt-sectionTabContainerForDetails {
+    float: left;
+    margin-bottom: 7px;
+    width: 551px;
+    height: 627px;
+    overflow: hidden;
+}
+
+.aw-xrt-sectionTabContainerForDetails:hover {
+    overflow: auto;
+}
+
+.aw-xrt-classificationDataPanel {
+    float: left;
+    display: block;
+    min-width: 293px;
+    width: 100%;
+    min-height: 27px;
+}
+
+.aw-xrt-separator {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid;
+    padding-bottom: 13px;
+    margin-bottom: 13px;
+    clear: both;
+}
+
+.aw-xrt-sectionBreak {
+    height: 1em;
+}
+
+.aw-xrt-label {
+    font-size: $fontsize_small;
+    padding-bottom: 10px;
+}
+
+.aw-xrt-headerImage {
+    border: none;
+    width: 107px;
+    height: 107px;
+    background: none;
+    background-size: 107px 107px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    float: left;
+    display: inline;
+    margin-right: 7px;
+}
+
+.aw-xrt-headerContent {
+    float: left;
+}
+
+.aw-xrt-headerTitle {
+    margin-bottom: 11px;
+}
+
+.aw-xrt-headerProperties {
+    float: left;
+}
+
+.aw-xrt-headerName {
+    display: inline;
+    font-size: $fontsize_5x_large;
+    white-space: nowrap;
+    vertical-align: top;
+    margin-right: 11px;
+}
+
+.aw-xrt-headerActions {
+    height: 37px;
+    width: 160px;
+    margin-left: 13px;
+    vertical-align: top;
+}
+
+.aw-xrt-objectSetPanel {
+    min-width: inherit;
+    /* child should take parent's min-width */
+}
+
+.aw-xrt-objectSetToolbar {
+    overflow: hidden;
+    min-height: 45px;
+}
+
+@media all and (max-width: $narrowMode_max_width) {
+    aw-command-bar[anchor="aw_objectSet"] {
+        visibility: hidden;
+    }
+}
+
+.aw-xrt-objectSetCommandPanel {
+    display: inline;
+    float: right;
+}
+
+.aw-xrt-objectSetCommandPanel .aw-commands-svg,
+.aw-xrt-objectSetToolbar .aw-commands-svg {
+    width: 22px;
+    height: 22px;
+    padding: 1px;
+}
+
+.aw-xrt-noFileLabel {
+    font-size: $fontsize_x_large;
+    margin-top: 27px;
+    width: 100%;
+}
+
+.aw-xrt-viewerPanel {
+    float: left;
+    display: block;
+    width: 98%;
+    height: 98%;
+    overflow: hidden;
+}
+
+.sw-section-content .aw-layout-panelContent {
+    padding: 0;
+}
+
+.aw-xrt-thumbnailImagePanel {
+    float: left;
+    display: block;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+}
+
+.aw-xrt-thumbnailImage {
+    display: block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.aw-xrt-thumbnailImage .aw-base-icon {
+    height: 64px;
+    width: 64px;
+}
+
+.aw-xrt-thumbnailImage>img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.aw-layout-panel .aw-xrt-thumbnailImage {
+    /* ct 042915 */
+    margin: 0 auto 0 0;
+}
+
+.aw-tcXrt-summaryXrt {
+    /* CT 081815 */
+    height: 100%;
+}
+
+.aw-xrt-summaryXrt .aw-layout-column {
+    padding-right: 10px;
+    min-width: 200px;
+    overflow-x: hidden;
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: calc(100% - 20px);
+    height: 100%;
+}
+
+.aw-xrt-summaryXrt .aw-layout-panelContent {
+    overflow: inherit;
+    /* Without this Declarative Summary doesn't get scroll bars. */
+}
+
+aw-walker-view,
+.aw-xrt-summaryXrt .aw-layout-panelContent .aw-jswidget-tabPage .aw-layout-panelBody {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* Without this Declarative Summary XRT page doesn't wrap columns */
+}
+
+
+
+.aw-xrt-summaryXrt {
+    /* CT 081815 */
+    height: inherit;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+
+
+.aw-xrt-tabsContainer {
+    /* CT 092115 */
+    padding: 0 0 4px;
+    margin-bottom: $margin_normal;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+.aw-xrt-summaryContainer {
+    width: 100%;
+}
+
+.aw-xrt-columnContentPanel {
+    float: left;
+    display: block;
+    padding-right: 16px;
+    min-width: 180px;
+    overflow-x: hidden;
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: calc(100% - 20px);
+}
+
+.aw-layout-panel .aw-xrt-columnContentPanel {
+    min-width: 100%;
+}
+
+.aw-xrt-xrtPage input,
+.aw-xrt-xrtPage textarea {
+    /* CT 091815 */
+    margin: 2px 0 0 0;
+}
+
+@media all and (max-width: 37.5em) {
+    .aw-xrt-columnContentPanel {
+        min-width: 100%;
+    }
+}
+
+.summaryXRT-objectSetContent {
+    float: left;
+    display: block;
+    padding: 5px 0 1px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.summaryXRT-objectSetContent .aw-widgets-cellListItem {
+    margin: 0 5px 5px 0;
+}
+
+.aw-layout-sublocationContent .summaryXRT-objectSetContent:hover {
+    overflow: auto;
+}
+
+.aw-xrt-objectInfo .aw-layout-panelBody {
+    /* This hurts the IE solution. */
+    overflow: hidden;
+    /* This is only useful for IE touch. */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* iPad */
+    -webkit-overflow-scrolling: touch;
+}
+
+.aw-xrt-objectInfo .aw-layout-panelBody:hover {
+    overflow-y: auto;
+    /* Since the user is using a mouse to hover, restore the default value to avoid causing issues. */
+    -ms-overflow-style: auto;
+}
+
+@media screen and (-ms-high-contrast: none) {
+
+    /* Windows 8+ IE only */
+    .aw-xrt-objectInfo .aw-layout-panelBody {
+        overflow-y: auto;
+    }
+}
+
+.aw-tcXrt-showObjectPrimaryWorkArea {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    overflow: hidden;
+}
+
+.aw-tcXrt-showObjectPrimaryWorkArea .aw-layout-panelContent {
+    height: 100%;
+}
+
+.aw-tcXrt-showObjectPrimaryWorkArea .aw-layout-panelBody {
+    height: -webkit-calc(100% - 20px);
+    height: -moz-calc(100% - 20px);
+    height: calc(100% - 20px);
+}
+
+.aw-xrt-tablePropContent {
+    float: left;
+    display: block;
+    padding: 7px 0 1px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.aw-xrt-tablePropertyContainer {
+    overflow: visible;
+}
+
+.aw-xrt-tablePropCommandPanel .aw-toolbar-layout.aw-toolbar-horizontal {
+    margin-bottom: 0;
+}
+
+.aw-xrt-tablePropertyCommandIcon {
+    height: 40px;
+    width: 40px;
+    padding: 12px;
+    margin: 0;
+}
+
+.aw-xrt-tablePropertyCommandIcon .aw-commands-svg {
+    height: 16px;
+    width: 16px;
+    padding: 1px;
+}
+
+.aw-xrt-tablePropGrid {
+    height: 200px;
+}
+
+.aw-xrt-objectsetImageView {
+    height: 100%;
+    max-height: 410px;
+}
+
+.aw-walker-objectset ul.aw-widgets-cellListWidget {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+aw-xrt-summary,
+.aw-xrt-containerElem {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.aw-xrt-htmlPanelEnableResize,
+.aw-xrt-htmlPanelEnableResize .sw-column.aw-layout-wrap.flex-shrink,
+.aw-xrt-htmlPanelEnableResize .aw-layout-column.aw-layout-flexbox.aw-xrt-columnContentPanel,
+.aw-xrt-htmlPanelEnableResize .aw-xrtjs-htmlPanelContainer {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    height: 100%
+}
+
+.aw-xrt-htmlPanelEnableResize aw-walker-view>.aw-xrt-htmlPanelResizeColumn>aw-walker-element,
+.aw-xrt-htmlPanelEnableResize aw-walker-view>.aw-xrt-htmlPanelResizeSection .aw-layout-panelSectionContent>aw-walker-element {
+
+    >div,
+    >div>div,
+    >div>div>aw-walker-htmlpanel,
+    >div>div>aw-walker-htmlpanel>.aw-xrtjs-htmlPanelContainer,
+    >div>div>aw-walker-htmlpanel>.aw-xrtjs-htmlPanelContainer>.aw-jswidgets-htmlPanel,
+    >div>div>aw-walker-htmlpanel>.aw-xrtjs-htmlPanelContainer>.aw-jswidgets-htmlPanel>.aw-jswidgets-declarativeKeyCont,
+    >div>div>aw-walker-htmlpanel>.aw-xrtjs-htmlPanelContainer>.aw-jswidgets-htmlPanel>.aw-jswidgets-htmlPanelFrame {
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+
+.aw-xrt-htmlPanelEnableResize aw-walker-view .aw-xrt-htmlPanelResizeContainer {
+    width: 100%;
+}
+
+.aw-xrt-thumbnailImage,
+.aw-xrt-summaryXrt,
+.aw-xrt-columnContentPanel,
+.aw-xrt-element,
+aw-xrt-summary {
+    min-height: 1px;
+}
+
+aw-xrt-summary {
+    width: 100%;
+}
+
+aw-xrt-summary aw-walker-label .aw-widgets-propertyNonEditValue {
+    margin-bottom: 10px;
+}
+
+.aw-xrt-thumbnailImagePanel .aw-base-icon {
+    height: 64px;
+    width: 64px;
+}
+
+aw-xrt-sublocation {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    overflow: hidden;
+}
+
+aw-walker-classificationproperties>div>div:first-of-type {
+    padding-top: 14px;
+}
+
+.aw-xrt-objectSetContent ul.aw-widgets-cellListWidget.sw-column {
+    min-height: rem-calc(40);
+}

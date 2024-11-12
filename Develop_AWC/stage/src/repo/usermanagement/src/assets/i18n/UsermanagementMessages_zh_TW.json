@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "人員",
+    "organizationTitle": "組織",
+    "groupTitle": "群組",
+    "roleTitle": "角色",
+    "userTitle": "使用者",
+    "RevokeConsentTitle": "撤回同意",
+    "revokeGDPRConsentLabel": "撤回使用者同意",
+    "revokeConsentConfirmationMessage": "撤回同意將使您離開 Teamcenter",
+    "Group": "群組",
+    "DefaultRole":  "預設角色",
+    "DefaultGroup": "預設群組",
+    "cancel": "取消",
+    "revoke": "撤回",
+    "group": "群組",
+    "role": "角色",
+    "userMembershipTitle":"使用者成員",
+    "userCalendarNotExits":"無使用者工作日曆",
+    "addButtonText": "新增"
+}

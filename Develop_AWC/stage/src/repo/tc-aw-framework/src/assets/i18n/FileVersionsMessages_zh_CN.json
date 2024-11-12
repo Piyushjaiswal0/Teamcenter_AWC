@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "版本",
+    "FileVersionsPanelHeader": "数据集版本",
+    "DownloadVersionButton": "下载的版本",
+    "RestoreVersionButton": "恢复版本",
+    "RestoreFailureMessage": "未能恢复先前数据集版本。",
+    "UnsavedEditWarning": "{0} 具有未保存的更改。恢复数据集的先前版本将移除您正在进行的更改。",
+    "ConfirmButtonLabel": "继续",
+    "CancelButtonLabel": "取消"
+}

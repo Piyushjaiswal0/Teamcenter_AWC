@@ -1,0 +1,40 @@
+<%  if(vmo.props && vmo.props[ propName ]) {
+    var checked_out = vmo.props[ propName ].dbValue;
+    if( checked_out === 'Y' ){
+        var imagePath = basePath +'/image/';
+        var toolTip = "";
+        if( tooltipProps ){
+            _.forEach( tooltipProps, function( tooltipPropName ){
+                if( vmo.props[ tooltipPropName ] ){
+                    var toolTipPropName = vmo.props[ tooltipPropName ].propertyDisplayName;
+                    var toolTipPropVal =  vmo.props[ tooltipPropName ].uiValue;
+                    if( toolTipPropVal ){
+                        toolTip += toolTipPropName + ": " + toolTipPropVal + '\n'
+                    }
+                }
+            });
+        }
+
+        if( vmo.props.checked_out_user ) {
+            var checked_out_user = vmo.props.checked_out_user.dbValues[0];
+            var checkoutObject = dependentServices[ 0 ].getObject(checked_out_user);
+            if( checked_out_user && checkoutObject )
+            {
+                if( checkoutObject.modelType.typeHierarchyArray.indexOf( 'POM_imc' ) > -1 )
+                {
+                    imagePath += "indicatorBriefcaseCheckOut16.svg"
+                }
+                else
+                {
+                    imagePath += "indicatorCheckedOut16.svg"
+                }
+            }
+        }
+        else
+        {
+           imagePath += "indicatorCheckedOut16.svg"
+        }
+
+    %>
+<img src ="<%=imagePath%>" title="<%=toolTip%>" alt="<%=toolTip%>" class="aw-visual-indicator">
+<%}}%>

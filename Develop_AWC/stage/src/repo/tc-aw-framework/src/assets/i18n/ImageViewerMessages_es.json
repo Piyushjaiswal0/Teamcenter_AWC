@@ -1,0 +1,6 @@
+{
+    "rotateClockwise": "Rotar en sentido horario",
+    "rotateCounterclockwise": "Rotar en sentido antihorario",
+    "rotateCWDesc": "Rote 90 º el archivo en el sentido horario.",
+    "rotateCCWDesc": "Rote 90 ° el archivo en el sentido antihorario."
+}

@@ -1,0 +1,25 @@
+<div class="aw-search-searchFolderSharingTab">
+    <div class="aw-layout-flexColumn">
+        <div class="aw-layout-flexRowContainer">
+            <aw-column class="aw-search-searchFolderAvailableTable">
+                <aw-panel-section caption="i18n.availableTable">
+                    <aw-radiobutton prop="data.searchFolderShareRuleOption"></aw-radiobutton>
+                    <awp0-search-folder-share-rule-projects-table 
+                        exist-when="!data.searchFolderShareRuleOption.dbValue"
+                        search-folder-share-rule-state="data.searchFolderShareRuleState">
+                    </awp0-search-folder-share-rule-projects-table>
+                    <awp0-search-folder-share-rule-organization 
+                        exist-when="data.searchFolderShareRuleOption.dbValue"
+                        search-folder-share-rule-state="data.searchFolderShareRuleState">
+                    </awp0-search-folder-share-rule-organization>
+                </aw-panel-section>
+            </aw-column>
+            <aw-command-bar class="aw-search-searchFolderAccessor" anchor="aw_searchFolderAccessorToolbar" context="{searchFolderShareRuleState: data.searchFolderShareRuleState}" exist-when="data.showAddRemoveButtons"></aw-command-bar>
+            <aw-column class="aw-search-searchFolderSharedWithTable">
+                <aw-panel-section caption="i18n.sharedWithTable">
+                    <awp0-search-folder-share-rule-accessors-table search-folder-share-rule-state="data.searchFolderShareRuleState"></awp0-search-folder-share-rule-accessors-table>
+                </aw-panel-section>
+            </aw-column>
+        </div>
+    </div>
+</div>

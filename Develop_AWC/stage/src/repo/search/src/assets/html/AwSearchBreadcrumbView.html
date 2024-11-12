@@ -1,0 +1,5 @@
+<div class='aw-search-breadcrumb sw-row'>
+    <aw-search-breadcrumb-title crumb-title='data.crumbTitle'></aw-search-breadcrumb-title>
+    <aw-search-breadcrumb-chips search-object='props.subPanelContext.searchState'></aw-search-breadcrumb-chips>
+    <aw-search-breadcrumb-unreadable-count exist-when="props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount.length > 0 && props.subPanelContext.searchState.totalFound >= 0" count='props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount[0]'></aw-search-breadcrumb-unreadable-count>
+</div>

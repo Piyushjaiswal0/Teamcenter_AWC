@@ -1,0 +1,13 @@
+<div class="aw-xrt-objectSetContent aw-layout-flexColumn">
+    <div class="aw-xrt-objectSetToolbar">
+        <aw-toolbar first-anchor="aw_objectSet,aw_searchFolderContentsSelectionSet" second-anchor="aw_searchFolderContentsExportSet"
+        reverse-second="true" orientation="HORIZONTAL" context="subPanelContext"></aw-toolbar>
+    </div>
+    <aw-flex-row>
+        <aw-scrollpanel>
+            <aw-list class="aw-search-activefolderContents" dataprovider="data.dataProviders.listDataProvider" has-floating-cell-commands="true" show-decorators="true" show-context-menu="true" show-check-box="data.dataProviders.listDataProvider.selectionModel.multiSelectEnabled">
+                <aw-image-cell vmo="item"></aw-image-cell>
+            </aw-list>
+        </aw-scrollpanel>
+    </aw-flex-row>
+</div>

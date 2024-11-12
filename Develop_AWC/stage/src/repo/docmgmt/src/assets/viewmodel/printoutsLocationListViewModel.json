@@ -1,0 +1,89 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [],
+
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+
+        "loadData":
+        {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData":
+            {
+                "searchInput":
+                {
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "startIndex": "{{data.dataProviders.imageDataProvider.startIndex}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}"
+                },
+
+                "columnConfigInput":
+                {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}"
+                }
+            },
+
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "output": "{{function:processOutput}}"
+            },
+
+            "deps": "js/printoutsLocationService"
+        }
+    },
+
+    "dataProviders":
+    {
+        "listDataProvider":
+        {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "reports_cell_commands"
+        }
+    },
+    "functions": {
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "reveal",
+            "observers": [
+                "props.subPanelContext.searchState.criteria.searchString",
+                "props.subPanelContext.searchState.filterString"
+            ]
+        }
+    },
+    "i18n":{
+        "noPrintedReport": [
+            "ReportChartMessages"
+        ],
+        "noPrintedReportHint": [
+            "ReportChartMessages"
+        ]
+    }
+}

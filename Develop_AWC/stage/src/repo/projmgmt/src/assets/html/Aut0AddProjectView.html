@@ -1,0 +1,16 @@
+<aw-command-panel caption="i18n.AddProjectLabel" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section caption="i18n.propertiesSection">
+            <aw-textbox prop="data.ProjectId"></aw-textbox>
+            <aw-textbox prop="data.ProjectName"></aw-textbox>
+            <aw-widget prop="data.ProjectDesc" ></aw-widget>
+            <aw-widget prop="data.ProjectCategory"></aw-widget>
+            <aw-radiobutton class="sw-column" prop = "data.useProgramSecurity" > </aw-radiobutton>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-panel-section>
+            <aw-button action="createProject" visible-when="awPanelBody.$valid"><aw-i18n>i18n.addButton</aw-i18n></aw-button>
+        </aw-panel-section>
+    </aw-panel-footer>
+</aw-command-panel>

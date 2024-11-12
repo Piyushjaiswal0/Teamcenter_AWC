@@ -1,0 +1,25 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0.5" y1="0.5" x2="47.5" y2="47.5">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" d="M20.5,20.5h-20v-20h20V20.5z M44.5,20.5h-20v-20h20V20.5z
+	 M20.5,44.5h-20v-20h20V44.5z M47.5,47.5h-20v-20h20V47.5z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="9.7722" y1="9.7722" x2="35.2281" y2="35.2281">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<circle fill="url(#SVGID_2_)" stroke="#464646" stroke-miterlimit="10" cx="22.5" cy="22.5" r="18"/>
+<circle fill="none" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" cx="22.5" cy="22.5" r="11"/>
+<line fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="22.5" y1="8" x2="22.5" y2="19"/>
+<line fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="22.5" y1="26" x2="22.5" y2="37"/>
+<line fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="26" y1="22.5" x2="37" y2="22.5"/>
+<line fill="none" stroke="#FFFFFF" stroke-linejoin="round" stroke-miterlimit="10" x1="8" y1="22.5" x2="19" y2="22.5"/>
+</svg>

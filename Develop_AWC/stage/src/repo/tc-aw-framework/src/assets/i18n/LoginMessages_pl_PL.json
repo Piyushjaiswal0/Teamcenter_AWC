@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "Nazwa użytkownika",
+    "PASSWORD_PLACEHOLDER": "Hasło",
+    "SIGN_IN_TEXT": "Zaloguj",
+    "LOGIN_TEXT": "Zaloguj",
+    "LOGGING_IN_TEXT": "Logowanie do",
+    "UNABLE_TO_CONNECT": "Użytkownik nie został zalogowany z powodu błędu wewnętrznego.",
+    "VERSION_TEXT": "Wersja",
+    "COPYRIGHT_DATE_TEXT": "Nieopublikowana praca.",
+    "COPYRIGHT_MESSAGE": "Niniejszy materiał zawiera tajemnice handlowe lub inne poufne informacje należące do firmy Siemens Industry Software Inc. lub jej spółek zależnych (zwanych zbiorczo \"Siemens\") lub jej licencjodawców. Dostęp do tych informacji i korzystanie z nich jest ściśle ograniczone zgodnie z obowiązującymi umowami zawartymi pomiędzy Klientem a firmą Siemens."
+}

@@ -1,0 +1,232 @@
+{
+    "schemaVersion": "1.0.0",
+    "props": {
+        "show-pre-filter": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "active-search": {
+            "type": "object"
+        },
+        "expand": {
+            "type": "object"
+        },
+        "search-state": {
+            "type": "object"
+        },
+        "search-prop": {
+            "type": "field"
+        },
+        "show-suggestions": {
+            "type": "object"
+        },
+        "search-history-cache": {
+            "type": "string"
+        },
+        "suggestion-action": {
+            "type": "action"
+        },
+        "show-popup": {
+            "type": "object"
+        },
+        "prefilter1": {
+            "type": "field"
+        },
+        "prefilter1-provider": {
+            "type": "object"
+        },
+        "prefilter2": {
+            "type": "field"
+        },
+        "prefilter2-provider": {
+            "type": "object"
+        },
+        "prefilter3": {
+            "type": "field"
+        },
+        "prefilter3-provider": {
+            "type": "object"
+        },
+        "action": {
+            "type": "action"
+        },
+        "conditions": {
+            "type": "object"
+        },
+        "show": {
+            "type": "field"
+        },
+        "search-action": {
+            "type": "action"
+        },
+        "search-box-prop": {
+            "type": "object"
+        },
+        "options": {
+            "type": "object"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awsuggestivesearchrender",
+            "deps": "js/AwSuggestiveSearchBoxService"
+        },
+        "initAwSearch": {
+            "actionType": "JSFunction",
+            "method": "initAwSearch",
+            "inputData": {
+                "userUidString": "{{ctx.user.uid}}"
+            },
+            "outputData": {},
+            "deps": "js/awSearchControllerService"
+        },
+        "hintPopup": {
+            "actionType": "popup",
+            "options": {
+                "whenParentScrolls": "close",
+                "maxHeight": "200px",
+                "toggleMode": true,
+                "clickOutsideToClose": true,
+                "forceCloseOthers": true,
+                "autoFocus": false
+            }
+        },
+        "updatePrefilter2": {
+            "actionType": "JSFunction",
+            "method": "updatePrefilter2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+        "initialize2": {
+            "actionType": "JSFunction",
+            "method": "initialize2",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "deps": "js/globalSearchService"
+        },
+        "updateSearchHistoryCache": {
+            "actionType": "JSFunction",
+            "method": "updateSearchHistoryCache",
+            "inputData": {
+                "data": "{{props}}"
+            },
+            "deps": "js/searchCommonUtils"
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateSearchHistoryCache"
+                },
+                {
+                    "action": "addRemoveClickListener",
+                    "condition": "!props.show.value"
+                },
+                {
+                    "action": "initAwSearch"
+                }
+            ]
+        },
+        "addRemoveClickListener": {
+            "actionType": "JSFunction",
+            "method": "addRemoveClickListener",
+            "inputData": {
+                "expand": "{{props.expand}}"
+            },
+            "deps": "js/AwGlobalSearchBoxUtils"
+        },
+        "doGlobalSearch": {
+            "actionType": "JSFunction",
+            "method": "performGlobalSearch2",
+            "inputData": {
+                "criteria": "{{data.searchBox.dbValue}}",
+                "ownerPrefilter": "{{data.selectPrefilter1.dbValue}}",
+                "categoryPrefilter": "{{data.selectPrefilter2.dbValue}}",
+                "anySource": "{{data.anyDataSource.propDisplayValue}}"
+            },
+            "outputData": {
+                "owners": ""
+            },
+            "deps": "js/globalSearchService"
+        },
+        "expandCollapseSearchBox": {
+            "actionType": "JSFunction",
+            "method": "expandCollapseSearchBox",
+            "inputData": {
+                "expand": "{{props.expand}}",
+                "searchString": "{{data.searchBox.dbValue}}"
+            },
+            "deps": "js/AwGlobalSearchBoxUtils"
+        }
+    },
+    "dataProviders": {},
+    "onEvent": [],
+    "functions": {},
+    "data": {
+        "visibleSuggestions": {
+            "type": "BOOLEAN",
+            "dbValue": true
+        },
+        "defaultPrefilter1Value": {
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "defaultPrefilter2Value": {
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "defaultPrefilter3Value": {
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+    "conditions": {
+        "isPrefilter2Dirty": {
+            "expression": "!data.selectPrefilter2.dbValue || data.selectPrefilter2.dbValue === 'ANY'"
+        },
+        "isPrefilter3Dirty": {
+            "expression": "data.selectPrefilter3.dbValues.includes('Any Source')"
+        }
+    },
+    "messages": {},
+    "i18n": {
+        "advancedSearch": [
+            "SearchMessages"
+        ],
+        "Awp0SearchTitle": [
+            "SearchMessages"
+        ],
+        "advancedText": [
+            "SearchMessages"
+        ],
+        "searchBtn": [
+            "SearchMessages"
+        ],
+        "anySource": [
+            "SearchMessages"
+        ],
+        "Teamcenter": [
+            "SearchMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize",
+        "onUpdate": [
+            {
+                "action": "addRemoveClickListener",
+                "observers": [
+                    "props.expand.value"
+                ]
+            }
+        ]
+    }
+}

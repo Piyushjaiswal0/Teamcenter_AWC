@@ -1,0 +1,15 @@
+<div class="aw-base-scrollPanel" exist-when="data.searchResults.reportdefinitions.length === 0">
+    <aw-empty-workarea
+    image="graEmptyReportSummary128"
+    title="i18n.noReports"
+    hint="i18n.reportsDashboardHint"
+    action="actions.addReport"
+    link-visibility="true"
+    link-text="i18n.addDashboardReportWithPanelTitle">
+    </aw-empty-workarea>
+</div>
+<aw-scrollpanel exist-when="data.searchResults.reportdefinitions.length>0">
+    <aw-list dataprovider="data.dataProviders.listDataProvider">
+       <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+</aw-scrollpanel>

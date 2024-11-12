@@ -1,0 +1,359 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "fileUploadActions": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "condition": "conditions.isLocalFileImport",
+                "action": "startDataCreation"
+            },
+            {
+                "condition": "conditions.isFileImportFromXCShare",
+                "action": "XCfileUploadAction"
+            }
+            ]
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+             },
+          "deps": "js/dialogService"
+        },
+        "XCfileUploadAction":{
+
+            "actionType": "batchJob",
+            "steps": [{
+                "action": "updateCtxAndXcImportExcel"
+            },
+            {
+
+                "action": "getCreateRequestJSONForImport"
+            },
+            {
+                "action": "XCUploadFile"
+            }
+            ,
+            {
+                "action": "importExcel"
+            }
+            ]
+
+        },
+        "getCreateRequestJSONForImport": {
+            "actionType": "JSFunction",
+            "method": "getCreateRequestJSONForImport",
+            "inputData": {
+                "fileSelData": "{{subPanelContext.uploadFileSelectionData}}"
+            },
+            "outputData": {
+                "xcFileUploadRequest": ""
+            },
+            "deps": "js/ExcelImport"
+        },
+        "XCUploadFile": {
+            "actionType": "JSFunction",
+            "method": "xcUploadFileToFMS",
+            "inputData": {
+                "addReqInp": "{{data.xcFileUploadRequest}}"
+            },
+            "outputData": {
+                "fmsTicket": "fmsTicket"
+            },
+            "deps": "js/ExcelImport"
+        },
+        "updateCtxAndXcImportExcel":
+        {
+            "actionType": "JSFunction",
+            "method": "registerCtx",
+            "inputData": {
+                "name": "arm0ImportFromExcelProgressing",
+                "value": true
+            },
+            "deps": "js/appCtxService"
+
+        },
+
+        "updateCtxAndImportExcel":
+        {
+            "actionType": "JSFunction",
+            "method": "registerCtx",
+            "inputData": {
+                "name": "arm0ImportFromExcelProgressing",
+                "value": true
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "Arm0ImportExcelRequirement.importExcel"
+                    }
+                ]
+            },
+            "deps": "js/appCtxService"
+
+        },
+        "unregisterImportCmdContext": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "arm0ImportFromExcelProgressing"
+            }
+        },
+
+        "importExcel": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-ReqMgmt-2023-06-ExcelImportExport",
+            "method": "importExcelAndUpdateMappingGrp",
+            "inputData": {
+                "importExcelData": [ {
+                    "selectedObject": {
+                        "uid": "AAAAAAAAAAAAAA",
+                        "type": "unknownType"
+                    },
+                    "transientFileWriteTicket": "{{data.fmsTicket}}",
+                    "importOptions": "{{function:importOptions}}",
+                    "mappingGroupData": {
+                        "groupName": {
+                            "dispName": "",
+                            "realName": "",
+                            "isModifiable": false
+                        },
+                        "actionName": "",
+                        "mappingInfo": []
+                    },
+                    "typePropInfos": []
+                } ]
+            },
+            "outputData": {
+                "response": "",
+                "partialErrors": "ServiceData.partialErrors",
+                "updatedobjects":"ServiceData.updated"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name":"Arm0ImportExcelRequirement.unregisterImportCmdContext"
+                    },
+                    {
+                        "name": "acePwa.reset",
+                        "eventData": {
+                            "retainTreeExpansionStates":true,
+                            "viewToReset":"occmgmtContext"
+                        }
+                    },
+                    {
+                        "name": "requirementDocumentation.documentationTabRefresh"
+                    },
+                    {
+                        "name": "Arm0ImportExcelRequirement.refreshOccurenceObjects"
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name":"Arm0ImportExcelRequirement.unregisterImportCmdContext"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                    "message": "successImportSpecification"
+                } ],
+                "failure": [ {
+                    "condition": "partialErrors",
+                    "message": "errorMessageOnAction"
+                } ]
+            },
+            "deps": "js/ExcelImport"
+        },
+        "startDataCreation": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "importExcel.getTransientFileTicketsForExcelUpload",
+                    "condition": "subPanelContext.uploadFileSelectionData.selectedFileInfo.fileName && subPanelContext.uploadFileSelectionData.selectedFileInfo.validFile"
+                } ]
+            }
+        },
+
+        "getTransientFileTicketsForExcelUpload": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-FileManagement",
+            "method": "getTransientFileTicketsForUpload",
+            "inputData": {
+                "transientFileInfos": [ {
+                    "fileName": "{{subPanelContext.uploadFileSelectionData.selectedFileInfo.fileName}}",
+                    "isBinary": true,
+                    "deleteFlag": true
+                } ]
+            },
+
+            "outputData": {
+                "fmsTicket": "transientFileTicketInfos[0].ticket"
+            },
+
+            "events": {
+                "success": [ {
+                    "name": "fmsTicket.updateExcel"
+                } ]
+            }
+        },
+
+        "updateExcelImportFormData": {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "inputData": {
+                "formData": "{{subPanelContext.uploadFileSelectionData.selectedFileInfo.formData}}",
+                "key": "fmsTicket",
+                "value": "{{data.fmsTicket}}"
+            },
+            "events": {
+                "success": [
+
+                    {
+                        "name": "importExcel.gotTransientExcelFileTicket"
+                    }
+                ]
+            },
+
+            "deps": "js/fileUploadUtils"
+        },
+
+        "refreshOccurenceObjects": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-DataManagement",
+            "method": "refreshObjects",
+            "inputData": {
+                "objects": "{{function:getOccurrenceId}}"
+
+            },
+            "deps": "js/ExcelImport"
+
+        },
+        "uploadExcelFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+
+                    "data": "{{subPanelContext.uploadFileSelectionData.selectedFileInfo.formData}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "importExcel.updateCtxAndImportExcel"
+                    }
+                ]
+            }
+        }
+    },
+
+    "onEvent": [
+
+        {
+            "eventId": "importExcel.getTransientFileTicketsForExcelUpload",
+            "action": "getTransientFileTicketsForExcelUpload"
+        },
+        {
+            "eventId": "fmsTicket.updateExcel",
+            "action": "updateExcelImportFormData"
+        },
+
+        {
+            "eventId": "importExcel.gotTransientExcelFileTicket",
+            "action": "uploadExcelFile"
+        },
+        {
+            "eventId": "Arm0ImportExcelRequirement.importExcel",
+            "action": "importExcel"
+        },
+        {
+            "eventId":"closeDialog",
+            "action": "closePanelDialog"
+        },
+        {
+            "eventId": "Arm0ImportExcelRequirement.refreshOccurenceObjects",
+            "action": "refreshOccurenceObjects"
+        },
+        {
+            "eventId": "Arm0ImportExcelRequirement.unregisterImportCmdContext",
+            "action": "unregisterImportCmdContext"
+        },
+        {
+            "eventId":"importExcel.updateCtxAndImportExcel",
+            "action": "updateCtxAndImportExcel"
+        }
+    ],
+
+    "data": {
+
+    },
+
+    "functions": {
+        "importOptions": {
+            "functionName": "importOptions",
+            "parameters": [
+                "{{subPanelContext.conflict}}"
+            ]
+        },
+
+        "getOccurrenceId": {
+            "functionName": "getOccurrenceId",
+            "parameters": [
+                "{{updatedobjects}}"
+            ]
+        },
+        "getFmsTicket": {
+            "functionName": "getFmsTicket",
+            "parameters": [
+                "{{response}}"
+            ]
+        }
+    },
+    "conditions": {
+        "isValidExtension":{
+            "expression" :"subPanelContext.uploadFileSelectionData.selectedFileInfo.fileExt === 'xlsm'"
+        },
+        "isFileImportFromXCShare":{
+            "expression" :"subPanelContext.uploadFileSelectionData.selectedFile.projectId"
+        },
+        "isLocalFileImport":{
+            "expression" :"!subPanelContext.uploadFileSelectionData.selectedFile"
+        }
+    },
+    "messages": {
+        "successImportSpecification": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.successImportSpecification}}"
+        },
+        "errorMessageOnAction": {
+            "messageType": "ERROR",
+            "messageText": "{{data.partialErrors[0].errorValues[0].message}}"
+        }
+    },
+
+    "i18n": {
+        "import": [
+            "ExcelRoundTripMessages"
+        ],
+        "successImportSpecification": [
+            "ExcelRoundTripMessages"
+        ]
+
+    }
+
+}

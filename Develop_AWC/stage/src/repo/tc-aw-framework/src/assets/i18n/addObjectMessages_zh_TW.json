@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" 不是物件集「{1}」的有效檔案。新建物件將不會顯示在物件集中。",
+    "addedObjectIsNotUnique": "物件「{1}-{0}」未儲存，因為 \"ID = {1}\" 不唯一。",
+    "fileSizeException": "\"{0}\" 未新增。檔案大小超出最大限制。",
+    "userNotAuthorized": "\"{0}\" 未新增。目前使用者未經授權。",
+    "addACopy": "新增副本",
+    "cancel": "取消",
+    "sourceObject": "來源",
+    "chooseFromSystem": "從系統選取檔案",
+    "chooseFromDrive": "從磁碟機選取",
+    "fileNameExceedsLengthLimit": "\"{0}\" 未新增。檔名長度超出最大限制。"
+}

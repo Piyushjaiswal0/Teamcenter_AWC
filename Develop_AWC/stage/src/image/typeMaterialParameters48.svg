@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <radialGradient id="radial-gradient" cx="32.799" cy="12.373" r="7.72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.355" stop-color="#e2e2e2"/>
+      <stop offset="0.76" stop-color="#c8c8c8"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="23.799" cy="24.373" r="7.72" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="10.31" cy="15.789" r="9.436" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-4" cx="10.211" cy="-71.404" r="8.578" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-5" cx="1.322" cy="-43.626" r="8.578" gradientTransform="translate(1.609 66.636) scale(0.9)" xlink:href="#radial-gradient"/>
+    <linearGradient id="Light_Blue_Grad_2" data-name="Light Blue Grad 2" x1="26.159" y1="28.246" x2="43.859" y2="45.946" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="33.586" y1="35.586" x2="36.414" y2="38.414" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <polyline points="13 7 13 19 5 30" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <polyline points="13 19 26 27 34.878 15.067" fill="none" stroke="#969696" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M39.5,15A4.5,4.5,0,1,1,35,10.5,4.5,4.5,0,0,1,39.5,15Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient)"/>
+  <path d="M30.5,27A4.5,4.5,0,1,1,26,22.5,4.5,4.5,0,0,1,30.5,27Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-2)"/>
+  <path d="M18.5,19A5.5,5.5,0,1,1,13,13.5,5.5,5.5,0,0,1,18.5,19Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-3)"/>
+  <path d="M17.5,5A4.5,4.5,0,1,1,13,.5,4.5,4.5,0,0,1,17.5,5Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-4)"/>
+  <path d="M9.5,30A4.5,4.5,0,1,1,5,25.5,4.5,4.5,0,0,1,9.5,30Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#radial-gradient-5)"/>
+  <path d="M27.137,46.863,30.5,43.5l9-.013,3.364,3.374A12.977,12.977,0,0,0,47.5,37.007a12.5,12.5,0,1,0-25,.089A12.785,12.785,0,0,0,27.137,46.863Z" stroke="#464646" stroke-linejoin="round" fill="url(#Light_Blue_Grad_2)"/>
+  <line x1="33.684" y1="35.747" x2="29.5" y2="31.5" fill="none" stroke="#147391"/>
+  <circle cx="35" cy="37" r="2" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+</svg>

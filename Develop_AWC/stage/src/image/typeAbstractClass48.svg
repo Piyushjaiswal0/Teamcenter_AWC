@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="21.5" y1="14.5" x2="32.5" y2="25.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="21.5" y1="28.5" x2="32.5" y2="39.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" data-name="paper gradient" x1="32.136" y1="32.136" x2="44.8639" y2="44.8639" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" data-name="paper gradient" x1="3.5" y1=".5" x2="14.5" y2="11.5" xlink:href="#paper_gradient"/>
+  </defs>
+  <polyline points="9 11.5 9 34 21.5 34" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="10" y1="20" x2="21.5" y2="20" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="21.5" y="14.5" width="11" height="11" fill="url(#paper_gradient)" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="21.5" y="28.5" width="11" height="11" fill="url(#Dark_Blue_Grad)" stroke="#464646" stroke-miterlimit="10"/>
+  <circle cx="38.5" cy="38.5" r="9" fill="url(#paper_gradient-2)" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="m41.3301,43l-.8955-2.5244h-3.9238l-.8545,2.5244h-1.7773l3.7119-10h1.8047l3.7256,10h-1.791Zm-2.8438-8.5007h-.041c-.0317.2789-.0796.519-.1436.7183l-1.3398,3.8563h3.0078l-1.3467-3.8563c-.0454-.1205-.0913-.3596-.1367-.7183Z" fill="#6e6e6e"/>
+  <rect x="3.5" y=".5" width="11" height="11" fill="url(#paper_gradient-3)" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

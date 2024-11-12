@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "登出",
+    "CONTINUE_TEXT": "繼續",
+    "GEOGRAPHY_SECTION_TITLE" : "地理位置",
+    "GEOGRAPHY_SECTION_PROMPT" : "輸入目前工作位置",
+    "CONFIDENTIAL_SECTION_TITLE" : "保密協議",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "我同意",
+    "GDPR_CHECKBOX_LABEL" : "我同意",
+    "INITIAL_LIST_VALUE" : "必需..."
+}

@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Raporty",
+    "allSubLocation": "Wszystkie",
+    "reportBuilderSubLocation": "Szablony",
+    "runReportTitle": "Utwórz raport",
+    "runReportOperationName": "Uruchom raport",
+    "doWorkOperationName": "Uruchom",
+    "execution": "Wykonanie",
+    "criteria": "Kryteria",
+    "stylesheet": "Arkusz stylu",
+    "dataset": "Nazwa pliku do zapisu",
+    "myreportsSubLocation": "Zapisane pliki",
+    "loadingMsg": "Ładowanie...",
+    "zeroSearchResults": "Nie znaleziono wyników",
+    "reportResultsChartTitle": "Filtruj wyniki wg:",
+    "AddSnapshot": "Zrzut ",
+    "AddNew": "Nowe",
+    "doQueueOperation": "Dodaj do kolejki",
+    "runTcraReport": "Uruchom",
+    "dosnapShotViewOperation": "Widok",
+    "myDashboard": "Mój pulpit",
+    "inOpenRptCommand": "Otwórz"
+}

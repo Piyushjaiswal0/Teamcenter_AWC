@@ -1,0 +1,248 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "_sublocation": {
+            "name": "com.siemens.splm.clientfx.tcui.xrt.objectNavigationSubLocation",
+            "label": "Declarative Navigate",
+            "clientScopeURI": "{{props.clientScopeUri}}",
+            "nameToken": "com.siemens.splm.clientfx.tcui.xrt.objectNavigationSubLocation",
+            "context": {
+                "search": {
+                    "provider": "Awp0ObjectSetRowProvider",
+                    "sortType": "Alphabetical",
+                    "hideInContentSearchBox": true
+                }
+            },
+            "selectionQueryParamKey": "s_uid",
+            "editSupportParamKeys": [ "s_uid" ],
+            "viewBase": "{{props.viewBase}}",
+            "defaultDisplayMode": "{{props.defaultDisplayMode}}",
+            "viewModes": "{{props.viewModes}}",
+            "policy": {
+                "types": [ {
+                    "name": "BusinessObject",
+                    "properties": [ {
+                        "name": "object_string"
+                    } ]
+                } ]
+            }
+        },
+        "objNavState": {
+            "initialValues": {
+                "totalFound": 0,
+                "sortCriteria": []
+            },
+            "meta": {
+                "sortCriteria": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "actions": {
+        "initializeObjectNav": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "registerContext"
+                },
+                {
+                    "action": "updateSubPanelContext"
+                },
+                {
+                    "action": "getChangedStateParams"
+                }
+            ]
+        },
+        "registerContext": {
+            "actionType": "JSFunction",
+            "method": "registerContext",
+            "deps": "js/objectNavigationService"
+        },
+        "deRegisterContext": {
+            "actionType": "JSFunction",
+            "method": "deRegisterContext",
+            "deps": "js/objectNavigationService"
+        },
+        "updateSubPanelContext": {
+            "actionType": "JSFunctionAsync",
+            "method": "getSubPanelContextData",
+            "inputData": {
+                "provider": "{{data._sublocation}}",
+                "baseSelection": "{{subPanelContext.openedObject}}",
+                "objNavSelectionModel": "{{data.selectionModels.objNavSelectionModel}}",
+                "objNavStateAtomicDataRef": "{{data.atomicDataRef.objNavState}}",
+                "objNavStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "outputData": {
+                "_sublocation": ""
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "actOnStateChange": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "setDefaultContextChangedVal"
+                },
+                {
+                    "action": "getUpdatedSearchContextOnStateChange"
+                },
+                {
+                    "action": "resetObjectNavSinceContxChanged",
+                    "condition": "conditions.shouldObjNavDpBeReset"
+                }
+
+            ]
+        },
+        "setDefaultContextChangedVal": {
+            "actionType": "JSFunction",
+            "method": "setDefaultContextChangedVal",
+            "inputData": {},
+            "outputData": {
+                "objNavContextChanged": "objNavContextChanged"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "getUpdatedSearchContextOnStateChange": {
+            "actionType": "JSFunctionAsync",
+            "method": "getUpdatedSearchContextOnStateChange",
+            "inputData": {
+                "originalParams": "{{data.changedParams}}",
+                "localSubPanelContext": "{{data._sublocation}}",
+                "baseSelection": "{{data.objNavState.baseSelection}}",
+                "objNavSelectionModel": "{{data.selectionModels.objNavSelectionModel}}",
+                "objNavStateAtomicDataRef": "{{data.atomicDataRef.objNavState}}",
+                "objNavStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "outputData": {
+                "_sublocation": "localSubPanelContext",
+                "objNavContextChanged": "objNavContextChanged",
+                "changedParams": "changeInParams"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "resetObjectNavSinceContxChanged": {
+            "actionType": "JSFunction",
+            "method": "resetObjNavDP",
+            "inputData": {
+                "objNavSelectionModel": "{{data.selectionModels.objNavSelectionModel}}"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "syncURLWithNewParams": {
+            "actionType": "JSFunction",
+            "method": "syncURLWithNewParams",
+            "inputData": {
+                "newParams": "{{ports.paramsToURL.syncObject.newParams}}"
+            },
+            "deps": "js/selectionSyncUtils"
+        },
+        "getChangedStateParams": {
+            "actionType": "JSFunction",
+            "method": "getChangedStateParams",
+            "inputData": {
+                "eventData": "{{parameters.eventData}}"
+            },
+            "outputData": {
+                "changedParams": "changedParams"
+            },
+            "deps": "js/selectionSyncUtils"
+        },
+        "syncSelectionWithURL": {
+            "actionType": "JSFunction",
+            "method": "getSelectionParamsToSyncInObjectNav",
+            "inputData": {
+                "selectedObjects": "{{data.objNavState.pwaSelection}}",
+                "selectionQueryParamKey": "s_uid",
+                "baseSelection": "{{data._sublocation && data._sublocation.baseSelection ? data._sublocation.baseSelection : subPanelContext.openedObject}}"
+            },
+            "deps": "js/objNavSelectionSyncUtils"
+        },
+        "handleSelectionChange": {
+            "actionType": "JSFunction",
+            "method": "handleSelectionChange",
+            "inputData": {
+                "localBaseSelection": "{{data._sublocation.baseSelection}}",
+                "localSelectionData": "{{data.selectionData}}",
+                "selectionModel": "{{data.selectionModels.objNavSelectionModel}}",
+                "objNavStateAtomicDataRef": "{{data.atomicDataRef.objNavState}}",
+                "objNavStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "deps": "js/objectNavigationService"
+        },
+        "handleHostingSelectionChange": {
+            "actionType": "JSFunction",
+            "method": "handleHostingSelectionChange",
+            "inputData": {
+                "eventdata": "{{parameters.eventData}}",
+                "selectionModel": "{{data.selectionModels.objNavSelectionModel}}"
+            },
+            "deps": "js/hostingSelectionUtils"
+        },
+        "handleRevisionRuleChange":{
+            "actionType": "JSFunction",
+            "method": "handleRevisionRuleChange",
+            "deps": "js/objectNavigationService"
+        }
+    },
+    "onEvent": [ {
+            "eventId": "stateChangeSuccess",
+            "action": "actOnStateChange",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "hosting.changeSelection",
+            "action": "handleHostingSelectionChange",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "aw.revisionRuleChangeEvent",
+            "action": "handleRevisionRuleChange"
+        }
+    ],
+    "selectionModels": {
+        "objNavSelectionModel": {
+            "selectionMode": "multiple"
+        }
+    },
+    "conditions": {
+        "shouldObjNavDpBeReset": {
+            "expression": "data.objNavContextChanged === true"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeObjectNav",
+        "onUpdate": [ {
+            "action": "syncSelectionWithURL",
+            "observers": [ "viewModel.atomicData.objNavState.pwaSelection" ]
+        }, {
+            "action": "handleSelectionChange",
+            "observers": [ "viewModel.atomicData.selectionData" ]
+        } ],
+        "onUnMount": "deRegisterContext"
+    },
+    "props": {
+        "client-scope-uri": {
+            "type": "string"
+        },
+        "default-display-mode": {
+            "type": "string"
+        },
+        "view-base": {
+            "type": "string"
+        },
+        "view-modes": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

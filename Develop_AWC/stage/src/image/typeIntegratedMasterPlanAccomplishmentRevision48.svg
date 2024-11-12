@@ -1,0 +1,29 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="-73.106" y1="67.34" x2="-51.185" y2="67.34" gradientTransform="translate(78.145 -37.339)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-78.055" y1="62.39" x2="-56.135" y2="62.39" gradientTransform="translate(83.095 -39.39)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-83.005" y1="57.44" x2="-61.085" y2="57.44" gradientTransform="translate(88.045 -41.44)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-79.58" y1="57.44" x2="-64.51" y2="57.44" gradientTransform="translate(88.045 -41.44)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="26.161" y1="26.161" x2="43.839" y2="43.839" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <rect id="_Rectangle_" data-name="&lt;Rectangle&gt;" x="5.04" y="19.04" width="21.92" height="21.92" transform="translate(25.9 -2.527) rotate(45)" stroke="#464646" stroke-linejoin="round" stroke-width="0.969" fill="url(#linear-gradient)"/>
+  <rect id="_Rectangle_2" data-name="&lt;Rectangle&gt;" x="5.04" y="12.04" width="21.92" height="21.92" transform="translate(20.95 -4.577) rotate(45)" stroke="#464646" stroke-linejoin="round" stroke-width="0.969" fill="url(#linear-gradient-2)"/>
+  <rect id="_Rectangle_3" data-name="&lt;Rectangle&gt;" x="5.04" y="5.04" width="21.92" height="21.92" transform="translate(16 -6.627) rotate(45)" stroke="#464646" stroke-linejoin="round" stroke-width="0.969" fill="url(#linear-gradient-3)"/>
+  <rect id="_Rectangle_4" data-name="&lt;Rectangle&gt;" x="8.465" y="8.465" width="15.07" height="15.07" transform="translate(16 -6.627) rotate(45)" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="0.969" fill="url(#linear-gradient-4)"/>
+  <circle cx="35" cy="35" r="12.5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+    <polygon points="26.445 36.485 28.756 34.571 32.486 39.052 41.688 27.677 44.022 29.561 32.519 43.788 26.445 36.485" fill="#fff"/>
+    <path d="M41.763,28.379l1.557,1.256L32.513,43,27.151,36.55l1.54-1.276,3.8,4.566,9.27-11.461m-.149-1.405-.628.777-8.5,10.514-3.022-3.63-.638-.767-.768.637-1.54,1.276-.771.639.64.77,5.362,6.449.78.938.767-.948L44.1,30.264l.629-.778-.779-.629L42.391,27.6l-.777-.627Z" fill="#147391"/>
+</svg>

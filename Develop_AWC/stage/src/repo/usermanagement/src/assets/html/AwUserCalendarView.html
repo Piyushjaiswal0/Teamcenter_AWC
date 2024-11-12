@@ -1,0 +1,6 @@
+<div class="sw-column" width="fill" height="fill">
+    <aw-guidance-message message="userCalendarNotExits" exist-when="!conditions.userCalendarExists" closable="false" banner-style="true" show-icon="true" show-type="false">
+        <aw-button class='small' action="openCreateUserCalendarPanel" enable-when="conditions.accessCheck">{{i18n.addButtonText}}</aw-button>
+    </aw-guidance-message>
+    <aw-calendar exist-when="conditions.userCalendarExists" edit-mode="{{conditions.accessCheck}}" tc-calendar="data.userCalendar" is-name-editable="false"></aw-calendar>
+</div>

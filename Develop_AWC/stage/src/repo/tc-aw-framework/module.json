@@ -1,0 +1,52 @@
+{
+  "name": "tc-aw-framework",
+  "description": "",
+  "pathOffset": ".",
+  "skipAudit": true,
+  "version": "6.3.1",
+  "author": "Siemens Product Lifecycle Management Software Inc.",
+  "themeExtensions": [
+    "baTheme",
+    "jtViewerTheme",
+    "tcuijsTheme",
+    "viewerjsTheme"
+  ],
+  "copyAssets": [
+    {
+      "baseDir": "src/**/images",
+      "fileRegex": "typeMs*.svg",
+      "destPath": "assets/image",
+      "copyDirectory": false
+    },
+    {
+      "baseDir": "node_modules/@swf/ClientViewer",
+      "fileRegex": "*.wasm",
+      "destPath": "static/wasm/TcVis",
+      "copyDirectory": false
+    },
+    {
+      "baseDir": "node_modules/@swf/ClientViewer",
+      "fileRegex": "JTReaderWorker.min.js",
+      "destPath": "static/js",
+      "copyDirectory": false
+    },
+    {
+      "baseDir": "node_modules/@swf/ClientViewer/assets/config",
+      "fileRegex": "*.json",
+      "destPath": "assets/config",
+      "copyDirectory": false
+    },
+    {
+      "baseDir": "node_modules/@swf/pdfjs/out",
+      "fileRegex": "**/*",
+      "destPath": "assets/pdfjs",
+      "copyDirectory": true
+    },
+    {
+      "baseDir": "node_modules/@swf/pdfjs/resources",
+      "fileRegex": "**/*",
+      "destPath": "assets/pdfjs",
+      "copyDirectory": true
+    }
+  ]
+}

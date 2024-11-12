@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<g>
+	<path fill="#FFFFFF" class="aw-theme-iconOutline" d="M16,16V7h-4.6L7.6,0.5L6.9,1.3L10.3,7H7v5H1.4l3.9-6.9L4.4,4.6l-4.3,7.7C0,12.5,0,12.8,0.3,13
+		c0,0,0.1,0,0.2,0H7v3H16 M12,12h3v3h-3V12z M15,11h-3V8h3V11z M11,8v3H8V8H11z M8,12h3v3H8V12z"/>
+</g>
+<rect x="8" y="12" fill="#EB780A" width="3" height="3"/>
+<rect x="8" y="8" fill="#EB780A" width="3" height="3"/>
+<rect x="12" y="8" fill="#EB780A" width="3" height="3"/>
+<rect x="12" y="12" fill="#EB780A" width="3" height="3"/>
+<polygon fill="#EB780A" points="6.9,1.3 4.4,4.6 5.3,5.1 1.4,12 7,12 7,7 10.3,7 "/>
+</svg>

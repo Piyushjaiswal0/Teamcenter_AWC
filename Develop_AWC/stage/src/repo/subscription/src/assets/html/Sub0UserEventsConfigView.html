@@ -1,0 +1,22 @@
+<aw-panel>
+    <aw-panel-body>
+        <aw-command-panel-section caption="i18n.selectedSectionTitle" anchor="data.sectionCommandsSelectedEvents">
+            <aw-row height="16f">
+                <aw-scrollpanel>
+                    <aw-list dataprovider="data.dataProviders.configuredEventTypesProvider">
+                        <aw-default-cell vmo="item"></aw-default-cell>
+                    </aw-list>
+                </aw-scrollpanel>
+            </aw-row>
+        </aw-command-panel-section>
+        <aw-command-panel-section caption="i18n.availableSectionTitle" anchor="data.sectionCommandsAvailableEvents">
+            <aw-row height="27f">
+                <aw-scrollpanel>
+                    <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.availableEventTypesProvider">
+                        <aw-default-cell vmo="item"></aw-default-cell>
+                    </aw-list-filter>
+                </aw-scrollpanel>
+            </aw-row>
+        </aw-command-panel-section>
+    </aw-panel-body>
+</aw-panel>

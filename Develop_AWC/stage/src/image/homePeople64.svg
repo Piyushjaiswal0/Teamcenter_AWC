@@ -1,0 +1,15 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M18.5,30C12.8,30,8,22.6,8,16.6C8,10.8,12.7,6,18.5,6S29,10.8,29,16.6C29,22.6,24.2,30,18.5,30z M18.5,8
+	c-4.7,0-8.5,3.9-8.5,8.6c0,5,4,11.4,8.5,11.4S27,21.6,27,16.6C27,11.9,23.2,8,18.5,8z"/>
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M39,64h-2V43.3c0-3.8-2.6-7.5-6.8-9.7c-3.4,2.3-7.4,3.5-11.5,3.5c-3.9,0-7.2-1.1-10.8-3.5
+	c-3.8,2-5.9,5.6-5.9,9.7V64H0V43.3c0-5.1,2.8-9.5,7.5-11.8c0.3-0.2,0.7-0.1,1,0.1c3.4,2.4,6.5,3.5,10.1,3.5c3.8,0,7.7-1.2,10.8-3.5
+	c0.3-0.2,0.7-0.2,1-0.1C35.8,34,39,38.5,39,43.3V64z"/>
+<rect x="8" y="48" class="aw-theme-iconHomeOutline" fill="#464646" width="2" height="16"/>
+<rect x="29" y="48" class="aw-theme-iconHomeOutline" fill="#464646" width="2" height="16"/>
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M43.5,24C37.8,24,33,16.6,33,10.6C33,4.8,37.7,0,43.5,0S54,4.8,54,10.6C54,16.6,49.2,24,43.5,24z M43.5,2
+	C38.8,2,35,5.9,35,10.6c0,5,4,11.4,8.5,11.4S52,15.6,52,10.6C52,5.9,48.2,2,43.5,2z"/>
+<path class="aw-theme-iconHomeOutline" fill="#464646" d="M63.2,59h-2V37.9c0-3.8-2.6-7.5-6.8-9.8c-3.4,2.3-7.4,3.5-11.5,3.5c-4.2,0-8-1.2-11.4-3.7l1.2-1.6
+	c3.2,2.2,6.4,3.3,10.3,3.3c3.8,0,7.7-1.2,10.8-3.5c0.3-0.2,0.7-0.2,1-0.1c5.2,2.5,8.5,7.1,8.5,11.8V59z"/>
+<rect x="54" y="43" class="aw-theme-iconHomeOutline" fill="#464646" width="2" height="16"/>
+</svg>

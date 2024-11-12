@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "添加到 {0}",
+    "revRuleNotAvailable": "选定版本规则在加载的版本规则中不存在",
+    "revRuleChangeFailed": "版本规则更改失败",
+    "revRuleChangeSucess": "版本规则已更改",
+    "sendToCommandTitle": "打开环境 {0}",
+    "sendToNewViewCommandTitle": "在新 {0} 视图中打开。",
+    "Awp0AddComponentHostedDesc": "将选定组件添加到活动工作零件。",
+    "Awp0OpenHostedDesc": "打开选定对象。",
+    "HostingSetRevisionRule": "托管集版本规则",
+    "HostingTimeoutAuthRequestSuccessful": "浏览器页面正在刷新以重新建立会话。",
+    "HostingTimeoutAuthRequestFailure": "由于主机应用程序的身份验证失败，因此无法重新建立会话。\n关闭并重新打开主机应用程序。",
+    "HostingFileUploadSvcUploadError": "保存文件 {0} 失败，错误为 {1}。"
+}

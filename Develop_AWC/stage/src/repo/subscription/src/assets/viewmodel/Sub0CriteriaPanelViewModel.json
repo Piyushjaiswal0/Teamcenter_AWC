@@ -1,0 +1,351 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+     [
+
+     ],
+     "onEvent": [
+         {
+             "eventId": "Sub0CriteriaPanel.attributeNameSelected",
+             "condition": "data.propAttributeName.dbValue !== data.selectedAttrName",
+             "action":  "applyAttributeNameSelection"
+         },
+         {
+             "eventId": "Sub0CriteriaPanel.attributeNameLoaded",
+             "action":  "resetAttributeValue"
+         },
+         {
+             "eventId": "Sub0CriteriaPanel.attrValueReset",
+             "condition": "ctx.panelContext",
+             "action":  "loadCriteriaEditAttributeValue"
+         },
+         {
+             "eventId": "Sub0CriteriaPanel.attrNameReset",
+             "action":  "loadCriteriaEditAttributeName"
+         },
+         {
+             "eventId": "subscriptionCriteriaTable.updateComplete",
+             "action":  "closePanel"
+         }
+     ],
+     "dataProviders": {
+        "dataProviderpropLogicalOperator": {
+            "response": [
+                {
+                    "propDisplayValue": "{{i18n.stringAndLabel}}",
+                    "dispValue": "{{i18n.stringAndLabel}}",
+                    "propInternalValue": "AND"
+                },
+                {
+                    "propDisplayValue": "{{i18n.stringOrLabel}}",
+                    "dispValue": "{{i18n.stringOrLabel}}",
+                    "propInternalValue": "OR"
+                }
+            ]
+        },
+        "dataProviderPropAttributeName": {
+            "response": "{{ctx.sub0Criteria.subscribableCtx.subscribableProperties}}"
+        },
+        "dataProviderPropAttributeValue": {
+            "initializeAction": "initialLOV",
+            "nextAction": "nextLOV",
+            "response": "{{data.listVals}}",
+            "moreValuesExist": "{{data.moreValuesExist}}"
+        }
+     },
+     "data": {
+         "selectedAttrName": "",
+         "propLogicalOperator": {
+             "displayName": "{{i18n.logicalOperatorLabel}}",
+             "type": "STRING",
+             "isRequired": "true",
+             "hasLov": "true",
+             "emptyLOVEntry": false,
+             "dataProvider": "dataProviderpropLogicalOperator",
+             "dbValue": "AND",
+             "uiValue": "{{i18n.stringAndLabel}}"
+         },
+         "propAttributeName": {
+             "displayName": "{{i18n.subscptCondFollowProperty}}",
+             "type": "STRING",
+             "isRequired": "true",
+             "emptyLOVEntry": false,
+             "hasLov":"true",
+             "dataProvider": "dataProviderPropAttributeName"
+         },
+         "propMathOperator": {
+             "displayName": "{{i18n.subscptCondFollowOperator}}",
+             "type": "STRING",
+             "isRequired": "true",
+             "hasLov": "true"
+         },
+         "propAttributeValue": {
+             "displayName": "{{i18n.subscptCondFollowValue}}",
+             "type": "STRINGARRAY",
+             "isArray": "true",
+             "isEditable": "true"
+         },
+         "valuesMathOperatorString": {
+             "type": "STRING",
+             "dbValue": [
+                 {
+                     "propDisplayValue": "=",
+                     "dispValue": "=",
+                     "propInternalValue": "="
+                 },
+                 {
+                     "propDisplayValue": "!=",
+                     "dispValue": "!=",
+                     "propInternalValue": "!="
+                 }
+             ]
+         },
+         "valuesMathOperatorNumber": {
+             "type": "STRING",
+             "dbValue": [
+                 {
+                     "propDisplayValue": "=",
+                     "dispValue": "=",
+                     "propInternalValue": "="
+                 },
+                 {
+                     "propDisplayValue": "!=",
+                     "dispValue": "!=",
+                     "propInternalValue": "!="
+                 },
+                 {
+                     "propDisplayValue": ">",
+                     "dispValue": ">",
+                     "propInternalValue": ">"
+                 },
+                 {
+                     "propDisplayValue": ">=",
+                     "dispValue": ">=",
+                     "propInternalValue": ">="
+                 },
+                 {
+                     "propDisplayValue": "<",
+                     "dispValue": "<",
+                     "propInternalValue": "<"
+                 },
+                 {
+                     "propDisplayValue": "<=",
+                     "dispValue": "<=",
+                     "propInternalValue": "<="
+                 }
+             ]
+         }
+     },
+     "actions":
+     {
+        "initialView": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "loadCriteriaEditAttributeName",
+                    "condition": "ctx.panelContext && ctx.panelContext.type==='Sub0Criteria'"
+                }
+            ]
+        },
+        "initialLOV": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2013-05-LOV",
+            "method": "getInitialLOVValues",
+            "inputData": {
+                "initialData": {
+                    "lov": {
+                        "uid": "",
+                        "type": ""
+                    },
+                    "lovInput": {
+                        "owningObject": {
+                            "type": "unknownType",
+                            "uid": "AAAAAAAAAAAAAA"
+                        },
+                        "boName": "{{ctx.sub0Criteria.targetType.name}}",
+                        "operationName": "Search",
+                        "propertyValues": {}
+                    },
+                    "propertyName": "{{data.propAttributeName.dbValue}}",
+                    "filterData": {
+                        "filterString": "{{data.propAttributeValue.filterString}}",
+                        "maxResults": 0,
+                        "numberToReturn": 25,
+                        "order": 1,
+                        "sortPropertyName": ""
+                    }
+                }
+            },
+            "outputData": {
+                "searchResults": "",
+                "listVals": "{{function:createLOVEntries}}",
+                "moreValuesExist": "moreValuesExist"
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+        "nextLOV": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2013-05-LOV",
+            "method": "getNextLOVValues",
+            "inputData": {
+                "lovData": "{{data.searchResults.lovData}}"
+            },
+            "outputData": {
+                "searchResults": "",
+                "listVals": "{{function:createLOVEntries}}",
+                "moreValuesExist": "moreValuesExist"
+            },
+            "deps": "js/awSubscriptionCriteriaTableService"
+        },
+         "notifyAttributeNameSelected":
+         {
+             "actionType":"Event",
+             "method":"Event",
+             "inputData":{
+                 "events":[
+                     {
+                         "name":"Sub0CriteriaPanel.attributeNameSelected"
+                     }
+                 ]
+             }
+         },
+         "applyAttributeNameSelection":
+         {
+             "actionType": "JSFunction",
+             "method": "resetAttributeValue",
+             "inputData": {
+                 "criteriaCtx": "{{ctx.sub0Criteria}}",
+                 "data":"{{data}}",
+                 "attrName": "{{data.propAttributeName.dbValue}}"
+             },
+             "outputData": {
+                 "selectedAttrName": "attr",
+                 "propAttributeValue": "propAttributeValue",
+                 "propMathOperator": "propMathOperator"
+             },
+             "deps": "js/awSubscriptionCriteriaTableService"
+         },
+         "resetAttributeValue":
+         {
+             "actionType": "JSFunction",
+             "method": "resetAttributeValue",
+             "inputData": {
+                 "criteriaCtx": "{{ctx.sub0Criteria}}",
+                 "data":"{{data}}",
+                 "attrName": "{{data.propAttributeName.dbValue}}",
+                 "operator": "{{data.propMathOperator.dbValue}}"
+             },
+             "outputData": {
+                 "selectedAttrName": "attr",
+                 "propAttributeValue": "propAttributeValue",
+                 "propMathOperator": "propMathOperator"
+             },
+             "events": {
+                 "success": [
+                     {
+                         "name": "Sub0CriteriaPanel.attrValueReset"
+                     }
+                 ]
+             },
+             "deps": "js/awSubscriptionCriteriaTableService"
+         },
+         "loadCriteriaEditAttributeName":
+         {
+             "actionType": "JSFunction",
+             "method": "setValueForPanel",
+             "inputData": {
+                 "data" : "{{fields}}",
+                 "dataProvider":"{{data.dataProviders.dataProviderPropAttributeName}}"
+             },
+             "outputData":{
+                "propAttributeName.dbValue":"propInternalValue",
+                "propAttributeName.uiValue":"propDisplayValue"
+             },
+             "events": {
+                 "success": [
+                     {
+                         "name": "Sub0CriteriaPanel.attributeNameLoaded"
+                     }
+                 ]
+             },
+             "deps": "js/awSubscriptionCriteriaTableService"
+         },
+         "loadCriteriaEditAttributeValue":
+         {
+             "actionType": "JSFunction",
+             "method": "loadCriteriaEditAttributeValue",
+             "inputData": {
+                 "prop": "{{data.propAttributeValue}}",
+                 "values": "{{ctx.selected.props.attribute_values.dbValue}}",
+                 "fields": "{{fields}}"
+             },
+             "outputData": {
+                 "showAttrName": true
+             },
+             "deps": "js/awSubscriptionCriteriaTableService"
+         },
+         "applyCriteriaChange":
+         {
+             "actionType": "JSFunction",
+             "method": "applyCriteriaChange",
+             "inputData": {
+                 "criteriaObjects": "{{ctx.sub0Criteria.criteriaObjects}}",
+                 "panelContext": "{{ctx.panelContext}}",
+                 "selectedObject": "{{ctx.selected}}",
+                 "columnDefs":"{{ctx.sub0Criteria.columnDefs}}",
+                 "props": {
+                     "logic_operators": "{{data.propLogicalOperator}}",
+                     "attribute_names": "{{data.propAttributeName}}",
+                     "math_operators": "{{data.propMathOperator}}",
+                     "attribute_values": "{{data.propAttributeValue}}"
+                 }
+             },
+             "events": {
+                 "success": [
+                     {
+                         "name": "subscriptionCriteriaObjects.updated"
+                     }
+                 ]
+             },
+             "deps": "js/awSubscriptionCriteriaTableService"
+         },
+         "closePanel": {
+             "actionType": "Event",
+             "method": "Event",
+             "inputData": {
+                 "events": [
+                     {
+                         "name": "complete",
+                         "eventData": {
+                             "source": "toolAndInfoPanel"
+                         }
+                     }
+                 ]
+             }
+         }
+     },
+     "i18n":
+     {
+         "addCriteriaText":[ "SubscriptionMessages" ],
+         "editCriteriaText":[ "SubscriptionMessages" ],
+         "followCondEditText": [ "SubscriptionMessages" ],
+         "followCondAddText": [ "SubscriptionMessages" ],
+         "logicalOperatorLabel": [ "SubscriptionMessages" ],
+         "subscptCondFollowProperty": [ "SubscriptionMessages" ],
+         "subscptCondFollowOperator": [ "SubscriptionMessages" ],
+         "subscptCondFollowValue": [ "SubscriptionMessages" ],
+         "stringAndLabel": [ "SubscriptionMessages" ],
+         "stringOrLabel": [ "SubscriptionMessages" ]
+     },
+     "functions": {
+        "createLOVEntries": {
+            "functionName": "createLOVEntries",
+            "parameters": [
+                "{{ctx.sub0Criteria.valueTypeDefs[ ctx.sub0Criteria.targetTypeDescriptor[ data.selectedAttrName ].valueType ]}}"
+            ]
+        }
+     },
+     "lifecycleHooks": {
+        "onMount": "initialView"
+     }
+ }

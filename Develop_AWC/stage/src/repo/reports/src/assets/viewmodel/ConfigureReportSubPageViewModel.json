@@ -1,0 +1,95 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-tab-set.directive",
+        "js/aw-include.directive"
+    ],
+    "actions": {
+        "initializeRepSearchState":{
+            "actionType": "JSFunction",
+            "deps": "js/configureReportService",
+            "method": "initializeRepSearchState",
+            "inputData": {
+                "searchState": "{{data.searchState}}"
+            },
+            "outputData": {
+                "searchState": ""
+            }
+        },
+        "updateReportsCtxForFilters": {
+            "actionType": "JSFunction",
+            "method": "updateReportsCtxForFilters",
+            "inputData": {
+                "subPanelContext": "{{subPanelContext}}",
+                "data": "{{data}}"
+            },
+            "deps": "js/configureReportService"
+        }
+    },
+    "data": {
+        "reportConfigureDataTabs": {
+            "isArray": "true",
+            "dbValue": [ {
+                    "tabKey": "searchData",
+                    "name": "{{i18n.dataTabName}}",
+                    "isolateMode": true,
+                    "priority": 0,
+                    "recreatePanel": true,
+                    "selectedTab": true,
+                    "view": null
+                },
+                {
+                    "tabKey": "setLayout",
+                    "name": "{{i18n.layoutTabName}}",
+                    "priority": 1,
+                    "recreatePanel": true,
+                    "selectedTab": false,
+                    "view": null
+                }
+            ]
+        },
+        "searchState": {
+            "initialValues": {
+                "autoApplyFilters": true
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ],
+                "searchFilterCategories": [{"internalName":{"field": true,"type": "STRING"}}],
+                "searchFilterMap": ""
+            }
+        }
+    },
+
+    "onEvent": [
+
+    ],
+
+    "ctx": {
+        "state": {
+            "type": "object"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n": {
+        "dataTabName": [ "ReportChartMessages" ],
+        "layoutTabName": [ "ReportChartMessages" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeRepSearchState",
+        "onUpdate": [{
+            "action": "updateReportsCtxForFilters",
+            "observers":["viewModel.atomicData.searchState.searchFilterCategories"]
+        }]
+    }
+}

@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "變更所有者",
+ "change" : "變更",
+ "user" : "使用者",
+ "EmailAddress" : "電子郵件地址：",
+ "PhoneNumber" : "電話號碼：",
+ "singleObjectChangeOwnershipSuccess": "「{0}」已更改。",
+ "multipleObjectsChangeOwnershipSuccess": "{0}\/{1} 個選定物件已變更。", 
+ "changeOwnershipForObjectFailure": "「{0}」未變更，因為您不具備相應許可權。"
+}

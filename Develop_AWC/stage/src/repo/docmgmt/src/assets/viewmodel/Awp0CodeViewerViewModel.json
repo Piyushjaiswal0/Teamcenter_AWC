@@ -1,0 +1,119 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awCodeViewerRenderFn",
+            "deps": "js/Awp0CodeViewerService"
+        },
+        "onMount": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "initUV"
+                },
+                {
+                    "action": "initCodeViewer"
+                }
+            ]
+        },
+        "initUV": {
+            "actionType": "JSFunction",
+            "method": "awCodeViewerOnMount",
+            "inputData": {
+                "viewerData": "{{subPanelContext}}",
+                "viewModel": "{{data}}"
+            },
+            "outputData": {
+                "data": ""
+            },
+            "deps": "js/Awp0CodeViewerService"
+        },
+        "initCodeViewer": {
+            "actionType": "JSFunction",
+            "method": "initCodeViewer",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0CodeViewerService"
+        },
+        "onUnMount": {
+            "actionType": "JSFunction",
+            "method": "awCodeViewerOnUnMount",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0CodeViewerService"
+        },
+        "updateEncoding": {
+            "actionType": "JSFunction",
+            "method": "updateEncoding",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/codeViewerUtils"
+        },
+        "revealViewer": {
+            "actionType": "JSFunction",
+            "method": "revealViewer",
+            "inputData": {
+                "viewModel": "{{data}}",
+                "mode": "edit",
+                "hideDataLossElements": "true"
+            },
+            "deps": "js/codeViewerUtils"
+        },
+        "changeEditorContent": {
+            "actionType": "JSFunction",
+            "method": "setChange",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/codeViewerUtils"
+        },
+        "codeWordWrapAction": {
+            "actionType": "JSFunction",
+            "method": "toggleWordWrap",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/codeViewerUtils"
+        }
+    },
+    "onEvent": [ {
+            "eventId": "textEditor.encodingChanged",
+            "action": "updateEncoding",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "preCheckin.failure",
+            "action": "revealViewer",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "preCheckout.failure",
+            "action": "revealViewer",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "sourceEditor.contentChanged",
+            "action": "changeEditorContent",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "textEditor.wordWrap",
+            "action": "codeWordWrapAction",
+            "cacheEventData": true
+        }
+    ],
+    "functions": {},
+    "messages": {},
+    "conditions": {},
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "onMount",
+        "onUnmount": "onUnMount"
+    },
+    "i18n": {},
+    "props": {}
+}

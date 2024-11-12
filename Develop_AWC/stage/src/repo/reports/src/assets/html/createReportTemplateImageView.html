@@ -1,0 +1,22 @@
+<aw-configure-report-viewer exist-when="conditions.nullSearchCriteria" reports-state="subPanelContext.provider.reportsState" sub-panel-context="{...subPanelContext}"></aw-configure-report-viewer>
+<div class="aw-reports-titleLabel sw-column h-12 w-12 justify-center" exist-when="!conditions.nullSearchCriteria">
+    <div class="sw-row justify-center" wrap-style="wrap">
+        <div class="sw-column">
+            <aw-pic class="sw-pic-tile aw-reports-reportIconView" icon-id="data.icon.dbValue"></aw-pic>
+        </div>
+    </div>
+    <div exist-when="conditions.summaryReport">
+        <strong><aw-i18n>i18n.noChartData</aw-i18n></strong>
+    </div>
+    <div exist-when="!conditions.summaryReport">
+        <strong><aw-i18n>i18n.noItemAvailable</aw-i18n></strong>
+    </div>
+    <div exist-when="conditions.summaryReport">
+        <div class="aw-reports-searchDataContext"><aw-i18n>i18n.searchDataContext</aw-i18n></div>
+        <aw-button class="large" button-type='chromeless' action="openPanel"><aw-i18n>i18n.dataTabName</aw-i18n></aw-button>
+    </div>
+    <div exist-when="!conditions.summaryReport">
+        <div class="aw-reports-searchDataContext"><aw-i18n>i18n.searchItemContext</aw-i18n></div>
+        <aw-button class="large" button-type='chromeless' action="openPanel"><aw-i18n>i18n.searchItem</aw-i18n></aw-button>
+    </div>
+</div>

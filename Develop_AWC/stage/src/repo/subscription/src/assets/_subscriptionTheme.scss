@@ -1,0 +1,16 @@
+// @<COPYRIGHT>@
+// ==================================================
+// Copyright (c) 2022 Siemens
+// Siemens Product Lifecycle Management Software Inc.
+// All Rights Reserved.
+// ==================================================
+// @<COPYRIGHT>@
+
+@import 'mixins/mixins';
+
+.aw-notificationAlert-subjectLink{
+    color: $brand_primary_link;
+    &:hover{
+        color:$brand_primary_link_hover;
+    }
+}

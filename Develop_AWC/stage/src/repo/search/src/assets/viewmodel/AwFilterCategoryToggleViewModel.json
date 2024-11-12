@@ -1,0 +1,47 @@
+{
+    "schemaVersion": "1.0.0",
+    "data":{
+        "notToggle": {
+            "displayName": "{{i18n.Not}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false,
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE"
+        }
+    },
+    "actions" :{
+        "toggleButton": {
+            "actionType": "JSFunction",
+            "method": "filterCategoryToggle",
+            "inputData": {
+                "toggleStatus": "{{data.notToggle}}",
+                "toggleFunction": "{{props.subPanelContext.excludeCategoryAction}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateToggleState": {
+            "actionType": "JSFunction",
+            "method": "updateToggleState",
+            "inputData": {
+                "toggleState": "{{props.subPanelContext.category.excludeCategory}}"
+            },
+            "outputData": {
+                "notToggle.dbValue": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+                "action": "updateToggleState",
+                "observers": [ "props.subPanelContext.category.excludeCategory" ]
+            }
+        ]
+    },
+    "i18n": {
+        "Not": [
+            "SearchMessages"
+        ]
+    }
+}

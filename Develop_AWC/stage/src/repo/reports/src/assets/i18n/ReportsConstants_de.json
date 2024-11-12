@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Berichte",
+    "allSubLocation": "Alle",
+    "reportBuilderSubLocation": "Vorlagen",
+    "runReportTitle": "Bericht erstellen",
+    "runReportOperationName": "Bericht ausführen",
+    "doWorkOperationName": "Ausführen",
+    "execution": "Ausführung",
+    "criteria": "Kriterien",
+    "stylesheet": "Formatvorlage",
+    "dataset": "In Datei speichern",
+    "myreportsSubLocation": "Gespeicherte Dateien",
+    "loadingMsg": "Laden...",
+    "zeroSearchResults": "Keine Ergebnisse gefunden",
+    "reportResultsChartTitle": "Ergebnisse filtern nach:",
+    "AddSnapshot": "Schnappschüsse",
+    "AddNew": "Neu",
+    "doQueueOperation": "Zu Warteschlange hinzufügen",
+    "runTcraReport": "Ausführen",
+    "dosnapShotViewOperation": "Ansicht",
+    "myDashboard": "Mein Dashboard",
+    "inOpenRptCommand": "Öffnen"
+}

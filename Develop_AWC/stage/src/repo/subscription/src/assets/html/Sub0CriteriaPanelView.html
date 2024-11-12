@@ -1,0 +1,14 @@
+<aw-command-panel caption="{{(ctx.panelContext && ctx.panelContext.type==='Sub0Criteria')?i18n.editCriteriaText:i18n.addCriteriaText}}">
+    <aw-panel-body>
+        <aw-panel-section>
+            <aw-widget prop="data.propLogicalOperator" exist-when="data.showAttrName !== false"></aw-widget>
+            <aw-widget prop="data.propAttributeName" action="notifyAttributeNameSelected" exist-when="data.showAttrName !== false"></aw-widget>
+            <aw-listbox prop="data.propMathOperator" list="data.valuesMathOperatorNumber.dbValue" exist-when="data.showAttrName !== false && data.selectedAttrName !== '' && ctx.sub0Criteria.valueTypeDefs[ctx.sub0Criteria.targetTypeDescriptor[data.selectedAttrName].valueType] != 'STRINGARRAY'"></aw-listbox>
+            <aw-listbox prop="data.propMathOperator" list="data.valuesMathOperatorString.dbValue" exist-when="data.showAttrName !== false && data.selectedAttrName !== '' && ctx.sub0Criteria.valueTypeDefs[ctx.sub0Criteria.targetTypeDescriptor[data.selectedAttrName].valueType] == 'STRINGARRAY'"></aw-listbox>
+            <aw-widget prop="data.propAttributeValue" exist-when="data.selectedAttrName !== '' && data.propAttributeName.dbValue === data.selectedAttrName"></aw-widget>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="applyCriteriaChange" exist-when="data.selectedAttrName !== ''">{{(ctx.panelContext && ctx.panelContext.type==='Sub0Criteria')?i18n.followCondEditText:i18n.followCondAddText}}</aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "排列",
+    "arrangeButtonTitle": "排列",
+    "arrangeAdminTitle": "管理员",
+    "arrangeNoColumnConfigs": "没有保存的布置",
+    "arrangeConfigNameTitle": "布置",
+    "arrangeNewConfigNameTitle": "名称",
+    "arrangeNewConfigNameTitleRequired": "命名布置",
+    "arrangeNewConfigTitle": "另存为新布置",
+    "arrangeAndSaveButtonTitle": "保存并排列",
+    "arrangeAndCreateButtonTitle": "保存并排列",
+    "defaultNewColumnConfigName": "新建列布置",
+    "availableColumnsTitle": "可用的列",
+    "tableColumnsTitle": "显示的列",
+    "box1Title": "带气球状弹出提示的 Active Workspace 命令示例",
+    "seeMorePropertiesTitle": "查看完整数据库..."
+}

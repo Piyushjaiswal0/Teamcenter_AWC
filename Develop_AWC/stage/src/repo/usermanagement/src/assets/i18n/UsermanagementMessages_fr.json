@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "Personnes",
+    "organizationTitle": "Organisation",
+    "groupTitle": "Groupes",
+    "roleTitle": "Rôles",
+    "userTitle": "Utilisateurs",
+    "RevokeConsentTitle": "Annuler le Consentement",
+    "revokeGDPRConsentLabel": "Annuler le Consentement de l'utilisateur",
+    "revokeConsentConfirmationMessage": "Annuler votre consentement vous déconnectera de Teamcenter",
+    "Group": "Groupe",
+    "DefaultRole":  "Rôle par défaut",
+    "DefaultGroup": "Groupe par défaut",
+    "cancel": "Annuler",
+    "revoke": "Annuler",
+    "group": "Groupe",
+    "role": "Rôle",
+    "userMembershipTitle":"Utilisateurs membres",
+    "userCalendarNotExits":"Pas de calendrier utilisateur",
+    "addButtonText": "Ajouter"
+}

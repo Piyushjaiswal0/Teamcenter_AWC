@@ -1,0 +1,19 @@
+{
+    "types": [ {
+            "name": "Dataset",
+            "properties": [ {
+                    "name": "object_name"
+                },
+                {
+                    "name": "creation_date"
+                },
+                {
+                    "name": "owning_group"
+                },
+                {
+                    "name": "object_type"
+                }
+            ]
+        }
+    ]
+}

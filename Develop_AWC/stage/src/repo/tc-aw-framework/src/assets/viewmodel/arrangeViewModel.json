@@ -1,0 +1,630 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-command-bar.directive",
+        "js/aw-panel-body.directive",
+        "js/visible-when.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-list-filter.directive",
+        "js/aw-checkbox.directive",
+        "js/aw-label.directive",
+        "js/aw-textbox.directive",
+        "js/aw-command-panel-section.directive"
+    ],
+    "actions": {
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-UiConfig",
+            "method": "getNamedColumnConfigs",
+            "inputData": {
+                "namedColumnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeUri": "{{function:getClientScopeUri}}",
+                    "columnConfigName": "",
+                    "columnConfigId": "{{ctx.ArrangeClientScopeUI.columnConfigId}}",
+                    "columnsToExclude": []
+                },
+                "namedColumnConfigCriteria": {}
+            },
+            "outputData": {
+                "arrangeData.savedColumnConfigs": "{{json:namedColumnConfigsJSON}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.listOfColumnConfigsRetrieved"
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "loadColumnConfigDataProvider": {
+            "actionType": "dataProvider",
+            "method": "dataProviderColumnConfigs"
+        },
+        "loadAvailableColumnConfigDataProvider": {
+            "actionType": "dataProvider",
+            "method": "dataProviderAvailableColumnConfigs"
+        },
+        "deleteNamedColumnConfig": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-UiConfig",
+            "method": "deleteNamedColumnConfig",
+            "inputData": {
+                "uid": "{{commandContext.vmo.columnConfigUid}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.namedColumnConfigDeleted",
+                        "eventData": {
+                            "data": "{{data}}"
+                        }
+                    },
+                    {
+                        "name": "hideViewColumnConfigurationsPopup"
+                    }
+                ],
+                "failure": [
+                    {
+                        "name": "hideViewColumnConfigurationsPopup"
+                    }
+                ]
+            }
+        },
+        "removeNamedColumnConfigFromProvider": {
+            "actionType": "JSFunction",
+            "method": "removeNamedColumnConfigFromProvider",
+            "inputData": {
+                "data": "{{data}}",
+                "loadedColumnConfig": "{{parameters.eventData}}"
+            },
+            "outputData": {
+                "arrangeData.savedColumnConfigs": ""
+            },
+            "deps": "js/arrange.service"
+        },
+        "reset": {
+            "actionType": "JSFunction",
+            "method": "reset",
+            "inputData": {
+                "arrangeData": "{{data.arrangeData}}"
+            },
+            "deps": "js/arrange.service"
+        },
+        "actionFilterList": {
+            "actionType": "JSFunction",
+            "method": "actionFilterList",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "arrangeData": "arrangeData",
+                "dataProvider.dataProviderAvailableColumnConfigs": "result.dataProviderAvailableColumnConfigs",
+                "dataProvider.dataProviderColumnConfigs": "result.dataProviderColumnConfigs",
+                "columnConfigName": "result.columnConfigName",
+                "newColumnConfigName": "result.newColumnConfigName"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.columnVisibilityChanged",
+                        "eventData": {
+                            "data": "{{data}}"
+                        }
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "loadExistingColumnConfig": {
+            "actionType": "JSFunction",
+            "method": "loadExistingColumnConfig",
+            "inputData": {
+                "data": "{{data}}",
+                "loadedColumnConfig": "{{parameters.eventData}}"
+            },
+            "outputData":{
+                "arrangeData": "result.arrangeData",
+                "newColumnConfig": "result.newColumnConfig",
+                "filterBox":"result.filterBox",
+                "dataProviderColumnConfigs": "result.dataProviderColumnConfigs",
+                "dataProviderAvailableColumnConfigs": "result.dataProviderAvailableColumnConfigs",
+                "columnConfigName": "result.columnConfigName",
+                "newColumnConfigName":"result.newColumnConfigName"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.columnVisibilityChanged",
+                        "eventData": {
+                            "data": "{{data}}"
+                        }
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "selectColumn": {
+            "actionType": "JSFunction",
+            "method": "selectColumn",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "outputData": {
+                "dataProvider.dataProviderAvailableColumnConfigs": "result.dataProviderAvailableColumnConfigs",
+                "dataProvider.dataProviderColumnConfigs": "result.dataProviderColumnConfigs"
+            },
+            "deps": "js/arrange.service"
+        },
+        "selectAvailableColumn": {
+            "actionType": "JSFunction",
+            "method": "selectAvailableColumn",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "outputData": {
+                "dataProvider.dataProviderAvailableColumnConfigs": "result.dataProviderAvailableColumnConfigs",
+                "dataProvider.dataProviderColumnConfigs": "result.dataProviderColumnConfigs"
+            },
+            "deps": "js/arrange.service"
+        },
+        "columnVisibilityChanged": {
+            "actionType": "JSFunction",
+            "method": "columnVisibilityChanged",
+            "inputData": {
+                "data": "{{parameters.eventData}}"
+            },
+            "outputData":{
+                "arrangeData":"result.arrangeData",
+                "newColumnConfig": "result.newColumnConfig"
+            },
+            "deps": "js/arrange.service"
+        },
+        "operationTypeChanged": {
+            "actionType": "JSFunction",
+            "method": "operationTypeChanged",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "filterBox":"result.filterBox",
+                "arrangeData":"result.arrangeData"
+            },
+            "deps": "js/arrange.service"
+        },
+        "updateColumns": {
+            "actionType": "JSFunction",
+            "method": "updateColumns",
+            "inputData": {
+                "data": "{{data}}",
+                "eventData": "{{parameters.eventData}}"
+            },
+            "outputData":{
+                "arrangeData": "result.arrangeData",
+                "dataProvider.dataProviderAvailableColumnConfigs": "dataProviderAvailableColumnConfigs",
+                "dataProvider.dataProviderColumnConfigs": "dataProviderColumnConfigs"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.columnVisibilityChanged",
+                        "eventData": {
+                            "data": "{{data}}"
+                        }
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "markDirty": {
+            "actionType": "JSFunction",
+            "method": "markDirty",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "newColumnConfig":"result.newColumnConfig",
+                "arrangeData":"result.arrangeData"
+            },
+            "deps": "js/arrange.service"
+        },
+        "arrange": {
+            "actionType": "JSFunction",
+            "method": "arrange",
+            "inputData": {
+                "data": "{{data.arrangeData}}",
+                "arrangeType": "saveColumnAndLoadAction"
+            },
+            "deps": "js/arrange.service"
+        },
+        "arrangeAndSave": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "saveNamedColumnConfig2",
+            "inputData": {
+                "uid": "{{data.arrangeData.loadedColumnConfigUid}}",
+                "columns": "{{function:createSoaColumns}}",
+                "namedColumnConfigCriteria": {
+                    "clientScopeUri": "{{data.arrangeData.clientScopeUri}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.arrange"
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "arrangeAndSet": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "saveNamedColumnConfig2",
+            "inputData": {
+                "uid": "{{data.arrangeData.loadedColumnConfigUid}}",
+                "columns": [],
+                "namedColumnConfigCriteria": {
+                    "clientScopeUri": "{{data.arrangeData.clientScopeUri}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.arrange"
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "arrangeAndCreateSOAAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "createNamedColumnConfig2",
+            "inputData": {
+                "namedColumnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeUri": "{{data.arrangeData.clientScopeUri}}",
+                    "columnConfigName": "{{data.newColumnConfigName.dbValue}}",
+                    "columnConfigId": "{{data.arrangeData.columnConfigId}}",
+                    "columnsToExclude": []
+                },
+                "columns": "{{function:createSoaColumns}}",
+                "namedColumnConfigCriteria": {
+                    "columnConfigOriginUid": "{{data.arrangeData.loadedColumnConfigUid}}"
+                }
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "arrangePanel.arrange"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure": [
+                    {
+                        "message": "arrangePanelConfigFailure"
+                    }
+                ]
+            },
+            "deps": "js/arrange.service"
+        },
+        "arrangeAndCreate": {
+            "actionType": "JSFunction",
+            "method": "arrange",
+            "inputData": {
+                "data": "{{data.arrangeData}}",
+                "arrangeType": "saveAsNewColumnAndLoadAction"
+            },
+            "deps": "js/arrange.service"
+        },
+        "closeArrangePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        },
+        "preLoadColumnConfig": {
+            "actionType": "JSFunction",
+            "method": "preLoadColumnConfig",
+            "deps": "js/arrange.service",
+            "inputData": {
+                "loadedColumnConfig": "{{parameters.eventData.loadedColumnConfig}}"
+            }
+        },
+        "preRemoveColumnConfig": {
+            "actionType": "JSFunction",
+            "method": "preRemoveColumnConfig",
+            "deps": "js/arrange.service",
+            "inputData": {
+                "namedColumnConfig": "{{commandContext.vmo}}"
+            }
+        },
+        "removeColumnConfig": {
+            "actionType": "JSFunction",
+            "method": "removeColumns",
+            "deps": "js/arrange.service",
+            "inputData": {
+                "arrangeData": "{{data.arrangeData}}",
+                "eventData": "{{parameters.eventData}}",
+                "data": "{{data.dataProviders}}"
+            },
+            "outputData": {
+                "arrangeData": "result.arrangeData",
+                "dataProvider.dataProviderAvailableColumnConfigs": "result.dataProviderAvailableColumnConfigs",
+                "dataProvider.dataProviderColumnConfigs": "result.dataProviderColumnConfigs"
+            }
+        },
+        "addAvailableColumnConfig": {
+            "actionType": "JSFunction",
+            "method": "addColumns",
+            "deps": "js/arrange.service",
+            "inputData": {
+                "arrangeData": "{{data.arrangeData}}",
+                "data": "{{data.dataProviders}}",
+                "eventData": "{{parameters.eventData}}"
+            },
+            "outputData": {
+                "arrangeData": "result.arrangeData",
+                "dataProvider.dataProviderAvailableColumnConfigs": "result.dataProviderAvailableColumnConfigs",
+                "dataProvider.dataProviderColumnConfigs": "result.dataProviderColumnConfigs"
+            }
+        },
+        "seeMoreAction": {
+            "actionType": "JSFunction",
+            "method": "addColumns",
+            "deps": "js/arrange.service",
+            "inputData": {
+                "arrangeData": "{{data.arrangeData}}"
+            }
+        }
+    },
+    "data": {
+        "filterBox": {
+            "dbValue": "",
+            "displayName": "",
+            "type": "STRING"
+        },
+        "filterAvailableBox": {
+            "dbValue": "",
+            "displayName": "",
+            "type": "STRING"
+        },
+        "seeMoreProperties": {
+            "dbValue": "",
+            "displayName": "{{i18n.seeMorePropertiesTitle}}",
+            "type": "STRING"
+        },
+        "columnConfigName": {
+            "dbValue": "",
+            "uiValue": "testColumnConfigName",
+            "type": "STRING",
+            "displayName": "{{i18n.arrangeConfigNameTitle}}",
+            "propertyName": "columnConfigName",
+            "isNull": false,
+            "propApi": {}
+        },
+        "newColumnConfigName": {
+            "dbValue": "testColumnConfigName",
+            "type": "STRING",
+            "displayName": "{{i18n.datasetName}}",
+            "propertyName": "newColumnConfigName",
+            "isNull": false,
+            "isEditable": true,
+            "isEnabled": true,
+            "propApi": {},
+            "inputType": "text",
+            "requiredText": "{{i18n.arrangeNewConfigNameTitleRequired}}",
+            "maxLength": 512
+        },
+        "newColumnConfig": {
+                "dbValue": false,
+                "uiValue": "",
+                "type": "BOOLEAN",
+                "displayName": "{{i18n.arrangeNewConfigTitle}}",
+                "propertyName": "newColumnConfig",
+                "isNull": false,
+                "isEditable": true,
+                "isEnabled": true,
+                "propApi": {},
+                "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "arrangeData": {
+            "columnConfigId": null,
+            "filter": "",
+            "columnDefs": null,
+            "availableColumnDefs": null,
+            "filteredColumnDefs": null,
+            "filteredAvailableColumnDefs": null,
+            "allColumnsVisible": true,
+            "dirty": false,
+            "operationType": "configured"
+        }
+    },
+    "dataProviders": {
+        "dataProviderColumnConfigs": {
+            "action": "actionFilterList",
+            "response": "{{data.arrangeData.filteredColumnDefs}}",
+            "totalFound": "{{data.arrangeData.filteredColumnDefs.length}}",
+            "selectionModelMode": "multiple",
+            "deps": "js/arrange.service"
+        },
+        "dataProviderAvailableColumnConfigs": {
+            "action": "actionFilterList",
+            "response": "{{data.arrangeData.filteredAvailableColumnDefs}}",
+            "totalFound": "{{data.arrangeData.filteredAvailableColumnDefs.length}}",
+            "selectionModelMode": "multiple",
+            "deps": "js/arrange.service"
+        }
+    },
+    "i18n": {
+        "arrangeAndSaveButtonTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "arrangeAndCreateButtonTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "arrangeConfigNameTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "arrangeNewConfigNameTitleRequired": [
+            "ArrangeColumnsMessages"
+        ],
+        "arrangeNewConfigTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "arrangeAdminTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "defaultNewColumnConfigName": [
+            "ArrangeColumnsMessages"
+        ],
+        "datasetName": [
+            "awAddDirectiveMessages"
+        ],
+        "arrangeMenu": [
+            "treeTableMessages"
+        ],
+        "availableColumnsTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "tableColumnsTitle": [
+            "ArrangeColumnsMessages"
+        ],
+        "seeMorePropertiesTitle": [
+            "ArrangeColumnsMessages"
+        ]
+    },
+    "onEvent": [
+        {
+            "eventId": "dataProviderColumnConfigs.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "selectColumn"
+        },
+        {
+            "eventId": "dataProviderAvailableColumnConfigs.selectionChangeEvent",
+            "cacheEventData": true,
+            "action": "selectAvailableColumn"
+        },
+        {
+            "eventId": "arrangePanel.columnVisibilityChanged",
+            "cacheEventData": false,
+            "action": "columnVisibilityChanged",
+            "inputArgs": {
+                "eventData": "{{eventData.data}}"
+            }
+        },
+        {
+            "eventId": "columnChanged",
+            "cacheEventData": false,
+            "action": "updateColumns",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "operationTypeChanged",
+            "cacheEventData": false,
+            "action": "operationTypeChanged"
+        },
+        {
+            "eventId": "appCtx.register",
+            "condition": "(name === 'ViewModeContext' || name === 'objectSetViewModeContext') && value !== 'TableView' && value !== 'TableSummaryView'",
+            "action": "closeArrangePanel"
+        },
+        {
+            "eventId": "tableDestroyed",
+            "action": "closeArrangePanel"
+        },
+        {
+            "eventId": "arrangePanel.columnConfigLoaded",
+            "action": "preLoadColumnConfig",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "arrangePanel.columnConfigLoadRedirect",
+            "action": "loadExistingColumnConfig",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "arrangePanel.columnConfigRemoveRedirect",
+            "action": "removeNamedColumnConfigFromProvider",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "arrangePanel.listOfColumnConfigsRetrieved",
+            "action": "loadColumnConfigDataProvider"
+        },
+        {
+            "eventId": "arrangePanel.listOfColumnConfigsRetrieved",
+            "action": "loadAvailableColumnConfigDataProvider"
+        },
+        {
+            "eventId": "arrangePanel.arrange",
+            "action": "arrange"
+        },
+        {
+            "eventId": "arrangePanel.deleteNamedColumnConfig",
+            "action": "deleteNamedColumnConfig"
+        },
+        {
+            "eventId": "arrangePanel.namedColumnConfigDeleted",
+            "action": "preRemoveColumnConfig"
+        },
+        {
+            "eventId": "dataProviderAvailableColumnConfigs.listDoubleClick",
+            "action": "addAvailableColumnConfig",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "dataProviderColumnConfigs.listDoubleClick",
+            "action": "removeColumnConfig",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        },
+        {
+            "eventId": "saveNewArrangementDefaultEvent",
+            "action": "arrangeAndCreateSOAAction"
+        }
+    ],
+    "functions": {
+        "createSoaColumns": {
+            "functionName": "createNamedSoaColumns",
+            "parameters": [
+                "{{data.arrangeData}}"
+            ]
+        },
+        "getClientScopeUri": {
+            "functionName": "getClientScopeUri"
+        }
+    },
+    "messages": {
+        "arrangePanelConfigFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    }
+}

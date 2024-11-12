@@ -1,0 +1,21 @@
+{
+    "types": 
+    [
+        {
+            "name": "CrfOutputHtml",
+            "properties": 
+            [
+                {
+                    "name": "ref_list",
+                    "modifiers": 
+                    [
+                        {
+                            "name": "withProperties",
+                            "Value": "true"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Adicionar a {0}",
+    "revRuleNotAvailable": "A regra de revisão selecionada não está disponível nas regras de revisão carregadas",
+    "revRuleChangeFailed": "Falha na alteração da regra de revisão",
+    "revRuleChangeSucess": "Regra de revisão alterada",
+    "sendToCommandTitle": "Abrir em {0}",
+    "sendToNewViewCommandTitle": "Abrir em nova visualização {0}",
+    "Awp0AddComponentHostedDesc": "Adicione o componente selecionado à peça de trabalho ativa.",
+    "Awp0OpenHostedDesc": "Abra a seleção.",
+    "HostingSetRevisionRule": "Definir Regra de Revisão de Hospedagem",
+    "HostingTimeoutAuthRequestSuccessful": "A página do navegador está atualizando para restabelecer a sessão.",
+    "HostingTimeoutAuthRequestFailure": "A sessão não pode ser restabelecida devido à falha de autenticação do aplicativo host. \nClose e reabra o aplicativo host.",
+    "HostingFileUploadSvcUploadError": "Falha ao salvar o arquivo {0} com erro {1}."
+}

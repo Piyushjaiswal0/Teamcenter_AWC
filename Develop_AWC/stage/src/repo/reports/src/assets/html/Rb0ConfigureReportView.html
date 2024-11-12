@@ -1,0 +1,3 @@
+<aw-command-panel caption="{{(ctx.state.params.referenceId === 'edit') ? i18n.editReportTitle : i18n.configurePanelTitle}}" context="subPanelContext">
+    <aw-command-sub-panel  panel-id="ConfigureReportSubPage" visible-when="data.activeView=='ConfigureReportSubPage'" sub-panel-context="{searchState: subPanelContext.searchState, reportsContext: data.reportsContext}"></aw-command-sub-panel>
+</aw-command-panel>

@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "Zmień właściciela",
+ "change" : "Zmień",
+ "user" : "Użytkownik",
+ "EmailAddress" : "Adres e-mail:",
+ "PhoneNumber" : "Numer telefonu:",
+ "singleObjectChangeOwnershipSuccess": "Zmieniono element \"{0}\".",
+ "multipleObjectsChangeOwnershipSuccess": "Zmieniono {0} z {1} wybranych elementów.", 
+ "changeOwnershipForObjectFailure": "Element \"{0}\" nie został zmieniony z powodu braku uprawnień. "
+}

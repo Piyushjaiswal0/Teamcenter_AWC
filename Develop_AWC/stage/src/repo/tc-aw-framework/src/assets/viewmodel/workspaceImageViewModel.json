@@ -1,0 +1,64 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-list.directive",
+        "js/aw-image-cell.directive",
+        "js/aw-scrollpanel.directive"
+    ],   
+
+    "actions":
+    {
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "imageDataProvider"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "getAllWorkspaces",
+            "outputData": {
+                "workspaces": ""
+            },
+            "deps": "js/workspaceService"
+        }
+     },
+    
+    "dataProviders":
+    {
+        "imageDataProvider":
+        {
+            "dataProviderType":"Action",
+            "action": "loadData",
+            "response": "{{data.workspaces.workspaceList}}",
+            "totalFound": "{{data.workspaces.workspaceCount}}",
+            "ctx.search.totalFound": "{{data.workspaces.workspaceCount}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commands":
+            {
+                "Awp0ShowObjectCell": {
+                    "id": "cmdOpen",
+                    "title": "{{i18n.Open}}",
+                    "areas": [
+                        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+                    ],
+                    "priorities": [
+                        300
+                    ],
+                    "dependencies": [
+                        "js/showObjectCommandHandler"
+                    ],
+                    "displayOption": "ON_HOVER_AND_SELECTION",
+                    "position": "TOP_RIGHT"
+                }
+            }
+        }
+    },
+    "onEvent": [{
+        "eventId": "workspaceImage.contentLoaded",
+        "action": "reveal"
+    }]
+     
+}

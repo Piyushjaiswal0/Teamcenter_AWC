@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Informes",
+    "allSubLocation": "Todas",
+    "reportBuilderSubLocation": "Plantillas",
+    "runReportTitle": "Generar informe",
+    "runReportOperationName": "Ejecutar informe",
+    "doWorkOperationName": "Ejecutar",
+    "execution": "Ejecución",
+    "criteria": "Criterios",
+    "stylesheet": "Hoja de estilo",
+    "dataset": "Guardar como Nombre de archivo",
+    "myreportsSubLocation": "Archivos guardados",
+    "loadingMsg": "Cargando...",
+    "zeroSearchResults": "No se encontró ningún resultado",
+    "reportResultsChartTitle": "Filtrar los resultados por: ",
+    "AddSnapshot": "Instantáneas",
+    "AddNew": "Nuevo",
+    "doQueueOperation": "Agregar a la fila de espera",
+    "runTcraReport": "Ejecutar",
+    "dosnapShotViewOperation": "Ver",
+    "myDashboard": "Mi cuadro de mando",
+    "inOpenRptCommand": "Abierto"
+}

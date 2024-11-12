@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "알림",
+    "subManAppLabel": "뉴스 알림",
+    "clear": "지우기",
+    "noNotificationMsg": "새 알림 없음",
+    "multipleObjectsMsg": "\"{0}\" 그리고 \"{1}\" 추가",
+    "aw_globalToolbar": "전역 도구 모음",
+    "Awp0ShowAlertWithBubbleDesc": "새 알림을 봅니다."
+}

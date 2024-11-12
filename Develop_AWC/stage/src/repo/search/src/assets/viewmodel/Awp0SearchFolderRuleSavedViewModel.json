@@ -1,0 +1,178 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "actions": {
+        "loadSavedSearch":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData":
+            {
+                "searchInput":
+                {
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0SavedSearchProvider",
+                    "startIndex": "{{data.dataProviders.savedSearchSelector.startIndex}}",
+                    "searchFilterMap6": ""
+                },
+                "inflateProperties": false
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Awp0FullTextSavedSearch",
+                        "properties": [ {
+                            "name": "object_name"
+                        }, {
+                            "name": "awp0search_string"
+                        }, {
+                            "name": "creation_date"
+                        }, {
+                            "name": "awp0string_filters",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        }, {
+                            "name": "last_mod_date"
+                        }, {
+                            "name": "awp0SearchFilterArray"
+                        }, {
+                            "name": "owning_user"
+                        }, {
+                            "name": "awp0is_global_shared"
+                        }, {
+                            "name": "awp0ChartOn"
+                        } ]
+                    }, {
+                        "name": "SavedSearch",
+                        "properties": [ {
+                            "name": "object_name"
+                        }, {
+                            "name": "savedsearch_attr_names"
+                        }, {
+                            "name": "savedsearch_attr_values"
+                        }, {
+                            "name": "shared"
+                        }, {
+                            "name": "last_mod_date"
+                        }, {
+                            "name": "savedsearch_query",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        }, {
+                            "name": "owning_user"
+                        }, {
+                            "name": "saved_search_criteria"
+                        } ]
+                    }, {
+                        "name": "SavedQueryCriteria",
+                        "properties": [ {
+                            "name": "fnd0AttributeDisplayValues"
+                        } ]
+                    }, {
+                        "name": "Awp0StringSearchFilter",
+                        "properties": [ {
+                            "name": "awp0filter_name"
+                        }, {
+                            "name": "awp0value"
+                        } ]
+                    }
+                ]
+            },
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "savedSearchesList": "{{function:createLOVEntriesForSavedSearchObjects}}",
+                "searchResults": "{{json:searchResultsJSON}}"
+            },
+            "deps": "js/searchFolderRuleImportSavedSearchService"
+        },
+        "showSavedSearchAttributes": {
+            "actionType": "JSFunction",
+            "method": "showSavedSearchAttributes",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "selectedObject": "{{data.dataProviders.savedSearchSelector.selectedObjects[0]}}"
+            },
+            "outputData": {
+                "savedSearchType": ""
+            },
+            "deps": "js/searchFolderRuleImportSavedSearchService"
+        }
+    },
+    "data": {
+        "savedSearchesListProp": {
+            "displayName": "{{i18n.savedSearch}}",
+            "type": "STRING",
+            "hasLov": true,
+            "isEditable": true,
+            "propertyLabelDisplay": "PROPERTY_LABEL_AT_TOP",
+            "dataProvider": "savedSearchSelector"
+        },
+        "fullTextCriteria": {
+            "displayName": "{{i18n.searchCriteria}}",
+            "type": "STRING",
+            "isEditable": false,
+            "propertyLabelDisplay": "PROPERTY_LABEL_AT_LEFT",
+            "dbValue": "{{subPanelContext.searchState.criteria.searchString}}"
+        }
+    },
+
+    "functions": {
+        "createLOVEntriesForSavedSearchObjects": {
+            "functionName": "createLOVEntriesForSavedSearchObjects",
+            "parameters": []
+        }
+    },
+    "dataProviders":
+    {
+        "savedSearchSelector":
+        {
+            "action": "loadSavedSearch",
+            "response": "{{data.savedSearchesList}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "single"
+        }
+    },
+    "onEvent": [],
+    "i18n": {
+        "searchBtn": [ "SearchMessages" ],
+        "searchFiltersTitle": [ "SearchMessages" ],
+        "refine": [ "SearchMessages" ],
+        "savedSearch": [ "SearchMessages" ],
+        "searchCriteria": [ "SearchMessages" ],
+        "unsavedChanges": [ "SearchMessages" ],
+        "discard": [ "SearchMessages" ],
+        "Save": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+            "action": "showSavedSearchAttributes",
+            "observers": [ "viewModel.dataProviders.savedSearchSelector.selectedObjects[0].object.uid" ]
+        } ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "conditions": {
+        "populatedSearchString": {
+            "expression": "subPanelContext.searchState.criteria && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.criteria.searchString.length > 0"
+        },
+        "fullTextSavedSearchType": {
+            "expression": "subPanelContext.searchState.awp0SearchType && subPanelContext.searchState.awp0SearchType === 'Awp0FullTextSearchProvider'"
+        },
+        "advancedSavedSearchType": {
+            "expression": "subPanelContext.searchState.awp0SearchType && subPanelContext.searchState.awp0SearchType === 'Awp0SavedQuerySearchProvider'"
+        }
+    }
+}

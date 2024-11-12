@@ -1,0 +1,11 @@
+<div class="aw-layout-flexColumn aw-search-folderColumn">
+    <div>
+        <span class="aw-widgets-propertyNonEditValue" exist-when="subPanelContext.searchState.awp0SearchType === 'Unknown'">{{i18n.noRuleFound}}</span>
+    </div>
+    <div exist-when="subPanelContext.searchState.awp0SearchType !== 'Unknown'">
+        <div class="aw-layout-flexColumn">
+            <aw-widget prop="data.searchFolderCriteria"></aw-widget>
+            <aw-widget prop="data.searchFolderFilters"></aw-widget>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{
+    "PanelBuilderCommandTitle": "패널 작성기",
+    "commandBuilderCommandTitle": "명령 작성기",
+    "GoToCommandBuilderDesc": "Active Workspace 명령을 생성하고 수정합니다.",
+    "GoToPanelBuilderDesc": "Active Workspace 패널을 생성하고 수정합니다."
+}

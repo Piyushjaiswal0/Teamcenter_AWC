@@ -1,0 +1,29 @@
+{
+    "schemaVersion" : "1.0.0",
+    "data":{
+        "_provider": {
+            "priority": 1,
+            "label": {
+                "source": "/i18n/FavoritesMessages",
+                "key": "myRecentViewedObjects"
+            },
+            "breadcrumbConfig": {
+                "type": "search",
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "clientScopeURI": "Awp0MyRecent",
+            "nameToken": "com.siemens.splm.client.favorites:myRecentSubLocation",
+            "context": {
+                "search": {
+                    "provider": "Awp0RecentObjectsProvider",
+                    "sortType": "Priority",
+                    "criteria":
+                    {
+                        "search": ""
+                    }
+                }
+            },
+            "viewBase": "Favorites"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="12.324" y1="15.945" x2="32.056" y2="35.677" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a5cfdc"/>
+      <stop offset="0.128" stop-color="#9cc9d7"/>
+      <stop offset="0.335" stop-color="#84bacb"/>
+      <stop offset="0.596" stop-color="#5ea2b7"/>
+      <stop offset="0.896" stop-color="#28809b"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <path d="M40.5,11.5a4,4,0,1,1-4-4A4,4,0,0,1,40.5,11.5ZM32.121.568a14.108,14.108,0,0,0-12.174,10.55,13.522,13.522,0,0,0,1.318,10.021L16.716,25.7v5.581h-5.6v5.6h-5.6l-4.1,4.586A3.631,3.631,0,0,0,.5,43.885v1.984A1.632,1.632,0,0,0,2.131,47.5l1.908,0a3.631,3.631,0,0,0,2.538-1.029l20.285-19.74a13.522,13.522,0,0,0,10.025,1.317A13.983,13.983,0,0,0,32.121.568Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#linear-gradient)"/>
+  <circle cx="33.5" cy="14.5" r="12" fill="none" stroke="#147391" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,8 @@
+[
+  {
+    "name": "",
+    "priority": 10,
+    "view": "AwSecondaryWorkareaNoSkeleton",
+    "visibleWhen": "selection.length === 0 && (context.clientScopeURI === 'Um0ShowOrganization' || context.clientScopeURI === 'Um0ShowGroup' || context.clientScopeURI === 'Um0ShowRole' || context.clientScopeURI === 'Um0ShowUser' || context.name === 'baseCalendars')"
+  }
+]

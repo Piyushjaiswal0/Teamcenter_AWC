@@ -1,0 +1,20 @@
+<aw-command-panel caption="i18n.SaveSearch" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section>
+            <aw-widget prop="data.savedSearchName" hint="textarea"></aw-widget>
+            <aw-widget prop="data.searchString"></aw-widget>
+            <aw-widget prop="data.searchFilters"></aw-widget>
+        </aw-panel-section>
+        <aw-panel-section>
+            <aw-widget prop="data.shareSavedSearch"></aw-widget>
+            <aw-widget prop="data.pinToHome"></aw-widget>
+        </aw-panel-section>
+        <aw-panel-section caption="i18n.ChartProperties">
+            <aw-widget prop="data.chartProperty"></aw-widget>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button size='auto' action="save" visible-when="conditions.isValidToSave"><aw-i18n>i18n.Save</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>
+

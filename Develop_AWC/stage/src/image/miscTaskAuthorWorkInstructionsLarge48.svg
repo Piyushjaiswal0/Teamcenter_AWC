@@ -1,0 +1,12 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <rect width="48" height="48" fill="#7fb2ac"/>
+  <path d="M20,40.5H12.569a4.052,4.052,0,0,1-4.05-4.053L8.5,12.806" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <path d="M31.529,15.979h-19.5A3.369,3.369,0,0,1,8.5,12.806h0A3.432,3.432,0,0,1,11.979,9.5h19.55S28.5,12.314,31.529,15.979Z" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <path d="M39.405,26.23h0a.33.33,0,0,0-.02-.482l-3.131-2.831a.371.371,0,0,0-.506,0L23.372,35.405l-1.339,4.851,5-1.569Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="37.433" y1="28.203" x2="33.776" y2="24.905" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="26.917" y1="38.456" x2="23.615" y2="35.208" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20.014" cy="25.989" r="5.5" fill="none" stroke="#fff" stroke-linejoin="round"/>
+  <polygon points="20.896 28.662 20.896 25.008 19.191 25.008 19.191 28.662 18.51 28.662 18.51 29.511 21.578 29.511 21.578 28.662 20.896 28.662" fill="#fff"/>
+  <ellipse cx="20.044" cy="23.436" rx="0.994" ry="1.01" fill="#fff"/>
+  <line x1="31.529" y1="15.979" x2="31.529" y2="25" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+</svg>

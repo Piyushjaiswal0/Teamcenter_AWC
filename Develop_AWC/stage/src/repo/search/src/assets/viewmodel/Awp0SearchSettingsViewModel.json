@@ -1,0 +1,459 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "lifecycleHooks": {
+        "onMount": "searchSettingBatch"
+    },
+    "data": {
+        "AW_DisableTypeAheadFacetSearch": {
+            "displayName": "{{i18n.AW_DisableTypeAheadFacetSearch}}",
+            "type": "BOOLEAN",
+            "renderingHint": "radiobutton",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.preferences.AW_DisableTypeAheadFacetSearch[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "description": "{{i18n.AW_DisableTypeAheadFacetSearch_Description}}",
+            "propertyRadioFalseText": "{{i18n.automaticSearch}}",
+            "propertyRadioTrueText": "{{i18n.manualSearch}}"
+        },
+        "AWC_Search_Show_Auto_Update_Filters": {
+            "type": "BOOLEAN",
+            "displayName": "{{i18n.AWC_Search_Show_Auto_Update_Filters}}",
+            "renderingHint": "checkbox",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.preferences.AWC_Search_Show_Auto_Update_Filters[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "AW_Search_Auto_Open_Filter_Panel": {
+            "type": "BOOLEAN",
+            "displayName": "{{i18n.AW_Search_Auto_Open_Filter_Panel}}",
+            "renderingHint": "checkbox",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.preferences.AW_Search_Auto_Open_Filter_Panel[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "AWC_Hide_Unassigned_FacetCategories": {
+            "type": "BOOLEAN",
+            "displayName": "{{i18n.AWC_Hide_Unassigned_FacetCategories}}",
+            "renderingHint": "checkbox",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.preferences.AWC_Hide_Unassigned_FacetCategories[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT",
+            "description": "{{i18n.AWC_Hide_Unassigned_FacetCategories_Description}}"
+        },
+        "AWC_search_filter_wildcard": {
+            "displayName": "{{i18n.AWC_search_filter_wildcard}}",
+            "type": "STRING",
+            "isArray": false,
+            "dataProvider": "wildCardProvider",
+            "dbValue": "{{ctx.preferences.AWC_search_filter_wildcard[0]}}",
+            "renderingHint": "STRING",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "description": "{{i18n.AWC_search_filter_wildcard_Description}}"
+        },
+        "AWC_Search_Filter_Values_Sort_Order": {
+            "displayName": "{{i18n.AWC_Search_Filter_Values_Sort_Order}}",
+            "type": "BOOLEAN",
+            "dbValue": "{{ctx.preferences.AWC_Search_Filter_Values_Sort_Order[0]}}",
+            "renderingHint": "radiobutton",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "propertyRadioFalseText": "{{i18n.byIndex}}",
+            "propertyRadioTrueText": "{{i18n.byCount}}",
+            "description": "{{i18n.AWC_Search_Filter_Values_Sort_Order_Description}}"
+        },
+        "AWC_Limited_Filter_Categories_Enabled": {
+            "displayName": "{{i18n.expand}}",
+            "type": "BOOLEAN",
+            "renderingHint": "radiobutton",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.preferences.AWC_Limited_Filter_Categories_Enabled[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "propertyRadioFalseText": "{{i18n.allFilters}}",
+            "propertyRadioTrueText": "{{i18n.selectedFilters}}",
+            "description": "{{i18n.AWC_Limited_Filter_Categories_Enabled_Description}}"
+        },
+        "AWC_Limited_Filter_Categories_Expanded": {
+            "displayName": "",
+            "type": "CHECKBOX",
+            "isArray": true,
+            "renderingHint": "checkboxoptionlov",
+            "dataProvider": "filtersExpandedProvider",
+            "isEditable": "true",
+            "dbValue" : [],
+            "dbValues" : [],
+            "uiValue" : "",
+            "uiValues" :[],
+            "displayValues" : [],
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "AWC_Search_Enable_Snippets": {
+            "isRequired": "false",
+            "isEditable": "true",
+            "displayName": "{{i18n.AWC_Search_Enable_Snippets}}",
+            "type": "BOOLEAN",
+            "renderingHint": "checkbox",
+            "dbValue": "{{ctx.preferences.AWC_Search_Enable_Snippets[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_LEFT",
+            "description": "{{i18n.AWC_Search_Enable_Snippets_Description}}"
+        },
+        "AWC_Include_Results_From_Files": {
+            "isRequired": "false",
+            "isEditable": "true",
+            "displayName": "{{i18n.AWC_Include_Results_From_Files}}",
+            "type": "BOOLEAN",
+            "renderingHint": "checkbox",
+            "dbValue": "{{ctx.preferences.AWC_Include_Results_From_Files[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_LEFT",
+            "description": "{{i18n.AWC_Include_Results_From_Files_Description}}"
+        },
+        "AWC_select_firstobject_inSearchLocation": {
+            "displayName": "{{i18n.AWC_select_firstobject_onSearch}}",
+            "type": "BOOLEAN",
+            "renderingHint": "radiobutton",
+            "isRequired": "false",
+            "isEditable": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "dbValue": "{{ctx.preferences.AWC_select_firstobject_inSearchLocation[0]}}",
+            "propertyRadioFalseText": "{{i18n.showChart}}",
+            "propertyRadioTrueText": "{{i18n.showSummary}}",
+            "description": "{{i18n.AWC_select_firstobject_onSearch_Description}}"
+        },
+        "AWC_Search_Filter_Panel_Expand_Selected_Groups": {
+            "displayName": "{{i18n.expand}}",
+            "type": "BOOLEAN",
+            "renderingHint": "radiobutton",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{ctx.preferences.AWC_Search_Filter_Panel_Expand_Selected_Groups[0]}}",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "propertyRadioFalseText": "{{i18n.allGroups}}",
+            "propertyRadioTrueText": "{{i18n.selectedGroups}}",
+            "description": "{{i18n.AWC_Search_Filter_Panel_Expand_Selected_Groups_Description}}"
+        },
+        "AWC_Search_Filter_Panel_Groups_Expanded": {
+            "displayName": "",
+            "type": "CHECKBOX",
+            "isArray": true,
+            "renderingHint": "checkboxoptionlov",
+            "dataProvider": "groupsExpandedProvider",
+            "isEditable": "true",
+            "dbValue" : [],
+            "dbValues" : [],
+            "uiValue" : "",
+            "uiValues" :[],
+            "displayValues" : [], 
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "AWC_Search_Filter_Categories_Display_Mode": {
+            "isRequired": "false",
+            "isEditable": "true",
+            "displayName": "{{i18n.displayFiltersAs}}",
+            "type": "BOOLEAN",
+            "renderingHint": "radiobutton",
+            "dbValue": "",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP",
+            "propertyRadioFalseText": "{{i18n.groupFilters}}",
+            "propertyRadioTrueText": "{{i18n.listFilters}}",
+            "description": "{{i18n.AWC_Search_Filter_Categories_Display_Mode_Description}}"
+        },
+        "AW_DisableTypeAheadFacetSearch_Description": {
+            "extendedTooltipContent": "{{i18n.AW_DisableTypeAheadFacetSearch_Description}}"
+        },
+        "AWC_Hide_Unassigned_FacetCategories_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_Hide_Unassigned_FacetCategories_Description}}"
+        },
+        "AWC_Search_Enable_Snippets_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_Search_Enable_Snippets_Description}}"
+        },
+        "AWC_Include_Results_From_Files_Description":{
+            "extendedTooltipContent": "{{i18n.AWC_Include_Results_From_Files_Description}}"
+        },
+        "AWC_Search_Filter_Values_Sort_Order_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_Search_Filter_Values_Sort_Order_Description}}"
+        },
+        "AWC_search_filter_wildcard_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_search_filter_wildcard_Description}}"
+        },
+        "AWC_select_firstobject_onSearch_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_select_firstobject_onSearch_Description}}"
+        },
+        "AWC_Limited_Filter_Categories_Enabled_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_Limited_Filter_Categories_Enabled_Description}}"
+        },
+        "wildCard":[
+            "{{i18n.noWildCard}}",
+            "{{i18n.trailingWildCard}}",
+            "{{i18n.leadingWildCard}}",
+            "{{i18n.bothWildCard}}"
+        ],
+        "AWC_Search_Filter_Panel_Expand_Selected_Groups_Description": {
+            "extendedTooltipContent": "{{i18n.AWC_Search_Filter_Panel_Expand_Selected_Groups_Description}}"
+        },
+        "AWC_Search_Filter_Categories_Display_Mode_Description": {
+            "extendedTooltipContent":"{{i18n.AWC_Search_Filter_Categories_Display_Mode_Description}}"
+        }
+    },
+    "actions": {
+        "searchSettingBatch": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "loadSearchData"
+                },
+                {
+                    "action": "loadViewModel"
+                }
+            ]
+        },
+        "saveSettings": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "saveSettingsOnly"
+            } ]
+        },
+        "doAddToChangedPreferences": {
+            "actionType": "JSFunction",
+            "method": "doAddToChangedPreferences",
+            "deps": "js/searchSettingsService",
+            "inputData": {
+                "viewModelPrefs": "{{data.data}}"
+            },
+            "outputData": {
+                "changedPreferenceValues": ""
+            }
+        },
+        "loadSearchData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-FullTextSearch",
+            "method": "getSearchSettings",
+            "inputData": {
+                "searchSettingInput": {
+                    "inputSettings": {
+                        "AWC_Limited_Filter_Categories_Expanded": [ "default", "custom" ],
+                        "getStoredDatasetFieldsConstantValue": [ "true" ],
+                        "AWC_Search_Filter_Panel_Groups_Expanded": [ "group" ],
+                        "getDisplayGroupsInFilterPanel": [ "true" ]
+                    }
+                }
+            },
+            "outputData": {
+                "defaultExpandedFilterList": "outputValues.AWC_Limited_Filter_Categories_Expanded_Default",
+                "custom": "outputValues.AWC_Limited_Filter_Categories_Expanded_Custom",
+                "getStoredDatasetFieldsConstantValue": "outputValues.getStoredDatasetFieldsConstantValue",
+                "customGroup": "outputValues.AWC_Search_Filter_Panel_Groups_Expanded_Group",
+                "defaultExpandedGroupList": "outputValues.getDisplayGroupsInFilterPanel"
+            }
+        },
+        "loadViewModel": {
+            "actionType": "JSFunction",
+            "method": "loadViewModel",
+            "inputData": {
+                "data": "{{data.data}}"
+            },
+            "outputData": {
+                "expandedPref": "expandedPref",
+                "AWC_Limited_Filter_Categories_Expanded": "AWC_Limited_Filter_Categories_Expanded",
+                "AWC_search_filter_wildcard": "AWC_search_filter_wildcard",
+                "AWC_Search_Filter_Panel_Groups_Expanded": "AWC_Search_Filter_Panel_Groups_Expanded",
+                "expandedGroupPref": "expandedGroupPref",
+                "AWC_Search_Filter_Categories_Display_Mode": "AWC_Search_Filter_Categories_Display_Mode"
+            },
+            "deps": "js/searchSettingsService"
+        },
+        "refreshSettings": {
+            "actionType": "JSFunction",
+            "method": "refreshSettings",
+            "inputData": {},
+            "deps": "js/searchSettingsService"
+        },
+        "saveSettingsOnly": {
+            "actionType": "JSFunctionAsync",
+            "method": "saveSettings",
+            "inputData": {
+                "data": "{{data}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "navigationPanel"
+                        }
+                    },
+                    {
+                        "name": "search.openfilterPanel",
+                        "condition": "(!ctx.preferences.AW_Disable_Auto_Open_Filter_Panel || ctx.preferences.AW_Disable_Auto_Open_Filter_Panel[0] === 'FALSE') && ctx.searchPanelState.searchFilterPanelState !== 'userClose'"
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            },
+            "deps": "js/searchSettingsService"
+        },
+        "loadWildCardData": {
+            "actionType": "JSFunction",
+            "method": "loadWildCardInfo",
+            "deps": "js/searchSettingsService",
+            "inputData": {
+                "data": "{{data}}",
+                "prop": "{{data.AWC_search_filter_wildcard}}"
+            },
+            "outputData": {
+                "wildCardValues": "wildCardValues",
+                "wildCardTotalFound": "wildCardTotalFound"
+            }
+        },
+        "loadData_FilterExpanded": {
+            "actionType": "JSFunction",
+            "method": "loadData_FilterExpanded",
+            "deps": "js/searchSettingsService",
+            "inputData": {
+                "prop": "{{data.AWC_Limited_Filter_Categories_Expanded}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "filtersExpandedValues": "filtersExpandedValues",
+                "filtersExpandedTotalFound": "filtersExpandedTotalFound",
+                "AWC_Limited_Filter_Categories_Expanded": "newProp"
+            }
+        },
+        "loadData_GroupExpanded": {
+            "actionType": "JSFunction",
+            "method": "loadData_GroupExpanded",
+            "deps": "js/searchSettingsService",
+            "inputData": {
+                "prop": "{{data.AWC_Search_Filter_Panel_Groups_Expanded}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "groupsExpandedValues": "groupsExpandedValues",
+                "groupssExpandedTotalFound": "groupssExpandedTotalFound",
+                "AWC_Search_Filter_Panel_Groups_Expanded": "newProp"
+            }
+        },
+        "closeDialogPanel": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "dataProviders": {
+        "wildCardProvider": {
+            "action": "loadWildCardData",
+            "response": "{{data.wildCardValues}}",
+            "moreValuesExist": false
+        },
+        "filtersExpandedProvider": {
+            "action": "loadData_FilterExpanded",
+            "response": "{{data.filtersExpandedValues}}",
+            "totalFound": "{{data.filtersExpandedTotalFound}}",
+            "moreValuesExist": false
+        },
+        "groupsExpandedProvider": {
+            "action": "loadData_GroupExpanded",
+            "response": "{{data.groupsExpandedValues}}",
+            "totalFound": "{{data.groupsExpandedTotalFound}}",
+            "moreValuesExist": false
+        }
+    },
+    "onEvent": [ {
+            "eventId":"filtersExpandedProvider.selectionChangeEvent",
+            "action":"doAddToChangedPreferences",
+            "cacheEventData":true
+        },
+        {
+            "eventId": "closeDialog",
+            "action": "closeDialogPanel"
+        },
+        {
+            "eventId":"groupsExpandedProvider.selectionChangeEvent",
+            "action":"doAddToChangedPreferences",
+            "cacheEventData":true
+        }
+    ],
+    "conditions": {
+        "isValidToSave": {
+            "expression": "data.changedPreferenceValues !== undefined && data.changedPreferenceValues.length > 0"
+        },
+        "showExpandedValue":{
+            "expression": "data.AWC_Limited_Filter_Categories_Enabled.dbValue === true && conditions.showListOption || data.AWC_Limited_Filter_Categories_Enabled.dbValue === 'true' && conditions.showListOption"
+        },
+        "showExpandedGroupValue":{
+            "expression": "data.AWC_Search_Filter_Panel_Expand_Selected_Groups.dbValue === true && conditions.showGroupOption || data.AWC_Search_Filter_Panel_Expand_Selected_Groups.dbValue === 'true' && conditions.showGroupOption"
+        },
+        "enableCheckBox":{
+            "expression": "data.AWC_Include_Results_From_Files.dbValue === true || data.AWC_Include_Results_From_Files.dbValue === 'true'"
+        },
+        "enableCheckBoxWhen":{
+            "expression": "data.getStoredDatasetFieldsConstantValue && conditions.enableCheckBox"
+        },
+        "showListOption":{
+            "expression": "data.AWC_Search_Filter_Categories_Display_Mode.dbValue === true || data.AWC_Search_Filter_Categories_Display_Mode.dbValue === 'true'"
+        },
+        "showGroupOption":{
+            "expression": "data.AWC_Search_Filter_Categories_Display_Mode.dbValue === false || data.AWC_Search_Filter_Categories_Display_Mode.dbValue === 'false'"
+        }
+    },
+    "i18n": {
+        "searchSettings": [ "SearchMessages" ],
+        "AW_DisableTypeAheadFacetSearch": [ "SearchMessages" ],
+        "AWC_Limited_Filter_Categories_Enabled": [ "SearchMessages" ],
+        "AWC_Search_Show_Auto_Update_Filters": [ "SearchMessages" ],
+        "AW_Search_Auto_Open_Filter_Panel": [ "SearchMessages" ],
+        "AWC_Limited_Filter_Categories_Expanded": [ "SearchMessages" ],
+        "AWC_Search_Threshold_Value": [ "SearchMessages" ],
+        "AWC_search_filter_wildcard": [ "SearchMessages" ],
+        "AWC_select_firstobject_onSearch": [ "SearchMessages" ],
+        "AWC_DefaultPageSize": [ "SearchMessages" ],
+        "filterPanelRelated": [ "SearchMessages" ],
+        "generalSearchRelated": [ "SearchMessages" ],
+        "Save": [ "SearchMessages" ],
+        "validateErrorMessageForIncorrectPreference": [ "SearchMessages" ],
+        "noWildCard": [ "SearchMessages" ],
+        "trailingWildCard": [ "SearchMessages" ],
+        "leadingWildCard": [ "SearchMessages" ],
+        "bothWildCard": [ "SearchMessages" ],
+        "AWC_Hide_Unassigned_FacetCategories": [ "SearchMessages" ],
+        "AWC_Search_Enable_Snippets": [ "SearchMessages" ],
+        "AWC_Include_Results_From_Files": [ "SearchMessages" ],
+        "AWC_Search_Filter_Values_Sort_Order": [ "SearchMessages" ],
+        "automaticSearch": [ "SearchMessages" ],
+        "manualSearch": [ "SearchMessages" ],
+        "showChart": [ "SearchMessages" ],
+        "showSummary": [ "SearchMessages" ],
+        "byCount": [ "SearchMessages" ],
+        "byIndex": [ "SearchMessages" ],
+        "AW_DisableTypeAheadFacetSearch_Description": [ "SearchMessages" ],
+        "AWC_Hide_Unassigned_FacetCategories_Description": [ "SearchMessages" ],
+        "AWC_Search_Enable_Snippets_Description": [ "SearchMessages" ],
+        "AWC_Include_Results_From_Files_Description": [ "SearchMessages" ],
+        "AWC_Search_Filter_Values_Sort_Order_Description": [ "SearchMessages" ],
+        "AWC_search_filter_wildcard_Description": [ "SearchMessages" ],
+        "AWC_select_firstobject_onSearch_Description": [ "SearchMessages" ],
+        "AWC_Limited_Filter_Categories_Enabled_Description": [ "SearchMessages" ],
+        "AWC_Search_Filter_Panel_Expand_Selected_Groups": [ "SearchMessages" ],
+        "AWC_Search_Filter_Panel_Grouping_Expanded": [ "SearchMessages" ],
+        "AWC_Search_Filter_Panel_Expand_Selected_Groups_Description": [ "SearchMessages" ],
+        "AWC_Search_Filter_Categories_Display_Mode_Description": [ "SearchMessages" ],
+        "reset": [ "SearchMessages" ],
+        "categoryOfCategorization": [ "SearchMessages" ],
+        "object_type": [ "SearchMessages" ],
+        "selectedFilters": [ "SearchMessages" ],
+        "selectedGroups": [ "SearchMessages" ],
+        "allFilters": [ "SearchMessages" ],
+        "allGroups": [ "SearchMessages" ],
+        "expand": [ "SearchMessages" ],
+        "listFilters": [ "SearchMessages" ],
+        "groupFilters": [ "SearchMessages" ],
+        "displayFiltersAs": [ "SearchMessages" ]
+    }
+}

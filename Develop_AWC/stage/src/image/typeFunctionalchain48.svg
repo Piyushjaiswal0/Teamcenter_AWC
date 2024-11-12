@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 42">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad_4" data-name="Dark Blue Grad 4" x1="4.5489" y1="2.0489" x2="18.4511" y2="15.9511" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b2c6"/>
+      <stop offset=".1733" stop-color="#6aacc0"/>
+      <stop offset=".4532" stop-color="#529cb3"/>
+      <stop offset=".8027" stop-color="#2b839d"/>
+      <stop offset="1" stop-color="#13738f"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_4-2" data-name="Dark Blue Grad 4" x1="29.5489" y1="26.0489" x2="43.4511" y2="39.9511" xlink:href="#Dark_Blue_Grad_4"/>
+  </defs>
+  <line x1="19.7694" y1="14.2724" x2="29.8758" y2="26.2682" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="4"/>
+  <line x1="19.7694" y1="14.2724" x2="29.8758" y2="26.2682" fill="none" stroke="#6e6e6e" stroke-miterlimit="10" stroke-width="2"/>
+  <ellipse cx="11.5" cy="9" rx="11" ry="8.5" fill="url(#Dark_Blue_Grad_4)" stroke="#464646" stroke-miterlimit="10"/>
+  <ellipse cx="36.5" cy="33" rx="11" ry="8.5" fill="url(#Dark_Blue_Grad_4-2)" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

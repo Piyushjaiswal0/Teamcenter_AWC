@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0} of {1} were added.<BR/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0} of {1} were removed.<BR/>{2}",
+    "errorInGettingSubtypesOfEndItem": "The search results were not filtered because of an internal error.",
+    "invalidDateRangeError": "The start date must be earlier than the end date.",
+    "invalidUnitRange": "Invalid unit range",
+    "notificationForBaselineCreation": "\"{0}\" is being saved. You will be notified when it is complete.",
+    "notificationForBaselineCreationSync": "\"{0}\" is saved and available in Home folder."
+}

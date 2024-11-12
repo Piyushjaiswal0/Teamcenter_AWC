@@ -1,0 +1,85 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-include.directive",
+        "js/aw-init.directive"
+    ],
+    "actions": {
+        "unregisterInContextIdDisplayRule": {
+            "actionType": "JSFunction",
+            "method": "setUnSetInContextIdDisplayRule",
+            "inputData": {},
+            "deps": "js/idDisplayRuleMgmntUtils"
+        },
+        "onUnmount": {
+            "actionType": "JSFunction",
+            "method": "destroy",
+            "inputData": {
+                "type": "INFO",
+                "editHandlerContext": {
+                    "INFO": "INFO_PANEL_CONTEXT",
+                    "SUMMARY": "NONE"
+                }
+            },
+            "deps": "js/Awp0ObjectInfoService"
+        },
+        "updateIdDisplayRuleContext":{
+            "actionType": "JSFunction",
+            "method": "updateIdDisplayRuleContext",
+            "inputData": {
+                "eventData": "{{parameters.eventData}}",
+                "context": "{{ctx}}"
+            },
+            "deps": "js/idDisplayRuleMgmntUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onUnmount": "onUnmount"
+    },
+    "data": {
+        "xrtState": {
+            "initialValues": {},
+            "meta": {
+                "xrtVMO": {
+                    "field": "true",
+                    "type": "viewModelObject"
+                }
+            }
+        },
+        "activeView": "Awp0IdDispRuleAdminInfoSub"
+    },
+    "functions": {},
+    "onEvent": [
+        {
+            "eventId": "Awp0IdDispRuleAdminInfo.contentUnloaded",
+            "action": "unregisterInContextIdDisplayRule"
+        },
+        {
+            "eventId":"cdm.modified",
+            "action" :"updateIdDisplayRuleContext",
+            "inputArgs": {
+                "eventData": "{{eventData}}"
+            }
+        }
+    ],
+    "i18n": {
+        "objectInfoLabel": [
+            "XRTMessages"
+        ]
+    },
+    "ctx": {
+        "selected.IsEmbeddedComponent": null,
+        "idDisplayRuleContext": {
+            "type": "Object"
+        }
+    },
+    "editHandlers": {
+        "Awp0IdDispRuleAdminEditHandler": {
+            "context": "INFO_PANEL_CONTEXT",
+            "dataSource": {
+                "xrtVMO": "{{data.xrtState}}"
+            }
+        }
+    }
+}

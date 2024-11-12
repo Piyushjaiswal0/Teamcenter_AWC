@@ -1,0 +1,25 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-21.7409" y1="-29.8008" x2="-10.4271" y2="-29.8008" gradientTransform="translate(-17.8008 28.084) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="-4.7703" y1="-46.7713" x2="6.5434" y2="-46.7713" gradientTransform="translate(-10.7713 11.1134) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="-4.7703" y1="-12.8302" x2="6.5434" y2="-12.8302" gradientTransform="translate(-0.8302 35.1134) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="-5.4774" y1="-29.8008" x2="7.2505" y2="-29.8008" gradientTransform="translate(-5.8008 23.1134) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-5" x1="12.2003" y1="-29.8008" x2="23.514" y2="-29.8008" gradientTransform="translate(6.1992 18.1429) rotate(90)" xlink:href="#Dark_Blue_Grad"/>
+  </defs>
+  <line y1="12" x2="48" y2="12" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line y1="36" x2="48" y2="36" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="12" x2="12" y2="48" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="24" y1="5.0003" x2="24" y2="42.9997" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <line x1="36" x2="36" y2="48" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <rect x="6.3431" y="6.3431" width="11.3137" height="11.3137" transform="translate(-4.9706 12) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <rect x="30.3431" y="6.3431" width="11.3137" height="11.3137" transform="translate(2.0589 28.9706) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <rect x="6.3431" y="30.3431" width="11.3137" height="11.3137" transform="translate(-21.9411 19.0294) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+  <rect x="17.636" y="17.636" width="12.7279" height="12.7279" transform="translate(-9.9411 24) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-4)"/>
+  <rect x="30.3431" y="30.3431" width="11.3137" height="11.3137" transform="translate(-14.9117 36) rotate(-45)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-5)"/>
+</svg>

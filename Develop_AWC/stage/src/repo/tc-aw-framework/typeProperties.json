@@ -1,0 +1,139 @@
+{
+  "typeProperties": {
+    "WorkspaceObject": {
+      "additionalProperties": [
+        {
+          "name": "object_name"
+        }
+      ]
+    },
+    "ItemRevision": {
+      "additionalProperties": [
+        {
+          "name": "checked_out_user",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "checked_out_date"
+        },
+        {
+          "name": "awp0ConfiguredRevision"
+        },
+        {
+          "name": "items_tag"
+        },
+        {
+          "name": "release_status_list",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "fnd0InProcess"
+        }
+      ]
+    },
+    "Dataset": {
+      "additionalProperties": [
+        {
+          "name": "checked_out_user",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "checked_out_date"
+        },
+        {
+          "name": "release_status_list",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "fnd0InProcess"
+        },
+        {
+          "name": "fnd0IsCheckoutable"
+        }
+      ]
+    },
+    "ReleaseStatus": {
+      "additionalProperties": [
+        {
+          "name": "object_name"
+        },
+        {
+          "name": "date_released"
+        }
+      ]
+    },
+    "UserSession": {
+      "additionalProperties": [
+        {
+          "name": "fnd0displayrule"
+        }
+      ]
+    },
+    "POM_imc": {
+      "additionalProperties": [
+        {
+          "name": "site_id"
+        }
+      ]
+    },
+    "Form": {
+      "additionalProperties": [
+        {
+          "name": "checked_out_user",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "checked_out_date"
+        }
+      ]
+    },
+    "Item": {
+      "additionalProperties": [
+        {
+          "name": "checked_out_user",
+          "modifiers": [
+            {
+              "name": "withProperties",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "name": "checked_out_date"
+        }
+      ]
+    },
+    "User": {
+      "additionalProperties": [
+        {
+          "name": "userid"
+        }
+      ]
+    }
+  }
+}

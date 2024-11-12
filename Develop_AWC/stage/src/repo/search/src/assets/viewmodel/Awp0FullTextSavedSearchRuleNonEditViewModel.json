@@ -1,0 +1,64 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "searchCriteria": {
+            "displayName": "{{i18n.searchCriteria}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{subPanelContext.searchState.criteria.searchString}}",
+            "uiValue":"{{subPanelContext.searchState.criteria.searchString}}",
+            "dispValue": "{{subPanelContext.searchState.criteria.searchString}}"
+        },
+        "searchFilters": {
+            "displayName": "{{i18n.searchFiltersTitle}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{subPanelContext.searchState.filterStringDisplay}}",
+            "uiValue":"{{subPanelContext.searchState.filterStringDisplay}}",
+            "dispValue": "{{subPanelContext.searchState.filterStringDisplay}}"
+        },
+        "chartOnProperty": {
+            "displayName": "{{i18n.ChartBy}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{subPanelContext.searchState.chartBy}}"
+        }
+    },
+    "actions": {
+        "getChartByDisplayValue": {
+            "actionType": "JSFunction",
+            "method": "getChartByDisplayValue",
+            "inputData": {
+                "chartOnProperty": "{{data.chartOnProperty}}"
+            },
+            "outputData": {
+                "chartBy": ""
+            },
+            "deps": "js/savedSearchService"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "getChartByDisplayValue",
+        "onUpdate": {
+            "action": "getChartByDisplayValue",
+            "observers": [
+                "props.subPanelContext.searchState"
+            ]
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n":
+    {
+        "noRuleFound": [ "SearchMessages" ],
+        "searchCriteria": [ "SearchMessages" ],
+        "searchFiltersTitle": [ "SearchMessages" ],
+        "ChartBy": [ "SearchMessages" ]
+    }
+}

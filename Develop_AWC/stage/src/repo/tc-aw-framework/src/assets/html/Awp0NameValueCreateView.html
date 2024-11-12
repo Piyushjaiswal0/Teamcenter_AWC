@@ -1,0 +1,14 @@
+<aw-command-panel caption="i18n.NameValue_Create" context="subPanelContext">
+    <aw-panel-body>
+        <aw-panel-section caption="i18n.Properties">
+            <aw-widget prop="data.nameValueTypes" action="getStyleSheet"></aw-widget>
+        </aw-panel-section>
+        <aw-panel-section  exist-when="data.modelProperty.props.fnd0Name !== null && data.modelProperty.props.fnd0Value !== null">
+            <aw-textbox prop="data.modelProperty.props.fnd0Name"></aw-textbox>
+            <aw-widget prop="data.modelProperty.props.fnd0Value"></aw-widget>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="submit" visible-when="conditions.isValidToShowCreateButton && awPanelBody.$valid"> <aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n></aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

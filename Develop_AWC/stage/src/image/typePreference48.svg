@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1.3787" y1="1.379" x2="46.6213" y2="46.6216" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2323" stop-color="#fafafa"/>
+      <stop offset=".4964" stop-color="#ececec"/>
+      <stop offset=".775" stop-color="#d5d5d5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="3.0429" y1="15.5432" x2="19.9571" y2="32.4574" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ccc"/>
+      <stop offset=".1856" stop-color="#c7c7c7"/>
+      <stop offset=".4001" stop-color="#b9b9b9"/>
+      <stop offset=".6289" stop-color="#a2a2a2"/>
+      <stop offset=".8661" stop-color="#818181"/>
+      <stop offset=".99" stop-color="#6e6e6e"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="9.3787" y1="13.379" x2="13.6214" y2="17.6216" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="15.0429" y1="15.5432" x2="31.9571" y2="32.4574" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="Dark_Blue_Grad-2" data-name="Dark Blue Grad" x1="21.3787" y1="29.379" x2="25.6214" y2="33.6216" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="linear-gradient-4" x1="27.0429" y1="15.5432" x2="43.9571" y2="32.4574" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="Dark_Blue_Grad-3" data-name="Dark Blue Grad" x1="33.3787" y1="20.379" x2="37.6213" y2="24.6216" xlink:href="#Dark_Blue_Grad"/>
+  </defs>
+  <rect x=".5" y=".5003" width="47" height="47" rx="3" ry="3" fill="url(#linear-gradient)" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="10.5" y="7.5003" width="2" height="33" rx="1" ry="1" fill="url(#linear-gradient-2)" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <circle cx="11.5" cy="15.5003" r="3" fill="url(#Dark_Blue_Grad)" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="22.5" y="7.5003" width="2" height="33" rx="1" ry="1" fill="url(#linear-gradient-3)" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <circle cx="23.5" cy="31.5003" r="3" fill="url(#Dark_Blue_Grad-2)" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="34.5" y="7.5003" width="2" height="33" rx="1" ry="1" fill="url(#linear-gradient-4)" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <circle cx="35.5" cy="22.5003" r="3" fill="url(#Dark_Blue_Grad-3)" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

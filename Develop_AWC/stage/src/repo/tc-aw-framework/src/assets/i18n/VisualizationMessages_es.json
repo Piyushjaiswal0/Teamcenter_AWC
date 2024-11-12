@@ -1,0 +1,4 @@
+{
+    "openVVICommandTitle": "Abrir en Teamcenter Visualization",
+    "Awp0OpenVVIDesc": "Abre el ensamble actual en la aplicación de escritorio Visualización del ciclo de vida de Teamcenter. Se envían las piezas al visualizador independiente, según el estado de la selección y la visibilidad."
+}

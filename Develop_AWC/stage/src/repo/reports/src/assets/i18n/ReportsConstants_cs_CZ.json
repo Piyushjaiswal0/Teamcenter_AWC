@@ -1,0 +1,23 @@
+{
+    "appDisplayName": "Výpisy",
+    "allSubLocation": "Vše",
+    "reportBuilderSubLocation": "Šablony",
+    "runReportTitle": "Generovat výpis",
+    "runReportOperationName": "Spustit výpis",
+    "doWorkOperationName": "Načíst",
+    "execution": "Spuštění",
+    "criteria": "Kritéria",
+    "stylesheet": "Tabulka stylů",
+    "dataset": "Uložit do souboru",
+    "myreportsSubLocation": "Uložené soubory",
+    "loadingMsg": "Načítání...",
+    "zeroSearchResults": "Nebyly nalezeny žádné výsledky",
+    "reportResultsChartTitle": "Filtrovat výsledky podle:",
+    "AddSnapshot": "Snímky",
+    "AddNew": "Nový",
+    "doQueueOperation": "Přidat do fronty",
+    "runTcraReport": "Načíst",
+    "dosnapShotViewOperation": "Zobrazit mapované atributy",
+    "myDashboard": "Můj Dashboard",
+    "inOpenRptCommand": "Otevřít"
+}

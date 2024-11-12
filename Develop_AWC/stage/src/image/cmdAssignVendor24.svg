@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M17.5,24A6.5,6.5,0,1,1,24,17.5,6.507,6.507,0,0,1,17.5,24Zm0-12A5.5,5.5,0,1,0,23,17.5,5.506,5.506,0,0,0,17.5,12Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M21,18V17L15.7,17l2.15-2.15-.707-.707-3,3a.5.5,0,0,0,0,.707l3,3,.707-.707L15.711,18Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="11" width="6" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="9" width="6" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="17" width="6" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="15" width="6" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" y="13" width="6" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M12,13V.5a.5.5,0,0,0-.78-.415L.22,7.5A.5.5,0,0,0,0,7.919V23.5a.5.5,0,0,0,.5.5h11a.5.5,0,0,0,.5-.5V22H11v1H8V20H4v3H1V8.185L11,1.44V13ZM5,21H7v2H5Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

@@ -1,0 +1,11 @@
+<aw-base-sublocation>
+    <aw-panel>
+        <aw-panel-body>
+            <aw-panel-section exist-when="data.messageText !== null">
+                {{data.messageText}}
+                <aw-break></aw-break>
+                <aw-link prop="data.retryFileDownload" action="retryDownloadAction"></aw-link>
+            </aw-panel-section>
+        </aw-panel-body>
+    </aw-panel>
+</aw-base-sublocation>

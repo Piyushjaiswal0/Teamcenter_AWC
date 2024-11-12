@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "Personen",
+    "organizationTitle": "Organisation",
+    "groupTitle": "Gruppen",
+    "roleTitle": "Rollen",
+    "userTitle": "Benutzer",
+    "RevokeConsentTitle": "Zustimmung widerrufen",
+    "revokeGDPRConsentLabel": "Benutzerzustimmung widerrufen",
+    "revokeConsentConfirmationMessage": "Wenn Sie Ihre Zustimmung widerrufen, werden Sie von Teamcenter abgemeldet",
+    "Group": "Gruppe",
+    "DefaultRole":  "Standardrolle",
+    "DefaultGroup": "Standardgruppe",
+    "cancel": "Abbrechen",
+    "revoke": "Entziehen",
+    "group": "Gruppe",
+    "role": "Rolle",
+    "userMembershipTitle":"Benutzermitgliedschaften",
+    "userCalendarNotExits":"Kein Benutzerkalender",
+    "addButtonText": "Hinzufügen"
+}

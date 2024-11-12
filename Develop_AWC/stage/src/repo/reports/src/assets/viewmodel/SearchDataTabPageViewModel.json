@@ -1,0 +1,21 @@
+{
+    "schemaVersion": "1.0.0",
+    "selectionModels": {
+        "searchSelectionModel": {
+            "selectionMode": "single"
+        }
+    },
+    "actions": {
+        "setPresetFilters": {
+            "actionType": "JSFunction",
+            "method": "setPresetFilters",
+            "inputData": {
+                "value": true
+            },
+            "deps": "js/filterPanelUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "setPresetFilters"
+    }
+}

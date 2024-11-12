@@ -1,0 +1,17 @@
+{
+    "arrangeTitle": "Rozmieść",
+    "arrangeButtonTitle": "Rozmieść",
+    "arrangeAdminTitle": "Administracja",
+    "arrangeNoColumnConfigs": "Brak zapisanych układów",
+    "arrangeConfigNameTitle": "Układ",
+    "arrangeNewConfigNameTitle": "Nazwa",
+    "arrangeNewConfigNameTitleRequired": "Nadaj nazwę układu",
+    "arrangeNewConfigTitle": "Zapisz jako nowy układ",
+    "arrangeAndSaveButtonTitle": "Zapisz i rozmieść",
+    "arrangeAndCreateButtonTitle": "Zapisz i rozmieść",
+    "defaultNewColumnConfigName": "Nowy układ kolumn",
+    "availableColumnsTitle": "Dostępne kolumny",
+    "tableColumnsTitle": "Wyświetlane kolumny",
+    "box1Title": "Przykład menu wyskakującego Active Workspace Polecenie z symbolem pozycji",
+    "seeMorePropertiesTitle": "Wyświetl pełną bazę danych..."
+}

@@ -1,0 +1,12 @@
+<declUI:schema xmlns:declUI="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns:xsB="decl-schema-common"  >
+  <declUI:import namespace="decl-schema-common" schemaLocation="decl-schema-common.xsd"/>
+  <declUI:element name="aw-walker-objectset">
+    <declUI:complexType mixed="true">
+      <declUI:group ref="xsB:addElement"/>
+      <declUI:attribute name="objsetdata" type="declUI:string" use="required"/>
+      <declUI:attribute name="view-model" type="declUI:string" use="required"/>
+      <declUI:attribute name="titleKey" type="declUI:string" use="optional"/>
+      <declUI:attribute name="displayTitle" type="declUI:string" use="optional"/>
+    </declUI:complexType>
+  </declUI:element>
+</declUI:schema>

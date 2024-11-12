@@ -1,0 +1,19 @@
+[
+  {
+    "type": {
+      "names": [
+        "DocumentRevision"
+      ],
+      "prop": {
+        "names": [
+          "fnd0SimplifiedDocumentDS"
+        ],
+        "type": {
+          "names": [
+            "Dataset"
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,219 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "addReport":{
+            "actionType": "activateCommandPanel",
+            "inputData": {
+                "commandId": "Rb0AddDashboardReportWithPanel",
+                "location": "aw_toolsAndInfo",
+                "context": {
+                    "dashboardListPreference": "REPORT_AW_MyDashboard_TC_Report"
+                },
+                "config": {
+                    "isPinUnpinEnabled": true
+                }
+            }
+        },
+        "revealAction": {
+            "actionType": "dataProvider",
+            "method": "listDataProvider"
+        },
+        "getreportdefinitionlist": {
+            "actionType": "TcSoaService",
+            "serviceName": "Reports-2008-06-CrfReports",
+            "method": "getReportDefinitions",
+            "inputData": {
+                "inputCriteria": "{{function:getReportDefinitionSOAInput}}"
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [ {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "searchResults": "{{function:getReportDefinitionValList}}"
+            },
+            "events":{
+                "success":[
+                    {
+                        "name": "showMyDashboardList.selectFirstItem",
+                        "condition": "data.searchResults.reportdefinitions.length > 0"
+                    }
+                ]
+            },
+            "deps": "js/showMyDashboardService"
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.listDataProvider.selectionModel}}",
+                "newSelection": "{{data.searchResults.reportdefinitions[0].uid}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "selectFirstItemOnRemoving": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.listDataProvider.selectionModel}}",
+                "newSelection": "{{data.dataProviders.listDataProvider.viewModelCollection.loadedVMObjects[0].uid}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "checkForDashboardConfigCommand": {
+            "actionType": "JSFunction",
+            "method": "checkForDashboardConfigCommand",
+            "inputData": {
+                "data": "{{data.dataProviders.listDataProvider.selectedObjects[0]}}"
+            },
+            "deps": "js/reportsCommonService"
+        },
+        "myDashboardUpdateByState": {
+            "actionType": "JSFunction",
+            "method": "myDashboardUpdate",
+            "inputData": {
+                "data": "{{data.dataProviders.listDataProvider}}",
+                "reportId":"{{subPanelContext.searchState.reportDashboard.reportDef}}",
+                "operation":"{{props.subPanelContext.searchState.reportDashboard.operation}}",
+                "tileIndex":"{{props.subPanelContext.searchState.reportDashboard.tileIndex}}",
+                "searchState":  "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/showMyDashboardService"
+        },
+        "myDashboardUpdateAndSelectFirst":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "myDashboardUpdateByState"
+            },{
+                "action": "selectFirstItemOnRemoving"
+            }]
+        },
+        "clearSelectedCtxAndUpdateReportDashboard": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "clearSelectedCtx"
+            }, {
+                "action": "clearMselectedCtx"
+            }, {
+                "action": "updateReportDashboard"
+            } ]
+        },
+        "clearSelectedCtx": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "selected"
+            }
+        },
+        "clearMselectedCtx": {
+            "actionType": "JSFunction",
+            "method": "updatePartialCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "mselected",
+                "data": []
+            }
+        },
+        "updateReportDashboard": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{props.subPanelContext.searchState}}",
+                "value": {
+                    "reportDashboard": {}
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "dataProviders": {
+        "listDataProvider": {
+            "action": "getreportdefinitionlist",
+            "response": "{{data.searchResults.reportdefinitions}}",
+            "totalFound": "{{data.searchResults.reportdefinitions.length}}",
+            "inputData": {
+                "selectionData": "{{subPanelContext.selectionData}}",
+                "selectionModel": "{{selectionModels.listSelectionModel}}"
+            }
+        }
+    },
+    "selectionModels": {
+        "listSelectionModel": {
+            "selectionMode": "single"
+        }
+    },
+    "functions": {
+        "getReportDefinitionValList": {
+            "functionName": "getReportDefinitionValList",
+            "parameters": [
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getReportDefinitionSOAInput": {
+            "functionName": "getReportDefinitionSOAInput",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "preferences":[
+        "REPORT_AW_MyDashboard_TC_Report"
+    ],
+    "lifecycleHooks": {
+        "onMount": "revealAction",
+        "onUnmount": "clearSelectedCtxAndUpdateReportDashboard",
+        "onUpdate": [{
+            "action": "checkForDashboardConfigCommand",
+            "observers": ["viewModel.dataProviders.listDataProvider.selectedObjects"]
+        }, {
+            "action": "myDashboardUpdateAndSelectFirst",
+            "observers": [ "props.subPanelContext.searchState.reportDashboard" ]
+        }]
+    },
+    "onEvent": [
+        {
+            "eventId": "showMyDashboardList.selectFirstItem",
+            "action": "selectFirstItem"
+        }
+    ],
+    "i18n": {
+        "noReports": ["ReportChartMessages"],
+        "reportsDashboardHint": ["ReportChartMessages"],
+        "addDashboardReportWithPanelTitle": ["ReportChartMessages"]
+    }
+}

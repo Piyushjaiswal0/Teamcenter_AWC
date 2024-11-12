@@ -1,0 +1,29 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [  ],
+    "data": {
+        "xrtState": {
+            "initialValues": {},
+            "meta": {
+                "xrtVMO": {
+                    "field": "true",
+                    "type": "viewModelObject"
+                }
+            }
+        },
+        "activeView": "Awp0HostedObjectInfoPrimarySub"
+    },
+    "editHandlers": {
+        "Awp0HostedObjectInfoPrimary": {
+            "context": "INFO_PANEL_CONTEXT",
+            "dataSource": {
+                "xrtVMO": "{{data.xrtState}}"
+            }
+        }
+    },
+    "i18n": {
+        "objectInfoLabel": [
+            "XRTMessages"
+        ]
+    }
+}

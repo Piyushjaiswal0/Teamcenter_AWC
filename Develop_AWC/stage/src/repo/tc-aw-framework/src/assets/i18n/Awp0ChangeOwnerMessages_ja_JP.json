@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "所有者の変更",
+ "change" : "変更",
+ "user" : "ユーザ",
+ "EmailAddress" : "電子メールアドレス:",
+ "PhoneNumber" : "電話番号:",
+ "singleObjectChangeOwnershipSuccess": "\"{0}\"は変更されました。",
+ "multipleObjectsChangeOwnershipSuccess": "{0}({1}選択の)は変更されました。", 
+ "changeOwnershipForObjectFailure": "権限がないため、\"{0}\"は変更されませんでした。"
+}

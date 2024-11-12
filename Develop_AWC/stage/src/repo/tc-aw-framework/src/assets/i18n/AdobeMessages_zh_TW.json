@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "數字資訊集",
+    "imagePanelTitle": "影像與顏色",
+    "updatesSectionTitle": "Teamcenter 更新",
+    "digitalAssetsInUseSectionTitle": "\"{0}\" 中的數字資訊集",
+    "imageInUseSectionTitle": "\"{0}\" 中的圖像與顏色",
+    "adobeFile": "Adobe 檔案",
+    "typeLabel": "類型",
+    "revisionLabel": "版本",
+    "quantityLabel": "數量",
+    "expectedLabel": "要求",
+    "cmdReplaceDigitalAsset": "取代",
+    "showObjectCell": "開啟",
+    "cmdDeleteDigitalAsset": "刪除",
+    "adobe_cell_commands_updatesList": "儲存格指令更新清單",
+    "adobe_cell_commands_inUseList": "儲存格指令使用中清單",
+    "DigitalAssetsPanelDesc": "檢視與圖片關聯的數字資訊集。",
+    "ImagePanelDesc": "檢視與 2D CAD 關聯的影像和顏色。",
+    "cmdReplaceDigitalAssetDesc": "將 Adobe 應用程式中開啟的數字資訊集取代為 Teamcenter 中更新的數字資訊集。",
+    "cmdDeleteDigitalAssetDesc": "從圖片中移除選定數字資訊集。",
+    "showObjectCellDesc": "開啟選定物件。"
+}

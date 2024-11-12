@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "즐겨찾기",
+    "myFavorites": "내 즐겨찾기",
+    "myRecentViewedObjects": "최신",
+    "addToFavoritesCommandTitle": "즐겨찾기에 추가",
+    "addToFavoritesConfirmation": "선택한 개체를 즐겨찾기에 성공적으로 추가함",
+    "addToFavoritesFailed": "즐겨찾기에 추가 실패",
+    "removeFromFavoritesCommandTitle": "즐겨찾기에서 제거",
+    "removeFromFavoritesConfirmation": "선택한 개체를 즐겨찾기에서 성공적으로 제거함",
+    "removeFromFavoritesFailed": "즐겨찾기에 추가 실패",
+    "Awp0AddToFavoritesDesc": "즐겨찾기 리스트에 선택 항목을 추가합니다.",
+    "Awp0RemoveFromFavoritesDesc": "즐겨찾기 리스트에서 선택 항목을 제거합니다.",
+    "noFavoritesFound": "여기에 즐겨찾기 없음",
+    "noFavoritesFoundHint": "즐겨찾기에 개체를 추가하려면 개체를 선택하고 즐겨찾기에 추가 명령을 사용합니다.",
+    "noRecentsFound": "최근 액티비티 없음",
+    "noRecentsFoundHint": "현재 표시할 아이템이 없습니다.",
+    "nothingSelected": "항목을 선택하지 않음",
+    "nothingSelectedSWAHint": "상세정보를 보려면 리스트에서 아이템을 선택합니다."
+}

@@ -1,0 +1,30 @@
+<aw-command-panel caption="i18n.addAlternate" context="subPanelContext">
+    <div class="aw-layout-flexColumn" show-when="data.activeState.value.activeView==='AddObjectPrimarySub'">
+        <aw-panel-header-section header-section-label="i18n.toTitle" header-section-element="{{data.toSectionElement.props.object_string.uiValues[0]}}"></aw-panel-header-section>
+        <!-- The exist-when property is added so that the aw-add will load once the preferred type is available. it is required for auto selection of object type -->
+        <aw-add exist-when="data.preferredType"
+            include-types="{{data.preferredType}}"
+            load-sub-types="true"
+            auto-select-on-unique-type="true"
+            visible-tabs="new,palette,search"
+            max-recent-count="5"
+            type-filter="{{data.filterType}}"
+            preferred-type="{{data.preferredType}}"
+            add-panel-state="fields.addPanelState"
+            active-state="data.activeState"
+            project-state="data.projectState"
+            sub-panel-context="{ ...subPanelContext, triggerCreate: data.triggerCreate }"
+            xrt-state="data.xrtState"
+            edit-handler="editHandlers.addPanelEditHandler">
+        </aw-add>
+        <aw-panel-footer>
+            <aw-button action="createAndAddAlternate" visible-when="conditions.shouldShowAddButtonInNewTab" enable-when="formProp.attributes.valid && conditions.shouldShowAddButtonInNewTab">
+                <aw-i18n>i18n.add</aw-i18n>
+            </aw-button>
+            <aw-button action="addSelectionAsAlternateActionHandler" visible-when="conditions.shouldbeOnPaletteTab || conditions.shouldBeOnSearchTab" enable-when="conditions.shouldShowAddButtonInPaletteTab || conditions.shouldShowAddButtonInSearchTab">
+                <aw-i18n>i18n.add</aw-i18n>
+            </aw-button>
+        </aw-panel-footer>
+    </div>
+    <aw-add-navigate active-state="data.activeState" project-state="data.projectState" action="actions.setActiveView"></aw-add-navigate>
+</aw-command-panel>

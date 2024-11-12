@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Добавить к {0}",
+    "revRuleNotAvailable": "Выбранное правило ревизии недоступно в загруженных правилах ревизии",
+    "revRuleChangeFailed": "Не удалось изменить правило ревизии",
+    "revRuleChangeSucess": "Правило ревизии изменено",
+    "sendToCommandTitle": "Открыть в {0}",
+    "sendToNewViewCommandTitle": "Открыть в новом виде {0}",
+    "Awp0AddComponentHostedDesc": "Добавить выбранный компонент в активную рабочую деталь.",
+    "Awp0OpenHostedDesc": "Откройте выбранные объекты.",
+    "HostingSetRevisionRule": "Размещение правила ревизии",
+    "HostingTimeoutAuthRequestSuccessful": "The browser page is refreshing to reestablish the session.",
+    "HostingTimeoutAuthRequestFailure": "The session cannot be reestablished due to authentication failure from the host application. \nClose and reopen the host application.",
+    "HostingFileUploadSvcUploadError": "Save file {0} failed with error {1}."
+}

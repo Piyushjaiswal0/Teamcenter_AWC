@@ -1,0 +1,218 @@
+{
+    "schemaVersion": "1.0.0",
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": [ {
+            "action": "getTranslatedSearchString",
+            "observers": ["props.subPanelContext.reportsState.searchTraslatedCriteria"]
+        }, {
+            "action": "reloadTableAction",
+            "observers": ["props.subPanelContext.reportsState.initRepDisp","props.subPanelContext.reportsState.runtimeInfo.appliedFilterString","props.subPanelContext.reportsState.selectedReport.uid","viewModel.ctx.state.params.searchCriteria","viewModel.ctx.state.params.filter"]
+        },{
+            "action": "updateTableRefreshFalse",
+            "observers": [ "props.subPanelContext.reportsState.tableRefresh" ]
+        }]
+    },
+    "props": {
+        "sub-panel-context":{
+            "type": "object"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awReportTableServiceRenderFunction",
+            "deps": "js/AwReportTableService"
+        },
+        "loadColumns": {
+            "actionType": "JSFunction",
+            "method": "loadColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.gridDataProvider}}",
+                "reportTable": "{{subPanelContext.reportsState.reportParameters.ReportDefProps.ReportTable1}}"
+            },
+            "outputData": {
+                "dataProviders.gridDataProvider.columnConfig.columns": ""
+            },
+            "deps": "js/AwReportTableService"
+        },
+        "loadData": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "getReportData",
+                "condition": "subPanelContext.reportsState.initRepDisp"
+            } ]
+        },
+        "getReportData": {
+            "actionType": "JSFunctionAsync",
+            "method": "getReportData",
+            "deps": "js/AwReportTableService",
+            "inputData": {
+                "reportsState": "{{subPanelContext.reportsState}}",
+                "data": "{{data}}"
+            },
+            "outputData":{
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "dataProviders.gridDataProvider.columnConfig": "columnConfig",
+                "reportsState.initRepDisp": false
+            }
+        },
+        "getTranslatedSearchString":{
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2020-05-FullTextSearch",
+            "method": "getSearchSettings",
+            "inputData": {
+                "searchSettingInput": {
+                    "inputSettings": {
+                        "getTranslatedSearchCriteriaForCurrentLocale": "{{subPanelContext.reportsState.searchTraslatedCriteria}}"
+                    }
+                }
+            },
+            "outputData": {
+                "output": "{{function:processAndUpdateSearchCriteria}}"
+            },
+            "deps": "js/AwReportTableService"
+        },
+        "reloadTableAction":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "resetGridDataProvider",
+                "condition": "subPanelContext.reportsState.initRepDisp"
+            } ]
+        },
+        "resetGridDataProvider": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "gridView.plTable.reload"
+                } ]
+            }
+        },
+        "saveColumnAndDoArrange": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "saveDisplyColumns"
+            }, {
+                "action": "updateTableRefreshTrue"
+            }
+         ]
+        },
+        "saveDisplyColumns": {
+            "actionType": "JSFunction",
+            "method": "saveDisplyColumns",
+            "inputData": {
+                "eventData": "{{data.eventData}}",
+                "reportsState": "{{subPanelContext.reportsState}}"
+            },
+            "outputData":{
+                "displayColumns": ""
+            },
+            "deps": "js/AwReportTableService"
+        },
+        "doArrangeEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "arrangeColumns",
+            "inputData": {
+                "declViewModel": "{{data}}",
+                "eventData": "{{data.eventData}}"
+            },
+            "deps": "js/columnArrangeService"
+        },
+        "updateTableRefreshTrue": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.reportsState}}",
+                "value": {
+                    "tableRefresh": true
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateTableRefreshFalse": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.reportsState}}",
+                "value": {
+                    "tableRefresh": false
+                }
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "dataProviders": {
+        "gridDataProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "columnProviders": {
+        "staticColumnProvider": {
+            "saveColumnAndLoadAction": "loadData",
+            "resetColumnAction": "resetColumnConfig",
+            "saveColumnAction": "saveColumnConfig",
+            "columns": "{{data.dataProviders.gridDataProvider.columnConfig.columns}}",
+            "sortCriteria": []
+        }
+    },
+    "grids": {
+        "gridView": {
+            "dataProvider": "gridDataProvider",
+            "columnProvider": "staticColumnProvider",
+            "enableArrangeMenu": true,
+            "gridOptions": {
+                "enableGridMenu": true,
+                "isFilteringEnabled": "{{props.subPanelContext.reportsState.isFilterEnabled}}",
+                "enableArrangeMenu": true,
+                "enableExpandAndPaginationInEdit": true
+            }
+        }
+    },
+    "functions": {
+        "processAndUpdateSearchCriteria":{
+            "functionName": "processAndUpdateSearchCriteria",
+            "parameters": [
+                "{{props.subPanelContext.reportsState}}"
+            ]
+        },
+        "getTypeNames": {
+            "functionName": "getTypeNames",
+            "parameters": [
+                "{{subPanelContext.searchState.searchFilterMap}}"
+            ]
+        }
+    },
+    "onEvent": [ {
+            "eventId": "columnArrange",
+            "cacheEventData": true,
+            "action": "saveColumnAndDoArrange",
+            "condition": "conditions.isEditModeOn"
+        },
+        {
+            "eventId": "columnArrange",
+            "cacheEventData": true,
+            "action": "doArrangeEvent",
+            "condition": "!conditions.isEditModeOn"
+        }
+    ],
+    "i18n": {
+        "objectStrColumnName": [
+            "ReportChartMessages"
+        ],
+        "parentSource":["ReportChartMessages"],
+        "structure": ["ReportChartMessages"]
+    },
+    "conditions": {
+        "isEditModeOn":{
+            "expression": "ctx.sublocation.historyNameToken==='createReportTemplate' && ctx.state.params.previewMode==='false'"
+        }
+    }
+}

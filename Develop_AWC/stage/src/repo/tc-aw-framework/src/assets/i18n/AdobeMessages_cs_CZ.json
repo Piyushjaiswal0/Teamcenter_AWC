@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Digitální položky",
+    "imagePanelTitle": "Obrázky a barvy",
+    "updatesSectionTitle": "Aktualizace Teamcenteru",
+    "digitalAssetsInUseSectionTitle": "Digitální položky v \"{0}\"",
+    "imageInUseSectionTitle": "Obrázky a barvy v \"{0}\"",
+    "adobeFile": "Soubor Adobe",
+    "typeLabel": "Typ",
+    "revisionLabel": "Revize",
+    "quantityLabel": "Množství",
+    "expectedLabel": "Očekávané",
+    "cmdReplaceDigitalAsset": "Nahradit",
+    "showObjectCell": "Otevřít",
+    "cmdDeleteDigitalAsset": "Odstranit",
+    "adobe_cell_commands_updatesList": "Seznam aktualizací příkazů buněk",
+    "adobe_cell_commands_inUseList": "Seznam používaných příkazů buněk",
+    "DigitalAssetsPanelDesc": "Zobrazte digitální položky asociované s grafickou podobou.",
+    "ImagePanelDesc": "Zobrazte obrázky a barvy asociované s 2D CAD.",
+    "cmdReplaceDigitalAssetDesc": "Nahraďte digitální položku otevřenou v aplikaci Adobe aktualizovanou položkou v Teamcenteru.",
+    "cmdDeleteDigitalAssetDesc": "Odeberte vybranou digitální položku z grafické podoby.",
+    "showObjectCellDesc": "Otevřete výběr."
+}

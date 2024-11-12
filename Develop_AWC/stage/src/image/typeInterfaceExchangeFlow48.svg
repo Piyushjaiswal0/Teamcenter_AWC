@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="-12.0842" y1="35.7501" x2="19.2442" y2="4.4217" gradientTransform="translate(39.3104 19.6896) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2214" stop-color="#f8f8f8"/>
+      <stop offset=".5415" stop-color="#e4e4e4"/>
+      <stop offset=".92" stop-color="#c5c5c5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="11.75" y1="16.25" x2="26.25" y2="30.75" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" data-name="Dark Blue Grad" x1="24.625" y1="29.375" x2="42.875" y2="47.625" xlink:href="#Dark_Blue_Grad"/>
+  </defs>
+  <path d="M7.0537,46.3841l10.6141-5.7041c.0896-.0505,.0537-.1871-.0492-.1871l-4.1686,.0012,1.55-3h20.5c1.1046,0,2-.8954,2-2V11.4941c0-1.1046-.8954-2-2-2h-3.5l1.5-3,3.7539-.0013c.0896,0,.1339-.1088,.0699-.1714L32.0001,.6163l-10.1844,5.6903c-.0879,.0516-.0512,.1862,.0507,.1862h3.6337l-1.5,3.0013H2.5c-1.1046,0-2,.8954-2,2v24c0,1.1046,.8954,2,2,2H7l-1.5,3-4.2396-.0012c-.0917,0-.1351,.1131-.0669,.1744l5.8602,5.7169Z" fill="url(#paper_gradient)" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <g>
+    <path d="M17.5,32.5v-2h.5c3.8599,0,7-3.1401,7-7s-3.1401-7-7-7h-.5v-2h.5c4.5957,0,8.4326,3.4771,8.9341,8h5.5659v2h-5.5659c-.5015,4.5229-4.3384,8-8.9341,8h-.5Zm0-5c-1.8198,0-3.4082-1.2627-3.8584-3H5.5v-2H13.6416c.4502-1.7373,2.0386-3,3.8584-3,2.2056,0,4,1.7944,4,4s-1.7944,4-4,4Z" fill="url(#Dark_Blue_Grad)"/>
+    <path d="M18,15c4.5182,0,8.2136,3.5461,8.4747,8h5.5253v1h-5.5253c-.2611,4.4539-3.9564,8-8.4747,8v-1c4.1357,0,7.5-3.3643,7.5-7.5s-3.3643-7.5-7.5-7.5v-1m-.5,5c1.933,0,3.5,1.567,3.5,3.5s-1.567,3.5-3.5,3.5c-1.7617,0-3.2051-1.306-3.4496-3H6v-1H14.0504c.2445-1.694,1.6879-3,3.4496-3m.5-6h-1v3h1c3.5841,0,6.5,2.9159,6.5,6.5s-2.9159,6.5-6.5,6.5h-1v3h1c4.6992,0,8.6469-3.4447,9.3709-8h5.6291v-3h-5.6291c-.724-4.5553-4.6717-8-9.3709-8h0Zm-.5,5c-1.915,0-3.6018,1.2413-4.2273,3H5v3H13.2727c.6256,1.7587,2.3123,3,4.2273,3,2.4813,0,4.5-2.0187,4.5-4.5s-2.0187-4.5-4.5-4.5h0Z" fill="#147391"/>
+  </g>
+  <polygon points="43 47.5 24.5 47.5 29 38.5 24.5 29.5 43 29.5 47.5 38.5 43 47.5" fill="url(#Dark_Blue_Grad-2)" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Кодировка",
+    "uvCheckoutTitle": "Заблокировать",
+    "uvCheckoutDesc": "Зарезервируйте выбор, чтобы другие пользователи не могли вносить изменения.",
+    "cancelCheckoutTitle": "Отменить блокировку",
+    "Awp0CancelCheckoutDesc": "Отмените блокировку и верните все изменения.",
+    "uvCheckinTitle": "Разблокировать",
+    "Awp0CheckinDesc": "Разблокируйте объект и сохраните изменения.",
+    "uvCodeWordWrapTitle": "Перенос по словам",
+    "uvCodeWordWrapDesc": "Перенести длинный текст на несколько строк."
+}

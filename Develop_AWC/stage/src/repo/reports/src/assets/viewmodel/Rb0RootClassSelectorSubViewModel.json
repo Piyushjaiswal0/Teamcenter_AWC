@@ -1,0 +1,109 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-search-box.directive",
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "actions": {
+        "rootClassUpdate": {
+            "actionType": "dataProvider",
+            "method": "rootClassListProvider"
+        },
+        "rootClassSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "object_name", "object_desc", "parent_types", "type_name" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Fnd0TypeSearchProvider",
+                    "searchCriteria": {
+                        "searchString": "{{data.rootClass.dbValue}}",
+                        "category": "Persistent",
+                        "root": "",
+                        "parentLO": ""
+                    },
+                    "startIndex": "{{data.dataProviders.rootClassListProvider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "classFound": "totalFound",
+                "classResults": "{{json:searchResultsJSON}}"
+            }
+        },
+        "rootClassAdd": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.reportsContext}}",
+                "value": {
+                    "activeView": "ConfigureItemReportPanel",
+                    "rootClassObject": ["{{data.dataProviders.rootClassListProvider.selectedObjects[0]}}"]
+                }
+            },
+
+            "deps": "js/addObjectUtils"
+        },
+        "updateActiveView":{
+            "actionType": "JSFunction",
+            "method": "resetActiveView",
+            "inputData": {
+                "stateName": "activeState",
+                "destPanelId": "ConfigureItemReportPanel"
+            },
+            "outputData": {
+                "activeState": "activeState"
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "data": {
+        "rootClass": {
+            "displayName": "Search and Select Object Type",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+        "searchTip": {
+            "dbValue": "{{i18n.searchDataType}}"
+        }
+    },
+    "dataProviders": {
+        "rootClassListProvider": {
+            "action": "rootClassSearch",
+            "response": "{{data.classResults}}",
+            "totalFound": "{{data.classFound}}",
+            "selectionModelMode": "single"
+        }
+    },
+    "onEvent": [ ],
+    "lifecycleHooks": {
+        "onMount": "rootClassUpdate"
+    },
+    "i18n": {
+        "addChartCommand": [ "ReportChartMessages" ],
+        "searchDataType": [ "ReportChartMessages" ]
+    }
+}

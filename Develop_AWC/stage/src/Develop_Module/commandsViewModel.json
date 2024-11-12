@@ -1,0 +1,241 @@
+{
+    "commands": {
+        "CustomCommands": {
+            "iconId": "CustomCommands",
+            "isGroup": true,
+            "title": "{{i18n.CustomCommandsTitle}}",
+            "description": "{{i18n.CustomCommandsDescription}}"
+        },
+        "EditProperty": {
+            "iconId": "cmdEdit",
+            "title": "{{i18n.EditPropertyTitle}}",
+            "description": "{{i18n.EditPropertyDescription}}"
+        },
+        "DevelopCommand": {
+            "iconId": "DevelopIcon",
+            "title": "{{i18n.DevelopCommandTitle}}",
+            "description": "{{i18n.DevelopCommandDescription}}"
+        },
+        "Preferences": {
+            "iconId": "googleIcon",
+            "title": "{{i18n.PreferencesTitle}}",
+            "description": "{{i18n.PreferencesDescription}}"
+        },
+        "checkout": {
+            "iconId": "CheckoutIcon",
+            "title": "{{i18n.checkoutTitle}}",
+            "description": "{{i18n.checkoutDescription}}"
+        }
+    },
+    "commandHandlers": {
+        "CustomCommandsHandler":{
+            "id": "CustomCommands",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isWorkspaceDevelop"
+            } 
+        },
+        "DevelopCommandHandler": {
+            "id": "DevelopCommand",
+            "action": "activateDevelopCommand",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isWorkspaceDevelop"
+            }
+        },
+        "EditPropertyHandler": {
+            "id": "EditProperty",
+            "action": "activateEditProperty",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isWorkspaceDevelop"
+            }
+        },
+        "PreferencesHandler": {
+            "id": "Preferences",
+            "action": "activatePreferences",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isWorkspaceDevelop"
+            }
+        },
+        "checkoutHandler": {
+            "id": "checkout",
+            "action": "activatecheckout",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.isDBA"
+            }
+        }
+    },
+    "commandPlacements": {
+        "CustomCommandsGroup": {
+            "id": "CustomCommands",
+            "uiAnchor": "aw_rightWall",
+            "priority": 10
+        },
+        "EditPropertyaw_oneStep": {
+            "id": "EditProperty",
+            "uiAnchor": "aw_oneStep",
+            "priority": 2,
+            "parentGroupId": "CustomCommands"
+        },
+        "DevelopCommandaw_oneStep": {
+            "id": "DevelopCommand",
+            "uiAnchor": "aw_oneStep",
+            "priority": 1,
+            "parentGroupId": "CustomCommands"
+        },
+        "Preferencesaw_oneStep": {
+            "id": "Preferences",
+            "uiAnchor": "aw_oneStep",
+            "priority": 4,
+            "parentGroupId": "CustomCommands"
+        },
+        "checkoutaw_rightWall": {
+            "id": "checkout",
+            "uiAnchor": "aw_oneStep",
+            "priority": 3,
+            "parentGroupId": "CustomCommands"
+        }
+    },
+    "actions": {
+        "activatePreferences": {
+            "actionType": "Navigate",
+            "navigateIn": "newWindow",
+            "navigateTo": "https://www.google.com/",
+            "navigationParams": {}
+        },
+        "activateEditProperty": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "EditProperty",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateDevelopCommand": {
+            "actionType": "JSFunction",
+            "method": "Fetch",
+            "deps": "js/DevelopCommandService",
+            "inputData": {
+                "text": "{{ctx.selected.uid}}"
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "DevelopSuccessMessage"
+                    }
+                ],
+                "failure": [
+                    {
+                        "message": "DevelopFailedMessage"
+                    }
+                ]
+            }
+        },
+        "activatecheckout": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-Reservation",
+            "method": "checkout",
+            "inputData": {
+                "objects": [
+                    "{{ctx.selected}}"
+                ]
+            },
+            "outputData": {
+                "checkOutPartialErrors": "partialErrors"
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "message": "CheckoutSuccess"
+                    }
+                ],
+                "failure": [
+                    {
+                        "message": "CheckoutFailed"
+                    }
+                ]
+            }
+        }
+    },
+    "conditions": {
+        "objectIsSelected": {
+            "expression": "ctx.selected"
+        },
+        "isWorkspaceDevelop": {
+            "expression": "ctx.workspace.workspaceId === 'Develop'"
+        },
+        "isDBA": {
+            "expression": "(ctx.userSession.props.group.displayValues[0] === 'dba') && (ctx.workspace.workspaceId === 'Develop')"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "DevelopCommand.invoke",
+            "action": "activateDevelopCommand"
+        },
+        {
+            "eventId": "Checkout.invoke",
+            "action": "activatecheckout"
+        }
+    ],
+    "messages": {
+        "DevelopSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "Success"
+        },
+        "DevelopFailedMessage": {
+            "messageType": "ERROR",
+            "messageText": "Failed"
+        },
+        "CheckoutSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.CheckoutSuccess}}",
+            "messageTextParams": [
+                "{{ctx.selected.props.object_string.dbValues[0]}}"
+            ]
+        },
+        "CheckoutFailed": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "i18n": {
+        "CustomCommandsTitle": [
+            "Develop_ModuleMessages"
+        ],
+        "CustomCommandsDescription": [
+            "Develop_ModuleMessages"
+        ],
+        "DevelopCommandTitle": [
+            "Develop_ModuleMessages"
+        ],
+        "DevelopCommandDescription": [
+            "Develop_ModuleMessages"
+        ],
+        "PreferencesTitle": [
+            "Develop_ModuleMessages"
+        ],
+        "PreferencesDescription": [
+            "Develop_ModuleMessages"
+        ],
+        "EditPropertyTitle": [
+            "Develop_ModuleMessages"
+        ],
+        "EditPropertyDescription": [
+            "Develop_ModuleMessages"
+        ],
+        "CheckoutSuccess": [
+            "Develop_ModuleMessages"
+        ],
+        "checkoutTitle": [
+            "Develop_ModuleMessages"
+        ],
+        "checkoutDescription": [
+            "Develop_ModuleMessages"
+        ]
+    }
+}

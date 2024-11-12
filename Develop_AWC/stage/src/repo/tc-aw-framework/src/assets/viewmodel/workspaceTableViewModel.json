@@ -1,0 +1,66 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-splm-table.directive"
+    ],
+
+    "actions": {
+        "doGridDataProvider": {
+            "actionType": "dataProvider",
+            "method": "gridDataProvider"
+        },
+        "getAvailableWorkspaces": {
+            "actionType": "JSFunctionAsync",
+            "method": "getAllWorkspaces",
+            "outputData": {
+                "workspaces": ""
+            },
+            "deps": "js/workspaceService"
+        },
+        "loadColumns": {
+            "actionType": "JSFunction",
+            "method": "loadColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.gridDataProvider}}"
+            },
+            "deps": "js/workspaceService"
+        }
+    },
+
+    "columnProviders": {
+        "staticColumnProvider": {
+            "loadColumnAction": "loadColumns",
+            "columns": "{{data.columns}}",
+            "sortCriteria": []
+        }
+    },
+
+    "dataProviders": {
+        "gridDataProvider": {
+            "action": "getAvailableWorkspaces",
+            "editContext": "TABLE_CONTEXT",
+            "response": "{{data.workspaces.workspaceList}}",
+            "totalFound": "{{data.workspaces.workspaceCount}}",
+            "ctx.search.totalFound": "{{data.workspaces.workspaceCount}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+
+    "grids": {
+        "gridView": {
+            "dataProvider": "gridDataProvider",
+            "columnProvider": "staticColumnProvider",
+            "gridOptions": {
+                "enablePinning": true
+            }
+        }
+    },
+
+    "onEvent": [ {
+        "eventId": "gridView.initialized",
+        "action": "doGridDataProvider"
+    } ]
+}

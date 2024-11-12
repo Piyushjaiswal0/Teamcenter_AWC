@@ -1,0 +1,93 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "actions": {
+        "setChartVisible":{
+            "actionType": "JSFunction",
+            "method": "setChartVisible",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.context.searchState}}",
+                "forceToggleOff": false
+            },
+            "deps": "js/awChartDataProviderService"
+        },
+        "setChartInvisible":{
+            "actionType": "JSFunction",
+            "method": "setChartVisible",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.context.searchState}}",
+                "forceToggleOff": "{{conditions.forceNoChart}}"
+            },
+            "deps": "js/awChartDataProviderService"
+        },
+        "createChartProvider":{
+            "actionType": "JSFunction",
+            "method": "createChartProvider",
+            "inputData": {
+                "searchState": "{{props.subPanelContext.context.searchState}}",
+                "chartListboxPropData": "{{data.chartListboxPropData}}"
+            },
+            "deps": "js/awChartDataProviderService"
+        },
+        "triggerSelectCategoryHeaderEvent": {
+            "actionType": "JSFunction",
+            "method": "triggerSearchFilterTargetCategoryEvent",
+            "inputData": {
+                "internalPropertyNameToGroupOn": "{{data.chartListboxPropData.dbValue}}",
+                "searchState": "{{subPanelContext.context.searchState}}"
+            },
+            "deps": "js/awChartDataProviderService"
+        }
+    },
+    "functions": {
+    },
+    "data": {
+        "chartListboxPropData": {
+            "displayName": "{{i18n.SearchResultsChartSelectorTitle}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "hasLov": "true",
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "chartTitleValue": {
+            "titleValue": "{{i18n.SearchResultsChartTitle}} {{subPanelContext.context.searchState.chartProvider.chartListboxPropData.dispValue}}"
+        }
+    },
+    "onEvent": [
+    ],
+    "dataProviders": {},
+    "messages": {},
+    "conditions": {
+        "defaultCategoryType": {
+            "expression": "subPanelContext.context.searchState && subPanelContext.context.searchState.chartProvider && subPanelContext.context.searchState.chartProvider.category && (subPanelContext.context.searchState.chartProvider.category.type === 'StringFilter' || subPanelContext.context.searchState.chartProvider.category.type === 'NumericFilter' || subPanelContext.context.searchState.chartProvider.category.type === 'DateFilter' || subPanelContext.context.searchState.chartProvider.category.type === 'RadioFilter' || subPanelContext.context.searchState.chartProvider.category.type === 'ObjectFilter')"
+        },
+        "showChartsForCategory": {
+            "expression": "subPanelContext.context.searchState.totalLoaded > 0 && subPanelContext.context.searchState.chartProvider && subPanelContext.context.searchState.chartProvider.category && subPanelContext.context.searchState.searchFilterCategories.length > 0 && subPanelContext.context.searchState.chartProvider.chartListboxListData.dbValue.length > 0"
+        },
+        "showChartByDropDown": {
+            "expression": "subPanelContext.context.searchState.chartProvider && subPanelContext.context.searchState.totalLoaded > 0 && subPanelContext.context.searchState.searchFilterCategories.length > 0 && subPanelContext.context.searchState.chartProvider.chartListboxListData.dbValue.length > 0"
+        },
+        "showChartByTitle": {
+            "expression": "subPanelContext.context.searchState.chartProvider.chartTitleString.length > 0 && subPanelContext.context.searchState.totalLoaded > 0 && subPanelContext.context.searchState.searchFilterCategories.length > 0 && subPanelContext.context.searchState.chartProvider.chartListboxListData.dbValue.length > 0"
+        },
+        "forceNoChart": {
+            "expression": "subPanelContext.context.searchState.forceNoChart !== false"
+        }
+    },
+    "i18n": {
+        "SearchResultsChartTitle": [ "SearchMessages" ],
+        "SearchResultsChartSelectorTitle": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "onUpdate":{
+            "action": "createChartProvider",
+            "observers": [
+                "props.subPanelContext.context.searchState.recreateChartProvider"
+            ]
+        },
+        "onMount": "setChartVisible",
+        "onUnmount": "setChartInvisible"
+    }
+}

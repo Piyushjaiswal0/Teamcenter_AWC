@@ -1,0 +1,243 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-textbox.directive",
+        "js/aw-break.directive",
+        "js/aw-textarea.directive",
+        "js/visible-when.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-widget.directive",
+        "js/depend-on.directive"
+    ],
+    "actions": {
+        "reveal": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-DataManagement",
+            "method": "getIdContexts",
+            "inputData": {
+                "inputObjs": [
+                    "{{ctx.xrtSummaryContextObject}}"
+                ]
+            },
+            "outputData": {
+                "idContexts": "{{function:processContexts}}"
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        },
+        "getIdentifierTypes": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2019-12-DataManagement",
+            "method": "getIdentifierTypes",
+            "inputData": {
+                "identifierTypesIn": [
+                    {
+                        "inputItemOrRev": "{{ctx.xrtSummaryContextObject}}",
+                        "idContext": {
+                            "uid": "{{data.context.dbValue}}",
+                            "type": ""
+                        }
+                    }
+                ]
+            },
+            "outputData": {
+                "identifierTypes": "{{function:processIdentifierTypes}}",
+                "itemIdentifiableObj": "identifiersOutput[0].item",
+                "itemRevIdentifiableObj": "identifiersOutput[0].inputItemOrRev",
+                "revisionsObjects": "{{function:processRevisionList}}"
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        },
+        "createAlternateId": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-12-DataManagement",
+            "method": "createAlternateIdentifiers",
+            "inputData": {
+                "input": [
+                    {
+                        "context": {
+                            "uid": "{{data.context.dbValue}}"
+                        },
+                        "identifierType": {
+                            "uid": "{{data.identifierType.dbValue}}"
+                        },
+                        "mainObject": {
+                            "identifiableObject": "{{data.itemIdentifiableObj}}",
+                            "alternateId": "{{data.id.dbValue}}",
+                            "additionalProps": {
+                                "object_name": [
+                                    "{{data.name.dbValue}}"
+                                ],
+                                "object_desc": [
+                                    "{{data.description.dbValue}}"
+                                ]
+                            },
+                            "makeDefault": true
+                        },
+                        "revObject": {
+                            "identifiableObject": "{{function:findSelectedRev}}",
+                            "alternateId": "{{data.rev.dbValue}}",
+                            "additionalProps": {
+                                "object_name": [
+                                    "{{data.name.dbValue}}"
+                                ],
+                                "object_desc": [
+                                    "{{data.description.dbValue}}"
+                                ]
+                            },
+                            "makeDefault": true
+                        }
+                    }
+                ]
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "relatedModified": [
+                                "{{ctx.selected}}"
+                            ],
+                            "refreshLocationFlag": true
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure": [
+                    {
+                        "message": "displayErrorCode"
+                    }
+                ]
+            },
+            "deps": "js/tcAlternateAliasIdService"
+        }
+    },
+    "data": {
+        "context": {
+            "displayName": "{{i18n.idContext}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "contextProvider",
+            "uiValue": "",
+            "dbValue": "",
+            "emptyLOVEntry": false
+        },
+        "identifierType": {
+            "displayName": "{{i18n.objectType}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "identifierProvider",
+            "uiValue": "",
+            "dbValue": "",
+            "emptyLOVEntry": false
+        },
+        "revision": {
+            "displayName": "{{i18n.itemRevision}}",
+            "type": "STRING",
+            "isRequired": true,
+            "dataProvider": "revisionListProvider",
+            "uiValue": "",
+            "dbValue": "",
+            "emptyLOVEntry": false
+        },
+        "id": {
+            "displayName": "{{i18n.id}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+        "name": {
+            "displayName": "{{i18n.datasetName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+        "rev": {
+            "displayName": "{{i18n.revision}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+        "description": {
+            "displayName": "{{i18n.datasetDesc}}",
+            "type": "STRING",
+            "dbValue": ""
+        }
+    },
+    "dataProviders": {
+        "contextProvider": {
+            "response": "{{data.idContexts}}"
+        },
+        "identifierProvider": {
+            "response": "{{data.identifierTypes}}"
+        },
+        "revisionListProvider": {
+            "response": "{{data.revisionsObjects}}"
+        }
+    },
+    "conditions": {
+        "isItemSelected": {
+            "expression": "ctx.selected && ctx.selected.modelType && ctx.selected.modelType.typeHierarchyArray && ctx.selected.modelType.typeHierarchyArray.indexOf( 'Item' ) > -1"
+        },
+        "isCreateButtonVisible": {
+            "expression": "( conditions.isItemSelected && data.context.dbValue && data.identifierType.dbValue && data.revision.dbValue && data.id.dbValue && data.rev.dbValue && data.name.dbValue ) || ( !conditions.isItemSelected && data.context.dbValue && data.identifierType.dbValue && data.id.dbValue && data.rev.dbValue && data.name.dbValue )"
+        }
+    },
+    "functions": {
+        "findSelectedRev": {
+            "functionName": "findSelectedRev",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "i18n": {
+        "Awp0CreateAlternateIdTitle": [
+            "ZeroCompileCommandMessages"
+        ],
+        "Properties": [
+            "NameValuePanelsMessages"
+        ],
+        "idContext": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "itemRevision": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "Create": [
+            "Awp0CreateAlternateIdMessages"
+        ],
+        "id": [
+            "TCUICommandPanelsMessages"
+        ],
+        "objectType": [
+            "awAddDirectiveMessages"
+        ],
+        "revision": [
+            "TCUICommandPanelsMessages"
+        ],
+        "datasetName": [
+            "awAddDirectiveMessages"
+        ],
+        "datasetDesc": [
+            "awAddDirectiveMessages"
+        ]
+    },
+    "messages": {
+        "displayErrorCode": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    }
+}

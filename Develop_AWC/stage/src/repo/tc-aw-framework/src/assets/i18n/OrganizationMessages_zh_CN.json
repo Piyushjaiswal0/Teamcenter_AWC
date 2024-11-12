@@ -1,0 +1,11 @@
+{
+    "Organization": "组织",
+    "orgTreeFilterText": "过滤",
+    "resultsText": "结果",
+    "noFiltersFound": "未找到结果",
+    "noOrgTreeResultsFound": "未找到过滤器字符串 \"{0}\" 的任何结果。",
+    "orgFilterUsage": "<br>例如，{0}:\"Ed Engineer\" 将返回 Ed Engineer 的所有用户。<br>有效字段为{1}和{2}。",
+    "usageMessage": "\"{0}\" 不是有效的过滤器字符串。{1}",
+    "orgEscapeChars": "<br>包含引号的过滤器字符串必须添加反斜杠前缀 (\\\")。{0}",
+    "advancedSearchMessage": "<br>包含冒号的过滤器字符串必须用引号 (\" \") 引起，除非用于查找特定的字段值。{0}"
+}

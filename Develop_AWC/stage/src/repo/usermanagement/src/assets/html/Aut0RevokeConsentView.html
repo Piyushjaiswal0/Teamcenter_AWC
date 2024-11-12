@@ -1,0 +1,5 @@
+<aw-panel visible-when="conditions.isPrivilegedUser">
+    <aw-panel-section caption="i18n.RevokeConsentTitle" exist-when="conditions.revokeVisibility" collapsed="false" >
+     <aw-checkbox prop="data.revokeGDPRConsent" exist-when="conditions.revokeVisibility" action="revokeConsentStatement"></aw-checkbox>
+    </aw-panel-section>
+</aw-panel>

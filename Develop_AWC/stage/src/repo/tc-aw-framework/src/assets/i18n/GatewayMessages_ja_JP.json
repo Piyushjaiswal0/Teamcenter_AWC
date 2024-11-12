@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "ホーム",
+    "pinObjectCommandTitle": "ホームに固定",
+    "unPinObjectCommandTitle": "ホームから固定解除",
+    "pinObjectFailed": "固定に失敗しました。",
+    "unPinObjectFailed": "固定解除に失敗しました。",
+    "tileUpdateFailedMsg": "タイル更新に失敗しました。",
+    "pinObjectFailedNoGateway": "ホームへのアクセスに問題があります。",
+    "pinObjectMultipleObjectError": "一度に固定できるのは1つのオブジェクトのみです。 追加されるオブジェクトは無視されます。",
+    "unpinTileFailed": "固定解除に失敗しました。",
+    "homeFolderTitle": "フォルダ",
+    "Awp0ShowHomeFolderDesc": "Homeフォルダを開きます。",
+    "Awp0PinObjectDesc": "選択内容をホームページにタイルとして追加します。"
+}

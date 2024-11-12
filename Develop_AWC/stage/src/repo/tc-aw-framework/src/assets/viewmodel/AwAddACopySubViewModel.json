@@ -1,0 +1,316 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "initializeAddCopy": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "getDefaultRelationforSearch"
+                },
+                {
+                    "action": "updateRelationList"
+                },
+                {
+                    "action": "handleAddCopySelection"
+                }
+            ]
+        },
+        "handleObjectCreate": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "addACopyBatchJob",
+                "condition": "conditions.readyToStartCreateOperation"
+            } ]
+        },
+        "addACopyBatchJob": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "saveACopy"
+            }, {
+                "action": "evalObjBasedOnConfigRevRule"
+            }, {
+                "action": "createRelations"
+            } ]
+        },
+        "getDefaultRelationforSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDefaultRelation",
+            "inputData": {
+                "input": [ {
+                    "primaryType": "{{subPanelContext.targetObject.type}}",
+                    "secondaryType": "{{subPanelContext.addPanelState.sourceObjects[0].type}}"
+                } ]
+            },
+            "outputData": {
+                "defaultRelation": "output[0].defaultRelation"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateRelationList": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateRelationList",
+            "inputData": {
+                "creationType": "{{data.creationType}}",
+                "relationMap": "{{subPanelContext.relationMap}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "type": "{{subPanelContext.addPanelState.sourceObjects[0].type}}",
+                "defaultRelation": "{{data.defaultRelation}}",
+                "creationRelation": "{{data.creationRelation}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "relationList": "relationList",
+                "creationRelation": "creationRelation"
+            },
+            "actionMessages": {
+                "success": [ {
+                    "condition": "data.typeIsNotValidForObjectSet && ctx.panelContext.objectSetSource",
+                    "message": "invalidObjectWarning"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "handleAddCopySelection": {
+            "actionType": "JSFunction",
+            "method": "handleAddCopySelection",
+            "inputData": {
+                "sourceObjects": "{{subPanelContext.addPanelState.sourceObjects}}",
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "relationMap": "{{subPanelContext.relationMap}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {
+                "sourceObjects": "sourceObjects",
+                "sourceModelObjects": "sourceModelObjects",
+                "targetModelObjects": "targetModelObjects"
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "saveACopy": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2012-09-DataManagement",
+            "method": "saveAsObjectAndRelate",
+            "inputData": {
+                "saveAsInput": "{{function:getSaveAsInputForAddCopy}}",
+                "relateInfo": [ {
+                    "relate": true
+                } ]
+            },
+            "outputData": {
+                "newObject": "{{dataParseDefinitions:convertSavedAsObject}}",
+                "newObjectCreated": "{{function:getRevToSelectForAddCopy}}"
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "startSaveAsFailure"
+                } ]
+            },
+            "deps": "js/Awp0ShowSaveAsService"
+        },
+        "evalObjBasedOnConfigRevRule": {
+            "actionType": "JSFunction",
+            "method": "evaluateObjsBasedOnConfiguredRevRule",
+            "inputData": {
+                "objectToEvaluateForExactRelation": "{{data.newObjectCreated}}",
+                "addObjectContext": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "objToRelateBasedOnConfiguredRevRule": ""
+            },
+            "deps": "js/awConfiguredRevService"
+        },
+        "createRelations": {
+            "actionType": "JSFunctionAsync",
+            "method": "execute",
+            "inputData": {
+                "targetObject": "{{subPanelContext.targetObject}}",
+                "sourceObjects": "{{data.objToRelateBasedOnConfiguredRevRule}}",
+                "relationName": "{{data.creationRelation.dbValue}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "gwt.CreateOrAddObjectCompleteEvent",
+                        "eventData": {
+                            "createdObjs": "{{data.sourceModelObjects}}"
+                        }
+                    },
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                            "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                            "relations": "{{data.creationRelation}}",
+                            "relatedModified": [
+                                "{{subPanelContext.targetObject}}"
+                            ],
+                            "createdObjects": "{{data.newObjectCreated}}"
+                        }
+                    },
+                    {
+                        "name": "addACopy.objectCreatedWithRelation"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "!subPanelContext.panelPinned",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ],
+                "failure": [ {
+                        "name": "gwt.CreateOrAddObjectCompleteEvent",
+                        "eventData": {
+                            "createdObjs": "{{data.sourceModelObjects}}"
+                        },
+                        "condition": "errorCodes[0].code === 6007"
+                    },
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "refreshLocationFlag": "{{conditions.isRefreshRequired}}",
+                            "isPinnedFlag": "{{subPanelContext.panelPinned}}",
+                            "relations": "{{data.creationRelation}}",
+                            "relatedModified": [
+                                "{{subPanelContext.targetObject}}"
+                            ],
+                            "createdObjects": "{{data.newObjectCreated}}"
+                        },
+                        "condition": "errorCodes[0].code === 6007"
+                    },
+                    {
+                        "name": "addACopy.objectCreatedWithRelation",
+                        "condition": "errorCodes[0].code === 6007"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "!subPanelContext.panelPinned && errorCodes[0].code === 6007",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                    "condition": "data.sourceObjects.length == 1",
+                    "message": "paletteObjectSuccess"
+                } ],
+                "failure": [ {
+                    "condition": "errorCodes[0].code !== 252106 && errorCodes[0].code !== 6007",
+                    "message": "genericAddObjectFailure"
+                } ]
+            },
+            "deps": "js/pasteService"
+        },
+        "updateCallbackWithRelatedObject": {
+            "actionType": "JSFunction",
+            "method": "updateCallbackWithCreatedObject",
+            "inputData": {
+                "createdObject": "{{data.sourceModelObjects}}",
+                "addPanelState": "{{subPanelContext.addPanelState}}"
+            },
+            "outputData": {},
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "functions": {
+        "getSaveAsInputForAddCopy": {
+            "functionName": "getSaveAsInputForAddCopy",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.addPanelState}}",
+                "{{subPanelContext.xrtState.deepCopyDatas}}",
+                "{{subPanelContext.editHandler}}",
+                "{{subPanelContext.xrtState}}"
+            ]
+        }
+    },
+    "dataParseDefinitions": {
+        "convertSavedAsObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "saveAsTrees[0].objectCopy.uid",
+            "operationType": "CREATE"
+        }
+    },
+    "dataProviders": {
+        "getRelationListProvider": {
+            "response": "{{data.relationList}}",
+            "totalFound": "{{data.relationList.length}}"
+        }
+    },
+    "data": {
+        "creationRelation": {
+            "displayName": "{{i18n.relation}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dataProvider": "getRelationListProvider"
+        },
+        "sourceObject": {
+            "displayName": "{{i18n.sourceObject}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{subPanelContext.addPanelState.sourceObjects[0].props.object_string.dbValues[0]}}",
+            "uiValue": "{{subPanelContext.addPanelState.sourceObjects[0].props.object_string.uiValues[0]}}",
+            "dispValue": "{{subPanelContext.addPanelState.sourceObjects[0].props.object_string.displayValues[0]}}"
+        }
+    },
+    "messages": {
+        "paletteObjectSuccess": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.pasteSuccessful}}",
+            "messageTextParams": [
+                "{{data.newObjectCreated[0].props.object_string.dbValues[0]}}"
+            ]
+        },
+        "startSaveAsFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        },
+        "genericAddObjectFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initializeAddCopy",
+        "onUpdate": [ {
+            "action": "handleObjectCreate",
+            "observers": [ "viewModel.subPanelContext.triggerAddACopy" ]
+        } ]
+    },
+    "onEvent": [ {
+        "eventId": "addACopy.objectCreatedWithRelation",
+        "action": "updateCallbackWithRelatedObject"
+    } ],
+    "conditions": {
+        "readyToStartCreateOperation": {
+            "expression": "subPanelContext.triggerAddACopy && subPanelContext.triggerAddACopy.dbValue"
+        }
+    },
+    "i18n": {
+        "ADD_BUTTON_TITLE": [
+            "BaseMessages"
+        ],
+        "addACopy": [
+            "addObjectMessages"
+        ],
+        "pasteSuccessful": [
+            "awAddDirectiveMessages"
+        ],
+        "mutiRelationObject": [
+            "awAddDirectiveMessages"
+        ],
+        "sourceObject": [
+            "addObjectMessages"
+        ],
+        "relation": [
+            "XRTMessages"
+        ]
+    }
+}

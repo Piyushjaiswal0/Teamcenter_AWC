@@ -1,0 +1,80 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-add.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "data": {
+        "addPanelState": {
+            "initialValues": {
+                "sourceObjects": "",
+                "selectedTab": ""
+            },
+            "meta": {
+                "sourceObjects": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                },
+                "selectedTab": {
+                    "field": "true",
+                    "type": "OBJECT"
+                }
+            }
+        }
+    },
+    "actions":
+    {
+        "updateRefProperty": {
+            "actionType": "JSFunction",
+
+            "method": "updateRefProperty",
+            "deps": "js/addObjectUtils",
+            "inputData": {
+                "sourceObjects": "{{addPanelState.sourceObjects}}",
+                "subPanelContext": "{{ctx.panelContext}}"
+            }
+        },
+        "setTypeReference": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "updateRefProperty"
+                },
+                {
+                    "action": "closePanel"
+
+                }
+            ]
+
+        },
+        "closePanel":
+        {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData":
+            {
+                "events":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "i18n":
+    {
+        "SET_PANEL_CAPTION": [ "BaseMessages" ]
+    },
+    "ctx": {
+        "panelContext": null
+    }
+}

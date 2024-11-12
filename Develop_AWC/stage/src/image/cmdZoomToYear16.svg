@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M4.5,3A.5.5,0,1,0,4,2.5.5.5,0,0,0,4.5,3Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M11.5,3a.5.5,0,1,0-.5-.5A.5.5,0,0,0,11.5,3Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="6" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" y="6" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="6" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="6" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="3" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="6" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="12" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M14,0H2A2.002,2.002,0,0,0,0,2V14a2.002,2.002,0,0,0,2,2H14a2.002,2.002,0,0,0,2-2V2A2.002,2.002,0,0,0,14,0ZM2,1H14a1.0013,1.0013,0,0,1,1,1V4H1V2A1.0013,1.0013,0,0,1,2,1ZM14,15H2a1.0013,1.0013,0,0,1-1-1V5H15v9A1.0013,1.0013,0,0,1,14,15Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

@@ -1,0 +1,87 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "searchState": {
+            "initialValues": {
+                "pwaSelection": [],
+                "autoApplyFilters": true,
+                "selectFirstObjectPreference": false,
+                "onRulePage": true,
+                "savedSearchType": "Awp0FullTextSavedSearch"
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "resultsText": "{{i18n.resultsText}}",
+        "searchText": "{{i18n.searchFolderSearch}}"
+    },
+    "actions":
+    {
+        "updateResultsCaptionForFullTextSearch": {
+            "actionType": "JSFunction",
+            "method": "updateResultsCaption",
+            "inputData": {
+                "resultsText": "{{i18n.resultsText}}",
+                "searchState": "{{data.searchState}}"
+            },
+            "outputData": {
+                "resultsText": "resultsText"
+            },
+            "deps": "js/advancedSearchService"
+        },
+        "updateState":
+        {
+            "actionType": "JSFunction",
+            "method": "updateState",
+            "inputData":
+            {
+                "savedSearchSelected": "{{ctx.selected}}",
+                "searchState": "{{data.searchState}}",
+                "searchStateUpdater": "{{data.updateAtomicData}}"
+            },
+            "deps": "js/savedSearchService"
+        }
+    },
+    "functions": {
+    },
+    "conditions": {
+    },
+    "lifecycleHooks": {
+        "onMount": "updateState",
+        "onUpdate": [
+            {
+                "action": "updateResultsCaptionForFullTextSearch",
+                "observers": [ "viewModel.searchState.cursorInfoString" ]
+            }
+        ]
+    },
+    "onEvent": [
+    ],
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n":
+    {
+        "Name":[ "SearchMessages"],
+        "Description":[ "SearchMessages"],
+        "savedSearch": [ "SearchMessages" ],
+        "Awp0SearchTitle": ["SearchMessages"],
+        "searchBtn": [ "SearchMessages" ],
+        "keyword": [ "SearchMessages" ],
+        "advancedText": [ "SearchMessages" ],
+        "searchesText": [ "SearchMessages" ],
+        "searchFolderSearch": [ "SearchMessages" ],
+        "resultsText": [ "SearchMessages" ]
+    }
+}
+

@@ -1,0 +1,169 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "initDataProvider": {
+            "actionType": "dataProvider",
+            "method": "imageDataProvider"
+        },
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex":"{{data.dataProviders.imageDataProvider.cursorObject.startIndex}}",
+                        "endIndex":"{{data.dataProviders.imageDataProvider.cursorObject.endIndex}}",
+                        "startReached":"{{data.dataProviders.imageDataProvider.cursorObject.startReached}}",
+                        "endReached":"{{data.dataProviders.imageDataProvider.cursorObject.endReached}}"
+                    },
+                    "focusObjUid": "{{ctx.newlyCreatedObj.uid}}",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": false,
+                "4": "{{ctx.newlyCreatedObj}}"
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "output": "{{function:processOutput}}",
+                "dataProviders.imageDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/userMgmtService",
+            "events": {
+                "success": [ {
+                    "name": "orgImage.selectFirstItem",
+                    "condition": "ctx.newlyCreatedObj"
+                } ]
+            }
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.dataProviders.imageDataProvider.selectionModel}}",
+                "newSelection": "{{ctx.newlyCreatedObj.uid}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "loadNextData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex":"{{data.dataProviders.imageDataProvider.cursorObject.startIndex}}",
+                        "endIndex":"{{data.dataProviders.imageDataProvider.cursorObject.endIndex}}",
+                        "startReached":"{{data.dataProviders.imageDataProvider.cursorObject.startReached}}",
+                        "endReached":"{{data.dataProviders.imageDataProvider.cursorObject.endReached}}"
+                    },
+                    "pagingType": "GetNextPage",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": false,
+                "4": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "output": "{{function:processOutput}}",
+                "dataProviders.imageDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/userMgmtService"
+        },
+        "loadPrevData": {
+            "actionType": "JSFunctionAsync",
+            "method": "loadData",
+            "inputData": {
+                "0": {
+                    "maxToLoad": "{{subPanelContext.searchState.maxToLoad}}",
+                    "maxToReturn": "{{subPanelContext.searchState.maxToReturn}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex":"{{data.dataProviders.imageDataProvider.cursorObject.startIndex}}",
+                        "endIndex":"{{data.dataProviders.imageDataProvider.cursorObject.endIndex}}",
+                        "startReached":"{{data.dataProviders.imageDataProvider.cursorObject.startReached}}",
+                        "endReached":"{{data.dataProviders.imageDataProvider.cursorObject.endReached}}"
+                    },
+                    "pagingType": "GetPreviousPage",
+                    "searchFilterMap6": "{{subPanelContext.searchState.activeFilterMap}}",
+                    "searchSortCriteria": "{{subPanelContext.searchState.sortCriteria}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}"
+                },
+                "1": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{subPanelContext.provider.clientScopeURI}}"
+                },
+                "2": null,
+                "3": false,
+                "4": null
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults",
+                "output": "{{function:processOutput}}",
+                "dataProviders.imageDataProvider.cursorObject": "cursor"
+            },
+            "deps": "js/userMgmtService"
+        }
+    },
+    "dataProviders": {
+        "imageDataProvider": {
+            "action": "loadData",
+            "nextAction": "loadNextData",
+            "previousAction": "loadPrevData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "navigate_objects"
+        }
+    },
+    "onEvent": [ {
+        "eventId": "orgImage.selectFirstItem",
+        "action": "selectFirstItem"
+    } ],
+    "functions":
+    {
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": {
+            "action": "initDataProvider",
+            "observers": [
+                "props.subPanelContext.searchState.criteria.groupUID",
+                "props.subPanelContext.searchState.criteria.roleUID"
+            ]
+        }
+    }
+}

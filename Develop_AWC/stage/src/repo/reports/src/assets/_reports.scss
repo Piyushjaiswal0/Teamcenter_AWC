@@ -1,0 +1,333 @@
+// Copyright 2019 Siemens Product Lifecycle Management Software Inc.
+/* reports */
+
+$bold_font_weight_400:400;
+$bold_font_weight_640:640;
+$italic_font_style:italic;
+$center_text_allign:center;
+
+.aw-reports-reportTotalFound {
+    font-weight: $bold_font_weight_400;
+    font-size: $fontsize_normal;
+}
+
+.aw-reports-sectionLabel {
+    margin-top: 15px;
+}
+
+.aw-reports-button {
+    margin-top: 10px;
+}
+
+.aw-reports-result {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.aw-incontext-contextreport {
+    position: relative;
+}
+
+.aw-reports-filterWidgets .aw-widgets-labelGroup {
+    width: 35%;
+}
+
+.aw-reports-filterWidgets .aw-widgets-namingRuleGroup {
+    width: 65%;
+}
+
+.aw-reports-tabpanel {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.aw-report-view-container {
+    overflow-y: hidden !important
+}
+
+.aw-reports-instructionsLabel {
+    font-size: $fontsize_x_large;
+    margin-left: 10px;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
+
+.aw-reports-reportTitle a {
+    font-weight: $bold_font_weight;
+    font-size: $fontsize_x_large;
+}
+
+.aw-reports-reportSourceName .aw-base-normal>a {
+    font-weight: $bold_font_weight_400;
+    font-size: $fontsize_normal;
+}
+
+.aw-reports-titleLabel {
+    text-align: center;
+    font-size: $fontsize_2x_large;
+}
+
+.aw-reports-totalFoundLabel {
+    font-size: $fontsize_large;
+}
+
+.aw-reports-requestTimeLabel {
+    font-size: $fontsize_normal;
+}
+
+.aw-reports-dashboardTileList .aw-widgets-cellListWidget{
+    display: flex;
+    justify-content: center;
+}
+
+.aw-reports-dashboardTileList .aw-widgets-cellListItemContainer .aw-widgets-cellListItemCell {
+    width: inherit;
+}
+
+.aw-reports-dashboardTileContent .aw-widgets-cellListWidget .aw-widgets-cellListItem {
+    margin: rem-calc(10);
+    min-width: rem-calc(400);
+    width: rem-calc(40);
+    height: rem-calc(320);
+}
+
+.aw-reports-lastUpdateLabel {
+    float: left;
+    padding-left: rem-calc(10);
+    padding-top: rem-calc(3);
+    font-weight: $label_text_font_weight;
+}
+
+.aw-reports-lastUpdated {
+    display: flex;
+    flex-direction: row;
+    margin: $label_margin_bottom;
+}
+
+.aw-reports-lastUpdateLabelValue {
+    float: right;
+    padding-top: rem-calc(3);
+    padding-left: rem-calc(3);
+}
+
+.aw-reports-frameSize {
+    width: inherit;
+    height: inherit;
+}
+
+.aw-reports-chartContainer .aw-layout-panelContent {
+    padding: $default_cell_list_item_padding;
+}
+
+.aw-reports-previewSection {
+    padding-right: 10px;
+    padding-top: 13px;
+}
+
+.aw-reports-tileTable {
+    padding-top: 20px;
+}
+
+
+.aw-reports-tileCommand {
+    align-self: flex-end;
+    display: none;
+    margin-right: rem-calc(0);
+}
+
+.aw-reports-viewerCommands {
+    align-items: flex-end;
+}
+
+.aw-reports-addButton {
+    width: 150px;
+}
+
+li:hover .aw-reports-tileCommand {
+    display: inline-block;
+}
+
+.aw-reports-defaultMessage {
+    white-space:pre-wrap;
+    font-size: $fontsize_large;
+}
+
+.aw-reports-tableContent {
+    width: rem-calc(832);
+    @media all and (max-width: 950px) {
+        width: rem-calc(400);
+    }
+    @media all and (max-width: 540px) {
+        width: rem-calc(384);
+        min-width: rem-calc(40);
+    }
+}
+
+.aw-reports-chartContent {
+    width: rem-calc(400);
+    @media all and (max-width: 540px) {
+        width: rem-calc(384);
+        min-width: rem-calc(40);
+    }
+}
+
+.aw-layout-primaryWorkareaFill .aw-reports-dashboardTileContent .aw-widgets-cellListWidget .aw-widgets-cellListItem {
+    width: auto;
+    max-width: initial;
+}
+
+.aw-reports-tableMarginShift {
+    margin-left: rem-calc(39.3);
+    @media all and (max-width: 1024px) {
+        margin-left: 0;
+    }
+}
+
+.aw-reports-tileBottomPadding {
+    padding-bottom: rem-calc(20);
+}
+
+.aw-reports-block-marginStartEnd{
+    padding-inline-end: rem-calc(10);
+    margin-inline-start:rem-calc(12)
+}
+
+.aw-reports-templateTitle span.sw-property-name{
+    padding-top: rem-calc(10);
+    padding-inline-start: rem-calc(10);
+}
+.aw-reports-templateTitle input.sw-property-val{
+    margin-top: $margin_small;
+}
+
+.aw-reports-reportViewHeader {
+    height: rem-calc(36);
+}
+
+.aw-reports-chartCount{
+    margin-left: auto;
+    margin-right: rem-calc(10);
+    margin-top: auto;
+}
+.aw-reports-chartCount .aw-reports-chartCountContainer{
+    width: min-content;
+    padding-inline-end: rem-calc(10);
+    padding-inline-start: rem-calc(10);
+}
+.aw-reports-chartCountList{
+    width: rem-calc(100);
+}
+
+.aw-reports-chartView{
+    margin-block-end: rem-calc(10);
+}
+
+.aw-reports-commandBar{
+    height:fit-content;
+    padding-block-end:rem-calc(10);
+    margin-inline-start: rem-calc(8);
+}
+
+.aw-reports-verticalCenterAlign{
+
+    margin-top: rem-calc(20);
+
+}
+
+.aw-reports-chartContainer .aw-widgets-droppable {
+    padding: $default_cell_list_item_padding;
+}
+
+.aw-reports-defaultChart{
+    margin-block-end: rem-calc(10);
+    text-align: $center_text_allign;
+    font-style: $italic_font_style;
+    font-size: $fontsize_large;
+}
+
+.aw-reports-workAreaCommandBar .aw-layout-workareaCommandbar {
+    min-height: 0;
+}
+
+.aw-reports-shareCmdBar{
+    margin: auto;
+}
+
+.aw-reports-heightForShareList{
+    height: rem-calc(250);
+}
+.aw-reports-defaultNotSharedTitle{
+    font-weight: $bold_font_weight_640;
+    font-size:  $fontsize_large;
+    text-align: $center_text_allign;
+    margin-bottom: 0;
+    margin-top: rem-calc(10);
+}
+.aw-reports-defaultNotSharedDesc{
+    font-style: $italic_font_style;
+    font-size:  $fontsize_x_large;
+    text-align: $center_text_allign;
+}
+.aw-reports-reportTypeContainer{
+    padding-left: rem-calc(10);
+}
+.aw-reports-reportTypeContainer .sw-property-name{
+    padding-top: rem-calc(15);
+}
+.aw-reports-reportTypeContainer .aw-reports-reportTypeLabel .sw-property{
+    width: rem-calc(42);
+    padding-left: rem-calc(10);
+}
+.aw-reports-reportTypeContainer .aw-reports-typeSelectorWidget .sw-component{
+    margin: 0;
+    padding-top: rem-calc(8);
+}
+.aw-reports-reportTypeContainer .aw-reports-reportCriteriaContainer{
+    padding-top: rem-calc(8);
+    padding-left: rem-calc(10);
+}
+.aw-reports-reportTypeContainer .aw-reports-reportNoCriteriaContainer{
+    padding-top: rem-calc(15);
+
+    font-style: $italic_font_style;
+    padding-left: rem-calc(10);
+}
+.aw-reports-reportTypeContainer .aw-reports-reportTypeLabel .sw-property{
+    width: rem-calc(42);
+}
+.aw-reports-reportTypeContainer .aw-reports-typeSelectorWidget .sw-component{
+    margin: 0;
+    padding-top: rem-calc(8);
+}
+.aw-reports-chartMessageContainer{
+    position: relative;
+    top: 30%;
+}
+.aw-reports-searchDataContext{
+    font-style: $italic_font_style;
+    font-size: $fontsize_x_large;
+    margin-block-end: rem-calc(10);
+}
+.aw-reports-regularFontStyle{
+    font-style: normal;
+}
+.aw-reports-reportIconView{
+    margin-block-end:rem-calc(10);
+}
+.aw-reports-noRelationContext{
+    font-style: normal;
+    font-size: $fontsize_x_large;
+    margin-block-end: rem-calc(10);
+}
+
+.aw-reports-criteriaLabelsContainer{
+    overflow: auto;
+}
+.aw-reports-defaultView{
+    margin-top: rem-calc(160);
+}

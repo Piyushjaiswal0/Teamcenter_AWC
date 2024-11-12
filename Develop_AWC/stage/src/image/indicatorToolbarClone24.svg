@@ -1,0 +1,15 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <rect width="24" height="24" fill="#dcdcdc"/>
+  <g>
+    <rect x="4.5" y="4.491" width="9" height="9" transform="translate(18 17.982) rotate(-180)" fill="#fff"/>
+    <path d="M14,13.991H4v-10H14Zm-9-1h8v-8H5Z" fill="#464646"/>
+  </g>
+  <g>
+    <rect x="7.5" y="7.5" width="9" height="9" transform="translate(24 24) rotate(-180)" fill="#fff"/>
+    <path d="M17,17H7V7H17ZM8,16h8V8H8Z" fill="#464646"/>
+  </g>
+  <g>
+    <rect x="10.5" y="10.509" width="9" height="9" transform="translate(30 30.018) rotate(-180)" fill="#fff"/>
+    <path d="M20,20.009H10v-10H20Zm-9-1h8v-8H11Z" fill="#464646"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <rect class="aw-theme-iconOutline" x="7.495" y="8.482" width="3.988" height="4.002" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line class="aw-theme-iconOutline" x1="0.422" y1="1.406" x2="7.422" y2="8.453" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line class="aw-theme-iconOutline" x1="18.422" y1="1.688" x2="11.469" y2="8.531" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <line class="aw-theme-iconOutline" x1="7.5" y1="12.453" x2="0.703" y2="19.359" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline class="aw-theme-iconOutline" points="9.003 19.506 0.506 19.506 0.506 1.506 18.482 1.506 18.482 8.965" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <circle class="aw-theme-iconOutline" cx="17.446" cy="17.425" r="6.051" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path class="aw-theme-iconOutline" d="M18.2,13.033l-.706.706,1.614,1.614H17.093a3.357,3.357,0,0,0-3.328,3.328,3.3,3.3,0,0,0,2.017,3.025l.4-.908a2.057,2.057,0,0,1-1.412-2.017,2.282,2.282,0,0,1,2.319-2.319H19.11L17.5,18.076l.706.706,2.925-2.925Z" fill="#464646"/>
+</svg>

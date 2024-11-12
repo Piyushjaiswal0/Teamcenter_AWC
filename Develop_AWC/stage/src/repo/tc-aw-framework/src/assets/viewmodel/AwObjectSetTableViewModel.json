@@ -1,0 +1,100 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awObjectSetTableRenderFunction",
+            "deps": "js/AwObjectSetTableService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "data": {
+    },
+    "dataProviders": {
+    },
+    "columnProviders": {
+    },
+    "grids": {
+    },
+    "functions": {
+
+    },
+    "onEvent": [],
+    "messages": {
+        "partialErrors": {
+            "messageText": "{{i18n.error}}",
+            "messageTextParams": [
+                "{{data.partialErrors[0].errorValues[0].message}}"
+            ],
+            "messageType": "ERROR"
+        }
+    },
+    "i18n": {
+        "error": [
+            "XRTMessages"
+        ]
+    },
+    "props": {
+        "objsetdata": {
+            "type": "object"
+        },
+        "first-page-uids": {
+            "type": "array"
+        },
+        "selection-model": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "object-set-data": {
+            "type": "object"
+        },
+        "operation-type": {
+            "type": "string"
+        },
+        "obj-set-uri": {
+            "type": "string"
+        },
+        "show-checkbox": {
+            "type": "string"
+        },
+        "select-all": {
+            "type": "string"
+        },
+        "columns": {
+            "type": "array"
+        },
+        "grid-info": {
+            "type": "object"
+        },
+        "object-set-info": {
+            "type": "object"
+        },
+        "xrt-context": {
+            "type": "object"
+        },
+        "edit-context-key": {
+            "type": "string"
+        },
+        "is-refresh-all-object-sets": {
+            "type": "boolean"
+        },
+        "totalFound": {
+            "type": "integer"
+        },
+        "parentUid": {
+            "type": "string"
+        }
+    },
+    "ctx": {
+        "dynamicTable": {
+            "parser": {
+                "method": "getDynamicTableComponent",
+                "deps": "js/AwObjectSetTableService"
+            }
+        }
+    }
+}

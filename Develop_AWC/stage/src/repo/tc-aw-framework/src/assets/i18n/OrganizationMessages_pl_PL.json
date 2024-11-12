@@ -1,0 +1,11 @@
+{
+    "Organization": "Organizacja",
+    "orgTreeFilterText": "Filtr",
+    "resultsText": "Wyniki",
+    "noFiltersFound": "Nie znaleziono wyników",
+    "noOrgTreeResultsFound": "Nie znaleziono wyników dla łańcucha filtra \"{0}\".",
+    "orgFilterUsage": "<br>Przykład: {0}:\"Ed Engineer\" zwraca w wynikach wszystkich użytkowników Ed Engineer.<br>Prawidłowe pola: {1} i {2}.",
+    "usageMessage": "\"{0}\" nie jest prawidłowym łańcuchem filtra.{1}",
+    "orgEscapeChars": "<br>Łańcuchy filtrów zawierające cudzysłowy należy poprzedzić ukośnikiem odwrotnym (\\\").{0}",
+    "advancedSearchMessage": "<br>Łańcuchy filtrów zawierające dwukropki należy ująć w cudzysłów (\" \"), chyba że są one używane do wyszukiwania określonej wartości pola.{0}"
+}

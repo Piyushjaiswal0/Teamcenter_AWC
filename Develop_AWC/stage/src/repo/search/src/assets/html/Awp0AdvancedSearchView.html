@@ -1,0 +1,57 @@
+<aw-command-panel class="aw-create-fillAvailable" caption="i18n.advancedSearch" hide-title="props.hideTitle">
+    <aw-panel-header>
+        <div aw-class="[{ 'sw-row': conditions.nonMobileMode }]">
+            <div aw-class="[{ 'w-12': conditions.nonMobileMode }]">
+                <aw-widget prop="data.awp0AdvancedVMObject.props.awp0AdvancedQueryName"></aw-widget>
+            </div>
+            <aw-link aw-class="[{ 'aw-layout-actionSection': conditions.isMobileMode },{ 'aw-keywordsearch-link w-6': conditions.nonMobileMode }]" prop="data.keywordSearch" action="toggleSearchView" exist-when="conditions.areResultsEnabled && data.awp0AdvancedVMObject.props.awp0AdvancedQueryName"></aw-link>
+        </div>
+        <aw-togglebutton prop="data.preferredSearch" visible-when="conditions.showAdvancedSearchButton && conditions.showPreferredToggle" action="togglePreferred"></aw-togglebutton>
+    </aw-panel-header>
+    <!-- Advanced Search Panel View without Results Section -->
+    <aw-panel-body exist-when="conditions.isMobileMode && !conditions.areResultsEnabled">
+        <aw-panel-section visible-when="conditions.showAdvancedSearchAttributes">
+            <aw-advanced-search-attributes attributes="fields.awp0AdvancedQueryAttributes" call-back-action="clearAll"></aw-advanced-search-attributes>
+        </aw-panel-section>
+    </aw-panel-body>
+    <!-- Advanced Search Panel View with Results Section-->
+    <div class="sw-column aw-create-fillAvailable" exist-when="conditions.isMobileMode && conditions.areResultsEnabled">
+        <aw-panel-section caption="{{data.inputText}}" visible-when="conditions.showAdvancedSearchAttributes" class='aw-input-section' aw-class="[{ 'h-12': !data._isInputSectionCollapsed }]"  name='inputSection' collapsed="{{data._isInputSectionCollapsed}}">
+            <aw-scrollpanel>
+                <aw-advanced-search-attributes attributes="fields.awp0AdvancedQueryAttributes" call-back-action="clearAll"></aw-advanced-search-attributes>
+            </aw-scrollpanel>
+        </aw-panel-section>
+        <aw-panel-section caption="{{data.resultsText}}" class="aw-results-section aw-create-fillAvailable" show-when="data._isInputSectionCollapsed && conditions.areResultsEnabled" include-component-name="AwSearchBreadcrumbUnreadableCount" context="{{props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount[0]}}" key="{{data.resultSectionID}}">
+            <aw-command-bar anchor="aw_search_objects" alignment="HORIZONTAL" context="props.subPanelContext"></aw-command-bar>
+            <aw-include name="AwAdvancedSearchList" sub-panel-context="props.subPanelContext"></aw-include>
+        </aw-panel-section>
+    </div>
+    <!-- Advanced Search Panel 2x View with Results Section-->
+    <div class="sw-row aw-create-fillAvailable" exist-when="conditions.nonMobileMode && conditions.areResultsEnabled && conditions.showAdvancedSearchAttributes">
+        <div class="sw-column aw-create-fillAvailable w-6">
+            <aw-panel-section collapsed="disabled" caption="{{data.inputText}}" class='aw-input-section aw-create-fillAvailable aw-search-left-panel-view' name='inputSection'>
+                <aw-scrollpanel>
+                    <aw-advanced-search-attributes attributes="fields.awp0AdvancedQueryAttributes" call-back-action="clearAll"></aw-advanced-search-attributes>
+                </aw-scrollpanel>
+                <aw-panel-footer>
+                    <aw-button button-type='base' size='auto' visible-when="conditions.showAdvancedSearchButton" action="doAdvancedSearch">
+                        <aw-i18n>i18n.searchBtn</aw-i18n>
+                    </aw-button>
+                </aw-panel-footer>
+            </aw-panel-section>
+        </div>
+        <aw-splitter></aw-splitter>
+        <aw-panel-section collapsed="disabled" caption="{{data.resultsText}}" class="aw-results-section aw-create-fillAvailable w-6" include-component-name="AwSearchBreadcrumbUnreadableCount" context="{{props.subPanelContext.searchState.additionalSearchInfoMap.unReadableCount[0]}}" key="{{data.resultSectionID}}">
+            <aw-command-bar anchor="aw_search_objects" alignment="HORIZONTAL" context="props.subPanelContext"></aw-command-bar>
+            <aw-include name="AwAdvancedSearchList" sub-panel-context="props.subPanelContext"></aw-include>
+        </aw-panel-section>
+    </div>
+    <aw-panel-footer exist-when="!data._isInputSectionCollapsed && conditions.isMobileMode">
+        <aw-button button-type="base" size='auto' exist-when="conditions.showAdvancedSearchButton && conditions.areResultsEnabled" action="doAdvancedSearch">
+            <aw-i18n>i18n.searchBtn</aw-i18n>
+        </aw-button>
+        <aw-button size='auto' exist-when="conditions.showAdvancedSearchButton && !conditions.areResultsEnabled" action="doAdvancedSearch">
+            <aw-i18n>i18n.searchBtn</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

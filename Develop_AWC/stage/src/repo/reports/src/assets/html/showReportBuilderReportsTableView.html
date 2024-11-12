@@ -1,0 +1,10 @@
+<div class="aw-base-scrollPanel" exist-when="data.totalFound === 0">
+    <aw-empty-workarea
+        title="i18n.noReportTemplates"
+        hint="i18n.emptyReportAreaHint"
+        action="actions.createReport"
+        link-visibility="true"
+        link-text="i18n.createReport">
+    </aw-empty-workarea>
+</div>
+<aw-splm-table gridid="reportGridView" exist-when="data.totalFound !== 0" ></aw-splm-table>

@@ -1,0 +1,47 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<polygon fill="#3C91AF" points="28.5,33.5 28.5,44.5 38.5,38.5 38.5,27.5 "/>
+<polygon fill="#3C91AF" points="18.5,16.5 18.5,27.5 28.5,21.5 28.5,10.5 "/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="23.5" y1="22.5" x2="33.5" y2="32.5">
+	<stop  offset="0" style="stop-color:#CDE6EB"/>
+	<stop  offset="0.2214" style="stop-color:#C6E2E8"/>
+	<stop  offset="0.5419" style="stop-color:#B3D8E1"/>
+	<stop  offset="0.9212" style="stop-color:#93C7D5"/>
+	<stop  offset="1" style="stop-color:#8CC3D2"/>
+</linearGradient>
+<polygon fill="url(#SVGID_1_)" points="38.5,27.5 28.5,33.5 18.5,27.5 28.5,21.5 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="4" y1="15" x2="31" y2="42">
+	<stop  offset="0" style="stop-color:#AFD7E1"/>
+	<stop  offset="0.1588" style="stop-color:#A4D0DC"/>
+	<stop  offset="0.7059" style="stop-color:#80BCCE"/>
+	<stop  offset="1" style="stop-color:#73B4C8"/>
+</linearGradient>
+<polygon fill="url(#SVGID_2_)" points="18.5,27.5 18.5,16.5 8.5,10.5 8.5,32.5 28.5,44.5 28.5,33.5 "/>
+	<line fill="none" stroke="#147391" stroke-linejoin="round" stroke-miterlimit="10" x1="18.5" y1="27.5" x2="8.5" y2="21.5"/>
+	<line fill="none" stroke="#147391" stroke-linejoin="round" stroke-miterlimit="10" x1="28.5" y1="33.5" x2="28.5" y2="44.5"/>
+<line fill="none" stroke="#147391" stroke-linejoin="round" stroke-miterlimit="10" x1="18.5" y1="38.5" x2="18.5" y2="16.5"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="13.5" y1="5.5" x2="23.5" y2="15.5">
+	<stop  offset="0" style="stop-color:#CDE6EB"/>
+	<stop  offset="0.2214" style="stop-color:#C6E2E8"/>
+	<stop  offset="0.5419" style="stop-color:#B3D8E1"/>
+	<stop  offset="0.9212" style="stop-color:#93C7D5"/>
+	<stop  offset="1" style="stop-color:#8CC3D2"/>
+</linearGradient>
+<polygon fill="url(#SVGID_3_)" points="8.5,10.5 18.5,4.5 28.5,10.5 18.5,16.5 "/>
+<polyline fill="none" stroke="#147391" stroke-miterlimit="10" points="28.5,10.5 18.5,16.5 8.5,10.5 "/>
+<polyline fill="none" stroke="#147391" stroke-miterlimit="10" points="38.5,27.5 28.5,33.5 18.5,27.5 28.5,21.5 "/>
+<path fill="none" stroke="#464646" stroke-miterlimit="10" d="M28.5,21.5v-11l-10-6l-10,6l0,22l20,12l10-6v-11L28.5,21.5z"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="18.5" cy="4.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="28.5" cy="10.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="18.5" cy="16.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="18.5" cy="27.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="18.5" cy="38.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="8.5" cy="10.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="8.5" cy="21.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="8.5" cy="32.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="28.5" cy="44.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="28.5" cy="33.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="38.5" cy="38.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="38.5" cy="27.5" r="1.5"/>
+<circle fill="#F0F0F0" stroke="#464646" cx="28.5" cy="21.5" r="1.5"/>
+</svg>

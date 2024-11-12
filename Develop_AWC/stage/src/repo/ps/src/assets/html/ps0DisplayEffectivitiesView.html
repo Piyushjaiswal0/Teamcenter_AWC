@@ -1,0 +1,8 @@
+<aw-panel-body>
+    <aw-command-panel-section caption="i18n.ps0ElementEffectivities" anchor="data.commandDisplayEffectivity" context='{expEffPanelState: props.subPanelContext.expEffPanelState, dataProviders: data.dataProviders}'>
+        <aw-list  exist-when="data.effectivities.length > 0" dataprovider="data.dataProviders.getEffectivity">
+            <aw-include name="ps0EffectivitiyCell" sub-panel-context="item"></aw-include>
+        </aw-list>
+    </aw-command-panel-section>
+</aw-panel-body>
+

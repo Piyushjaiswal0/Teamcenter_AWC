@@ -1,0 +1,455 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "revealAction":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updatePreviewModeTrue",
+                "condition": "!ctx.state.params.reportId"
+            }, {
+                "action": "getThumbnailChartList"
+            }, {
+                "action": "getReportReportId",
+                "condition":"!ctx.state.params.reportId"
+            }]
+        },
+        "getReportReportId":{
+            "actionType": "TcSoaService",
+            "serviceName": "Reports-2007-01-CrfReports",
+            "method": "generateReportDefintionIds",
+            "inputData": {
+                "inputCriteria": [ {
+                    "category": "SummaryReport",
+                    "clientId": "",
+                    "source": "",
+                    "status": ""
+                } ]
+            },
+            "outputData": {
+                "reportId": "{{function:getNewReportId}}"
+            },
+            "deps": "js/addNewReportService"
+        },
+        "updatePreviewModeTrue":{
+            "actionType": "JSFunction",
+            "method": "getEscapedUrlParameters",
+            "deps": "js/AwConfigureReportViewerService",
+            "inputData": {
+                "previewMode": "true",
+                "params":"{{ctx.state.params}}"
+            }
+        },
+        "getThumbnailChartList": {
+            "actionType": "JSFunction",
+            "method": "getThumbnailChartList",
+            "inputData": {
+                "reportState": "{{subPanelContext.reportsState}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "thumbnailChartList": "thumbnailChartList",
+                "thumbnail": "thumbnail",
+                "editModeThumbnail": "editModeThumbnail",
+                "addToDashboard": "addToDashboard"
+            },
+            "deps": "js/AwConfigureChartService"
+        },
+        "unMountAction":{
+            "actionType":"batchJob",
+            "steps":[
+                {
+                    "action":"updatePreviewModeFalse",
+                    "condition":"!ctx.state.params.reportId && !subPanelContext.reportsState.selectedReport"
+                }
+            ]
+        },
+        "updatePreviewModeFalse":{
+            "actionType": "JSFunction",
+            "method": "getEscapedUrlParameters",
+            "deps": "js/AwConfigureReportViewerService",
+            "inputData": {
+                "previewMode": "false",
+                "params":"{{ctx.state.params}}"
+            }
+        },
+        "closePanel": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updatePreviewModeFalse",
+                "condition":"!ctx.state.params.reportId"
+            }, {
+                "action": "popupClose"
+            }]
+        },
+        "popupClose": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupId": "{{props.subPanelContext.chartConfig.popUpId}}",
+                "targetEvent": "{{$event}}"
+            },
+            "deps": "js/popupService"
+        },
+        "navigateReportIdonUrl":{
+            "actionType": "Navigate",
+            "navigateTo": "createReportTemplate",
+            "navigationParams": {
+                "reportId": "{{data.reportId.dbValue}}",
+                "previewMode": "true",
+                "reportType": "{{ctx.state.params.reportType}}"
+            },
+            "options": {
+                "inherit": false
+            }
+        },
+        "editReportTemplate":{
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{fields.templateState}}",
+                "value": {
+                    "editToggled": "true"
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "saveReportAndClose": {
+            "actionType": "batchJob",
+            "steps": [{
+                "action": "updateThumbnail"
+            },{
+                "action": "saveReportProps",
+                "condition":"!ctx.state.params.reportId"
+            },{
+                "action":"setProperties",
+                "condition":"ctx.state.params.reportId"
+            },{
+                "action": "addNewReportAction",
+                "condition": "!ctx.state.params.reportId"
+            }, {
+                "action": "navigateReportIdonUrl",
+                "condition":"!ctx.state.params.reportId"
+            }, {
+                "action": "popupClose"
+            }]
+        },
+        "updateThumbnail": {
+            "actionType": "JSFunction",
+            "method": "updateThumbnail",
+            "inputData": {
+                "reportsState": "{{subPanelContext.reportsState}}",
+                "thumbnail": "{{data.thumbnail}}"
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "saveReportProps": {
+            "actionType": "JSFunction",
+            "method": "saveReportProps",
+            "inputData": {
+                "reportsState": "{{subPanelContext.reportsState}}"
+            },
+            "outputData":{
+                "rd_params": "params",
+                "reportType":"reportType"
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "setProperties":{
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+            "method": "setProperties",
+            "inputData": {
+                "info": "{{function:getRdMetaDataInfo}}"
+            },
+            "outputData": {
+                "serviceData": "{{function:updateSelectedReportAndAddToDashboard}}"
+            },
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "message": "saveReportSuccessMessage"
+                    }
+                ]
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "addNewReportAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2008-06-DataManagement",
+            "method": "createObjects",
+            "inputData": {
+                "input": [ {
+                    "clientId": "1",
+                    "data": {
+                        "boName": "ReportDefinition",
+                        "stringProps": {
+                            "rd_name": "{{data.reportName.uiValue}}",
+                            "rd_source": "Active Workspace",
+                            "rd_folder_name": "CrfHome",
+                            "rd_class": "{{data.rd_params[2].values[0]}}",
+                            "rd_id": "{{data.reportId.uiValue}}",
+                            "rd_description": "{{data.reportDesc.uiValue}}"
+                        },
+                        "intProps": {
+                            "rd_state": 0,
+                            "rd_type": "{{data.reportType}}"
+                        },
+                        "stringArrayProps": {
+                            "rd_param_values": "{{data.rd_params[1].values}}",
+                            "rd_parameters": "{{data.rd_params[0].values}}"
+                        },
+                        "boolProps": {
+                            "fnd0IsAsync": false,
+                            "fnd0IsClassOnly": "{{data.rd_params[3].values[0]}}"
+                        }
+                    }
+                } ]
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [ {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        },
+                        {
+                            "name":"rd_description"
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "createdReportDefObject": "{{function:updateSelectedReportAndAddToDashboard}}"
+            },
+            "actionMessages": {
+                "success":
+                [
+                    {
+                        "message": "saveReportSuccessMessage"
+                    }
+                ],
+                "failure": [ {
+                    "message": "showReportCreateErrorMessage",
+                    "condition": "errorCode.code === 515106"
+                } ]
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        }
+    },
+    "dataProviders": {
+        "thumbnailChartListProvider": {
+            "response": "{{data.thumbnailChartList}}"
+        }
+    },
+    "data": {
+        "reportId": {
+            "displayName": "{{i18n.reportId}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "{{ctx.state.params.reportId?false:true}}",
+            "dbValue": "{{ctx.state.params.reportId?ctx.state.params.reportId:''}}",
+            "uiValue": "{{ctx.state.params.reportId?ctx.state.params.reportId:''}}"
+        },
+        "reportName": {
+            "displayName": "{{i18n.reportName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": "{{subPanelContext.reportsState.selectedReport?subPanelContext.reportsState.selectedReport.props.rd_name.dbValues[0]:subPanelContext.reportsState.reportParameters.ReportDefProps.ReportTitle.TitleText}}",
+            "uiValue": "{{subPanelContext.reportsState.selectedReport?subPanelContext.reportsState.selectedReport.props.rd_name.dbValues[0]:subPanelContext.reportsState.reportParameters.ReportDefProps.ReportTitle.TitleText}}"
+        },
+        "reportDesc": {
+            "displayName": "{{i18n.reportDesc}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "{{subPanelContext.reportsState.selectedReport.props.rd_description.dbValues[0]}}",
+            "uiValue": "{{subPanelContext.reportsState.selectedReport.props.rd_description.dbValues[0]}}"
+        },
+        "thumbnail": {
+            "displayName": "{{i18n.thumbnail}}",
+            "type": "STRING",
+            "hasLov": true,
+            "dataProvider": "thumbnailChartListProvider"
+        },
+        "thumbnailChartList": [],
+        "addToDashboard":  {
+            "displayName":"{{i18n.addToDashboard}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": false
+        },
+        "editModeReportId": {
+            "displayName": "{{i18n.reportId}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": false,
+            "dbValue": "{{ctx.state.params.reportId}}",
+            "uiValue": "{{ctx.state.params.reportId}}"
+        },
+        "editModeReportName": {
+            "displayName": "{{i18n.reportName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "isEditable": false,
+            "dbValue": "{{subPanelContext.reportsState.selectedReport.props.rd_name.dbValues[0]}}",
+            "uiValue": "{{subPanelContext.reportsState.selectedReport.props.rd_name.dbValues[0]}}"
+        },
+        "editModeReportDesc": {
+            "displayName": "{{i18n.reportDesc}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": false,
+            "dbValue": "{{subPanelContext.reportsState.selectedReport.props.rd_description.dbValues[0]}}",
+            "uiValue": "{{subPanelContext.reportsState.selectedReport.props.rd_description.dbValues[0]}}"
+        },
+        "editModeThumbnail": {
+            "displayName": "{{i18n.thumbnail}}",
+            "type": "STRING",
+            "isEditable":false
+        },
+        "editModeAddToDashboard":{
+            "displayName":"{{i18n.addToDashboard}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{!ctx.showAddToDashboardCommand}}",
+            "dispValue": "{{ctx.showAddToDashboardCommand? 'No' : 'Yes'}}",
+            "renderingHint": "checkbox"
+        },
+        "templateState": {
+            "initialValues": {
+                "editToggled":false
+            },
+            "meta": {}
+        }
+    },
+    "functions": {
+        "getNewReportId":{
+            "functionName": "getNewReportId",
+            "parameters": ["{{data.reportId}}"]
+        },
+        "updateSelectedReportAndAddToDashboard": {
+            "functionName": "updateSelectedReportAndAddToDashboard",
+            "parameters": [
+                "{{subPanelContext.reportsState}}",
+                "{{data.addToDashboard.dbValue}}"
+            ]
+        },
+        "getRdMetaDataInfo":{
+            "functionName":"getRdMetaDataInfo",
+            "parameters":[
+                "{{subPanelContext.reportsState}}",
+                "{{data.reportName.uiValue}}",
+                "{{data.reportDesc.uiValue}}"
+            ]
+        },
+        "getReportType": {
+            "functionName":"getReportType",
+            "parameters":[]
+        }
+    },
+    "i18n": {
+        "reportId": [
+            "ReportChartMessages"
+        ],
+        "reportName": [
+            "ReportChartMessages"
+        ],
+        "reportDesc": [
+            "ReportChartMessages"
+        ],
+        "addToDashboard": [
+            "ReportChartMessages"
+        ],
+        "CancelButtonLabel":[
+            "FileVersionsMessages"
+        ],
+        "saveReport": [
+            "ReportChartMessages"
+        ],
+        "edit":[
+            "ReportChartMessages"
+        ],
+        "thumbnail": [ "ReportChartMessages" ],
+        "tablePanel": [ "ReportChartMessages" ],
+        "chart": [ "ReportChartMessages" ],
+        "reportCreateErrorMessageTest":[
+            "ReportChartMessages"
+        ],
+        "yes":[
+            "ReportChartMessages"
+        ],
+        "no":[
+            "ReportChartMessages"
+        ],
+        "saveReportSuccessMessage":[
+            "ReportChartMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "revealAction",
+        "onUnmount": "unMountAction"
+    },
+    "conditions": {
+        "showreportparameters": {
+            "expression": "data.reportId"
+        },
+        "isEditToggled": {
+            "expression": "data.templateState.editToggled"
+        },
+        "enableSave": {
+            "expression": "data.reportName.uiValue.length>0 && data.reportId.uiValue.length>0"
+        }
+    },
+    "messages": {
+        "showReportCreateErrorMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.reportCreateErrorMessageTest}}",
+            "messageTextParams": [
+                "{{data.reportName.uiValue}}",
+                "{{data.reportId.uiValue}}"
+            ]
+        },
+        "saveReportSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.saveReportSuccessMessage}}",
+            "messageTextParams": [
+                "{{data.reportName.uiValue}}"
+            ]
+        }
+    }
+}

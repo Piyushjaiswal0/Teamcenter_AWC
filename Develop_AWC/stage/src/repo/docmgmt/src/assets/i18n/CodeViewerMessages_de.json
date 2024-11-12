@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Zeichencodierung",
+    "uvCheckoutTitle": "Auschecken",
+    "uvCheckoutDesc": "Auswahl reservieren, um andere Benutzer davon abzuhalten, Änderungen vorzunehmen.",
+    "cancelCheckoutTitle": "Auschecken abbrechen",
+    "Awp0CancelCheckoutDesc": "Checkout-Vorgang abbrechen und alle Änderungen rückgängig machen.",
+    "uvCheckinTitle": "Einchecken",
+    "Awp0CheckinDesc": "Objekt einchecken und Änderungen speichern.",
+    "uvCodeWordWrapTitle": "Wortumbruch",
+    "uvCodeWordWrapDesc": "Zeilenumbruch für lange Texte."
+}

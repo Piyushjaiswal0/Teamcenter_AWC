@@ -1,0 +1,106 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+.aw-tcPanels-addObjectViewListBox {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.aw-tcPanels-attInputBackButton {
+    float: left;
+    height: 22px;
+    width: 22px;
+}
+
+.aw-tcPanels-attInputContentTable {
+    clear: both;
+}
+
+.aw-tcPanels-attachmentsPanelContent {
+    float: left;
+    width: 100%;
+    overflow: visible;
+}
+
+.aw-tcPanels-AttachmentsButton {
+    display: inline;
+    height: 24px;
+    width: 24px;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.aw-tcPanels-fileDownloadRetry .aw-base-normal{
+    display: inline;
+}
+
+.aw-layout-panelHeader .aw-tcPanels-backButton {
+    float: left;
+    border: 0;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.aw-layout-panelHeader .aw-tcPanels-backButton>.aw-base-icon {
+    float: left;
+    border: 0;
+    height: 24px;
+    width: 24px;
+}
+
+.aw-tcPanels-addReferenceObject .aw-tcPanels-tabsContainer {
+    margin-top: 15px;
+    clear: left;
+}
+
+.aw-tcPanels-refPropertyLbl {
+    margin-left: 10px;
+}
+
+.aw-tcPanels-commandBar,
+.aw-tcPanels-commandBar.aw-layout-workareaCommandbar {
+    background: none;
+}
+
+.aw-tcPanels-translationLanguages {
+    vertical-align: bottom;
+    .sw-property {
+        &:first-child {
+            padding: 0 8px 0 0;
+            width: 340px;
+        }
+    }
+}
+
+.aw-tcPanels-localeProp {
+    @include flex(8);
+    textarea {
+        resize: vertical;
+    }
+}
+
+.aw-tcPanels-localeStatusProp {
+    @include flex(4);
+}
+
+.aw-tcPanels-removeLocale {
+    @include flex(0 0 auto);
+    @include align-items(flex-start);
+    margin-top: 14px;
+    aw-command-bar.aw-commands-commandBarHorizontal .aw-commands-commandIconButton {
+        height: 32px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.aw-commands-showIconLabel {
+    .aw-tcPanels-removeLocale {
+        aw-command-bar:not(.aw-layout-userSessionCommands).aw-commands-commandBarHorizontal {
+            .aw-commands-commandIconButton {
+                height: 32px;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+}

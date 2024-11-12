@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs>
+    <pattern id="New_Pattern_Swatch_3" data-name="New Pattern Swatch 3" x="0" y="0" width="17.4757" height="17.4757" patternTransform="translate(-30 -180)" patternUnits="userSpaceOnUse" viewBox="0 0 17.4757 17.4757">
+      <g>
+        <rect x="0" width="17.4757" height="17.4757" fill="none"/>
+        <rect x="0" width="17.4757" height="17.4757" fill="#28a06e"/>
+      </g>
+    </pattern>
+  </defs>
+  <polyline points="8.5 5 12 1.5 15.5 5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <polyline points="21.5061 17.5563 21.5061 22.506 16.5564 22.5061" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <polyline points="7.5 22.5 2.5 22.5 2.5 17.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <line x1="12" y1="2" x2="12" y2="13.5" fill="none" stroke="#464646" stroke-linejoin="round" stroke-width="3"/>
+  <polyline points="3 22 12 13 21 22" fill="none" stroke="#464646" stroke-linejoin="round" stroke-width="3"/>
+  <polyline points="8.5 5 12 1.5 15.5 5" fill="none" stroke="url(#New_Pattern_Swatch_3)" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="21.5061 17.5563 21.5061 22.506 16.5564 22.5061" fill="none" stroke="#fa142d" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="7.5 22.5 2.5 22.5 2.5 17.5" fill="none" stroke="#55a0b9" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="20.6465 22.3535 11.9977 13.7051 11.9985 13.1367 12.5028 12.797 21.3535 21.6465 20.6465 22.3535" fill="#fa142d"/>
+  <polygon points="3.3535 22.3535 2.6465 21.6465 11.498 12.7916 11.9985 13.1367 12.0031 13.6997 3.3535 22.3535" fill="#55a0b9"/>
+  <polygon points="12.5 12.7916 11.9923 13.1355 11.5 12.7916 11.5 2 12.5 2 12.5 12.7916" fill="url(#New_Pattern_Swatch_3)"/>
+</svg>

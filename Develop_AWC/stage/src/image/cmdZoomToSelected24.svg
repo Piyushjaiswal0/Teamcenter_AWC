@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <g>
+    <polygon points="1.991 2 9.991 2 9.991 1 0.991 1 0.991 9 1.991 9 1.991 2" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="13.991 1 13.991 2 22.009 2 22.009 9 23.009 9 23.009 1 13.991 1" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="1.991 15 0.991 15 0.991 23 9.991 23 9.991 22 1.991 22 1.991 15" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="22.009 22 13.991 22 13.991 23 23.009 23 23.009 15 22.009 15 22.009 22" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M4.991,19h14V5h-14Zm1-13h12V18h-12Z" class="aw-theme-iconOutline" fill="#464646"/>
+  </g>
+</svg>

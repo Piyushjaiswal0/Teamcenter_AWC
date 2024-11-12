@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "사람",
+    "organizationTitle": "조직",
+    "groupTitle": "그룹",
+    "roleTitle": "역할",
+    "userTitle": "사용자",
+    "RevokeConsentTitle": "동의 해지",
+    "revokeGDPRConsentLabel": "사용자 동의 해지",
+    "revokeConsentConfirmationMessage": "동의를 해지하면 Teamcenter에서 로그아웃됩니다.",
+    "Group": "그룹",
+    "DefaultRole":  "기본 역할",
+    "DefaultGroup": "기본 그룹",
+    "cancel": "취소",
+    "revoke": "해지",
+    "group": "그룹",
+    "role": "역할",
+    "userMembershipTitle":"사용자 멤버십",
+    "userCalendarNotExits":"사용자 달력 없음",
+    "addButtonText": "추가"
+}

@@ -1,0 +1,53 @@
+/* Copyright (c) 2021 Siemens */
+// this file defines all colors in the AW search application
+
+.aw-search-filterNameLabelMore .sw-aria-border {
+    color: $Siemens_Blue_7;
+}
+
+.aw-search-filterSkeleton:empty {
+    background-image:
+        linear-gradient(90deg, rgba($Siemens_Snow, 0), rgba($Siemens_Snow, 0.50) 50%, rgba($Siemens_Snow, 0) 100%),
+        linear-gradient(rgba($PL_Black, 0.1) 32px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 16px, transparent 0);
+}
+
+.aw-search-results-filters-tab  .aw-jswidgets-loading {
+    background-image:
+        linear-gradient(to right, rgba($brand_secondary_content_background, 0), rgba($brand_secondary_content_background, 0.5) 50%, rgba($brand_secondary_content_background, 0) 100%),
+        linear-gradient(rgba($PL_Black, 0.1) 48px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 12px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 12px, transparent 0),
+        linear-gradient(rgba($PL_Black, 0.1) 12px, transparent 0);
+}
+
+.aw-search-globalSearchContainer {
+    .aw-search-globalSearchElementsContainer {
+        .aw-search-globalSearchWrapper {
+            .aw-uiwidgets-searchBoxContainer {
+                .aw-uiwidgets-searchBoxIcon:hover,
+                .aw-uiwidgets-searchResetIcon:hover {
+                    background-color: $Natural_Blue_10;
+                }
+            }
+        }
+    }
+}
+
+.aw-search-suggestionSelected{
+    background-color: $Natural_Blue_9_5;
+}
+
+//Splitter should match the primary workspace splitter color
+.aw-search-searchSuggestionsBreak {
+    border-color: $PL_Black_23;
+}

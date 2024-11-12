@@ -1,0 +1,11 @@
+{
+    "BRAND_NAME": "Teamcenter",
+    "SIGN_OUT_TEXT": "Esci",
+    "CONTINUE_TEXT": "Continua",
+    "GEOGRAPHY_SECTION_TITLE" : "Informazioni geografiche",
+    "GEOGRAPHY_SECTION_PROMPT" : "Immettere la posizione di lavoro attuale",
+    "CONFIDENTIAL_SECTION_TITLE" : "Accordo di riservatezza",
+    "CONFIDENTIAL_CHECKBOX_LABEL" : "Accetto",
+    "GDPR_CHECKBOX_LABEL" : "Accetto",
+    "INITIAL_LIST_VALUE" : "Richiesto..."
+}

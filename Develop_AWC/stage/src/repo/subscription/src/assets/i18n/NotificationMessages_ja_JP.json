@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "アラート",
+    "subManAppLabel": "ニュースフィード",
+    "clear": "クリア",
+    "noNotificationMsg": "新しい通知はありません",
+    "multipleObjectsMsg": "\"{0}\"および\"{1}\" 以上",
+    "aw_globalToolbar": "グローバルツールバー",
+    "Awp0ShowAlertWithBubbleDesc": "新しいアラートを表示します。"
+}

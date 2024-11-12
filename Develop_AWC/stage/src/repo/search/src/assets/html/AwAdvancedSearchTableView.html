@@ -1,0 +1,19 @@
+<div class="aw-base-scrollPanel" exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded">
+    <aw-empty-workarea exist-when="subPanelContext.searchState.advancedSearchCriteria"
+        image="graNoSearchResult"
+        title="i18n.noResultsFound"
+        hint="i18n.noResultsSearchAreaHint"
+        action="actions.advancedSearchLinkCommand"
+        link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+        link-text="i18n.advancedSearch">
+    </aw-empty-workarea>
+    <aw-empty-workarea exist-when="!subPanelContext.searchState.advancedSearchCriteria"
+        image="graEmptySearchList"
+        title="i18n.nothingFound"
+        hint="i18n.emptySearchAreaHint"
+        action="actions.advancedSearchLinkCommand"
+        link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+        link-text="i18n.advancedSearch">
+    </aw-empty-workarea>
+</div>
+<aw-splm-table gridid="gridView" exist-when="subPanelContext.searchState.advancedSearchCriteria !== undefined && subPanelContext.searchState.advancedSearchCriteria !== ''" show-context-menu="true" show-check-box="subPanelContext.showCheckBox"></aw-splm-table>

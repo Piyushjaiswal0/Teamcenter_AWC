@@ -1,0 +1,4 @@
+<div class="sw-row" exist-when="subPanelContext.searchState.isEditMode === true" height="48f">
+    <awp0-advanced-search sub-panel-context="subPanelContext" hide-title="true" exist-when="subPanelContext.searchState.useRule === 'newRule'"></awp0-advanced-search>
+    <awp0-review-and-execute-advanced-saved-search saved-search-object="subPanelContext.searchState.savedSearchObject" execute-advanced-saved-search="true" sub-panel-context="subPanelContext"  hide-title="true" exist-when="subPanelContext.searchState.useRule === 'currentRule'"></awp0-review-and-execute-advanced-saved-search>
+</div>

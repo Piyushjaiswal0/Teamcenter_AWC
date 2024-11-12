@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="0.5858" y1="2.5858" x2="45" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="14.1716" y1="15.7478" x2="19.8284" y2="21.4046" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="29.8787" y1="16.3787" x2="34.1213" y2="20.6213" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="25.3576" y1="21.8946" x2="38.6424" y2="35.1794" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-4" x1="8.635" y1="23.2165" x2="24.9854" y2="39.5669" xlink:href="#paper_gradient"/>
+  </defs>
+  <path d="M.5,44.5h47V7.5h-29L15.0937,2.3906A2,2,0,0,0,13.43,1.5H2.5a2,2,0,0,0-2,2Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M21,18.5762a4,4,0,1,1-4-4A4,4,0,0,1,21,18.5762ZM17,16.5a2,2,0,1,0,2,2A2,2,0,0,0,17,16.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <path d="M35,18.5a3,3,0,1,1-3-3A3,3,0,0,1,35,18.5Zm-3-1.25a1.25,1.25,0,1,0,1.25,1.25A1.25,1.25,0,0,0,32,17.25Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <path d="M39.6587,33.5H24.3413a1.6,1.6,0,0,1-1.5344-2.0535l3.0738-9.8A1.6,1.6,0,0,1,27.4151,20.5h9.17a1.6,1.6,0,0,1,1.5344,1.1465l3.0738,9.8A1.6,1.6,0,0,1,39.6587,33.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+  <path d="M26.2363,37.5H7.3841a1.9692,1.9692,0,0,1-1.8884-2.5274L9.2788,22.9111A1.9692,1.9692,0,0,1,11.1672,21.5h11.286a1.9694,1.9694,0,0,1,1.8885,1.4111l3.7831,12.0615A1.9693,1.9693,0,0,1,26.2363,37.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-4)"/>
+</svg>

@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "PDFファイルビューア",
+    "ShowStreamErrorMessage": "ストリームにはデータがなければなりません",
+    "LoadingPDFfile": "ファイルをロードしています...",
+    "LoadingFileSuccess": "ファイルは正常にロードされました...",
+    "LoadingFileFailed": "ファイルのロードに失敗しました!"
+}

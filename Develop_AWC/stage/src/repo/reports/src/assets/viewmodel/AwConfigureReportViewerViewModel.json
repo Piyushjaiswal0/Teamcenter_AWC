@@ -1,0 +1,377 @@
+{
+    "schemaVersion": "1.0.0",
+    "columnProviders": {
+        "sourceObjectColumnProvider": {
+            "loadColumnAction": "loadColumnsForSourceObject",
+            "columns": "{{data.dataProviders.getSourceObjectListProvider.columnConfig.columns}}",
+            "sortCriteria": []
+        }
+    },
+    "grids": {
+        "sourceObjectView": {
+            "dataProvider": "getSourceObjectListProvider",
+            "columnProvider": "sourceObjectColumnProvider",
+            "addIconColumn": true,
+            "gridOptions": {
+                "enableSorting": false,
+                "isFilteringEnabled": false,
+                "maxRowsToShow": 4
+            }
+        }
+    },
+    "actions": {
+        "getRootClassSampleObject": {
+            "actionType": "JSFunctionAsync",
+            "method": "getRootClassSampleObject",
+            "inputData": {
+                "reportsState":"{{props.reportsState}}",
+                "dataProvider":"{{data.dataProviders.getSourceObjectListProvider}}"
+            },
+            "outputData": {
+                "objects": ""
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "render": {
+            "method": "awConfigureReportViewerViewRenderFunction",
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "initialize":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "getReportDefinitions",
+                "condition": "ctx.state.params.reportId && !props.reportsState.selectedReport"
+            },{
+                "action": "updateReportInformation",
+                "condition": "ctx.state.params.reportId"
+            },{
+                "action":"updateChartCountAndTitle"
+            }, {
+                "action": "updatePreviewModeFalse",
+                "condition":"!ctx.state.params.reportId && !props.reportsState.selectedReport && ctx.state.params.previewMode === 'true'"
+            }]
+        },
+        "updatePreviewModeFalse":{
+            "actionType": "JSFunction",
+            "method": "getEscapedUrlParameters",
+            "deps": "js/AwConfigureReportViewerService",
+            "inputData": {
+                "previewMode": "false",
+                "params":"{{ctx.state.params}}"
+            }
+        },
+        "updateChartCountAndTitle":{
+            "actionType":"JSFunction",
+            "method": "updateChartCountAndTitle",
+            "inputData": {
+                "reportsState":"{{props.reportsState}}",
+                "chartCountList": "{{data.chartCountList}}",
+                "chartCountListValues":"{{data.chartCountListValues}}",
+                "reportTitleWidget": "{{data.reportTitleWidget}}"
+            },
+            "outputData":{
+                "chartCountList":"chartCountList",
+                "reportTitleWidget":"reportTitleWidget"
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "updateReportInformation":{
+            "actionType":"JSFunctionAsync",
+            "method": "updateReportInformation",
+            "inputData": {
+                "reportsState":"{{props.reportsState}}"
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "getReportDefinitions": {
+            "actionType": "TcSoaService",
+            "serviceName": "Reports-2008-06-CrfReports",
+            "method": "getReportDefinitions",
+            "inputData": {
+                "inputCriteria": [{
+                    "source": "Active Workspace",
+                    "reportDefinitionId": "{{ctx.state.params.reportId}}"
+                }]
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [
+                        {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        },
+                        {
+                            "name":"rd_description"
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "output": "{{function:processResponseToPopulateReportState}}"
+            },
+            "deps": "js/AwActiveReportViewerService"
+        },
+        "initializeChartList": {
+            "actionType": "JSFunction",
+            "method": "initializeChartList",
+            "inputData": {
+                "dataProvider": "{{data.chartCountList.dbValue}}",
+                "reportTable": "{{props.reportsState}}",
+                "i18n": "{{data.i18n}}"
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "callShowPreview": {
+            "actionType": "JSFunction",
+            "method": "showPreviewed",
+            "inputData": {
+                "reportsState": "{{props.reportsState}}",
+                "title": "{{data.reportTitleWidget}}",
+                "chartCountList": "{{data.chartCountList}}",
+                "chartCountListValues":"{{data.chartCountListValues}}",
+                "i18n": "{{data.i18n}}"
+            },
+            "outputData": {
+                "reportTitleWidget": ""
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        },
+        "createRelationsForNone": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "createRelations",
+            "inputData": {
+                "input": [
+                    {
+                        "primaryObject": {
+                            "type": "ReportDefinition",
+                            "uid": "{{props.reportsState.newSavedReport}}"
+                        },
+                        "secondaryObject": {
+                            "type": "GroupMember",
+                            "uid": "{{ctx.userSession.props.fnd0groupmember.dbValue}}"
+                        },
+                        "relationType": "Fnd0Applicable_Assignment",
+                        "clientId": ""
+                    }
+                ]
+            },
+            "policy": {
+                "types": [ {
+                    "name": "ReportDefinition",
+                    "properties": [
+                        {
+                            "name": "rd_style_sheets",
+                            "modifiers": [ {
+                                "name": "withProperties",
+                                "Value": "true"
+                            } ]
+                        },
+                        {
+                            "name": "rd_source"
+                        },
+                        {
+                            "name": "rd_name"
+                        },
+                        {
+                            "name": "rd_type"
+                        },
+                        {
+                            "name": "rd_id"
+                        },
+                        {
+                            "name": "rd_parameters"
+                        },
+                        {
+                            "name": "rd_param_values"
+                        },
+                        {
+                            "name": "fnd0IsAsync"
+                        },
+                        {
+                            "name": "owning_user"
+                        },
+                        {
+                            "name": "creation_date"
+                        },
+                        {
+                            "name":"rd_description"
+                        }
+                    ]
+                } ]
+            },
+            "outputData":{
+                "output": "{{function:processReportTemplate}}"
+            },
+            "deps": "js/ShareTemplateService"
+        },
+        "openPanel": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Rb0ConfigureSearchData",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "loadColumnsForSourceObject": {
+            "actionType":"JSFunctionAsync",
+            "method": "loadColumnsForSourceObject",
+            "inputData": {
+            },
+            "outputData": {
+                "dataProviders.getSourceObjectListProvider.columnConfig.columns": ""
+            },
+            "deps": "js/AwConfigureReportViewerService"
+        }
+    },
+    "ctx": {},
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "reports-state": {
+            "type": "object"
+        }
+    },
+    "data": {
+        "reportTitleWidget": {
+            "displayName": "{{i18n.reportTitle}}",
+            "type": "STRING",
+            "isEnabled": true,
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE"
+        },
+        "reportChartNumber": {
+            "propertyDisplayName": "{{i18n.numberChartShown}}"
+        },
+        "chartCountList": {
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "chartCountListValues": [
+            {
+                "propDisplayValue": "{{i18n.1Chart}}",
+                "propInternalValue": 1
+            },
+            {
+                "propDisplayValue": "{{i18n.2Chart}}",
+                "propInternalValue": 2
+            },
+            {
+                "propDisplayValue": "{{i18n.3Chart}}",
+                "propInternalValue": 3
+            },
+            {
+                "propDisplayValue": "{{i18n.noChart}}",
+                "propInternalValue": 0
+            }
+        ]
+    },
+    "dataProviders": {
+        "getSourceObjectListProvider": {
+            "action": "getRootClassSampleObject",
+            "response": "{{data.objects}}",
+            "totalFound": "{{data.objects.length}}",
+            "selectionModelMode": "multiple"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize",
+        "onUpdate": [ {
+            "action": "initializeChartList",
+            "observers": [
+                "viewModel.data.chartCountList.dbValue"
+            ]
+        }, {
+            "action": "callShowPreview",
+            "observers": [
+                "viewModel.ctx.state.params.previewMode"
+            ]
+        }, {
+            "action": "createRelationsForNone",
+            "observers": [
+                "props.reportsState.newSavedReport"
+            ]
+        }, {
+            "action": "updateChartCountAndTitle",
+            "observers": [
+                "props.reportsState.reportParameters.ReportDefProps.allChartsList.length"
+            ]
+        } ]
+    },
+    "i18n": {
+        "numberChartShown": [ "ReportChartMessages" ],
+        "noChart": [ "ReportChartMessages" ],
+        "1Chart": [ "ReportChartMessages" ],
+        "2Chart": [ "ReportChartMessages" ],
+        "3Chart": [ "ReportChartMessages" ],
+        "reportTitle": [ "ReportChartMessages" ],
+        "barChart": [ "ReportChartMessages" ],
+        "noItemAvailable": [ "ReportChartMessages" ],
+        "itemMissing": [ "ReportChartMessages" ],
+        "searchItem": [ "ReportChartMessages" ]
+    },
+    "functions": {
+        "processResponseToPopulateReportState":{
+            "functionName": "processResponseToPopulateReportState",
+            "parameters": [
+                "{{props.reportsState}}"
+            ]
+        },
+        "processReportTemplate":{
+            "functionName": "processReportTemplate",
+            "parameters": [
+                "{{props.reportsState}}"
+            ]
+        }
+    },
+    "conditions":{
+        "isSummaryReport": {
+            "expression": "ctx.state.params.reportType === '4'"
+        },
+        "notPreviewed": {
+            "expression": "ctx.state.params.previewMode === 'false'"
+        },
+        "renderCondition": {
+            "expression": "(conditions.isSummaryReport && ctx.state.params.searchCriteria) || (!conditions.isSummaryReport && props.reportsState.relationsPath) || (props.reportsState.selectedReport && props.reportsState.reportParameters.ReportDefProps.ReportSearchInfo.SearchCriteria)"
+        },
+        "shourceObjectDeleted": {
+            "expression": "props.reportsState.selectedReport && props.reportsState.rootClassSampleObject.length===0 && props.reportsState.reportParameters.ReportDefProps.ReportSegmentParams.length>0 && props.reportsState.reportParameters.totalFound === 0"
+        }
+    }
+}

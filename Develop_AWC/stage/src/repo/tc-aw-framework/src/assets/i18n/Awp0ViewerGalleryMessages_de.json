@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "Auschecken",
+    "uvCheckinTitle": "Einchecken",
+    "uvCancelCheckoutTitle": "Auschecken abbrechen",
+    "previousButtonTitle": "Zurück",
+    "nextButtonTitle": "Weiter",
+    "noObjectSelectionMessage": "Wählen Sie etwas zum Anzeigen aus.",
+    "fullViewModeTitle": "Vollbild",
+    "uvWordWrapTitle": "Wortumbruch",
+    "exitFullViewModeTitle": "Vollbild beenden",
+    "aw_viewerRightSide": "Viewer rechts",
+    "aw_universalViewerLink": "Link zum universellen Viewer",
+    "uvCheckoutDesc": "Auswahl reservieren, um andere Benutzer davon abzuhalten, Änderungen vorzunehmen.",
+    "fullViewModeDesc": "Zur Vollbildansicht wechseln.",
+    "uvWordWrapDesc": "Zeilenumbruch für lange Texte.",
+    "Awp0ShowObjectForUVpDesc": "Diese Datei im aktuellen Fenster öffnen.",
+    "Awp0ViewFileForUVDesc": "Datei herunterladen."
+}

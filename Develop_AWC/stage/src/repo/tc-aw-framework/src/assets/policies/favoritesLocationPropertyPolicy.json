@@ -1,0 +1,46 @@
+{
+    "types": [{
+        "name": "BusinessObject",
+        "properties": [
+            {
+                "name": "object_string",
+                "count": 0
+            },
+            {
+                "name": "object_name",
+                "count": 0
+            },
+            {
+                "name": "object_desc",
+                "count": 0
+            },
+            {
+                "name": "release_status_list",
+                "count": 0
+            },
+            {
+                "name": "item_id",
+                "count": 0
+            },
+            {
+                "name": "item_revision_id",
+                "count": 0
+            },
+            {
+                "name": "last_mod_date",
+                "count": 0
+            },
+            {
+                "name": "creation_date",
+                "count": 0
+            },
+            {
+                "name": "owning_user",
+                "count": 0
+            },
+            {
+                "name": "awp0CellProperties"
+            }
+        ]
+    }]
+}

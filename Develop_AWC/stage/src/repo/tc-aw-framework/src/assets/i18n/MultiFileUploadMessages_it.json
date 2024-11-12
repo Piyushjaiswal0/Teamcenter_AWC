@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "Allegati del file",
+    "dropHere": "Rilascia qui",
+    "chooseFile": "Scegli file",
+    "removeFileBtnTooltip": "Rimuovi file",
+    "failureToAttachFiles": "Impossibile aggiungere \"{0}\" perché quel tipo di file non è consentito come allegato."
+}

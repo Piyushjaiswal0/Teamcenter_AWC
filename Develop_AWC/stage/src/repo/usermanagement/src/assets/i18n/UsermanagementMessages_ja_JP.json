@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "人",
+    "organizationTitle": "組織",
+    "groupTitle": "グループ",
+    "roleTitle": "ロール",
+    "userTitle": "ユーザ",
+    "RevokeConsentTitle": "同意を取消し",
+    "revokeGDPRConsentLabel": "ユーザ同意を取消し",
+    "revokeConsentConfirmationMessage": "お客様の同意を取消すと、Teamcenterからログアウトされます。",
+    "Group": "グループ",
+    "DefaultRole":  "デフォルトロール",
+    "DefaultGroup": "デフォルトグループ",
+    "cancel": "キャンセル",
+    "revoke": "権限取消",
+    "group": "グループ",
+    "role": "ロール",
+    "userMembershipTitle":"ユーザメンバシップ",
+    "userCalendarNotExits":"ユーザカレンダーがありません",
+    "addButtonText": "追加"
+}

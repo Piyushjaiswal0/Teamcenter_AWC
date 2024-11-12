@@ -1,0 +1,27 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerElementRenderFunction",
+            "deps": "js/AwWalkerElementService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "elemdata": {
+            "type": "object"
+        },
+        "xrt-data": {
+            "type": "object"
+        },
+        "xrt-state": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        }
+    }
+}

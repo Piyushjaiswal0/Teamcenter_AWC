@@ -1,0 +1,5 @@
+<svg id="Artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path class="aw-theme-iconOutline" d="M9,5V0h5V5Zm1-4V4h3V1Z" fill="#464646"/>
+  <path class="aw-theme-iconOutline" d="M9,14V9h5v5Zm1-4v3h3V10Z" fill="#464646"/>
+  <path class="aw-theme-iconOutline" d="M9,23V18h5v5Zm1-4v3h3V19Z" fill="#464646"/>
+</svg>

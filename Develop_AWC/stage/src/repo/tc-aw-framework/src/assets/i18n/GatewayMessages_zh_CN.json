@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "主页",
+    "pinObjectCommandTitle": "固定到主页",
+    "unPinObjectCommandTitle": "从主页取消固定",
+    "pinObjectFailed": "固定失败。",
+    "unPinObjectFailed": "取消固定失败。",
+    "tileUpdateFailedMsg": "图块更新失败。",
+    "pinObjectFailedNoGateway": "访问主页时出现问题。",
+    "pinObjectMultipleObjectError": "一次只能固定一个对象。其他对象将被忽略。",
+    "unpinTileFailed": "取消固定失败。",
+    "homeFolderTitle": "文件夹",
+    "Awp0ShowHomeFolderDesc": "打开 Home 文件夹。",
+    "Awp0PinObjectDesc": "将选择作为图块添加到主页。"
+}

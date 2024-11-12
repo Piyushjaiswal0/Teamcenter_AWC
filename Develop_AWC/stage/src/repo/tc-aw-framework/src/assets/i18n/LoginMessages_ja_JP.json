@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "ユーザ名",
+    "PASSWORD_PLACEHOLDER": "パスワード",
+    "SIGN_IN_TEXT": "サインイン",
+    "LOGIN_TEXT": "ログイン",
+    "LOGGING_IN_TEXT": "ログインしています",
+    "UNABLE_TO_CONNECT": "内部エラーのためサインインされていません。",
+    "VERSION_TEXT": "バージョン",
+    "COPYRIGHT_DATE_TEXT": "未公開の作業です。",
+    "COPYRIGHT_MESSAGE": "この資料には、Siemens Industry Software Inc.またはその関連会社(総称して“Siemens”)、またはそのライセンサーが所有する営業秘密または機密情報が含まれています。この情報へのアクセスおよび使用は、お客様とSiemensの適用可能な契約で厳密に制限されています。"
+}

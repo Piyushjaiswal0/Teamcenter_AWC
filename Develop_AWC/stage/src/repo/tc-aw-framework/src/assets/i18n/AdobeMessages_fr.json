@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "Entités numériques",
+    "imagePanelTitle": "Images et couleurs",
+    "updatesSectionTitle": "Mises à jour dans Teamcenter",
+    "digitalAssetsInUseSectionTitle": "Entités numériques dans \"{0}\"",
+    "imageInUseSectionTitle": "Images et couleurs dans \"{0}\"",
+    "adobeFile": "Fichier Adobe",
+    "typeLabel": "Type",
+    "revisionLabel": "Révision",
+    "quantityLabel": "Quantité",
+    "expectedLabel": "Attendu",
+    "cmdReplaceDigitalAsset": "Remplacer",
+    "showObjectCell": "Ouvrir",
+    "cmdDeleteDigitalAsset": "Détruire",
+    "adobe_cell_commands_updatesList": "Liste Mises à jour de commandes",
+    "adobe_cell_commands_inUseList": "Liste Commandes de cellule en cours d'utilisation",
+    "DigitalAssetsPanelDesc": "Afficher les entités numériques associées à cette illustration.",
+    "ImagePanelDesc": "Afficher les images et couleurs associées à la CAO 2D.",
+    "cmdReplaceDigitalAssetDesc": "Remplacer l'entité numérique ouverte dans l'application Adobe par celle ouverte dans Teamcenter.",
+    "cmdDeleteDigitalAssetDesc": "Supprimer l'entité numérique sélectionnée dans l'illustration.",
+    "showObjectCellDesc": "Ouvrir la sélection."
+}

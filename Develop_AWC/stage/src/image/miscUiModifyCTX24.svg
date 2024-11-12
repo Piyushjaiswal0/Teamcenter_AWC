@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <polygon points=".5 18.5 .5 .5 10.5 .5 15.5 5.5 15.5 18.5 .5 18.5" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <polyline points="10.5 1.0741 10.5 5.5 14.9038 5.5" fill="#dce1e6" stroke="#464646" stroke-linecap="round" stroke-miterlimit="10"/>
+  <g>
+    <rect x="11.2355" y="14.4468" width="10.8041" height="3.8347" transform="translate(-6.6981 16.5649) rotate(-45.0182)" fill="#ffcd50" stroke="#464646" stroke-linejoin="round"/>
+    <polygon points="11.4635 18.8267 9.5 23.5 14.1732 21.5425 11.4635 18.8267" fill="#dce1e6" stroke="#464646" stroke-linejoin="round"/>
+    <path d="m23.2619,11.2983l-1.5602-1.5603c-.3175-.3174-.8322-.3174-1.1496,0l-1.4505,1.4505,2.7103,2.7103,1.4501-1.4511c.3173-.3175.3172-.8321-.0002-1.1494Z" fill="#fda6c4" stroke="#464646" stroke-linejoin="round"/>
+  </g>
+  <line x1="7.1071" y1="15.5" x2="8.8929" y2="6.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="9.8421 8.3684 13 10.9999 9.8421 13.6316" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="6.1579 8.3684 3 10.9999 6.1579 13.6316" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

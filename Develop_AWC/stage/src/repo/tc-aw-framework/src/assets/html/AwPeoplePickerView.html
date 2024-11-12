@@ -1,0 +1,12 @@
+<aw-panel-body>
+    <aw-search-objects visible-when="data.isSearchDataInit"
+        search-state-for-keyword="data.searchState"
+        selection-model="selectionModels.searchSelectionModel"
+        selection-data="data.selectionData"
+        supports-advanced-search="false"
+        sub-panel-context="{...props.subPanelContext, showCheckBox: false, isCustomSearchFilterPresent: true, preFilterContext: subPanelContext, listviewCell: 'AwPeoplePickerCell'}">
+    </aw-search-objects>
+</aw-panel-body>
+<aw-panel-footer visible-when="conditions.isAddButtonNeedToShown">
+    <aw-button size="auto" action="addObjects" enable-when="conditions.isValidToAdd"><aw-i18n>i18n.Add_Title</aw-i18n></aw-button>
+</aw-panel-footer>

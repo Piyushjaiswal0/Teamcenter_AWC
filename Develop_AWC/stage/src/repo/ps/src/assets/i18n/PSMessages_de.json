@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0} von {1} wurden hinzugefügt.<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0} von {1} wurden entfernt.<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "Die Suchergebnisse konnten wegen eines internen Fehlers nicht gefiltert werden.",
+    "invalidDateRangeError": "Das Startdatum muss vor dem Enddatum liegen.",
+    "invalidUnitRange": "Ungültiger Einheitenbereich",
+    "notificationForBaselineCreation": "\"{0}\" wird gespeichert. Sie werden benachrichtigt, wenn der Vorgang abgeschlossen ist.",
+    "notificationForBaselineCreationSync": "\"{0}\" wurde gespeichert und ist im Ordner \"Persönliche Ablage\" verfügbar."
+}

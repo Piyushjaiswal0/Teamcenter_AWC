@@ -1,0 +1,27 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="3.5" y1="41.5" x2="45" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="3.75" y1="0.25" x2="26.25" y2="22.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <polygon points="32.5 0.5 9.5 0.5 9.5 47.5 45.5 47.5 45.5 13.5 32.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="15" y1="34.5" x2="40" y2="34.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="15" y1="28.5" x2="40" y2="28.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="15" y1="40.5" x2="40" y2="40.5" fill="none" stroke="#5a5a5a"/>
+  <rect x="0.5" y="3.5" width="29" height="16" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <polyline points="3 7 10 7 10 8 4 15 4 16 11 16" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="15" y1="6" x2="15" y2="17" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="20" y1="6" x2="20" y2="17" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M20,7h3a2,2,0,0,1,2,2v1a2,2,0,0,1-2,2H20" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+</svg>

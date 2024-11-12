@@ -1,0 +1,184 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":
+     [ ],
+      "actions":
+     {
+         "unsubscribeSubscription":
+         {
+             "actionType": "TcSoaService",
+             "serviceName": "Internal-Notification-2015-10-SubscriptionManagement",
+             "method": "unsubscribe",
+             "inputData":
+             {
+                 "subscriptions": ["{{subPanelContext.selected}}"]
+             },
+              "outputData": {
+                 "unFollowPartialErrors": "ServiceData.partialErrors"
+             },
+             "events":
+             {
+                 "success":
+                   [
+                        {
+                            "condition":"ctx.locationContext['ActiveWorkspace:SubLocation'] === 'showObject'",
+                            "name": "cdm.relatedModified",
+                            "eventData":
+                            {
+                                "refreshLocationFlag": true,
+                                "relations": "",
+                                "relatedModified":
+                                [
+                                    "{{subPanelContext.selected}}"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "primaryWorkarea.reset"
+                        }
+                   ]
+             },
+              "actionMessages":
+             {
+                 "success": [{
+                      "message": "unFollowSingleSubscriptionSuccessfulMessage"
+                    }
+                 ],
+                 "failure": [
+                     {
+                         "message": "unFollowSingleSubscriptionFailureMessage"
+                     }
+                 ]
+             }
+         },
+         "deleteSubscription": {
+             "actionType": "TcSoaService",
+             "serviceName": "Core-2006-03-DataManagement",
+             "method": "deleteObjects",
+             "inputData": {
+                 "objects": ["{{subPanelContext.selected}}"]
+             },
+             "outputData": {
+                 "unFollowPartialErrors": "partialErrors"
+             },
+             "events": {
+                 "success": [
+                     {
+                         "name": "primaryWorkarea.reset"
+                     }
+                 ]
+             },
+             "actionMessages": {
+                 "success": [
+                     {
+                         "message": "unFollowSingleSubscriptionSuccessfulMessage"
+                     }
+                 ],
+                 "failure": [
+                     {
+                         "message": "unFollowSingleSubscriptionFailureMessage"
+                     }
+                 ]
+             }
+         },
+         "unFollowSubscription":
+         {
+             "actionType": "Event",
+             "method": "Event",
+             "inputData": {
+                 "events": [
+                     {
+                         "name": "deleteSubscriptionEvent",
+                         "condition": "subPanelContext.selected.props.subscriber.dbValues[0] === subPanelContext.session.current_user_session.properties.user.dbValues[0]"
+                     },
+                     {
+                         "name": "unsubscribeSubscriptionEvent",
+                         "condition": "subPanelContext.selected.props.subscriber.dbValues[0] !== subPanelContext.session.current_user_session.properties.user.dbValues[0]"
+                     }
+                 ]
+             }
+         },
+         "performUnFollow":
+         {
+             "actionType": "Event",
+             "method": "Event",
+             "inputData": {
+                 "events": [
+                     {
+                         "name": "unFollowSingleSubscriptionConfirmation"
+                     }
+                 ]
+             }
+         }
+     },
+     "conditions":
+     {
+         "isValidToUnFollow":
+         {
+             "expression": "subPanelContext.selected.props.subscriber.dbValues[0] === subPanelContext.session.current_user_session.properties.user.dbValues[0] || subPanelContext.selected.props.handler_parameters.dbValues.includes(subPanelContext.session.current_user_session.properties.user_id.dbValues[0])"
+         }
+     },
+     "data":
+     {
+     },
+     "messages":
+     {
+         "unFollowSingleSubscriptionConfirmationMessage": {
+             "messageType": "WARNING",
+             "messageText": "{{i18n.unFollowSingleSubscriptionConfirmationMsg}}",
+             "messageTextParams": [
+                 "{{subPanelContext.selected.props.object_string.dbValues[0]}}"
+             ],
+             "navigationOptions": [
+                 {
+                     "option": "Cancel",
+                     "text": "{{i18n.cancel}}"
+                 },
+                 {
+                     "option": "Unfollow",
+                     "text": "{{i18n.unFollow}}",
+                     "action": "unFollowSubscription"
+                 }
+             ]
+         },
+         "unFollowSingleSubscriptionSuccessfulMessage":
+         {
+             "messageType": "INFO",
+             "messageText": "{{i18n.unFollowSingleSubscriptionSuccessfulMsg}}",
+             "messageTextParams": [
+                 "{{subPanelContext.selected.props.object_string.dbValues[0]}}"
+             ]
+         },
+        "unFollowSingleSubscriptionFailureMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.unFollowSubscriptionFailureMsg}}",
+            "messageTextParams": [
+                "{{subPanelContext.selected.props.object_string.uiValues[0]}}",
+                "{{data.unFollowPartialErrors[0].errorValues[0].message}}"
+            ]
+        }
+     },
+     "i18n":
+     {
+         "unFollowSingleSubscriptionConfirmationMsg": ["SubscriptionMessages"],
+         "unFollowSingleSubscriptionSuccessfulMsg": ["SubscriptionMessages"],
+         "unFollowSubscriptionFailureMsg": ["SubscriptionMessages"],
+         "unFollow": ["SubscriptionMessages"],
+         "cancel": ["SubscriptionMessages"]
+     },
+     "onEvent": [
+        {
+             "eventId": "unFollowSingleSubscriptionConfirmation",
+             "message": "unFollowSingleSubscriptionConfirmationMessage"
+        },
+        {
+            "eventId": "deleteSubscriptionEvent",
+            "action": "deleteSubscription"
+        },
+        {
+            "eventId": "unsubscribeSubscriptionEvent",
+            "action": "unsubscribeSubscription"
+        }
+     ]
+   }
+

@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "Afficheur de fichier PDF",
+    "ShowStreamErrorMessage": "Le flux doit avoir des données",
+    "LoadingPDFfile": "Chargement du fichier...",
+    "LoadingFileSuccess": "Fichier correctement chargé...",
+    "LoadingFileFailed": "Echec de chargement du fichier."
+}

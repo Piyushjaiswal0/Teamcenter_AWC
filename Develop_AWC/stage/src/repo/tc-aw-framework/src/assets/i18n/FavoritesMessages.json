@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "Favorites",
+    "myFavorites": "My Favorites",
+    "myRecentViewedObjects": "Recent",
+    "addToFavoritesCommandTitle": "Add to Favorites",
+    "addToFavoritesConfirmation": "Selected Object(s) added to favorites successfully",
+    "addToFavoritesFailed": "Add to Favorites failed",
+    "removeFromFavoritesCommandTitle": "Remove from Favorites",
+    "removeFromFavoritesConfirmation": "Selected Object(s) removed from favorites successfully",
+    "removeFromFavoritesFailed": "Add to Favorites failed",
+    "Awp0AddToFavoritesDesc": "Add the selection to your Favorites list.",
+    "Awp0RemoveFromFavoritesDesc": "Remove the selection from your Favorites list.",
+    "noFavoritesFound": "No Favorites Here",
+    "noFavoritesFoundHint": "To add an object to Favorites, select the object and use the Add to Favorites command.",
+    "noRecentsFound": "No Recent Activity",
+    "noRecentsFoundHint": "There are currently no items to display.",
+    "nothingSelected": "Nothing Selected",
+    "nothingSelectedSWAHint": "Select an item in the list to view details."
+}

@@ -1,0 +1,24 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="8.8358" y1="-1.6642" x2="36.75" y2="26.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="6" y1="12" x2="42" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_5" data-name="New Gradient Swatch 5" x1="14.9142" y1="36.0858" x2="16.9142" y2="38.0858" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b0b0b0"/>
+      <stop offset="1" stop-color="#7e7e7e"/>
+    </linearGradient>
+  <path d="M19.5,10.5,16.0937,5.3906A2,2,0,0,0,14.43,4.5H3.5a2,2,0,0,0-2,2v10h45v-6Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="1.5" y="16.5" width="45" height="27" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+    <path d="M18.9142,32.0858l-7,7a1.4142,1.4142,0,0,0,0,2h0a1.4142,1.4142,0,0,0,2,0l7-7" stroke="#464646" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_5)"/>
+    <circle cx="26" cy="26.9711" r="8.5" fill="#f0f0f0" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

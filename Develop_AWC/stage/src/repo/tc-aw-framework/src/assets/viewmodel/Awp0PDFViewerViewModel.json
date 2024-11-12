@@ -1,0 +1,24 @@
+{
+"schemaVersion" : "1.0.0",
+"imports":
+    [
+    ],
+    "actions":
+    {
+    },
+    "onEvent":
+    [
+    ],
+    "functions":
+    {
+    },
+    "messages":
+    {
+    },
+    "conditions":
+    {
+    },
+    "i18n":
+    {
+    }
+}

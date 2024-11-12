@@ -1,0 +1,12 @@
+<aw-panel-body>
+    <aw-widget prop="data.listBoxVisModules" hide-filter=true is-select-only="true"></aw-widget>
+</aw-panel-body>
+
+<aw-panel-footer>
+    <aw-button action="startLogging" visible-when="!conditions.isVisLoggingInProgress">
+        <aw-i18n>i18n.start</aw-i18n>
+    </aw-button>
+    <aw-button action="stopLogging" visible-when="conditions.isVisLoggingInProgress">
+        <aw-i18n>i18n.stop</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

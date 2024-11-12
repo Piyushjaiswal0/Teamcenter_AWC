@@ -1,0 +1,230 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        
+    ],
+
+    "actions":
+    {
+        "projectsAction":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2009-10-ProjectLevelSecurity",
+            "method": "getUserProjects",
+            "inputData":
+            {
+                "userProjectsInfoInputs":
+                [
+                    {
+                        "activeProjectsOnly": true,
+                        "clientId": "ProjectContext",
+                        "privilegedProjectsOnly": "{{data.getprojectValidateConditions}}",
+                        "programsOnly": "{{conditions.isProgramOnly}}",
+                        "user":
+                        {
+                            "uid": "{{ctx.user.uid}}",
+                            "type": "User"
+                        }
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "projectOutput": "{{function:getProjectInfo}}",
+                "totalFound": "data.projectOutput.length"
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "TC_Project",
+                        "properties":
+                        [
+                            {
+                                "name": "project_id"
+                            },
+
+                            {
+                                "name": "project_name"
+                            },
+
+                            {
+                                "name": "object_string"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "context.isProjectLoaded"
+                    }
+                ]
+            },
+
+            "deps": "js/projectMgmntUtils"
+        },
+
+        "addNoProjectString":
+        {
+            "actionType": "JSFunction",
+            "method": "checkForProjectAssig",
+            "inputData":
+            {
+                "noProjectString": "{{i18n.noProject}}"
+            },
+
+            "deps": "js/projectMgmntUtils"
+        },
+
+        "projectChanged":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionState",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "currentProject",
+                        "value": "{{data.eventData.property.dbValue.uid}}"
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+        "projectChangedForNoProject":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionState",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "currentProject",
+                        "value": ""
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+        "getprojectValidateConditions":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-PreferenceManagement",
+            "method": "getPreferences",
+            "inputData":
+            {
+                "preferenceNames": [ "TC_project_validate_conditions" ],
+                "includePreferenceDescriptions": false
+            },
+            "outputData":
+            {
+                "getprojectValidateConditions": "{{function:getprojectValidateConditions}}"
+            },            
+            "deps": "js/projectMgmntUtils"
+        }
+    },
+
+    "data":
+    {
+        "projectText":
+        {
+            "displayName": "{{i18n.noProject}}",
+            "type": "STRING",
+            "dbValue": "noProject",
+            "dispValue": ""
+        },
+        "project":
+        {
+            "isNull": false,
+            "propertyDisplayName": "{{i18n.project}}",
+            "uiValue": "{{i18n.project}}"
+        }
+    },
+
+    "conditions":
+    {
+        "isProgramOnly":
+        {
+            "expression": "ctx.preferences.TC_use_strict_program_project_hierarchy[0].toLowerCase() == 'true'"
+        },
+
+        "hasNoProjects":
+        {
+            "expression": "ctx.userSession.props.project.dbValues[0]==='' && ctx.hasProjects"
+        },
+
+        "hasProjects":
+        {
+            "expression": "ctx.userSession.props.project.dbValues[0]==='' && !ctx.hasProjects"
+        },
+
+        "isNoProjectSelected":
+        {
+            "expression": "property.dbValue.value && property.dbValue.value === 'noProject'"
+        },
+
+        "isProjectSelected":
+        {
+            "expression": "property.dbValue && property.dbValue.type === 'TC_Project'"
+        }
+    },
+
+    
+
+    "dataProviders":
+    {
+        "projectLink":
+        {
+            "dataProviderType": "Action",
+            "action": "projectsAction",
+            "response": "{{data.projectOutput}}",
+            "totalFound": "{{data.totalFound}}"
+        }
+    },
+
+    "onEvent":
+    [
+
+        {
+            "eventId": "awlinkPopup.selected",
+            "condition": "conditions.isProjectSelected",
+            "cacheEventData": true,
+            "action": "projectChanged"
+        },
+
+        {
+            "eventId": "awlinkPopup.selected",
+            "condition": "conditions.isNoProjectSelected",
+            "cacheEventData": true,
+            "action": "projectChangedForNoProject"
+        }
+
+    ],
+
+    "i18n":
+    {
+        "noProject": [ "ProjmgmtConstants" ],
+        "project":[ "ProjmgmtConstants" ]
+    },
+    "lifecycleHooks": {
+        "onMount": "getprojectValidateConditions"
+    },
+    "ctxFields": [
+        "userSession.props.project"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awGlobalSearchServiceRenderFunction",
+            "deps": "js/AwGlobalSearchService"
+        },
+        "narrowModeAction": {
+            "actionType": "JSFunction",
+            "method": "openNarrowModeSearchPanel",
+            "inputData": {},
+            "deps": "js/awSearchCoreService"
+        }
+    },
+    "data": {
+        "expandSearchBox": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    }
+}

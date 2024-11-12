@@ -1,0 +1,194 @@
+{
+  "homeFavoritesFolder64": [
+    "favoritesfolder"
+  ],
+  "homeFavorites64": [
+    "favorites"
+  ],
+  "typeDirectModelDataset48": [
+    "DirectModel",
+    "DirectModelAssembly"
+  ],
+  "typeHtmlDataset48": [
+    "HTML"
+  ],
+  "typeHyperlink48": [
+    "Web Link",
+    "web link"
+  ],
+  "typeItemRevision48": [
+    "BOMLine"
+  ],
+  "typeMsExcel48": [
+    "MSExcel",
+    "MSExcelX",
+    "ExcelReportFormatter",
+    "ExcelTemplateMaster",
+    "ExcelTemplateMasterS",
+    "xls",
+    "xlsx"
+  ],
+  "typeMsPowerpoint48": [
+    "MSPowerPoint",
+    "MSPowerPointX",
+    "MSPowerPointTemplate",
+    "MSPowerPointTemplateX",
+    "ppt",
+    "pptx",
+    "pot",
+    "potx"
+  ],
+  "typeMsWord48": [
+    "MSWord",
+    "MSWordX",
+    "MSWordTemplate",
+    "MSWordTemplateX",
+    "CrfOutputMSWord",
+    "CrfMSWordDocStylesheet",
+    "doc",
+    "docx",
+    "dot",
+    "dotx"
+  ],
+  "typeObjectTemplate48": [
+    "SpecTemplateRevision",
+    "SpecTemplate",
+    "ObjectTemplateRevision",
+    "ObjectTemplate"
+  ],
+  "typeExcelTemplate48": [
+    "ExcelTemplateRevision",
+    "MSExcelTemplate",
+    "MSExcelTemplateX",
+    "xlt",
+    "xltx"
+  ],
+  "typePdf48": [
+    "PDF",
+    "CrfOutputPdf",
+    "CrfPdfStylesheet",
+    "pdf"
+  ],
+  "typePartRevision48": [
+    "Part Revision"
+  ],
+  "typeDesignRevision48": [
+    "Design Revision"
+  ],
+  "typePerson48": [
+    "GroupMember",
+    "User"
+  ],
+  "typeHTMLReport48": [
+    "CME_Report"
+  ],
+  "typeTile48": [
+    "Awp0Tile"
+  ],
+  "typeTileCollection48": [
+    "Awp0TileCollection"
+  ],
+  "typeTileProxy48": [
+    "Awp0TileProxy"
+  ],
+  "typeTileTemplate48": [
+    "Awp0TileTemplate"
+  ],
+  "typeUGMasterDataset48": [
+    "UGMASTER"
+  ],
+  "typeModelView48": [
+    "Fnd0DisclosedModelViewData",
+    "Fnd0ModelViewProxy"
+  ],
+  "typeModelViewPalette48": [
+    "Fnd0ModelViewPalette"
+  ],
+  "typeCpgRawMaterial48": [
+    "RawMaterial",
+    "RawMaterialRevision"
+  ],
+  "typeCpgBrief48": [
+    "CPMarketingBrief",
+    "CPMarketingBriefRevision"
+  ],
+  "typeCpgThemeBoard48": [
+    "CPThemeBoard",
+    "CPThemeBoardRevision"
+  ],
+  "typeIdDisplayRule48": [
+    "IdDispRule"
+  ],
+  "typeDataTypeIdentifier48": [
+    "Identifier"
+  ],
+  "typeSiteLocation48": [
+    "POM_imc"
+  ],
+  "homeAdmin64": [
+    "admin"
+  ],
+  "homePDF64": [
+    "pdf"
+  ],
+  "homeHome64": [
+    "home"
+  ],
+  "homeHomeFolder64": [
+    "homefolder"
+  ],
+  "homePart64": [
+    "part"
+  ],
+  "homeHelp64": [
+    "help"
+  ],
+  "homePrint64": [
+    "print"
+  ],
+  "homeDocument64": [
+    "document"
+  ],
+  "homeIdea64": [
+    "idea"
+  ],
+  "homeFolder64": [
+    "folder"
+  ],
+  "homeAnnouncement64": [
+    "announcement"
+  ],
+  "homePower64": [
+    "power"
+  ],
+  "homeMail64": [
+    "mail"
+  ],
+  "homePeople64": [
+    "people"
+  ],
+  "homeUnlive64": [
+    "unlive"
+  ],
+  "homeEdit64": [
+    "xrtedit"
+  ],
+  "homePinButton24": [
+    "pin"
+  ],
+  "homeUnpinButton24": [
+    "unpin"
+  ],
+  "homeUpLeftArrowMakeLarge24": [
+    "shrink"
+  ],
+  "homeLeftArrowMakeSmall24": [
+    "collapse"
+  ],
+  "homeDownRightArrowMakeMedium24": [
+    "expand"
+  ],
+  "homeDisplayRule64": [
+    "iddisplayrule"
+  ]
+}

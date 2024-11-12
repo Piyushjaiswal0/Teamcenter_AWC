@@ -1,0 +1,30 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<rect id="XMLID_185_" x="3" y="3" fill="#2882A0" width="33" height="33"/>
+<rect id="XMLID_183_" x="38" y="13" fill="#969696" width="9" height="23"/>
+<rect id="XMLID_181_" x="38" y="38" fill="#969696" width="9" height="9"/>
+<rect id="XMLID_179_" x="3" y="38" fill="#BEBEBE" width="33" height="9"/>
+<rect id="XMLID_100_" x="0.5" y="0.5" fill="none" stroke="#464646" stroke-miterlimit="10" width="47" height="47"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="34.5" y1="0.5" x2="47.5" y2="13.5">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<rect x="34.5" y="0.5" fill="url(#SVGID_1_)" width="13" height="13"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="38" y1="-2" x2="50" y2="10">
+	<stop  offset="0" style="stop-color:#AFD7E1"/>
+	<stop  offset="1" style="stop-color:#73B4C8"/>
+</linearGradient>
+<polygon fill="url(#SVGID_2_)" points="47,13 47,1 35,1 "/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="35" y1="1" x2="47" y2="13">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<line fill="url(#SVGID_3_)" stroke="#464646" stroke-miterlimit="10" x1="35" y1="1" x2="47" y2="13"/>
+<rect x="34.5" y="0.5" fill="none" stroke="#464646" stroke-miterlimit="10" width="13" height="13"/>
+</svg>

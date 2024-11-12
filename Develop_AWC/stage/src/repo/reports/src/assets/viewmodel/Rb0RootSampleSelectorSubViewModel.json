@@ -1,0 +1,144 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-search-box.directive",
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+
+    "actions": {
+        "rootSampleUpdate": {
+            "actionType": "dataProvider",
+            "method": "rootSampleListProvider"
+        },
+        "rootSampleSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "deps": "js/configureItemReportService",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "Awp0SearchResults",
+                    "columnsToExclude": [],
+                    "hostingClientName": "",
+                    "operationType": "intersection"
+                },
+                "saveColumnConfigData": {
+                    "columnConfigId": "",
+                    "clientScopeURI": "",
+                    "columns": [],
+                    "scope": "",
+                    "scopeName": ""
+                },
+                "searchInput": {
+                    "attributesToInflate": [ "object_name", "object_desc", "object_type", "awp0CellProperties" ],
+                    "internalPropertyName": "",
+                    "maxToLoad": 50,
+                    "maxToReturn": 50,
+                    "providerName": "Awp0SavedQuerySearchProvider",
+                    "searchCriteria": {
+                        "Type": "{{props.subPanelContext.reportsContext.rootClassObject[0].props.type_name.dbValues[0]}}",
+                        "Name": "{{data.rootBox.dbValue}}",
+                        "lastEndIndex": "",
+                        "queryName": "General...",
+                        "searchID": "Qwd5MOM_5gMmECUCZ5Melt5gMmEC1610693379327",
+                        "totalObjectsFoundReportedToClient": "",
+                        "typeOfSearch": "ADVANCED_SEARCH",
+                        "utcOffset": "330"
+                    },
+                    "startIndex": "{{data.dataProviders.rootSampleListProvider.startIndex}}"
+                }
+            },
+            "outputData": {
+                "rootSampleFound": "totalFound",
+                "rootSampleResults": "{{json:searchResultsJSON}}"
+            }
+        },
+        "rootSampleObjAdd": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updateSampleObjOnCtx"
+            }, {
+                "action": "updateRootSampleUid",
+                "condition": "ctx.state.params.configure === 'true'"
+            }, {
+                "action": "updateSampleObjOnRepContext"
+            } ]
+        },
+        "updateSampleObjOnRepContext": {
+            "actionType": "JSFunction",
+            "method": "updateAtomicDataValue",
+            "inputData": {
+                "AtomicObj": "{{subPanelContext.reportsContext}}",
+                "value": {
+                    "activeView": "ConfigureItemReportPanel",
+                    "rootClassSampleObject": ["{{data.dataProviders.rootSampleListProvider.selectedObjects[0]}}"]
+                }
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "updateSampleObjOnCtx": {
+            "actionType": "JSFunction",
+            "method": "updatePartialCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "ReportsContext.reportParameters.rootSampleObjectSelected",
+                "data": "{{data.dataProviders.rootSampleListProvider.selectedObjects[0]}}"
+            }
+        },
+        "updateRootSampleUid": {
+            "actionType": "JSFunction",
+            "method": "updatePartialCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "ReportsContext.reportParameters.ReportDefProps.ReportClassParameters.rootSampleUid",
+                "data": "{{data.dataProviders.rootSampleListProvider.selectedObjects[0].uid}}"
+            }
+        }
+    },
+    "data": {
+        "rootBox": {
+            "displayName": "Search and Select Object Type",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": ""
+        },
+        "rootObjType": {
+            "displayName": "Object Type",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{props.subPanelContext.reportsContext.rootClassObject[0].props.type_name.dbValue}}",
+            "uiValue": "{{props.subPanelContext.reportsContext.rootClassObject[0].props.type_name.dbValue}}"
+        },
+        "searchTip": {
+            "dbValue": "{{i18n.sampleSearchTip}}"
+        }
+    },
+    "dataProviders": {
+        "rootSampleListProvider": {
+            "action": "rootSampleSearch",
+            "response": "{{data.rootSampleResults}}",
+            "totalFound": "{{data.rootSampleFound}}",
+            "selectionModelMode": "single",
+            "noResultsFound": "{{i18n.noTraversedObject}}"
+        }
+    },
+    "i18n": {
+        "addChartCommand": [ "ReportChartMessages" ],
+        "sampleSearchTip": [ "ReportChartMessages" ],
+        "noTraversedObject": [ "ReportChartMessages" ],
+        "structure": [ "ReportChartMessages" ]
+    },
+    "onEvent": [ {
+        "eventId": "awPanel.reveal",
+        "action": "rootSampleUpdate",
+        "criteria": { "panelId": "Rb0SampleRootSelector" }
+    } ],
+    "functions": {}
+}

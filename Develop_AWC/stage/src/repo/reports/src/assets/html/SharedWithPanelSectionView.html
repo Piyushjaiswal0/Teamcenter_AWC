@@ -1,0 +1,13 @@
+<div class="sw-row aw-search-activefolderShareRule">
+    <aw-scrollpanel aw-class="[{ 'aw-search-searchFolderSharedWithTableContent': !conditions.isMobileMode }]" class="">
+        <div class="" exist-when="props.reportsState.sharedWithList.length>0">
+            <aw-search-box prop="data.sharedTableSearchBox" action="doGridDataProvider"></aw-search-box>
+            <aw-splm-table gridid="accessorsView" show-context-menu="true"></aw-splm-table>
+        </div>
+        <div class="" exist-when="props.sharedWith ==='custom' &&  props.reportsState.sharedWithList.length===0">
+            <aw-label class="aw-reports-defaultNotSharedTitle" prop='data.defaultNotSharedTitle'></aw-label>
+            <aw-label class="aw-reports-defaultNotSharedDesc" prop='data.defaultNotSharedDesc'></aw-label>
+        </div>
+    </aw-scrollpanel>
+</div>
+

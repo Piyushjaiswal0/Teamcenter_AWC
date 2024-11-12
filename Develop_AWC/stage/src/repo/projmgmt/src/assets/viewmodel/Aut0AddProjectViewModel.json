@@ -1,0 +1,240 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-widget.directive",
+        "js/aw-textbox.directive",
+        "js/aw-radiobutton.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-i18n.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive"
+    ],
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "ProjectCategoryProvider"
+        },
+        "revealAction":{
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "reveal"
+                },
+                {
+                    "action": "getConstantValueAction"
+                }
+            ]
+        },
+        "loadProjectCategories":{
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2013-05-LOV",
+            "method": "getInitialLOVValues",
+            "inputData":
+            {
+                "initialData":
+                {
+                    "lovInput":
+                    {
+                        "boName": "TC_Project",
+                        "operationName": "Search"
+                    },
+                    "propertyName": "fnd0ProjectCategory"
+                }
+            },
+            "outputData": {
+                "projectCategories": "{{function:getProjectCategoryList}}",
+                "moreValuesExist":"moreValuesExist"
+            },
+            "deps": "js/Aut0AddProjectCommandService"
+        },
+        "getConstantValueAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "BusinessModeler-2007-06-Constants",
+            "method": "getPropertyConstantValues",
+            "inputData": {
+
+             "keys": [{"constantName": "InitialValue",
+
+                "typeName": "TC_Project",
+
+                "propertyName": "fnd0ProjectCategory"
+
+                },{"constantName": "Required",
+
+                    "typeName": "TC_Project",
+
+                    "propertyName": "fnd0ProjectCategory"
+
+                    }]
+            },
+            "outputData": {
+
+                "constantValues": "{{function:setConstantValues}}"
+
+            },
+            "deps": "js/Aut0AddProjectCommandService"
+        },
+        "createProject":{
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Security-2021-06-AwProjectLevelSecurity",
+            "method": "createProjects",
+            "deps": "js/Aut0AddProjectCommandService",
+            "inputData":
+            {
+                "createInfo":[{
+                    "projectId": "{{data.ProjectId.dbValue}}",
+                    "projectName": "{{data.ProjectName.dbValue}}",
+                    "projectDescription": "{{data.ProjectDesc.dbValue}}",
+                    "useProgramSecurity": "{{function:isProgram}}",
+                    "projectCategory": "{{data.ProjectCategory.dbValue}}",
+                    "clientId": "PLS-AW-SESSION"
+                }]
+            },
+            "outputData":{
+                "createProjectResponse":"",
+                "createdProject": "{{function:getCreatedProject}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "complete",
+                        "condition": "!subPanelContext.panelPinned",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name":"addProject.projectCreated",
+                        "excludeLocalDataCtx": true,
+                        "condition": "data.createdProject",
+                        "eventData": {
+                            "project": "{{data.createdProject}}",
+                            "isPinned":"{{subPanelContext.panelPinned}}"
+                        }
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                        "condition": "data.createdProject",
+                        "message": "createProjectSuccessMessage"
+                    }
+                ],
+                "failure":[
+                    {
+                        "condition":"data.createProjectResponse.partialErrors[0].errorValues",
+                        "message":"createProjectFailureMessage"
+                    }
+                ]
+            }
+        }
+    },
+    "data": {
+        "ProjectId":{
+            "displayName": "{{i18n.projectId}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition:": "PROPERTY_LABEL_AT_TOP",
+            "dispValue":"",
+            "dbValue":"",
+            "maxLength":32
+        },
+        "ProjectName":{
+            "displayName": "{{i18n.projectName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition:": "PROPERTY_LABEL_AT_TOP",
+            "dispValue":"",
+            "dbValue":"",
+            "maxLength":32
+        },
+        "ProjectDesc": {
+            "displayName": "{{i18n.projectDesc}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition:": "PROPERTY_LABEL_AT_TOP",
+            "dispValue":"",
+            "dbValue":""
+        },
+        "useProgramSecurity": {
+            "displayName": "{{i18n.useProgramSecurity}}",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "labelPosition:": "PROPERTY_LABEL_AT_TOP",
+            "propertyRadioFalseText": "{{i18n.programRadioLabel}}",
+            "propertyRadioTrueText":"{{i18n.projectRadioLabel}}",
+            "dbValue": true,
+            "vertical":true
+        },
+        "ProjectCategory":{
+            "displayName": "{{i18n.projectCategory}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "labelPosition:": "PROPERTY_LABEL_AT_TOP",
+            "hasLov":true,
+            "dataProvider":"ProjectCategoryProvider"
+        }
+    },
+    "dataProviders":{
+        "ProjectCategoryProvider":{
+            "dataProviderType": "Action",
+            "action": "loadProjectCategories",
+            "response": "{{data.projectCategories}}",
+            "moreValuesExist": "{{data.moreValuesExist}}"
+        }
+    },
+    "i18n": {
+        "projectId":[ "ProjmgmtConstants" ],
+        "projectName":[ "ProjmgmtConstants" ],
+        "projectDesc":[ "ProjmgmtConstants" ],
+        "projectCategory":[ "ProjmgmtConstants" ],
+        "useProgramSecurity":[ "ProjmgmtConstants" ],
+        "projectRadioLabel":[ "ProjmgmtConstants" ],
+        "programRadioLabel":[ "ProjmgmtConstants" ],
+        "propertiesSection":[ "ProjmgmtConstants" ],
+        "AddProjectLabel":[ "ProjmgmtConstants" ],
+        "addButton":[ "ProjmgmtConstants" ],
+        "createProjectSuccess":[ "ProjmgmtConstants" ]
+    },
+    "functions": {
+        "setConstantValues": {
+            "functionName": "setConstantValues",
+            "parameters": ["{{data.ProjectCategory}}"]
+        },
+        "getProjectCategoryList": {
+            "functionName": "getProjectCategoryList",
+            "parameters": []
+        },
+        "getCreatedProject": {
+            "functionName": "getCreatedProject",
+            "parameters": []
+        },
+        "isProgram": {
+            "functionName": "isProgram",
+            "parameters": [
+                "{{data.useProgramSecurity.dbValue}}"
+            ]
+        }
+    },
+    "messages": {
+        "createProjectSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.createProjectSuccess}}",
+            "messageTextParams": [
+                "{{data.createdProject.props.object_string.dbValues[0]}}"
+            ]
+        },
+        "createProjectFailureMessage":{
+            "messageType": "ERROR",
+            "messageText": "{{data.createProjectResponse.partialErrors[0].errorValues[0].message}}"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount":"revealAction"
+    },
+    "onEvent": [ ]
+}

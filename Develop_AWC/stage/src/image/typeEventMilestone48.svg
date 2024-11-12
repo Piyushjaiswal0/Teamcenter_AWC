@@ -1,0 +1,26 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="5.5" y1="24" x2="47.19" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="1.5" y1="-0.5" x2="6.5" y2="4.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="-7.75" y1="13.75" x2="15.75" y2="37.25" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="-48.0782" y1="112.948" x2="-30.4005" y2="112.948" gradientTransform="translate(61.7394 -88.948)" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-45.7212" y1="112.948" x2="-32.7576" y2="112.948" gradientTransform="translate(61.7394 -88.948)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <polyline points="5.5 7.5 47.19 7.5 39 24 47.19 40.5 5.5 40.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <rect x="0.5" y="0.5" width="7" height="3" stroke="#464646" stroke-linejoin="round" fill="url(#linear-gradient-2)"/>
+  <rect x="2.5" y="3.5" width="3" height="44" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-3)"/>
+  <rect x="13.6612" y="15.1612" width="17.6777" height="17.6777" transform="translate(23.5607 -8.8805) rotate(45)" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+  <rect x="16.0182" y="17.5182" width="12.9636" height="12.9636" transform="translate(23.5607 -8.8805) rotate(45)" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+</svg>

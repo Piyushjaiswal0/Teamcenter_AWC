@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "ファイルアタッチメント",
+    "dropHere": "ここにドロップ",
+    "chooseFile": "ファイルを選択",
+    "removeFileBtnTooltip": "ファイルを除去",
+    "failureToAttachFiles": "\"{0}\"は、そのファイルタイプが添付として許可されていないため、追加されませんでした。"
+}

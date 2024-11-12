@@ -1,0 +1,30 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "_provider": {
+            "breadcrumbConfig": {
+                "vm" : "AwSearchBreadcrumb"
+            },
+            "priority": 0,
+            "label": {
+                "source": "/i18n/__targetModule-name__Messages",
+                "key": "__sublocation-name__Title"
+            },
+            "clientScopeURI": "Awp0SearchResults",
+            "nameToken": "__sublocation-name__",
+            "context": {
+                "search": {
+                    "provider": "Awp0FullTextSearchProvider",
+                    "criteria": {
+                        "searchString" : "hdd"
+                    },
+                    "chartTitle": {
+                        "source": "/i18n/__targetModule-name__Messages",
+                        "key": "__sublocation-name__ChartTitle"
+                    }
+                }
+            },
+            "viewBase": "__sublocation-name__"
+        }
+    }
+}

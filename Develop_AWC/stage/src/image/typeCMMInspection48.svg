@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="21.5" y1="15.193" x2="26.5" y2="15.193" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="-658.097" y1="-318.257" x2="-640.277" y2="-324.742" gradientTransform="matrix(-0.005, 1, -1.023, -0.005, -308.019, 684.551)" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="18.389" y1="33.445" x2="22.389" y2="33.445" xlink:href="#paper_gradient"/>
+  </defs>
+  <rect x="21.5" y="1.427" width="5" height="27.531" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <path d="M23.965,46.5A9.5,9.5,0,1,1,33.5,37.053,9.5,9.5,0,0,1,23.965,46.5Z" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <path d="M22.389,33.444a2,2,0,1,1-2-2A2,2,0,0,1,22.389,33.444Z" stroke="#6e6e6e" stroke-linejoin="round" fill="url(#paper_gradient-3)"/>
+</svg>

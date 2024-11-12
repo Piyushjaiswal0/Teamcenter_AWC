@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Generic_Top" data-name="Generic Top" x1="11.5" y1="25.5" x2="33.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="1" stop-color="#cdcdcd"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="11.8765" y1="11.3765" x2="33.1235" y2="32.6236" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <polygon points="44.5 36.5 22.5 47.5 0.5 36.5 22.5 25.5 44.5 36.5" stroke="#464646" stroke-linejoin="round" fill="url(#Generic_Top)"/>
+  <path d="M24,1H34.87A6.13,6.13,0,0,1,41,7.13V13" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <polyline points="35 7 41 13 47 7" fill="none" stroke="#969696" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <ellipse cx="22.5" cy="22" rx="19" ry="9.5" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+</svg>

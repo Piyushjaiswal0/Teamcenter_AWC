@@ -1,0 +1,69 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {},
+    "actions": {
+        "render": {
+            "method": "awFilterCategoryRenderFunction",
+            "deps": "js/AwFilterCategoryService"
+        },
+        "expandCategory": {
+            "actionType": "JSFunction",
+            "method": "expandUnExpandedCategory",
+            "inputData": {
+                "isCollapsed": "{{parameters.isCollapsed}}",
+                "name": "{{parameters.name}}",
+                "props": "{{props}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "i18n": {
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "category": {
+            "type": "object"
+        },
+        "facetAction": {
+            "type": "object"
+        },
+        "numericRangeAction": {
+            "type": "object"
+        },
+        "dateRangeAction": {
+            "type": "object"
+        },
+        "radioAction": {
+            "type": "object"
+        },
+        "noResultsFoundLabel": {
+            "type": "object"
+        },
+        "dateRangeFacetAction": {
+            "type": "object"
+        },
+        "numericRangeFacetAction": {
+            "type": "object"
+        },
+        "isBulkMode": {
+            "type": "object"
+        },
+        "selectFilterAction": {
+            "type": "object"
+        },
+        "exclude-category-call-back-action": {
+            "type": "object"
+        },
+        "context": {
+            "type": "object"
+        },
+        "hideBulkModeActionCommand": {
+            "type": "object"
+        }
+    },
+    "onEvent": [],
+    "messages": {},
+    "conditions": {}
+}

@@ -1,0 +1,176 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "initialize",
+            "inputData": {
+                "objsetdata": "{{props.objsetdata}}",
+                "displayModeState": "{{fields.displayModeState}}",
+                "objectSetState": "{{fields.objectSetState}}",
+                "selectionModel": "{{selectionModels.objectSetSelectionModel}}",
+                "placementTracker": "{{data.placementTracker}}",
+                "props": "{{props}}"
+            },
+            "outputData": {
+                "displayModeState": "displayModeState",
+                "placementTracker": "placementTracker",
+                "context": "context"
+            },
+            "deps": "js/AwObjectSetService"
+        },
+        "cleanup": {
+            "actionType": "JSFunction",
+            "method": "cleanup",
+            "inputData": {
+                "placementTracker": "{{data.placementTracker}}"
+            },
+            "outputData": {},
+            "deps": "js/AwObjectSetService"
+        },
+        "handleSelectionChange": {
+            "actionType": "JSFunction",
+            "method": "handleSelectionChange",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}",
+                "parentSelectionData": "{{props.selectionData}}",
+                "selectionModel": "{{selectionModels.objectSetSelectionModel}}"
+            },
+            "outputData": {},
+            "deps": "js/AwObjectSetService"
+        },
+        "handleFocusChange": {
+            "actionType": "JSFunction",
+            "method": "handleFocusChange",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}",
+                "focusComponent": "{{props.focusComponent}}",
+                "selectionModel": "{{selectionModels.objectSetSelectionModel}}"
+            },
+            "deps": "js/AwObjectSetService"
+        },
+        "handleActiveComponentChange": {
+            "actionType": "JSFunction",
+            "method": "handleActiveComponentChange",
+            "inputData": {
+                "localSelectionData": "{{data.selectionData}}",
+                "isSublocationActive": "{{subPanelContext.pageContext.sublocationState.isSublocationActive}}",
+                "parentSelectionModel": "{{props.selectionModel}}",
+                "localSelectionModel": "{{selectionModels.objectSetSelectionModel}}"
+            },
+            "deps": "js/AwObjectSetService"
+        },
+        "render": {
+            "method": "awObjectSetRenderFunction",
+            "deps": "js/AwObjectSetService"
+        }
+    },
+    "selectionModels": {
+        "objectSetSelectionModel": {
+            "selectionMode": "multiple"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUnmount": "cleanup",
+        "onUpdate": [ {
+            "action": "handleSelectionChange",
+            "observers": [ "viewModel.atomicData.selectionData" ]
+        }, {
+            "action": "handleFocusChange",
+            "observers": [ "props.focusComponent" ]
+        }, {
+            "action": "initialize",
+            "observers": [ "props.objsetdata" ]
+        },{
+            "action": "handleActiveComponentChange",
+            "observers": [ "props.subPanelContext.pageContext.sublocationState.isSublocationActive" ]
+        } ]
+    },
+    "data": {
+        "displayModeState": {
+            "initialValues": {
+                "activeDisplay": "listDisplay"
+            },
+            "meta": {}
+        },
+        "objectSetState": {
+            "initialValues": {
+                "showCheckBox": false
+            },
+            "meta": {}
+        },
+        "selectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "i18n": {
+        "error": [
+            "XRTMessages"
+        ]
+    },
+    "onEvent": [],
+    "props": {
+        "objsetdata": {
+            "type": "object"
+        },
+        "first-page-uids": {
+            "type": "array"
+        },
+        "vmo": {
+            "type": "object"
+        },
+        "title-key": {
+            "type": "string"
+        },
+        "displaytitle": {
+            "type": "string"
+        },
+        "columns": {
+            "type": "array"
+        },
+        "grid-info": {
+            "type": "object"
+        },
+        "operation-type": {
+            "type": "string"
+        },
+        "obj-set-uri": {
+            "type": "string"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "selection-model": {
+            "type": "object"
+        },
+        "xrt-context": {
+            "type": "object"
+        },
+        "object-set-info": {
+            "type": "object"
+        },
+        "focus-component": {
+            "type": "string"
+        },
+        "edit-context-key": {
+            "type": "string"
+        },
+        "is-refresh-all-object-sets": {
+            "type": "boolean"
+        },
+        "reload": {
+            "type": "boolean"
+        },
+        "dp-ref": {
+            "type": "object"
+        },
+        "totalFound": {
+            "type": "integer"
+        },
+        "parentUid": {
+            "type": "string"
+        }
+    }
+}

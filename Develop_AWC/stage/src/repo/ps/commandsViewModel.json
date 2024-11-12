@@ -1,0 +1,367 @@
+{
+  "commands": {
+    "ps0AddAlternate": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addAlternate}}",
+      "description": "{{i18n.ps0AddAlternateDesc}}"
+    },
+    "ps0AddAlternatePWA": {
+      "iconId": "cmdAlternate",
+      "isGroup": false,
+      "title": "{{i18n.addAlternatePWA}}",
+      "description": "{{i18n.ps0AddAlternateDesc}}"
+    },
+    "ps0RemoveAlternate": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.removeAlternate}}",
+      "description": "{{i18n.ps0RemoveAlternateDesc}}"
+    },
+    "ps0AddEffectivitiesCmd": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.ps0AddEffectivitiesCmd}}",
+      "description": "{{i18n.ps00AddEffectivitiesCmdDesc}}"
+    },
+    "ps0RemoveEffectivitiesCmd": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.ps0RemoveEffectivitiesCmd}}",
+      "description": "{{i18n.ps0RemoveEffectivitiesCmdDesc}}"
+    },
+    "ps0EditEffectivityCmd": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.startEditButtonText}}",
+      "description": "{{i18n.ps0EditEffectivityCmdDesc}}"
+    },
+    "ps0CmdBaseline": {
+      "iconId": "cmdNew",
+      "title": "{{i18n.ps0CreateBaseline}}",
+      "description": "{{i18n.ps0CreateBaselineDesc}}"
+    }
+  },
+  "commandHandlers": {
+    "ps0AddAlternateCommandHandler": {
+      "id": "ps0AddAlternate",
+      "action": "CheckForEditsAndAddAlternateCommandAction",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.ps0AddAlternateCommandCondition"
+      }
+    },
+    "ps0AddAlternatePWACommandHandler": {
+      "id": "ps0AddAlternatePWA",
+      "action": "CheckForEditsAndAddAlternateCommandAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isNotOpenedFor4GStructure"
+      },
+      "enableWhen": {
+        "condition": "conditions.ps0AddAlternateCommandConditionForPWA"
+      }
+    },
+    "ps0RemoveAlternateCommandHandler": {
+      "id": "ps0RemoveAlternate",
+      "action": "removeAlternates",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.ps0RemoveAlternateCommandCondition"
+      }
+    },
+    "ps0AddEffectivitiesCmdHandler": {
+      "id": "ps0AddEffectivitiesCmd",
+      "action": "ps0LaunchAddEffectivitiesPanel",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.ps0AddEffectivitiesCommandCondition"
+      }
+    },
+    "ps0RemoveEffectivitiesCmdHandler": {
+      "id": "ps0RemoveEffectivitiesCmd",
+      "action": "ps0RemoveEffectivitiesAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.ps0RemoveEffectivitiesCommandVisibilityCondition"
+      },
+      "enableWhen": {
+        "condition": "conditions.ps0RemoveEffectivitiesCommandEnabledCondition"
+      }
+    },
+    "ps0EditEffectivityCommandHandler": {
+      "id": "ps0EditEffectivityCmd",
+      "action": "ps0LaunchEditEffectivityPanel",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.ps0EditEffectivitiesCommandCondition"
+      }
+    },
+    "ps0CmdBaselineCommandHandler": {
+      "id": "ps0CmdBaseline",
+      "action": "ps0CmdBaselineAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.ps0CmdBaselineCondition"
+      },
+      "enableWhen": {
+        "condition": "conditions.ps0CmdBaselineCondition"
+      }
+    },
+    "openBaselineNotificationCommandHandler": {
+      "id": "Awp0OpenLineItem",
+      "action": "openBaselineNotification",
+      "activeWhen": {
+        "condition": "conditions.enableOpenBaselineNotificationCommandCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.enableOpenBaselineNotificationCommandCond"
+      }
+    }
+  },
+  "commandPlacements": {
+    "ps0AddAlternateCommandPlacement": {
+      "id": "ps0AddAlternatePWA",
+      "uiAnchor": "aw_primaryWorkArea",
+      "parentGroupId": "Awb0AddGroup",
+      "priority": 40
+    },
+    "ps0AddEffectivitiesCmdPlacement": {
+      "id": "ps0AddEffectivitiesCmd",
+      "uiAnchor": "ps0_commandDisplayEffectivity",
+      "priority": 1
+    },
+    "ps0RemoveEffectivitiesCmdPlacement": {
+      "id": "ps0RemoveEffectivitiesCmd",
+      "uiAnchor": "ps0_commandDisplayEffectivity",
+      "priority": 1
+    },
+    "ps0EffectivityCellCmdPlacement": {
+      "id": "ps0EditEffectivityCmd",
+      "uiAnchor": "ps0_effectivity_cell_commands",
+      "priority": 100,
+      "cellDisplay": {
+        "hover": true,
+        "selected": true,
+        "position": "TOP_RIGHT"
+      }
+    },
+    "ps0BaselineCmdPlacement": {
+      "id": "ps0CmdBaseline",
+      "uiAnchor": "aw_rightWall",
+      "priority": 1,
+      "parentGroupId": "Awp0NewGroup",
+      "relativeTo": "Awp0ShowCreateObject"
+    }
+  },
+  "actions": {
+    "CheckForEditsAndAddAlternateCommandAction": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "showLeaveConfirmation",
+          "condition": "conditions.isEditInProgressInTreeOrTable"
+        },
+        {
+          "action": "AddAlternateCommandAction"
+        }
+      ]
+    },
+    "AddAlternateCommandAction": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "ps0AddAlternate",
+        "location": "aw_toolsAndInfo",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "removeAlternates": {
+      "actionType": "JSFunction",
+      "method": "removeAlternates",
+      "inputData": {
+        "selectedAlternates": "{{ctx.mselected}}",
+        "selectedObjects": {
+          "$adapt": "{{ctx.xrtSummaryContextObject}}",
+          "path": "uid"
+        }
+      },
+      "outputData": {},
+      "deps": "js/alternatesService"
+    },
+    "ps0LaunchAddEffectivitiesPanel": {
+      "actionType": "JSFunction",
+      "method": "updateValueOnCtxOrState",
+      "inputData": {
+        "path": "",
+        "value": {
+          "activeView": "ps0AddEffectivity"
+        },
+        "target": "{{commandContext.expEffPanelState}}"
+      },
+      "deps": "js/occmgmtUtils"
+    },
+    "ps0RemoveEffectivitiesAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "removeEffectivitiesEvent",
+            "eventData": {
+              "data": "{{commandContext}}"
+            }
+          }
+        ]
+      }
+    },
+    "ps0LaunchEditEffectivityPanel": {
+      "actionType": "JSFunction",
+      "method": "execute",
+      "deps": "js/expressionEffectivityEditCommandHandler",
+      "inputData": {
+        "vmo": "{{commandContext.vmo}}"
+      }
+    },
+    "ps0CmdBaselineAction": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "ps0CreateBaseline",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "openBaselineNotification": {
+      "actionType": "JSFunction",
+      "method": "openRevisionBaselineItem",
+      "inputData": {
+        "notificationObject": "{{commandContext}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "NotificationMessage.markRead"
+          }
+        ]
+      },
+      "deps": "js/createBaselineCommandPanel"
+    }
+  },
+  "conditions": {
+    "isEditInProgressInTreeOrTable": {
+      "expression": "(ctx.occDataProvider || ctx.occDataProvider2)  && (ctx['occDataProvider']._editing || ctx['occDataProvider2']._editing) || ctx.TABLE_CONTEXT && ctx['TABLE_CONTEXT']._editing"
+    },
+    "ps0AddAlternateCommandCondition": {
+      "expression": "commandContext.objectSetSource==='Awp0AlternatesProvider.Item' && ctx.visibleServerCommands.Awp0AddAlternate && !ctx.hiddenCommands.ps0AddAlternate"
+    },
+    "ps0AddAlternateCommandConditionForPWA": {
+      "expression": "ctx.mselected.length === 1 && ctx.visibleServerCommands.Awp0AddAlternate && !ctx.hiddenCommands.ps0AddAlternate"
+    },
+    "ps0RemoveAlternateCommandCondition": {
+      "expression": "commandContext.objectSetSource==='Awp0AlternatesProvider.Item' && ctx.visibleServerCommands.Awp0RemoveAlternate && !ctx.hiddenCommands.ps0RemoveAlternate && commandContext.occContext.supportedFeatures.Awb0RevisibleOccurrenceFeature === undefined"
+    },
+    "ps0RemoveEffectivitiesCommandVisibilityCondition": {
+      "expression": "commandContext.expEffPanelState.activeView=='ps0DisplayEffectivities' && commandContext.dataProviders.getEffectivity.selectedObjects.length>0 "
+    },
+    "isNotOpenedFor4GStructure": {
+      "expression": "!commandContext.occContext.supportedFeatures.4GStructureFeature"
+    },
+    "ps0RemoveEffectivitiesCommandEnabledCondition": {
+      "expression": {
+        "$source": "conditions.ps0IsSelectionNotReleased",
+        "$query": {
+          "$eq": true
+        }
+      }
+    },
+    "ps0AddEffectivitiesCommandCondition": {
+      "expression": "commandContext.expEffPanelState.activeView=='ps0DisplayEffectivities' && conditions.ps0IsSelectionNotReleased"
+    },
+    "ps0EditEffectivitiesCommandCondition": {
+      "expression": {
+        "$source": "conditions.ps0IsSelectionNotReleased",
+        "$query": {
+          "$eq": true
+        }
+      }
+    },
+    "ps0IsSelectionNotReleased": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "ctx.expressionEffectivity.underlyingPropLoaded",
+            "$query": {
+              "$eq": true
+            }
+          },
+          {
+            "$source": {
+              "$adapt": "ctx.selected"
+            },
+            "$query": {
+              "$source": "props.release_status_list.uiValues",
+              "$query": {
+                "$notin": [
+                  "TCM Released"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ps0CmdBaselineCondition": {
+      "expression": "ctx.visibleServerCommands.Awp0ShowRevise === true"
+    },
+    "enableOpenBaselineNotificationCommandCond": {
+      "expression": "commandContext.group.groupName==='ACE'"
+    }
+  },
+  "i18n": {
+    "addAlternate": [
+      "PSConstants"
+    ],
+    "addAlternatePWA": [
+      "PSConstants"
+    ],
+    "removeAlternate": [
+      "PSConstants"
+    ],
+    "ps0AddAlternateDesc": [
+      "PSConstants"
+    ],
+    "ps0RemoveAlternateDesc": [
+      "PSConstants"
+    ],
+    "ps0AddEffectivitiesCmd": [
+      "PSConstants"
+    ],
+    "ps00AddEffectivitiesCmdDesc": [
+      "PSConstants"
+    ],
+    "ps0RemoveEffectivitiesCmd": [
+      "PSConstants"
+    ],
+    "ps0RemoveEffectivitiesCmdDesc": [
+      "PSConstants"
+    ],
+    "ps0_commandDisplayEffectivity": [
+      "PSConstants"
+    ],
+    "ps0EditEffectivityCmdDesc": [
+      "PSConstants"
+    ],
+    "startEditButtonText": [
+      "TCUICommandPanelsMessages"
+    ],
+    "ps0CreateBaseline": [
+      "PSConstants"
+    ],
+    "ps0CreateBaselineDesc": [
+      "PSConstants"
+    ]
+  }
+}

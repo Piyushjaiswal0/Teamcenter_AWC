@@ -1,0 +1,198 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "reveal":
+        {
+            "actionType": "dataProvider",
+            "method": "contentsDataProvider"
+        },
+        "updateSelectAll": {
+            "actionType": "JSFunction",
+            "method": "updateSelectAll",
+            "inputData": {
+                "searchFolder": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/savedSearchService"
+        },
+        "updateMultiSelect": {
+            "actionType": "JSFunction",
+            "method": "updateMultiSelectEnabled",
+            "inputData": {
+                "searchFolder": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/savedSearchService"
+        },
+        "loadData":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData":
+            {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                    "operationType": "{{data.dataProviders.contentsDataProvider.columnConfig.operationType}}"
+                },
+                "searchInput":
+                {
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{function:getSavedSearchProvider}}",
+                    "searchCriteria": "{{props.subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType" : "Priority",
+                    "searchSortCriteria": "{{function:getSavedSearchSortCriteria}}",
+                    "startIndex": "{{data.dataProviders.contentsDataProvider.startIndex}}"
+                },
+                "inflateProperties": false
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "BusinessObject",
+                        "properties":
+                        [
+                            {
+                                "name": "awp0CellProperties"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData":
+            {
+                "totalFound": "{{function:getActualTotalFound}}",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "dataProviders.contentsDataProvider.columnConfig": "columnConfig",
+                "output": "{{function:processOutput}}"
+            },
+            "deps": "js/awSearchService"
+        },
+        "getSavedSearchProperties": {
+            "actionType": "JSFunction",
+            "method": "getSavedSearchProperties",
+            "inputData": {
+                "vmo": "{{subPanelContext.selected}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/savedSearchService"
+        }
+    },
+    "dataProviders":
+    {
+        "contentsDataProvider":
+        {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModelMode": "multiple",
+            "selectionModel": {
+                "multiSelectEnabled": true
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "data": {
+        "uid": "{{subPanelContext.selected.uid}}"
+    },
+    "functions": {
+        "getSavedSearchProvider": {
+            "functionName": "getSavedSearchProvider",
+            "parameters": [
+                "{{subPanelContext.selected}}"
+            ]
+        },
+        "getSavedSearchFilterMap": {
+            "functionName": "getSavedSearchFilterMap",
+            "parameters": [
+                "{{subPanelContext.selected}}"
+            ]
+        },
+        "getSavedSearchSortCriteria": {
+            "functionName": "getSavedSearchSortCriteria",
+            "parameters": [
+                "",
+                "{{subPanelContext.searchState.clientScopeURI}}",
+                "{{subPanelContext.searchState.columnConfig}}"
+            ]
+        },
+        "processOutput": {
+            "functionName": "processSavedSearchOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getDefaultPageSize":
+        {
+            "functionName": "getDefaultPageSize",
+            "parameters":
+            [
+                 "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getTypeNames": {
+            "functionName": "getTypeNames",
+            "parameters": [
+                "{{subPanelContext.searchState.searchFilterMap}}"
+            ]
+        },
+        "getActualTotalFound": {
+            "functionName": "getActualTotalFound",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "processColumnConfig": {
+            "functionName": "processColumnConfig",
+            "parameters": [
+                "intersection",
+                "{{dataProviders.gridDataProvider.columnConfig}}",
+                "{{dataProviders.gridDataProvider.resetColumnConfigs}}"
+            ]
+        },
+        "getVMOsWithColoring": {
+            "functionName": "getVMOsWithColoring",
+            "parameters": [
+                "{{subPanelContext.searchState.showChartColorBars}}"
+            ]
+        },
+        "getThresholdDisplayMessage": {
+            "functionName": "getThresholdDisplayMessage",
+            "parameters": [
+                "{{subPanelContext.searchState.criteria.searchString}}"
+            ]
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "contentsDataProvider.selectAll",
+            "action": "updateSelectAll"
+        },
+        {
+            "eventId": "contentsDataProvider.selectNone",
+            "action": "updateSelectAll"
+        },
+        {
+            "eventId": "Awp0SearchFolderContentsTable.refreshTable",
+            "action": "updateMultiSelect"
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "getSavedSearchProperties",
+        "onUpdate": [ {
+            "action": "reveal",
+            "observers": [
+                "props.subPanelContext.searchState.criteriaJSONString",
+                "props.subPanelContext.searchState.filterString"
+            ]
+        } ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

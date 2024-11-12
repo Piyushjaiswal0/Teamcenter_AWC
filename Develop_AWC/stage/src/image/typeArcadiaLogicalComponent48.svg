@@ -1,0 +1,36 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="7.457" y1="-25.543" x2="44.457" y2="11.457" gradientTransform="matrix(1 0 0 1 0 32)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.221" style="stop-color:#F8F8F8"/>
+		<stop  offset="0.541" style="stop-color:#E5E5E5"/>
+		<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+		<stop  offset="1" style="stop-color:#BEBEBE"/>
+	</linearGradient>
+	
+		<rect x="4.5" y="9.5" fill="url(#SVGID_1_)" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" width="43" height="31"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1.957" y1="-21.043" x2="11.957" y2="-11.043" gradientTransform="matrix(1 0 0 1 0 32)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.221" style="stop-color:#F8F8F8"/>
+		<stop  offset="0.541" style="stop-color:#E5E5E5"/>
+		<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+		<stop  offset="1" style="stop-color:#BEBEBE"/>
+	</linearGradient>
+	
+		<rect x="0.5" y="12.5" fill="url(#SVGID_2_)" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" width="13" height="7"/>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="1.957" y1="-11.043" x2="11.957" y2="-1.043" gradientTransform="matrix(1 0 0 1 0 32)">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.221" style="stop-color:#F8F8F8"/>
+		<stop  offset="0.541" style="stop-color:#E5E5E5"/>
+		<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+		<stop  offset="1" style="stop-color:#BEBEBE"/>
+	</linearGradient>
+	
+		<rect x="0.5" y="22.5" fill="url(#SVGID_3_)" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" width="13" height="7"/>
+</g>
+<path fill="#464646" stroke="#464646" stroke-width="0.913" stroke-miterlimit="10" d="M22.9,17.9h1.8v12.6h6V32h-7.9V17.9H22.9z"/>
+</svg>

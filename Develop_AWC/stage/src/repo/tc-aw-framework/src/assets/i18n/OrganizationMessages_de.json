@@ -1,0 +1,11 @@
+{
+    "Organization": "Organisation",
+    "orgTreeFilterText": "Filter",
+    "resultsText": "Ergebnisse",
+    "noFiltersFound": "Keine Ergebnisse gefunden",
+    "noOrgTreeResultsFound": "Für die Filterzeichenfolge \"{0}\" wurden keine Ergebnisse gefunden.",
+    "orgFilterUsage": "<br>{0}:\"Ed Engineer\" gibt z. B. alle Benutzer für Ed Engineer zurück.<br>Gültige Felder sind {1} und {2}.",
+    "usageMessage": "\"{0}\" ist keine gültige Filterzeichenfolge.{1}",
+    "orgEscapeChars": "<br>Filterzeichenfolgen, die Anführungszeichen enthalten, muss ein umgekehrter Schrägstrich vorangestellt werden (\\\").{0}",
+    "advancedSearchMessage": "<br>Filterzeichenfolgen, die Doppelpunkte enthalten, müssen in Anführungszeichen gesetzt werden (\" \"), es sei denn, sie werden verwendet, um einen bestimmten Feldwert zu suchen.{0}"
+}

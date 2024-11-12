@@ -1,0 +1,28 @@
+{
+  "printReportsLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/DocMgmtMessages",
+        "key": "printReportsAppDisplayName"
+      },
+      "headerTitle": {
+        "source": "/i18n/DocMgmtMessages",
+        "key": "printReportsAppDisplayName"
+      }
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "printoutsLocation": {
+    "data": {
+      "priority": 0,
+      "label": {
+        "source": "/i18n/DocMgmtMessages",
+        "key": "printReportsSublocation"
+      }
+    },
+    "parent": "printReportsLocation",
+    "view": "printoutsLocation",
+    "url": "/printoutsLocation"
+  }
+}

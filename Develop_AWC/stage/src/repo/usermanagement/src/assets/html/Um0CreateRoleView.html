@@ -1,0 +1,14 @@
+<aw-command-panel caption="i18n.AddTitle">
+    <aw-panel-body>
+       <aw-panel-section action="getStyleSheetForRole" caption="i18n.NewTab">
+           <aw-textbox prop="data.modelProperty.props.role_name"></aw-textbox>
+           <aw-textarea prop="data.modelProperty.props.description"></aw-textarea>
+       </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="createRole" visible-when="conditions.isValidToCreateRole">
+            <aw-i18n>i18n.AddButton</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+    
+</aw-command-panel>

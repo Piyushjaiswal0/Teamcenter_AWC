@@ -1,0 +1,1347 @@
+{
+  "commands": {
+    "Sub0EventAddCellCmd": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addEventTitle}}",
+      "description": "{{i18n.Sub0EventAddCellCmdDesc}}"
+    },
+    "Sub0EventRemoveCellCmd": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.removeEventTitle}}",
+      "description": "{{i18n.Sub0EventRemoveCellCmdDesc}}"
+    },
+    "Sub0ShowObjectCell": {
+      "iconId": "cmdOpen",
+      "title": "{{i18n.open}}",
+      "description": "{{i18n.Sub0ShowObjectCellDesc}}"
+    },
+    "Sub0SubscriptionShowObjectCell": {
+      "iconId": "cmdOpen",
+      "title": "{{i18n.open}}",
+      "description": "{{i18n.Sub0SubscriptionShowObjectCellDesc}}"
+    },
+    "Sub0DeleteMessage": {
+      "iconId": "cmdDelete",
+      "title": "{{i18n.deleteMessagesTitle}}",
+      "description": "{{i18n.Sub0DeleteMessageDesc}}"
+    },
+    "Sub0AddCriteria": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.followCondAddText}}",
+      "description": "{{i18n.Sub0AddCriteriaDesc}}"
+    },
+    "Sub0EditCriteria": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.followCondEditText}}",
+      "description": "{{i18n.Sub0EditCriteriaDesc}}"
+    },
+    "Sub0RemoveCriteria": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeCriteriaText}}",
+      "description": "{{i18n.Sub0RemoveCriteriaDesc}}"
+    },
+    "Sub0MoveUpCriteria": {
+      "iconId": "cmdMoveUp",
+      "title": "{{i18n.moveUpCriteriaText}}",
+      "description": "{{i18n.Sub0MoveUpCriteriaDesc}}"
+    },
+    "Sub0MoveDownCriteria": {
+      "iconId": "cmdMoveDown",
+      "title": "{{i18n.moveDownCriteriaText}}",
+      "description": "{{i18n.Sub0MoveDownCriteriaDesc}}"
+    },
+    "Sub0TemporaryTransferNotification": {
+      "iconId": "cmdSetTemporaryNotifier",
+      "title": "{{i18n.transferNotification}}",
+      "description": "{{i18n.Sub0TemporaryTransferNotificationDesc}}"
+    },
+    "Sub0Subscribe": {
+      "iconId": "cmdFollow",
+      "title": "{{i18n.followCommandTitle}}",
+      "description": "{{i18n.Sub0SubscribeDesc}}"
+    },
+    "Sub0SubscribeType": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.followTypeCommandTitle}}",
+      "description": "{{i18n.Sub0SubscribeTypeDesc}}"
+    },
+    "Sub0AddFollower": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addFollowerCmd}}",
+      "description": "{{i18n.Sub0AddFollowerDesc}}"
+    },
+    "Sub0RemoveFollower": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeFollowerCmd}}",
+      "description": "{{i18n.Sub0RemoveFollowerDesc}}"
+    },
+    "Sub0AddFollowerTable": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addFollowerCmd}}",
+      "description": "{{i18n.Sub0AddFollowerTableDesc}}"
+    },
+    "Sub0RemoveFollowerTable": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeFollowerCmd}}",
+      "description": "{{i18n.Sub0RemoveFollowerDesc}}"
+    },
+    "Sub0AddSubscription": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addSubscriptionCmd}}",
+      "description": "{{i18n.Sub0AddSubscriptionDesc}}"
+    },
+    "Sub0SaveAsSubscription": {
+      "iconId": "cmdSaveAs",
+      "title": "{{i18n.saveAsTitle}}",
+      "description": "{{i18n.Sub0SaveAsSubscriptionDesc}}"
+    },
+    "Sub0NewsFeedFilters": {
+      "iconId": "cmdfilter",
+      "isGroup": false,
+      "title": "{{i18n.searchFiltersTitle}}",
+      "description": "{{i18n.Sub0NewsFeedFiltersDesc}}"
+    },
+    "Sub0UnFollowSubscriptions": {
+      "iconId": "cmdUnfollow",
+      "isGroup": false,
+      "title": "{{i18n.unFollow}}",
+      "description": "{{i18n.Sub0UnFollowSubscriptionsDesc}}"
+    },
+    "Awp0ShowAlertWithBubble": {
+      "iconId": "cmdAlerts",
+      "isGroup": false,
+      "title": "{{i18n.AlertCmdTitle}}",
+      "template": {
+        "text": "{{ctx.unreadMessageCount}}",
+        "visibleWhen": {
+          "condition": "conditions.enableAlertWithBubbleCountTemplate"
+        }
+      },
+      "description": "{{i18n.Awp0ShowAlertWithBubbleDesc}}"
+    },
+    "Awp0OpenLineItem": {
+      "iconId": "cmdOpen",
+      "isGroup": false,
+      "title": ""
+    }
+  },
+  "commandHandlers": {
+    "Sub0ShowEventAddCellCommandHandler": {
+      "id": "Sub0EventAddCellCmd",
+      "action": "Sub0EventAddCellCmdAction",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Sub0ShowEventRemoveCellCommandHandler": {
+      "id": "Sub0EventRemoveCellCmd",
+      "action": "Sub0EventRemoveCellCmdAction",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Sub0ShowOpenCellCommandHandler": {
+      "id": "Sub0ShowObjectCell",
+      "action": "newsfeedOpenCellCommand",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Sub0SubscriptionShowObjectCellCommandHandler": {
+      "id": "Sub0SubscriptionShowObjectCell",
+      "action": "subscriptionOpenCellCommand",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Sub0DeleteMessageCommandHandler": {
+      "id": "Sub0DeleteMessage",
+      "action": "Sub0DeleteMessageCommandAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Sub0DeleteMessageCommandCondition"
+      }
+    },
+    "Sub0AddCriteriaCommandHandler": {
+      "id": "Sub0AddCriteria",
+      "action": "Sub0AddCriteriaAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditingAndNotImanSubscriptionForDelete"
+      }
+    },
+    "SubscriptionChangeOwnerHandler": {
+      "id": "Awp0ChangeOwner",
+      "action": "openChangeOwnerPanelforSub",
+      "activeWhen": {
+        "condition": "conditions.subscriptionChangeOwnerCommandActiveCondition"
+      },
+      "visibleWhen": {
+        "condition": "conditions.subscriptionChangeOwnerCommandActiveCondition"
+      }
+    },
+    "Sub0EditCriteriaCommandHandler": {
+      "id": "Sub0EditCriteria",
+      "action": "Sub0EditCriteriaAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditingAndNonSystemCriteriaSelected"
+      }
+    },
+    "Sub0RemoveCriteriaCommandHandler": {
+      "id": "Sub0RemoveCriteria",
+      "action": "Sub0RemoveCriteriaAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditingAndNonSystemCriteriaSelected"
+      }
+    },
+    "Sub0MoveUpCriteriaCommandHandler": {
+      "id": "Sub0MoveUpCriteria",
+      "action": "Sub0MoveUpCriteriaAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditingAndNonSystemCriteriaSelected"
+      }
+    },
+    "Sub0MoveDownCriteriaCommandHandler": {
+      "id": "Sub0MoveDownCriteria",
+      "action": "Sub0MoveDownCriteriaAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditingAndNonSystemCriteriaSelected"
+      }
+    },
+    "Sub0TemporaryTransferNotificationCommandHandler": {
+      "id": "Sub0TemporaryTransferNotification",
+      "action": "Sub0TemporaryTransferAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isSub0TempTransferNotificationVisible"
+      }
+    },
+    "Sub0SubscribeCommandHandler": {
+      "id": "Sub0Subscribe",
+      "action": "activateCreateSubscriptionPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Sub0SubscribeCommandCondition"
+      }
+    },
+    "Sub0SubscribeObjectTypeCommandHandler": {
+      "id": "Sub0SubscribeType",
+      "action": "activateCreateSubscriptionPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Sub0SubscribeTypeCommandCondition"
+      }
+    },
+    "Sub0AddFollowerCommandHandler": {
+      "id": "Sub0AddFollower",
+      "action": "addFollowers",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Sub0RemoveFollowerCommandHandler": {
+      "id": "Sub0RemoveFollower",
+      "action": "removeFollower",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isSub0RemoveFollowerCmdVisible"
+      }
+    },
+    "Sub0AddFollowerTableCommandHandler": {
+      "id": "Sub0AddFollowerTable",
+      "action": "addFollowersToTable",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditing"
+      }
+    },
+    "Sub0RemoveFollowerTableCommandHandler": {
+      "id": "Sub0RemoveFollowerTable",
+      "action": "removeFollowerFromTable",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditingAndNonSubscriberSelected"
+      }
+    },
+    "Sub0AddSubscriptionCommandHandler": {
+      "id": "Sub0AddSubscription",
+      "action": "addSubscription",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Sub0SaveAsSubscriptionCommandHandler": {
+      "id": "Sub0SaveAsSubscription",
+      "action": "Sub0SaveAsAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isSub0SaveAsSelected"
+      }
+    },
+    "Sub0NewsFeedFiltersCommandHandler": {
+      "id": "Sub0NewsFeedFilters",
+      "action": "openNewsFeedFiltersPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Sub0NewsFeedFiltersCmdCondition"
+      }
+    },
+    "Sub0InContextReportsCommandHandlerOverride": {
+      "id": "Awp0InContextReports",
+      "activeWhen": {
+        "condition": "conditions.Sub0HideCommandForSubscription"
+      },
+      "visibleWhen": false
+    },
+    "Sub0UnFollowSubscriptionsCommandHandler": {
+      "id": "Sub0UnFollowSubscriptions",
+      "action": "Sub0UnFollowSubscriptionsAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Sub0UnFollowSubscriptionCmdCondition"
+      }
+    },
+    "showAlertCommandHandlerWithBubble": {
+      "id": "Awp0ShowAlertWithBubble",
+      "action": "activateNotificationPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.enableAlertWihBubbleCommand"
+      }
+    },
+    "openNotificationCommandHandler": {
+      "id": "Awp0OpenLineItem",
+      "action": "openNotification",
+      "activeWhen": {
+        "condition": "conditions.enableOpenNotificationCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.enableOpenNotificationCommand"
+      }
+    }
+  },
+  "commandPlacements": {
+    "Sub0EventAddCellCmdCommandPlacement": {
+      "id": "Sub0EventAddCellCmd",
+      "uiAnchor": "aw_eventAddCellCommandAction",
+      "areas": [
+        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+      ],
+      "priority": 300,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Sub0EventRemoveCellCmdCommandPlacement": {
+      "id": "Sub0EventRemoveCellCmd",
+      "uiAnchor": "aw_eventRemoveCellCommandAction",
+      "areas": [
+        "com.siemens.splm.clientfx.ui.modelObjectListActionCommands"
+      ],
+      "priority": 300,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Sub0ShowObjectCellCommandPlacement": {
+      "id": "Sub0ShowObjectCell",
+      "uiAnchor": "aw_newsfeedShowObjectCellCommandAction",
+      "priority": 0,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Sub0SubscriptionShowObjectCellCommandPlacement": {
+      "id": "Sub0SubscriptionShowObjectCell",
+      "uiAnchor": "aw_subscriptionShowObjectCellCommandAction",
+      "priority": 0,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Sub0DeleteMessageaw_oneStepCommand": {
+      "id": "Sub0DeleteMessage",
+      "uiAnchor": "aw_rightWall",
+      "priority": 535,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Sub0AddCriteriaCommandPlacement": {
+      "id": "Sub0AddCriteria",
+      "uiAnchor": "sub0_criteriaTableCommands",
+      "priority": 0
+    },
+    "Sub0EditCriteriaCommandPlacement": {
+      "id": "Sub0EditCriteria",
+      "uiAnchor": "sub0_criteriaTableCommands",
+      "priority": 100
+    },
+    "Sub0RemoveCriteriaCommandPlacement": {
+      "id": "Sub0RemoveCriteria",
+      "uiAnchor": "sub0_criteriaTableCommands",
+      "priority": 200
+    },
+    "Sub0MoveUpCriteriaCommandPlacement": {
+      "id": "Sub0MoveUpCriteria",
+      "uiAnchor": "sub0_criteriaTableCommands",
+      "priority": 300
+    },
+    "Sub0MoveDownCriteriaCommandPlacement": {
+      "id": "Sub0MoveDownCriteria",
+      "uiAnchor": "sub0_criteriaTableCommands",
+      "priority": 400
+    },
+    "Sub0SubscribeCommandPlacement": {
+      "id": "Sub0Subscribe",
+      "uiAnchor": "aw_rightWall",
+      "priority": 90,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "Sub0TemporaryTransferNotificationCommandPlacement": {
+      "id": "Sub0TemporaryTransferNotification",
+      "uiAnchor": "aw_rightWall",
+      "priority": 280,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "Sub0SubscribeObjectTypeCommandPlacement": {
+      "id": "Sub0SubscribeType",
+      "uiAnchor": "aw_rightWall",
+      "priority": 100,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "Sub0AddFollowerCommandPlacement": {
+      "id": "Sub0AddFollower",
+      "uiAnchor": "sub0_addFollowerCommands",
+      "priority": 101
+    },
+    "Sub0RemoveFollowerCommandPlacement": {
+      "id": "Sub0RemoveFollower",
+      "uiAnchor": "sub0_addFollowerCommands",
+      "priority": 101
+    },
+    "Sub0AddFollowerTableCommandPlacement": {
+      "id": "Sub0AddFollowerTable",
+      "uiAnchor": "sub0_addFollowerCustomPanelCommands",
+      "priority": 101
+    },
+    "Sub0RemoveFollowerTableCommandPlacement": {
+      "id": "Sub0RemoveFollowerTable",
+      "uiAnchor": "sub0_addFollowerCustomPanelCommands",
+      "priority": 101
+    },
+    "Sub0AddSubscriptionCommandPlacement": {
+      "id": "Sub0AddSubscription",
+      "uiAnchor": "sub0_addSubscriptionCommands",
+      "priority": 102
+    },
+    "Sub0SaveAsSubscriptionCommandPlacement": {
+      "id": "Sub0SaveAsSubscription",
+      "uiAnchor": "aw_rightWall",
+      "priority": 640,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Sub0NewsFeedFiltersCommandPlacement": {
+      "id": "Sub0NewsFeedFilters",
+      "uiAnchor": "aw_primaryWorkArea_fnd0MySubscriptionMessages",
+      "priority": 1170
+    },
+    "Sub0UnFollowSubscriptionsCommandPlacement": {
+      "id": "Sub0UnFollowSubscriptions",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 1190
+    },
+    "showAlertGlobalToolbarWithBubble": {
+      "id": "Awp0ShowAlertWithBubble",
+      "uiAnchor": "aw_globalToolbar",
+      "relativeTo": "Awp0ChangeTheme",
+      "priority": 1
+    },
+    "showAlertUserSessionbarWithBubble": {
+      "id": "Awp0ShowAlertWithBubble",
+      "uiAnchor": "aw_userSessionbar",
+      "priority": 100
+    },
+    "openNotificationCommandPlacement": {
+      "id": "Awp0OpenLineItem",
+      "uiAnchor": "none",
+      "priority": 1
+    }
+  },
+  "actions": {
+    "Sub0EventAddCellCmdAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "Sub0UserEventsConfig.addEvent"
+          }
+        ]
+      }
+    },
+    "Sub0EventRemoveCellCmdAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "Sub0UserEventsConfig.removeEvent"
+          }
+        ]
+      }
+    },
+    "newsfeedOpenCellCommand": {
+      "actionType": "JSFunction",
+      "method": "messageOpenDelegateJS",
+      "deps": "js/awMessageService",
+      "inputData": {
+        "selectedCell": "{{commandContext.vmo}}",
+        "uidPropertyPath": "{{commandContext.vmo.uid}}",
+        "openInEditMode": false
+      }
+    },
+    "subscriptionOpenCellCommand": {
+      "actionType": "JSFunction",
+      "method": "openObject",
+      "deps": "js/Sub0SubscribeCommandPanelService",
+      "inputData": {
+        "selectedCell": "{{commandContext.vmo}}"
+      }
+    },
+    "Sub0DeleteMessageCommandAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "Sub0DeleteSubscriptionDeleteCmdEvent"
+          }
+        ]
+      }
+    },
+    "confirmSubscriptionDelete": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "confirmSingleSubscriptionDeleteEvent",
+            "condition": "ctx.mselected.length === 1"
+          },
+          {
+            "name": "confirmMultiSubscriptionDeleteEvent",
+            "condition": "ctx.mselected.length > 1"
+          }
+        ]
+      }
+    },
+    "deleteObjects": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2006-03-DataManagement",
+      "method": "deleteObjects",
+      "inputData": {
+        "objects": "{{ctx.mselected}}"
+      },
+      "outputData": {
+        "deletePartialErrors": "partialErrors"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ],
+        "failure": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "condition": "(ctx.mselected && ctx.mselected.length === 1)",
+            "message": "deleteSingleFailure"
+          },
+          {
+            "condition": "(ctx.mselected && ctx.mselected.length > 1)",
+            "message": "deleteMultipleFailure"
+          }
+        ]
+      }
+    },
+    "Sub0AddCriteriaAction": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Sub0CriteriaPanel",
+        "location": "aw_toolsAndInfo"
+      },
+      "deps": "js/commandPanel.service"
+    },
+    "openChangeOwnerPanelforSub": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Sub0ChangeOwner",
+        "location": "aw_toolsAndInfo",
+        "context": "{{commandContext}}"
+      }
+    },
+    "Sub0EditCriteriaAction": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Sub0CriteriaPanel",
+        "location": "aw_toolsAndInfo",
+        "context": "{{ctx.selected}}"
+      },
+      "deps": "js/commandPanel.service"
+    },
+    "Sub0RemoveCriteriaAction": {
+      "actionType": "JSFunction",
+      "method": "removeCriteria",
+      "inputData": {
+        "criteriaObjects": "{{ctx.sub0Criteria.criteriaObjects}}",
+        "selectedObj": "{{ctx.selected}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "subscriptionCriteriaObjects.updated"
+          }
+        ]
+      },
+      "deps": "js/awSubscriptionCriteriaTableService"
+    },
+    "Sub0MoveUpCriteriaAction": {
+      "actionType": "JSFunction",
+      "method": "moveCriteria",
+      "inputData": {
+        "criteriaObjects": "{{ctx.sub0Criteria.criteriaObjects}}",
+        "selectedObj": "{{ctx.selected}}",
+        "eventType": "{{ctx.sub0Criteria.eventType}}",
+        "isMoveUp": true
+      },
+      "events": {
+        "success": [
+          {
+            "name": "subscriptionCriteriaObjects.updated"
+          }
+        ]
+      },
+      "deps": "js/awSubscriptionCriteriaTableService"
+    },
+    "Sub0MoveDownCriteriaAction": {
+      "actionType": "JSFunction",
+      "method": "moveCriteria",
+      "inputData": {
+        "criteriaObjects": "{{ctx.sub0Criteria.criteriaObjects}}",
+        "selectedObj": "{{ctx.selected}}",
+        "eventType": "{{ctx.sub0Criteria.eventType}}",
+        "isMoveUp": false
+      },
+      "events": {
+        "success": [
+          {
+            "name": "subscriptionCriteriaObjects.updated"
+          }
+        ]
+      },
+      "deps": "js/awSubscriptionCriteriaTableService"
+    },
+    "Sub0SaveAsAction": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Sub0SaveAsSubscription",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "Sub0TemporaryTransferAction": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Sub0TemporaryTransferNotification",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "activateCreateSubscriptionPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Sub0CreateSubscription",
+        "location": "aw_toolsAndInfo",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "addFollowersToTable": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Sub0AddFollower",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "removeFollowerFromTable": {
+      "actionType": "JSFunction",
+      "method": "removeFollower",
+      "inputData": {
+        "followerObjects": "{{ctx.sub0Follower.followerObjects}}",
+        "selectedObj": "{{ctx.selected}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "subscriptionFollowerObjects.updated"
+          }
+        ]
+      },
+      "deps": "js/awSubscriptionFollowerTableService"
+    },
+    "addFollowers": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "addFollowersToCreatePanel",
+          "condition": "!conditions.isTempNotifierPanel"
+        },
+        {
+          "action": "addFollowersToTempNotifierPanel",
+          "condition": "conditions.isTempNotifierPanel"
+        }
+      ]
+    },
+    "addFollowersToTempNotifierPanel": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.activeState}}",
+        "value": {
+          "activeView": "AwPeoplePicker"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "addFollowersToCreatePanel": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.sharedData}}",
+        "value": {
+          "activeView": "AwPeoplePicker"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "removeFollower": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "sub0RemoveFollowerCmdActionEvent"
+          }
+        ]
+      }
+    },
+    "addSubscription": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.sharedData}}",
+        "value": {
+          "activeView": "Sub0CreateSubscriptionSub",
+          "prePanelId": "Sub0SubscribeSub"
+        }
+      },
+      "events": {
+        "success": [
+          {
+            "name": "Sub0CreateSubscriptionSub.updateTitleLink"
+          }
+        ]
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "openNewsFeedFiltersPanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Sub0NewsFeedFilters",
+        "location": "aw_navigation"
+      }
+    },
+    "Sub0UnFollowSubscriptionsAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "unFollowSingleSubscriptionConfirmation",
+            "condition": "ctx.mselected.length === 1"
+          },
+          {
+            "name": "unFollowMultipleSubscriptionsConfirmation",
+            "condition": "ctx.mselected.length > 1"
+          }
+        ]
+      }
+    },
+    "unFollowSubscriptions": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "deleteSubscriptionsEvent",
+            "condition": "ctx.locationContext['ActiveWorkspace:SubLocation'] === 'com.siemens.splm.client.subscription.follow.Subscriptions'"
+          },
+          {
+            "name": "unsubscribeSubscriptionsEvent",
+            "condition": "ctx.locationContext['ActiveWorkspace:SubLocation'] === 'com.siemens.splm.client.subscription.follow.FollowedSubscriptions'"
+          }
+        ]
+      }
+    },
+    "unsubscribeSubscriptions": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-Notification-2015-10-SubscriptionManagement",
+      "method": "unsubscribe",
+      "inputData": {
+        "subscriptions": "{{ctx.mselected}}"
+      },
+      "outputData": {
+        "unFollowPartialErrors": "ServiceData.partialErrors"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ],
+        "failure": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "message": "unFollowMultipleSubscriptionsFailureMessage"
+          }
+        ]
+      }
+    },
+    "deleteSubscriptions": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2006-03-DataManagement",
+      "method": "deleteObjects",
+      "inputData": {
+        "objects": "{{ctx.mselected}}"
+      },
+      "outputData": {
+        "unFollowPartialErrors": "partialErrors"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ],
+        "failure": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "message": "unFollowMultipleSubscriptionsFailureMessage"
+          }
+        ]
+      }
+    },
+    "openNotification": {
+      "actionType": "Navigate",
+      "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+      "navigationParams": {
+        "uid": "{{commandContext.object.uid}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "NotificationMessage.markRead"
+          }
+        ]
+      }
+    },
+    "activateNotificationPanelOne": {
+      "actionType": "popup",
+      "inputData": {
+        "options": {
+          "preset": "balloon",
+          "view": "showAlert",
+          "detachMode": true,
+          "resizeToClose": true,
+          "whenParentScrolls": "close",
+          "placement": "right-end",
+          "hasArrow": true,
+          "arrowOptions": {
+            "alignment": "center",
+            "shift": 5
+          },
+          "width": 300,
+          "height": 300
+        }
+      },
+      "outputData": {
+        "popupId": "id"
+      }
+    },
+    "activateNotificationPanelTwo": {
+      "actionType": "JSFunction",
+      "method": "registerCtx",
+      "inputData": {
+        "name": "alertPopupId",
+        "value": "{{data.popupId}}"
+      },
+      "deps": "js/appCtxService"
+    },
+    "activateNotificationPanel": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "activateNotificationPanelOne"
+        },
+        {
+          "action": "activateNotificationPanelTwo"
+        }
+      ]
+    }
+  },
+  "onEvent": [
+    {
+      "eventId": "Sub0DeleteSubscriptionDeleteCmdEvent",
+      "action": "confirmSubscriptionDelete"
+    },
+    {
+      "eventId": "confirmSingleSubscriptionDeleteEvent",
+      "message": "confirmSingleDeleteMessage"
+    },
+    {
+      "eventId": "confirmMultiSubscriptionDeleteEvent",
+      "message": "confirmMultiDeleteMessage"
+    },
+    {
+      "eventId": "unFollowMultipleSubscriptionsConfirmation",
+      "message": "unFollowMultipleSubscriptionsConfirmationMessage"
+    },
+    {
+      "eventId": "deleteSubscriptionsEvent",
+      "action": "deleteSubscriptions"
+    },
+    {
+      "eventId": "unsubscribeSubscriptionsEvent",
+      "action": "unsubscribeSubscriptions"
+    }
+  ],
+  "messages": {
+    "confirmSingleDeleteMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.deleteSingleConfirmation}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.object_string.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "Cancel",
+          "text": "{{i18n.cancel}}"
+        },
+        {
+          "option": "Delete",
+          "text": "{{i18n.delete}}",
+          "action": "deleteObjects"
+        }
+      ]
+    },
+    "confirmMultiDeleteMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.deleteMultipleConfirmation}}",
+      "messageTextParams": [
+        "{{ctx.mselected.length}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "Cancel",
+          "text": "{{i18n.cancel}}"
+        },
+        {
+          "option": "Delete",
+          "text": "{{i18n.delete}}",
+          "action": "deleteObjects"
+        }
+      ]
+    },
+    "deleteSingleFailure": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.deleteFailureMsg}}",
+      "messageTextParams": [
+        "{{ctx.mselected[0].props.object_string.uiValues[0]}}",
+        "{{data.deletePartialErrors[0].errorValues[0].message}}"
+      ]
+    },
+    "deleteMultipleFailure": {
+      "expression": {
+        "successCount": "ctx.mselected.length - data.deletePartialErrors.length"
+      },
+      "messageType": "ERROR",
+      "messageKey": "deleteNotyError",
+      "messageTextParams": [
+        "{{expression.successCount}}",
+        "{{ctx.mselected.length}}"
+      ],
+      "messageData": {
+        "partialErrors": "{{data.deletePartialErrors}}"
+      },
+      "message": {
+        "messageParam": {
+          "name": "deleteSuccessMsg"
+        },
+        "partialError": {
+          "name": "deleteFailureMsg"
+        }
+      }
+    },
+    "unFollowMultipleSubscriptionsConfirmationMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.unFollowMultipleSubscriptionsConfirmationMsg}}",
+      "messageTextParams": [
+        "{{ctx.mselected.length}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "Cancel",
+          "text": "{{i18n.cancel}}"
+        },
+        {
+          "option": "unFollow",
+          "text": "{{i18n.unFollow}}",
+          "action": "unFollowSubscriptions"
+        }
+      ]
+    },
+    "unFollowMultipleSubscriptionsFailureMessage": {
+      "expression": {
+        "successCount": "ctx.mselected.length - data.unFollowPartialErrors.length"
+      },
+      "messageType": "ERROR",
+      "messageKey": "unFollowSubscriptionsError",
+      "messageTextParams": [
+        "{{expression.successCount}}",
+        "{{ctx.mselected.length}}"
+      ],
+      "messageData": {
+        "partialErrors": "{{data.unFollowPartialErrors}}"
+      },
+      "message": {
+        "messageParam": {
+          "name": "unFollowMultipleSubscriptionsSuccessfulMsg"
+        },
+        "partialError": {
+          "name": "unFollowSubscriptionFailureMsg"
+        }
+      }
+    }
+  },
+  "conditions": {
+    "isTempNotifierPanel": {
+      "expression": "ctx.activeToolsAndInfoCommand.commandId==='Sub0TemporaryTransferNotification'"
+    },
+    "Sub0DeleteSubscriptionCommandCondition": {
+      "expression": "ctx.visibleServerCommands.Sub0DeleteSubscription && ctx.selected.type==='ImanSubscription'"
+    },
+    "Sub0DeleteMessageCommandCondition": {
+      "expression": "ctx.selected.type==='Fnd0Message'"
+    },
+    "subscriptionChangeOwnerCommandActiveCondition": {
+      "expression": "ctx.selected.type==='ImanSubscription' && conditions.Awp0ChangeOwnerVisibleCondition"
+    },
+    "isEditing": {
+      "expression": "ctx.editInProgress"
+    },
+    "isEditingAndNonSystemCriteriaSelected": {
+      "expression": "ctx.editInProgress && ctx.selected.type === 'Sub0Criteria' && ( ( ctx.sub0Criteria.eventType !== '__Attach' && ctx.sub0Criteria.eventType !== '__Attained_Release_Status' && ctx.sub0Criteria.eventType !== '__Item_Rev_Create' ) || ctx.selected.criteriaId !== 1 )"
+    },
+    "isEditingAndNonSubscriberSelected": {
+      "expression": "ctx.editInProgress && ctx.selected.type === 'Sub0Follower' && ctx.sub0Follower.subscriber!==ctx.selected.props.handler_parameters.dbValue"
+    },
+    "isEditingAndNotImanSubscriptionForDelete": {
+      "expression": "ctx.editInProgress && ctx.sub0Criteria.eventType !== '__Delete'"
+    },
+    "isSub0RemoveFollowerCmdVisible": {
+      "expression": "commandContext.selectionData.selected.length>0 && commandContext.selectionData.selected[0].type==='User' && ctx.activeToolsAndInfoCommand.commandId !== 'Sub0TemporaryTransferNotification'"
+    },
+    "Sub0SubscribeCommandCondition": {
+      "expression": "conditions.isFollowVisible && !conditions.isFollowSubLocation"
+    },
+    "isFollowVisible": {
+      "expression": "ctx.visibleServerCommands.Sub0Subscribe || ctx.selected.modelType.typeHierarchyArray.indexOf( 'Awb0Element' ) > -1"
+    },
+    "Sub0SubscribeTypeCommandCondition": {
+      "expression": "conditions.isFollowSubLocation"
+    },
+    "isFollowSubLocation": {
+      "expression": "ctx.locationContext['ActiveWorkspace:SubLocation'] === 'com.siemens.splm.client.subscription.follow.Subscriptions'"
+    },
+    "isSub0SaveAsSelected": {
+      "expression": "(ctx.selected.props.subscriber.uiValues[0] !== ctx.userSession.props.user.uiValues[0]) && ctx.selected.type=== 'ImanSubscription' && ctx.mselected.length === 1"
+    },
+    "isSub0TempTransferNotificationVisible": {
+      "expression": "ctx.selected.type==='ImanSubscription' && ctx.visibleServerCommands.Sub0TemporaryTransferNotification"
+    },
+    "Sub0NewsFeedFiltersCmdCondition": {
+      "expression": "(commandContext.searchState.totalFound > 0 || commandContext.searchState.criteria.searchString) && commandContext.searchState.provider === 'Sub0NotificationProvider' && commandContext.clientScopeURI==='fnd0MySubscriptionMessages'"
+    },
+    "Sub0HideCommandForSubscription": {
+      "expression": "ctx.selected.type === 'ImanSubscription' || ctx.pselected.type === 'ImanSubscription'"
+    },
+    "Sub0UnFollowSubscriptionCmdCondition": {
+      "expression": "(conditions.isFollowSubLocation || conditions.isAddedAsFollowerSubLocation) && (ctx.mselected.length > 1 || ctx.selected.props.subscriber.dbValues[0] === ctx.userSession.props.user.dbValues[0] || ctx.selected.props.handler_parameters.dbValues.includes(ctx.userSession.props.user_id.dbValues[0]))"
+    },
+    "isAddedAsFollowerSubLocation": {
+      "expression": "ctx.locationContext['ActiveWorkspace:SubLocation'] === 'com.siemens.splm.client.subscription.follow.FollowedSubscriptions'"
+    },
+    "enableAlertWihBubbleCommand": {
+      "expression": "(ctx.unreadMessageCount==='' || ctx.unreadMessageCount>= 0 ) && ctx.preferences.AWS_Notifications_Polling_Interval && ctx.preferences.AWS_Notifications_Polling_Interval[0] > 0"
+    },
+    "enableOpenNotificationCommand": {
+      "expression": "commandContext.group.groupName!=='DOCMGMT' &&  commandContext.group.groupName!=='REQ_MAN' && commandContext.group.groupName!=='COMPARE' && commandContext.group.groupName!=='CLONE_CONTENT_SUCCESSFUL'&& commandContext.group.groupName!=='TCSIM'&& commandContext.group.groupName!=='CONTMGMT' && commandContext.group.groupName!=='CBA' && commandContext.group.groupName!=='GENERATE_ROLLUP_REPORT_SUCCESS' && commandContext.group.groupName!=='BOM' && commandContext.group.groupName!=='ACTIVE_COLLABORATION' && commandContext.group.groupName!=='SOLUTION_VARIANT' && commandContext.group.groupName!=='MBM' && commandContext.group.groupName!=='ACE'"
+    },
+    "enableAlertWithBubbleCountTemplate": {
+      "expression": "ctx.unreadMessageCount>0"
+    }
+  },
+  "i18n": {
+    "addEventTitle": [
+      "SubscriptionMessages"
+    ],
+    "removeEventTitle": [
+      "SubscriptionMessages"
+    ],
+    "deleteMessagesTitle": [
+      "SubscriptionMessages"
+    ],
+    "deleteSubscriptionsTitle": [
+      "SubscriptionMessages"
+    ],
+    "deleteSuccessMsg": [
+      "SubscriptionMessages"
+    ],
+    "deleteFailureMsg": [
+      "SubscriptionMessages"
+    ],
+    "deleteSingleConfirmation": [
+      "SubscriptionMessages"
+    ],
+    "deleteMultipleConfirmation": [
+      "SubscriptionMessages"
+    ],
+    "cancel": [
+      "SubscriptionMessages"
+    ],
+    "delete": [
+      "SubscriptionMessages"
+    ],
+    "followCondAddText": [
+      "SubscriptionMessages"
+    ],
+    "followCondEditText": [
+      "SubscriptionMessages"
+    ],
+    "removeCriteriaText": [
+      "SubscriptionMessages"
+    ],
+    "moveUpCriteriaText": [
+      "SubscriptionMessages"
+    ],
+    "moveDownCriteriaText": [
+      "SubscriptionMessages"
+    ],
+    "followTypeCommandTitle": [
+      "SubscriptionMessages"
+    ],
+    "addSubscriptionCmd": [
+      "SubscriptionMessages"
+    ],
+    "removeFollowerCmd": [
+      "SubscriptionMessages"
+    ],
+    "addFollowerCmd": [
+      "SubscriptionMessages"
+    ],
+    "followCommandTitle": [
+      "SubscriptionMessages"
+    ],
+    "open": [
+      "SubscriptionMessages"
+    ],
+    "saveAsTitle": [
+      "SubscriptionMessages"
+    ],
+    "transferNotification": [
+      "SubscriptionMessages"
+    ],
+    "createMultiObjectSubscriptionConfirmation": [
+      "SubscriptionMessages"
+    ],
+    "proceed": [
+      "SubscriptionMessages"
+    ],
+    "nonSubscribableObjectMessage": [
+      "SubscriptionMessages"
+    ],
+    "multiObjectSelectionLimit": [
+      "SubscriptionMessages"
+    ],
+    "aw_eventAddCellCommandAction": [
+      "SubscriptionMessages"
+    ],
+    "aw_eventRemoveCellCommandAction": [
+      "SubscriptionMessages"
+    ],
+    "aw_newsfeedShowObjectCellCommandAction": [
+      "SubscriptionMessages"
+    ],
+    "aw_subscriptionShowObjectCellCommandAction": [
+      "SubscriptionMessages"
+    ],
+    "sub0_criteriaTableCommands": [
+      "SubscriptionMessages"
+    ],
+    "sub0_addSubscriptionCommands": [
+      "SubscriptionMessages"
+    ],
+    "searchFiltersTitle": [
+      "SearchMessages"
+    ],
+    "unFollow": [
+      "SubscriptionMessages"
+    ],
+    "unFollowMultipleSubscriptionsConfirmationMsg": [
+      "SubscriptionMessages"
+    ],
+    "Sub0EventAddCellCmdDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0EventRemoveCellCmdDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0ShowObjectCellDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0SubscriptionShowObjectCellDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0DeleteMessageDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0AddCriteriaDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0EditCriteriaDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0MoveUpCriteriaDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0MoveDownCriteriaDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0TemporaryTransferNotificationDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0SubscribeTypeDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0AddFollowerDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0RemoveFollowerDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0AddFollowerTableDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0AddSubscriptionDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0SaveAsSubscriptionDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0NewsFeedFiltersDesc": [
+      "SearchMessages"
+    ],
+    "Sub0SubscribeDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0RemoveCriteriaDesc": [
+      "SubscriptionMessages"
+    ],
+    "Sub0UnFollowSubscriptionsDesc": [
+      "SubscriptionMessages"
+    ],
+    "unFollowMultipleSubscriptionsSuccessfulMsg": [
+      "SubscriptionMessages"
+    ],
+    "unFollowSubscriptionFailureMsg": [
+      "SubscriptionMessages"
+    ],
+    "AlertCmdTitle": [
+      "NotificationMessages"
+    ],
+    "aw_globalToolbar": [
+      "NotificationMessages"
+    ],
+    "Awp0ShowAlertWithBubbleDesc": [
+      "NotificationMessages"
+    ]
+  },
+  "functions": {
+    "getOpenHookFunction": {
+      "functionName": "getHookFunction",
+      "parameters": [
+        "open"
+      ]
+    },
+    "getCloseHookFunction": {
+      "functionName": "getHookFunction",
+      "parameters": [
+        "close"
+      ]
+    }
+  },
+  "preferences": [
+    "AWS_Notifications_Polling_Interval"
+  ],
+  "ctx": {
+    "unreadMessageCount": {
+      "type": "INTEGER"
+    }
+  }
+}

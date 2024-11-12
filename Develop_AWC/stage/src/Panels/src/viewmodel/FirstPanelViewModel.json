@@ -1,0 +1,39 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "showExample": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        }
+    },
+    "data": {
+        "check": {
+            "displayName": "{{i18n.checkBoxName}}",
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "vertical": true,
+            "dbValue": false
+        },
+        "text": {
+            "type": "STRING",
+            "uiValue": "{{i18n.textValue}}"
+        }
+    },
+    "i18n": {
+        "FirstPanelTitle": [ "PanelsMessages" ],
+        "header": [ "PanelsMessages" ],
+        "body": [ "PanelsMessages" ],
+        "footer": [ "PanelsMessages" ],
+        "save": [ "PanelsMessages" ],
+        "checkBoxName": [ "PanelsMessages" ],
+        "textValue": [ "PanelsMessages" ]
+    }
+}

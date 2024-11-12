@@ -1,0 +1,7 @@
+{
+    "fileAttachTitle": "Pièces jointes",
+    "dropHere": "Déposer ici",
+    "chooseFile": "Choisir un fichier",
+    "removeFileBtnTooltip": "Supprimer le fichier",
+    "failureToAttachFiles": "\"{0}\" n'a pas été ajouté car le type de fichier n'est pas autorisé comme pièce jointe."
+}

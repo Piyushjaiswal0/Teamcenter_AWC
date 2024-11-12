@@ -1,0 +1,19 @@
+<div class="{{((props.subPanelContext.addObject.showDataSetUploadPanel || props.addPanelState.isDatasetCreate) && data.activeTab.tabKey == 'new') || (data.activeTab.tabKey == 'search') ? 'sw-column aw-create-fillAvailable' : 'sw-column' }}">
+    <div class='aw-xrt-tabsContainer aw-create-tabsContainer'  show-when="( !conditions.isAddACopy && conditions.isMobileMode ) || conditions.nonMobileMode">
+        <aw-tab-container tab-container-model="data.tabModels" exist-when="data.tabModels" callback="data.tabApiCallback" tab-set-id='addPanel'>
+            <aw-tab tab-model='tab' aw-repeat='tab: data.tabModels'></aw-tab>
+        </aw-tab-container>
+    </div>
+    <div class="{{((props.subPanelContext.addObject.showDataSetUploadPanel || props.addPanelState.isDatasetCreate) && data.activeTab.tabKey == 'new') || (data.activeTab.tabKey == 'search') ? 'sw-row aw-create-fillAvailable' : 'sw-row' }}"  show-when="( !conditions.isAddACopy && conditions.isMobileMode ) || conditions.nonMobileMode">
+        <div class="{{((props.subPanelContext.addObject.showDataSetUploadPanel || props.addPanelState.isDatasetCreate) && data.activeTab.tabKey == 'new') || (data.activeTab.tabKey == 'search') ? 'sw-column flex-auto aw-create-fillAvailable' : 'sw-column flex-auto' }}" >
+            <aw-command-sub-panel panel-id="{{data.activeTab.view}}" exist-when="data.activeTab" sub-panel-context="subPanelContext"></aw-command-sub-panel>
+        </div>
+        <aw-splitter exist-when="conditions.isAddACopy && conditions.nonMobileMode"></aw-splitter>
+        <div class="sw-column flex-auto" exist-when="conditions.isAddACopy && conditions.nonMobileMode">
+            <aw-command-sub-panel panel-id="AwAddACopySub" sub-panel-context="subPanelContext"></aw-command-sub-panel>
+        </div>
+    </div>
+</div>
+<div class='aw-layout-flexColumn' exist-when="conditions.isAddACopy && conditions.isMobileMode">
+    <aw-command-sub-panel panel-id="AwAddACopySub" sub-panel-context="subPanelContext"></aw-command-sub-panel>
+</div>

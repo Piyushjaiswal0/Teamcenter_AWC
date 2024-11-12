@@ -1,0 +1,8 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+	<path class="aw-theme-iconHomeOutline" fill="#464646" d="M48,32c-0.1,0-0.2,0-0.3,0L30.4,1.8l-1.7,1l16.9,29.4C37.9,33.4,32,40,32,48c0,1,0.1,2,0.3,3H2.7l16.4-28.6
+		l-1.7-1L0.1,51.5c-0.2,0.3-0.2,0.7,0,1S0.6,53,1,53h31.8c2.1,6.4,8.1,11,15.2,11c8.8,0,16-7.2,16-16S56.8,32,48,32z M48,62
+		c-7.7,0-14-6.3-14-14s6.3-14,14-14s14,6.3,14,14S55.7,62,48,62z"/>
+<circle class="aw-theme-iconHomeOutline" fill="#464646" cx="48" cy="55" r="1"/>
+	<rect x="47" y="38" class="aw-theme-iconHomeOutline" fill="#464646" width="2" height="14"/>
+</svg>

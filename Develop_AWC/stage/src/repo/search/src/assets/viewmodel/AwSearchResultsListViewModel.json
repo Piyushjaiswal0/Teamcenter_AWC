@@ -1,0 +1,273 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "initSearchListView": {
+            "actionType": "JSFunction",
+            "method": "initSearchListView",
+            "inputData": {
+                "subPanelContext": "{{subPanelContext}}",
+                "provider": "{{data.dataProviders.searchListDataProvider}}"
+            },
+            "outputData": {
+                "searchListDataProvider": ""
+            },
+            "deps": "js/awSearchService"
+        },
+        "initDataProvider": {
+            "actionType": "dataProvider",
+            "method": "searchListDataProvider"
+        },
+        "groupObjectsByProperties": {
+            "actionType": "JSFunction",
+            "method": "groupObjectsByProperties",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "provider": "{{data.searchListDataProvider}}"
+            },
+            "deps": "js/searchColorDecoratorService"
+        },
+        "toggleColors": {
+            "actionType": "JSFunction",
+            "method": "groupObjectsByProperties",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "provider": "{{data.searchListDataProvider}}",
+                "toggleColors": true
+            },
+            "deps": "js/searchColorDecoratorService"
+        },
+        "loadSearchData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "attributesToInflate": [
+                        "object_name",
+                        "checked_out_user",
+                        "object_desc",
+                        "release_status_list",
+                        "fnd0InProcess"
+                    ],
+                    "internalPropertyName": "{{function:getInternalPropertyName}}",
+                    "maxToLoad": "{{function:getDefaultPageSize}}",
+                    "maxToReturn": "{{function:getDefaultPageSize}}",
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "searchCriteria": "{{subPanelContext.searchState.criteria}}",
+                    "searchFilterFieldSortType": "{{subPanelContext.searchState.sortType}}",
+                    "cursor": {
+                        "startIndex": "{{data.searchListDataProvider.startIndex}}",
+                        "endIndex": "{{data.searchListDataProvider.endIndex}}",
+                        "startReached": "{{data.searchListDataProvider.startReached}}",
+                        "endReached": "{{data.searchListDataProvider.endReached}}"
+                    },
+                    "searchSortCriteria": "{{function:getSearchSortCriteria}}",
+                    "searchFilterMap6": "{{function:processInputSearchFilterMap}}"
+                },
+                "inflateProperties": false,
+                "noServiceData": false
+            },
+            "policy": {
+                "types": "{{function:populatePropetyPolicy}}",
+                "override":"{{props.subPanelContext.searchState.policy.override}}"
+            },
+            "outputData": {
+                "totalFound": "{{function:getActualTotalFound}}",
+                "totalLoaded": "totalLoaded",
+                "searchResults": "{{function:getVMOsWithColoring}}",
+                "cursor": "cursor",
+                "selectFirstObject": "{{function:processSelectionOfFirstObject}}",
+                "highlighter": "{{function:getHighlightKeywords}}",
+                "thresholdExceededMessage": "{{function:getThresholdDisplayMessage}}",
+                "output": "{{function:processOutput}}"
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "message": "loadSearchDataFailure"
+                } ]
+            },
+            "deps": "js/awSearchService"
+        },
+        "selectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.searchListDataProvider.selectionModel}}",
+                "newSelection": "{{data.searchResults[0].uid}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "unSelectFirstItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "{{data.searchListDataProvider.selectionModel}}",
+                "newSelection": ""
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "searchListViewLoadBatchJob": {
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "loadSearchData",
+                    "condition": "conditions.populatedSearchString"
+                },
+                {
+                    "action": "selectFirstItem",
+                    "condition": "data.selectFirstObject"
+                },
+                {
+                    "action": "unSelectFirstItem",
+                    "condition": "conditions.forceChart"
+                }
+            ]
+        }
+    },
+
+    "functions": {
+        "processSelectionOfFirstObject": {
+            "functionName": "processSelectionOfFirstObject",
+            "parameters": [
+                "{{subPanelContext.searchState.selectFirstObjectPreference}}"
+            ]
+        },
+        "processOutput": {
+            "functionName": "processOutput",
+            "parameters": [
+                "{{data}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getDefaultPageSize": {
+            "functionName": "getDefaultPageSize",
+            "parameters": [
+                "{{ctx.preferences.AWC_DefaultPageSize}}"
+            ]
+        },
+        "getHighlightKeywords": {
+            "functionName": "getHighlightKeywords",
+            "parameters": [
+                "{{data}}"
+            ]
+        },
+        "getInternalPropertyName": {
+            "functionName": "getInternalPropertyName",
+            "parameters": [
+                "{{subPanelContext.searchState.provider}}"
+            ]
+        },
+        "getSearchSortCriteria": {
+            "functionName": "getSearchSortCriteria",
+            "parameters": [
+                "{{data.columnProviders.clientScopeUI.sortCriteria}}",
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getVMOsWithColoring": {
+            "functionName": "getVMOsWithColoring",
+            "parameters": [
+                "{{subPanelContext.searchState.showChartColorBars}}"
+            ]
+        },
+        "populatePropetyPolicy": {
+            "functionName": "populatePropetyPolicy",
+            "parameters": [
+                "{{props}}"
+            ]
+        },
+        "getThresholdDisplayMessage": {
+            "functionName": "getThresholdDisplayMessage",
+            "parameters": [
+                "{{subPanelContext.searchState.criteria.searchString}}"
+            ]
+        },
+        "processInputSearchFilterMap": {
+            "functionName": "processInputSearchFilterMap",
+            "parameters": [
+                "{{subPanelContext.searchState}}"
+            ]
+        },
+        "getActualTotalFound": {
+            "functionName": "getActualTotalFound",
+            "parameters": [
+                "{{subPanelContext.searchState}}"
+            ]
+        }
+    },
+    "dataProviders": {
+        "searchListDataProvider": {
+            "action": "searchListViewLoadBatchJob",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}",
+                "selectionData": "{{subPanelContext.selectionData}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+    "conditions": {
+        "populatedSearchString": {
+            "expression": "subPanelContext.searchState.criteria && subPanelContext.searchState.criteria.searchString && subPanelContext.searchState.criteria.searchString.length > 0"
+        },
+        "forceChart": {
+            "expression": "subPanelContext.searchState && subPanelContext.searchState.forceChart"
+        },
+        "checkTotalLoadStatus": {
+            "expression": "subPanelContext.searchState.totalFound !== 0 || subPanelContext.searchState.totalFound === undefined"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "initSearchListView",
+        "onUpdate": [ {
+                "action": "initDataProvider",
+                "observers": [
+                    "props.subPanelContext.searchState.criteriaJSONString",
+                    "props.subPanelContext.searchState.filterString"
+                ]
+            },
+            {
+                "action": "groupObjectsByProperties",
+                "observers": [
+                    "props.subPanelContext.searchState.chartProvider"
+                ]
+            },
+            {
+                "action": "toggleColors",
+                "observers": [
+                    "props.subPanelContext.searchState.colorToggle"
+                ]
+            }
+        ]
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "onEvent": [],
+    "i18n": {
+        "noFiltersFound": [
+            "SearchMessages"
+        ],
+        "noResultsFound": [
+            "SearchMessages"
+        ],
+        "noResultsSearchAreaKeywordHint": [
+            "SearchMessages"
+        ],
+        "nothingFound": [
+            "SearchMessages"
+        ],
+        "noCriteriaKeywordHint": [
+            "SearchMessages"
+        ]
+    },
+    "messages": {
+        "loadSearchDataFailure": {
+            "messageType": "ERROR",
+            "messageText": "{{errorCode}}"
+        }
+    }
+}

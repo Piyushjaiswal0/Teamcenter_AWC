@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "Имя пользователя",
+    "PASSWORD_PLACEHOLDER": "Пароль",
+    "SIGN_IN_TEXT": "Вход",
+    "LOGIN_TEXT": "Регистрация",
+    "LOGGING_IN_TEXT": "Регистрация",
+    "UNABLE_TO_CONNECT": "Не удалось выполнить вход, возникла внутренняя ошибка.",
+    "VERSION_TEXT": "Версия",
+    "COPYRIGHT_DATE_TEXT": "Unpublished work.",
+    "COPYRIGHT_MESSAGE": "This material contains trade secrets or otherwise confidential information owned by Siemens Industry Software Inc. or its affiliates (collectively, “Siemens”), or its licensors. Access to and use of this information is strictly limited as set forth in the Customer’s applicable agreements with Siemens."
+}

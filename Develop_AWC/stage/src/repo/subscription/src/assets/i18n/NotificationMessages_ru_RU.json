@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Оповещения",
+    "subManAppLabel": "Лента новостей",
+    "clear": "Очистить",
+    "noNotificationMsg": "Нет новых уведомлений",
+    "multipleObjectsMsg": "\"{0}\" и еще \"{1}\"",
+    "aw_globalToolbar": "Глобальная панель инструментов",
+    "Awp0ShowAlertWithBubbleDesc": "Просмотр новых предупреждений."
+}

@@ -1,0 +1,106 @@
+{
+    "types": [{
+        "name": "ImanSubscription",
+        "properties": [{
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "event_type"
+        },
+        {
+            "name": "fnd0EventHandlers",
+            "modifiers": [ {
+                "name": "withProperties",
+                "Value": "true"
+            } ]
+        },
+        {
+            "name": "logic_operators"
+        }, {
+            "name": "math_operators"
+        }, {
+            "name": "attribute_names"
+        }, {
+            "name": "attribute_values"
+        }, {
+            "name": "handler_parameters"
+        }, {
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "subscriber"
+        }, {
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "target"
+        }]
+    }, {
+        "name": "ImanType",
+        "properties": [{
+            "name": "type_name"
+        }]
+    },
+    {
+        "name":"ImanActionHandler",
+        "properties": [ {
+            "name": "handler_id"
+        } ]
+    },
+     {
+        "name": "Fnd0Message",
+        "properties": [{
+            "name": "fnd0Subject"
+        }, {
+            "name": "fnd0Priority"
+        }, {
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "fnd0EventType"
+        }, {
+            "name": "fnd0SentDate"
+        }, {
+            "name": "fnd0Receiver"
+        }, {
+            "name": "fnd0MessageBody"
+        }, {
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "fnd0TargetObject"
+        }, {
+            "name": "fnd0MessageReadFlag"
+        }, {
+            "modifiers": [{
+                "Value": "true",
+                "name": "withProperties"
+            }],
+            "name": "fnd0RelatedObjects"
+        }]
+    }, {
+        "name": "User",
+        "properties": [{
+            "name": "user_id"
+        }, {
+            "name": "user_name"
+        }]
+    }, {
+        "name": "ImanEventType",
+        "properties": [{
+            "name": "eventtype_id"
+        }, {
+            "name": "fnd0eventtype_name"
+        }]
+    }, {
+        "name": "TaskType",
+        "properties": [{
+            "name": "tasktype_name"
+        }]
+    }]
+}

@@ -1,0 +1,17 @@
+<aw-command-panel caption="i18n.Organization" context="subPanelContext">
+    <aw-panel-body>
+        <div class="sw-column aw-create-fillAvailable">
+            <!-- sidenavMode is passed for panel to check whether mode is mobile or non mobile -->
+            <aw-organization-tree selection-model="selectionModels.orgTreeSelectionModel"
+            selection-data="data.selectionData"
+            sub-panel-context="{sidenavMode: subPanelContext.sidenavMode}"
+            search-state="fields.searchState">
+            </aw-organization-tree>
+        </div>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="addSelectedTeamMembers" visible-when="awPanelBody.$valid && conditions.isValidToShowAddTeamMembersButton">
+            <aw-i18n>i18n.addTeamMembers</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

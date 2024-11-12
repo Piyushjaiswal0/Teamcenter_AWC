@@ -1,0 +1,39 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="1.818" y1="20.818" x2="8.182" y2="27.182" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2284" stop-color="#fafafa"/>
+      <stop offset="0.4881" stop-color="#ededed"/>
+      <stop offset="0.7621" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4-2" x1="1.818" y1="39.818" x2="8.182" y2="46.182" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-3" x1="1.818" y1="1.818" x2="8.182" y2="8.182" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-4" x1="20.818" y1="20.818" x2="27.182" y2="27.182" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-5" x1="20.818" y1="39.818" x2="27.182" y2="46.182" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-6" x1="20.818" y1="1.818" x2="27.182" y2="8.182" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="39.818" y1="20.818" x2="46.182" y2="27.182" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="39.818" y1="39.818" x2="46.182" y2="46.182" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="39.818" y1="1.818" x2="46.182" y2="8.182" xlink:href="#Dark_Blue_Grad"/>
+  </defs>
+  <line x1="5" y1="5" x2="5" y2="43" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="5" y1="24" x2="24" y2="24" fill="none" stroke="#969696" stroke-linejoin="round" stroke-width="2"/>
+  <circle cx="5" cy="24" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4)"/>
+  <circle cx="5" cy="43" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4-2)"/>
+  <circle cx="5" cy="5" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4-3)"/>
+  <line x1="24" y1="5" x2="24" y2="43" fill="none" stroke="#969696" stroke-miterlimit="10" stroke-width="2"/>
+  <line x1="24" y1="24" x2="43" y2="24" fill="none" stroke="#147391" stroke-linejoin="round" stroke-width="2"/>
+  <circle cx="24" cy="24" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4-4)"/>
+  <circle cx="24" cy="43" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4-5)"/>
+  <circle cx="24" cy="5" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4-6)"/>
+  <line x1="43" y1="5" x2="43" y2="43" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="2"/>
+  <circle cx="43" cy="24" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <circle cx="43" cy="43" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <circle cx="43" cy="5" r="4.5" stroke="#464646" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-3)"/>
+</svg>

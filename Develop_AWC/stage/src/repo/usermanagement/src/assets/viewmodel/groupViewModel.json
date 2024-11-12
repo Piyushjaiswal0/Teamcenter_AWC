@@ -1,0 +1,274 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-link-with-popup-menu.directive",
+        "js/aw-property-label.directive",
+        "js/aw-column.directive"
+    ],
+
+    "actions":
+    {
+        "groupAction":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-Session",
+            "method": "getGroupMembership",
+            "inputData":
+            {
+
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Group",
+                        "properties":
+                        [
+                            {
+                                "name": "object_full_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "Role",
+                        "properties":
+                        [
+                            {
+                                "name": "role_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "GroupMember",
+                        "properties":
+                        [
+                            {
+                                "name": "status"
+                            },
+
+                            {
+                                "name": "group"
+                            },
+
+                            {
+                                "name": "role"
+                            },
+
+                            {
+                                "name": "default_role"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "uniqueGroups": "{{function:getGroups}}",
+                "groupOutput": "groupMembers",
+                "gtotalFound": "uniqueGroups.length"
+            },
+
+            "deps": "js/groupRoleUtils"
+        },
+
+        "groupRoleChangeWithExistingDafaultRole":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionStateWithoutDefaults",
+            "inputData":
+            {
+                "pairs": "{{data.pairs}}"
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+        "groupRoleChangeWithNewDefaultRole":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionStateWithoutDefaults",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "groupMember",
+                        "value": "{{data.eventData.property.dbValue.uid}}"
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+
+        "getGroupMemberObjectWithDefaultRoleSet":
+        {
+            "actionType": "JSFunction",
+            "method": "getGroupMemberObjectWithDefaultRoleSet",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "groupMember",
+                        "value": "{{data.eventData.property.dbValue.uid}}"
+                    }
+                ]
+            },
+            "outputData": {
+                "isDefaultRoleExists" : "isDefaultRoleExists",
+                "pairs": "pairs"
+            },
+
+            "deps": "js/groupRoleUtils",
+            "events": {
+                "success": [
+
+                    {
+                        "condition": "data.isDefaultRoleExists === true",
+                        "name": "group.defaultRole"
+                    },
+                    {
+                        "condition": "data.isDefaultRoleExists === false",
+                        "name": "group.noDefaultRole"
+                    } ]
+            }
+        },
+
+        "roleAction":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-Session",
+            "method": "getGroupMembership",
+            "inputData":
+            {
+
+            },
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "Group",
+                        "properties":
+                        [
+                            {
+                                "name": "object_full_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "Role",
+                        "properties":
+                        [
+                            {
+                                "name": "role_name"
+                            }
+                        ]
+                    },
+
+                    {
+                        "name": "GroupMember",
+                        "properties":
+                        [
+                            {
+                                "name": "status"
+                            },
+
+                            {
+                                "name": "group"
+                            },
+
+                            {
+                                "name": "role"
+                            },
+
+                            {
+                                "name": "default_role"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "uniqueRoles": "{{function:getRoles}}",
+                "roleOutput": "groupMembers",
+                "rolesFound": "uniqueRoles.length"
+            },
+
+            "deps": "js/groupRoleUtils"
+        }
+    },
+
+    "conditions":
+    {
+        "isGroupRoleSel":
+        {
+            "expression": "property.dbValue.type && property.dbValue.type === 'GroupMember' && property.propertyName === 'group'"
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "awlinkPopup.selected",
+            "condition": "conditions.isGroupRoleSel",
+            "cacheEventData": true,
+            "action": "getGroupMemberObjectWithDefaultRoleSet"
+        },
+        {
+            "eventId":  "group.defaultRole",
+            "action": "groupRoleChangeWithExistingDafaultRole"
+        },
+        {
+            "eventId":  "group.noDefaultRole",
+            "action": "groupRoleChangeWithNewDefaultRole"
+        }
+    ],
+
+    "dataProviders":
+    {
+        "groupLink":
+        {
+            "dataProviderType": "Action",
+            "action": "groupAction",
+            "response": "{{data.uniqueGroups}}",
+            "totalFound": "{{data.gtotalFound}}"
+        },
+
+        "roleLink":
+        {
+            "dataProviderType": "Action",
+            "action": "roleAction",
+            "response": "{{data.uniqueRoles}}",
+            "totalFound": "{{data.rolesFound}}"
+        }
+    },
+    "data":
+    {
+        "group":
+        {
+            "isNull": false,
+            "propertyDisplayName": "{{i18n.group}}",
+            "uiValue": "{{i18n.group}}"
+        }
+    },
+    "i18n":
+    {
+        "group": [ "HeaderMessages", "UsermanagementMessages"]
+    },
+    "ctxFields": [
+        "userSession.props.group"
+    ]
+}

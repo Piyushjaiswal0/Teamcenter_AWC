@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="0.5" y1="0.5" x2="47.5" y2="47.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2323" stop-color="#fafafa"/>
+      <stop offset="0.4964" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+  <rect x="0.5" y="0.5" width="47" height="47" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+    <path d="M25,31.5625C25,33.2539,23.6569,35.5,22,35.5s-3-2.2461-3-3.9375a3.0006,3.0006,0,1,1,6,0Z" fill="#dcdcdc" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M28.5,40.8913a4.6359,4.6359,0,0,0-2.6031-4.0142,6.6712,6.6712,0,0,1-7.7938,0A4.6359,4.6359,0,0,0,15.5,40.8913V42.5h13Z" fill="#3c91af" stroke="#147391" stroke-miterlimit="10"/>
+    <path d="M15,10.5625C15,12.2539,13.6569,14.5,12,14.5s-3-2.2461-3-3.9375a3.0006,3.0006,0,1,1,6,0Z" fill="#dcdcdc" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M18.5,19.8913a4.6359,4.6359,0,0,0-2.6031-4.0142,6.6712,6.6712,0,0,1-7.7938,0A4.6359,4.6359,0,0,0,5.5,19.8913V21.5h13Z" fill="#3c91af" stroke="#147391" stroke-miterlimit="10"/>
+    <path d="M39,14.5625C39,16.2539,37.6569,18.5,36,18.5s-3-2.2461-3-3.9375a3.0006,3.0006,0,1,1,6,0Z" fill="#dcdcdc" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M42.5,23.8913a4.6359,4.6359,0,0,0-2.6031-4.0142,6.6712,6.6712,0,0,1-7.7938,0A4.6359,4.6359,0,0,0,29.5,23.8913V25.5h13Z" fill="#3c91af" stroke="#147391" stroke-miterlimit="10"/>
+    <path d="M32.5657,10.884a15.174,15.174,0,0,0-14.6239-.9407" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M30.2094,37.9127a15.3243,15.3243,0,0,0,8.68-9.304" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="M9.1106,23.7826A15.2422,15.2422,0,0,0,15.1325,35.92" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

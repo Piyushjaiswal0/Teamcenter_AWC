@@ -1,0 +1,23 @@
+{
+  "slots": {
+    "CreateReportTemplateSubLocationPWACommandBarSlot": {
+      "name": "aw_pwaCommandBar",
+      "view": "CreateReportTemplateTaskbar",
+      "activeWhen": {
+        "condition": "conditions.isCreateReportTemplateSubLocation"
+      }
+    },
+    "CreateReportTemplateSubLocationTitleSlot": {
+      "name": "aw_headerTitle",
+      "view": "CreateReportTemplateTitle",
+      "activeWhen": {
+        "condition": "conditions.isCreateReportTemplateSubLocation"
+      }
+    }
+  },
+  "conditions": {
+    "isCreateReportTemplateSubLocation": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:createReportTemplate'"
+    }
+  }
+}

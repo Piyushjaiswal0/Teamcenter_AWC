@@ -1,0 +1,969 @@
+{
+  "commands": {
+    "Awp0GeneratePdfFromDataset": {
+      "iconId": "cmdGeneratePdf",
+      "isGroup": false,
+      "title": "{{i18n.generatePdfCommandName}}",
+      "description": "{{i18n.Awp0GeneratePdfFromDatasetDesc}}"
+    },
+    "Awp0GeneratePdfFromDatasetNew": {
+      "iconId": "cmdGeneratePdf",
+      "isGroup": false,
+      "title": "{{i18n.generatePdfCommandName}}",
+      "description": "{{i18n.Awp0GeneratePdfFromDatasetDesc}}"
+    },
+    "Awp0GeneratePdfFromDatasetForDocument": {
+      "iconId": "cmdGeneratePdf",
+      "isGroup": false,
+      "title": "{{i18n.generatePdfCommandName}}",
+      "description": "{{i18n.Awp0GeneratePdfFromDatasetDesc}}"
+    },
+    "Awp0Print": {
+      "iconId": "cmdPrint",
+      "title": "{{i18n.printCommandName}}",
+      "description": "{{i18n.Awp0PrintDesc}}"
+    },
+    "Awp0OpenInOfficeClient": {
+      "iconId": "cmdOpen",
+      "isGroup": false,
+      "title": "{{i18n.openInOfficeClient}}",
+      "description": "{{i18n.Awp0OpenInOfficeClientDesc}}"
+    },
+    "Awp0OpenAcrobatViewMarkup": {
+      "iconId": "cmdOpen",
+      "isGroup": false,
+      "title": "{{i18n.openAcrobatViewMarkup}}",
+      "description": "{{i18n.Awp0OpenAcrobatViewMarkupDesc}}"
+    },
+    "Awp0OpenAcrobatDigitalSign": {
+      "iconId": "cmdOpen",
+      "isGroup": false,
+      "title": "{{i18n.openAcrobatDigitalSign}}",
+      "description": "{{i18n.Awp0OpenAcrobatDigitalSignDesc}}"
+    },
+    "Awp0PrintDownload": {
+      "iconId": "cmdDownload",
+      "title": "{{i18n.downloadFileCommand}}",
+      "description": "{{i18n.Awp0ViewFileForUVDesc}}"
+    },
+    "Awp0DigitalSignPDF": {
+      "iconId": "cmdSignatureCertificate",
+      "title": "{{i18n.digitalSignPDFCommand}}",
+      "description": "{{i18n.Awp0DigitalSignPDFDesc}}"
+    },
+    "Awp0CancelDigitalSignPDF": {
+      "iconId": "cmdCancel",
+      "title": "{{i18n.cancelDigitalSignPDFCommand}}",
+      "description": "{{i18n.Awp0CancelDigitalSignPDFDesc}}"
+    },
+    "Dma1Delete": {
+      "iconId": "cmdDelete",
+      "title": "{{i18n.Awp0DeleteCommandTitle}}",
+      "description": "{{i18n.Dma1DeleteDesc}}"
+    },
+    "LO1RefreshExchangeConfig": {
+      "iconId": "cmdRefresh",
+      "isGroup": false,
+      "title": "{{i18n.refresh}}",
+      "description": "{{i18n.refreshExchangeConfigDesc}}"
+    },
+    "LO1DeleteExchangeConfig": {
+      "iconId": "cmdDelete",
+      "isGroup": false,
+      "title": "{{i18n.delete}}",
+      "description": "{{i18n.deleteExchangeConfigDesc}}"
+    },
+    "Dma1DownloadSimplifiedDataset": {
+      "iconId": "cmdDownload",
+      "isGroup": false,
+      "title": "{{i18n.showObjectCommandDownloadTitle}}",
+      "description": "{{i18n.Awp0ShowObjectCellDatasetDesc}}"
+    },
+    "uvTextUnicode": {
+      "iconId": "cmdUTF8Encoding",
+      "title": "{{ctx.viewerContext.textUnicode}}",
+      "description": "{{i18n.characterEncoding}}"
+    },
+    "uvTextLocale": {
+      "iconId": "cmdLocalEncoding",
+      "title": "{{ctx.viewerContext.textLocale}}",
+      "description": "{{i18n.characterEncoding}}"
+    },
+    "uvCodeWordWrap": {
+      "iconId": "cmdWrapText",
+      "title": "{{i18n.uvCodeWordWrapTitle}}",
+      "description": "{{i18n.uvCodeWordWrapDesc}}"
+    }
+  },
+  "commandHandlers": {
+    "awp0PrintDownloadCommandHandler": {
+      "id": "Awp0PrintDownload",
+      "action": "downloadPrintReport",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.shouldDownloadPrintReport"
+      }
+    },
+    "awp0GeneratePdfFromDatasetCommandHandler": {
+      "id": "Awp0GeneratePdfFromDataset",
+      "action": "generatePdfFromDataset",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.shouldGeneratePdfFromDatasetVisible"
+      }
+    },
+    "awp0GeneratePdfFromDatasetNewCommandHandler": {
+      "id": "Awp0GeneratePdfFromDatasetNew",
+      "action": "generatePdfFromDatasetNew",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.shouldGeneratePdfFromDatasetVisibleNew"
+      }
+    },
+    "awp0GeneratePdfFromDatasetForDocumentCommandHandler": {
+      "id": "Awp0GeneratePdfFromDatasetForDocument",
+      "action": "generatePdfFromDatasetForDocument",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.shouldGeneratePdfFromDatasetVisibleOnDocument"
+      }
+    },
+    "awp0PrintCommandHandler": {
+      "id": "Awp0Print",
+      "action": "activatePrintPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.shouldPrintVisible"
+      }
+    },
+    "awp0OpenInOfficeClientCommandHandler": {
+      "id": "Awp0OpenInOfficeClient",
+      "action": "openInOfficeClient",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.shouldOpenInOfficeVisible"
+      }
+    },
+    "awp0OpenAcrobatViewMarkupCommandHandler": {
+      "id": "Awp0OpenAcrobatViewMarkup",
+      "action": "openAcrobatViewMarkup",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.enableOpenAcrobatViewMarkupCommandCond"
+      }
+    },
+    "awp0OpenAcrobatDigitalSignCommandHandler": {
+      "id": "Awp0OpenAcrobatDigitalSign",
+      "action": "openAcrobatDigitalSign",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.enableOpenAcrobatDigitalSignCommandCond"
+      }
+    },
+    "openDocumentsNotificationCommandHandler": {
+      "id": "Awp0OpenLineItem",
+      "action": "openDocumentsNotification",
+      "activeWhen": {
+        "condition": "conditions.enableOpenDocumentsNotificationCommandCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.enableOpenDocumentsNotificationCommandCond"
+      }
+    },
+    "awp0DigitalSignPDFCommandHandler": {
+      "id": "Awp0DigitalSignPDF",
+      "action": "initDigitalSign",
+      "activeWhen": {
+        "condition": "conditions.enableDigitalSignPDFCommandCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.enableDigitalSignPDFCommandCond"
+      }
+    },
+    "awp0CancelDigitalSignPDFCommandHandler": {
+      "id": "Awp0CancelDigitalSignPDF",
+      "action": "cancelDigitalSign",
+      "activeWhen": {
+        "condition": "conditions.enableCancelDigitalSignPDFCommandCond"
+      },
+      "visibleWhen": {
+        "condition": "conditions.enableCancelDigitalSignPDFCommandCond"
+      }
+    },
+    "Dma1DeleteCommandHandler": {
+      "id": "Dma1Delete",
+      "action": "Awp0DeleteCommandAction",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.Dma1DeleteConditionEnable"
+      }
+    },
+    "LO1RefreshExchangeConfigCommandHandler": {
+      "id": "LO1RefreshExchangeConfig",
+      "action": "refreshExchangeConfig",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.refreshExchangeConfigCommandVisible"
+      }
+    },
+    "LO1DeleteExchangeConfigCommandHandler": {
+      "id": "LO1DeleteExchangeConfig",
+      "action": "confirmDeleteExchangeConfig",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.deleteExchangeConfigCommandVisible"
+      }
+    },
+    "Dma1DownloadSimplifiedDatasetHandler": {
+      "id": "Dma1DownloadSimplifiedDataset",
+      "action": "getSimplifiedDatasetObject",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Dma1DownloadSimplifiedDatasetBaseVisible"
+      }
+    },
+    "Awp0OpenHostedHandlerForOfficeClient": {
+      "id": "Awp0OpenHosted",
+      "action": "Awp0OpenHostedAction",
+      "activeWhen": {
+        "condition": "conditions.isHostedInOC"
+      },
+      "visibleWhen": {
+        "condition": "conditions.openInHostedOC"
+      }
+    },
+    "uvTextUnicodeHandler": {
+      "id": "uvTextUnicode",
+      "action": "uvTextEncodingAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.textUnicodeVisible"
+      }
+    },
+    "uvTextLocaleHandler": {
+      "id": "uvTextLocale",
+      "action": "uvTextEncodingAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.textLocaleVisible"
+      }
+    },
+    "uvCodeWordWrapHandler": {
+      "id": "uvCodeWordWrap",
+      "action": "uvCodeWordWrapAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.uvCodeWordWrapCmdVisible"
+      },
+      "selectWhen": {
+        "condition": "conditions.uvCodeWordWrapCmdSelected"
+      }
+    }
+  },
+  "commandPlacements": {
+    "awp0GeneratePdfFromDatasetCommandPlacement": {
+      "id": "Awp0GeneratePdfFromDataset",
+      "uiAnchor": "aw_rightWall",
+      "priority": 530,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "awp0GeneratePdfFromDatasetNewCommandPlacement": {
+      "id": "Awp0GeneratePdfFromDatasetNew",
+      "uiAnchor": "aw_rightWall",
+      "priority": 530,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "awp0GeneratePdfFromDatasetForDocumentCommandPlacement": {
+      "id": "Awp0GeneratePdfFromDatasetForDocument",
+      "uiAnchor": "aw_rightWall",
+      "priority": 530,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "awp0PrintCommandGlobalPlacement": {
+      "id": "Awp0Print",
+      "uiAnchor": "aw_rightWall",
+      "priority": 160,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "awp0PrintCommandFooterPlacement": {
+      "id": "Awp0Print",
+      "uiAnchor": "aw_footer",
+      "priority": 100
+    },
+    "awp0OpenInOfficeClientOneStepCommandPlacement-classic": {
+      "id": "Awp0OpenInOfficeClient",
+      "uiAnchor": "aw_oneStep",
+      "priority": 4,
+      "parentGroupId": "Awp0OpenGroup"
+    },
+    "awp0OpenInOfficeClientOneStepCommandPlacement": {
+      "id": "Awp0OpenInOfficeClient",
+      "uiAnchor": "aw_rightWall",
+      "priority": 200,
+      "parentGroupId": "Awp0OpenGroup"
+    },
+    "awp0OpenAcrobatViewMarkupOneStepCommandPlacement": {
+      "id": "Awp0OpenAcrobatViewMarkup",
+      "uiAnchor": "aw_rightWall",
+      "priority": 220,
+      "parentGroupId": "Awp0OpenGroup"
+    },
+    "awp0OpenAcrobatDigitalSignOneStepCommandPlacement": {
+      "id": "Awp0OpenAcrobatDigitalSign",
+      "uiAnchor": "aw_rightWall",
+      "priority": 240,
+      "parentGroupId": "Awp0OpenGroup"
+    },
+    "cmdPrintDownloadPlacement": {
+      "id": "Awp0PrintDownload",
+      "uiAnchor": "reports_cell_commands",
+      "priority": 1,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "awp0DigitalSignPDFCommandPlacement": {
+      "id": "Awp0DigitalSignPDF",
+      "uiAnchor": "aw_rightWall",
+      "priority": 100,
+      "parentGroupId": "Awp0ManageGroup"
+    },
+    "awp0CancelDigitalSignPDFCommandPlacement": {
+      "id": "Awp0CancelDigitalSignPDF",
+      "uiAnchor": "aw_rightWall",
+      "priority": 100,
+      "parentGroupId": "Awp0ManageGroup"
+    },
+    "deleteExchangeConfigOneStep": {
+      "id": "LO1DeleteExchangeConfig",
+      "uiAnchor": "aw_rightWall",
+      "priority": 500,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Dma1DownloadSimplifiedDatasetForObjectNavigationOnHover": {
+      "id": "Dma1DownloadSimplifiedDataset",
+      "uiAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectObjectNavigationCellListActionCommands",
+      "priority": 2,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Dma1DownloadSimplifiedDatasetOnHoverList": {
+      "id": "Dma1DownloadSimplifiedDataset",
+      "uiAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+      "priority": 2,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Dma1DownloadSimplifiedDatasetOnHoverDataGrid": {
+      "id": "Dma1DownloadSimplifiedDataset",
+      "uiAnchor": "com.siemens.splm.clientfx.ui.modelObjectDataGridActionCommands",
+      "priority": 2,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "uvTextUnicodePlacement": {
+      "id": "uvTextUnicode",
+      "uiAnchor": "aw_universalViewer",
+      "priority": 510
+    },
+    "uvTextLocalePlacement": {
+      "id": "uvTextLocale",
+      "uiAnchor": "aw_universalViewer",
+      "priority": 510
+    },
+    "uvCodeWordWrapPlacement": {
+      "id": "uvCodeWordWrap",
+      "uiAnchor": "aw_universalViewer",
+      "priority": 500
+    }
+  },
+  "actions": {
+    "activatePrintPanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Awp0Print",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "generatePdfFromDataset": {
+      "actionType": "TcSoaService",
+      "serviceName": "DocumentManagement-2013-12-PrintOrRender",
+      "method": "renderSubmitRequest",
+      "inputData": {
+        "input": [
+          {
+            "clientId": "",
+            "renderObjs": [
+              "{{ctx.pselected}}"
+            ],
+            "preserve": false,
+            "extraInfo": {}
+          }
+        ]
+      }
+    },
+    "generatePdfFromDatasetNew": {
+      "actionType": "TcSoaService",
+      "serviceName": "DocumentManagement-2018-11-PrintOrRender",
+      "method": "renderFilesSubmitRequest",
+      "inputData": {
+        "selectedObjects": [
+          {
+            "type": "{{ctx.selected.type}}",
+            "uid": "{{ctx.selected.uid}}"
+          }
+        ],
+        "renderFormat": "PDF",
+        "saveRenderedFiles": true
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "generatePdfSuccess"
+          }
+        ],
+        "failure": [
+          {
+            "message": "generatePdfSOAError"
+          }
+        ]
+      }
+    },
+    "generatePdfFromDatasetForDocument": {
+      "actionType": "TcSoaService",
+      "serviceName": "DocumentManagement-2018-11-PrintOrRender",
+      "method": "renderFilesSubmitRequest",
+      "inputData": {
+        "selectedObjects": [
+          {
+            "type": "{{ctx.selected.type}}",
+            "uid": "{{ctx.selected.uid}}"
+          }
+        ],
+        "renderFormat": "PDF",
+        "saveRenderedFiles": false
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "generatePdfSuccess"
+          }
+        ],
+        "failure": [
+          {
+            "message": "generatePdfSOAError"
+          }
+        ]
+      }
+    },
+    "openInOfficeClient": {
+      "actionType": "TcSoaService",
+      "serviceName": "DocumentManagement-2010-04-LaunchDefinition",
+      "method": "getLaunchDefinition",
+      "inputData": {
+        "operation": "AWOfficeOpen",
+        "selectedInputs": [
+          {
+            "id": "{{ctx.mselected[0]}}",
+            "requestMode": "EDIT"
+          }
+        ],
+        "serverInfo": {
+          "hostPath": "{{ctx.tcSessionData.server}}"
+        },
+        "sessionInfo": {
+          "descriminator": ""
+        },
+        "userAgentData": {
+          "userApplication": "{{ctx.userAgentInfo.userApplication}}",
+          "userAppVersion": "{{ctx.userAgentInfo.userAppVersion}}"
+        }
+      },
+      "outputData": {
+        "launchDefinition": "xmlLaunchDef"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "open.FMSTicket"
+          }
+        ]
+      }
+    },
+    "openAcrobatViewMarkup": {
+      "actionType": "JSFunction",
+      "method": "openAcrobat",
+      "inputData": {
+        "action": "Markup"
+      },
+      "deps": "js/Dma1DigitalSignService"
+    },
+    "openAcrobatDigitalSign": {
+      "actionType": "JSFunction",
+      "method": "openAcrobat",
+      "inputData": {
+        "action": "SIGN"
+      },
+      "deps": "js/Dma1DigitalSignService"
+    },
+    "processSoaResponse": {
+      "actionType": "JSFunction",
+      "method": "openFile",
+      "inputData": {
+        "data": "{{data.launchDefinition}}"
+      },
+      "deps": "js/fmsUtils"
+    },
+    "openDocumentsNotification": {
+      "actionType": "JSFunction",
+      "method": "openLineItem",
+      "inputData": {
+        "notificationObject": "{{commandContext}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "NotificationMessage.markRead"
+          }
+        ]
+      },
+      "deps": "js/Dma1NotificationService"
+    },
+    "downloadPrintReport": {
+      "actionType": "JSFunction",
+      "method": "execute",
+      "deps": "js/viewFileCommandHandler",
+      "inputData": {
+        "vmo": "{{commandContext.vmo}}"
+      }
+    },
+    "initDigitalSign": {
+      "actionType": "JSFunction",
+      "method": "initDigitalSign",
+      "actionMessages": {
+        "success": [
+          {
+            "message": "digitalSignInstructions"
+          }
+        ]
+      },
+      "deps": "js/Dma1DigitalSignService"
+    },
+    "cancelDigitalSign": {
+      "actionType": "JSFunction",
+      "method": "cancelDigitalSign",
+      "deps": "js/Dma1DigitalSignService"
+    },
+    "refreshExchangeConfig": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-DocumentManagement-2020-12-AttributeExchange",
+      "method": "processAttrExchangeConfigurations",
+      "inputData": {
+        "processAttrExchConfInputInfo": {
+          "logicalObjectType": "{{ctx.selected}}",
+          "propertyData": [
+            {
+              "presentedPropertyName": "",
+              "action": "update"
+            }
+          ]
+        }
+      },
+      "events": {
+        "success": [
+          {
+            "name": "cdm.relatedModified",
+            "eventData": {
+              "relatedModified": [
+                "{{ctx.selected}}"
+              ]
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "message": "exchangeConfigFailure"
+          }
+        ]
+      }
+    },
+    "confirmDeleteExchangeConfig": {
+      "actionType": "JSFunctionAsync",
+      "method": "confirmDeleteExchangeConfig",
+      "inputData": {
+        "data": "{{data}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "dma1.deleteExchangeConfig",
+            "condition": "data.confirmDelete === true"
+          }
+        ]
+      },
+      "deps": "js/Dma1ExchangeConfigService"
+    },
+    "deleteExchangeConfig": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-DocumentManagement-2020-12-AttributeExchange",
+      "method": "processAttrExchangeConfigurations",
+      "inputData": {
+        "processAttrExchConfInputInfo": {
+          "logicalObjectType": "{{ctx.pselected}}",
+          "propertyData": "{{data.exchangeConfigs}}"
+        }
+      },
+      "events": {
+        "success": [
+          {
+            "name": "cdm.relatedModified",
+            "eventData": {
+              "relatedModified": [
+                "{{ctx.pselected}}"
+              ]
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "message": "exchangeConfigFailure"
+          }
+        ]
+      }
+    },
+    "getSimplifiedDatasetObject": {
+      "actionType": "JSFunction",
+      "method": "getObject",
+      "deps": "soa/kernel/clientDataModel",
+      "inputData": {
+        "uid": "{{commandContext.vmo.props.fnd0SimplifiedDocumentDS.dbValue}}"
+      },
+      "outputData": {
+        "datasetModelObject": ""
+      },
+      "events": {
+        "success": [
+          {
+            "name": "dataset.checkIsDSMUsable"
+          }
+        ]
+      }
+    },
+    "uvTextEncodingAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "textEditor.encodingChanged"
+          }
+        ]
+      }
+    },
+    "uvCodeWordWrapAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "textEditor.wordWrap"
+          }
+        ]
+      }
+    }
+  },
+  "conditions": {
+    "Dma1DeleteConditionEnable": {
+      "expression": "commandContext.selectionModel.selectionData.selected.length > 0"
+    },
+    "tcVersionCondition11": {
+      "expression": "ctx.tcSessionData.tcMajorVersion === 11 && ctx.tcSessionData.tcMinorVersion === 2 && ctx.tcSessionData.tcQRMNumber >= 7"
+    },
+    "tcVersionCondition12": {
+      "expression": "ctx.tcSessionData.tcMajorVersion === 12 && ctx.tcSessionData.tcMinorVersion > 0"
+    },
+    "tcVersionCondition13": {
+      "expression": "ctx.tcSessionData.tcMajorVersion > 12"
+    },
+    "correctVersion": {
+      "expression": "conditions.tcVersionCondition11 || conditions.tcVersionCondition12 || conditions.tcVersionCondition13"
+    },
+    "docPSelected": {
+      "expression": "ctx.pselected !== null && ctx.pselected.modelType.typeHierarchyArray.indexOf( 'DocumentRevision' ) > -1"
+    },
+    "docSelected": {
+      "expression": "ctx.selected !== null && ctx.selected.modelType.typeHierarchyArray.indexOf( 'DocumentRevision' ) > -1"
+    },
+    "shouldGeneratePdfFromDatasetVisibleOnDocument": {
+      "expression": "conditions.correctVersion && (conditions.docPSelected || conditions.docSelected)"
+    },
+    "shouldGeneratePdfFromDatasetVisible": {
+      "expression": "!conditions.correctVersion && ctx.selected.type === 'Image' && ctx.selected.modelType.typeHierarchyArray[1] === 'Dataset' && ctx.pselected !== null && ctx.pselected.type ==='Drawing Revision' && ctx.relationContext.relationInfo[0].relationType == 'TC_Attaches'"
+    },
+    "generatePdfDatasetSelected": {
+      "expression": "ctx.selected.type === 'AdobeIllustrator' || ctx.selected.type === 'Bitmap' || ctx.selected.type === 'Bitmap_Thumbnail' || ctx.selected.type === 'CGM' || ctx.selected.type === 'DWG' || ctx.selected.type === 'DXF' || ctx.selected.type === 'GIF' || ctx.selected.type === 'HPGL' || ctx.selected.type === 'Image' || ctx.selected.type === 'JPEG' || ctx.selected.type === 'JPEG_Thumbnail' || ctx.selected.type === 'MSExcel' || ctx.selected.type === 'MSExcelX' || ctx.selected.type === 'MSPowerPoint' || ctx.selected.type === 'MSPowerPointX' || ctx.selected.type === 'MSWord' || ctx.selected.type === 'MSWordX' || ctx.selected.type === 'PDF' || ctx.selected.type === 'TIF'"
+    },
+    "shouldGeneratePdfFromDatasetVisibleNew": {
+      "expression": "!conditions.shouldGeneratePdfFromDatasetVisibleOnDocument && conditions.correctVersion && conditions.generatePdfDatasetSelected && ctx.selected.modelType.typeHierarchyArray[1] === 'Dataset' && ctx.pselected.modelType.typeHierarchyArray.indexOf( 'ItemRevision' ) > -1"
+    },
+    "shouldPrintVisible": {
+      "expression": "ctx.selected &&  ctx.sublocation.clientScopeURI !== 'Fnd0Report' && ctx.visibleServerCommands.Awp0Print && ctx.selected.type !== 'Fnd0Branch'"
+    },
+    "shouldOpenInOfficeVisible": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "ctx.aw_host_type",
+            "$query": {
+              "$ne": "OC"
+            }
+          },
+          {
+            "$source": "ctx.mselected.length",
+            "$query": {
+              "$eq": 1
+            }
+          },
+          {
+            "$source": "ctx.selected.modelType.typeHierarchyArray",
+            "$query": {
+              "$in": "{{ctx.preferences.AWC_OC_OpenSupportedTypes}}"
+            }
+          }
+        ]
+      }
+    },
+    "isHostedInOC": {
+      "expression": "ctx.aw_host_type.toUpperCase() === 'OC'"
+    },
+    "openInHostedOC": {
+      "expression": {
+        "$and": [
+          {
+            "$source": "ctx.aw_host_type",
+            "$query": {
+              "$eq": "OC"
+            }
+          },
+          {
+            "$source": "ctx.mselected.length",
+            "$query": {
+              "$eq": 1
+            }
+          },
+          {
+            "$source": "ctx.selected.modelType.typeHierarchyArray",
+            "$query": {
+              "$in": "{{ctx.preferences.AWC_OC_OpenSupportedTypes}}"
+            }
+          }
+        ]
+      }
+    },
+    "enableOpenDocumentsNotificationCommandCond": {
+      "expression": "commandContext.group.groupName==='DOCMGMT'"
+    },
+    "shouldDownloadPrintReport": {
+      "expression": "commandContext.vmo.type === 'CrfOutputHtml' || commandContext.vmo.type === 'CrfOutputExcel' || commandContext.vmo.type === 'CrfOutputText' || commandContext.vmo.type === 'CrfOutputXml'"
+    },
+    "enableDigitalSignPDFCommandCond": {
+      "expression": "( ctx.tcSessionData.tcMajorVersion >= 13 || ( ctx.tcSessionData.tcMajorVersion >= 12 && ctx.tcSessionData.tcMinorVersion >= 3 ) ) && ctx.viewerContext.type === 'aw-pdf-viewer' && !ctx.digitalSign.inProgress && ctx.viewerContext.vmo.props.fnd0IsCheckOutForSign.dbValues[0] !== '1'"
+    },
+    "enableCancelDigitalSignPDFCommandCond": {
+      "expression": "ctx.viewerContext.type === 'aw-pdf-viewer' && ( ctx.digitalSign.inProgress || ctx.viewerContext.vmo.props.fnd0IsCheckOutForSign.dbValues[0] === '1' )"
+    },
+    "enableOpenAcrobatViewMarkupCommandCond": {
+      "expression": "( ctx.tcSessionData.tcMajorVersion >= 15 || ( ctx.tcSessionData.tcMajorVersion === 14 && ctx.tcSessionData.tcMinorVersion >= 1 ) ) && ctx.viewerContext.type === 'aw-pdf-viewer'"
+    },
+    "enableOpenAcrobatDigitalSignCommandCond": {
+      "expression": "( ctx.tcSessionData.tcMajorVersion >= 15 || ( ctx.tcSessionData.tcMajorVersion === 14 && ctx.tcSessionData.tcMinorVersion >= 1 ) ) && ctx.viewerContext.type === 'aw-pdf-viewer' && ctx.selected.type === 'PDF'"
+    },
+    "refreshExchangeConfigCommandVisible": {
+      "expression": "!ctx.editInProgress && ctx.selected && ctx.selected.props.fnd0RootTypeName"
+    },
+    "deleteExchangeConfigCommandVisible": {
+      "expression": "!ctx.editInProgress && ctx.selected && ctx.selected.props.fnd0TargetPresentedPropName"
+    },
+    "Dma1DownloadSimplifiedDatasetBaseVisible": {
+      "expression": {
+        "$and": [
+          {
+            "$source": {
+              "$adapt": "commandContext.vmo"
+            },
+            "$query": {
+              "$source": "modelType.typeHierarchyArray",
+              "$query": {
+                "$in": [
+                  "DocumentRevision"
+                ]
+              }
+            }
+          },
+          {
+            "$source": {
+              "$adapt": "commandContext.vmo"
+            },
+            "$query": {
+              "$source": "props.fnd0SimplifiedDocumentDS.dbValue",
+              "$query": {
+                "$notNull": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "textUnicodeVisible": {
+      "expression": "ctx.viewerContext.textLocale && ctx.viewerContext.textEncoding === ctx.viewerContext.textUnicode"
+    },
+    "textLocaleVisible": {
+      "expression": "ctx.viewerContext.textLocale && ctx.viewerContext.textEncoding === ctx.viewerContext.textLocale"
+    },
+    "uvCodeWordWrapCmdVisible": {
+      "expression": "ctx.viewerContext.showWordWrap && ctx.viewerContext.isCodeViewer"
+    },
+    "uvCodeWordWrapCmdSelected": {
+      "expression": "ctx.viewerContext.wordWrapped"
+    }
+  },
+  "onEvent": [
+    {
+      "eventId": "open.FMSTicket",
+      "action": "processSoaResponse"
+    },
+    {
+      "eventId": "dma1.deleteExchangeConfig",
+      "condition": "data.exchangeConfigs.length > 0",
+      "action": "deleteExchangeConfig"
+    }
+  ],
+  "messages": {
+    "generatePdfSuccess": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.generatePdfSuccess}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.object_name.dbValues[0]}}"
+      ]
+    },
+    "generatePdfSOAError": {
+      "messageType": "ERROR",
+      "messageText": "{{errorCode}}"
+    },
+    "digitalSignInstructions": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.digitalSignInstructions}}"
+    },
+    "exchangeConfigFailure": {
+      "messageType": "ERROR",
+      "messageText": "{{errorCode}}"
+    }
+  },
+  "i18n": {
+    "generatePdfCommandName": [
+      "DocMgmtMessages"
+    ],
+    "printCommandName": [
+      "DocMgmtMessages"
+    ],
+    "openInOfficeClient": [
+      "DocMgmtMessages"
+    ],
+    "openAcrobatViewMarkup": [
+      "DocMgmtMessages"
+    ],
+    "openAcrobatDigitalSign": [
+      "DocMgmtMessages"
+    ],
+    "downloadFileCommand": [
+      "DocMgmtMessages"
+    ],
+    "generatePdfSuccess": [
+      "DocMgmtMessages"
+    ],
+    "reports_cell_commands": [
+      "DocMgmtMessages"
+    ],
+    "digitalSignPDFCommand": [
+      "DocMgmtMessages"
+    ],
+    "cancelDigitalSignPDFCommand": [
+      "DocMgmtMessages"
+    ],
+    "digitalSignInstructions": [
+      "DocMgmtMessages"
+    ],
+    "Awp0GeneratePdfFromDatasetDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0PrintDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0OpenInOfficeClientDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0OpenAcrobatViewMarkupDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0OpenAcrobatDigitalSignDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0DigitalSignPDFDesc": [
+      "DocMgmtMessages"
+    ],
+    "Dma1DeleteDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0CancelDigitalSignPDFDesc": [
+      "DocMgmtMessages"
+    ],
+    "refresh": [
+      "DocMgmtMessages"
+    ],
+    "refreshExchangeConfigDesc": [
+      "DocMgmtMessages"
+    ],
+    "delete": [
+      "DocMgmtMessages"
+    ],
+    "deleteExchangeConfigDesc": [
+      "DocMgmtMessages"
+    ],
+    "Awp0ShowObjectCellDatasetDesc": [
+      "ZeroCompileCommandMessages"
+    ],
+    "showObjectCommandDownloadTitle": [
+      "XRTMessages"
+    ],
+    "Awp0DeleteCommandTitle": [
+      "ZeroCompileCommandMessages"
+    ],
+    "characterEncoding": [
+      "CodeViewerMessages"
+    ],
+    "uvCodeWordWrapTitle": [
+      "CodeViewerMessages"
+    ],
+    "uvCodeWordWrapDesc": [
+      "CodeViewerMessages"
+    ]
+  }
+}

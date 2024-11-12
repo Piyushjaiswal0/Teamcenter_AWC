@@ -1,0 +1,5 @@
+<aw-command-panel caption="i18n.inContextReportPanelTitle" context="subPanelContext">
+    <aw-command-sub-panel panel-id="Awp0InContextReportsList" visible-when="data.activeView=='Awp0InContextReportsList' && data.showList.dbValue" sub-panel-context='{ ...subPanelContext ,showList:fields.showList,tcReportsAvailable:data.tcReportsAvailable,tcraReportsAvailable:data.tcraReportsAvailable}'></aw-command-sub-panel>
+    <aw-navigate-panel title='{{i18n.backButton}}' exist-when="data.activeView === 'Awp0InContextReportsSub'" pre-panel-id='Awp0InContextReportsList' panel-id='Awp0InContextReportsSub' sub-panel-context='{ ...subPanelContext, selectedReport: data.selectedReport, languageList: data.languageList }'>
+    </aw-navigate-panel>
+</aw-command-panel>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-118.6248" y1="-47.0979" x2="-86.1054" y2="-47.0979" gradientTransform="translate(126.3757 71.0979)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".2323" stop-color="#fafafa"/>
+      <stop offset=".4964" stop-color="#ececec"/>
+      <stop offset=".775" stop-color="#d5d5d5"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-118.6323" y1="-47.0904" x2="-86.1129" y2="-47.0904" gradientTransform="translate(126.3726 71.0904)" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="-114.2991" y1="-47.0904" x2="-90.446" y2="-47.0904" gradientTransform="translate(126.3726 71.0904)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset=".1747" stop-color="#6aaec2"/>
+      <stop offset=".4567" stop-color="#529db5"/>
+      <stop offset=".8089" stop-color="#2b839e"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <rect x="7.7509" y="7.7403" width="32.5194" height="32.5194" transform="translate(24.0031 -9.9486) rotate(45)" fill="url(#linear-gradient)" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="7.7403" y="7.7403" width="32.5194" height="32.5194" transform="translate(24 -9.9411) rotate(45)" fill="url(#linear-gradient-2)" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="12.0735" y="12.0735" width="23.8531" height="23.8531" transform="translate(24 -9.9411) rotate(45)" fill="url(#Dark_Blue_Grad)" stroke="#147391" stroke-miterlimit="10"/>
+  <polygon points="32.0307 30.5 26.6584 30.5 30.7103 24.5112 26.6584 18.5 32.0307 18.5 36.0827 24.5224 32.0307 30.5" fill="#fff" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="26.6584 30.5 21.2958 30.5 25.3478 24.5112 21.2958 18.5 26.6584 18.5 30.7103 24.5112 26.6584 30.5" fill="#cae3ea" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="21.2958 30.5 15.929 30.5 19.981 24.5 15.929 18.5 21.2958 18.5 25.3478 24.5112 21.2958 30.5" fill="#8cc3d2" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

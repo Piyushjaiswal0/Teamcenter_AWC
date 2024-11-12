@@ -1,0 +1,148 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-include.directive",
+        "js/aw-init.directive",
+        "js/exist-when.directive",
+        "js/show-when.directive"
+    ],
+    "actions": {
+        "onUnmount": {
+            "actionType": "JSFunction",
+            "method": "destroy",
+            "inputData": {
+                "type": "INFO",
+                "editHandlerContext": {
+                    "INFO": "INFO_PANEL_CONTEXT",
+                    "SUMMARY": "NONE"
+                }
+            },
+            "deps": "js/Awp0ObjectInfoService"
+        },
+        "setActiveView":{
+            "actionType": "JSFunction",
+            "method": "resetActiveView",
+            "inputData": {
+                "stateName": "{{data.activeState}}",
+                "destPanelId": "ObjectInfoPrimarySub"
+            },
+            "outputData": {
+                "activeState": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "resetFileUploadState":{
+            "actionType": "JSFunction",
+            "method": "resetFileUploadState",
+            "deps": "js/addObjectUtils"
+        },
+        "closePanelBatchJob": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "closePanelSidenav",
+                    "condition": "!props.subPanelContext.selectionData.value.pselected && props.subPanelContext.selectionData.value.selected.length > 1 && !(props.subPanelContext.isPopupAnchorVisible===true)"
+                },
+                {
+                    "action": "closePanelDialog",
+                    "condition": "!props.subPanelContext.selectionData.value.pselected && props.subPanelContext.selectionData.value.selected.length > 1 && props.subPanelContext.isPopupAnchorVisible===true"
+                }
+            ]
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "condition": "!data.isDestroyed()",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{props.subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        },
+        "closePanelSidenav": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                    "name": "complete",
+                    "condition": "!data.isDestroyed()",
+                    "eventData": {
+                        "source": "toolAndInfoPanel"
+                    }
+                } ]
+            }
+        },
+        "refreshObjectSetCustom": {
+            "actionType": "JSFunction",
+            "method": "refreshObjectSet",
+            "inputData": {
+                "viewModel": "{{data}}",
+                "props": "{{props}}"
+            },
+            "deps": "js/xrtUtilities"
+        }
+    },
+    "onEvent": [
+    {
+        "eventId": "refreshObjectSet",
+        "action": "refreshObjectSetCustom",
+        "cacheEventData": true
+    }
+
+],
+    "lifecycleHooks": {
+        "onMount": "resetFileUploadState",
+        "onUnmount": "onUnmount",
+        "onUpdate": [ {
+            "action": "closePanelBatchJob",
+            "observers": [ "props.subPanelContext.selectionData.value" ]
+        } ]
+    },
+    "i18n": {
+        "objectInfoLabel": [
+            "XRTMessages"
+        ],
+        "BACK_BUTTON_TITLE": [
+            "BaseMessages"
+        ]
+    },
+    "editHandlers": {
+        "awp0ObjectInfoEditHandler": {
+            "context": "INFO_PANEL_CONTEXT",
+            "dataSource": {
+                "xrtVMO": "{{data.xrtState}}"
+            }
+        }
+    },
+    "data": {
+        "xrtState": {
+            "initialValues": {},
+            "meta": {
+                "xrtVMO": {
+                    "field": "true",
+                    "type": "viewModelObject"
+                }
+            }
+        },
+        "activeState": {
+            "initialValues": {
+                "activeView": "ObjectInfoPrimarySub",
+                "context": {}
+            },
+            "meta": {}
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "characterEncoding": "Character Encoding",
+    "uvCheckoutTitle": "Checkout",
+    "uvCheckoutDesc": "Reserve the selection to prevent other users from making changes.",
+    "cancelCheckoutTitle": "Cancel Checkout",
+    "Awp0CancelCheckoutDesc": "Cancel the checkout and revert any changes.",
+    "uvCheckinTitle": "Checkin",
+    "Awp0CheckinDesc": "Check in the object and save the changes.",
+    "uvCodeWordWrapTitle": "Word Wrap",
+    "uvCodeWordWrapDesc": "Wrap lengthy text into multiple lines."
+}

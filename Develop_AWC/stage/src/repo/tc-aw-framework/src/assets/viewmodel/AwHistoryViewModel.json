@@ -1,0 +1,71 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awHistoryRenderFunction",
+            "deps": "js/AwHistoryService"
+        },
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "getRecentObjsProvider"
+        },
+        "getHistoryData": {
+            "actionType": "JSFunctionAsync",
+            "method": "getHistory",
+            "deps": "js/AwHistoryService",
+            "inputData": {
+                "filterTypes": "{{props.filterTypes}}",
+                "isIncludeSubTypes": "{{props.isIncludeSubTypes}}",
+                "addObjectContext": "{{props.subPanelContext.addObject}}"
+            },
+            "outputData": {
+                "totalFound": "histResultLength",
+                "searchResults": "histResults"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "reveal",
+        "onUpdate": [ {
+            "action": "reveal",
+            "observers": [ "props.filterTypes" ]
+        } ]
+    },
+    "dataProviders": {
+        "getRecentObjsProvider": {
+            "action": "getHistoryData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands",
+            "selectionModelMode": "multiple",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}",
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "i18n": {
+        "recentSectionTitle": [
+            "awAddDirectiveMessages"
+        ]
+    },
+    "props": {
+        "max-length": {
+            "type": "string"
+        },
+        "filter-types": {
+            "type": "string"
+        },
+        "selection-mode": {
+            "type": "string"
+        },
+        "is-include-sub-types": {
+            "type": "string"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

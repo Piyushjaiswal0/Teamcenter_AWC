@@ -1,0 +1,12 @@
+<aw-search-box prop="data.rootBox" placeholder="data.searchTip.dbValue" action="rootSampleUpdate"></aw-search-box>
+<aw-panel-body>
+    <!--aw-widget prop="data.rootObjType"></aw-widget-->
+    <aw-list dataprovider="data.dataProviders.rootSampleListProvider">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="rootSampleObjAdd" enable-when="data.dataProviders.rootSampleListProvider.selectedObjects.length > 0" size="auto">
+        <aw-i18n>i18n.addChartCommand</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

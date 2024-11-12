@@ -1,0 +1,18 @@
+{
+    "uvCheckoutTitle": "チェックアウト",
+    "uvCheckinTitle": "チェックイン",
+    "uvCancelCheckoutTitle": "チェックアウトのキャンセル",
+    "previousButtonTitle": "前へ",
+    "nextButtonTitle": "次へ",
+    "noObjectSelectionMessage": "表示する何かを選択します。",
+    "fullViewModeTitle": "全画面",
+    "uvWordWrapTitle": "ワードラップ",
+    "exitFullViewModeTitle": "全画面を終了",
+    "aw_viewerRightSide": "ビューア右側",
+    "aw_universalViewerLink": "ユニバーサルビューアリンク",
+    "uvCheckoutDesc": "選択内容を保管して、他のユーザが変更を行うことを防止します。",
+    "fullViewModeDesc": "フルスクリーンビューに切替えます。",
+    "uvWordWrapDesc": "長いテキストを折返して複数行にします。",
+    "Awp0ShowObjectForUVpDesc": "このファイルを現在のウィンドウで開きます。",
+    "Awp0ViewFileForUVDesc": "ファイルをダウンロード."
+}

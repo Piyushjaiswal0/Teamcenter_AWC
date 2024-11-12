@@ -1,0 +1,44 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="linear-gradient" x1="9" y1="1.831" x2="26" y2="18.831" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.159" stop-color="#a4d0dc"/>
+      <stop offset="0.706" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-2.629" y1="13.46" x2="20.57" y2="36.659" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="12.625" y1="24.875" x2="22.375" y2="34.625" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-4" x1="10.297" y1="3.117" x2="27.053" y2="19.873" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="-445.318" y1="640.318" x2="-433.318" y2="628.318" gradientTransform="translate(663.818 480.818) rotate(90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="145.864" y1="1101.136" x2="133.864" y2="1089.136" gradientTransform="translate(169.364 1124.636) rotate(180)" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="634.182" y1="482.182" x2="646.182" y2="494.182" gradientTransform="translate(-446.682 669.682) rotate(-90)" xlink:href="#paper_gradient"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="35.5" y1="35.5" x2="47.5" y2="47.5" xlink:href="#linear-gradient-4"/>
+  </defs>
+  <g>
+    <polygon points="17.5 20.162 34.5 10.332 34.5 30.016 17.5 39.729 17.5 20.162" fill="#3c91af"/>
+    <polygon points="0.5 10.33 17.471 0.5 34.5 10.332 17.5 20.162 0.5 10.33" fill="url(#linear-gradient)"/>
+    <polygon points="17.5 20.162 17.5 39.729 0.5 30.016 0.5 10.33 17.5 20.162" fill="url(#linear-gradient-2)"/>
+    <line x1="17.5" y1="20" x2="17.5" y2="39.5" stroke="#147391" stroke-linejoin="round" fill="url(#linear-gradient-3)"/>
+    <polygon points="23.5 16.617 6.571 6.843 11.635 3.881 28.5 13.869 28.5 17.176 23.5 23.426 23.5 16.617" stroke="#147391" stroke-miterlimit="10" fill="url(#linear-gradient-4)"/>
+    <polyline points="34.5 10.332 17.5 20.162 0.5 10.33" fill="none" stroke="#147391" stroke-linejoin="round"/>
+    <polygon points="17.471 0.5 0.5 10.33 0.5 29.898 17.5 39.729 34.5 29.899 34.5 10.331 17.471 0.5" fill="none" stroke="#464646" stroke-linejoin="round"/>
+  </g>
+  <path d="M35.5,43.054a2.274,2.274,0,0,0,1.6.662,2.214,2.214,0,0,0,0-4.427,2.274,2.274,0,0,0-1.6.662V35.5h-12v12h12Z" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <path d="M27.946,35.5a2.27,2.27,0,0,0-.662,1.6,2.214,2.214,0,0,0,4.427,0,2.27,2.27,0,0,0-.662-1.6H35.5v-12h-12v12Z" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-2)"/>
+  <path d="M35.5,27.946a2.27,2.27,0,0,0-1.6-.662,2.213,2.213,0,0,0,0,4.426,2.27,2.27,0,0,0,1.6-.662V35.5h12v-12h-12Z" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient-3)"/>
+  <path d="M43.054,35.5a2.274,2.274,0,0,0,.662-1.6,2.214,2.214,0,0,0-4.427,0,2.274,2.274,0,0,0,.662,1.6H35.5v4.426a2.213,2.213,0,1,1,0,3.09V47.5h12v-12Z" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M47.5,35.5H43.054a2.274,2.274,0,0,0,.662-1.6,2.214,2.214,0,0,0-4.427,0,2.274,2.274,0,0,0,.662,1.6H35.5v4.426a2.213,2.213,0,1,1,0,3.09V47.5" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <path d="M47.5,23.5h-24v24h24Z" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

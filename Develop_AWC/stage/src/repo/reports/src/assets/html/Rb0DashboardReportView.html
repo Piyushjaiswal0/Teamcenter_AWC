@@ -1,0 +1,16 @@
+<div exist-when="subPanelContext.selected.props.rd_source.dbValues[0] === 'Active Workspace'">
+    <aw-flex-column justify="center">
+        <aw-flex-row align-content="center" height="68f">
+            <!-- <aw-report-viewer class="aw-reports-frameSize" sub-panel-context="{ selected: subPanelContext.selected, selectionData: subPanelContext.selectionData}"></aw-report-viewer> -->
+            <aw-active-report-viewer report-template="subPanelContext.selected" sub-panel-context="{ ...subPanelContext}"></aw-active-report-viewer>
+        </aw-flex-row>
+    </aw-flex-column>
+</div>
+<div exist-when="subPanelContext.selected.props.rd_source.dbValues[0] === 'TcRA'">
+    <aw-flex-column justify="center">
+        <aw-flex-row align-content="center" height="68f">
+            <aw-include class="aw-reports-frameSize" name="TcRAReport">
+            </aw-include>
+        </aw-flex-row>
+    </aw-flex-column>
+</div>

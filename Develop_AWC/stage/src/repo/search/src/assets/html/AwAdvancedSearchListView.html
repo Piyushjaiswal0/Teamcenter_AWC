@@ -1,0 +1,32 @@
+
+<aw-empty-workarea class="aw-base-scrollPanel"
+    exist-when="subPanelContext.searchState.totalFound === 0 && !subPanelContext.searchState.savedSearchType && subPanelContext.provider.clientScopeURI === 'Awp0AdvancedSearch'
+    && subPanelContext.searchState.advancedSearchCriteria"
+    image="graNoSearchResult"
+    title="i18n.noResultsFound"
+    hint="i18n.noResultsSearchAreaHint"
+    action="actions.advancedSearchLinkCommand"
+    link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+    link-text="i18n.advancedSearch">
+</aw-empty-workarea>
+<aw-empty-workarea class="aw-base-scrollPanel" 
+    exist-when="subPanelContext.searchState.totalFound === 0 && !subPanelContext.searchState.savedSearchType && subPanelContext.provider.clientScopeURI === 'Awp0AdvancedSearch'
+    && !subPanelContext.searchState.advancedSearchCriteria"
+    image="graEmptySearchList"
+    title="i18n.nothingFound"
+    hint="i18n.emptySearchAreaHint"
+    action="actions.advancedSearchLinkCommand"
+    link-visibility="{{!props.viewModel.ctx.awSidenavConfig.globalSidenavContext.aw_navigation.open}}"
+    link-text="i18n.advancedSearch">
+</aw-empty-workarea>
+<!-- For Add Panel usage of the advanced search -->
+<aw-empty-workarea class="aw-base-scrollPanel" 
+    exist-when="!subPanelContext.searchState.totalFound && !subPanelContext.searchState.totalLoaded && !subPanelContext.searchState.savedSearchType && !subPanelContext.searchState.advancedSearchCriteria
+    && subPanelContext.provider.clientScopeURI != 'Awp0AdvancedSearch' && subPanelContext.preFilterContext"
+    hint="i18n.emptySearchAreaHint">
+</aw-empty-workarea>
+<aw-scrollpanel exist-when="subPanelContext.searchState.totalFound > 0 || ( subPanelContext.searchState.totalFound === undefined && subPanelContext.searchState.advancedSearchCriteria !== '')">
+    <aw-list dataprovider="data.dataProviders.listDataProvider" show-context-menu="true" show-check-box="subPanelContext.showCheckBox">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+</aw-scrollpanel>

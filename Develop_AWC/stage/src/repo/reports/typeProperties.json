@@ -1,0 +1,11 @@
+{
+  "typeProperties": {
+    "ReportDefinition": {
+      "additionalProperties": [
+        {
+          "name": "Fnd0Applicable_Assignment"
+        }
+      ]
+    }
+  }
+}

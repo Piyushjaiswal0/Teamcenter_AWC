@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path d="M16,16H3V3H16ZM4,15H15V4H4Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <polygon points="13 2 12 2 12 1 11 1 11 0 13 0 13 2" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="7" width="3" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect x="3" width="3" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <polygon points="1 1.999 0 1.999 0 0 1.993 0 1.993 1 1 1 1 1.999" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect y="7" width="1" height="3" class="aw-theme-iconOutline" fill="#464646"/>
+  <rect y="3" width="1" height="3" class="aw-theme-iconOutline" fill="#464646"/>
+  <polygon points="2 13 0 13 0 11 1 11 1 12 2 12 2 13" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

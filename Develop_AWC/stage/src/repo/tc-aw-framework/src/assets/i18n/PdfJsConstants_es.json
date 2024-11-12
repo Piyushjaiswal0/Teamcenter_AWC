@@ -1,0 +1,7 @@
+{
+    "ShowPdfFileTitle": "Visualizador de archivos PDF",
+    "ShowStreamErrorMessage": "La secuencia debe contener datos",
+    "LoadingPDFfile": "Cargando el archivo...",
+    "LoadingFileSuccess": "Se cargó el archivo correctamente...",
+    "LoadingFileFailed": "Fallo al cargar el archivo."
+}

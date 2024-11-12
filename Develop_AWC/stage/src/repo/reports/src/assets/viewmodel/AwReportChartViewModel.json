@@ -1,0 +1,84 @@
+{
+    "schemaVersion": "1.0.0",
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "getReportChartConfiguration",
+        "onUpdate": [{
+            "action": "getReportChartConfiguration",
+            "observers": ["props.subPanelContext.reportsState.searchInfo.categories","props.chartConfig.ChartPropInternalName", "props.chartConfig.ChartTitle", "props.chartConfig.ChartTpIntName","props.subPanelContext.chartCount"]
+        }]
+    },
+    "props": {
+        "chart-config": {
+            "type": "object"
+        },
+        "sub-panel-context":{
+            "type": "object"
+        }
+    },
+    "data":{
+        "chartProviders": {
+            "genericChart": {
+                "title": "",
+                "chartType": "line",
+                "chartConfig": {
+                    "isChartZoomable": true,
+                    "isYAxisLinearOrLogarithmic": "logarithmic",
+                    "xAxisLabel": "",
+                    "yAxisLabel": "{{i18n.objectCount}}",
+                    "isDataLabelOnChartEnabled": true
+                }
+            }
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awReportChartServiceRenderFunction",
+            "deps": "js/AwReportChartService"
+        },
+        "getReportChartConfiguration":{
+            "actionType": "JSFunction",
+            "method": "getReportChartConfiguration",
+            "inputData": {
+                "chartConfig": "{{props.chartConfig}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "outputData":{
+                "chartProviders.genericChart.name": "chartName",
+                "genericChart_chartPoints": "chartPoints",
+                "chartProviders.genericChart.title": "chartTitle",
+                "chartProviders.genericChart.chartType": "chartType",
+                "dataIsReadyChartGen": "dataIsReadyChartGen",
+                "chartProviders.genericChart.seriesInternalName": "seriesInternalName",
+                "chartProviders.genericChart.seriesPropName": "seriesPropName",
+                "chartNoData": "chartNoData"
+            },
+            "deps": "js/AwReportChartService"
+        },
+        "applyChartFilter": {
+            "actionType": "JSFunction",
+            "method": "applyChartFilter",
+            "inputData": {
+                "filterValue": "{{data.eventData.label}}",
+                "filterProperty": "{{data.eventData.seriesName}}",
+                "data": "{{data}}",
+                "subPanelCtx": "{{props.subPanelContext}}",
+                "filterChips": "{{props.filterChips}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "filtersDataProvider.reset"
+                } ]
+            },
+            "deps": "js/AwReportChartService"
+        }
+    },
+    "i18n": {
+        "objectCount": [ "ReportChartMessages" ]
+    },
+    "onEvent": [{
+        "eventId": "genericChart.selected",
+        "action": "applyChartFilter",
+        "cacheEventData": true
+    }]
+}

@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "По умолчанию",
+    "tcAuthorWorkspaceName": "Автор",
+    "tcConsumerWorkspaceName": "Потребитель",
+    "tcActiveAdminWorkspaceName": "Администрирование активного пространства",
+    "tcActiveArchitectWorkspaceName": "Активная архитектура",
+    "mbmWorkspaceName":"Диспетчер MBOM"
+}

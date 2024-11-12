@@ -1,0 +1,43 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+    ],
+    "lifecycleHooks": {
+        "onMount": "buildTitle",
+        "onUpdate": {
+            "action": "buildTitle",
+            "observers": [ "props.subPanelContext.searchState" ]
+        }
+    },
+    "data": {
+        "crumbTitle": null
+    },
+    "actions": {
+        "selectSeedItem": {
+            "actionType": "JSFunction",
+            "method": "setSelection",
+            "inputData": {
+                "selectionModel": "",
+                "newSelection": "{{ctx.shapeSearch.geolusCriteria}}"
+            },
+            "deps": "js/selectionModelFactory"
+        },
+        "buildTitle": {
+            "actionType": "JSFunctionAsync",
+            "method": "buildTitle",
+            "inputData": {
+                "searchObject": "{{props.subPanelContext.searchState}}"
+            },
+            "outputData": {
+                "crumbTitle": ""
+            },
+            "deps": "js/AwSearchBreadcrumbUtils"
+        }
+    },
+    "onEvent": [],
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    }
+}

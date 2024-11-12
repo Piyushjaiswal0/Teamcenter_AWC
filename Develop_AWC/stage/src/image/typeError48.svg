@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Dark_Blue_Grad_4" data-name="Dark Blue Grad 4" x1="7.3841" y1="16.1025" x2="40.6158" y2="49.3342" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75b2c5"/>
+      <stop offset=".1774" stop-color="#6cacbf"/>
+      <stop offset=".4638" stop-color="#549cb1"/>
+      <stop offset=".8215" stop-color="#2d829a"/>
+      <stop offset="1" stop-color="#18748e"/>
+    </linearGradient>
+  </defs>
+  <path d="m1.1097,37.5756c-1.8089,3.5815.6242,7.9245,4.4397,7.9245h36.9012c3.8154,0,6.2486-4.3429,4.4397-7.9245L29.0501,4.888c-2.1993-4.0411-7.9009-4.0411-10.1002,0L1.1097,37.5756Z" fill="url(#Dark_Blue_Grad_4)" stroke="#464646" stroke-miterlimit="10"/>
+  <line x1="17.2857" y1="22" x2="30.7143" y2="35.4286" fill="none" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+  <line x1="17.2857" y1="35.4286" x2="30.7143" y2="22" fill="none" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
+  <line x1="17.2857" y1="22" x2="30.7143" y2="35.4286" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <line x1="17.2857" y1="35.4286" x2="30.7143" y2="22" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <line x1="17.2857" y1="22" x2="30.7143" y2="35.4286" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+  <line x1="17.2857" y1="35.4286" x2="30.7143" y2="22" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+</svg>

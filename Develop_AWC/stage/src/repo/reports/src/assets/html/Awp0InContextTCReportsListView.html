@@ -1,0 +1,8 @@
+<aw-panel-body>
+         <aw-list dataprovider="data.dataProviders.getInContextReportDefinitions">
+            <aw-default-cell vmo="item"></aw-default-cell>
+        </aw-list>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="generateAWReport" enable-when="conditions.showAWGenerateButton" size="auto"><aw-i18n>i18n.generateReport</aw-i18n></aw-button>
+</aw-panel-footer>

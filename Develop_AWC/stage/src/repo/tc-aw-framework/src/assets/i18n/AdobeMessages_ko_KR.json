@@ -1,0 +1,22 @@
+{
+    "digitalAssetsPanelTitle": "디지털 에셋",
+    "imagePanelTitle": "이미지 및 색상",
+    "updatesSectionTitle": "Teamcenter의 업데이트",
+    "digitalAssetsInUseSectionTitle": "\"{0}\"의 디지털 에셋",
+    "imageInUseSectionTitle": "\"{0}\"의 이미지 및 색상",
+    "adobeFile": "Adobe 파일",
+    "typeLabel": "유형",
+    "revisionLabel": "리비전",
+    "quantityLabel": "수량",
+    "expectedLabel": "예상",
+    "cmdReplaceDigitalAsset": "교체",
+    "showObjectCell": "열기",
+    "cmdDeleteDigitalAsset": "삭제",
+    "adobe_cell_commands_updatesList": "셀 명령 업데이트 리스트",
+    "adobe_cell_commands_inUseList": "셀 명령 사용 중 리스트",
+    "DigitalAssetsPanelDesc": "아트워크와 관련된 디지털 에셋을 봅니다.",
+    "ImagePanelDesc": "2D CAD와 관련된 이미지 및 색상을 봅니다.",
+    "cmdReplaceDigitalAssetDesc": "Adobe 응용 프로그램에서 열린 디지털 에셋을 Teamcenter에서 업데이트된 디지털 에셋으로 교체합니다.",
+    "cmdDeleteDigitalAssetDesc": "아트워크에서 선택한 디지털 에셋을 제거합니다.",
+    "showObjectCellDesc": "선택 항목을 엽니다."
+}

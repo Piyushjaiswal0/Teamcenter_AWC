@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "Uživatelé",
+    "organizationTitle": "Organizace",
+    "groupTitle": "Skupiny",
+    "roleTitle": "Role",
+    "userTitle": "Uživatelé",
+    "RevokeConsentTitle": "Odvolat souhlas",
+    "revokeGDPRConsentLabel": "Odvolat souhlas uživatele",
+    "revokeConsentConfirmationMessage": "Odvoláním souhlasu budete odhlášeni z Teamcenteru",
+    "Group": "Skupina",
+    "DefaultRole":  "Výchozí role",
+    "DefaultGroup": "Výchozí skupina",
+    "cancel": "Storno",
+    "revoke": "Zrušit",
+    "group": "Skupina",
+    "role": "Role",
+    "userMembershipTitle":"Členství uživatele",
+    "userCalendarNotExits":"Žádný uživatelský kalendář",
+    "addButtonText": "Přidat"
+}

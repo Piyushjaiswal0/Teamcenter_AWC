@@ -1,0 +1,56 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3.7929" y1="9.2071" x2="37.2071" y2="42.6213">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M0.5,12.5v26c0,1.105,0.895,2,2,2h36c1.105,0,2-0.895,2-2v-26H0.5z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="7.7929" y1="-5.6213" x2="33.2071" y2="19.7929">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<path fill="url(#SVGID_2_)" stroke="#147391" stroke-miterlimit="10" d="M40.5,12.5v-10c0-1.105-0.895-2-2-2h-36
+	c-1.105,0-2,0.896-2,2v10H40.5z"/>
+<line fill="none" stroke="#6E6E6E" x1="8.5" y1="13" x2="8.5" y2="40"/>
+<line fill="none" stroke="#6E6E6E" x1="16.5" y1="13" x2="16.5" y2="40"/>
+<line fill="none" stroke="#6E6E6E" x1="24.5" y1="13" x2="24.5" y2="28.999"/>
+<line fill="none" stroke="#6E6E6E" x1="32.5" y1="13" x2="32.5" y2="22.999"/>
+<line fill="none" stroke="#6E6E6E" x1="1" y1="33.5" x2="22.999" y2="33.5"/>
+<line fill="none" stroke="#6E6E6E" x1="1" y1="26.5" x2="26.999" y2="26.5"/>
+<line fill="none" stroke="#6E6E6E" x1="1" y1="19.5" x2="40" y2="19.5"/>
+<circle fill="#FFFFFF" stroke="#147391" stroke-miterlimit="10" cx="13" cy="6" r="1.5"/>
+<circle fill="#FFFFFF" stroke="#147391" stroke-miterlimit="10" cx="28" cy="6" r="1.5"/>
+<path fill="none" stroke="#464646" stroke-miterlimit="10" d="M40.5,38.5v-36c0-1.105-0.895-2-2-2h-36c-1.105,0-2,0.895-2,2v36
+	c0,1.105,0.895,2,2,2h36C39.605,40.5,40.5,39.605,40.5,38.5z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="26.1612" y1="26.1612" x2="43.8388" y2="43.8389">
+	<stop  offset="0" style="stop-color:#73B4C8"/>
+	<stop  offset="0.1747" style="stop-color:#6AAEC3"/>
+	<stop  offset="0.4567" style="stop-color:#529EB5"/>
+	<stop  offset="0.8089" style="stop-color:#2C839F"/>
+	<stop  offset="1" style="stop-color:#147391"/>
+</linearGradient>
+<circle fill="url(#SVGID_3_)" stroke="#464646" stroke-miterlimit="10" cx="35" cy="35" r="12.5"/>
+	<path fill="#FFFFFF" d="M35,40.499c-0.827,0-1.5-0.673-1.5-1.5v-1.73c0-1.713,1-3.282,2.547-3.999
+		c1.047-0.484,1.614-1.583,1.412-2.737c-0.175-0.998-0.994-1.817-1.993-1.993c-0.156-0.027-0.312-0.041-0.467-0.041
+		c-0.595,0-1.15,0.202-1.605,0.583c-0.567,0.477-0.894,1.175-0.894,1.916c0,0.827-0.673,1.5-1.5,1.5s-1.5-0.673-1.5-1.5
+		c0-1.629,0.716-3.164,1.965-4.213c0.987-0.83,2.245-1.286,3.542-1.286c0.325,0,0.654,0.029,0.978,0.086
+		c2.219,0.389,4.041,2.21,4.43,4.429c0.434,2.474-0.844,4.932-3.107,5.978c-0.49,0.227-0.807,0.728-0.807,1.276v1.73
+		C36.5,39.826,35.827,40.499,35,40.499z"/>
+		<path fill="#147391" d="M35.006,26c0.296,0,0.594,0.026,0.891,0.078c2.016,0.354,3.671,2.008,4.024,4.023
+			c0.395,2.25-0.768,4.487-2.825,5.438C36.431,35.847,36,36.526,36,37.269v1.73c0,0.552-0.447,1-1,1c-0.553,0-1-0.448-1-1v-1.73
+			c0-1.519,0.886-2.91,2.257-3.545c1.256-0.58,1.937-1.897,1.694-3.277c-0.21-1.202-1.197-2.188-2.399-2.399
+			C35.366,28.016,35.181,28,34.999,28c-0.707,0-1.377,0.239-1.927,0.7C32.391,29.273,32,30.11,32,30.999c0,0.552-0.447,1-1,1
+			c-0.553,0-1-0.448-1-1c0-1.481,0.651-2.877,1.786-3.83C32.693,26.408,33.831,26,35.006,26 M35.007,25L35.007,25
+			c-1.414,0-2.786,0.498-3.864,1.403C29.781,27.547,29,29.222,29,30.999c0,1.103,0.897,2,2,2c1.103,0,2-0.897,2-2
+			c0-0.593,0.261-1.151,0.715-1.533C34.079,29.161,34.523,29,34.999,29c0.126,0,0.254,0.011,0.382,0.033
+			c0.78,0.137,1.448,0.804,1.584,1.586c0.163,0.927-0.291,1.81-1.129,2.197C34.113,33.614,33,35.362,33,37.269v1.73
+			c0,1.103,0.897,2,2,2c1.103,0,2-0.897,2-2v-1.73c0-0.354,0.203-0.677,0.517-0.822c2.469-1.141,3.863-3.822,3.39-6.518
+			c-0.425-2.422-2.414-4.41-4.837-4.835C35.719,25.031,35.361,25,35.007,25L35.007,25z"/>
+<circle fill="#FFFFFF" stroke="#147391" cx="35" cy="43" r="1.5"/>
+</svg>

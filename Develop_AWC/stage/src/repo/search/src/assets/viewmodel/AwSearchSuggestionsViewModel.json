@@ -1,0 +1,201 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "props": {
+        "action": {
+            "type": "action"
+        },
+        "suggestions": {
+            "type": "object"
+        },
+        "searchstring": {
+            "type": "field"
+        },
+        "show-suggestions":{
+            "type":"object"
+        },
+        "search-history-cache":{
+            "type":"string"
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awSearchSuggestionsServiceRenderFunction",
+            "deps": "js/AwSearchSuggestionsService"
+        },
+        "onMount": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "getRecents"
+                },
+                {
+                    "action": "initAwSearch"
+                }
+            ]
+        },
+        "onUnmount": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "clearLocalStorage"
+                }
+            ]
+        },
+        "clearLocalStorage": {
+            "actionType": "JSFunction",
+            "method": "clearLocalStorage",
+            "inputData": {
+                "displayClearAll": "{{data.displayClear}}",
+                "searchHistoryCache":"{{props.searchHistoryCache}}"
+            },
+            "outputData": {
+            },
+            "deps": "js/awSearchControllerService"
+        },
+        "initAwSearch": {
+            "actionType": "JSFunction",
+            "method": "initAwSearch",
+            "inputData": {
+                "userUidString": "{{ctx.user.uid}}"
+            },
+            "outputData": {
+            },
+            "deps": "js/awSearchControllerService"
+        },
+        "toggleShowMoreFlag": {
+            "actionType": "JSFunction",
+            "method": "toggleShowMoreFlag",
+            "inputData": {
+                "userUidString": "{{ctx.user.uid}}",
+                "criteria": "{{props.searchstring.value}}"
+            },
+            "outputData": {
+                "recents": "",
+                "displayClear": true
+            },
+            "deps": "js/awSearchControllerService"
+        },
+        "getSuggestions": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2012-10-FullTextSearch",
+            "method": "getSuggestions",
+            "inputData": {
+                "searchInput": {
+                    "searchString": "{{props.searchstring.value}}",
+                    "maxCount": 5
+                }
+            },
+            "outputData": {
+                "showPopup": true,
+                "getSuggestionsDone": true,
+                "suggestions": "suggestions"
+            }
+        },
+        "getRecents": {
+            "actionType": "JSFunction",
+            "method": "retrieveRecentSearchObjectsFiltered",
+            "inputData": {
+                "userUidString": "{{ctx.user.uid}}",
+                "criteria": "{{props.searchstring.value}}",
+                "searchHistoryCache":"{{props.searchHistoryCache}}"
+            },
+            "outputData": {
+                "getRecentsDone": true,
+                "recents": "",
+                "displayClear": true
+            },
+            "deps": "js/awSearchControllerService"
+        },
+        "deleteAllRecentSearches": {
+            "actionType": "JSFunction",
+            "method": "deleteAllRecentSearches",
+            "inputData": {
+            },
+            "outputData": {
+                "recents": "",
+                "displayClear": false
+            },
+            "deps": "js/awSearchControllerService"
+        },
+        "undoDeleteAllRecentSearches": {
+            "actionType": "JSFunction",
+            "method": "retrieveRecentSearchObjectsFiltered",
+            "inputData": {
+                "userUidString": "{{ctx.user.uid}}",
+                "criteria": "{{props.searchstring.value}}",
+                "searchHistoryCache":"{{props.searchHistoryCache}}"
+            },
+            "outputData": {
+                "recents": "",
+                "displayClear": true
+            },
+            "deps": "js/awSearchControllerService"
+        }
+    },
+    "onEvent": [
+        {
+            "eventId": "search.recentsChanged",
+            "action": "getRecents"
+        },
+        {
+            "eventId": "search.suggestionsChanged",
+            "action": "getSuggestions"
+        }
+    ],
+
+    "functions": {
+
+    },
+    "data": {
+        "clear": {
+            "displayName": "{{i18n.clear}}",
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "undoClear": {
+            "displayName": "{{i18n.undo}}",
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "showMore": {
+            "displayName": "{{i18n.searchFilterCategoryExpandMore}}",
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "showLess": {
+            "displayName": "{{i18n.searchFilterCategoryExpandLess}}",
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": ""
+        }
+    },
+
+    "messages": {
+
+    },
+    "conditions": {
+    },
+
+    "i18n": {
+        "noSuggestions": [ "SearchMessages" ],
+        "suggestions": [ "SearchMessages" ],
+        "launchSavedSearchText": [ "SearchMessages" ],
+        "recentSearches": [ "SearchMessages" ],
+        "clear": [ "SearchMessages" ],
+        "undo": [ "SearchMessages" ],
+        "searchFilterCategoryExpandMore": [ "SearchMessages" ],
+        "searchFilterCategoryExpandLess": [ "SearchMessages" ],
+        "clearedRecentSearches": [ "SearchMessages" ],
+        "expandSearch": [ "SearchMessages" ],
+        "expandSearchPanel": [ "SearchMessages" ]
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "onMount",
+        "onUnmount": "onUnmount"
+    }
+}

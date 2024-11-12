@@ -1,0 +1,251 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-checkbox.directive",
+        "js/aw-label.directive",
+        "js/aw-break.directive",
+        "js/aw-flex-row.directive"
+    ],
+    "data": {
+        "descriptionBasic": {
+            "displayName": "Description",
+            "dispValue": "To display basic checkbox vertically and allows the user for single, multiple or no selection"
+        },
+        "categoryEntertainment": {
+            "displayName": "Entertainment",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": "Entertainment"
+        },
+        "categoryTechnology": {
+            "displayName": "Technology",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "categorySports": {
+            "displayName": "Sports",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "descriptionHorizontal": {
+            "displayName": "Description",
+            "dispValue": "To display basic checkbox horizontally, allows the user for single, multiple or no selection and to display pre-selected value"
+        },
+        "foodWaffles": {
+            "displayName": "Waffles",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": true,
+            "dispValue": "Waffles",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "foodPanCakes": {
+            "displayName": "Pan Cakes",
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": "Pan Cakes",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "foodBrownie": {
+            "displayName": "Brownie",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": true,
+            "dispValue": "Brownie",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT"
+        },
+        "selectedFood": {
+            "displayName": "Selected Food",
+            "isRequired": "false",
+            "isEditable": "true"
+        },
+        "descriptionLeft": {
+            "displayName": "Description",
+            "dispValue": "To display checkbox at left and to show pre-selected value"
+        },
+        "colorBlack": {
+            "displayName": "Black",
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": true,
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE"
+        },
+        "colorBlue": {
+            "displayName": "Blue",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE"
+        },
+        "descriptionTop": {
+            "displayName": "Description",
+            "dispValue": "display basic checkbox with label on top"
+        },
+        "categoryHeart": {
+            "displayName": "Heart",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "categoryMind": {
+            "displayName": "Mind",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "categoryBody": {
+            "displayName": "Bag of Bones",
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": "",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        },
+        "categoryLbl": {
+            "displayName": "Selected Categories",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValue": "",
+            "dispValue": ""
+        },
+        "disabledUnchecked": {
+            "displayName": "Disabled",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "",
+            "dispValue": "Disabled"
+        },
+        "disabledChecked": {
+            "displayName": "Disabled Checked",
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": true,
+            "dispValue": "Disabled Checked"
+        },
+        "descriptionCheckboxArray": {
+            "displayName": "Description",
+            "dispValue": "To add multiple checkbox boolean values (press Enter once you check/uncheck the checkbox). Double click the added value to go in inline edit mode. Check/uncheck the checkbox and press Enter key."
+        },
+        "checkBoxArray": {
+            "displayName": "Check Box Array",
+            "type": "BOOLEANARRAY",
+            "isRequired": "false",
+            "isEditable": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_SIDE",
+            "isArray": "true"
+        }
+    },
+    "actions": {
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "onLoadValues",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "selectedFood": ""
+            },
+            "deps": "js/showcaseHelper"
+        },
+        "updateEntertainment": {
+            "actionType": "JSFunction",
+            "method": "updateValues",
+            "inputData": {
+                "data": "{{data.categoryEntertainment}}",
+                "dataCategory": "{{data.categoryLbl}}"
+            },
+            "outputData": {
+                "categoryLbl": ""
+            },
+            "deps": "js/showcaseHelper"
+        },
+        "updateTechnology": {
+            "actionType": "JSFunction",
+            "method": "updateValues",
+            "inputData": {
+                "data": "{{data.categoryTechnology}}",
+                "dataCategory": "{{data.categoryLbl}}"
+            },
+            "outputData": {
+                "categoryLbl": ""
+            },
+            "deps": "js/showcaseHelper"
+        },
+        "updateSports": {
+            "actionType": "JSFunction",
+            "method": "updateValues",
+            "inputData": {
+                "data": "{{data.categorySports}}",
+                "dataCategory": "{{data.categoryLbl}}"
+            },
+            "outputData": {
+                "categoryLbl": ""
+            },
+            "deps": "js/showcaseHelper"
+        },
+        "updateWaffles": {
+            "actionType": "JSFunction",
+            "method": "updateValues",
+            "inputData": {
+                "data": "{{data.foodWaffles}}",
+                "dataCategory": "{{data.selectedFood}}"
+            },
+            "outputData": {
+                "selectedFood": ""
+            },
+            "deps": "js/showcaseHelper"
+        },
+        "updatePanCakes": {
+            "actionType": "JSFunction",
+            "method": "updateValues",
+            "inputData": {
+                "data": "{{data.foodPanCakes}}",
+                "dataCategory": "{{data.selectedFood}}"
+            },
+            "outputData": {
+                "selectedFood": ""
+            },
+            "deps": "js/showcaseHelper"
+        },
+        "updateBrownie": {
+            "actionType": "JSFunction",
+            "method": "updateValues",
+            "inputData": {
+                "data": "{{data.foodBrownie}}",
+                "dataCategory": "{{data.selectedFood}}"
+            },
+            "outputData": {
+                "selectedFood": ""
+            },
+            "deps": "js/showcaseHelper"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "reveal"
+    }
+}

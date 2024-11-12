@@ -1,0 +1,47 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awFilterCategoryContentsRenderFunction",
+            "deps": "js/AwFilterCategoryContentsService"
+        },
+        "selectFilterCallBackAction": {
+            "actionType": "JSFunction",
+            "method": "selectFilterCallBackAction",
+            "inputData": {
+                "filter": "{{props.filter}}",
+                "selectFilterAction": "{{props.selectFilterCallBackAction}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "clearFilterFromProps": {
+            "actionType": "JSFunction",
+            "method": "clearFilterFromProps",
+            "inputData": {
+                "props": "{{props}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "data": {
+    },
+    "props": {
+        "filter": {
+            "type": "object"
+        },
+        "exclude-category":{
+            "type": "object"
+        },
+        "selectFilterCallBackAction": {
+            "type": "object"
+        }
+    },
+    "i18n": {},
+    "conditions": {},
+    "onEvent": [],
+    "lifecycleHooks": {
+        "render": "render",
+        "onUnmount": "clearFilterFromProps"
+    }
+}

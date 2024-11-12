@@ -1,0 +1,40 @@
+{
+    "types": 
+    [
+        {
+            "name": "WorkspaceObject",
+            "properties": 
+            [
+                {
+                    "name": "object_desc"
+                },
+
+                {
+                    "name": "object_name"
+                }
+            ]
+        },
+
+        {
+            "name": "ItemRevisionSvAI",
+            "modifiers": 
+            [
+                {
+                    "name": "includeIsModifiable",
+                    "Value": "true"
+                }
+            ]
+        },
+
+        {
+            "name": "ItemSvAI",
+            "modifiers": 
+            [
+                {
+                    "name": "includeIsModifiable",
+                    "Value": "true"
+                }
+            ]
+        }
+    ]
+}

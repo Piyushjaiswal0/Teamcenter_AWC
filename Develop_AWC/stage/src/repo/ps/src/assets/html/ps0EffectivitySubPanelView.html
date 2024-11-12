@@ -1,0 +1,38 @@
+<aw-panel-body>
+    <div exist-when="!ctx.expressionEffectivity.isOnlyUnitEffectivityApplicable">
+        <aw-radiobutton prop="data.dateOrUnitEffectivityTypeRadioButton" action="updateDateOrUnitEffectivityAndClearFields"></aw-radiobutton>
+        <div exist-when="props.subPanelContext.expEffPanelState.dateOrUnitEffectivityTypeRadioButton.dbValue">
+            <div aw-init="prop=data.startDate">
+                <aw-widget prop="data.startDate" exist-when="!data.isTimeEnabled"></aw-widget>
+                <aw-datetime prop="data.startDate" exist-when="data.isTimeEnabled"></aw-datetime>
+            </div>
+            <div>
+                <aw-listbox prop="data.endDateOptions" list="data.endDateList.dbValue"></aw-listbox>
+                <aw-date prop="data.endDate" exist-when="data.endDateOptions.dbValue=='Date' && !data.isTimeEnabled" class="aw-endDate-authorEffectivityPanel"></aw-date>
+                <aw-datetime prop="data.endDate" exist-when="data.endDateOptions.dbValue=='Date' && data.isTimeEnabled" class="aw-endDate-authorEffectivityPanel"></aw-datetime>
+            </div>
+        </div>
+    </div>
+
+    <div exist-when="!props.subPanelContext.expEffPanelState.dateOrUnitEffectivityTypeRadioButton.dbValue || ctx.expressionEffectivity.isOnlyUnitEffectivityApplicable">
+        <aw-command-panel-section caption="i18n.unitEffectivity" exist-when="ctx.expressionEffectivity.isOnlyUnitEffectivityApplicable"></aw-command-panel-section>
+        <aw-flex-row class="aw-occmgmt-elemEffEndItem">
+            <aw-label prop="data.endItemLabel"></aw-label>
+            <aw-property-non-edit-val prop="data.endItemVal"></aw-property-non-edit-val>
+            <aw-icon-button command="data.navigateCommand" class="aw-commands-commandIconButton aw-jswidgets-rmButton"></aw-icon-button>
+        </aw-flex-row>
+        <div>
+            <div aw-init="prop=data.unitRangeText">
+                <aw-textbox title="{{i18n.unitEffectivityTooltip}}" prop="data.unitRangeText"></aw-textbox>
+            </div>
+        </div>
+    </div>
+</aw-panel-body>
+<aw-panel-footer visible-when="conditions.isAddOrEditButtonVisible">
+    <aw-button action="setEffectivity" exist-when="props.subPanelContext.data.flag.dbValue!=='EDIT'" size="auto">
+        <aw-i18n>i18n.add</aw-i18n>
+    </aw-button>
+    <aw-button action="setEffectivity" exist-when="props.subPanelContext.data.flag.dbValue=='EDIT'" size="auto">
+        <aw-i18n>i18n.saveButtonText</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

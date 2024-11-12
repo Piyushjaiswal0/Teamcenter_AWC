@@ -1,0 +1,46 @@
+<aw-command-panel caption="i18n.ADD_BUTTON_TITLE" context="subPanelContext">
+    <div class="aw-layout-flexColumn" show-when="data.activeState.value.activeView ==='AddObjectPrimarySub'">
+        <aw-add target-object="subPanelContext.addObject.targetObject"
+            relations="{{subPanelContext.addObject.relationType}}"
+            include-types="{{subPanelContext.addObject.includedTypes}}"
+            load-sub-types="{{subPanelContext.addObject.loadSubTypes}}"
+            auto-select-on-unique-type="{{subPanelContext.addObject.autoSelectOnUniqueType}}"
+            visible-tabs="{{subPanelContext.addObject.visibleTabs}}"
+            max-recent-count="{{subPanelContext.addObject.maxRecentCount}}"
+            type-filter="{{subPanelContext.addObject.typeFilterNames}}"
+            relation-map="subPanelContext.addObject.relationMap"
+            search-filter="{{subPanelContext.addObject.searchFilter}}"
+            add-panel-state="fields.addPanelState"
+            active-state="data.activeState"
+            xrt-state="data.xrtState"
+            project-state="data.projectState"
+            edit-handler="editHandlers.addPanelEditHandler"
+            sub-panel-context="{ ...subPanelContext, triggerCreate: data.triggerCreate, triggerAddACopy: data.triggerAddACopy }">
+        </aw-add>
+
+        <!-- Panel footer-->
+        <aw-panel-footer visible-when="!fields.addPanelState.searchInputExpanded">
+            <!-- panel-footer button for New tab -->
+            <aw-button size="auto" default="true" action="createObject" enable-when="!ctx.addItemEventProgressing && formProp.attributes.valid" visible-when="conditions.isNewTabAddButtonVisible">
+                <aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n>
+            </aw-button>
+            <!-- panel-footer button for Add a Copy sub Panel -->
+            <aw-button size="auto" button-type="base" default="true" action="toggleAddACopy" visible-when="conditions.isPaletteSearchTabAddACopyButtonVisible" enable-when="conditions.isPaletteSearchTabAddACopyButtonEnable">
+                <aw-i18n>i18n.addACopy</aw-i18n>
+            </aw-button>
+            <!-- panel-footer button for cancel Add a Copy sub Panel -->
+            <aw-button size="auto" button-type="base" default="true" action="toggleAddACopy" visible-when="conditions.isPaletteSearchTabAddACopyCancelButtonVisible" >
+                <aw-i18n>i18n.cancel</aw-i18n>
+            </aw-button>
+            <!-- panel-footer button for Add, Add a Copy sub Panel -->
+            <aw-button size="auto" default="true" action="addACopyObject" visible-when="conditions.isPaletteSearchTabAddACopyCancelButtonVisible">
+                <aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n>
+            </aw-button>
+            <!-- panel-footer button for Palette and Search tab -->
+            <aw-button size="auto" default="true" action="createRelationForPaletteOrSearch" visible-when="conditions.isPaletteSearchTabAddButtonVisible" >
+                <aw-i18n>i18n.ADD_BUTTON_TITLE</aw-i18n>
+            </aw-button>
+        </aw-panel-footer>
+    </div>
+    <aw-add-navigate active-state="data.activeState" project-state="data.projectState" action="actions.setActiveView"></aw-add-navigate>
+</aw-command-panel>

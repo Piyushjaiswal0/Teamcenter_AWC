@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" ist keine gültige Datei für Objektsatz \"{1}\". Neu erstellte Objekte erscheinen nicht im Objektsatz.",
+    "addedObjectIsNotUnique": "Das Objekt \"{1}-{0}\" wurde nicht gespeichert, da \"ID = {1}\" nicht eindeutig ist.",
+    "fileSizeException": "\"{0}\" wurde nicht hinzugefügt. Die Dateigröße hat den maximalen Grenzwert überschritten.",
+    "userNotAuthorized": "\"{0}\" wurde nicht hinzugefügt. Der aktuelle Benutzer ist nicht autorisiert.",
+    "addACopy": "Kopie hinzufügen",
+    "cancel": "Abbrechen",
+    "sourceObject": "Quelle",
+    "chooseFromSystem": "Datei aus System auswählen",
+    "chooseFromDrive": "Von Laufwerk auswählen",
+    "fileNameExceedsLengthLimit": "\"{0}\" wurde nicht hinzugefügt. Die Länge des Dateinamens hat den maximalen Grenzwert überschritten."
+}

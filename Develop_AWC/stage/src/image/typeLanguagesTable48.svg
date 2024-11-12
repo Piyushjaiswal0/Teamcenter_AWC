@@ -1,0 +1,48 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="1.25" y1="-0.25" x2="31.75" y2="30.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2284" stop-color="#fafafa"/>
+      <stop offset="0.4881" stop-color="#ededed"/>
+      <stop offset="0.7621" stop-color="#d7d6d6"/>
+      <stop offset="1" stop-color="#bdbcbc"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_3" data-name="Dark Blue Grad 3" x1="7.25" y1="-6.25" x2="25.75" y2="12.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b3c6"/>
+      <stop offset="0.1774" stop-color="#6aadc1"/>
+      <stop offset="0.4638" stop-color="#529db3"/>
+      <stop offset="0.8215" stop-color="#2c839c"/>
+      <stop offset="1" stop-color="#16748f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="16.7867" y1="13.3596" x2="43.6511" y2="40.224" xlink:href="#linear-gradient"/>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="23.9297" y1="19.4237" x2="38.0611" y2="33.5551" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cce4e9"/>
+      <stop offset="0.2214" stop-color="#c5e0e6"/>
+      <stop offset="0.5419" stop-color="#b2d6df"/>
+      <stop offset="0.9212" stop-color="#92c5d2"/>
+      <stop offset="1" stop-color="#8bc1cf"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4-2" x1="25.0366" y1="20.5518" x2="36.9543" y2="32.4695" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-3" x1="25.8456" y1="21.3396" x2="36.1452" y2="31.6392" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-4" x1="26.0069" y1="21.4917" x2="36.0023" y2="31.4871" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-5" x1="26.693" y1="17.2466" x2="35.1891" y2="25.7427" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-6" x1="26.693" y1="27.236" x2="35.1891" y2="35.7321" xlink:href="#New_Gradient_Swatch_4"/>
+  <rect x="0.5" y="0.5" width="32" height="29" fill="url(#linear-gradient)"/>
+  <rect x="0.5" y="0.5" width="32" height="5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad_3)"/>
+  <line x1="8.5" y1="6" x2="8.5" y2="29.5" fill="none" stroke="#6f6e6f" stroke-miterlimit="10"/>
+  <line x1="8.5" y1="1" x2="8.5" y2="5" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+  <line x1="16.5" y1="1" x2="16.5" y2="5" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+  <line x1="24.5" y1="1" x2="24.5" y2="5" fill="none" stroke="#16748f" stroke-miterlimit="10"/>
+  <line x1="16.5" y1="6" x2="16.5" y2="29.5" fill="none" stroke="#6f6e6f" stroke-miterlimit="10"/>
+  <line x1="32.5" y1="11.5" x2="1" y2="11.5" fill="none" stroke="#6f6e6f" stroke-miterlimit="10"/>
+  <line x1="24.5" y1="6" x2="24.5" y2="29.5" fill="none" stroke="#6f6e6f" stroke-miterlimit="10"/>
+  <line x1="32.5" y1="17.5" x2="1" y2="17.5" fill="none" stroke="#6f6e6f" stroke-miterlimit="10"/>
+  <line x1="32.5" y1="23.5" x2="1" y2="23.5" fill="none" stroke="#6f6e6f" stroke-miterlimit="10"/>
+  <rect x="0.5" y="0.5" width="32" height="29" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path d="M42.129,13.5H18.871A5.371,5.371,0,0,0,13.5,18.871V34.0049A5.4784,5.4784,0,0,0,18.871,39.5h3.63v7l7.2341-7H42.129A5.3348,5.3348,0,0,0,47.5,34.1716V18.871A5.371,5.371,0,0,0,42.129,13.5Z" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+    <ellipse cx="30.9954" cy="26.4894" rx="9.9954" ry="9.9894" stroke="#16748f" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4)"/>
+    <ellipse cx="30.9954" cy="26.5106" rx="6.497" ry="9.9894" stroke="#16748f" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-2)"/>
+    <ellipse cx="30.9954" cy="26.4894" rx="2.4989" ry="9.9894" stroke="#16748f" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-3)"/>
+    <line x1="21.0092" y1="26.4894" x2="41" y2="26.4894" stroke="#16748f" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-4)"/>
+    <line x1="22.445" y1="21.4947" x2="39.4372" y2="21.4947" stroke="#16748f" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-5)"/>
+    <line x1="22.445" y1="31.4841" x2="39.4372" y2="31.4841" stroke="#16748f" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-6)"/>
+</svg>

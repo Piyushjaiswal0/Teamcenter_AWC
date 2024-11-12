@@ -1,0 +1,36 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awWalkerLabelRenderFunction",
+            "deps": "js/AwWalkerLabelService"
+        },
+        "createPropertyFromLabelData": {
+            "actionType": "JSFunction",
+            "inputData": {
+                "labeldata": "{{props.labeldata}}",
+                "property": "{{data.property}}"
+            },
+            "outputData": {
+                "property": ""
+            },
+            "method": "createPropertyFromLabelData",
+            "deps": "js/AwWalkerLabelService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": {
+            "action": "createPropertyFromLabelData",
+            "observers": [
+                "props.labeldata"
+            ]
+        }
+    },
+    "props": {
+        "labeldata": {
+            "type": "object"
+        }
+    }
+}

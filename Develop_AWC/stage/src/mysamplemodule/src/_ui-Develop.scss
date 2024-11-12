@@ -1,0 +1,87 @@
+/* Copyright (c) 2022 Siemens */
+
+/* Theme File*/
+@use 'sass:math';
+// Import the Apollo Default Theme Palette
+@import 'colors/afx-base-themeColors';
+
+// Import the Afx Theme "brand" variables
+@import 'colors/afx-theme-vars';
+@import 'vars/ui-theme-vars';
+
+// Import the Afx Theme variable assignments
+//    PLACEHOLDER
+//    Alternate theme-specific color VARs
+
+//    PLACEHOLDER
+//    Assign Alternate theme-specific VARS to the generic VARs (from _afx-theme-vars.scss) you'd like to override
+
+body.ui-Develop,
+.ui-Develop .afx-default-background {
+    $color: #3B3448; //Generator color has been used here
+
+    // Lightness
+    $lbase: 23;
+    $ltop: 86;
+    $linc: math.div(($ltop - $lbase), 12);
+
+    // The core colors for your theme
+    $aw_accent_1: $color;
+    $aw_accent_2: mix(white, $color, $linc * 1);
+    $aw_accent_3: mix(white, $color, $linc * 2);
+    $aw_accent_4: mix(white, $color, $linc * 3);
+    $aw_accent_5: mix(white, $color, $linc * 4);
+    $aw_accent_6: mix(white, $color, $linc * 5);
+    $aw_accent_7: mix(white, $color, $linc * 6);
+    $aw_accent_8: mix(white, $color, $linc * 7);
+    $aw_accent_9: mix(white, $color, $linc * 8);
+    $aw_accent_10: mix(white, $color, $linc * 9);
+    $aw_accent_11: mix(white, $color, $linc * 10);
+    $aw_accent_12: mix(white, $color, $linc * 11);
+    $aw_accent_13: mix(white, $color, $linc * 12);
+
+    // Override colors from ui-theme-vars
+    $background_1: $aw_accent_1;
+    $background_2: $aw_accent_4;
+    $background_3: $aw_accent_5;
+    $background_4: $aw_accent_6;
+
+    // aw background schemes - used for tiles
+    $aw_background_5: $aw_accent_1;
+    $aw_foreground_5: $Siemens_Snow;
+
+    $aw_background_6: $aw_accent_11;
+    $aw_foreground_6: $Siemens_Snow;
+
+    // include some brand colors; more can be added and overidden as-needed from _afx-theme-vars.scss
+    $aw_accent_7a: $aw_accent_7;
+    $brand_quaternary_content_background: $aw_accent_1;
+    $brand_secondary_button_background: $aw_accent_7a;
+    $brand_primary_background: $aw_accent_4;
+    $brand_secondary_background: $aw_accent_7a;
+    $brand_tertiary_accent_background: $aw_accent_6;
+    $brand_primary_border_focus: $aw_accent_7a;
+    $brand_primary_border_changed: $aw_accent_7a;
+    $brand_primary_accent_border: $aw_accent_6;
+    $brand_search_prefilter_border: $aw_accent_7a;
+    $brand_secondary_button_background_hover: $aw_accent_5;
+    $brand_secondary_button_background_active: $aw_accent_5;
+    $brand_base_button_text: $aw_accent_4;
+    $brand_base_button_border: $aw_accent_4;
+    $brand_tab_title_hover: $aw_accent_5;
+    $brand_tab_title_active: $aw_accent_8;
+    $brand_tab_title_selected: $aw_accent_5;
+    $brand_tab_title_selected_border_color: $aw_accent_5;
+    $brand_tab_title_selected_border_color_hover: $aw_accent_5;
+
+    // Import the Theme variable assignments
+    @import 'colors/afx-theme-settings';
+    @import 'vars/ui-theme-settings';
+    @import 'mixins/mixins';
+    @import 'colors/afx-widgets-theme';
+
+    // note: this is a dark blue gradient background for light/horizon theme
+    @include gradient_bg();
+    color: $brand_primary_inverse_text;
+    fill: $brand_primary_inverse_text;
+}

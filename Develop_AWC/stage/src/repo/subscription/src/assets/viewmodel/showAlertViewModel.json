@@ -1,0 +1,231 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "showAlertContentLoaded": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2013-05-LOV",
+            "method": "getInitialLOVValues",
+            "inputData": {
+                "initialData": {
+                    "lov": "",
+                    "lovInput": {
+                        "owningObject": "",
+                        "boName": "Fnd0Message",
+                        "operationName": "Search",
+                        "propertyValues": {}
+                    },
+                    "propertyName": "fnd0ApplicationType",
+                    "filterData": {
+                        "filterString": "",
+                        "maxResults": 0,
+                        "numberToReturn": -1,
+                        "sortPropertyName": "",
+                        "order": 1
+                    }
+                }
+            },
+            "outputData": {
+                "msgAppTypes": "{{function:getApplicationTypes}}",
+                "appTypes": "{{function:getApplicationTypeString}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "performSearch"
+                    }
+                ]
+            },
+            "deps": "js/aw.notification.service"
+        },
+        "loadData": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "columnConfigInput": {
+                    "clientName": "AWClient",
+                    "clientScopeURI": ""
+                },
+                "inflateProperties": false,
+                "saveColumnConfigData": {},
+                "searchInput": {
+                    "maxToLoad": "{{data.messageToLoad.dbValue}}",
+                    "maxToReturn": 190,
+                    "providerName": "Fnd0MessageProvider",
+                    "searchCriteria": {
+                        "Fnd0Message": "*"
+                    },
+                    "searchFilterFieldSortType": "Alphabetical",
+                    "searchFilterMap6": {
+                        "fnd0ApplicationType": [
+                            {
+                                "searchFilterType": "StringFilter",
+                                "stringValue": "{{data.appTypes}}",
+                                "selected": false,
+                                "stringDisplayValue": "",
+                                "startDateValue": "",
+                                "endDateValue": "",
+                                "startNumericValue": 0,
+                                "endNumericValue": 0,
+                                "count": 0,
+                                "startEndRange": ""
+                            }
+                        ],
+                        "fnd0MessageReadFlag": [
+                            {
+                                "searchFilterType": "StringFilter",
+                                "stringValue": "FALSE",
+                                "selected": false,
+                                "stringDisplayValue": "",
+                                "startDateValue": "",
+                                "endDateValue": "",
+                                "startNumericValue": 0,
+                                "endNumericValue": 0,
+                                "count": 0,
+                                "startEndRange": ""
+                            }
+                        ]
+                    },
+                    "searchSortCriteria": [
+                        {
+                            "fieldName": "fnd0SentDate",
+                            "sortDirection": "DESC"
+                        }
+                    ]
+                }
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "Fnd0Message",
+                        "properties": [
+                            {
+                                "name": "awp0CellProperties"
+                            },
+                            {
+                                "name": "fnd0Subject"
+                            },
+                            {
+                                "name": "fnd0ApplicationType"
+                            },
+                            {
+                                "name": "fnd0MessageReadFlag"
+                            },
+                            {
+                                "name": "fnd0SentDate"
+                            },
+                            {
+                                "name": "fnd0TargetObject",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "fnd0RelatedObjects",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "fnd0EventType",
+                                "modifiers": [
+                                    {
+                                        "name": "withProperties",
+                                        "Value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ImanEventType",
+                        "properties": [
+                            {
+                                "name": "eventtype_id"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "ctx.unreadMessageCount": "totalFound",
+                "searchResults": "{{function:getMessageObjects}}",
+                "searchFilterMap3": "searchFilterMap",
+                "response": "{{data.searchResults}}"
+            },
+            "events": {
+                "success": [
+                    {
+                        "name": "loadMessageObjects"
+                    }
+                ]
+            },
+            "deps": "js/aw.notification.service"
+        },
+        "parseMessageObjects": {
+            "actionType": "JSFunction",
+            "method": "parseMessageObjects",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "msgObject.messageObjects": ""
+            },
+            "deps": "js/aw.notification.service"
+        }
+    },
+    "data": {
+        "messageToLoad": {
+            "type": "INTEGER",
+            "dbValue": 190
+        },
+        "msgObject": {
+            "initialValues": {},
+            "meta": {
+                "messageObjects": [
+                    {
+                        "appType": {
+                            "field": "true",
+                            "type": "ViewModelProperty"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "functions": {
+        "getApplicationTypes": {
+            "functionName": "getApplicationTypes",
+            "parameters": [
+                "{{data}}"
+            ]
+        }
+    },
+    "dataProviders": {
+        "listDataProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "selectionModel": "single"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "showAlertContentLoaded"
+    },
+    "onEvent": [
+        {
+            "eventId": "performSearch",
+            "action": "loadData"
+        },
+        {
+            "eventId": "loadMessageObjects",
+            "action": "parseMessageObjects"
+        }
+    ]
+}

@@ -1,0 +1,329 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-listbox.directive",
+        "js/aw-file-upload.directive",
+        "js/visible-when.directive"
+    ],
+    "actions": {
+        "initReplaceAction": {
+            "actionType": "batchJob",
+            "steps": [{
+                    "action": "loadRefNames"
+                },
+                {
+                    "action": "getFilePickerConfiguration"
+                }
+            ]
+        },
+        "loadRefNames": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-DataManagement",
+            "method": "getProperties",
+            "inputData": {
+                "objects": "{{ctx.mselected}}",
+                "attributes": [
+                    "ref_names"
+                ]
+            }
+        },
+        "getFilePickerConfiguration": {
+            "actionType": "JSFunction",
+            "method": "getFilePickerConfiguration",
+            "inputData": {
+                "fileConfigRootType": "replace"
+            },
+            "outputData": {
+                "uploadFileProvider": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "selectionChange": {
+            "actionType": "JSFunction",
+            "method": "onFileSelectionChange",
+            "inputData": {
+                "currentValue": "{{data.datasetFileName}}"
+            },
+            "outputData": {
+                "ctx.selectedDataset.fileNameExt": "result.extension"
+            },
+            "deps": "js/Awp0ReplaceDatasetService"
+        },
+        "cleanUp": {
+            "actionType": "JSFunction",
+            "method": "resetUploadFileSelectionData",
+            "inputData": {
+                "uploadFileSelectionData": "{{data.uploadFileSelectionData}}"
+            },
+            "outputData": {
+                "uploadFileSelectionData": ""
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "fileChangeAction": {
+            "actionType": "JSFunction",
+            "method": "setFileParameters",
+            "inputData": {
+                "fileName": "{{parameters.fileName}}",
+                "validFile": "{{parameters.validFile}}",
+                "fileNameNoExt": "{{parameters.fileNameNoExt}}",
+                "fileExt": "{{parameters.fileExt}}",
+                "formData": "{{parameters.formData}}"
+            },
+            "outputData": {
+                "fileName": "fileName",
+                "validFile": "validFile",
+                "fileNameNoExt": "fileNameNoExt",
+                "fileExt": "fileExt",
+                "formData": "formData"
+            },
+            "deps": "js/fileUploadUtils"
+        },
+        "replaceFile": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [{
+                    "name": "replaceFile.usingDSM",
+                    "condition": "ctx.selectedDataset.isDSMUsable && !ctx.selectedDataset.isPlatformSupported && ctx.selectedDataset.isMultipleReference > 1"
+                }]
+            }
+        },
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "createListModelObjectsFromStrings",
+            "inputData": {
+                "input": "{{ctx.selectedDataset.fileNames}}"
+            },
+            "outputData": {
+                "selectedDatasetFileNames": ""
+            },
+            "deps": "js/listBoxService"
+        },
+        "unregisterContextBatchAction": {
+            "actionType": "batchJob",
+            "steps": [{
+                    "action": "unregisterContext"
+                },
+                {
+                    "action": "unregisterDatasetUploadState"
+                },
+                {
+                    "action": "dataproviderRefresh"
+                }
+            ]
+        },
+        "unregisterContext": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "selectedDataset"
+            }
+        },
+        "unregisterDatasetUploadState": {
+            "actionType": "JSFunction",
+            "method": "unRegisterCtx",
+            "deps": "js/appCtxService",
+            "inputData": {
+                "name": "showFileUploadPanel"
+            }
+        },
+        "dataproviderRefresh": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [{
+                    "name": "cdm.relatedModified",
+                    "eventData": {
+                        "relatedModified": [
+                            "{{ctx.selected}}"
+                        ]
+                    }
+                }]
+            }
+        },
+        "uploadUsingDSM": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Core-2017-05-FileManagement",
+            "method": "getPlmdFileTicketForReplace",
+            "deps": "js/Awp0ReplaceDatasetService",
+            "inputData": {
+                "infos": "{{function:createInputForDSM}}"
+            },
+            "outputData": {
+                "fmsTicket": "ticket"
+            },
+            "events": {
+                "success": [{
+                    "name": "ticket.openFile"
+                }],
+                "failure": [{
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure": [{
+                        "condition": "errorCode.code===14167",
+                        "message": "invalidInputObject"
+                    },
+                    {
+                        "condition": "errorCode.code===14165",
+                        "message": "uploadInProgress"
+                    },
+                    {
+                        "condition": "errorCode.code===141170",
+                        "message": "platformnotsupported"
+                    }
+                ]
+            }
+        },
+        "openFile": {
+            "actionType": "openFile",
+            "inputData": {
+                "fileTicket": "{{data.fmsTicket}}",
+                "openFileName": ""
+            },
+            "events": {
+                "success": [{
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            }
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "onEvent": [{
+            "eventId": "complete",
+            "condition": "props.subPanelContext.upload === false",
+            "action": "unregisterContext"
+        },
+        {
+            "eventId": "complete",
+            "condition": "props.subPanelContext.upload === true",
+            "action": "unregisterContextBatchAction"
+        },
+        {
+            "eventId": "replaceFile.usingDSM",
+            "action": "uploadUsingDSM"
+        },
+        {
+            "eventId": "ticket.openFile",
+            "action": "openFile"
+        },
+        {
+            "eventId": "closeDialog",
+            "action": "closePanelDialog"
+        },
+        {
+            "eventId": "primaryWorkArea.selectionChangeEvent",
+            "action": "closePanelDialog"
+        }
+    ],
+    "data": {
+        "datasetName": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "true",
+            "dbValue": "{{ctx.selectedDataset.datasetDisplayName}}",
+            "dispValue": "{{ctx.selectedDataset.datasetDisplayName}}"
+        },
+        "datasetFileName": {
+            "displayName": "",
+            "type": "STRING",
+            "hasLov": true,
+            "dbValue": "{{ctx.selectedDataset.fileNames[0]}}",
+            "dispValue": "{{ctx.selectedDataset.fileNames[0]}}"
+        },
+        "uploadFileSelectionData": {
+            "initialValues": {},
+            "meta": {}
+        }
+    },
+    "functions": {
+        "submitForm": {
+            "functionName": "submitForm",
+            "parameters": []
+        },
+        "createInputForDSM": {
+            "functionName": "createInputForDSM",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{data}}"
+            ]
+        }
+    },
+    "conditions": {
+        "isMultipleFiles": {
+            "expression": "ctx.selectedDataset.fileNames.length>1"
+        },
+        "isMultipleFileDSMSupport": {
+            "expression": "ctx.selectedDataset.isDSMUsable && !ctx.selectedDataset.isPlatformSupported && ctx.selectedDataset.isMultipleReference > 1"
+        },
+        "isMultipleFilesSynchronous": {
+            "expression": "!ctx.selectedDataset.isDSMUsable || !ctx.selectedDataset.isMultipleReference"
+        }
+    },
+    "messages": {
+        "invalidInputObject": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.InvalidSelectedObject}}"
+        },
+        "uploadInProgress": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.AsynUploadInProgress}}"
+        },
+        "platformnotsupported": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.PlatformNotSupported}}"
+        }
+    },
+    "i18n": {
+        "replace": [
+            "ReplaceFileMessages"
+        ],
+        "upload": [
+            "ReplaceFileMessages"
+        ],
+        "InvalidSelectedObject": [
+            "ReplaceFileMessages"
+        ],
+        "AsynUploadInProgress": [
+            "ReplaceFileMessages"
+        ],
+        "PlatformNotSupported": [
+            "ReplaceFileMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "initReplaceAction",
+        "onUnmount": "cleanUp"
+    }
+}

@@ -1,0 +1,64 @@
+<aw-command-panel caption="i18n.arrangeMenu">
+    <aw-panel-body>
+        <div class="sw-column h-12 my-normal">
+            <div class="sw-row flex-shrink">
+                <div class="sw-column w-5">
+                       <aw-label prop="data.columnConfigName" visible-when="data.columnConfigName.uiValue" class="aw-arrange-columnConfigLabel"></aw-label>
+                </div>
+                <div class="sw-column w-2"></div>
+                <div class="sw-column w-5">
+                    <aw-command-bar anchor="arrangeCommandbar" context="data" alignment="HORIZONTAL"></aw-command-bar>
+                </div>
+            </div>
+
+            <div class="sw-row aw-arrange-noSelect justify-space-between h-12">
+                <div class="sw-column w-5">
+                    <div class="sw-row flex-auto">
+                        <aw-command-panel-section caption="i18n.availableColumnsTitle" name="arrangeAvailableColumnsSection" collapsed="disabled">
+                            <aw-list-filter prop="data.filterAvailableBox" dataprovider="data.dataProviders.dataProviderAvailableColumnConfigs">
+                            {{item.displayName}}
+                            </aw-list-filter>
+                        </aw-command-panel-section>
+                    </div>
+                </div>
+                <div class="sw-column flex-auto justify-center align-center">
+                    <aw-command-bar anchor="arrangeTwoPanelCommandbar" context="data" alignment="VERTICAL"></aw-command-bar>
+                </div>
+                <div class="sw-column w-5 my-normal">
+                    <div class="sw-row flex-auto">
+                        <aw-command-panel-section caption="i18n.tableColumnsTitle" name="arrangeTableColumnsSection" collapsed="disabled">
+                            <aw-list-filter prop="data.filterBox" dataprovider="data.dataProviders.dataProviderColumnConfigs">
+                            {{item.displayName}}
+                            </aw-list-filter>
+                        </aw-command-panel-section>
+                    </div>
+                    <div class="sw-row flex-shrink">
+                        <div class="sw-column my-normal justify-space-around w-12">
+                            <div class="sw-row">
+                                <aw-checkbox prop="data.newColumnConfig" action="markDirty"></aw-checkbox>
+                            </div>
+                            <div>
+                                <aw-textbox prop="data.newColumnConfigName" visible-when="data.newColumnConfig.dbValue" id="arrange_newColumnConfigName"></aw-textbox>
+                            </div>
+                            <div class="sw-row">
+                                <aw-button action="arrange" class="arrange_submitButton" visible-when="data.arrangeData.isArrange && data.arrangeData.dirty && data.arrangeData.isColumnsSelected">
+                                    <aw-i18n>i18n.arrangeMenu</aw-i18n>
+                                </aw-button>
+                                <aw-button action="arrangeAndSet" class="arrange_submitButton" visible-when="data.arrangeData.isArrangeAndSave && data.arrangeData.isColumnsSelected && !data.arrangeData.dirty && data.arrangeData.isExistingColumnConfigLoaded">
+                                    <aw-i18n>i18n.arrangeMenu</aw-i18n>
+                                </aw-button>
+                                <aw-button action="arrangeAndSave" class="arrange_submitButton" visible-when="data.arrangeData.isArrangeAndSave && data.arrangeData.isColumnsSelected && data.arrangeData.dirty">
+                                    <aw-i18n>i18n.arrangeAndSaveButtonTitle</aw-i18n>
+                                </aw-button>
+                                <aw-button action="arrangeAndCreate" class="arrange_submitButton" visible-when="data.arrangeData.isArrangeAndCreate && data.arrangeData.isColumnsSelected">
+                                    <aw-i18n>i18n.arrangeAndCreateButtonTitle</aw-i18n>
+                                </aw-button>
+                            </div>
+                            <div class="sw-row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aw-panel-body>
+</aw-command-panel>

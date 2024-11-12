@@ -1,0 +1,9 @@
+{
+    "AlertCmdTitle": "Avvisi",
+    "subManAppLabel": "News Feed",
+    "clear": "Cancella",
+    "noNotificationMsg": "Nessuna nuova notifica",
+    "multipleObjectsMsg": "\"{0}\" e altri \"{1}\"",
+    "aw_globalToolbar": "Barra degli strumenti globale",
+    "Awp0ShowAlertWithBubbleDesc": "Visualizzare i nuovi avvisi."
+}

@@ -1,0 +1,22 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <rect x="7" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="11" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="13" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="17" y="8" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="7" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="9" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="11" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="13" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="15" y="10" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <polygon points="17 10 17 11 17.5 11 18 11 18 10 17 10" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="8" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="10" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="12" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="14" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="16" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="18" y="9" width="1" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+    <path d="M21,12.0316V6H16V0H0V7H5v5H0v7H11.1817A6.4961,6.4961,0,1,0,21,12.0316ZM18,7V8h1V7h1V8H19V9h1v1H19v1h1v.5015a6.4489,6.4489,0,0,0-1-.32V11H18v.0253c-.1656-.0127-.3312-.0253-.5-.0253s-.3344.0126-.5.0253V11H16v.1817a6.4489,6.4489,0,0,0-1,.32V11H14v1h.0519c-.0171.0107-.0349.0206-.0519.0316V12H13V11H12v1H11V11H10v1H9V11H8v1H7V11H6V10H7V9H6V8H7V7H8V8H9V7h1V8h1V7h1V8h1V7h1V8h1V7h1V8h1V7ZM1,6V1H15V6H1ZM1,18V13H12.8206A6.4727,6.4727,0,0,0,11,17.5c0,.1688.0126.3344.0253.5Zm16.5,5A5.5,5.5,0,1,1,23,17.5,5.5062,5.5062,0,0,1,17.5,23Z" class="aw-theme-iconOutline" fill="#464646"/>
+    <rect x="14" y="17" width="7" height="1" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="22.5" y1="21" x2="34.5" y2="33" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.2214" stop-color="#c6e2e8"/>
+      <stop offset="0.5419" stop-color="#b3d8e1"/>
+      <stop offset="0.9212" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="-1" y1="17.5" x2="26" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.1588" stop-color="#a4d0dc"/>
+      <stop offset="0.7059" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="12.5" y1="4" x2="24.5" y2="16" xlink:href="#New_Gradient_Swatch_1"/>
+  </defs>
+  <polygon points="23.5 36 23.5 47 33.5 41 33.5 30 23.5 36" fill="#3c91af"/>
+  <polygon points="33.5 30 33.5 41 43.5 35 43.5 24 33.5 30" fill="#3c91af"/>
+  <polygon points="23.5 13 23.5 24 33.5 18 33.5 7 23.5 13" fill="#3c91af"/>
+  <polygon points="13.5 19 13.5 30 23.5 24 23.5 13 13.5 19" fill="#3c91af"/>
+  <line x1="33.5" y1="30" x2="33.5" y2="41" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="23.5" y1="24" x2="23.5" y2="13" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polygon points="33.5 18 23.5 24 13.5 30 23.5 36 33.5 30 43.5 24 33.5 18" fill="url(#New_Gradient_Swatch_1)"/>
+  <polygon points="13.5 30 13.5 19 3.5 13 3.5 35 23.5 47 23.5 36 13.5 30" fill="url(#New_Gradient_Swatch_2)"/>
+  <line x1="13.5" y1="30" x2="3.5" y2="24" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="23.5" y1="36" x2="23.5" y2="47" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <line x1="13.5" y1="41" x2="13.5" y2="19" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polygon points="23.5 1 13.5 7 3.5 13 13.5 19 23.5 13 33.5 7 23.5 1" fill="url(#New_Gradient_Swatch_1-2)"/>
+  <polyline points="23.5 13 13.5 19 3.5 13" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polyline points="33.5 30 23.5 36 13.5 30 23.5 24" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polyline points="33.5 7 23.5 13 13.5 7" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <polyline points="43.5 24 33.5 30 23.5 24 33.5 18" fill="none" stroke="#147391" stroke-linejoin="round"/>
+  <path d="M3.5,13l0,22,20,12,20-12V24l-10-6V7l-10-6Z" fill="none" stroke="#464646" stroke-linejoin="round"/>
+</svg>

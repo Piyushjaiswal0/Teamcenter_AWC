@@ -1,0 +1,91 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "render": {
+            "method": "aut0UserSettingsRoleLOVComponentRenderFunction",
+            "deps": "js/AutUserSettingsRoleLOVComponentService"
+        },
+        "roleAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Administration-2012-09-UserManagement",
+            "method": "getUserGroupMembers",
+            "inputData":{
+                "inputObjects": [{
+                    "user": "{{ctx.xrtSummaryContextObject}}",
+                    "includeInactive": true,
+                    "includeUser": false,
+                    "clientId": "AWClient"
+                  }]
+            },
+            "policy": {
+                "types": [
+                    {
+                        "name": "Group",
+                        "properties": [
+                            {
+                                "name": "object_full_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Role",
+                        "properties": [
+                            {
+                                "name": "role_name"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "GroupMember",
+                        "properties": [
+                            {
+                                "name": "status"
+                            },
+                            {
+                                "name": "group"
+                            },
+                            {
+                                "name": "role"
+                            },
+                            {
+                                "name": "default_role"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "outputData": {
+                "uniqueRoles": "{{function:getRolesForSelectedGroup}}",
+                "rolesFound": "uniqueRoles.length",
+                "moreValuesExist": "data.moreValuesExist"
+            },
+            "deps": "js/aw.UserSettings.Service"
+        }
+    },
+    "data": {},
+    "conditions": {},
+    "onEvent": [],
+    "dataProviders": {
+        "rolesProvider": {
+            "action": "roleAction",
+            "response": "{{data.uniqueRoles}}",
+            "moreValuesExist": "{{data.moreValuesExist}}"
+        }
+    },
+    "functions": {
+        "getRolesForSelectedGroup": {
+            "functionName": "getRolesForSelectedGroup",
+            "parameters": [
+                "{{props.vmo.props.group.uiValues[0]}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props":{
+        "prop":{
+            "type": "field"
+        }
+    }
+}

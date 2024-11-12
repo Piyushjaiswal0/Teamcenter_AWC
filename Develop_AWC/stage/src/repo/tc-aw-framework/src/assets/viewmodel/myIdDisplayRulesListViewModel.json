@@ -1,0 +1,49 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-scrollpanel.directive"
+    ],
+
+    "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "myIdDisplayRuleProvider"
+        },
+
+        "getDisplayRules": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-12-DataManagement",
+            "method": "listAlternateIdDisplayRules",
+            "inputData": {
+                "input": {
+                    "users": [ "{{ctx.user}}" ],
+                    "currentUser": true
+                }
+            },
+            "outputData": {
+                "searchResults": "{{function:getDisplayIdsForUser}}",
+                "currentRuleInDB": "currentRuleInDB"
+            },
+            "deps": "js/idDisplayRuleMgmntUtils"
+        }
+    },
+
+    "dataProviders": {
+        "myIdDisplayRuleProvider": {
+            "action": "getDisplayRules",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.searchResults.length}}",
+            "inputData": {
+                "selectionModel": "{{subPanelContext.selectionModel}}"
+            },
+            "commandsAnchor": "com.siemens.splm.clientfx.tcui.commands.modelObjectCellListActionCommands"
+        }
+    },
+
+    "onEvent": [ {
+        "eventId": "myIdDisplayRulesList.contentLoaded",
+        "action": "reveal"
+    } ]
+}

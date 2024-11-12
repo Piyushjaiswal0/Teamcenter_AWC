@@ -1,0 +1,11 @@
+{
+  "name": "search",
+  "description": "",
+  "pathOffset": ".",
+  "skipAudit": true,
+  "version": "6.3.1",
+  "author": "Siemens Product Lifecycle Management Software Inc.",
+  "themeExtensions": [
+    "searchTheme"
+  ]
+}

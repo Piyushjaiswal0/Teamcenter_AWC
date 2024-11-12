@@ -1,0 +1,30 @@
+<div class="sw-row aw-taskbar-container afx-accent-background w-12">
+    <div class="sw-row w-8 aw-reports-reportTypeContainer">
+        <div class="aw-reports-reportTypeLabel">
+            <aw-property-label prop="data.reportTypeLabel"></aw-property-label>
+        </div>
+        <div class="aw-reports-typeSelectorWidget">
+            <aw-widget class="w-12" enable-when="conditions.editMode" prop="data.reportTypeName" action="changeReportType"></aw-widget>
+        </div>
+        <div class="sw-row aw-reports-criteriaLabelsContainer" exist-when="conditions.itemReport" >
+            <div class="aw-reports-reportTypeLabel">
+                <aw-property-label prop="data.criteria"></aw-property-label>
+            </div>
+            <aw-label class="aw-reports-reportNoCriteriaContainer" exist-when="data.criteriaChips.length===0" prop="data.criteriaValue"></aw-label>
+            <aw-chip-list class="aw-reports-reportCriteriaContainer" enable-when="conditions.notPreviewed" exist-when="data.criteriaChips.length>0"  button-type="chromeless" dataprovider="data.dataProviders.criteriaChipDataProvider"></aw-chip-list>
+            <aw-command-bar anchor="createItemReportTemplateTaskBar1" alignment="HORIZONTAL" context="subPanelContext"></aw-command-bar>
+            <div class="w-1">
+                <aw-property-label exist-when="conditions.segmentsAvailable" prop="data.relations"></aw-property-label>
+            </div>
+            <aw-popup-wrapper popup="openSegmentPopup">
+                <aw-chip-list exist-when="conditions.segmentsAvailable" class="aw-reports-reportCriteriaContainer" button-type="chromeless" dataprovider="data.dataProviders.segmentChipDataProvider" action="openSegmentPopup"></aw-chip-list>
+            </aw-popup-wrapper>
+            <aw-command-bar anchor="createItemReportTemplateTaskBar2" alignment="HORIZONTAL" context="subPanelContext"></aw-command-bar>
+        </div>
+    </div>
+    <div class="sw-row w-4 justify-right flex-auto">
+        <aw-command-bar anchor="createTemplateTaskBar" alignment="HORIZONTAL" context="subPanelContext"></aw-command-bar>
+        <aw-separator is-vertical="true"></aw-separator>
+        <aw-command-bar anchor="toolbarRightSlot" alignment="HORIZONTAL"></aw-command-bar>
+    </div>
+</div>

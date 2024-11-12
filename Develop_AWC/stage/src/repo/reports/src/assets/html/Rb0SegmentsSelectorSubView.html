@@ -1,0 +1,51 @@
+<aw-panel-body>
+    <aw-command-panel-section collapsed="false" caption="{{seg.caption}}" anchor="(seg.index !== 1 && seg.index === data.segments.length) ? data.rb0RemoveSegmentCommands : ''" aw-repeat="seg: props.subPanelContext.reportsContext.segments" context="{ ...subPanelContext }" exist-when="props.subPanelContext.reportsContext.segments.length">
+        <div visible-when="seg.caption !== undefined && seg.caption !== null">
+            <aw-segment-section sub-panel-context="subPanelContext" traverse-segment="seg" >
+            </aw-segment-section>
+        </div>
+    </aw-command-panel-section>
+    <aw-flex-row height="4f">
+        <aw-flex-column width="fill" justify="left" align-content="start">
+            <!--aw-link prop="data.previewLink" action="goToPreview" visible-when="data.segment.props.fnd0DestinationType.dbValue.length > 0"></aw-link-->
+            <!--aw-button button-type="chromeless" class="align-items=flex-start" size="auto" action="verifyTraversal" aw-class="{'disabled': data.disabledButtonChk.dbValue}" visible-when="data.segment.props.fnd0DestinationType.dbValue.length > 0">Verify</aw-button-->
+            <!--aw-togglebutton prop="data.showPreview"></aw-togglebutton-->
+        </aw-flex-column>
+        <aw-flex-column width="10f" justify="center" align-content="end">
+            <!--aw-command-bar anchor="addNewSegmentsCommands" alignment="HORIZONTAL" visible-when="conditions.canAddNewSegment"></aw-command-bar-->
+            <aw-button action="addSegmentActions" button-type="base" size="auto" visible-when="conditions.canAddNewSegment">
+                <aw-i18n>i18n.addSegment</aw-i18n>
+            </aw-button>
+        </aw-flex-column>
+    </aw-flex-row>
+    <aw-flex-row class="aw-layout-panelSection aw-layout-panelSectionTitle" height="3f">
+        <aw-flex-column>
+            <div>{{i18n.preview}}</div>
+        </aw-flex-column>
+        <aw-flex-column justify="right" align-content="end">
+            <aw-togglebutton prop="data.showPreview" class="aw-reports-previewSection"></aw-togglebutton>
+        </aw-flex-column>
+    </aw-flex-row>
+    <aw-list dataprovider="data.dataProviders.traversedObjectProvider" visible-when="conditions.shouldShowPreview">
+        <aw-default-cell vmo="item"></aw-default-cell>
+    </aw-list>
+    <!--div exist-when="data.showSegment.dbValue">
+        <aw-radiobutton prop="data.segment.props.fnd0Direction" action="clearRelationSegment"></aw-radiobutton>
+        <aw-widget prop="data.segment.props.fnd0RelationOrReference" visible-when="data.segment.props.fnd0Direction.dbValue"></aw-widget>
+        <aw-widget prop="data.segment.props.fnd0DestinationType"></aw-widget>
+        <aw-widget prop="data.segment.props.fnd0RelationOrReference" visible-when="!data.segment.props.fnd0Direction.dbValue"></aw-widget>
+        <aw-button action="verifyTraversal">
+            <aw-i18n>i18n.verify</aw-i18n>
+        </aw-button>
+    </div-->
+    <!--aw-command-panel-section caption="{{i18n.preview}}" anchor="data.segmentPreviewCommands">
+        <aw-list dataprovider="data.dataProviders.traversedObjectProvider" visible-when="conditions.shouldShowPreview">
+            <aw-default-cell vmo="item"></aw-default-cell>
+        </aw-list>
+    </aw-command-panel-section-->
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="buildAndUpdateSegPanel" enable-when="conditions.canAddNewSegment" size="auto">
+        <aw-i18n>i18n.addChartCommand</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

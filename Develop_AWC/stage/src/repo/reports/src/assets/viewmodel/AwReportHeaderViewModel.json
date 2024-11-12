@@ -1,0 +1,157 @@
+{
+    "schemaVersion": "1.0.0",
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize",
+        "onUpdate": [{
+            "action": "prepareReportHeader",
+            "observers": ["props.reportsState.reportParameters.totalFound", "props.reportsState.reportParameters.ReportDefProps.ReportTitle.TitleText"]
+        },{
+            "action": "getRevisionRule",
+            "observers": ["props.reportsState.reportParameters.ReportDefProps.ReportSearchInfo.SearchCriteria"]
+        }]
+    },
+    "actions": {
+        "render": {
+            "method": "awReportHeaderServiceRenderFunction",
+            "deps": "js/AwReportHeaderService"
+        },
+        "goToSource": {
+            "actionType": "Navigate",
+            "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+            "navigationParams": {
+                "uid": "{{ctx.state.params.referenceId}}"
+            }
+        },
+        "initialize": {
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "prepareReportHeader"
+            },{
+                "action": "updateRevisionRuleLabel",
+                "condition": "ctx.sublocation.historyNameToken !== 'createReportTemplate' && conditions.showRevRule"
+            }, {
+                "action": "getSourceObject",
+                "condition": "!(ctx.state.params.referenceId === 'new' || ctx.state.params.referenceId ==='edit')"
+            } ]
+        },
+        "prepareReportHeader": {
+            "actionType": "JSFunction",
+            "method": "prepareReportHeader",
+            "inputData": {
+                "data": "{{data}}",
+                "reportsState": "{{props.reportsState.reportParameters}}",
+                "repTitle": "{{data.title}}",
+                "repTotalObj": "{{data.totalFoundString}}",
+                "repTime": "{{data.timeOfRequest}}"
+            },
+            "outputData": {
+                "dataIsReady": true,
+                "title": "repTitle",
+                "totalFoundString": "repTotalObj",
+                "timeOfRequest": "repTime"
+            },
+            "deps": "js/AwReportHeaderService"
+        },
+        "getRevisionRule":{
+            "actionType": "batchJob",
+            "steps": [ {
+                "action": "updateRevisionRuleLabel",
+                "condition": "ctx.sublocation.historyNameToken !== 'createReportTemplate' && conditions.showRevRule"
+            }]
+        },
+        "updateRevisionRuleLabel":{
+            "actionType": "JSFunction",
+            "method": "updateRevisionRuleLabel",
+            "inputData": {
+                "appliedRevRule":"{{data.appliedRevRule}}",
+                "i18n": "{{i18n}}",
+                "reportsState": "{{props.reportsState}}"
+            },
+            "outputData": {
+                "appliedRevRule": ""
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "getSourceObject":{
+            "actionType": "JSFunctionAsync",
+            "method": "getSourceObject",
+            "inputData": {
+                "sourceUid": "{{ctx.state.params.referenceId}}",
+                "data":"{{data}}"
+            },
+            "outputData":{
+                "startShowSourceLink": ""
+            },
+            "deps": "js/myDashboardTileService"
+        }
+    },
+    "data": {
+        "dataIsReady": false,
+        "totalFoundString": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "",
+            "uiValue": ""
+        },
+        "timeOfRequest": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "Time",
+            "uiValue": "Time"
+        },
+        "reportSource":{
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false"
+        },
+        "appliedRevRule": {
+            "displayName": "",
+            "dispValue": "{{i18n.appliedRevRule}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": ""
+        },
+        "title": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "title",
+            "dispValue": "{{ctx.state.params.title}}"
+        }
+    },
+    "conditions": {
+        "isEditPage": {
+            "expression":"ctx.state.params.referenceId!=='edit' && ctx.sublocation.historyNameToken !== 'createReportTemplate'"
+        },
+        "showSourceLink":{
+            "expression": "data.startShowSourceLink"
+        },
+        "showRevRule": {
+            "expression": "props.reportsState.reportParameters.ReportDefProps.ReportSearchInfo.SearchCriteria.includes('searchMethod\":\"BOM')"
+        }
+    },
+    "i18n": {
+        "appliedRevRule": [ "ReportChartMessages" ],
+        "totalObjsFound": [ "ReportChartMessages" ],
+        "dashboardLastRefresh":[ "ReportChartMessages" ],
+        "rep_month_Jan": [ "ReportChartMessages" ],
+        "rep_month_Feb": [ "ReportChartMessages" ],
+        "rep_month_Mar": [ "ReportChartMessages" ],
+        "rep_month_Apr": [ "ReportChartMessages" ],
+        "rep_month_May": [ "ReportChartMessages" ],
+        "rep_month_Jun": [ "ReportChartMessages" ],
+        "rep_month_Jul": [ "ReportChartMessages" ],
+        "rep_month_Aug": [ "ReportChartMessages" ],
+        "rep_month_Sep": [ "ReportChartMessages" ],
+        "rep_month_Oct": [ "ReportChartMessages" ],
+        "rep_month_Nov": [ "ReportChartMessages" ],
+        "rep_month_Dec": [ "ReportChartMessages" ]
+    }
+}

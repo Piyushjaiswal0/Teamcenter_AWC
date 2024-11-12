@@ -1,0 +1,198 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-compare2.directive"
+    ],
+    "actions": {
+        "loadData": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/awCompare.service",
+            "method": "getViewModelObjects",
+            "inputData": {
+                "0": "{{subPanelContext.selection}}",
+                "1": "{{data.dataProviders.compareDataProvider.columnConfig.columns}}"
+            },
+            "outputData": {
+                "totalFound": "totalFound",
+                "searchResults": "searchResults"
+            }
+        },
+        "doArrangeEvent": {
+            "actionType": "JSFunctionAsync",
+            "method": "arrangeColumns",
+            "inputData": {
+                "dataProvider": "{{data.dataProviders.compareDataProvider}}",
+                "gridId": "multiSelectCompare",
+                "eventData": "{{data.eventData}}"
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.newColumns": "result.newColumns",
+                "dataProviders.compareDataProvider.columnConfig.columns": "result.columnConfig.columns"
+            },
+            "events": {
+                "success": [ {
+                    "name": "awCompare.saveColumns"
+                } ]
+            },
+            "deps": "js/awCompare.service"
+        },
+        "saveColumns": {
+            "actionType": "JSFunctionAsync",
+            "method": "saveColumns",
+            "inputData": {
+                "columnProvider": "{{data.columnProviders.compareColumnProvider}}",
+                "gridId": "multiSelectCompare",
+                "declViewModel": "{{data}}",
+                "ctx": "{{ctx}}",
+                "eventData": "{{data.eventData}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "deps": "js/awCompare.service"
+        },
+        "loadColumns": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/awCompare.service",
+            "method": "getTypesAndCallSoa",
+            "inputData": {
+                "serviceName": "Internal-AWS2-2023-06-UiConfig",
+                "operationName": "getOrResetUIColumnConfigs4",
+                "soaInput": {
+                    "getOrResetUiConfigsIn": [ {
+                        "scope": "LoginUser",
+                        "clientName": "AWClient",
+                        "resetColumnConfig": false,
+                        "columnConfigQueryInfos": [ {
+                            "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                            "operationType": "union",
+                            "typeNames": ""
+                        } ],
+                        "businessObjects": ""
+                    } ]
+                },
+                "modelObjects": "{{subPanelContext.selection}}",
+                "columnProvider": "{{data.columnProviders.compareColumnProvider}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.columnConfig": "columnConfigurations.0.columnConfigurations.0",
+                "dataProviders.compareDataProvider.columnConfigId": "columnConfigurations.0.columnConfigurations.0.columnConfigId"
+            }
+        },
+        "resetCompare": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/awCompare.service",
+            "method": "getTypesAndCallSoa",
+            "inputData": {
+                "serviceName": "Internal-AWS2-2023-06-UiConfig",
+                "operationName": "getOrResetUIColumnConfigs4",
+                "soaInput": {
+                    "getOrResetUiConfigsIn": [ {
+                        "scope": "LoginUser",
+                        "clientName": "AWClient",
+                        "resetColumnConfig": false,
+                        "columnConfigQueryInfos": [ {
+                            "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                            "operationType": "union",
+                            "typeNames": ""
+                        } ],
+                        "businessObjects": ""
+                    } ]
+                },
+                "modelObjects": "{{subPanelContext.selection}}",
+                "columnProvider": "{{data.columnProviders.compareColumnProvider}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.columnConfig": "columnConfigurations.0.columnConfigurations.0",
+                "dataProviders.compareDataProvider.columnConfigId": "columnConfigurations.0.columnConfigurations.0.columnConfigId"
+            },
+            "events": {
+                "success": [ {
+                    "name": "multiSelectCompare.plTable.reload"
+                } ]
+            }
+        },
+        "saveColumnAndLoadAction": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-UiConfig",
+            "method": "saveUIColumnConfigs2",
+            "inputData": {
+                "columnConfigurations": [ {
+                    "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                    "columnConfigId": "{{data.dataProviders.compareDataProvider.columnConfigId}}",
+                    "columns": "{{data.dataProviders.compareDataProvider.newColumns}}",
+                    "scope": "LoginUser",
+                    "scopeName": ""
+                } ]
+            },
+            "outputData": {}
+        },
+        "resetColumns": {
+            "actionType": "JSFunctionAsync",
+            "deps": "js/awCompare.service",
+            "method": "getTypesAndCallSoa",
+            "inputData": {
+                "serviceName": "Internal-AWS2-2023-06-UiConfig",
+                "operationName": "getOrResetUIColumnConfigs4",
+                "soaInput": {
+                    "getOrResetUiConfigsIn": [ {
+                        "scope": "LoginUser",
+                        "clientName": "AWClient",
+                        "resetColumnConfig": true,
+                        "columnConfigQueryInfos": [ {
+                            "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}",
+                            "operationType": "{{data.eventData.operationType}}",
+                            "typeNames": "{{types}}"
+                        } ],
+                        "businessObjects": "{{subPanelContext.selection}}"
+                    } ]
+                },
+                "modelObjects": "{{subPanelContext.selection}}",
+                "columnProvider": "{{data.columnProviders.compareColumnProvider}}",
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "dataProviders.compareDataProvider.columnConfig": "columnConfigurations.0.columnConfigurations.0"
+            }
+        }
+    },
+    "columnProviders": {
+        "compareColumnProvider": {
+            "name": "compareGridView",
+            "loadColumnAction": "loadColumns",
+            "saveColumnAndLoadAction": "saveColumnAndLoadAction",
+            "resetColumnAction": "resetColumns"
+        }
+    },
+    "dataProviders": {
+        "compareDataProvider": {
+            "action": "loadData",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}",
+            "inputData": {
+                "selectionData": "{{subPanelContext.selectionData}}"
+            }
+        }
+    },
+    "grids": {
+        "multiSelectCompare": {
+            "dataProvider": "compareDataProvider",
+            "columnProvider": "compareColumnProvider",
+            "enableArrangeMenu": true,
+            "gridOptions": {}
+        }
+    },
+    "onEvent": [ {
+        "eventId": "primaryWorkArea.selectionChangeEvent",
+        "action": "resetCompare"
+    }, {
+        "eventId": "columnArrange",
+        "cacheEventData": true,
+        "action": "doArrangeEvent"
+    },
+    {
+        "eventId": "awCompare.saveColumns",
+        "action": "saveColumns"
+    } ],
+    "i18n": {}
+}

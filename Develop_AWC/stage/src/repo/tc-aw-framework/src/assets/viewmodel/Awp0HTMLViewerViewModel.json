@@ -1,0 +1,67 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "frameTitle": "{{i18n.htmlViewerFrameTitle}}"
+    },
+    "actions": {
+        "render": {
+            "method": "awp0HTMLViewerRenderFn",
+            "deps": "js/Awp0HTMLViewerService"
+        },
+        "onMount": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "init"
+                },
+                {
+                    "action": "setFrameContent"
+                }
+            ]
+        },
+        "init": {
+            "actionType": "JSFunctionAsync",
+            "method": "awp0HTMLViewerOnMount",
+            "inputData": {
+                "viewerData": "{{subPanelContext}}",
+                "viewModel": "{{data}}"
+            },
+            "outputData": {
+                "data": ""
+            },
+            "deps": "js/Awp0HTMLViewerService"
+        },
+        "setFrameContent": {
+            "actionType": "JSFunctionAsync",
+            "method": "setFrameContent",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0HTMLViewerService"
+        },
+        "onUnmount": {
+            "actionType": "JSFunction",
+            "method": "awp0HTMLViewerOnUnMount",
+            "inputData": {
+                "viewModel": "{{data}}"
+            },
+            "deps": "js/Awp0HTMLViewerService"
+        }
+    },
+    "onEvent": [],
+    "functions": {},
+    "messages": {},
+    "conditions": {},
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "onMount",
+        "onUnmount": "onUnmount"
+    },
+    "i18n": {
+        "htmlViewerFrameTitle": [
+            "Awp0HTMLViewerMessages"
+        ]
+    },
+    "props": {}
+}

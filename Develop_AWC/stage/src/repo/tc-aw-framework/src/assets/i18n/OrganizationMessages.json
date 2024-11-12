@@ -1,0 +1,11 @@
+{
+    "Organization": "Organization",
+    "orgTreeFilterText": "Filter",
+    "resultsText": "Results",
+    "noFiltersFound": "No results found",
+    "noOrgTreeResultsFound": "No results found for filter string \"{0}\".",
+    "orgFilterUsage": "<br>For example, {0}:\"Ed Engineer\" returns all users for Ed Engineer.<br>Valid fields are {1}, and {2}.",
+    "usageMessage": "\"{0}\" is not a valid filter string.{1}",
+    "orgEscapeChars": "<br>Filter strings containing quotes must be be preceded with a backslash (\\\").{0}",
+    "advancedSearchMessage": "<br>Filter strings containing colons must be in quotes (\" \") unless used to find a specific field value.{0}"
+}

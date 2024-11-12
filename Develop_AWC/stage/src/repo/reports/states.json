@@ -1,0 +1,134 @@
+{
+  "com_siemens_splm_reports:reportsLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      },
+      "headerTitle": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      },
+      "propertyPolicy": "/policies/ReportsObjectPropertyPolicy.json"
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "com_siemens_splm_reports:configureReportsLocation": {
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      },
+      "headerTitle": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      },
+      "propertyPolicy": "/policies/ReportsObjectPropertyPolicy.json"
+    },
+    "view": "AwSearchLocation",
+    "parent": "root"
+  },
+  "com_siemens_splm_reports:configureReportsTemplateLocation": {
+    "abstract": true,
+    "data": {
+      "browserSubTitle": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      },
+      "headerTitle": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      },
+      "propertyPolicy": "/policies/ReportsObjectPropertyPolicy.json"
+    },
+    "view": "commonLocation",
+    "parent": "root"
+  },
+  "createReportTemplate": {
+    "abstract": false,
+    "data": {
+      "context": {
+        "hideRightWall": true
+      }
+    },
+    "params": {
+      "searchCriteria": null,
+      "filter": null,
+      "reportId": null,
+      "previewMode": "false",
+      "reportType": null,
+      "editReport": null
+    },
+    "parent": "com_siemens_splm_reports:configureReportsTemplateLocation",
+    "view": "CreateReportTemplateViewer",
+    "url": "/createReportTemplate"
+  },
+  "showReport": {
+    "data": {
+      "breadcrumbConfig": {
+        "type": "board",
+        "noBreadCrumb": true
+      },
+      "priority": 0,
+      "label": {
+        "source": "/i18n/ReportsConstants",
+        "key": "appDisplayName"
+      }
+    },
+    "params": {
+      "reportType": null,
+      "title": null,
+      "uid": null,
+      "reportId": null,
+      "referenceId": null,
+      "configure": null,
+      "cmdId": null
+    },
+    "parent": "com_siemens_splm_reports:configureReportsLocation",
+    "view": "ShowReportViewerPage",
+    "url": "/showReport"
+  },
+  "com_siemens_splm_clientfx_tcui_xrt_showObject": {
+    "params": {
+      "swa_tab": null
+    },
+    "type": "parameter"
+  },
+  "showReportBuilderReports": {
+    "data": {
+      "priority": 2,
+      "label": {
+        "source": "/i18n/ReportsConstants",
+        "key": "reportBuilderSubLocation"
+      }
+    },
+    "view": "showReportBuilderReports",
+    "parent": "com_siemens_splm_reports:reportsLocation",
+    "url": "/showReportBuilderReports"
+  },
+  "showMyReports": {
+    "data": {
+      "priority": 3,
+      "label": {
+        "source": "/i18n/ReportsConstants",
+        "key": "myreportsSubLocation"
+      }
+    },
+    "parent": "com_siemens_splm_reports:reportsLocation",
+    "view": "showMyReports",
+    "url": "/showMyReports"
+  },
+  "showMyDashboard": {
+    "data": {
+      "priority": 1,
+      "label": {
+        "source": "/i18n/ReportsConstants",
+        "key": "myDashboard"
+      }
+    },
+    "parent": "com_siemens_splm_reports:reportsLocation",
+    "view": "showMyDashboard",
+    "url": "/showMyDashboard"
+  }
+}

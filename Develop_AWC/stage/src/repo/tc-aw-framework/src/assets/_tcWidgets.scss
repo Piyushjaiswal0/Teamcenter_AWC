@@ -1,0 +1,321 @@
+// Copyright 2018 Siemens Product Lifecycle Management Software Inc.
+/* begin modelTypeCellList.css */
+
+.aw-tcWidgets-modelTypeCell {
+    font-size: $fontsize_normal;
+    display: flex;
+    width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.aw-tcWidgets-modelTypeCell .aw-base-icon {
+    border: none;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    display: inline-block;
+    margin: 2px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aw-tcWidgets-modelTypeCellTitle {
+    /* CT071415 */
+    vertical-align: top;
+    display: inline-block;
+    width: -webkit-calc(100% - 35px);
+    width: -moz-calc(100% - 35px);
+    width: calc(100% - 35px);
+    max-width: 230px;
+    font-size: $fontsize_normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    margin-left: 8px;
+}
+
+/* end modelTypeCellList.css */
+
+/* begin galleryWidget.css */
+
+.aw-tcWidgets-thumbTitle {
+    font-weight: 600;
+    cursor: default;
+    vertical-align: middle;
+    width: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aw-tcWidgets-thumbnailWidget {
+    height: 73px;
+    width: 73px;
+    overflow: hidden;
+    padding: 0 3px;
+}
+
+.aw-tcWidgets-thumbLabelContainer {
+    width: 67px;
+}
+
+.aw-tcWidgets-thumbImage {
+    opacity: 0.5;
+    cursor: pointer;
+    height: 67px;
+    width: 67px;
+}
+
+.aw-tcWidgets-thumbImage:HOVER {
+    opacity: 1.0;
+}
+
+.aw-tcWidgets-fileDownloadMessage {
+    font-size: $fontsize_x_large;
+    word-wrap: break-word;
+    margin-top: 27px;
+}
+
+.aw-tcWidgets-viewerPanel {
+    float: left;
+    display: block;
+    width: 548px;
+    height: 384px;
+    overflow: hidden;
+}
+
+.aw-tcWidgets-viewerPanel:hover {
+    overflow: auto;
+}
+
+.aw-tcWidgets-viewerPanelSmall {
+    float: left;
+    display: block;
+    width: 548px;
+    height: 573px;
+    padding: 1px;
+    overflow: hidden;
+}
+
+.aw-tcWidgets-viewerPanelSmall:hover {
+    overflow: auto;
+}
+
+.aw-tcWidgets-viewerPanelPdf {
+    float: left;
+    display: block;
+    width: 548px;
+    height: 384px;
+    overflow: hidden;
+}
+
+.aw-tcWidgets-viewerPanelPdf:hover {
+    overflow: auto;
+}
+
+.aw-tcWidgets-viewerPanelPdfSmall {
+    float: left;
+    display: block;
+    width: 548px;
+    height: 573px;
+    overflow: hidden;
+    padding: 1px;
+}
+
+.aw-tcWidgets-viewerPanelPdfSmall:hover {
+    overflow: auto;
+}
+
+.aw-tcWidgets-zoomButton {
+    display: inline;
+    height: 32px;
+    width: 32px;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+/* end galleryWidget.css */
+
+/* begin GalleryWidgetVerticalThumbnail and GalleryWidgetHorizontalThumbnail */
+
+.aw-tcWidgets-galleryWidgetContainerVertical {
+    width: 100%;
+    height: 100%;
+}
+
+.aw-tcWidgets-panelStyleVertical {
+    overflow: hidden;
+    height: 384px;
+    margin-top: 32px;
+}
+
+.aw-tcWidgets-panelStyleVertical:hover {
+    overflow: auto;
+}
+
+/* end GalleryWidgetVerticalThumbnail and GalleryWidgetHorizontalThumbnail */
+
+/* tcWidgets */
+
+sub-title,
+.aw-tcWidgets-userInfo {
+    overflow: hidden;
+    line-height: 14px;
+}
+
+.userIdSubTitle,
+.userProjectSubTitle,
+.userGroupSubTitle,
+.userRoleSubTitle,
+.revRuleSubTitle,
+.contextSeparator,
+.sub-title a,
+.aw-tcWidgets-userInfo a,
+.aw-tcWidgets-userInfo .aw-tcWidgets-separator {
+    font-size: $fontsize_small;
+    cursor: pointer;
+    float: left;
+    margin: 1px 1px 0;
+}
+
+.aw-tcWidgets-modelObjectList {
+    /* CT 081115 */
+    margin: 0 0 10px;
+}
+
+.aw-layout-primaryWorkarea .aw-tcWidgets-modelObjectList {
+    width: -webkit-calc(100% - 17px);
+    width: -moz-calc(100% - 17px);
+    width: calc(100% - 17px);
+    min-width: 300px;
+}
+
+.aw-search-resultFilterPanel .aw-tcWidgets-modelObjectList {
+    /* CT 091115 */
+    margin-top: 10px;
+}
+
+.aw-tcWidgets-partialOpacity {
+    opacity: 0.2;
+}
+
+.aw-tcWidgets-opacityHidden {
+    opacity: 0;
+}
+
+.aw-tcWidgets-crumbPopupPanel {
+    max-height: 500px;
+    max-width: 320px;
+    z-index: 9999;
+    overflow: hidden;
+    border: solid 1px;
+}
+
+.aw-tcWidgets-crumbPopupPanel .aw-tcWidgets-crumbPopupPanel {
+    border: none;
+    background: none;
+}
+
+.aw-tcWidgets-crumbPopupPanel .aw-widgets-cellListItem {
+    min-width: 290px;
+}
+
+.aw-tcWidgets-childListPopup {
+    max-height: 450px;
+}
+
+.aw-tcWidgets-inContextSearchRecipeContainer {
+    width: 100%;
+}
+
+.aw-tcWidgets-inContextSearchRecipeLabelValueContainer {
+    display: inline-block;
+    width: -webkit-calc(100% - 40px);
+    /* width of container minus button and some padding */
+    width: -moz-calc(100% - 40px);
+    width: calc(100% - 40px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 18px;
+}
+
+.aw-tcWidgets-inContextSearchRecipeLabel,
+.aw-tcWidgets-inContextSearchHiddenRecipeLabel {
+    display: inline;
+    font-size: $fontsize_normal;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+
+.aw-tcWidgets-inContextSearchRecipeValue,
+.aw-tcWidgets-inContextSearchRecipeLink {
+    display: inline;
+    font-size: $fontsize_normal;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+}
+
+.aw-tcWidgets-inContextSearchRecipeDeleteImage {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    float: right;
+    margin-right: 4px;
+    width: 18px;
+    height: 18px;
+}
+
+.aw-tcWidgets-inContextSearchRecipeLink {
+    cursor: pointer;
+}
+
+.aw-tcWidgets-inContextSearchRecipeContainer .aw-commands-commandIconButton {
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    float: right;
+    margin-right: 2px;
+}
+
+.aw-widgets-cellListCellContent.aw-tcWidgets-groupMemberCellContent {
+    width: 100%;
+}
+
+.aw-tcWidgets-groupMemberRoleCellTitle {
+    max-width: 100%;
+    text-overflow: ellipsis;
+}
+
+.aw-layout-headerProperty .sw-component.sw-property{
+    width: auto;
+}
+
+.aw-layout-locationPanel {
+    .aw-show-objectError {
+        //this is one off hardcoded size for the show object error message
+        font-size: $fontsize_x_large;
+        font-style: italic;
+    }
+}
+
+.global-navigation-toolbar{
+    .aw-command-bar.aw-commands-commandBarVertical .aw-commands-wrapper {
+        padding-top: 4px;
+    }
+    .aw-app-logo {
+        margin: 8px 16px 0 16px;
+
+        svg {
+            height: 32px;
+            width: 32px;
+        }
+    }
+}

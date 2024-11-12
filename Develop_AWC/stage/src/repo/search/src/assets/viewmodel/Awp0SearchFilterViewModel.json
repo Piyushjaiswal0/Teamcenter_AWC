@@ -1,0 +1,29 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+    },
+    "data": {
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "hide-title": {
+            "type": "object"
+        }
+    },
+    "functions": {
+    },
+    "lifecycleHooks": {
+    },
+    "onEvent": [
+    ],
+    "messages": {
+    },
+    "conditions": {
+    },
+    "i18n": {
+        "filterString": [ "SearchMessages" ]
+    }
+}

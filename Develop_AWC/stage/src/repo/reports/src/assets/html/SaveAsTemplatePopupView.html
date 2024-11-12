@@ -1,0 +1,36 @@
+<aw-panel class="h-12" exist-when="!props.subPanelContext.reportsState.selectedReport || conditions.isEditToggled">
+    <aw-panel-body>
+        <aw-textbox prop="data.reportName"></aw-textbox>
+        <aw-widget prop="data.reportDesc"></aw-widget>
+        <aw-textbox prop="data.reportId"></aw-textbox>
+        <aw-listbox prop="data.thumbnail" list="data.thumbnailChartList"></aw-listbox>
+        <aw-checkbox prop="data.addToDashboard" exist-when="ctx.state.params.reportType === '4'"></aw-checkbox>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button class='base-button' action="closePanel" size="auto">
+            <aw-i18n>i18n.CancelButtonLabel</aw-i18n>
+        </aw-button>
+        <aw-button action="saveReportAndClose" enable-when="conditions.enableSave" size="auto">
+            <aw-i18n>i18n.saveReport</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-panel>
+<aw-panel class="h-12" exist-when="props.subPanelContext.reportsState.selectedReport && !conditions.isEditToggled">
+    <aw-panel-body>
+        <aw-textbox prop="data.editModeReportName"></aw-textbox>
+        <aw-break></aw-break>
+        <aw-widget prop="data.editModeReportDesc"></aw-widget>
+        <aw-break></aw-break>
+        <aw-textbox prop="data.editModeReportId"></aw-textbox>
+        <aw-break></aw-break>
+        <aw-widget prop="data.editModeThumbnail"></aw-widget>
+        <aw-break></aw-break>
+        <aw-widget prop="data.editModeAddToDashboard" exist-when="ctx.state.params.reportType === '4'"></aw-widget>
+        <aw-break></aw-break>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="editReportTemplate" size="auto">
+            <aw-i18n>i18n.edit</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-panel>

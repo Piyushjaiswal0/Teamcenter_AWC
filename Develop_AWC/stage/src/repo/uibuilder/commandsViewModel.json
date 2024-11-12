@@ -1,0 +1,110 @@
+{
+  "commands": {
+    "GoToCommandBuilder": {
+      "iconId": "cmdCommandBuilder",
+      "title": "{{i18n.commandBuilderCommandTitle}}",
+      "description": "{{i18n.GoToCommandBuilderDesc}}"
+    },
+    "GoToPanelBuilder": {
+      "iconId": "cmdPanelBuilder",
+      "title": "{{i18n.PanelBuilderCommandTitle}}",
+      "description": "{{i18n.GoToPanelBuilderDesc}}"
+    }
+  },
+  "commandHandlers": {
+    "GoToPanelBuilder": {
+      "id": "GoToPanelBuilder",
+      "action": "showPanelBuilder",
+      "activeWhen": {
+        "condition": "conditions.isPanelBuilderValid"
+      },
+      "visibleWhen": {
+        "condition": "conditions.isPanelBuilderValid"
+      }
+    },
+    "GoToCommandBuilder": {
+      "id": "GoToCommandBuilder",
+      "action": "showCommandBuilder",
+      "activeWhen": {
+        "condition": "conditions.isCommandBuilderValid"
+      },
+      "visibleWhen": {
+        "condition": "conditions.isCommandBuilderValid"
+      }
+    },
+    "wysCloseCommandPanelHandler": {
+      "id": "Awp0CloseCommandPanel",
+      "action": "",
+      "activeWhen": {
+        "condition": "conditions.isPanelBuilderLocation"
+      },
+      "visibleWhen": false
+    },
+    "GoToCommandBuilderCommandHandler": {
+      "id": "GoToCommandBuilder",
+      "action": "showCommandBuilder",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "GoToPanelBuilderCommandHandler": {
+      "id": "GoToPanelBuilder",
+      "action": "showPanelBuilder",
+      "activeWhen": true,
+      "visibleWhen": true
+    }
+  },
+  "commandPlacements": {
+    "GoToCommandBuilderPlacement": {
+      "id": "GoToCommandBuilder",
+      "uiAnchor": "aw_globalNavigationbar",
+      "priority": 120
+    },
+    "GoToPanelBuilderPlacement": {
+      "id": "GoToPanelBuilder",
+      "uiAnchor": "aw_globalNavigationbar",
+      "priority": 130
+    }
+  },
+  "actions": {
+    "showCommandBuilder": {
+      "actionType": "Navigate",
+      "navigateTo": "#/uibuilder/commands",
+      "navigationParams": {}
+    },
+    "showPanelBuilder": {
+      "actionType": "Navigate",
+      "navigateTo": "#/editor",
+      "navigationParams": {}
+    }
+  },
+  "conditions": {
+    "isPanelBuilderLocation": {
+      "expression": "ctx.locationContext['ActiveWorkspace:Location'] === 'wysiwygMainPage'"
+    },
+    "isCommandBuilderLocation": {
+      "expression": "ctx.sublocation && ( ctx.sublocation.clientScopeURI === 'Awp0Toolbars'||ctx.sublocation.clientScopeURI === 'Awp0CommandBuilder' )"
+    },
+    "isPanelBuilderValid": {
+      "expression": "conditions.isPanelBuilderLocation||conditions.isCommandBuilderLocation"
+    },
+    "isCommandBuilderValid": {
+      "expression": "conditions.isCommandBuilderLocation||conditions.isPanelBuilderLocation"
+    }
+  },
+  "messages": {},
+  "onEvent": [],
+  "i18n": {
+    "PanelBuilderCommandTitle": [
+      "uiBuilderMessages"
+    ],
+    "commandBuilderCommandTitle": [
+      "uiBuilderMessages"
+    ],
+    "GoToCommandBuilderDesc": [
+      "uiBuilderMessages"
+    ],
+    "GoToPanelBuilderDesc": [
+      "uiBuilderMessages"
+    ]
+  }
+}

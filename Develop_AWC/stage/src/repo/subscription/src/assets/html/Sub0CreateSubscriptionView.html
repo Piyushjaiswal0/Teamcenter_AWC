@@ -1,0 +1,20 @@
+<aw-command-panel caption='{{conditions.isSub0SubscribeType  ? i18n.followTypeCommandTitle :  i18n.followCommandTitle}}' context="subPanelContext" >
+    <aw-command-sub-panel visible-when="conditions.isSub0SubscribeType && data.sharedData.activeView === 'Sub0SubscribeType'" panel-id='Sub0SubscribeType'
+        sub-panel-context='{sharedData:data.sharedData}'>
+    </aw-command-sub-panel>
+    <aw-command-sub-panel show-when="conditions.isSub0CreateSubscriptionSub && data.sharedData.activeView === 'Sub0CreateSubscriptionSub'" panel-id='Sub0CreateSubscriptionSub'
+        pre-panel-id="{{data.sharedData.prePanelId}}" sub-panel-context='{...subPanelContext,addUserPanelState : data.addUserPanelState,sharedData:data.sharedData}'>
+    </aw-command-sub-panel>
+
+    <aw-command-sub-panel show-when="conditions.isSub0SubscribeSub && data.sharedData.activeView === 'Sub0SubscribeSub'" panel-id='Sub0SubscribeSub'
+        sub-panel-context='{...subPanelContext,sharedData:data.sharedData}'>
+    </aw-command-sub-panel>
+    <aw-navigate-panel title="i18n.userEventsConfigTitle" visible-when="data.sharedData.activeView === 'Sub0UserEventsConfig'"
+         panel-id='Sub0UserEventsConfig' sub-panel-context='{sharedData:data.sharedData}' action='backAction'>
+    </aw-navigate-panel>
+    <aw-navigate-panel title="i18n.user" visible-when="data.sharedData.activeView === 'AwPeoplePicker'"
+        panel-id="AwPeoplePicker" action="backActionFromAddFollower"
+        sub-panel-context="{ ...subPanelContext, addUserPanelState : data.addUserPanelState, sharedData:data.sharedData }">
+    </aw-navigate-panel>
+
+</aw-command-panel>

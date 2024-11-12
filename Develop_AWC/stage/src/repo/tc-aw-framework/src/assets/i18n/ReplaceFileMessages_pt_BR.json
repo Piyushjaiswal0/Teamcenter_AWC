@@ -1,0 +1,14 @@
+{
+    "replace": "Substituir",
+    "upload": "Carregar (Fazer upload)",
+    "chooseFromSystem": "Escolher Arquivo do Sistema",
+    "replaceFileError": "Atualize o arquivo com a mesma extensão do arquivo anterior presente no item",
+    "replaceSuccessWithFileName": "\"{0}\" foi substituído.",
+    "replaceFailureWithFileName": "Não é possível adicionar arquivo de importação como conteúdo ao dataset em função de extensão inválida de arquivo",
+    "replaceNoValidTarget": "\"{0}\" não tem um arquivo válido para substituir.",
+    "replaceFileCommandTitle": "Substituir arquivo",
+    "InvalidSelectedObject": "Um objeto de arquivo de volume ou dataset inválido foi informado para gerar um arquivo PLMD. Tente novamente usando um objeto de arquivo de volume ou dataset válido.",
+    "AsynUploadInProgress": "A transferência assíncrona do arquivo para o volume Teamcenter está em andamento.",
+    "PlatformNotSupported": "A operação de substituição assíncrona não é suportada nesta plataforma: Alternando para substituição síncrona",
+    "Awp0ReplaceDatasetDesc": "Substitua o arquivo selecionado por um novo de seu dispositivo."
+}

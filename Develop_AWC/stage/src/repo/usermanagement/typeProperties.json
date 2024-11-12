@@ -1,0 +1,11 @@
+{
+  "typeProperties": {
+    "UserSession": {
+      "additionalProperties": [
+        {
+          "name": "fnd0ShowGDPR"
+        }
+      ]
+    }
+  }
+}

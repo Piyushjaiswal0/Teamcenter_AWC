@@ -1,0 +1,31 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="-5.5" y1="41.5" x2="35" y2="1" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="19.25" y1="44.25" x2="32.25" y2="31.25" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad_2" data-name="Dark Blue Grad 2" x1="20.172" y1="39.828" x2="23.172" y2="42.828" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#74b3c7"/>
+      <stop offset="0.177" stop-color="#6badc2"/>
+      <stop offset="0.464" stop-color="#539db4"/>
+      <stop offset="0.822" stop-color="#2d839d"/>
+      <stop offset="1" stop-color="#177490"/>
+    </linearGradient>
+  <polygon points="22.5 0.5 0.5 0.5 0.5 46.5 35.5 46.5 35.5 13.5 22.5 0.5" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <polygon points="22.5 0.5 22.5 13.5 35.5 13.5 22.5 0.5" stroke="#464646" stroke-linejoin="round" fill="url(#paper_gradient)"/>
+  <rect x="5.5" y="37.5" width="25" height="4" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="5.5" y="30.5" width="25" height="4" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="5.5" y="23.5" width="25" height="4" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="5.5" y="16.5" width="25" height="4" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <path id="_Compound_Path_" data-name="&lt;Compound Path&gt;" d="M25.672,34.328l-9.586,9.586a2,2,0,0,0,0,2.829l.171.171a2,2,0,0,0,2.829,0l9.586-9.586" transform="translate(0)" stroke="#464646" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad_2)"/>
+  <circle cx="35.5" cy="27.5" r="12" fill="#f0f0f0" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

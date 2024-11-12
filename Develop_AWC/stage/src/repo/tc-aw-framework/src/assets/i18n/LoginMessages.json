@@ -1,0 +1,11 @@
+{
+    "USER_NAME_PLACEHOLDER": "User Name",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "SIGN_IN_TEXT": "Sign in",
+    "LOGIN_TEXT": "Login",
+    "LOGGING_IN_TEXT": "Logging in",
+    "UNABLE_TO_CONNECT": "You were not signed in because of an internal error.",
+    "VERSION_TEXT": "Version",
+    "COPYRIGHT_DATE_TEXT": "Unpublished work.",
+    "COPYRIGHT_MESSAGE": "This material contains trade secrets or otherwise confidential information owned by Siemens Industry Software Inc. or its affiliates (collectively, “Siemens”), or its licensors. Access to and use of this information is strictly limited as set forth in the Customer’s applicable agreements with Siemens."
+}

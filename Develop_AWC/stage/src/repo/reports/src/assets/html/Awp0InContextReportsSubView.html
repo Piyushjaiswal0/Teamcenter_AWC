@@ -1,0 +1,19 @@
+<aw-panel-body>
+            <aw-listbox prop="data.packedbom" visible-when="conditions.showifBOM" list="data.packedbombooleanValues"></aw-listbox>
+            <aw-listbox prop="data.revRuleProp" list="data.revRuleLovList" visible-when="conditions.showifBOM"></aw-listbox>
+
+         <aw-panel-section caption="i18n.customPanel" visible-when="conditions.showForCustomRD && !data.customreportPropConfig" aw-if="data.customProps != undefined" collapsed="disabled"></aw-panel-section>
+            <aw-widget visible-when="!data.customreportPropConfig" prop="property" aw-repeat="property : data.customProps"></aw-widget>
+        </aw-panel-section>
+
+        <aw-panel-section caption="i18n.additionalParams" collapsed="disabled">
+             <aw-listbox prop="data.selectStyleSheet" list="data.reportStylesheets"></aw-listbox>
+             <aw-listbox prop="data.displayLocale" list="data.languageList" visible-when="conditions.showifSourceIsTc"></aw-listbox>
+             <aw-textbox prop="data.saveToDataSet" visible-when="conditions.showifSourceIsTc && !data.customreportPropConfig"></aw-textbox>
+             <aw-checkbox prop="data.doLiveIntegration" visible-when="conditions.showforOfficeTemplate"></aw-checkbox>
+             <aw-checkbox prop="data.runReportAsync" visible-when="conditions.showifSourceIsTc && !data.customreportPropConfig"></aw-checkbox>
+        </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="generateReport" size="auto"><aw-i18n>i18n.generateReport</aw-i18n></aw-button>
+</aw-panel-footer>

@@ -1,0 +1,136 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports":[],
+    "actions":
+    {
+        "save":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Notification-2015-10-SubscriptionManagement",
+            "method": "saveAsSubscription",
+            "inputData":
+            {
+                "input":
+                {
+                    "name": "{{data.subscriptionName.dbValue}}",
+                    "subscription": "{{ctx.selected}}"
+                }
+            },
+            "outputData": {
+                "saveAsError": "ServiceData.partialErrors"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "cdm.relatedModified",
+                        "eventData": {
+                            "refreshLocationFlag": false,
+                            "relations": "",
+                            "relatedModified": [
+                                "{{ctx.selected}}"
+                            ]
+                        },
+                        "condition":"ctx.locationContext['ActiveWorkspace:SubLocation'] !== 'com.siemens.splm.client.subscription.follow.FollowedSubscriptions'"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "primaryWorkarea.reset"
+                    }
+                ],
+
+                "failure":
+                [
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            },
+
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "message": "SuccessfulSaveAs"
+                    }
+                ],
+                "failure": [
+                    {
+                        "message": "FailedSaveAs"
+                    }
+                ]
+            }
+        }
+    },
+
+    "data":
+    {
+        "subscriptionName":
+        {
+            "displayName": "{{i18n.subscriptionNameWidgetTitle}}",
+            "type": "STRING",
+            "dbValue": "{{ctx.selected.props.object_string.dbValues[0]}}",
+            "isRequired": "true"
+        }
+    },
+
+    "messages":
+    {
+        "SuccessfulSaveAs":
+        {
+            "messageType": "INFO",
+            "messageText": "{{i18n.successfulSaveAs}}",
+            "messageTextParams":
+            [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{data.subscriptionName.dbValue}}"
+            ]
+        },
+        "FailedSaveAs":
+        {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.failedSaveAs}}",
+            "messageTextParams":
+            [
+                "{{ctx.selected.props.object_string.dbValues[0]}}",
+                "{{data.saveAsError[0].errorValues[0].message}}"
+            ]
+        }
+    },
+
+    "i18n":
+    {
+        "subscriptionNameWidgetTitle":
+        [
+            "SubscriptionMessages"
+        ],
+        "saveAsButtonText":
+        [
+            "SubscriptionMessages"
+        ],
+        "saveAsTitle":
+        [
+            "SubscriptionMessages"
+        ],
+        "successfulSaveAs":
+        [
+            "SubscriptionMessages"
+        ],
+        "failedSaveAs":
+        [
+            "SubscriptionMessages"
+        ]
+    }
+}

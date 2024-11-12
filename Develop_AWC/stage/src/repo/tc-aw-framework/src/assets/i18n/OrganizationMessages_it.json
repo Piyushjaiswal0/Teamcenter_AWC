@@ -1,0 +1,11 @@
+{
+    "Organization": "Organizzazione",
+    "orgTreeFilterText": "Filtro",
+    "resultsText": "Risultati",
+    "noFiltersFound": "Nessun risultato trovato",
+    "noOrgTreeResultsFound": "Nessun risultato trovato per la stringa di filtro \"{0}\".",
+    "orgFilterUsage": "<br>Ad esempio, {0}:\"Ed Engineer\" restituisce tutti gli utenti per Ed Engineer.<br>I campi validi sono {1} e {2}.",
+    "usageMessage": "\"{0}\" non è una stringa di filtro valida.{1}",
+    "orgEscapeChars": "<br>Stringhe di filtro contenenti virgolette devono essere precedute dalla barra rovesciata (\\\").{0}",
+    "advancedSearchMessage": "<br>Stringhe di filtro contenenti due punti devono essere racchiuse tra virgolette (\":\"), a meno che non siano utilizzate per individuare un valore di campo specifico.{0}"
+}

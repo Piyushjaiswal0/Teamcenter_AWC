@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "소유자 변경",
+ "change" : "변경",
+ "user" : "사용자",
+ "EmailAddress" : "전자 메일 주소:",
+ "PhoneNumber" : "전화 번호:",
+ "singleObjectChangeOwnershipSuccess": "\"{0}\"이(가) 변경되었습니다.",
+ "multipleObjectsChangeOwnershipSuccess": "{0}({1}개 중)개의 선택 항목이 변경되었습니다.", 
+ "changeOwnershipForObjectFailure": "권한이 없으므로 \"{0}\"을(를) 변경하지 못했습니다.  "
+}

@@ -1,0 +1,17 @@
+<aw-panel-body>
+    <aw-panel-section>
+        <aw-list dataprovider="data.dataProviders.getDetachableLicense">
+             <aw-default-cell vmo="item"></aw-default-cell>
+        </aw-list>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-panel-section visible-when= "conditions.is4GObject">
+        <aw-radiobutton prop="data.applyToDetach"></aw-radiobutton>
+    </aw-panel-section>
+    <aw-panel-section visible-when="conditions.isACEContext">
+        <aw-radiobutton  prop="data.structure" visible-when= "conditions.isValidToShowBOMStructure"></aw-radiobutton>
+        <aw-numeric prop="data.level" visible-when="conditions.isValidToShowLevel && conditions.isValidToShowBOMStructure"></aw-numeric>
+    </aw-panel-section>
+    <aw-button action="detach" visible-when="conditions.isValidToShowDetachButton && awPanelBody.$valid"><aw-i18n>i18n.DetachLicenseButtonText</aw-i18n></aw-button>
+</aw-panel-footer>

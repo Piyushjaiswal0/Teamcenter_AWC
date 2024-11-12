@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" non è un file valido per il set di oggetti \"{1}\". L'oggetto appena creato non comparirà nel set di oggetti.",
+    "addedObjectIsNotUnique": "Impossibile salvare l'oggetto \"{1}-{0}\" perché \"ID = {1}\" non è univoco.",
+    "fileSizeException": "Impossibile aggiungere \"{0}\". Le dimensioni del file superano il limite massimo.",
+    "userNotAuthorized": "Impossibile aggiungere \"{0}\". L'utente corrente non dispone dell'autorizzazione.",
+    "addACopy": "Aggiungi una copia",
+    "cancel": "Annulla",
+    "sourceObject": "Origine",
+    "chooseFromSystem": "Scegli file dal sistema",
+    "chooseFromDrive": "Scegli dall'unità",
+    "fileNameExceedsLengthLimit": "Impossibile aggiungere \"{0}\". La lunghezza del nome file ha superato il limite massimo."
+}

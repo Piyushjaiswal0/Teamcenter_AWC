@@ -1,0 +1,9 @@
+{
+    "addAlternateMultipleFailureMessage": "{0} sur {1} ont été ajoutés.<BR\/>{2}",
+    "removeAlternateMultipleFailureMessage": "{0} sur {1} ont été supprimés.<BR\/>{2}",
+    "errorInGettingSubtypesOfEndItem": "Les résultats de recherche n'ont pas été filtrés en raison d'une erreur interne.",
+    "invalidDateRangeError": "La date de début doit être antérieure à la date de fin.",
+    "invalidUnitRange": "Plage d'unités non valable",
+    "notificationForBaselineCreation": "\"{0}\" est en cours de sauvegarde. Vous serez averti à la fin.",
+    "notificationForBaselineCreationSync": "\"{0}\" est sauvegardé et disponible dans le dossier Accueil."
+}

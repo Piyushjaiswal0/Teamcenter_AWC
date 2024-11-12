@@ -1,0 +1,3351 @@
+{
+  "commands": {
+    "Awp0GoReports": {
+      "iconId": "cmdReports",
+      "title": "{{i18n.reportsTitle}}",
+      "description": "{{i18n.Awp0GoReportsDesc}}"
+    },
+    "Rb0QuickRunChartReport": {
+      "iconId": "cmdOpen",
+      "title": "{{i18n.inOpenRptCommand}}"
+    },
+    "Rb0QuickRunSummaryCustomReport": {
+      "iconId": "cmdOpen",
+      "title": "{{i18n.inOpenRptCommand}}"
+    },
+    "Awp0InContextReports": {
+      "iconId": "cmdGenerateReport",
+      "title": "{{i18n.inContextCommandName}}",
+      "description": "{{i18n.Awp0InContextReportsDesc}}"
+    },
+    "Awp0ReportsSummary": {
+      "iconId": "cmdGenerateReport",
+      "title": "{{i18n.inContextCommandName}}",
+      "description": "{{i18n.Awp0ReportsSummaryDesc}}"
+    },
+    "Rb0DeleteReport": {
+      "iconId": "cmdDelete",
+      "title": "{{i18n.deleteReportTitle}}"
+    },
+    "Rb0AddReport": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addReport}}",
+      "description": "{{i18n.Rb0AddReportDesc}}"
+    },
+    "Rb0AddReportOnSearch": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addReport}}",
+      "description": "{{i18n.Rb0AddReportDesc}}"
+    },
+    "Rb0ConfigureReport": {
+      "title": "{{i18n.configureReport}}",
+      "description": "{{i18n.Rb0ConfigureReportDesc}}"
+    },
+    "Rb0AddCharts": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addChartCommand}}",
+      "description": "{{i18n.Rb0AddChart1Desc}}"
+    },
+    "Rb0AddChart11": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addChartCommand}}",
+      "description": "{{i18n.Rb0AddChart1Desc}}"
+    },
+    "Rb0RemoveChart1": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.removeChartCommand}}",
+      "description": "{{i18n.Rb0RemoveChartDesc}}"
+    },
+    "Rb0AddChart22": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addChartCommand}}",
+      "description": "{{i18n.Rb0AddChart1Desc}}"
+    },
+    "Rb0RemoveChart2": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.removeChartCommand}}",
+      "description": "{{i18n.Rb0RemoveChartDesc}}"
+    },
+    "Rb0AddChart33": {
+      "iconId": "cmdAdd",
+      "isGroup": false,
+      "title": "{{i18n.addChartCommand}}",
+      "description": "{{i18n.Rb0AddChartDesc}}"
+    },
+    "Rb0RemoveChart3": {
+      "iconId": "cmdRemove",
+      "isGroup": false,
+      "title": "{{i18n.removeChartCommand}}",
+      "description": "{{i18n.Rb0RemoveChart1Desc}}"
+    },
+    "Rb0GenerateAdvReport": {
+      "iconId": "cmdGenerateReport",
+      "title": "{{i18n.generateAdvCommandName}}",
+      "description": "{{i18n.Rb0GenerateAdvReportDesc}}"
+    },
+    "Rb0EditReport": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.editReportTitle}}",
+      "description": "{{i18n.Rb0EditReportDesc}}"
+    },
+    "Rb0SaveAsReportTemplate": {
+      "iconId": "cmdSaveAs",
+      "title": "{{i18n.saveAsReportTitle}}"
+    },
+    "Rb0RemoveDashboardReport": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeDashboardReport}}"
+    },
+    "Rb0AddToDashboard": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addToDashboard}}",
+      "description": "{{i18n.addToDashboardDesc}}"
+    },
+    "Rb0AddDashboardReportWithPanel": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addDashboardReportWithPanel}}"
+    },
+    "Rb0ConfigureItemReport": {
+      "title": "{{i18n.configureReport}}",
+      "description": "{{i18n.Rb0ConfigureReportDesc}}"
+    },
+    "Rb0AddItem": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addDashboardReportWithPanel}}"
+    },
+    "Rb0RemoveItem": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeClass}}"
+    },
+    "Rb0AddClass": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addClass}}"
+    },
+    "Rb0RemoveClass": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeClass}}"
+    },
+    "Rb0AddSample": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addSample}}"
+    },
+    "Rb0RemoveSample": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeClass}}"
+    },
+    "Rb0AddSegments": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addSegment}}"
+    },
+    "Rb0SetReportLayout": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.layout}}"
+    },
+    "Rb0RemoveSegment": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeClass}}"
+    },
+    "Rb0ReportDashboardShowMore": {
+      "iconId": "cmdMore",
+      "isGroup": true,
+      "title": "{{i18n.moreCommands}}"
+    },
+    "Rb0ShowReportObject": {
+      "iconId": "cmdOpen",
+      "title": "{{i18n.openReport}}"
+    },
+    "Rb0ReportMovePrevious": {
+      "iconId": "cmdPreviousRequired",
+      "isGroup": false,
+      "title": "{{i18n.reportMovePrevious}}"
+    },
+    "Rb0ReportMoveNext": {
+      "iconId": "cmdNextRequired",
+      "isGroup": false,
+      "title": "{{i18n.reportMoveNext}}"
+    },
+    "Rb0RemoveDashboardTile": {
+      "iconId": "cmdRemove",
+      "title": "{{i18n.removeFromDashboard}}",
+      "description": "{{i18n.removeDashboardReport}}"
+    },
+    "Rb0AddItmRepToDashboard": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addToDashboard}}",
+      "description": "{{i18n.addGeneratedReport}}"
+    },
+    "Rb0ChartTypeListDisplayToggles": {
+      "isShuttle": true
+    },
+    "Rb0ShowBarChart": {
+      "iconId": "cmdBarChart",
+      "title": "{{i18n.barChart}}"
+    },
+    "Rb0ShowPieChart": {
+      "iconId": "cmdPieChart",
+      "title": "{{i18n.pieChart}}"
+    },
+    "Rb0ShowLineChart": {
+      "iconId": "cmdLineChart",
+      "title": "{{i18n.lineChart}}"
+    },
+    "Rb0ConfigureChartEdit": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.editConfigureChart}}"
+    },
+    "Rb0EditReportCriteria": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.editReportCriteria}}"
+    },
+    "Rb0ConfigureChartClearOnShowMore": {
+      "iconId": "cmdClearText",
+      "title": "{{i18n.clearChart}}"
+    },
+    "Rb0ConfigureChartClear": {
+      "iconId": "cmdClearText",
+      "title": "{{i18n.clearConfigureChart}}"
+    },
+    "Rb0ConfigureChartShowMore": {
+      "iconId": "cmdMore",
+      "isGroup": true,
+      "title": "{{i18n.moreCommands}}"
+    },
+    "Rb0ConfigureChartMovePrevious": {
+      "iconId": "cmdPreviousRequired",
+      "isGroup": false,
+      "title": "{{i18n.reportMovePrevious}}"
+    },
+    "Rb0ConfigureChartMoveNext": {
+      "iconId": "cmdNextRequired",
+      "isGroup": false,
+      "title": "{{i18n.reportMoveNext}}"
+    },
+    "Rb0ConfigureSearch": {
+      "iconId": "cmdSearch",
+      "isGroup": false,
+      "title": "{{i18n.dataTabName}}"
+    },
+    "Rb0SaveAsTemplate": {
+      "iconId": "cmdSave",
+      "title": "{{i18n.saveAsTemplate}}"
+    },
+    "Rb0Template": {
+      "iconId": "cmdGenerateReport",
+      "title": "{{i18n.template}}"
+    },
+    "Rb0EditReportTemplate": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.edit}}"
+    },
+    "Rb0CancelReportTemplate": {
+      "iconId": "cmdCancelEdit",
+      "title": "{{i18n.rptCancel}}"
+    },
+    "Rb0SaveReportTemplate": {
+      "iconId": "cmdSave",
+      "title": "{{i18n.saveReport}}"
+    },
+    "Rb0ShareReportTemplate": {
+      "iconId": "cmdShare",
+      "title": "{{i18n.shareTemplateTitle}}"
+    },
+    "Rb0AddToSharedList": {
+      "iconId": "cmdChevronRight_uxRefresh",
+      "isGroup": false,
+      "title": "{{i18n.addDashboardReportWithPanel}}",
+      "description": "{{i18n.addShareReportDesc}}"
+    },
+    "Rb0AddToSharedListMobileMode": {
+      "iconId": "miscChevronDown",
+      "isGroup": false,
+      "title": "{{i18n.addDashboardReportWithPanel}}",
+      "description": "{{i18n.addShareReportDesc}}"
+    },
+    "Rb0RemoveFromSharedList": {
+      "iconId": "cmdChevronLeft_uxRefresh",
+      "isGroup": false,
+      "title": "{{i18n.removeFromDashboard}}",
+      "description": "{{i18n.removeShareReportDesc}}"
+    },
+    "Rb0RemoveFromSharedListMobileMode": {
+      "iconId": "miscChevronUp",
+      "isGroup": false,
+      "title": "{{i18n.removeFromDashboard}}",
+      "description": "{{i18n.removeShareReportDesc}}"
+    },
+    "Rb0ConfigureItemSearch": {
+      "iconId": "cmdSearch",
+      "isGroup": false,
+      "title": "{{i18n.itemTabName}}"
+    },
+    "Rb0AddRelations": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.addRelations}}"
+    },
+    "Rb0EditRelation": {
+      "iconId": "cmdEdit",
+      "title": "{{i18n.editRelations}}"
+    }
+  },
+  "commandPlacements": {
+    "Awp0GoReportsGlobalNavigationbar": {
+      "id": "Awp0GoReports",
+      "uiAnchor": "aw_globalNavigationbar",
+      "priority": 110
+    },
+    "Rb0QuickRunChartReportPlacement": {
+      "id": "Rb0QuickRunChartReport",
+      "uiAnchor": "reportdefinition_cell_commands",
+      "priority": 1,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "Rb0QuickRunSummaryCustomReport": {
+      "id": "Rb0QuickRunSummaryCustomReport",
+      "uiAnchor": "reportdefinition_cell_commands",
+      "priority": 1,
+      "cellDisplay": {
+        "hover": true,
+        "position": "TOP_RIGHT",
+        "selected": true
+      }
+    },
+    "awp0InContextCommandPlacement": {
+      "id": "Awp0InContextReports",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "awp0SummaryCommandPlacement": {
+      "id": "Awp0ReportsSummary",
+      "uiAnchor": "aw_rightWall",
+      "priority": 550,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Rb0DeleteReportPlacement": {
+      "id": "Rb0DeleteReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Rb0ReportDashboardShowMoreCommandPlacement": {
+      "id": "Rb0ReportDashboardShowMore",
+      "uiAnchor": "reportTileViewerCommands",
+      "priority": 1,
+      "cellDisplay": {
+        "position": "TOP_RIGHT",
+        "hover": true
+      }
+    },
+    "Rb0ShowReportObjectCommandPlacement": {
+      "id": "Rb0ShowReportObject",
+      "uiAnchor": "reportTileViewerCommands",
+      "priority": 100,
+      "parentGroupId": "Rb0ReportDashboardShowMore"
+    },
+    "Rb0ReportDashboardMovePreviousCommandPlacement": {
+      "id": "Rb0ReportMovePrevious",
+      "uiAnchor": "reportTileViewerCommands",
+      "priority": 400,
+      "parentGroupId": "Rb0ReportDashboardShowMore"
+    },
+    "Rb0ReportDashboardMoveNextCommandPlacement": {
+      "id": "Rb0ReportMoveNext",
+      "uiAnchor": "reportTileViewerCommands",
+      "priority": 500,
+      "parentGroupId": "Rb0ReportDashboardShowMore"
+    },
+    "Rb0RemoveDashboardTilePlacement": {
+      "id": "Rb0RemoveDashboardTile",
+      "uiAnchor": "reportTileViewerCommands",
+      "priority": 600,
+      "parentGroupId": "Rb0ReportDashboardShowMore"
+    },
+    "Rb0RemoveSegmentPlacement": {
+      "id": "Rb0RemoveSegment",
+      "uiAnchor": "rb0_removeSegmentCommands"
+    },
+    "Rb0SetReportLayoutPlacement": {
+      "id": "Rb0SetReportLayout",
+      "uiAnchor": "rb0_layoutCommands"
+    },
+    "Rb0AddSegmentsPlacement": {
+      "id": "Rb0AddSegments",
+      "uiAnchor": "rb0_segmentCommands"
+    },
+    "Rb0RemoveSamplePlacement": {
+      "id": "Rb0RemoveSample",
+      "uiAnchor": "rb0_rootClassSampleCommands"
+    },
+    "Rb0AddSamplePlacement": {
+      "id": "Rb0AddSample",
+      "uiAnchor": "rb0_rootClassSampleCommands"
+    },
+    "Rb0ConfigureItemReportPlacement": {
+      "id": "Rb0ConfigureItemReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Rb0RemoveItemPlacement": {
+      "id": "Rb0RemoveItem",
+      "priority": 550,
+      "uiAnchor": "rb0_itemCommands"
+    },
+    "Rb0AddItemPlacement": {
+      "id": "Rb0AddItem",
+      "priority": 540,
+      "uiAnchor": "rb0_itemCommands"
+    },
+    "Rb0RemoveClassPlacement": {
+      "id": "Rb0RemoveClass",
+      "uiAnchor": "rb0_rootClassCommands"
+    },
+    "Rb0AddClassPlacement": {
+      "id": "Rb0AddClass",
+      "uiAnchor": "rb0_rootClassCommands"
+    },
+    "Rb0EditReportPlacement": {
+      "id": "Rb0EditReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Rb0GenerateAdvReportPlacement": {
+      "id": "Rb0GenerateAdvReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Rb0AddReportPlacement": {
+      "id": "Rb0AddReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0NewGroup"
+    },
+    "Rb0AddReportOnSearchPlacement": {
+      "id": "Rb0AddReportOnSearch",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 34
+    },
+    "Rb0ConfigureReportPlacement": {
+      "id": "Rb0ConfigureReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0EditGroup"
+    },
+    "Rb0AddChartsCommandPlacement": {
+      "id": "Rb0AddCharts",
+      "uiAnchor": "setLayoutTabPage_addChartCommand",
+      "priority": 100
+    },
+    "Rb0AddChart1CommandPlacement": {
+      "id": "Rb0AddChart1",
+      "uiAnchor": "setLayoutTabPage_chart1Commands",
+      "priority": 100
+    },
+    "Rb0RemoveChart1CommandPlacement": {
+      "id": "Rb0RemoveChart1",
+      "uiAnchor": "setLayoutTabPage_chart1Commands",
+      "priority": 100
+    },
+    "Rb0AddChart2CommandPlacement": {
+      "id": "Rb0AddChart2",
+      "uiAnchor": "setLayoutTabPage_chart2Commands",
+      "priority": 100
+    },
+    "Rb0RemoveChart2CommandPlacement": {
+      "id": "Rb0RemoveChart2",
+      "uiAnchor": "setLayoutTabPage_chart2Commands",
+      "priority": 100
+    },
+    "Rb0AddChart3CommandPlacement": {
+      "id": "Rb0AddChart3",
+      "uiAnchor": "setLayoutTabPage_chart3Commands",
+      "priority": 100
+    },
+    "Rb0RemoveChart3CommandPlacement": {
+      "id": "Rb0RemoveChart3",
+      "uiAnchor": "setLayoutTabPage_chart3Commands",
+      "priority": 100
+    },
+    "Rb0SaveAsReportTemplateCommandPlacement": {
+      "id": "Rb0SaveAsReportTemplate",
+      "uiAnchor": "aw_rightWall",
+      "parentGroupId": "Awp0NewGroup",
+      "priority": 550
+    },
+    "Rb0RemoveDashboardReportCommandPlacement": {
+      "id": "Rb0RemoveDashboardReport",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0ManageGroup"
+    },
+    "Rb0RemoveDashboardReportPWACommandPlacement": {
+      "id": "Rb0RemoveDashboardReport",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 540
+    },
+    "Rb0AddToDashboardCommandPlacement": {
+      "id": "Rb0AddToDashboard",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 540
+    },
+    "Rb0AddDashboardReportWithPanelCommandPlacement": {
+      "id": "Rb0AddDashboardReportWithPanel",
+      "uiAnchor": "aw_primaryWorkArea",
+      "priority": 540
+    },
+    "Rb0AddToDashboardRHCommandPlacement": {
+      "id": "Rb0AddToDashboard",
+      "uiAnchor": "aw_rightWall",
+      "priority": 540,
+      "parentGroupId": "Awp0ManageGroup"
+    },
+    "Rb0AddItmRepToDashboardRepViewCmd": {
+      "id": "Rb0AddItmRepToDashboard",
+      "uiAnchor": "reportViewerCommands"
+    },
+    "Rb0EditReportCriteriaCmd": {
+      "id": "Rb0EditReportCriteria",
+      "uiAnchor": "reportViewerCommands"
+    },
+    "Rb0ChartTypeListDisplayTogglesPlacement": {
+      "id": "Rb0ChartTypeListDisplayToggles",
+      "uiAnchor": "configureChartCommands",
+      "priority": 0,
+      "showGroupSelected": false
+    },
+    "Rb0ShowBarChartPlacement": {
+      "id": "Rb0ShowBarChart",
+      "priority": 200,
+      "parentGroupId": "Rb0ChartTypeListDisplayToggles"
+    },
+    "Rb0ShowPieChartPlacement": {
+      "id": "Rb0ShowPieChart",
+      "priority": 300,
+      "parentGroupId": "Rb0ChartTypeListDisplayToggles"
+    },
+    "Rb0ShowLineChartPlacement": {
+      "id": "Rb0ShowLineChart",
+      "priority": 400,
+      "parentGroupId": "Rb0ChartTypeListDisplayToggles"
+    },
+    "Rb0ConfigureChartEditCmdPlacement": {
+      "id": "Rb0ConfigureChartEdit",
+      "uiAnchor": "configureChartCommands"
+    },
+    "Rb0ConfigureChartShowMoreCmdPlacement": {
+      "id": "Rb0ConfigureChartShowMore",
+      "uiAnchor": "configureShowMoreCommands",
+      "showTitle": "never",
+      "cellDisplay": {
+        "position": "TOP_RIGHT"
+      }
+    },
+    "Rb0ConfigureChartMovePreviousCmdPlacement": {
+      "id": "Rb0ConfigureChartMovePrevious",
+      "uiAnchor": "configureShowMoreCommands",
+      "priority": 400,
+      "parentGroupId": "Rb0ConfigureChartShowMore"
+    },
+    "Rb0ConfigureChartMoveNextCmdPlacement": {
+      "id": "Rb0ConfigureChartMoveNext",
+      "uiAnchor": "configureShowMoreCommands",
+      "priority": 400,
+      "parentGroupId": "Rb0ConfigureChartShowMore"
+    },
+    "Rb0ConfigureSearchCmdPlacement": {
+      "id": "Rb0ConfigureSearch",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0SaveAsTemplateCmdPlacement": {
+      "id": "Rb0SaveAsTemplate",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0TemplateCmdPlacement": {
+      "id": "Rb0Template",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0EditReportTemplateCmdPlacement": {
+      "id": "Rb0EditReportTemplate",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0CancelReportTemplateCmdPlacement": {
+      "id": "Rb0CancelReportTemplate",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0SaveReportTemplateCmdPlacement": {
+      "id": "Rb0SaveReportTemplate",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0ShareReportTemplateCmdPlacement": {
+      "id": "Rb0ShareReportTemplate",
+      "uiAnchor": "createTemplateTaskBar",
+      "priority": 400
+    },
+    "Rb0ShareReportTemplateCmdPlacementForGroup": {
+      "id": "Rb0ShareReportTemplate",
+      "uiAnchor": "aw_rightWall",
+      "priority": 400,
+      "parentGroupId": "Awp0ShareGroup"
+    },
+    "Rb0ConfigureChartClearOnShowMoreCmdPlacement": {
+      "id": "Rb0ConfigureChartClearOnShowMore",
+      "uiAnchor": "configureShowMoreCommands",
+      "priority": 400,
+      "parentGroupId": "Rb0ConfigureChartShowMore"
+    },
+    "Rb0ConfigureChartClearCmdPlacement": {
+      "id": "Rb0ConfigureChartClear",
+      "uiAnchor": "configureChartCommands"
+    },
+    "Rb0AddToSharedListCommandPlacement": {
+      "id": "Rb0AddToSharedList",
+      "uiAnchor": "aw_reportsShareAccessorToolbar",
+      "priority": 400
+    },
+    "Rb0AddToSharedListMobileModeCommandPlacement": {
+      "id": "Rb0AddToSharedListMobileMode",
+      "uiAnchor": "aw_reportsShareAccessorToolbarMobile",
+      "priority": 400
+    },
+    "Rb0RemoveFromSharedListCommandPlacement": {
+      "id": "Rb0RemoveFromSharedList",
+      "uiAnchor": "aw_reportsShareAccessorToolbar",
+      "priority": 400
+    },
+    "Rb0RemoveFromSharedListMobileModeCommandPlacement": {
+      "id": "Rb0RemoveFromSharedListMobileMode",
+      "uiAnchor": "aw_reportsShareAccessorToolbarMobile",
+      "priority": 400
+    },
+    "Rb0ConfigureItemSearchCmdPlacement": {
+      "id": "Rb0ConfigureItemSearch",
+      "uiAnchor": "createItemReportTemplateTaskBar1",
+      "priority": 100
+    },
+    "Rb0AddRelationsCmdPlacement": {
+      "id": "Rb0AddRelations",
+      "uiAnchor": "createItemReportTemplateTaskBar2",
+      "priority": 100
+    },
+    "Rb0EditRelationCmdPlacement": {
+      "id": "Rb0EditRelation",
+      "uiAnchor": "createItemReportTemplateTaskBar2",
+      "priority": 100
+    }
+  },
+  "commandHandlers": {
+    "Awp0GoReportsHandler": {
+      "id": "Awp0GoReports",
+      "action": "showReports",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Rb0QuickRunChartReportHandler": {
+      "id": "Rb0QuickRunChartReport",
+      "action": "Rb0QuickRunChartReportCellAction",
+      "activeWhen": {
+        "condition": "conditions.shouldShowChartReportCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shouldShowChartReportCommand"
+      }
+    },
+    "Rb0QuickRunSummaryCustomReportHandler": {
+      "id": "Rb0QuickRunSummaryCustomReport",
+      "action": "Rb0QuickRunSummaryCustomReportCellAction",
+      "activeWhen": {
+        "condition": "conditions.shouldShowSummCustomReportCommand"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shouldShowSummCustomReportCommand"
+      }
+    },
+    "addTracabilityReportCommandHandler": {
+      "id": "Arm0GenerateTraceabilityMatrix",
+      "activeWhen": {
+        "condition": "conditions.hideNotApplicableReportsCommand"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0ShowImageViewInReportsCommandHandler": {
+      "id": "Awp0ShowImageView",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInTemplatesLocation"
+      },
+      "visibleWhen": false
+    },
+    "Awp0CopyReportCommandHandler": {
+      "id": "Awp0Copy",
+      "activeWhen": {
+        "condition": "conditions.hideNotApplicableReportsCommand"
+      },
+      "visibleWhen": false
+    },
+    "Awp0CopyContextMenuReportCommandHandler": {
+      "id": "Awp0CopyContextMenu",
+      "activeWhen": {
+        "condition": "conditions.hideNotApplicableReportsCommand"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0ChangeOwnerInReportsCommandHandler": {
+      "id": "Awp0ChangeOwner",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0InContextReportsInReportsCommandHandler": {
+      "id": "Awp0InContextReports",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0PrintInReportsCommandHandler": {
+      "id": "Awp0Print",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0ShowCreateChangeInContextInReportsCommandHandler": {
+      "id": "Cm1ShowCreateChangeInContext",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0ReplaceDatasetInReportsCommandHandler": {
+      "id": "Awp0ReplaceDataset",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Sub0SubscribeInReportsCommandHandler": {
+      "id": "Sub0Subscribe",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0ExportGroupInReportsCommandHandler": {
+      "id": "Awp0ExportGroup",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Arm0CreateTraceLinkInReportsCommandHandler": {
+      "id": "Arm0CreateTraceLink",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0AssignProjectsInReportsCommandHandler": {
+      "id": "Awp0AssignProjects",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0uvCheckoutInReportsCommandHandler": {
+      "id": "uvCheckout",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0Awp0AttachLicensesCommandHandler": {
+      "id": "Awp0AttachLicenses",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInMyReportsLocation"
+      },
+      "visibleWhen": false
+    },
+    "awp0InContextCommandHandler": {
+      "id": "Awp0InContextReports",
+      "action": "activateReportPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.showGenerateReportCommand"
+      }
+    },
+    "awp0SummaryCommandHandler": {
+      "id": "Awp0ReportsSummary",
+      "action": "activateSummaryReportPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isSelectedReportObject"
+      }
+    },
+    "Rb0Awp0DeleteCommandHandler": {
+      "id": "Awp0Delete",
+      "activeWhen": {
+        "condition": "conditions.Rb0IsCommandRequiredInTemplatesLocation"
+      },
+      "visibleWhen": false
+    },
+    "Rb0DeleteReportHandler": {
+      "id": "Rb0DeleteReport",
+      "action": "reportDeleteConfirmationEvent",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isReportDeleteAllowed"
+      }
+    },
+    "Rb0AddItmRepToDashboardCmdHandler": {
+      "id": "Rb0AddItmRepToDashboard",
+      "action": "addSelectedReportToDashboard",
+      "activeWhen": {
+        "condition": "conditions.canAddActiveItemReportToMyDashboard"
+      },
+      "visibleWhen": {
+        "condition": "conditions.canAddActiveItemReportToMyDashboard"
+      }
+    },
+    "Rb0ConfigureChartEditCmdHandler": {
+      "id": "Rb0ConfigureChartEdit",
+      "action": "getChartPropsAndOpenPopup",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Rb0ConfigureChartClearOnShowMoreCmdHandler": {
+      "id": "Rb0ConfigureChartClearOnShowMore",
+      "action": "clearChartConfig",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.clearChartConfigCommandEnable"
+      },
+      "visibleWhen": true
+    },
+    "Rb0ConfigureChartClearCmdHandler": {
+      "id": "Rb0ConfigureChartClear",
+      "action": "clearChartConfig",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.clearChartConfigCommandEnable"
+      },
+      "visibleWhen": {
+        "condition": "conditions.chartCountIsOne"
+      }
+    },
+    "Rb0ConfigureChartMovePreviousCmdHandler": {
+      "id": "Rb0ConfigureChartMovePrevious",
+      "action": "moveChartPrevious",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.moveChartPreviousCommandEnable"
+      },
+      "visibleWhen": true
+    },
+    "Rb0ConfigureChartMoveNextCmdHandler": {
+      "id": "Rb0ConfigureChartMoveNext",
+      "action": "moveChartNext",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.moveChartNextCommandEnable"
+      },
+      "visibleWhen": true
+    },
+    "Rb00ShowReportObjectCommandHandler": {
+      "id": "Rb0ShowReportObject",
+      "action": "showSelectedReportObject",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Rb0ReportDashboardMovePreviousHandler": {
+      "id": "Rb0ReportMovePrevious",
+      "action": "reportDashboardMovePrevious",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.canReportMovePrevious"
+      },
+      "visibleWhen": true
+    },
+    "Rb0ReportDashboardMoveNextHandler": {
+      "id": "Rb0ReportMoveNext",
+      "action": "reportDashboardMoveNext",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.canReportMoveNext"
+      },
+      "visibleWhen": true
+    },
+    "Rb0RemoveDashboardTileCmdHandler": {
+      "id": "Rb0RemoveDashboardTile",
+      "action": "rb0RemoveSelectedReportAction",
+      "activeWhen": true,
+      "visibleWhen": true
+    },
+    "Rb0RemoveSegmentHandler": {
+      "id": "Rb0RemoveSegment",
+      "action": "Rb0RemoveSegmentAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.removeSegmentCommandVisible"
+      }
+    },
+    "Rb0SetReportLayoutHandler": {
+      "id": "Rb0SetReportLayout",
+      "action": "Rb0SetReportLayoutAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0SetLayoutCmdVisible"
+      }
+    },
+    "Rb0AddSegmentsHandler": {
+      "id": "Rb0AddSegments",
+      "action": "Rb0AddSegmentsAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0AddSegmentCmdVisible"
+      }
+    },
+    "Rb0RemoveSampleHandler": {
+      "id": "Rb0RemoveSample",
+      "action": "Rb0RemoveSampleAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsRemoveRootSampleCmdVisible"
+      }
+    },
+    "Rb0AddSampleCommandHandler": {
+      "id": "Rb0AddSample",
+      "action": "Rb0AddSampleAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsAddRootSampleCmdVisible"
+      }
+    },
+    "Rb0ConfigureItemReportHandler": {
+      "id": "Rb0ConfigureItemReport",
+      "action": "activateConfigureItemReportPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsConfiguringItemReport"
+      }
+    },
+    "Rb0RemoveItemHandler": {
+      "id": "Rb0RemoveItem",
+      "action": "Rb0RemoveItemAction",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.shouldRemoveItemCommandVisible"
+      },
+      "visibleWhen": true
+    },
+    "Rb0AddItemCommandHandler": {
+      "id": "Rb0AddItem",
+      "action": "Rb0AddItemAction",
+      "activeWhen": true,
+      "enableWhen": {
+        "condition": "conditions.shouldAddItemCommandVisible"
+      },
+      "visibleWhen": true
+    },
+    "Rb0RemoveClassHandler": {
+      "id": "Rb0RemoveClass",
+      "action": "Rb0RemoveClassAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0RemoveClassCmdVisible"
+      }
+    },
+    "Rb0AddClassCommandHandler": {
+      "id": "Rb0AddClass",
+      "action": "Rb0AddClassAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0AddClassCmdVisible"
+      }
+    },
+    "awp0OpenInRACCommandHandler": {
+      "id": "Awp0OpenInRAC",
+      "activeWhen": {
+        "condition": "conditions.isItAdvanceChartReport"
+      },
+      "visibleWhen": false
+    },
+    "awp0StartEditReportCommandHandler": {
+      "id": "Awp0StartEdit",
+      "activeWhen": {
+        "condition": "conditions.hideStartEditCommand"
+      },
+      "visibleWhen": false
+    },
+    "awp0StartEditTableReportCommandHandler": {
+      "id": "Awp0StartEditTable",
+      "activeWhen": {
+        "condition": "conditions.hideStartEditCommand"
+      },
+      "visibleWhen": false
+    },
+    "Awp0PinObjectReportHandler": {
+      "id": "Awp0PinObject",
+      "action": "Rb0PinReportAction",
+      "activeWhen": {
+        "condition": "conditions.isReportPinnable"
+      },
+      "visibleWhen": {
+        "condition": "conditions.isReportPinnable"
+      }
+    },
+    "Awp0UnPinObjectReportHandler": {
+      "id": "Awp0UnPinObject",
+      "action": "Rb0UnPinReportAction",
+      "activeWhen": {
+        "condition": "conditions.isReportUnPinnable"
+      },
+      "visibleWhen": {
+        "condition": "conditions.isReportUnPinnable"
+      }
+    },
+    "Awp0PinObjectReportHandler1": {
+      "id": "Awp0PinObject",
+      "activeWhen": {
+        "condition": "conditions.shouldShowPinCommand"
+      },
+      "visibleWhen": false
+    },
+    "Awp0UnPinObjectReportHandler1": {
+      "id": "Awp0UnPinObject",
+      "activeWhen": {
+        "condition": "conditions.shouldShowPinCommand"
+      },
+      "visibleWhen": false
+    },
+    "Rb0EditReportHandler": {
+      "id": "Rb0EditReport",
+      "action": "updateSessionAndNavigate",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isReportEditAllowed"
+      }
+    },
+    "Rb0GenerateAdvReportHandler": {
+      "id": "Rb0GenerateAdvReport",
+      "action": "Rb0GenerateAdvReportAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isItAdvanceChartReport"
+      }
+    },
+    "Rb0AddChartsHandler": {
+      "id": "Rb0AddCharts",
+      "action": "Rb0AddChartsAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.AddChartsCondition"
+      }
+    },
+    "Rb0AddChart1Handler": {
+      "id": "Rb0AddChart1",
+      "action": "Rb0AddChart1Action",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Chart1AddCondition"
+      }
+    },
+    "Rb0RemoveChart1Handler": {
+      "id": "Rb0RemoveChart1",
+      "action": "Rb0RemoveChart1Action",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Chart1RemoveCondition"
+      }
+    },
+    "Rb0AddChart2Handler": {
+      "id": "Rb0AddChart2",
+      "action": "Rb0AddChart2Action",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Chart2AddCondition"
+      }
+    },
+    "Rb0RemoveChart2Handler": {
+      "id": "Rb0RemoveChart2",
+      "action": "Rb0RemoveChart2Action",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Chart2RemoveCondition"
+      }
+    },
+    "Rb0AddChart3Handler": {
+      "id": "Rb0AddChart3",
+      "action": "Rb0AddChart3Action",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Chart3AddCondition"
+      }
+    },
+    "Rb0RemoveChart3Handler": {
+      "id": "Rb0RemoveChart3",
+      "action": "Rb0RemoveChart3Action",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Chart3RemoveCondition"
+      }
+    },
+    "Rb0AddReportHandler": {
+      "id": "Rb0AddReport",
+      "action": "navigateToCreateReportTemplate",
+      "activeWhen": {
+        "condition": "conditions.notSearchResultsLocation"
+      },
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsInsideTemplateWithNoSelection"
+      }
+    },
+    "Rb0AddReportSearchHandler": {
+      "id": "Rb0AddReport",
+      "action": "activateCreateReportPanel",
+      "activeWhen": {
+        "condition": "conditions.isSearchResultsLocation"
+      },
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsInsideTemplateWithNoSelection"
+      }
+    },
+    "Rb0AddReportOnSearchHandler": {
+      "id": "Rb0AddReportOnSearch",
+      "action": "activateCreateReportPanel",
+      "activeWhen": {
+        "condition": "conditions.isSearchResultsLocation"
+      },
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsInsideTemplateWithNoSelection"
+      }
+    },
+    "Rb0ConfigureReportHandler": {
+      "id": "Rb0ConfigureReport",
+      "action": "activateConfigureReportPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.Rb0IsConfiguringReport"
+      }
+    },
+    "Rb0HideOpenInIllustratorCommandHandler": {
+      "id": "openInIllustrator",
+      "activeWhen": {
+        "condition": "conditions.hideCommandInMyDashboard"
+      },
+      "visibleWhen": false
+    },
+    "Rb0HideAwp0StartEditTableCommandHandler": {
+      "id": "Awp0StartEditTable",
+      "activeWhen": {
+        "condition": "conditions.hideCommandInMyDashboard"
+      },
+      "visibleWhen": false
+    },
+    "Rb0HideAwp0StartEditCommandHandler": {
+      "id": "Awp0StartEdit",
+      "activeWhen": {
+        "condition": "conditions.hideCommandInMyDashboard"
+      },
+      "visibleWhen": false
+    },
+    "Rb0HideRb0GenerateAdvReportCommandHandler": {
+      "id": "Rb0GenerateAdvReport",
+      "activeWhen": {
+        "condition": "conditions.hideCommandInMyDashboard"
+      },
+      "visibleWhen": false
+    },
+    "Rb0HideAwp0ShareURLCommandHandler": {
+      "id": "Awp0ShareURL",
+      "activeWhen": {
+        "condition": "conditions.hideCommandInMyDashboard"
+      },
+      "visibleWhen": false
+    },
+    "Rb0SaveAsReportTemplateCommandHandler": {
+      "id": "Rb0SaveAsReportTemplate",
+      "action": "activateSaveAsReportPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isReportSaveAsAllowed"
+      }
+    },
+    "Rb0RemoveDashboardReportCommandHandler": {
+      "id": "Rb0RemoveDashboardReport",
+      "action": "removeSelectedDashboardReport",
+      "activeWhen": {
+        "condition": "conditions.shouldRemoveDashboardReport"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shouldRemoveDashboardReport"
+      }
+    },
+    "Rb0AddToDashboardCommandHandler": {
+      "id": "Rb0AddToDashboard",
+      "action": "addSelectedReportToDashboard",
+      "activeWhen": {
+        "condition": "conditions.shouldAddDashboardReport"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shouldAddDashboardReport"
+      }
+    },
+    "Rb0AddDashboardReportWithPanelCommandHandler": {
+      "id": "Rb0AddDashboardReportWithPanel",
+      "action": "activateRb0DashboardAddReportsPanel",
+      "activeWhen": {
+        "condition": "conditions.isMyDashboardLocation"
+      },
+      "visibleWhen": {
+        "condition": "conditions.isMyDashboardLocation"
+      }
+    },
+    "Rb0DashboardSelectAllViewDisplayHandler": {
+      "id": "Awp0SelectAll",
+      "activeWhen": {
+        "condition": "conditions.isItOnTempOrDashOrShow"
+      },
+      "visibleWhen": false
+    },
+    "Rb0DashboardMultiSelectViewDisplayHandler": {
+      "id": "Awp0EnableMultiSelect",
+      "activeWhen": {
+        "condition": "conditions.isItOnTempOrDashOrShow"
+      },
+      "visibleWhen": false
+    },
+    "Rb0EditReportCriteriaCommandHandler": {
+      "id": "Rb0EditReportCriteria",
+      "action": "getRevisionRuletoPopulateWidget",
+      "activeWhen": {
+        "condition": "conditions.shouldEditReportCriteria"
+      },
+      "visibleWhen": {
+        "condition": "conditions.shouldEditReportCriteria"
+      }
+    },
+    "Rb0ConfigureSearchCmdHandler": {
+      "id": "Rb0ConfigureSearch",
+      "action": "activateConfigureSearchPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isConfigureSearchDataVisible"
+      }
+    },
+    "Rb0SaveAsTemplateCmdHandler": {
+      "id": "Rb0SaveAsTemplate",
+      "action": "openSaveAsTemplatePopup",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isSaveAsTemplateVisible"
+      }
+    },
+    "Rb0TemplateCmdHandler": {
+      "id": "Rb0Template",
+      "action": "openSaveAsTemplatePopup",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isTemplateCmdVisbile"
+      }
+    },
+    "Rb0EditReportTemplateCmdHandler": {
+      "id": "Rb0EditReportTemplate",
+      "action": "updatePreviewModeFalse",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditTemplateCommandVisible"
+      }
+    },
+    "Rb0CancelReportTemplateCmdHandler": {
+      "id": "Rb0CancelReportTemplate",
+      "action": "Rb0CancelReportTemplateAction",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isCancelCmdVisible"
+      }
+    },
+    "Rb0SaveReportTemplateCmdHandler": {
+      "id": "Rb0SaveReportTemplate",
+      "action": "saveReportAndUpdatePreview",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isCancelCmdVisible"
+      },
+      "enableWhen": {
+        "condition": "conditions.isSaveCmdVisible"
+      }
+    },
+    "Rb0ShareReportTemplateCommandHandler": {
+      "id": "Rb0ShareReportTemplate",
+      "action": "activateShareReportTemplatePanel",
+      "activeWhen": {
+        "condition": "conditions.isCreateReportTemplateLocation"
+      },
+      "enableWhen": {
+        "condition": "conditions.isShareTemplateCommandVisible"
+      }
+    },
+    "Rb0ShareReportTemplate1CommandHandler": {
+      "id": "Rb0ShareReportTemplate",
+      "action": "activateShareReportTemplatePanel",
+      "activeWhen": {
+        "condition": "conditions.notCreateReportTemplateLocation"
+      },
+      "visibleWhen": {
+        "condition": "conditions.isShareTemplateCommandVisible"
+      }
+    },
+    "Rb0ShowBarChartHandler": {
+      "id": "Rb0ShowBarChart",
+      "action": "createBarChart",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "selectWhen": {
+        "condition": "conditions.isBarChart"
+      }
+    },
+    "Rb0ShowPieChartHandler": {
+      "id": "Rb0ShowPieChart",
+      "action": "createPieChart",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "selectWhen": {
+        "condition": "conditions.isPieChart"
+      }
+    },
+    "Rb0ShowLineChartHandler": {
+      "id": "Rb0ShowLineChart",
+      "action": "createLineChart",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "selectWhen": {
+        "condition": "conditions.isLineChart"
+      }
+    },
+    "Rb0ChartTypeListDisplayTogglesHandler": {
+      "id": "Rb0ChartTypeListDisplayToggles",
+      "activeWhen": true
+    },
+    "Rb0AddToSharedListCommandHandler": {
+      "id": "Rb0AddToSharedList",
+      "action": "addShareReport",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.addToSharedList"
+      }
+    },
+    "Rb0AddToSharedListMobileModeCommandHandler": {
+      "id": "Rb0AddToSharedListMobileMode",
+      "action": "addShareReport",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.addToSharedList"
+      }
+    },
+    "Rb0RemoveFromSharedListCommandHandler": {
+      "id": "Rb0RemoveFromSharedList",
+      "action": "removeShareReport",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.removeFromSharedList"
+      }
+    },
+    "Rb0RemoveFromSharedListMobileModeCommandHandler": {
+      "id": "Rb0RemoveFromSharedListMobileMode",
+      "action": "removeShareReport",
+      "activeWhen": true,
+      "visibleWhen": true,
+      "enableWhen": {
+        "condition": "conditions.removeFromSharedList"
+      }
+    },
+    "Rb0DisableArrangeColumn": {
+      "id": "openArrangePanel",
+      "action": "",
+      "activeWhen": {
+        "condition": "conditions.arrangePanelDisable"
+      },
+      "visibleWhen": false
+    },
+    "Rb0DisableHideColumnCommand": {
+      "id": "splmTableHideColumn",
+      "action": "",
+      "activeWhen": {
+        "condition": "conditions.arrangePanelDisable"
+      },
+      "visibleWhen": false
+    },
+    "Rb0ConfigureItemSearchCmdHandler": {
+      "id": "Rb0ConfigureItemSearch",
+      "action": "activateConfigureSearchPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isItemReportAndNotPreviewed"
+      }
+    },
+    "Rb0AddRelationsCmdHandler": {
+      "id": "Rb0AddRelations",
+      "action": "activateAddRelationsPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isAddRelationsVisible"
+      }
+    },
+    "Rb0EditRelationCmdHandler": {
+      "id": "Rb0EditRelation",
+      "action": "activateAddRelationsPanel",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.isEditRelationsVisible"
+      }
+    },
+    "Rb0ModelObjListDisplayTogglesCmdHandler": {
+      "id": "Awp0ShowImageView",
+      "activeWhen": {
+        "condition": "conditions.isShowReportPage"
+      },
+      "visibleWhen": false
+    }
+  },
+  "data": {
+    "reportstileAction": "showMyDashboard",
+    "reportId": {
+      "type": "STRING",
+      "isRequired": "true",
+      "isEditable": "true",
+      "dbValue": "",
+      "uiValue": ""
+    }
+  },
+  "preferences": [
+    "REPORT_AW_Use_Custom_Tile_Navigate"
+  ],
+  "actions": {
+    "showReports": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "getCurrentReportsTileAction",
+          "condition": "conditions.isCustomActionDefined"
+        },
+        {
+          "action": "navigateToReportsLocation"
+        }
+      ]
+    },
+    "getCurrentReportsTileAction": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2023-06-Finder",
+      "deps": "js/showMyReportsService",
+      "method": "performSearchViewModel5",
+      "inputData": {
+        "searchInput": {
+          "maxToLoad": 50,
+          "maxToReturn": 50,
+          "providerName": "Awp0SavedQuerySearchProvider",
+          "searchCriteria": {
+            "queryName": "General...",
+            "searchID": "REPORTSTILETEMPLATESEARCH",
+            "typeOfSearch": "ADVANCED_SEARCH",
+            "Name": "Awp0ReportsTemplate",
+            "Type": "Awp0TileTemplate",
+            "lastEndIndex": "",
+            "totalObjectsFoundReportedToClient": "",
+            "utcOffset": "0"
+          },
+          "searchFilterFieldSortType": "Alphabetical",
+          "startIndex": 0,
+          "searchFilterMap6": {},
+          "searchSortCriteria": []
+        },
+        "columnConfigInput": {
+          "clientName": "AWClient",
+          "clientScopeURI": "{{ctx.sublocation.clientScopeURI}}"
+        }
+      },
+      "policy": {
+        "types": [
+          {
+            "name": "Awp0TileTemplate",
+            "properties": [
+              {
+                "name": "awp0Action"
+              }
+            ]
+          }
+        ]
+      },
+      "outputData": {
+        "reportstileAction": "{{function:getActionName}}"
+      }
+    },
+    "navigateToReportsLocation": {
+      "actionType": "JSFunction",
+      "method": "navigate",
+      "deps": "js/navigationService",
+      "inputData": {
+        "action": {
+          "actionType": "Navigate",
+          "navigateTo": "{{data.reportstileAction}}"
+        },
+        "navigationParams": {
+          "navigationContext": {}
+        }
+      }
+    },
+    "Rb0QuickRunSummaryCustomReportCellAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "selectReportAndDisplayGenerateReportPanel",
+            "eventData": {
+              "selectedReport": "{{commandContext.vmo}}"
+            }
+          }
+        ]
+      }
+    },
+    "Rb0QuickRunChartReportCellAction": {
+      "actionType": "Navigate",
+      "navigateTo": "showReport",
+      "navigationParams": {
+        "uid": "{{commandContext.vmo.uid}}",
+        "reportId": "{{commandContext.vmo.props.rd_id.dbValues[0]}}",
+        "title": "{{commandContext.vmo.props.rd_name.uiValues[0]}}",
+        "reportType": "{{commandContext.vmo.props.rd_type.dbValues[0]}}",
+        "configure": "false"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "activateReportPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Awp0InContextReports",
+        "location": "aw_toolsAndInfo",
+        "context": "{{commandContext}}",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "activateSummaryReportPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Awp0ReportsSummary",
+        "location": "aw_toolsAndInfo",
+        "context": "{{commandContext}}",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "reportDeleteConfirmationEvent": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "rptDeleteObjectConfirmation"
+          }
+        ]
+      }
+    },
+    "deleteRelations": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2006-03-DataManagement",
+      "method": "deleteRelations",
+      "deps": "js/ShareTemplateService",
+      "inputData": {
+        "input": "{{function:prepareInputForDeleteRelations}}"
+      }
+    },
+    "Rb0DeleteReportAction": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "deleteRelations",
+          "condition": "ctx.selected.props.Fnd0Applicable_Assignment.dbValues.length>0"
+        },
+        {
+          "action": "callSoaDeleteObjects"
+        }
+      ]
+    },
+    "callSoaDeleteObjects": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2006-03-DataManagement",
+      "method": "deleteObjects",
+      "inputData": {
+        "objects": "{{ctx.mselected}}"
+      },
+      "outputData": {
+        "deleteObjectsPartialErrors": "partialErrors"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ],
+        "failure": [
+          {
+            "name": "primaryWorkarea.reset"
+          }
+        ]
+      },
+      "actionMessages": {
+        "failure": [
+          {
+            "condition": "ctx.mselected && ctx.mselected.length === 1",
+            "message": "deleteReportObjectsSingleFailureMessage"
+          }
+        ],
+        "success": [
+          {
+            "message": "deleteReportObjectSuccesfulMessage"
+          }
+        ]
+      }
+    },
+    "Rb0RemoveSegmentAction": {
+      "actionType": "JSFunction",
+      "method": "removeTraverseSegment",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}",
+        "i18n": "{{i18n}}"
+      },
+      "deps": "js/configureItemReportService"
+    },
+    "ContinueSampleObjectRemoveAction": {
+      "actionType": "JSFunction",
+      "method": "continueSampleObjectRemoveAction",
+      "inputData": {
+        "data": "{{commandContext.data}}",
+        "reportsContext": "{{commandContext.reportsContext}}"
+      },
+      "deps": "js/configureItemReportService"
+    },
+    "openEditItemReportAction": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Rb0ConfigureItemReport",
+        "location": "aw_toolsAndInfo",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "_OldRb0SetReportLayoutAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "awPanel.navigate",
+            "eventData": {
+              "destPanelId": "SetLayoutTabPage",
+              "title": "{{data.i18n.layout}}",
+              "supportGoBack": true,
+              "recreatePanel": false
+            }
+          }
+        ]
+      }
+    },
+    "Rb0AddSegmentsAction": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "activeView": "Rb0SegmentsSelectorSub"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "rb0RemoveSelectedReportAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "rb0RemoveSelectedReport.getConfirmationForParms"
+          }
+        ]
+      }
+    },
+    "Rb0RemoveSampleAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "rb0RemoveSampleObject.getConfirmation",
+            "condition": "ctx.ReportsContext && !((ctx.ReportsContext.reportParameters.segments !== undefined && ctx.ReportsContext.reportParameters.segments.length > 0) || (ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams && ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams.length > 0))"
+          },
+          {
+            "name": "rb0RemoveSampleObject.getConfirmationForParms",
+            "condition": "ctx.ReportsContext && ((ctx.ReportsContext.reportParameters.segments !== undefined && ctx.ReportsContext.reportParameters.segments.length > 0) || (ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams && ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams.length > 0))"
+          }
+        ]
+      }
+    },
+    "Rb0AddSampleAction": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "activeView": "Rb0RootSampleSelectorSub"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "ContinueClassRemoveAction": {
+      "actionType": "JSFunction",
+      "method": "continueClassRemoveAction",
+      "deps": "js/configureItemReportService",
+      "inputData": {
+        "data": "{{commandContext.data}}",
+        "reportsContext": "{{commandContext.reportsContext}}"
+      }
+    },
+    "Rb0RemoveItemAction": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "itemSource": []
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "Rb0RemoveClassAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "rb0RemoveClass.getConfirmation",
+            "condition": "ctx.ReportsContext && !((ctx.ReportsContext.reportParameters.segments !== undefined && ctx.ReportsContext.reportParameters.segments.length > 0) || (ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams && ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams.length > 0))"
+          },
+          {
+            "name": "rb0RemoveClass.getConfirmationForParms",
+            "condition": "ctx.ReportsContext && ((ctx.ReportsContext.reportParameters.segments !== undefined && ctx.ReportsContext.reportParameters.segments.length > 0) || (ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams && ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams.length > 0))"
+          }
+        ]
+      }
+    },
+    "activateConfigureItemReportPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Rb0ConfigureItemReport",
+        "location": "aw_toolsAndInfo",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "Rb0AddItemAction": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "updateSelectReport"
+        },
+        {
+          "action": "initializeAndAddActiveFilters"
+        },
+        {
+          "action": "goToSearchDataTabPage"
+        }
+      ]
+    },
+    "updateSelectReport": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "selectedReport": "{{commandContext.selectedObjects[0]}}"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "initializeAndAddActiveFilters": {
+      "actionType": "JSFunction",
+      "method": "initializeAndAddActiveFilters",
+      "inputData": {
+        "searchState": "{{commandContext.searchState}}",
+        "rdClassName": "{{commandContext.selectedObjects[0].reportdefinition.props.rd_class.dbValues[0]}}"
+      },
+      "deps": "js/showMyDashboardService"
+    },
+    "goToSearchDataTabPage": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "activeView": "SearchDataTabPage"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "Rb0AddClassAction": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "activeView": "Rb0RootClassSelectorSub"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "Rb0SetReportLayoutAction": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsContext}}",
+        "value": {
+          "activeView": "SetLayoutTabPage"
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "activateChartReportPanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Rb0AddReport",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "activateRb0DashboardAddReportsPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Rb0AddDashboardReportWithPanel",
+        "location": "aw_toolsAndInfo",
+        "context": {
+          "dashboardListPreference": "REPORT_AW_MyDashboard_TC_Report"
+        },
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "activateSaveAsReportPanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Rb0SaveAsReport",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "activateConfigureReportPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Rb0ConfigureReport",
+        "location": "aw_toolsAndInfo",
+        "context": "{{commandContext}}",
+        "config": {
+          "isPinUnpinEnabled": true
+        }
+      }
+    },
+    "Rb0AddChartsAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.addCharts",
+            "eventData": {
+              "pnlData": "{{commandContext}}"
+            }
+          }
+        ]
+      }
+    },
+    "Rb0AddChart1Action": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.addChart1"
+          }
+        ]
+      }
+    },
+    "Rb0RemoveChart1Action": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.removeChart1"
+          }
+        ]
+      }
+    },
+    "Rb0AddChart2Action": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.addChart2"
+          }
+        ]
+      }
+    },
+    "Rb0RemoveChart2Action": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.removeChart2"
+          }
+        ]
+      }
+    },
+    "Rb0AddChart3Action": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.addChart3"
+          }
+        ]
+      }
+    },
+    "Rb0RemoveChart3Action": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "setLayoutTabPageCommand.removeChart3"
+          }
+        ]
+      }
+    },
+    "Rb0GenerateAdvReportAction": {
+      "actionType": "Navigate",
+      "navigateTo": "showReport",
+      "navigationParams": {
+        "uid": "{{ctx.selected.uid}}",
+        "reportId": "{{ctx.selected.props.rd_id.dbValues[0]}}",
+        "title": "{{ctx.selected.props.rd_name.uiValues[0]}}",
+        "configure": "false"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "Rb0EditSelectedReportAction": {
+      "actionType": "Event",
+      "method": "Event",
+      "inputData": {
+        "events": [
+          {
+            "name": "navigateToReportForEdit",
+            "condition": "ctx.state.params.referenceId === undefined"
+          },
+          {
+            "name": "openConfigurePanelForReportEdit",
+            "condition": "ctx.state.params !== undefined && ctx.state.params.referenceId === 'edit' && conditions.isSummaryReport"
+          },
+          {
+            "name": "openConfigurePanelForItemReportEdit",
+            "condition": "ctx.state.params !== undefined && ctx.state.params.referenceId === 'edit' && conditions.isItemReport"
+          }
+        ]
+      }
+    },
+    "Rb0EditReportNavigateAction": {
+      "actionType": "Navigate",
+      "navigateTo": "showReport",
+      "navigationParams": {
+        "uid": "{{ctx.selected.uid}}",
+        "reportId": "{{ctx.selected.props.rd_id.dbValues[0]}}",
+        "title": "{{ctx.selected.props.rd_name.uiValues[0]}}",
+        "configure": "true",
+        "referenceId": "edit",
+        "reportType": "{{ctx.selected.props.rd_type.dbValues[0]}}"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "Rb0PinReportAction": {
+      "actionType": "JSFunction",
+      "method": "getEscapedUrlParameters",
+      "deps": "js/addNewReportService",
+      "inputData": {
+        "data": "{{data}}",
+        "selectedObject": "{{ctx.selected}}"
+      },
+      "outputData": {
+        "escapedParam": ""
+      },
+      "events": {
+        "success": [
+          {
+            "name": "initiatePinReportObject"
+          }
+        ]
+      }
+    },
+    "initiatePinReportObjectAction": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2018-05-DataManagement",
+      "method": "pinObjects",
+      "inputData": {
+        "input": [
+          {
+            "uid": "{{ctx.selected.uid}}",
+            "actionParams": "{{data.escapedParam}}",
+            "templateId": "Awp0PinnedReportTemplate"
+          }
+        ]
+      },
+      "events": {
+        "success": [
+          {
+            "name": "cdm.updated",
+            "eventData": {
+              "updatedObjects": "{{ctx.mselected}}"
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "pinReportSuccessMessage"
+          }
+        ],
+        "failure": [
+          {
+            "message": "pinReportFailedMessage"
+          }
+        ]
+      }
+    },
+    "Rb0UnPinReportAction": {
+      "actionType": "TcSoaService",
+      "serviceName": "Internal-AWS2-2018-05-DataManagement",
+      "method": "unpinObjects",
+      "inputData": {
+        "uidsToUnpin": [
+          "{{ctx.mselected[0].uid}}"
+        ],
+        "returnGateway": false
+      },
+      "events": {
+        "success": [
+          {
+            "name": "cdm.updated",
+            "eventData": {
+              "updatedObjects": "{{ctx.mselected}}"
+            }
+          }
+        ]
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "unpinReportSuccessMessage"
+          }
+        ],
+        "failure": [
+          {
+            "message": "unpinReportFailedMessage"
+          }
+        ]
+      }
+    },
+    "showSelectedReportObject": {
+      "actionType": "Navigate",
+      "navigateTo": "showReport",
+      "navigationParams": {
+        "uid": "{{commandContext.selectedReport.reportUid}}",
+        "reportId": "{{commandContext.selectedReport.props.rd_id.dbValues[0]}}",
+        "title": "{{commandContext.selectedReport.props.rd_name.uiValues[0]}}",
+        "configure": "false",
+        "referenceId": "{{commandContext.selectedReport.props.rd_sourceObject.dbValue}}",
+        "reportType": "{{commandContext.selectedReport.props.rd_type.dbValues[0]}}"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "reportDashboardMovePrevious": {
+      "actionType": "JSFunction",
+      "method": "reportDashboardMove",
+      "deps": "js/showMyDashboardService",
+      "inputData": {
+        "data": "{{commandContext.selectedReport}}",
+        "prefName": "{{commandContext.preferenceName}}",
+        "searchState": "{{commandContext.searchState}}",
+        "momentTo": "previous"
+      }
+    },
+    "reportDashboardMoveNext": {
+      "actionType": "JSFunction",
+      "method": "reportDashboardMove",
+      "deps": "js/showMyDashboardService",
+      "inputData": {
+        "data": "{{commandContext.selectedReport}}",
+        "prefName": "{{commandContext.preferenceName}}",
+        "searchState": "{{commandContext.searchState}}",
+        "momentTo": "next"
+      }
+    },
+    "removeSelectedDashboardReport": {
+      "actionType": "JSFunction",
+      "method": "removeSelectedDashboardReport",
+      "deps": "js/showMyDashboardService",
+      "inputData": {
+        "selectedReportDef": "{{function:getSelectedRepObject}}",
+        "prefName": "{{commandContext.preferenceName}}",
+        "searchState": "{{commandContext.searchState}}"
+      }
+    },
+    "addSelectedReportToDashboard": {
+      "actionType": "JSFunction",
+      "method": "addSelectedReportToDashboard",
+      "deps": "js/showMyDashboardService",
+      "inputData": {
+        "selectedReportDef": "{{function:getSelectedRepObject}}",
+        "prefName": "{{commandContext.preferenceName}}",
+        "sourceUid": "{{function:getUIDForSelectObject}}",
+        "searchState": "{{commandContext.searchState}}"
+      },
+      "actionMessages": {
+        "success": [
+          {
+            "message": "addToDashboardSucessMessage",
+            "condition": "ctx.selected && ctx.selected.type === 'ReportDefinition'"
+          },
+          {
+            "message": "addToDashboardSucessMessageScenario2",
+            "condition": "commandContext.selectedReport !== undefined"
+          }
+        ]
+      }
+    },
+    "showEditReportCriteiraPopup": {
+      "actionType": "JSFunctionAsync",
+      "method": "showEditReportCriteria",
+      "inputData": {
+        "data": {
+          "declView": "editReportCriteriaPanel",
+          "options": {
+            "reference": ".aw-reports-viewerCommands",
+            "placement": "bottom-end"
+          }
+        },
+        "commandData": "{{data}}",
+        "commandContext": "{{commandContext}}"
+      },
+      "deps": "js/configureItemReportService"
+    },
+    "getRevisionRuletoPopulateWidget": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2013-05-LOV",
+      "deps": "js/configureItemReportService",
+      "method": "getInitialLOVValues",
+      "inputData": {
+        "initialData": {
+          "filterData": {
+            "filterString": "",
+            "maxResults": 2000,
+            "numberToReturn": 100,
+            "order": 1,
+            "sortPropertyName": ""
+          },
+          "lov": {
+            "type": "unknownType",
+            "uid": "AAAAAAAAAAAAAA"
+          },
+          "lovInput": {
+            "boName": "UserSession",
+            "operationName": "Create",
+            "owningObject": {
+              "uid": "{{ctx.userSession.uid}}",
+              "type": "UserSession"
+            },
+            "propertyValues": {}
+          },
+          "propertyName": "awp0RevRule"
+        }
+      },
+      "outputData": {
+        "revRuleLovList": "{{function:getRevRuleLovListFromLovValues}}"
+      },
+      "events": {
+        "success": [
+          {
+            "name": "rb0ReadyToOpenEditReportCriteriaPopup"
+          }
+        ]
+      }
+    },
+    "getChartPropsAndOpenPopup": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "getChartProps"
+        },
+        {
+          "action": "openEditChartPopup"
+        }
+      ]
+    },
+    "getChartProps": {
+      "actionType": "JSFunction",
+      "method": "getChartPropList",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "openEditChartPopup": {
+      "actionType": "popup",
+      "inputData": {
+        "options": {
+          "view": "EditChartPopup",
+          "placement": "bottom-start",
+          "width": 350,
+          "height": 185,
+          "hasArrow": true,
+          "hasCloseButton": false,
+          "subPanelContext": {
+            "chartConfig": "{{commandContext.chartConfig}}",
+            "reportsState": "{{commandContext.reportsState}}",
+            "id": "{{commandContext.id}}"
+          }
+        }
+      },
+      "outputData": {
+        "popUpId": "{{function:updatePopUpId}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "openSaveAsTemplatePopup": {
+      "actionType": "popup",
+      "inputData": {
+        "options": {
+          "view": "SaveAsTemplatePopup",
+          "placement": "bottom-end",
+          "width": 300,
+          "height": 400,
+          "hasArrow": true,
+          "hasCloseButton": true,
+          "clickOutsideToClose": true,
+          "subPanelContext": "{{commandContext}}"
+        }
+      }
+    },
+    "saveReportAndUpdatePreview": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "updateThumbnail"
+        },
+        {
+          "action": "saveReportProps"
+        },
+        {
+          "action": "setProperties"
+        },
+        {
+          "action": "updatePreviewModeTrue"
+        }
+      ]
+    },
+    "updateThumbnail": {
+      "actionType": "JSFunction",
+      "method": "updateThumbnail",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}"
+      },
+      "deps": "js/AwConfigureReportViewerService"
+    },
+    "saveReportProps": {
+      "actionType": "JSFunction",
+      "method": "saveReportProps",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}"
+      },
+      "outputData": {
+        "rd_params": "params"
+      },
+      "deps": "js/AwConfigureReportViewerService"
+    },
+    "setProperties": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2010-09-DataManagement",
+      "method": "setProperties",
+      "inputData": {
+        "info": "{{function:getReportInfo}}"
+      },
+      "outputData": {
+        "serviceData": ""
+      },
+      "deps": "js/AwConfigureReportViewerService"
+    },
+    "updatePreviewModeFalse": {
+      "actionType": "Navigate",
+      "navigateTo": "createReportTemplate",
+      "navigationParams": {
+        "reportId": "{{ctx.state.params.reportId}}",
+        "previewMode": "false",
+        "reportType": "{{ctx.state.params.reportType}}",
+        "editReport": "{{ctx.state.params.editReport}}"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "clearSegmentsAndSourceObject": {
+      "actionType": "JSFunction",
+      "method": "updateAtomicDataValue",
+      "inputData": {
+        "AtomicObj": "{{commandContext.reportsState}}",
+        "value": {
+          "segments": [],
+          "rootClassSampleObject": []
+        }
+      },
+      "deps": "js/addObjectUtils"
+    },
+    "loadSourceObject": {
+      "actionType": "JSFunction",
+      "method": "loadSourceObject",
+      "inputData": {
+        "uid": "{{commandContext.reportsState.value.reportParameters.ReportDefProps.ReportClassParameters.rootSampleUid}}",
+        "reportsState": "{{commandContext.reportsState}}",
+        "data": "{{data}}"
+      },
+      "deps": "js/AwConfigureReportViewerService"
+    },
+    "Rb0CancelReportTemplateAction": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "updateReportsStateFromTemplate",
+          "condition": "ctx.state.params.reportId && !conditions.isSummaryReport"
+        },
+        {
+          "action": "clearSegmentsAndSourceObject",
+          "condition": "ctx.state.params.reportId && !conditions.isSummaryReport"
+        },
+        {
+          "action": "loadSourceObject",
+          "condition": "ctx.state.params.reportId && !conditions.isSummaryReport"
+        },
+        {
+          "action": "updateSegmentTree",
+          "condition": "ctx.state.params.reportId && !conditions.isSummaryReport"
+        },
+        {
+          "action": "updatePreviewModeTrue"
+        }
+      ]
+    },
+    "updateReportsStateFromTemplate": {
+      "actionType": "JSFunction",
+      "method": "processTemplateToPopulateReportState",
+      "inputData": {
+        "reportTemplate": "{{commandContext.reportsState.selectedReport}}",
+        "reportsState": "{{commandContext.reportsState}}"
+      },
+      "deps": "js/AwActiveReportViewerService"
+    },
+    "updateSegmentTree": {
+      "actionType": "JSFunction",
+      "deps": "js/configureItemReportService",
+      "method": "callUpdateSegmentTree",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}"
+      }
+    },
+    "updatePreviewModeTrue": {
+      "actionType": "Navigate",
+      "navigateTo": "createReportTemplate",
+      "navigationParams": {
+        "reportId": "{{ctx.state.params.reportId}}",
+        "previewMode": "true",
+        "reportType": "{{ctx.state.params.reportType}}",
+        "editReport": "{{ctx.state.params.editReport}}"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "clearChartConfig": {
+      "actionType": "JSFunction",
+      "method": "clearChartConfig",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}",
+        "id": "{{commandContext.id}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "moveChartPrevious": {
+      "actionType": "JSFunction",
+      "method": "moveChart",
+      "inputData": {
+        "movement": "previous",
+        "id": "{{commandContext.id}}",
+        "reportsState": "{{commandContext.reportsState}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "moveChartNext": {
+      "actionType": "JSFunction",
+      "method": "moveChart",
+      "inputData": {
+        "movement": "next",
+        "id": "{{commandContext.id}}",
+        "reportsState": "{{commandContext.reportsState}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "activateConfigureSearchPanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Rb0ConfigureSearchData",
+        "location": "aw_toolsAndInfo"
+      }
+    },
+    "createBarChart": {
+      "actionType": "JSFunction",
+      "method": "createChart",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}",
+        "id": "{{commandContext.id}}",
+        "chartType": "column",
+        "i18n": "{{commandContext.i18n}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "createPieChart": {
+      "actionType": "JSFunction",
+      "method": "createChart",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}",
+        "id": "{{commandContext.id}}",
+        "chartType": "pie",
+        "i18n": "{{commandContext.i18n}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "createLineChart": {
+      "actionType": "JSFunction",
+      "method": "createChart",
+      "inputData": {
+        "reportsState": "{{commandContext.reportsState}}",
+        "id": "{{commandContext.id}}",
+        "chartType": "line",
+        "i18n": "{{commandContext.i18n}}"
+      },
+      "deps": "js/AwConfigureChartService"
+    },
+    "activateShareReportTemplatePanel": {
+      "actionType": "JSFunction",
+      "method": "activateCommandPanel",
+      "deps": "js/commandPanel.service",
+      "inputData": {
+        "commandId": "Rb0ShareTemplate",
+        "location": "aw_toolsAndInfo",
+        "push": false,
+        "context": null,
+        "closeWhenCommandHidden": false,
+        "config": {
+          "width": "DOUBLEWIDE"
+        }
+      }
+    },
+    "addShareReport": {
+      "actionType": "JSFunction",
+      "method": "addShareReport",
+      "inputData": {
+        "shareReportState": "{{commandContext.shareReportState}}"
+      },
+      "deps": "js/ShareTemplateService"
+    },
+    "removeShareReport": {
+      "actionType": "JSFunction",
+      "method": "removeShareReport",
+      "inputData": {
+        "shareReportState": "{{commandContext.shareReportState}}"
+      },
+      "deps": "js/ShareTemplateService"
+    },
+    "navigateToCreateReportTemplate": {
+      "actionType": "Navigate",
+      "navigateTo": "createReportTemplate",
+      "navigationParams": {
+        "previewMode": "false",
+        "reportType": "4"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "updateSessionAndNavigate": {
+      "actionType": "batchJob",
+      "steps": [
+        {
+          "action": "updateSessionStorage"
+        },
+        {
+          "action": "navigateToEditCreateReportTemplate"
+        }
+      ]
+    },
+    "updateSessionStorage": {
+      "actionType": "JSFunction",
+      "method": "updateSessionStorage",
+      "inputData": {
+        "selectedReport": "{{commandContext.selectionData.selected[0].uid}}"
+      },
+      "deps": "js/showReportBuilderReportsService"
+    },
+    "navigateToEditCreateReportTemplate": {
+      "actionType": "Navigate",
+      "navigateTo": "createReportTemplate",
+      "navigationParams": {
+        "reportId": "{{commandContext.selectionData.selected[0].props.rd_id.dbValues[0]}}",
+        "previewMode": "false",
+        "reportType": "{{commandContext.selectionData.selected[0].props.rd_type.dbValues[0]}}",
+        "editReport": "true"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "activateCreateReportPanel": {
+      "actionType": "Navigate",
+      "navigateTo": "createReportTemplate",
+      "navigationParams": {
+        "searchCriteria": "{{commandContext.searchState.criteria.searchString}}",
+        "filter": "{{ctx.state.params.filter}}",
+        "previewMode": "false",
+        "reportType": "4"
+      },
+      "options": {
+        "inherit": false
+      }
+    },
+    "activateAddRelationsPanel": {
+      "actionType": "activateCommandPanel",
+      "inputData": {
+        "commandId": "Rb0AddRelationPanel",
+        "location": "aw_toolsAndInfo",
+        "context": "{{commandContext}}",
+        "config": {
+          "isPinUnpinEnabled": false
+        }
+      }
+    }
+  },
+  "functions": {
+    "getActionName": {
+      "functionName": "getActionName",
+      "parameters": []
+    },
+    "prepareInputForDeleteRelations": {
+      "functionName": "prepareInputForDeleteRelations",
+      "parameters": [
+        "{{ctx.selected}}",
+        "",
+        "public"
+      ]
+    },
+    "getRevRuleLovListFromLovValues": {
+      "functionName": "getRevRuleLovListFromLovValues",
+      "parameters": [
+        "{{response}}"
+      ]
+    },
+    "getSelectedRepObject": {
+      "functionName": "getSelectedRepObject",
+      "parameters": [
+        "{{commandContext.selectedReport}}"
+      ]
+    },
+    "getUIDForSelectObject": {
+      "functionName": "getUIDForSelectObject",
+      "parameters": [
+        "{{commandContext.selectedReport}}"
+      ]
+    },
+    "updatePopUpId": {
+      "functionName": "updatePopUpId",
+      "parameters": [
+        "{{commandContext.id}}",
+        "{{commandContext.reportsState}}"
+      ]
+    },
+    "getReportInfo": {
+      "functionName": "getReportInfo",
+      "parameters": [
+        "{{commandContext.reportsState}}",
+        "{{data.rd_params}}",
+        "{{commandContext.reportsState.selectedReport.props.rd_name.dbValues[0]}}",
+        "{{commandContext.reportsState.selectedReport.props.rd_description.dbValues[0]}}"
+      ]
+    }
+  },
+  "i18n": {
+    "reportsTitle": [
+      "ReportMessages"
+    ],
+    "inOpenRptCommand": [
+      "ReportsConstants"
+    ],
+    "Awp0GoReportsDesc": [
+      "ReportMessages"
+    ],
+    "inContextCommandName": [
+      "ReportMessages"
+    ],
+    "pinButtonToolTip": [
+      "ReportMessages"
+    ],
+    "unpinButtonToolTip": [
+      "ReportMessages"
+    ],
+    "generateReportPanel_oneStepPinCommands": [
+      "ReportMessages"
+    ],
+    "deleteReportTitle": [
+      "ReportMessages"
+    ],
+    "rptDeleteSingleFailureMessage": [
+      "ReportMessages"
+    ],
+    "deleteReportObjectSuccesful": [
+      "ReportMessages"
+    ],
+    "deleteReportObjectConfirmation": [
+      "ReportMessages"
+    ],
+    "rptCancel": [
+      "ReportMessages",
+      "ReportMessages"
+    ],
+    "rptDelete": [
+      "ReportMessages"
+    ],
+    "Awp0InContextReportsDesc": [
+      "ReportMessages"
+    ],
+    "Awp0ReportsSummaryDesc": [
+      "ReportMessages"
+    ],
+    "saveAsReportTitle": [
+      "ReportChartMessages"
+    ],
+    "addToDashboardSuccessMsg": [
+      "ReportChartMessages"
+    ],
+    "segments": [
+      "ReportChartMessages"
+    ],
+    "proceedOption": [
+      "ReportChartMessages"
+    ],
+    "removeSampleWithConfigMessage": [
+      "ReportChartMessages"
+    ],
+    "removeClassWithConfigMessage": [
+      "ReportChartMessages"
+    ],
+    "removeSampleConfirm": [
+      "ReportChartMessages"
+    ],
+    "layout": [
+      "ReportChartMessages"
+    ],
+    "segment": [
+      "ReportChartMessages"
+    ],
+    "addSegment": [
+      "ReportChartMessages"
+    ],
+    "addSample": [
+      "ReportChartMessages"
+    ],
+    "selectSample": [
+      "ReportChartMessages"
+    ],
+    "removeClass": [
+      "ReportChartMessages"
+    ],
+    "CancelButtonLabel": [
+      "FileVersionsMessages"
+    ],
+    "ConfirmButtonLabel": [
+      "FileVersionsMessages"
+    ],
+    "removeClassConfirm": [
+      "ReportChartMessages"
+    ],
+    "selectClass": [
+      "ReportChartMessages"
+    ],
+    "addClass": [
+      "ReportChartMessages"
+    ],
+    "addReport": [
+      "ReportChartMessages"
+    ],
+    "createReport": [
+      "ReportChartMessages"
+    ],
+    "addDashboardReportWithPanel": [
+      "ReportChartMessages"
+    ],
+    "configureReport": [
+      "ReportChartMessages"
+    ],
+    "addChartCommand": [
+      "ReportChartMessages"
+    ],
+    "removeChartCommand": [
+      "ReportChartMessages"
+    ],
+    "generateAdvCommandName": [
+      "ReportChartMessages"
+    ],
+    "pinObjectConfirmation": [
+      "ReportChartMessages"
+    ],
+    "pinObjectFailed": [
+      "ReportChartMessages"
+    ],
+    "editReportTitle": [
+      "ReportChartMessages"
+    ],
+    "editConfigureChart": [
+      "ReportChartMessages"
+    ],
+    "clearConfigureChart": [
+      "ReportChartMessages"
+    ],
+    "clearChart": [
+      "ReportChartMessages"
+    ],
+    "unpinObjectConfirmation": [
+      "ReportChartMessages"
+    ],
+    "unPinObjectFailed": [
+      "ReportChartMessages"
+    ],
+    "removeDashboardReport": [
+      "ReportChartMessages"
+    ],
+    "addToDashboard": [
+      "ReportChartMessages"
+    ],
+    "addToDashboardDesc": [
+      "ReportChartMessages"
+    ],
+    "addGeneratedReport": [
+      "ReportChartMessages"
+    ],
+    "Rb0AddReportDesc": [
+      "ReportChartMessages"
+    ],
+    "Rb0ConfigureReportDesc": [
+      "ReportChartMessages"
+    ],
+    "Rb0AddChart1Desc": [
+      "ReportChartMessages"
+    ],
+    "Rb0RemoveChartDesc": [
+      "ReportChartMessages"
+    ],
+    "Rb0GenerateAdvReportDesc": [
+      "ReportChartMessages"
+    ],
+    "Rb0EditReportDesc": [
+      "ReportChartMessages"
+    ],
+    "editReportCriteria": [
+      "ReportChartMessages"
+    ],
+    "moreCommands": [
+      "ReportChartMessages"
+    ],
+    "openReport": [
+      "ReportChartMessages"
+    ],
+    "reportMovePrevious": [
+      "ReportChartMessages"
+    ],
+    "reportMoveNext": [
+      "ReportChartMessages"
+    ],
+    "removeFromDashboardConfirmation": [
+      "ReportChartMessages"
+    ],
+    "removeFromDashboard": [
+      "ReportChartMessages"
+    ],
+    "dataTabName": [
+      "ReportChartMessages"
+    ],
+    "saveAsTemplate": [
+      "ReportChartMessages"
+    ],
+    "template": [
+      "ReportChartMessages"
+    ],
+    "edit": [
+      "ReportChartMessages"
+    ],
+    "saveReport": [
+      "ReportChartMessages"
+    ],
+    "barChart": [
+      "ReportChartMessages"
+    ],
+    "pieChart": [
+      "ReportChartMessages"
+    ],
+    "lineChart": [
+      "ReportChartMessages"
+    ],
+    "shareTemplateTitle": [
+      "ReportChartMessages"
+    ],
+    "addShareReportDesc": [
+      "ReportChartMessages"
+    ],
+    "removeShareReportDesc": [
+      "ReportChartMessages"
+    ],
+    "itemTabName": [
+      "ReportChartMessages"
+    ],
+    "addRelations": [
+      "ReportChartMessages"
+    ],
+    "editRelations": [
+      "ReportChartMessages"
+    ],
+    "structure": [
+      "ReportChartMessages"
+    ]
+  },
+  "conditions": {
+    "shouldShowChartReportCommand": {
+      "expression": "commandContext.vmo.type === 'ReportDefinition' && commandContext.vmo.props.rd_type.dbValues[0] === '4'"
+    },
+    "shouldShowSummCustomReportCommand": {
+      "expression": "commandContext.vmo.type === 'ReportDefinition' && (commandContext.vmo.props.rd_type.dbValues[0] === '2' || commandContext.vmo.props.rd_type.dbValues[0] === '0')"
+    },
+    "isCustomActionDefined": {
+      "expression": "ctx.preferences.REPORT_AW_Use_Custom_Tile_Navigate && ctx.preferences.REPORT_AW_Use_Custom_Tile_Navigate[0] === 'true'"
+    },
+    "isTCVersion116OrLaterInReports": {
+      "expression": "(ctx.tcSessionData.tcMajorVersion > 11  || (ctx.tcSessionData.tcMajorVersion === 11 && (ctx.tcSessionData.tcMinorVersion >= 2 && ctx.tcSessionData.tcQRMNumber >= 7)))"
+    },
+    "isTCVersion121": {
+      "expression": "(ctx.tcSessionData.tcMajorVersion === 12 && ctx.tcSessionData.tcMinorVersion ===1 && ctx.tcSessionData.tcQRMNumber === 0)"
+    },
+    "isSelectedObjectPOMObject": {
+      "expression": "ctx.selected && ctx.sublocation.clientScopeURI !== 'Fnd0Report' && (ctx.selected.modelType.typeHierarchyArray.indexOf( 'POM_object' ) > -1) && ctx.selected.type !== 'ReportDefinition'"
+    },
+    "singleObjSelectPrefValueFalse": {
+      "expression": "ctx.selected && ctx.mselected.length === 1 && ctx.preferences.REPORT_AW_Show_GenerateReport_Command_for_Multiselect[0] === 'false'"
+    },
+    "multipleObjSelectPrefValueTrue": {
+      "expression": "ctx.selected && ctx.mselected.length >= 1 && ctx.preferences.REPORT_AW_Show_GenerateReport_Command_for_Multiselect[0] === 'true'"
+    },
+    "showGenerateReportCommand": {
+      "expression": "((conditions.isSelectedObjectWSO) || ((conditions.isTCVersion116OrLaterInReports || conditions.isTCVersion121) && conditions.isSelectedObjectPOMObject)) && ( conditions.singleObjSelectPrefValueFalse || conditions.multipleObjSelectPrefValueTrue)"
+    },
+    "isSelectedObjectWSO": {
+      "expression": "ctx.selected && ctx.sublocation.clientScopeURI !== 'Fnd0Report' && (ctx.visibleServerCommands.Awp0InContextReports || ctx.selected.modelType.typeHierarchyArray.indexOf( 'Awb0Element' ) > -1)"
+    },
+    "isSelectedReportObject": {
+      "expression": "ctx.selected.type === 'ReportDefinition' && ctx.selected.props.rd_source.dbValues[0] !== 'TcRA' && ctx.selected.props.rd_type.dbValues[0] !== '4' && ctx.selected.props.rd_type.dbValues[0] !== '1'"
+    },
+    "Rb0IsCommandRequiredInMyReportsLocation": {
+      "expression": "(ctx.selected.type === 'CrfOutputHtml' || ctx.selected.type === 'CrfOutputExcel' || ctx.selected.type === 'CrfOutputText' || ctx.selected.type === 'CrfOutputXml')"
+    },
+    "Rb0IsCommandRequiredInTemplatesLocation": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReportBuilderReports'"
+    },
+    "hideNotApplicableReportsCommand": {
+      "expression": "ctx.mselected.length >= 1 && ctx.mselected[0].modelType !== null && ctx.selected.type === 'ReportDefinition'"
+    },
+    "isReportDeleteAllowed": {
+      "expression": "(ctx.selected.type === 'ReportDefinition') && ((ctx.selected.props.owning_user.dbValues[0] === ctx.userSession.props.user.dbValues[0])||(ctx.userSession.props.group.displayValues[0] === 'dba')) && (ctx.mselected.length === 1) && (ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReportBuilderReports')"
+    },
+    "Rb0IsPreviewActionSelected": {
+      "expression": "$parent.data.showPreview.dbValue"
+    },
+    "Rb0SetLayoutCmdVisible": {
+      "expression": "(commandContext.reportsContext.segments && commandContext.reportsContext.segments.length > 0 && commandContext.reportsContext.segmentTree && commandContext.reportsContext.segmentTree[0].children.length > 0) || (ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams && ctx.ReportsContext.reportParameters.ReportDefProps.ReportSegmentParams.length > 0 && commandContext.reportsContext.rootClassSampleObject[0] != null)"
+    },
+    "Rb0AddClassCmdVisible": {
+      "expression": "commandContext.reportsContext.rootClassObject.length === 0"
+    },
+    "Rb0RemoveClassCmdVisible": {
+      "expression": "commandContext.data.dataProviders.rootClassProvider.selectedObjects.length > 0"
+    },
+    "Rb0AddSegmentCmdVisible": {
+      "expression": "commandContext.reportsContext.rootClassSampleObject.length > 0 && commandContext.reportsContext.rootClassSampleObject[0] != null"
+    },
+    "Rb0IsRemoveRootSampleCmdVisible": {
+      "expression": "commandContext.data.dataProviders.rootClassSampleProvider.selectedObjects.length > 0"
+    },
+    "Rb0IsAddRootSampleCmdVisible": {
+      "expression": "commandContext.reportsContext.rootClassSampleObject.length === 0 && commandContext.reportsContext.rootClassObject.length > 0 || commandContext.reportsContext.rootClassSampleObject[0] === null"
+    },
+    "Rb0IsInsideTemplateWithNoSelection": {
+      "expression": "ctx.mselected.length === 0 && ctx.sublocation.clientScopeURI === 'Awp0ReportBuilder' && ctx.locationContext['ActiveWorkspace:SubLocation'] !== 'showReport' || ctx.sublocation.clientScopeURI==='Awp0SearchResults'"
+    },
+    "Rb0IsConfiguringReport": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport' && ctx.selected === null && ctx.state.params.referenceId === 'new' && conditions.isSummaryReport"
+    },
+    "Rb0IsConfiguringItemReport": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport' && ctx.selected === null && ctx.state.params.referenceId === 'new' && conditions.isItemReport"
+    },
+    "AddChartsCondition": {
+      "expression": "!(commandContext.removeChart1.dbValue && commandContext.removeChart2.dbValue && commandContext.removeChart3.dbValue)"
+    },
+    "Chart1AddCondition": {
+      "expression": "commandContext.addChart1.dbValue"
+    },
+    "Chart1RemoveCondition": {
+      "expression": "commandContext.removeChart1.dbValue"
+    },
+    "Chart2AddCondition": {
+      "expression": "commandContext.addChart2.dbValue"
+    },
+    "Chart2RemoveCondition": {
+      "expression": "commandContext.removeChart2.dbValue"
+    },
+    "Chart3AddCondition": {
+      "expression": "commandContext.addChart3.dbValue"
+    },
+    "Chart3RemoveCondition": {
+      "expression": "commandContext.removeChart3.dbValue"
+    },
+    "isItAdvanceChartReport": {
+      "expression": "ctx.selected.type === 'ReportDefinition' && ctx.selected.props.rd_source.dbValues[0] !== 'TcRA' && ctx.selected.props.rd_source.dbValues[0] === 'Active Workspace' && (ctx.selected.props.rd_type.dbValues[0] === '4')"
+    },
+    "isItActiveItemReport": {
+      "expression": "ctx.selected.type === 'ReportDefinition' && ctx.selected.props.rd_source.dbValues[0] !== 'TcRA' && ctx.selected.props.rd_source.dbValues[0] === 'Active Workspace' && (ctx.selected.props.rd_type.dbValues[0] === '1')"
+    },
+    "isReportPinnable": {
+      "expression": "ctx.visibleServerCommands.Awp0PinObject && conditions.isItAdvanceChartReport"
+    },
+    "shouldShowPinCommand": {
+      "expression": "ctx.selected.type === 'ReportDefinition' && ctx.selected.props.rd_source.dbValues[0] === 'TcRA' && ctx.selected.props.rd_type.dbValues[0] !== '4'"
+    },
+    "isReportUnPinnable": {
+      "expression": "ctx.visibleServerCommands.Awp0UnPinObject && conditions.isItAdvanceChartReport"
+    },
+    "isReportSaveAsAllowed": {
+      "expression": "ctx.selected.type === 'ReportDefinition' && ctx.sublocation.clientScopeURI === 'Awp0ReportBuilder' && ctx.selected.props.rd_source.dbValues[0] === 'Active Workspace' && ( ctx.selected.props.rd_type.dbValues[0]==='4' || ctx.selected.props.rd_type.dbValues[0]==='1' )"
+    },
+    "isSummaryReportDataProvider": {
+      "expression": "!(ctx.selected.props.rd_parameters.dbValues.indexOf('DataProvider')>=0 && ctx.selected.props.rd_param_values.dbValues[ctx.selected.props.rd_parameters.dbValues.indexOf('DataProvider')] !== 'Awp0FullTextSearchProvider')"
+    },
+    "isReportEditAllowed": {
+      "expression": "(((conditions.isItAdvanceChartReport && conditions.isSummaryReportDataProvider) || conditions.isItActiveItemReport) && (ctx.selected.props.owning_user.dbValues[0] === ctx.userSession.props.user.dbValues[0])) || (ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport' && ctx.ReportsContext.selected.props.owning_user.dbValues[0] === ctx.userSession.props.user.dbValues[0] && ctx.state.params.referenceId === 'edit')"
+    },
+    "isMyDashboardLocation": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showMyDashboard' && !(ctx.selected.type === 'ReportDefinition' || ctx.pselected.type === 'ReportDefinition')"
+    },
+    "hideStartEditCommand": {
+      "expression": "conditions.isStartEditAllowed && (ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport' || ctx.sublocation.nameToken === 'com.siemens.splm.reports:showMyDashboard')"
+    },
+    "hideCommandInMyDashboard": {
+      "expression": "(ctx.selected.type === 'ReportDefinition' || ctx.pselected.type === 'ReportDefinition') && ctx.sublocation.nameToken === 'com.siemens.splm.reports:showMyDashboard'"
+    },
+    "canReportMovePrevious": {
+      "expression": "!((ctx.ReportsPersistCtx.MyDashboardReportList[0] === commandContext.selectedReport.props.rd_id.dbValues[0]) || (ctx.ReportsPersistCtx.MyDashboardReportList[0] === (commandContext.selectedReport.props.rd_id.dbValues[0] + commandContext.selectedReport.props.rd_sourceObject.dbValue)))"
+    },
+    "canReportMoveNext": {
+      "expression": "!((ctx.ReportsPersistCtx.MyDashboardReportList[ctx.ReportsPersistCtx.MyDashboardReportList.length -1] === commandContext.selectedReport.props.rd_id.dbValues[0]) || (ctx.ReportsPersistCtx.MyDashboardReportList[ctx.ReportsPersistCtx.MyDashboardReportList.length -1] === (commandContext.selectedReport.props.rd_id.dbValues[0] + commandContext.selectedReport.props.rd_sourceObject.dbValue)))"
+    },
+    "shouldRemoveDashboardReport": {
+      "expression": "(( (ctx.selected.type === 'ReportDefinition' && ctx.selected.props.rd_type.dbValues[0] === '4') || (ctx.pselected.type === 'ReportDefinition' && ctx.pselected.props.rd_type.dbValues[0] === '4') ) && !ctx.showAddToDashboardCommand) || (ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport' && conditions.isSummaryReport && !ctx.showAddToDashboardCommand)"
+    },
+    "canAddActiveItemReportToMyDashboard": {
+      "expression": "ctx.sublocation.nameToken !== 'com.siemens.splm.reports:showReport' && commandContext.selectedReport.type === 'ReportDefinition' && commandContext.selectedReport.props.rd_type.dbValues[0] === '1' && ctx.showAddToDashboardCommand"
+    },
+    "shouldAddDashboardReport": {
+      "expression": "(ctx.selected.type === 'ReportDefinition' && ctx.selected.props.rd_type.dbValues[0] === '4' && ctx.showAddToDashboardCommand) || (ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport' && conditions.isSummaryReport && ctx.showAddToDashboardCommand)"
+    },
+    "isItOnDashOrShow": {
+      "expression": "ctx.sublocation.historyNameToken === 'showMyDashboard' || ctx.sublocation.historyNameToken === 'showReport'"
+    },
+    "isItOnTemp": {
+      "expression": "ctx.sublocation.historyNameToken === 'showReportBuilderReports'"
+    },
+    "isItOnTempOrDashOrShow": {
+      "expression": "conditions.isItOnDashOrShow || conditions.isItOnTemp"
+    },
+    "isCommandPanelPinnable": {
+      "expression": "!commandContext.panelPinned"
+    },
+    "isCommandPanelUnPinnable": {
+      "expression": "commandContext.panelPinned"
+    },
+    "shouldEditReportCriteria": {
+      "expression": "commandContext.reportParameters.ReportDefProps.ReportSearchInfo.SearchCriteria.includes('searchMethod\":\"BOM') && ((ctx.locationContext['ActiveWorkspace:SubLocation'] !=='showReport') || ( ctx.locationContext['ActiveWorkspace:SubLocation'] === 'showReport' && !commandContext.saveReportConfigActionComplete))"
+    },
+    "shouldAddItemCommandVisible": {
+      "expression": "commandContext.reportsContext.itemSource.length===0"
+    },
+    "shouldRemoveItemCommandVisible": {
+      "expression": "ctx.selected && !conditions.shouldAddItemCommandVisible"
+    },
+    "clearChartConfigCommandEnable": {
+      "expression": "commandContext.chartConfig.ChartPropInternalName && commandContext.chartConfig.ChartPropInternalName!=''"
+    },
+    "isCreateReportTemplateLocation": {
+      "expression": "ctx.sublocation.historyNameToken === 'createReportTemplate'"
+    },
+    "notCreateReportTemplateLocation": {
+      "expression": "ctx.sublocation.historyNameToken !== 'createReportTemplate'"
+    },
+    "isConfigureSearchDataVisible": {
+      "expression": "ctx.sublocation.historyNameToken === 'createReportTemplate' && conditions.previewModeFalse && conditions.isSummaryReport"
+    },
+    "isItemReportAndNotPreviewed": {
+      "expression": "ctx.sublocation.historyNameToken === 'createReportTemplate' && conditions.previewModeFalse && conditions.isItemReport"
+    },
+    "isAddRelationsVisible": {
+      "expression": "conditions.isItemReportAndNotPreviewed && commandContext.reportsState.rootClassSampleObject[0] && !(commandContext.reportsState.segmentTree[0].children.length>0)"
+    },
+    "isEditRelationsVisible": {
+      "expression": "conditions.isItemReportAndNotPreviewed && commandContext.reportsState.rootClassSampleObject[0] && commandContext.reportsState.segmentTree[0].children.length>0"
+    },
+    "isSaveAsTemplateVisible": {
+      "expression": "conditions.isCreateReportTemplateLocation && !commandContext.reportsState.selectedReport && ctx.state.params.searchCriteria && (conditions.isSummaryReport || (!conditions.isSummaryReport && commandContext.reportsState.segmentTree[0].children.length > 0))"
+    },
+    "isTemplateCmdVisbile": {
+      "expression": "conditions.isCreateReportTemplateLocation && commandContext.reportsState.selectedReport"
+    },
+    "isEditTemplateCommandVisible": {
+      "expression": "conditions.isTemplateCmdVisbile && !conditions.previewModeFalse"
+    },
+    "isShareTemplateCommandVisible": {
+      "expression": "conditions.isTemplateCmdVisbile || (ctx.selected.type === 'ReportDefinition') && ((ctx.selected.props.owning_user.dbValues[0] === ctx.userSession.props.user.dbValues[0])||(ctx.userSession.props.group.displayValues[0] === 'dba')) && (ctx.mselected.length === 1) && (ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReportBuilderReports')"
+    },
+    "isCancelCmdVisible": {
+      "expression": "conditions.isTemplateCmdVisbile && conditions.previewModeFalse"
+    },
+    "isSaveCmdVisible": {
+      "expression": "conditions.isCancelCmdVisible && conditions.isSummaryReport || (!conditions.isSummaryReport && commandContext.reportsState.segmentTree[0].children.length > 0)"
+    },
+    "moveChartPreviousCommandEnable": {
+      "expression": "commandContext.id>0"
+    },
+    "moveChartNextCommandEnable": {
+      "expression": "commandContext.id<commandContext.chartCount-1"
+    },
+    "chartCountIsOne": {
+      "expression": "commandContext.chartCount==1"
+    },
+    "isPieChart": {
+      "expression": "commandContext.chartConfig.ChartType === 'pie'"
+    },
+    "isBarChart": {
+      "expression": "commandContext.chartConfig.ChartType === 'column'"
+    },
+    "isLineChart": {
+      "expression": "commandContext.chartConfig.ChartType === 'line'"
+    },
+    "addToSharedList": {
+      "expression": "!commandContext.shareReportState.disableAddButton"
+    },
+    "removeFromSharedList": {
+      "expression": "!commandContext.shareReportState.disableRemoveButton"
+    },
+    "arrangePanelDisable": {
+      "expression": "(ctx.sublocation.historyNameToken==='createReportTemplate' && !conditions.previewModeFalse) || conditions.isItOnTempOrDashOrShow"
+    },
+    "isSearchResultsLocation": {
+      "expression": "ctx.sublocation.nameToken==='com.siemens.splm.client.search:SearchResultsSubLocation'"
+    },
+    "notSearchResultsLocation": {
+      "expression": "ctx.sublocation.nameToken!=='com.siemens.splm.client.search:SearchResultsSubLocation'"
+    },
+    "isSummaryReport": {
+      "expression": "ctx.state.params.reportType === '4'"
+    },
+    "isItemReport": {
+      "expression": "ctx.state.params.reportType === '1'"
+    },
+    "previewModeFalse": {
+      "expression": "ctx.state.params.previewMode ==='false'"
+    },
+    "removeSegmentCommandVisible": {
+      "expression": "commandContext.reportsState.selectedNode && commandContext.reportsState.selectedNode !== commandContext.reportsState.segmentTree[0]"
+    },
+    "isShowReportPage": {
+      "expression": "ctx.sublocation.nameToken === 'com.siemens.splm.reports:showReport'"
+    }
+  },
+  "messages": {
+    "deleteReportObjectsSingleFailureMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.rptDeleteSingleFailureMessage}}",
+      "messageTextParams": [
+        "{{ctx.mselected[0].props.object_string.uiValues[0]}}",
+        "{{data.deleteObjectsPartialErrors[0].errorValues[0].message}}"
+      ]
+    },
+    "deleteReportObjectSuccesfulMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.deleteReportObjectSuccesful}}",
+      "messageTextParams": [
+        "{{commandContext.selectionData.selected[0].cellHeader1}}"
+      ]
+    },
+    "rptDeleteObjectConfirmation": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.deleteReportObjectConfirmation}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.rd_name.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "rptCancel",
+          "text": "{{i18n.rptCancel}}",
+          "action": ""
+        },
+        {
+          "option": "rptDelete",
+          "text": "{{i18n.rptDelete}}",
+          "action": "Rb0DeleteReportAction"
+        }
+      ]
+    },
+    "addToDashboardSucessMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.addToDashboardSuccessMsg}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.rd_name.dbValues[0]}}"
+      ]
+    },
+    "addToDashboardSucessMessageScenario2": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.addToDashboardSuccessMsg}}",
+      "messageTextParams": [
+        "{{commandContext.selectedReport.props.rd_name.dbValues[0]}}"
+      ]
+    },
+    "getRemoveReportFromDashboardConfirmation": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.removeFromDashboardConfirmation}}",
+      "messageTextParams": [
+        "{{commandContext.selectedReport.props.rd_name.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "CancelButtonLabel",
+          "text": "{{i18n.CancelButtonLabel}}",
+          "action": ""
+        },
+        {
+          "option": "proceedOption",
+          "text": "{{i18n.removeFromDashboard}}",
+          "action": "removeSelectedDashboardReport"
+        }
+      ]
+    },
+    "getSampleRemoveConfirmationBigMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.removeSampleWithConfigMessage}}",
+      "messageTextParams": [
+        "{{ctx.ReportsContext.reportParameters.rootSampleObjectSelected.props.object_name.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "CancelButtonLabel",
+          "text": "{{i18n.CancelButtonLabel}}",
+          "action": ""
+        },
+        {
+          "option": "proceedOption",
+          "text": "{{i18n.proceedOption}}",
+          "action": "ContinueSampleObjectRemoveAction"
+        }
+      ]
+    },
+    "getClassRemoveConfirmationBigMessage": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.removeClassWithConfigMessage}}",
+      "messageTextParams": [
+        "{{ctx.ReportsContext.reportParameters.rootObjectSelected.props.object_string.dbValues[0]}}",
+        "{{ctx.ReportsContext.reportParameters.rootSampleObjectSelected.props.object_name.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "CancelButtonLabel",
+          "text": "{{i18n.CancelButtonLabel}}",
+          "action": ""
+        },
+        {
+          "option": "proceedOption",
+          "text": "{{i18n.proceedOption}}",
+          "action": "ContinueClassRemoveAction"
+        }
+      ]
+    },
+    "getClassRemoveConfirmation": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.removeClassConfirm}}",
+      "messageTextParams": [
+        "{{commandContext.reportsContext.rootClassObject[0].props.type_name.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "CancelButtonLabel",
+          "text": "{{i18n.CancelButtonLabel}}",
+          "action": ""
+        },
+        {
+          "option": "proceedOption",
+          "text": "{{i18n.proceedOption}}",
+          "action": "ContinueClassRemoveAction"
+        }
+      ]
+    },
+    "getSampleObjectRemoveConfirmation": {
+      "messageType": "WARNING",
+      "messageText": "{{i18n.removeSampleConfirm}}",
+      "messageTextParams": [
+        "{{commandContext.reportsContext.rootClassSampleObject[0].props.object_string.dbValues[0]}}"
+      ],
+      "navigationOptions": [
+        {
+          "option": "CancelButtonLabel",
+          "text": "{{i18n.CancelButtonLabel}}",
+          "action": ""
+        },
+        {
+          "option": "proceedOption",
+          "text": "{{i18n.proceedOption}}",
+          "action": "ContinueSampleObjectRemoveAction"
+        }
+      ]
+    },
+    "pinReportSuccessMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.pinObjectConfirmation}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.rd_name.dbValues[0]}}"
+      ]
+    },
+    "pinReportFailedMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.pinObjectFailed}}"
+    },
+    "unpinReportSuccessMessage": {
+      "messageType": "INFO",
+      "messageText": "{{i18n.unpinObjectConfirmation}}",
+      "messageTextParams": [
+        "{{ctx.selected.props.rd_name.dbValues[0]}}"
+      ]
+    },
+    "unpinReportFailedMessage": {
+      "messageType": "ERROR",
+      "messageText": "{{i18n.unPinObjectFailed}}"
+    }
+  },
+  "onEvent": [
+    {
+      "eventId": "rptDeleteObjectConfirmation",
+      "message": "rptDeleteObjectConfirmation"
+    },
+    {
+      "eventId": "rb0RemoveSelectedReport.getConfirmationForParms",
+      "message": "getRemoveReportFromDashboardConfirmation"
+    },
+    {
+      "eventId": "rb0RemoveSampleObject.getConfirmationForParms",
+      "message": "getSampleRemoveConfirmationBigMessage"
+    },
+    {
+      "eventId": "rb0RemoveClass.getConfirmationForParms",
+      "message": "getClassRemoveConfirmationBigMessage"
+    },
+    {
+      "eventId": "rb0RemoveSampleObject.getConfirmation",
+      "message": "getSampleObjectRemoveConfirmation"
+    },
+    {
+      "eventId": "rb0RemoveClass.getConfirmation",
+      "message": "getClassRemoveConfirmation"
+    },
+    {
+      "eventId": "initiatePinReportObject",
+      "action": "initiatePinReportObjectAction"
+    },
+    {
+      "eventId": "navigateToReportForEdit",
+      "action": "Rb0EditReportNavigateAction"
+    },
+    {
+      "eventId": "openConfigurePanelForReportEdit",
+      "action": "activateConfigureReportPanel"
+    },
+    {
+      "eventId": "openConfigurePanelForItemReportEdit",
+      "action": "openEditItemReportAction"
+    },
+    {
+      "eventId": "rb0ReadyToOpenEditReportCriteriaPopup",
+      "action": "showEditReportCriteiraPopup"
+    }
+  ]
+}

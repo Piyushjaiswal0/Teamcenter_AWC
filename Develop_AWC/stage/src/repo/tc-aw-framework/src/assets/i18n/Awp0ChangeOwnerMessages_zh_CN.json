@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "更改所有者",
+ "change" : "更改",
+ "user" : "用户",
+ "EmailAddress" : "电子邮件地址：",
+ "PhoneNumber" : "电话号码：",
+ "singleObjectChangeOwnershipSuccess": "“{0}”已更改。",
+ "multipleObjectsChangeOwnershipSuccess": "{0}\/ {1} 个选定对象已更改。", 
+ "changeOwnershipForObjectFailure": "“{0}”未更改，因为您不具备相应权限。"
+}

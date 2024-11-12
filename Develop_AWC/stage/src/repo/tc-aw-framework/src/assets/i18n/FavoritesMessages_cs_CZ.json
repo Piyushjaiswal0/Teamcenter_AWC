@@ -1,0 +1,19 @@
+{
+    "favoritesAppDisplayName": "Oblíbené",
+    "myFavorites": "Moje oblíbené",
+    "myRecentViewedObjects": "Nedávné",
+    "addToFavoritesCommandTitle": "Přidat k oblíbeným",
+    "addToFavoritesConfirmation": "Vybrané objekty byly úspěšně přidány k oblíbeným.",
+    "addToFavoritesFailed": "Přidání k oblíbeným se nezdařilo.",
+    "removeFromFavoritesCommandTitle": "Odebrat z oblíbených položek",
+    "removeFromFavoritesConfirmation": "Vybrané objekty byly úspěšně odebrány z oblíbených.",
+    "removeFromFavoritesFailed": "Přidání k oblíbeným se nezdařilo.",
+    "Awp0AddToFavoritesDesc": "Přidejte výběr do seznamu Oblíbené.",
+    "Awp0RemoveFromFavoritesDesc": "Odeberte výběr ze seznamu Oblíbené.",
+    "noFavoritesFound": "Zde nejsou žádné oblíbené položky",
+    "noFavoritesFoundHint": "Chcete-li přidat objekt do oblíbených položek, vyberte objekt a použijte příkaz Přidat k oblíbeným.",
+    "noRecentsFound": "Žádná nedávná aktivita",
+    "noRecentsFoundHint": "Aktuálně neexistují žádné položky, které by bylo možné zobrazit.",
+    "nothingSelected": "Nic není vybráno",
+    "nothingSelectedSWAHint": "Výběrem položky v seznamu zobrazíte podrobnosti."
+}

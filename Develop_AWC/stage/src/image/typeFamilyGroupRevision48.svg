@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="0.8358" y1="3.3358" x2="44.75" y2="47.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2214" stop-color="#f8f8f8"/>
+      <stop offset="0.5415" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="paper_gradient-2" x1="15.25" y1="17.75" x2="32.75" y2="35.25" xlink:href="#paper_gradient"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="18.4114" y1="23.8362" x2="21.9253" y2="27.3501" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.1747" stop-color="#6aaec3"/>
+      <stop offset="0.4567" stop-color="#529eb5"/>
+      <stop offset="0.8089" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  </defs>
+  <path d="M.5,44.5h47V8.5h-28L16.0937,3.3906A2,2,0,0,0,14.43,2.5H2.5a2,2,0,0,0-2,2Z" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+  <path d="M33,13h3.1071A2.8929,2.8929,0,0,1,39,15.8929V37.1071A2.8929,2.8929,0,0,1,36.1071,40H33" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="2"/>
+  <path d="M15,40H11.8929A2.8929,2.8929,0,0,1,9,37.1071V15.8929A2.8929,2.8929,0,0,1,11.8929,13H15" fill="none" stroke="#147391" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="13.5" y="19.5" width="21" height="14" stroke="#464646" fill="url(#paper_gradient-2)"/>
+  <line x1="26" y1="29.5" x2="33" y2="29.5057" fill="none" stroke="#6e6e6e"/>
+  <line x1="26" y1="26.5" x2="33" y2="26.5057" fill="none" stroke="#147391"/>
+  <line x1="26" y1="23.5" x2="33" y2="23.5057" fill="none" stroke="#6e6e6e"/>
+    <polygon points="15.541 26.707 17.026 25.481 18.719 27.505 22.95 22.299 24.452 23.504 18.739 30.536 15.541 26.707" fill="url(#Dark_Blue_Grad)"/>
+    <path d="M23.0244,23l.7221.58-5.0127,6.17-2.4873-2.9775.7143-.5893,1.7635,2.1083L23.0244,23m-.149-1.4022-.627.7715-3.5353,4.35-.9852-1.1779-.6372-.7618-.7662.632-.7144.5893-.7762.64.6451.7722,2.4873,2.9775.7782.9316.7654-.9421,5.0127-6.17.6342-.7806-.7842-.63-.7221-.58-.7751-.6225Z" fill="#147391"/>
+</svg>

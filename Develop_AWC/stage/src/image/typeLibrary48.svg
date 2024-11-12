@@ -1,0 +1,35 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="18.1243" y1="4.8407" x2="31.1974" y2="17.9138">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M39.395,9.716l-0.018-0.011L27.5,3L9.927,13.038l0,0c0.466,0.439,1.004,0.885,1.557,1.21
+	C13.188,15.25,15.5,15.5,15.5,15.5s1.445,1.844,2.984,2.749c1.702,1.001,4.012,1.251,4.015,1.251l0,0l0,0L39.395,9.716z"/>
+<path fill="#969696" d="M8.5,11.5c0,0,0.596,0.757,1.427,1.538L27.5,3V0.5L8.5,11.5z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2.8024" y1="17.1977" x2="27.8027" y2="42.198">
+	<stop  offset="0" style="stop-color:#AFD7E1"/>
+	<stop  offset="0.1588" style="stop-color:#A4D0DC"/>
+	<stop  offset="0.7059" style="stop-color:#80BCCE"/>
+	<stop  offset="1" style="stop-color:#73B4C8"/>
+</linearGradient>
+<path fill="url(#SVGID_2_)" d="M22.5,47.5c0,0-2.04,0.126-4.531-1.188S15.5,43.5,15.5,43.5l0,0c0,0-2.04,0.126-4.531-1.188
+	S8.5,39.5,8.5,39.5v-28c0,0,1.445,1.844,2.984,2.749C13.188,15.25,15.5,15.5,15.5,15.5s1.445,1.844,2.984,2.749
+	C20.188,19.25,22.5,19.5,22.5,19.5V47.5z"/>
+	<polygon fill="#3C91AF" points="41.5,8.497 41.5,36.997 22.5,47.497 22.5,19.5 	"/>
+	<line fill="none" stroke="#147391" stroke-linejoin="round" stroke-miterlimit="10" x1="22.5" y1="47.497" x2="22.5" y2="19.5"/>
+<line fill="none" stroke="#147391" stroke-linejoin="round" stroke-miterlimit="10" x1="15.5" y1="43.497" x2="15.5" y2="15.5"/>
+<line fill="none" stroke="#6E6E6E" stroke-linejoin="round" stroke-miterlimit="10" x1="27.5" y1="3" x2="10" y2="13"/>
+<polyline fill="none" stroke="#464646" stroke-linejoin="round" stroke-miterlimit="10" points="39.377,9.705 27.5,3 27.5,0.5 
+	8.5,11.5 "/>
+<path fill="#969696" d="M15.5,15.5L15.5,15.5L15.5,15.5c0,0,0.597,0.758,1.429,1.541L34.5,6.953V4.5L15.5,15.5z"/>
+<line fill="none" stroke="#6E6E6E" stroke-linejoin="round" stroke-miterlimit="10" x1="16.929" y1="17.041" x2="34.5" y2="6.953"/>
+<path fill="none" stroke="#464646" stroke-linejoin="round" stroke-miterlimit="10" d="M22.5,47.5c0,0-2.04,0.126-4.531-1.188
+	S15.5,43.5,15.5,43.5l0,0c0,0-2.04,0.126-4.531-1.188S8.5,39.5,8.5,39.5v-28c0,0,1.445,1.844,2.984,2.749
+	C13.188,15.25,15.5,15.5,15.5,15.5s1.445,1.844,2.984,2.749C20.188,19.25,22.5,19.5,22.5,19.5l19-11.003v28.5L22.5,47.5z"/>
+<polyline fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,15.5 
+	34.5,4.5 34.5,6.953 "/>
+</svg>

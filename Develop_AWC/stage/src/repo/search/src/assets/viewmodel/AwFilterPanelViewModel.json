@@ -1,0 +1,217 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "performFacetSearch": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2018-05-Finder",
+            "method": "performFacetSearch",
+            "inputData": {
+                "facetSearchInput": {
+                    "providerName": "{{subPanelContext.searchState.provider}}",
+                    "maxToReturn": 100,
+                    "searchCriteria": {
+                        "searchString": "{{subPanelContext.searchState.criteria.searchString}}",
+                        "categoryForFacetSearch": "{{data.categoryForFacetSearchInput.name}}",
+                        "facetSearchString": "{{data.categoryForFacetSearchInput.facetSearchString}}",
+                        "isRangeSearch": "{{data.categoryForFacetSearchInput.isRangeSearch}}"
+                    },
+                    "searchFilterMap": "{{function:getSearchFilterMapForFacetSearch}}",
+                    "startIndex": "{{data.categoryForFacetSearchInput.startIndex}}"
+                }
+            },
+            "outputData": {
+                "categories": "{{function:updateCategoriesAfterFacetSearch}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateExpandFlagForCategory": {
+            "actionType": "JSFunction",
+            "method": "updateExpandFlagForCategory",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "categoryForFacetSearchInput": "{{data.categoryForFacetSearchInput}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateSearchStateWithNumericRangeCriteria": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateWithNumericRangeCriteria",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "categoryForRangeSearch": "{{data.categoryForRangeSearch}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateSearchStateWithDateRangeCriteria": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateWithDateRangeCriteria",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "categoryForRangeSearch": "{{data.categoryForRangeSearch}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateSearchStateForRadioFilter": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateForRadioFilter",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}",
+                "radioFilter": "{{data.categoryForRangeSearch}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "render": {
+            "method": "awFilterPanelRenderFunction",
+            "deps": "js/AwFilterPanelService"
+        },
+        "updateFacetSearchStringInCategory": {
+            "actionType": "JSFunction",
+            "method": "updateFacetSearchStringInCategory",
+            "inputData": {
+                "categoryForFacetSearchInput": "{{data.categoryForFacetSearchInput}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateSearchStateForStringFilterInBulkMode": {
+            "actionType": "JSFunction",
+            "method": "updateSearchStateForStringFilterInBulkMode",
+            "inputData": {
+                "category": "{{data.category}}",
+                "facetSearchString": "{{data.facetSearchString}}",
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "showAllCategories": {
+            "actionType": "JSFunction",
+            "method": "showAllCategories",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "data": {
+        "categorySearchString": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "propertyDisplayName": "",
+            "requiredText": "{{i18n.filterByCategory}}",
+            "dbValue": ""
+        },
+        "groupAndCategorySearchString": {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "propertyDisplayName": "",
+            "requiredText": "{{i18n.filterByCategoryAndGroup}}",
+            "dbValue": ""
+        },
+        "noResultsFoundLabel": {
+            "displayName": "{{i18n.NO_RESULTS_FOUND}}",
+            "type": "STRING",
+            "dbValue": "{{i18n.NO_RESULTS_FOUND}}",
+            "uiValue": "{{i18n.NO_RESULTS_FOUND}}",
+            "labelPosition": "NO_PROPERTY_LABEL"
+        },
+        "moreLinkProp": {
+            "displayName": "{{i18n.MORE_LINK_TEXT}}",
+            "type": "STRING",
+            "dbValue": "{{i18n.MORE_LINK_TEXT}}",
+            "uiValue": "{{i18n.MORE_LINK_TEXT}}",
+            "isRequired": "false"
+        },
+        "lessLinkProp": {
+            "displayName": "{{i18n.LESS_LINK_TEXT}}",
+            "type": "STRING",
+            "dbValue": "{{i18n.LESS_LINK_TEXT}}",
+            "uiValue": "{{i18n.LESS_LINK_TEXT}}",
+            "isRequired": "false"
+        },
+        "showAllCategories": {
+            "displayName": "{{i18n.showAllCategories}}",
+            "type": "STRING",
+            "dbValue": "{{i18n.showAllCategories}}",
+            "uiValue": "{{i18n.showAllCategories}}",
+            "isRequired": "false"
+        },
+        "showAllGroupsProp": {
+            "displayName": "{{i18n.showAllGroupsText}}",
+            "type": "STRING",
+            "dbValue": "{{i18n.showAllGroupsText}}",
+            "uiValue": "{{i18n.showAllGroupsText}}",
+            "isRequired": "false"
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "string-facet-call-back": {
+            "type": "object"
+        },
+        "numeric-range-facet-call-back": {
+            "type": "object"
+        },
+        "date-range-facet-call-back": {
+            "type": "object"
+        },
+        "bulk-string-facet-call-back": {
+            "type": "object"
+        },
+        "bulk-numeric-range-facet-call-back": {
+            "type": "object"
+        },
+        "bulk-date-range-facet-call-back": {
+            "type": "object"
+        },
+        "select-filter-call-back": {
+            "type": "object"
+        },
+        "exclude-category-call-back": {
+            "type" : "object"
+        },
+        "custom-facet-search-delay": {
+            "type" : "object"
+        },
+        "group-expand-call-back": {
+            "type" : "object"
+        }
+    },
+    "functions": {
+        "getSearchFilterMapForFacetSearch": {
+            "functionName": "getSearchFilterMapForFacetSearch",
+            "parameters": [
+                "{{subPanelContext.searchState}}",
+                "{{data.category}}"
+            ]
+        },
+        "updateCategoriesAfterFacetSearch": {
+            "functionName": "updateCategoriesAfterFacetSearch",
+            "parameters": [
+                "{{subPanelContext.searchState}}",
+                "{{data.categoryForFacetSearchInput}}",
+                "{{data.category}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "onEvent": [],
+    "messages": {},
+    "conditions": {},
+    "i18n": {
+        "NO_RESULTS_FOUND": [ "BaseMessages" ],
+        "LESS_LINK_TEXT": [ "BaseMessages" ],
+        "MORE_LINK_TEXT": [ "BaseMessages" ],
+        "filterByCategory": [ "SearchMessages" ],
+        "showAllCategories": [ "SearchMessages" ],
+        "filterByCategoryAndGroup": [ "SearchMessages" ],
+        "showAllGroupsText": [ "SearchMessages" ]
+    }
+}

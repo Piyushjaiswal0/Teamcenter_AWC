@@ -1,0 +1,227 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [],
+    "actions":
+    {
+        "createFormData": {
+            "actionType": "JSFunction",
+            "method": "setFileParameters",
+            "inputData": {
+                "fileName": "{{parameters.fileName}}",
+                "validFile": "{{parameters.validFile}}",
+                "fileNameNoExt":"{{parameters.fileNameNoExt}}",
+                "fileExt":"{{parameters.fileExt}}",
+                "formData": "{{parameters.formData}}"
+            },
+            "outputData":
+            {
+                "fileName": "fileName",
+                "validFile":"validFile",
+                "fileNameNoExt":"fileNameNoExt",
+                "fileExt":"fileExt",
+                "formData":"formData"
+            },
+            "deps": "js/fileUploadUtils"
+        },
+        "initiateImport": {
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "createFormData"
+                },
+                {
+                    "action": "getTransientFileTicketsForUpload"
+                },
+                {
+                    "action": "updateFormData"
+                },
+                {
+                    "action": "uploadFile"
+                }
+            ]
+        },
+        "getTransientFileTicketsForUpload":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-01-FileManagement",
+            "method": "getTransientFileTicketsForUpload",
+            "inputData":
+            {
+                "transientFileInfos":
+                [
+                    {
+                        "fileName": "{{data.fileName}}",
+                        "isBinary": false,
+                        "deleteFlag": false
+                    }
+                ]
+            },
+            "outputData":
+            {
+                "fmsTicket": "transientFileTicketInfos[0].ticket"
+            }
+        },
+        "updateFormData":
+        {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "inputData":
+            {
+                "formData": "{{data.formData}}",
+                "key"  : "fmsTicket",
+                "value": "{{data.fmsTicket}}"
+            },
+            "deps": "js/fileUploadUtils"
+        },
+        "uploadFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+
+                    "data": "{{data.formData}}"
+                }
+            }
+        },
+        "importSearchFolder": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Search-2020-12-SearchFolder",
+            "method": "importSearchFolder",
+            "inputData": {
+                "input":{
+                    "mode": "import",
+                    "transientFileTicket": "{{data.fmsTicket}}",
+                    "searchFolderUID": "{{ctx.xrtSummaryContextObject.uid}}"
+                }
+            },
+            "outputData": {
+                "partialErrors": "partialErrors",
+                "errorMessages": "{{partialErrors[0].errorValues[0].message}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "primaryWorkarea.reset"
+                    },
+                    {
+                        "name": "importSuccessful"
+                    },
+                    {
+                        "name": "closePanel"
+                    }
+                ],
+                "failure" : [
+                    {
+                        "name" : "closePanel"
+                    }
+                ]
+            },
+            "actionMessages": {
+                "failure":
+                [
+                    {
+                        "condition": "errorCode.code === 141392",
+                        "message": "importFailedInvalidSavedQuery"
+                    },
+                    {
+                        "condition": "errorCode.code === 141389 || errorCode.code === 141391",
+                        "message": "importFailed"
+                    }
+                ]
+            }
+        },
+        "closePanel": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData":
+            {
+                "events": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            }
+        },
+        "closeDialogPanel": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "data": {},
+    "functions": {},
+    "conditions":
+    {
+        "isValidToImport":
+        {
+            "expression": "data.fmsTicket !== null && data.fmsTicket !== undefined && data.fileName !== null && data.fileName !== undefined && data.fileName !== ''"
+        }
+    },
+    "messages": {
+        "importDone": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.importActiveFolderSuccessfulMessage}}",
+            "messageTextParams": [
+                "{{data.fileName}}"
+            ]
+        },
+        "importFailed": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.importActiveFolderFailedMessage}}",
+            "messageTextParams": [
+                "{{data.fileName}}"
+            ]
+        },
+        "importFailedInvalidSavedQuery": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.importActiveFolderInvalidSavedQueryMessage}}",
+            "messageTextParams": [
+                "{{data.fileName}}",
+                "{{errorCode.message}}"
+            ]
+        }
+    },
+    "lifecycleHooks": {
+    },
+    "onEvent":
+    [
+        {
+            "eventId": "importSuccessful",
+            "message": "importDone"
+        },
+        {
+            "eventId": "closePanel",
+            "action": "closePanel"
+        },
+        {
+            "eventId": "closeDialog",
+            "action": "closeDialogPanel"
+        }
+    ],
+    "i18n":
+    {
+        "Import": [ "SearchMessages" ],
+        "uploadFile": [ "awAddDirectiveMessages" ],
+        "Awp0ImportSearchFolderTitle": [ "SearchMessages" ],
+        "importActiveFolderSuccessfulMessage": [ "SearchMessages" ],
+        "importActiveFolderFailedMessage": [ "SearchMessages" ],
+        "importActiveFolderInvalidSavedQueryMessage": [ "SearchMessages" ]
+    }
+}

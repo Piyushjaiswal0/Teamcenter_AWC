@@ -1,0 +1,103 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "data": {
+        "xrtState": {
+            "initialValues": {},
+            "meta": {
+                "xrtVMO": {
+                    "field": "true",
+                    "type": "viewModelObject"
+                }
+            }
+        }
+    },
+    "editHandlers": {
+        "showObjectEditHandler": {
+            "context": "NONE",
+            "setActive": true,
+            "dataSource": {
+                "xrtVMO": "{{data.xrtState}}"
+            }
+        }
+    },
+    "actions": {
+        "render": {
+            "method": "awShowObjectXrtRenderFunction",
+            "deps": "js/AwShowObjectXrtService"
+        },
+        "refreshObjectSet": {
+            "actionType": "JSFunction",
+            "method": "refreshObjectSet",
+            "inputData": {
+                "viewModel": "{{data}}",
+                "props": "{{props}}"
+            },
+            "deps": "js/xrtUtilities"
+        },
+        "initialize": {
+            "actionType": "JSFunction",
+            "method": "registerEditHandler",
+            "inputData": {
+                "activeEditHandler": "{{editHandlers.showObjectEditHandler}}"
+            },
+            "outputData": {
+                "preSaveActionID": "preSaveActionID"
+
+            },
+            "deps": "js/AwShowObjectXrtService"
+        },
+        "cleanUp": {
+            "actionType": "JSFunction",
+            "method": "cleanUp",
+            "inputData": {
+                "editHandlers": "{{editHandlers.showObjectEditHandler}}",
+                "preSaveActionID": "{{data.preSaveActionID}}"
+
+            },
+            "deps": "js/AwShowObjectXrtService"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "initialize",
+        "onUnmount": "cleanUp"
+    },
+    "props": {
+        "type": {
+            "type": "string"
+        },
+        "object-type": {
+            "type": "string"
+        },
+        "xrt-data": {
+            "type": "object"
+        },
+        "selection-data": {
+            "type": "object"
+        },
+        "callback": {
+            "type": "object"
+        },
+        "sub-panel-context": {
+            "type": "object"
+        },
+        "active-state": {
+            "type": "object"
+        },
+        "objectset-info": {
+            "type": "object"
+        },
+        "vmo": {
+            "type": "object"
+        },
+        "enable-resize-callback": {
+            "type": "object"
+        }
+    },
+    "onEvent": [ {
+        "eventId": "cdm.relatedModified",
+        "action": "refreshObjectSet",
+        "cacheEventData": true
+    } ]
+}

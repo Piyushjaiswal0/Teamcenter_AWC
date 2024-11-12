@@ -1,0 +1,14 @@
+{
+    "xrtEditorTitle": "XRT 編輯器",
+    "scopeLabel": "範圍：",
+    "objectTypeLabel": "物件類型：",
+    "xrtTypeLabel": "XRT 類型：",
+    "locationLabel": "位置：",
+    "sublocationLabel": "子位置：",
+    "loadButtonText": "載入",
+    "editLabel": "編輯： ",
+    "readOnlyLabel": "（唯讀）",
+    "overrideMsg": "\"{0}\" 將在使用者範圍內被取代。",
+    "cancel": "取消",
+    "override": "取代"
+}

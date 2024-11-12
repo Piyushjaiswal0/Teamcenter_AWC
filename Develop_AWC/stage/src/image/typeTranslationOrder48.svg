@@ -1,0 +1,46 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="3.4521" y1="1.3359" x2="23.1641" y2="21.0479" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.2284" stop-color="#fafafa"/>
+      <stop offset="0.4881" stop-color="#ededed"/>
+      <stop offset="0.7621" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bcbcbc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="18.144" y1="14.644" x2="37.856" y2="34.356" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad_4" data-name="Dark Blue Grad 4" x1="314.524" y1="-765.3493" x2="303.0899" y2="-776.7833" gradientTransform="matrix(0.7071, 0.7071, 0.7071, -0.7071, 345.2816, -743.6671)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c5c5c5"/>
+      <stop offset="0.1774" stop-color="#c0c0c0"/>
+      <stop offset="0.4638" stop-color="#b2b2b2"/>
+      <stop offset="0.8215" stop-color="#9b9b9b"/>
+      <stop offset="1" stop-color="#8e8e8e"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="805.5002" y1="981.4282" x2="787.4971" y2="963.4251" gradientTransform="translate(836 1007.9299) rotate(180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e9e9e9"/>
+      <stop offset="0.2214" stop-color="#e6e6e6"/>
+      <stop offset="0.5419" stop-color="#dfdfdf"/>
+      <stop offset="0.9212" stop-color="#d2d2d2"/>
+      <stop offset="1" stop-color="#cfcfcf"/>
+    </linearGradient>
+  <path d="M21.0334.5H6.9666A6.4666,6.4666,0,0,0,.5,6.9666v7.0668A6.4666,6.4666,0,0,0,6.9666,20.5H8.5v6.98l7.0035-6.98h5.53A6.4666,6.4666,0,0,0,27.5,14.0334V6.9666A6.4666,6.4666,0,0,0,21.0334.5Z" stroke="#464646" stroke-linejoin="round" fill="url(#linear-gradient)"/>
+  <path d="M5,7.5c1.3662-.1109,1.71-2.0073,2.9981-2,1.3784.0079,1.6515,2.0017,3.007,1.9969S12.6459,5.4986,13.9961,5.5c1.3316.0014,1.6433,1.9909,2.9961,2,1.3338.009,1.6461-1.9921,2.9981-2,1.3251-.0077,1.6286,1.9021,3.01,2" fill="none" stroke="#6f6f6f"/>
+  <path d="M5,11.5c1.3662-.1109,1.71-2.0073,2.9981-2,1.3784.0079,1.6515,2.0017,3.007,1.9969S12.6459,9.4986,13.9961,9.5c1.3316.0014,1.6433,1.9909,2.9961,2,1.3338.009,1.6461-1.9921,2.9981-2,1.3251-.0077,1.6286,1.9021,3.01,2" fill="none" stroke="#6f6f6f"/>
+  <path d="M16.9922,15.5c1.3338.009,1.6461-1.9921,2.9981-2,1.3251-.0077,1.6286,1.9021,3.01,2" fill="none" stroke="#6f6f6f"/>
+  <path d="M5,15.5c1.3662-.1109,1.71-2.0073,2.9981-2" fill="none" stroke="#6f6f6f"/>
+  <path d="M35.0334,14.5H20.9666A6.4666,6.4666,0,0,0,14.5,20.9666v7.0668A6.4666,6.4666,0,0,0,20.9666,34.5H21.5l7,6.98.0035-6.98h6.53A6.4666,6.4666,0,0,0,41.5,28.0334V20.9666A6.4666,6.4666,0,0,0,35.0334,14.5Z" stroke="#464646" stroke-linejoin="round" fill="url(#linear-gradient-2)"/>
+  <line x1="29" y1="19.5" x2="37" y2="19.5" fill="none" stroke="#6f6f6f"/>
+  <line x1="29" y1="25.5" x2="36" y2="25.5" fill="none" stroke="#6f6f6f"/>
+  <line x1="19" y1="28.5" x2="36" y2="28.5" fill="none" stroke="#6f6f6f"/>
+  <line x1="29" y1="22.5" x2="37" y2="22.5" fill="none" stroke="#6f6f6f"/>
+  <path d="M26.5,25.5017H17.98l2.2784-2.2784A15.87,15.87,0,0,0,10.33,14.4379c5.439-.4746,10.02.6221,13.8163,4.8971L26.5,16.9812Z" stroke="#8f8f8f" stroke-linejoin="round" fill="url(#Dark_Blue_Grad_4)"/>
+    <polygon points="31.5 25.509 33.5 23.501 35.5 25.509 37.5 23.501 39.5 25.509 41.494 23.501 43.5 25.509 45.5 23.501 47.5 25.509 47.5 45.5 45.5 47.508 43.5 45.5 41.5 47.508 39.5 45.5 37.5 47.508 35.5 45.5 33.506 47.508 31.5 45.5 31.5 25.509" stroke="#464646" stroke-linejoin="round" fill="url(#New_Gradient_Swatch_4)"/>
+    <line x1="34" y1="29.5" x2="41" y2="29.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="43" y1="29.5" x2="45" y2="29.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="34" y1="32.5" x2="41" y2="32.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="43" y1="32.5" x2="45" y2="32.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="34" y1="35.5" x2="41" y2="35.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="43" y1="35.5" x2="45" y2="35.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="34" y1="38.5" x2="41" y2="38.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="43" y1="38.5" x2="45" y2="38.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="34" y1="41.5" x2="41" y2="41.5" fill="none" stroke="#8f8f8f"/>
+    <line x1="43" y1="41.5" x2="45" y2="41.5" fill="none" stroke="#8f8f8f"/>
+</svg>

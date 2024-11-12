@@ -1,0 +1,47 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "setSharedWithList": {
+            "actionType": "JSFunction",
+            "method": "setSharedWithList",
+            "inputData": {
+                "propertyProp": "{{data.propertyProp}}",
+                "property": "{{props.subPanelContext.selected.props.Fnd0Applicable_Assignment}}",
+                "i18n": "{{i18n}}"
+            },
+            "outputData":{
+                "propertyProp": "propertyProp"
+            },
+            "deps": "js/showReportBuilderReportsService"
+        }
+    },
+    "data": {
+        "propertyProp": {
+            "name": "{{props.subPanelContext.selected.props.Fnd0Applicable_Assignment.propertyName}}",
+            "displayName": "{{i18n.sharedWith}}",
+            "type": "STRING",
+            "dbValue": "",
+            "dispValue": "",
+            "isEditable": false
+        }
+    },
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n": {
+        "sharedWith": [
+            "ReportChartMessages"
+        ],
+        "public": [
+            "ReportChartMessages"
+        ],
+        "private": [
+            "ReportChartMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "setSharedWithList"
+    }
+}

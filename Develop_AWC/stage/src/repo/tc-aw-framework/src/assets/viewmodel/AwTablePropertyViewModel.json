@@ -1,0 +1,31 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "actionType": "JSFunction",
+            "method": "awTablePropertyRenderFunction",
+            "deps": "js/AwTablePropertyService"
+        }
+    },
+    "ctx": {
+        "userSession": null,
+        "dynamicTable": {
+            "parser": {
+                "method": "createTablePropertyComponent",
+                "deps": "js/AwTablePropertyService"
+            }
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render"
+    },
+    "props": {
+        "selection-data": {
+            "type": "object"
+        },
+        "edit-context-key": {
+            "type": "string"
+        }
+    }
+}

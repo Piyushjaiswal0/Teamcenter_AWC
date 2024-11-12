@@ -1,0 +1,59 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "i18n": {
+        "followersXRTTitle": [
+            "SubscriptionMessages"
+        ],
+        "addFollower": [ "SubscriptionMessages" ]
+    },
+
+    "data": {
+        "addUserPanelState": {
+            "initialValues": {
+                "provider": "Awp0PeoplePickerProvider",
+                "selectionModelMode": "multiple",
+                "criteria": {
+                    "providerContentType": "User",
+                    "searchString": ""
+                },
+                "selectedUsers": ""
+            },
+            "meta": {
+                "selectedUsers": {
+                    "field": "true",
+                    "type": "OBJECTARRAY"
+                }
+            }
+        },
+        "activeView": "Sub0AddFollowerSub"
+    },
+
+    "actions" : {
+        "addFollowers":{
+            "actionType":"JSFunction",
+            "method":"applyFollowerChange",
+            "deps":"js/awSubscriptionFollowerTableService",
+            "inputData":{
+               "followerObjects": "{{ctx.sub0Follower.followerObjects}}",
+                "columnDefs":"{{ctx.sub0Follower.columnDefs}}",
+                "props": {
+                    "handler_parameters": "{{addUserPanelState.selectedUsers}}"
+                }
+            },
+            "events":{
+                "success":[
+                    {
+                        "name":"subscriptionFollowerObjects.updated"
+                    },
+                    {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

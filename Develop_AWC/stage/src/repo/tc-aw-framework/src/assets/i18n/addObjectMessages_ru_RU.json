@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" не является допустимым файлом для набора объектов \"{1}\". Новый объект не появится в наборе объектов.",
+    "addedObjectIsNotUnique": "Объект \"{1}-{0}\" не сохранен, поскольку \"ID = {1}\" не является уникальным.",
+    "fileSizeException": "\"{0}\" не был добавлен. Размер файла превышает максимальное ограничение.",
+    "userNotAuthorized": "\"{0}\" не было добавлен. Текущий пользователь не авторизован.",
+    "addACopy": "Add a Copy",
+    "cancel": "Отмена",
+    "sourceObject": "Источник",
+    "chooseFromSystem": "Choose File from System",
+    "chooseFromDrive": "Choose from Drive",
+    "fileNameExceedsLengthLimit": "\"{0}\" was not added. The filename length exceeded the maximum limit."
+}

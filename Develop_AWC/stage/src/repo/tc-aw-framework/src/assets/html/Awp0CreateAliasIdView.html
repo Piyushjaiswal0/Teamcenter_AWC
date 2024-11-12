@@ -1,0 +1,17 @@
+<aw-command-panel caption="i18n.Awp0CreateAliasIdTitle" context="{...data,...subPanelContext}">
+    <aw-panel-body>
+        <aw-widget prop="data.context"></aw-widget>
+        <aw-widget prop="data.identifierType" depend-on="context" on-change="getIdentifierTypes"></aw-widget>
+        <aw-break></aw-break>
+        <aw-panel-section  caption="i18n.Properties">
+        <aw-textbox prop="data.id"></aw-textbox>
+        <aw-textbox prop="data.name"></aw-textbox>
+        <aw-textarea prop="data.description" hint="textarea"></aw-textarea>
+        </aw-panel-section>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="createAlternateId" visible-when="conditions.isCreateButtonVisible">
+            <aw-i18n>i18n.Create</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-command-panel>

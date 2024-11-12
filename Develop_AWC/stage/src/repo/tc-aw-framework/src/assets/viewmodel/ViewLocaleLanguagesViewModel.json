@@ -1,0 +1,45 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel.directive",
+        "js/aw-balloon-popup-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-checkbox.directive"
+    ],
+    "data": {},
+    "actions": {
+        "render": {
+            "method": "viewLocaleLanguagesRenderFunction",
+            "deps": "js/viewLocaleLanguagesService"
+        },
+        "initLocalizedProps": {
+            "actionType": "JSFunction",
+            "inputData": {
+                "localizedProps": "{{props.subPanelContext.localizedProps}}",
+                "allLanguages": "{{props.subPanelContext.allLanguages}}",
+                "adaptedObject": "{{props.subPanelContext.adaptedObject}}"
+            },
+            "outputData": {
+                "languageProps": "languageProps",
+                "localeProps": "localeProps"
+            },
+            "method": "initLocalizedProps",
+            "deps": "js/viewLocaleLanguagesService"
+        }
+    },
+    "props": {
+        "language-prop": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onUpdate": [ {
+            "action": "initLocalizedProps",
+            "observers": [
+                "props.subPanelContext.localizedProps"
+            ]
+        } ]
+    },
+    "i18n": {}
+}

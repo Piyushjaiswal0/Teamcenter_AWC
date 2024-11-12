@@ -1,0 +1,38 @@
+{
+  "contexts": {
+    "groupContext": {
+      "view": "group"
+    },
+    "roleContext": {
+      "view": "role"
+    },
+    "workSpaceContext": {
+      "view": "workSpaceContext"
+    },
+    "idDisplayRuleContext": {
+      "view": "idDisplayRule"
+    }
+  },
+  "placements": {
+    "groupRolePlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "groupContext",
+      "priority": 30
+    },
+    "rolePlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "roleContext",
+      "priority": 35
+    },
+    "workSpacePlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "workSpaceContext",
+      "priority": 40
+    },
+    "idDisplayRulePlacement": {
+      "anchor": "headerContextPosition",
+      "contextId": "idDisplayRuleContext",
+      "priority": 45
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "addToCommandTitle": "Hinzufügen zu {0}",
+    "revRuleNotAvailable": "Die ausgewählte Änderungsstandregel ist nicht in den geladenen Änderungsstandregeln verfügbar",
+    "revRuleChangeFailed": "Ändern der Änderungsstandregel fehlgeschlagen",
+    "revRuleChangeSucess": "Änderungsstandregel wurde geändert",
+    "sendToCommandTitle": "Öffnen in {0}",
+    "sendToNewViewCommandTitle": "In neuer {0}-Ansicht öffnen",
+    "Awp0AddComponentHostedDesc": "Fügen Sie die ausgewählte Komponenten zum aktiven Teil hinzu.",
+    "Awp0OpenHostedDesc": "Auswahl öffnen.",
+    "HostingSetRevisionRule": "Hosting - Änderungsstandregel festlegen",
+    "HostingTimeoutAuthRequestSuccessful": "Die Browserseite wird aktualisiert, um die Sitzung wiederherzustellen.",
+    "HostingTimeoutAuthRequestFailure": "Die Sitzung kann aufgrund eines Authentifizierungsfehlers in der Hostanwendung nicht wiederhergestellt werden. \nSchließen Sie die Hostanwendung und öffnen Sie sie erneut.",
+    "HostingFileUploadSvcUploadError": "Das Speichern der Datei {0} ist mit Fehler {1} fehlgeschlagen."
+}

@@ -1,0 +1,88 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "actions": {
+        "render": {
+            "method": "awFilterCategoryDateFilterRenderFunction",
+            "deps": "js/AwFilterCategoryDateFilterService"
+        },
+        "updateNumberOfFiltersToShowForMoreLink": {
+            "actionType": "JSFunctionAsync",
+            "method": "updateNumberOfFiltersToShowForMoreLink",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateNumberOfFiltersToShowForLessLink": {
+            "actionType": "JSFunction",
+            "method": "updateNumberOfFiltersToShowForLessLink",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        },
+        "updateVMPropFromPassedInValueOfDefaultFilterDisplayCount": {
+            "actionType": "JSFunction",
+            "method": "updateVMPropFromPassedInValueOfDefaultFilterDisplayCount",
+            "inputData": {
+                "props": "{{props}}",
+                "numberOfFiltersToShow": "{{data.numberOfFiltersToShow}}"
+            },
+            "outputData": {
+                "numberOfFiltersToShow": ""
+            },
+            "deps": "js/AwFilterPanelUtils"
+        }
+    },
+    "data": {
+        "numberOfFiltersToShow": {
+            "type": "INTEGER",
+            "isRequired": "false",
+            "propertyDisplayName": "numberOfFiltersToShow",
+            "dbValue": 5
+        }
+    },
+    "i18n": {},
+    "conditions": {},
+    "onEvent": [],
+    "props": {
+        "category": {
+            "type": "object"
+        },
+        "facetAction": {
+            "type": "object"
+        },
+        "updateNumberOfFiltersShown": {
+            "type": "boolean"
+        },
+        "dateRangeAction": {
+            "type": "object"
+        },
+        "dateRangeFacetAction": {
+            "type": "object"
+        },
+        "selectFilterAction": {
+            "type": "object"
+        },
+        "isBulkMode": {
+            "type": "object"
+        }
+    },
+    "lifecycleHooks": {
+        "render": "render",
+        "onMount": "updateVMPropFromPassedInValueOfDefaultFilterDisplayCount",
+        "onUpdate": {
+            "action": "updateNumberOfFiltersToShowForMoreLinkAfterFacetSearch",
+            "observers": [ "props.category.updateNumberOfFiltersShown" ]
+        }
+    }
+}

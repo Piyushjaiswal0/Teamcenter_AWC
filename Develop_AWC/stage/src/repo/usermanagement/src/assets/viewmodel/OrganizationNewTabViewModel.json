@@ -1,0 +1,307 @@
+{
+    "schemaVersion" : "1.0.0",
+    "imports": [
+         ],
+
+    "actions":
+    {
+        "getStyleSheetrCreateGroupSubGroup": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-12-DataManagement",
+            "method": "getDeclarativeStyleSheets",
+            "inputData": {
+                "processEntireXRT": true,
+                "input": [
+                    {
+                        "businessObjectType": "Group",
+                        "businessObject": {
+                            "uid": "AAAAAAAAAAAAAA",
+                            "type": "Group"
+                        },
+                        "styleSheetType": "CREATE",
+                        "styleSheetLastModDate": "",
+                        "targetPage": "",
+                        "clientContext": {
+                            "ActiveWorkspace:Location": "com.siemens.splm.client.usermanagement.peoplelocation",
+                            "ActiveWorkspace:SubLocation": "com.siemens.splm.client.usermanagement:groupsublocation"
+                        }
+                    }
+
+                ]
+
+            },
+
+             "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "CreateInput",
+                        "modifiers":
+                        [
+                            {
+                                "name": "includeIsModifiable",
+                                "Value": "true"
+                            }
+                        ]
+                     }
+                ]
+            },
+
+            "outputData":
+            {
+                "modelPropGroup": "{{dataParseDefinitions:convertNvObject}}"
+            },
+            "events":
+            {
+                "success":
+                [
+                   {
+                        "name": "orgNewTab.setToParentProperty"
+                   }
+                ]
+            }
+
+        },
+
+         "createGroup":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2008-06-DataManagement",
+            "method": "createObjects",
+            "inputData":
+            {
+                "input":
+                [{
+                    "clientId": "{{data.name.uiValue}}",
+                    "data":
+                    {
+                        "boName": "Group",
+                        "stringProps":
+                        {
+                            "name":"{{data.name.uiValue}}",
+                            "description":"{{data.modelPropGroup.props.description.uiValue}}",
+                            "security":"{{data.modelPropGroup.props.security.uiValue}}"
+                        },
+                        "intProps":
+                        {
+                            "privilege":"{{data.modelPropGroup.props.privilege.dbValue}}"
+                        },
+                        "tagProps":
+                        {
+                             "parent":
+                            {
+                                "uid": "{{data.modelPropGroup.props.parent.dbValue}}",
+                                "type": "Group"
+                            },
+                              "volume":
+                            {
+                                "uid": "{{data.modelPropGroup.props.volume.dbValue}}",
+                                "type": "Volume"
+                            },
+                              "local_volume":
+                            {
+                                "uid": "{{data.modelPropGroup.props.local_volume.dbValue}}",
+                                "type": "Volume"
+                            }
+                        }
+
+                    }
+                }]
+            },
+
+             "outputData":
+            {
+                "createdObjectUid": "output[0].objects[0].uid",
+                "createdObject":"output[0].objects[0]",
+                "partialErrors": "ServiceData.partialErrors"
+            },
+
+            "events":
+            {
+                "success":
+                [
+                   {
+                        "name": "registerCreatedObject",
+                        "eventData":
+                        {
+
+                        }
+                   },
+                   {
+                        "name": "usermanagement.newlyCreatedGroupObject",
+                        "condition": "ctx.sublocation.historyNameToken == 'groups'",
+                        "eventData":
+                        {
+                            "uid": "{{data.createdObjectUid}}",
+                            "selectedObject": "{{ctx.mselected[0]}}",
+                            "historyNameToken": "{{ctx.sublocation.historyNameToken}}"
+                        }
+                   },
+                   {
+                        "name": "usermanagement.refreshNewGroupRoleInOrganizationTab",
+                        "condition": "ctx.sublocation.historyNameToken == 'organization'",
+                        "eventData":
+                        {
+                            "uid": "{{data.createdObjectUid}}",
+                            "selectedObject": "{{ctx.lastSelectedObject}}",
+                            "historyNameToken": "{{ctx.sublocation.historyNameToken}}"
+                        }
+                    },
+                    {
+                        "name": "OrgTree.reloadOrgTree",
+                        "eventData":
+                        {
+                            "uid": "{{data.createdObjectUid}}"
+                        }
+                    },
+                    {
+                        "name": "complete",
+                        "eventData":
+                        {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                      "name": "primaryWorkarea.reset"
+                    }
+                ]
+
+            },
+            "actionMessages": {
+                "success": [
+                    {
+                        "condition": "data.createdObjectUid",
+                        "message": "createGroupSuccessMessage"
+                    }
+                ],
+                "failure": [
+                    {
+                        "message": "createGroupFailureMessage"
+                    }
+                ]
+            },
+
+            "deps": "js/Um0CreateUserService"
+        },
+        "add":
+        {
+            "actionType": "JSFunction",
+            "method": "addAdminObjects",
+            "inputData":
+            {
+                "selectedPanelId": "OrganizationNewTab",
+                "isGroupRadioButtonSelected":  true
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        },
+        "setToParentProperty":
+        {
+            "actionType": "JSFunction",
+            "method": "setToParentProperty",
+            "inputData":
+            {
+                "data": "{{data}}",
+                "selectionData": "{{subPanelContext.selectionData}}",
+                "subPanelContext": "{{subPanelContext}}"
+            },
+            "outputData":
+            {
+                "modelPropGroup.props.parent": ""
+            },
+            "deps": "js/um0AddInAnOrganizationService"
+        }
+    },
+
+    "data":
+    {
+        "isGroupRadioButtonSelected":
+        {
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "propertyRadioTrueText": "{{i18n.GroupName}}",
+            "propertyRadioFalseText": "{{i18n.RoleName}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT",
+            "dbValue": true
+        },
+
+        "addRoleOrUserSelection":
+        {
+            "type": "BOOLEAN",
+            "isRequired": "true",
+            "propertyRadioTrueText": "{{i18n.RoleName}}",
+            "propertyRadioFalseText": "{{i18n.UserName}}",
+            "labelPosition": "PROPERTY_LABEL_AT_RIGHT",
+            "dbValue": true
+        },
+       "name":
+        {
+          "displayName": "{{i18n.CreateName}}",
+            "type": "STRING",
+            "isRequired": "true",
+            "labelPosition": "PROPERTY_LABEL_AT_TOP"
+        }
+    },
+
+     "dataParseDefinitions": {
+        "convertNvObject": {
+            "outputFormatType": "ViewModelObject",
+            "dataInput": "ServiceData.plain[0]",
+            "operationType": "CREATE"
+        }
+    },
+
+    "lifecycleHooks": {
+        "onMount": "getStyleSheetrCreateGroupSubGroup"
+    },
+    "onEvent":
+    [
+        {
+           "eventId": "ics.createGroup",
+           "action": "createGroup"
+        },
+        {
+            "eventId": "orgNewTab.setToParentProperty",
+            "action": "setToParentProperty"
+         }
+    ],
+    "conditions":
+    {
+        "isAllowToCreateUser":
+        {
+
+            "expression": "ctx.lastSelectedObject.type==\"Role\""
+        },
+        "isValidToAddAdminObjects":
+        {
+            "expression": "(data.name.uiValue.length>0)"
+        }
+    },
+
+    "messages":
+     {
+        "createGroupFailureMessage": {
+            "messageType": "ERROR",
+            "messageText": "{{partialErrors[0].errorValues[0].message}}"
+        },
+        "createGroupSuccessMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.createGroupSuccess}}",
+            "messageTextParams": [
+                "{{data.name.uiValue}}"
+            ]
+        }
+    },
+
+    "i18n":
+    {
+        "GroupName": [ "UsermanagementCommandPanelMessages" ],
+        "RoleName": [ "UsermanagementCommandPanelMessages" ],
+        "UserName": [ "UsermanagementCommandPanelMessages" ],
+        "UserProperties": [ "UsermanagementCommandPanelMessages" ],
+        "PersonProperties": [ "UsermanagementCommandPanelMessages" ],
+        "CreateName": [ "UsermanagementCommandPanelMessages" ],
+        "AddButton": [ "UsermanagementCommandPanelMessages" ],
+        "createGroupSuccess": [ "UsermanagementCommandPanelMessages" ]
+    }
+}

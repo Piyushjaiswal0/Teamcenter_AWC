@@ -1,0 +1,49 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <path d="M38.5869,17h2V15.3145c.0576-.08.1133-.1617.168-.2442l-1.668-1.1035a5.616,5.616,0,0,1-1.1318,1.2583A1,1,0,0,0,38.5869,17Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M25.2207,12.4683a7.386,7.386,0,0,1-.3784-2.3589,7.5561,7.5561,0,0,1,.0586-.9463l-1.9844-.25a9.6109,9.6109,0,0,0-.0742,1.1963,9.3751,9.3751,0,0,0,.4824,2.9956Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M27.1309,4.8052,25.77,3.34a9.1916,9.1916,0,0,0-2.35,3.51l1.8745.6973A7.0915,7.0915,0,0,1,27.1309,4.8052Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M37.55,2.1094A9.84,9.84,0,0,0,33.5635.8125l-.2071,1.9893A7.85,7.85,0,0,1,36.5381,3.835Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M40.1787,10.1694a7.2241,7.2241,0,0,1-.375,2.3277l1.8945.6425a9.2445,9.2445,0,0,0,.48-2.97A9.4409,9.4409,0,0,0,42.1,8.9409L40.1172,9.2A7.5284,7.5284,0,0,1,40.1787,10.1694Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M41.5908,6.8818A9.2858,9.2858,0,0,0,39.2461,3.374l-1.3672,1.46a7.2761,7.2761,0,0,1,1.8389,2.748Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M31.6641,2.7993l-.1973-1.99a9.8616,9.8616,0,0,0-3.9922,1.2734l1,1.7315A7.8852,7.8852,0,0,1,31.6641,2.7993Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M26.4346,17a1,1,0,0,0,.6318-1.7749,5.5042,5.5042,0,0,1-1.123-1.2593L24.27,15.0605q.0805.1232.1651.2427V17Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="6.9434" y="15" width="3.8872" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="12.7739" y="15" width="3.8867" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="18.6045" y="15" width="3.8867" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M4,17H5V15H3a1,1,0,0,0-1,1v2H4Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="2" y="19.998" width="2" height="3.9961" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="2" y="25.9922" width="2" height="3.9966" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M2.6221,34.9126a1,1,0,0,0,1.0923-.2261,7.7491,7.7491,0,0,1,1.372-1.1147L4.0112,31.8853c-.0522.0332-.104.0673-.1557.1015H2v2A1,1,0,0,0,2.6221,34.9126Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M10.2637,49.6187,10.0449,47.63a7.7391,7.7391,0,0,1-3.395-.3872l-.666,1.8857a9.6171,9.6171,0,0,0,3.2124.5483A9.861,9.861,0,0,0,10.2637,49.6187Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M14.6147,45.439a7.7258,7.7258,0,0,1-2.894,1.8144l.6582,1.8887a9.7354,9.7354,0,0,0,3.648-2.2871Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M16.0088,33.1782a9.732,9.732,0,0,0-3.6558-2.2773l-.6523,1.8906a7.7229,7.7229,0,0,1,2.9,1.8066Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M10.0239,32.418l.2119-1.9883a9.7648,9.7648,0,0,0-4.2778.5019L6.63,32.8154A7.7843,7.7843,0,0,1,10.0239,32.418Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M16.8164,40.8755A7.5351,7.5351,0,0,1,15.69,44.0962l1.6914,1.0674a9.5284,9.5284,0,0,0,1.4238-4.0684Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M16.814,39.1548l1.9873-.2246a9.5177,9.5177,0,0,0-1.4341-4.0645L15.6787,35.938A7.5335,7.5335,0,0,1,16.814,39.1548Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M2.6221,45.1387A1,1,0,0,0,2,46.0645v2H3.8555q.0775.0511.1552.101L5.0869,46.48a7.7946,7.7946,0,0,1-1.3725-1.1153A.9978.9978,0,0,0,2.6221,45.1387Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="2" y="49.9121" width="2" height="3.6958" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="2" y="55.4561" width="2" height="3.6958" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M4,61H2v2a1,1,0,0,0,1,1H5V62H4Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="6.8931" y="62" width="3.7856" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="18.25" y="62" width="3.7861" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="52.3213" y="62" width="3.7861" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="46.6426" y="62" width="3.7861" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="35.2861" y="62" width="3.7852" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="12.5718" y="62" width="3.7856" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="29.6074" y="62" width="3.7852" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="23.9287" y="62" width="3.7861" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="40.9648" y="62" width="3.7852" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M59,62H58v2h2a1,1,0,0,0,1-1V61H59Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="25.8184" width="2" height="3.9087" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="31.6816" width="2" height="3.9092" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="37.5454" width="2" height="3.9092" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="19.9546" width="2" height="3.9092" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="49.2725" width="2" height="3.9092" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="43.4092" width="2" height="3.9092" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="59" y="55.1362" width="2" height="3.9092" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M60,15H58v2h1v1h2V16A1,1,0,0,0,60,15Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="42.3281" y="15" width="3.4824" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="52.7764" y="15" width="3.4824" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <rect x="47.5518" y="15" width="3.4834" height="2" class="aw-theme-iconHomeOutline" fill="#464646"/>
+    <path d="M40.025,33.389l6.682-6.682-1.414-1.414-6.682,6.682A8.9891,8.9891,0,0,0,25.975,44.611l-6.682,6.682,1.414,1.414,6.682-6.682A8.9891,8.9891,0,0,0,40.025,33.389ZM26,39a6.9865,6.9865,0,0,1,11.1843-5.5983l-9.7826,9.7826A6.9544,6.9544,0,0,1,26,39Zm7,7a6.9542,6.9542,0,0,1-4.1843-1.4017l9.7826-9.7826A6.9865,6.9865,0,0,1,33,46Z" class="aw-theme-iconHomeOutline" fill="#464646"/>
+</svg>

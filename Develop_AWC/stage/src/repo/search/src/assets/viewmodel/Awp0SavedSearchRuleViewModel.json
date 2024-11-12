@@ -1,0 +1,128 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "searchState": {
+            "initialValues": {
+                "pwaSelection": [],
+                "autoApplyFilters": true,
+                "selectFirstObjectPreference": false,
+                "onRulePage": true,
+                "savedSearchType": "SavedSearch"
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "shareSavedSearch": {
+        },
+        "pinSavedSearch": {
+        },
+        "resultsText": "{{i18n.resultsText}}",
+        "searchText": "{{i18n.searchFolderSearch}}"
+    },
+    "actions":
+    {
+        "getPinSearchValue": {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2016-03-UiConfig",
+            "method": "getVisibleCommands",
+            "inputData": {
+                "getVisibleCommandsInfo": [ {
+                    "clientScopeURI": "Awp0SavedSearch",
+                    "commandInfo": [
+                        {
+                            "commandCollectionId": "",
+                            "commandId": "Awp0PinSearch"
+                        },
+                        {
+                            "commandCollectionId": "",
+                            "commandId": "Awp0UnpinSearch"
+                        }
+                    ],
+                    "selectionInfo": [
+                        {
+                            "contextName": "",
+                            "parentSelectionIndex": -1,
+                            "selectedObjects": [
+                                {
+                                    "uid": "{{ctx.selected.uid}}",
+                                    "type": "{{ctx.selected.type}}"
+                                }
+                            ]
+                        }
+                    ]
+                } ]
+            },
+            "outputData": {
+                "pinToHome": "{{function:setPinToHome}}"
+            },
+            "deps": "js/Awp0SaveSearchUtils"
+        },
+        "updateResultsCaptionForAdvancedSearch": {
+            "actionType": "JSFunction",
+            "method": "updateResultsCaption",
+            "inputData": {
+                "resultsText": "{{i18n.resultsText}}",
+                "searchState": "{{data.searchState}}",
+                "customResultsCount": "{{data.searchState.WSOMFindSetSearchLimit}}"
+            },
+            "outputData": {
+                "resultsText": "resultsText"
+            },
+            "deps": "js/advancedSearchService"
+        }
+    },
+    "functions": {
+        "setPinToHome": {
+            "functionName": "setPinToHome",
+            "parameters": [
+                "{{data.pinSavedSearch}}"
+            ]
+        }
+    },
+    "conditions": {
+        "isAwp0FullTextProvider": {
+            "expression": "props.subPanelContext.selected.type === 'Awp0FullTextSavedSearch'"
+        },
+        "isSavedQueryProvider": {
+            "expression": "props.subPanelContext.selected.type === 'SavedSearch'"
+        }
+    },
+    "lifecycleHooks": {
+        "onMount": "getPinSearchValue",
+        "onUpdate": [
+            {
+                "action": "updateResultsCaptionForAdvancedSearch",
+                "observers": [ "viewModel.searchState.cursorInfoString" ]
+            }
+        ]
+    },
+    "onEvent": [
+    ],
+    "props": {
+        "sub-panel-context": {
+            "type": "object"
+        }
+    },
+    "i18n":
+    {
+        "Name":[ "SearchMessages"],
+        "Description":[ "SearchMessages"],
+        "savedSearch": [ "SearchMessages" ],
+        "Awp0SearchTitle": ["SearchMessages"],
+        "searchBtn": [ "SearchMessages" ],
+        "keyword": [ "SearchMessages" ],
+        "advancedText": [ "SearchMessages" ],
+        "searchesText": [ "SearchMessages" ],
+        "searchFolderSearch": [ "SearchMessages" ],
+        "resultsText": [ "SearchMessages" ]
+    }
+}
+

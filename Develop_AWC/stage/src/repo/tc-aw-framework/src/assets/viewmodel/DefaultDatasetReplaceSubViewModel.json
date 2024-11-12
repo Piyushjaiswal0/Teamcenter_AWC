@@ -1,0 +1,420 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive"
+    ],
+    "actions": {
+        "replaceFileSub": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [ {
+                        "name": "replaceFileSub.notUsingDSM",
+                        "condition": "!ctx.selectedDataset.isDSMUsable || ctx.selectedDataset.isPlatformSupported"
+                    }
+                ]
+            }
+        },
+        "getDatasetType": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2007-06-DataManagement",
+            "method": "getDatasetTypeInfo",
+            "inputData": {
+                "datasetTypeNames": [
+                    "{{ctx.selected.type}}"
+                ]
+            },
+            "outputData": {
+                "refInfos": "infos[0].refInfos"
+            },
+            "events": {
+                "success": [ {
+                    "name": "replaceFileSub.datasetFileTypeLoaded"
+                } ]
+            },
+            "deps": "js/Awp0ReplaceDatasetService"
+        },
+        "getDatasetWriteTickets": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-FileManagement",
+            "method": "getDatasetWriteTickets",
+            "inputData": {
+                "inputs": [ {
+                    "createNewVersion": true,
+                    "dataset": "{{ctx.selected}}",
+                    "datasetFileInfos": "{{function:getDatasetFileInfos}}"
+                } ]
+            },
+            "outputData": {
+                "fmsTicket": "commitInfo[0].datasetFileTicketInfos[0].ticket",
+                "commitInfos": "commitInfo[0]"
+            },
+            "events": {
+                "success": [ {
+                    "name": "replaceFileSub.update"
+                } ]
+            },
+            "actionMessages": {
+                "failure": [ {
+                    "condition": "errorCode=='replaceFileError'",
+                    "message": "replaceFileError"
+                } ]
+            },
+            "deps": "js/Awp0ReplaceDatasetService"
+        },
+        "updateFormData": {
+            "actionType": "JSFunction",
+            "method": "updateFormData",
+            "deps": "js/fileUploadUtils",
+            "inputData": {
+                "formData": "{{subPanelContext.pageData.formData}}",
+                "key": "fmsTicket",
+                "value": "{{data.fmsTicket}}"
+            },
+            "events": {
+                "success": [ {
+                        "name": "replaceFileSub.datasetWriteTicketsCreated",
+                        "condition": "!ctx.HostedFileNameContext.filename"
+                    },
+                    {
+                        "name": "replaceFile.datasetCreatedPreinitialized",
+                        "condition": "ctx.HostedFileNameContext.filename"
+                    }
+                ]
+            }
+        },
+        "uploadFile": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "POST",
+            "inputData": {
+                "request": {
+                    "method": "POST",
+                    "url": "{{Constants.fmsUrl}}",
+                    "headers": {
+                        "Content-type": "undefined"
+                    },
+                    "data": "{{subPanelContext.pageData.formData}}"
+                }
+            },
+            "events": {
+                "success": [ {
+                    "name": "replaceFileSub.fileUploaded"
+                } ]
+            }
+        },
+        "uploadFilePreinitialized": {
+            "actionType": "JSFunctionAsync",
+            "method": "uploadFilePreinit",
+            "inputData": {
+                "uid": "{{data.commitInfos.dataset.uid}}",
+                "ticket": "{{data.fmsTicket}}",
+                "filename": "{{subPanelContext.pageData.fileName}}"
+            },
+            "events": {
+                "success": [ {
+                    "name": "replaceFile.fileUploaded"
+                } ]
+            },
+            "deps": "js/addObjectUtils"
+        },
+        "commitDatasetFiles": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2006-03-FileManagement",
+            "method": "commitDatasetFiles",
+            "inputData": {
+                "commitInput": [
+                    "{{data.commitInfos}}"
+                ]
+            },
+            "outputData": {
+                "fmsTicket": "commitInfo[0].datasetFileTicketInfos[0].ticket",
+                "commitInfos": "commitInfo[0]"
+            },
+            "policy": {
+                "types": [ {
+                    "name": "Dataset",
+                    "properties": [ {
+                        "name": "ref_list"
+                    } ]
+                } ]
+            },
+            "events": {
+                "success": [ {
+                        "name": "replaceFileSub.updateDatasetProperty",
+                        "condition": "subPanelContext.pageData.fileNameNoExt != subPanelContext.pageData.datasetName.dbValue && ctx.selectedDataset.fileNames.length==1"
+                    },
+                    {
+                        "name": "complete",
+                        "condition": "subPanelContext.pageData.fileNameNoExt == subPanelContext.pageData.datasetName.dbValue || ctx.selectedDataset.fileNames.length!=1",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "closeDialog",
+                        "condition": "subPanelContext.pageData.fileNameNoExt == subPanelContext.pageData.datasetName.dbValue || ctx.selectedDataset.fileNames.length!=1"
+
+                    }
+                ]
+            },
+            "actionMessages": {
+                "success": [ {
+                    "condition": "ctx.selectedDataset.fileNames.length>1",
+                    "message": "replaceFileSuccess_multiple"
+                } ],
+                "failure": [ {
+                    "message": "replaceFileFailure_multiple"
+                } ]
+            },
+            "deps": "js/Awp0ReplaceDatasetService"
+        },
+        "setProperties": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+            "method": "setProperties",
+            "inputData": {
+                "info": [ {
+                        "object": "{{ctx.selected}}",
+                        "timestamp": "",
+                        "vecNameVal": [ {
+                            "name": "object_name",
+                            "values": [
+                                "{{subPanelContext.pageData.fileNameNoExt}}"
+                            ]
+                        } ]
+                    },
+                    {
+                        "object": "{{function:getDatasetRefObj}}",
+                        "timestamp": "",
+                        "vecNameVal": [ {
+                            "name": "original_file_name",
+                            "values": [
+                                "{{subPanelContext.pageData.fileName}}"
+                            ]
+                        } ]
+                    }
+                ]
+            },
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "fileReplace.success",
+                        "condition": "subPanelContext.pageData.fileNameNoExt != subPageData.datasetName.dbValue && ctx.selectedDataset.fileNames.length==1"
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            },
+            "deps": "js/Awp0ReplaceDatasetService"
+        },
+        "setProperties2": {
+            "actionType": "TcSoaService",
+            "serviceName": "Core-2010-09-DataManagement",
+            "method": "setProperties",
+            "inputData": {
+                "info": [
+                    {
+                        "object": "{{function:getDatasetRefObj}}",
+                        "timestamp": "",
+                        "vecNameVal": [ {
+                            "name": "original_file_name",
+                            "values": [
+                                "{{subPanelContext.pageData.fileName}}"
+                            ]
+                        } ]
+                    }
+                ]
+            },
+            "events": {
+                "success": [ {
+                        "name": "complete",
+                        "eventData": {
+                            "source": "toolAndInfoPanel"
+                        }
+                    },
+                    {
+                        "name": "fileReplace.success",
+                        "condition": "subPanelContext.pageData.fileNameNoExt != subPageData.datasetName.dbValue && ctx.selectedDataset.fileNames.length==1"
+                    },
+                    {
+                        "name": "closeDialog"
+                    }
+                ]
+            },
+            "deps": "js/Awp0ReplaceDatasetService"
+        },
+        "closePanelDialog": {
+            "actionType": "JSFunction",
+            "method": "closeDialog",
+            "inputData": {
+                "editContext": "INFO_PANEL_CONTEXT",
+                "popupId": "{{subPanelContext.popupOptions.popupId}}"
+            },
+            "deps": "js/dialogService"
+        }
+    },
+    "onEvent": [ {
+            "eventId": "replaceFileSub.update",
+            "action": "updateFormData"
+        },
+        {
+            "eventId": "replaceFileSub.datasetFileTypeLoaded",
+            "action": "getDatasetWriteTickets"
+        },
+        {
+            "eventId": "replaceFileSub.fileUploaded",
+            "action": "commitDatasetFiles"
+        },
+        {
+            "eventId": "replaceFileSub.updateDatasetProperty",
+            "action": "setProperties",
+            "condition": "ctx.preferences.AWC_UseItemIdAsDefaultDatasetName === undefined || ctx.preferences.AWC_UseItemIdAsDefaultDatasetName[0] === 'false'"
+        },
+        {
+            "eventId": "replaceFileSub.updateDatasetProperty",
+            "action": "setProperties2",
+            "condition": "ctx.preferences.AWC_UseItemIdAsDefaultDatasetName && ctx.preferences.AWC_UseItemIdAsDefaultDatasetName[0] === 'true'"
+        },
+        {
+            "eventId": "replaceFileSub.datasetWriteTicketsCreated",
+            "action": "uploadFile"
+        },
+        {
+            "eventId": "replaceFile.datasetCreatedPreinitialized",
+            "action": "uploadFilePreinitialized"
+        },
+        {
+            "eventId": "complete",
+            "action": "unregisterContext"
+        },
+        {
+            "eventId": "replaceFileSub.notUsingDSM",
+            "action": "getDatasetType"
+        },
+        {
+            "eventId": "closeDialog",
+            "action": "closePanelDialog"
+
+        }
+    ],
+    "functions": {
+        "getDatasetFileInfos": {
+            "functionName": "getDatasetFileInfos",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{subPanelContext.pageData}}",
+                "{{data}}",
+                "{{subPanelContext.uploadFileSelectionData}}",
+                "{{subPanelContext.upload}}"
+            ]
+        },
+        "constructCommitDatasetFileInfos": {
+            "functionName": "constructCommitDatasetFileInfos",
+            "parameters": [
+                "{{data.commitInfos}}"
+            ]
+        },
+        "submitForm": {
+            "functionName": "submitForm",
+            "parameters": []
+        },
+        "getDatasetRefObj": {
+            "functionName": "getDatasetRefObj",
+            "parameters": [
+                "{{ctx.selected}}"
+            ]
+        },
+        "getUpdatedObjects": {
+            "functionName": "getUpdatedObjects",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{ctx.pselected}}"
+            ]
+        },
+        "createInputForDSM": {
+            "functionName": "createInputForDSM",
+            "parameters": [
+                "{{ctx.selected}}",
+                "{{data}}"
+            ]
+        }
+    },
+    "conditions": {
+        "isMultipleFiles": {
+            "expression": "ctx.selectedDataset.fileNames.length>1"
+        },
+        "isMultipleFileDSMSupport": {
+            "expression": "ctx.selectedDataset.isDSMUsable && !ctx.selectedDataset.isPlatformSupported && ctx.selectedDataset.isMultipleReference > 1"
+        },
+        "isMultipleFilesSynchronous": {
+            "expression": "!ctx.selectedDataset.isDSMUsable || !ctx.selectedDataset.isMultipleReference"
+        }
+    },
+    "messages": {
+        "replaceFileSuccess_multiple": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.replaceSuccessWithFileName}}",
+            "messageTextParams": [
+                "{{subPanelContext.pageData.datasetName.dbValue}}"
+            ]
+        },
+        "replaceFileFailure_multiple": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.replaceFailureWithFileName}}"
+        },
+        "replaceFileError": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.replaceFileError}}"
+        },
+        "invalidInputObject": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.InvalidSelectedObject}}"
+        },
+        "uploadInProgress": {
+            "messageType": "ERROR",
+            "messageText": "{{i18n.AsynUploadInProgress}}"
+        },
+        "platformnotsupported": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.PlatformNotSupported}}"
+        }
+    },
+    "i18n": {
+        "replace": [
+            "ReplaceFileMessages"
+        ],
+        "upload": [
+            "ReplaceFileMessages"
+        ],
+        "replaceFileError": [
+            "ReplaceFileMessages"
+        ],
+        "replaceSuccessWithFileName": [
+            "ReplaceFileMessages"
+        ],
+        "InvalidSelectedObject": [
+            "ReplaceFileMessages"
+        ],
+        "AsynUploadInProgress": [
+            "ReplaceFileMessages"
+        ],
+        "PlatformNotSupported": [
+            "ReplaceFileMessages"
+        ],
+        "replaceFailureWithFileName": [
+            "ReplaceFileMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "getFilePickerConfiguration"
+    }
+}

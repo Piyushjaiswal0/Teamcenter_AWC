@@ -1,0 +1,10 @@
+{
+ "Awp0ChangeOwner" : "Изменение владельца",
+ "change" : "Изменить",
+ "user" : "Пользователь",
+ "EmailAddress" : "Email:",
+ "PhoneNumber" : "Номер телефона:",
+ "singleObjectChangeOwnershipSuccess": "\"{0}\" изменено.",
+ "multipleObjectsChangeOwnershipSuccess": "Изменено {0} из {1} выбранных объектов.", 
+ "changeOwnershipForObjectFailure": "\"{0}\" не изменены, так как у вас отсутствуют права.  "
+}

@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="3.668" y1="8.832" x2="37.332" y2="42.496" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="7.793" y1="-5.622" x2="33.207" y2="19.792" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="26.16" y1="26.161" x2="43.837" y2="43.838" xlink:href="#Dark_Blue_Grad"/>
+  <path d="M.5,12V38.5a2,2,0,0,0,2,2h36a2,2,0,0,0,2-2V12Z" fill="url(#paper_gradient)"/>
+  <path d="M40.5,12.5V2.5a2,2,0,0,0-2-2H2.5a2,2,0,0,0-2,2v10Z" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <line x1="8.5" y1="13" x2="8.5" y2="40.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="16.5" y1="13" x2="16.5" y2="40.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="24.5" y1="13" x2="24.5" y2="40.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="32.5" y1="13" x2="32.5" y2="40.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="0.5" y1="33.5" x2="40.5" y2="33.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="0.5" y1="26.5" x2="40.5" y2="26.5" fill="none" stroke="#6e6e6e"/>
+  <line x1="0.5" y1="19.5" x2="40.5" y2="19.5" fill="none" stroke="#6e6e6e"/>
+  <circle cx="13" cy="5.979" r="1.5" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.011"/>
+  <circle cx="13" cy="6" r="1.5" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="6" r="1.5" fill="#fff" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="0.5" y="0.5" width="40" height="40" rx="2" ry="2" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <circle cx="34.998" cy="34.999" r="12.5" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad-2)"/>
+  <polygon points="41.5 32.5 34.5 39.5 34.5 37.5 31.5 37.5 31.5 44.5 38.5 44.5 38.5 41.5 36.5 41.5 43.5 34.5 41.5 32.5" fill="#fff" stroke="#147391"/>
+  <polygon points="28.497 37.499 35.497 30.499 35.497 32.499 38.497 32.499 38.497 25.499 31.497 25.499 31.497 28.498 33.497 28.498 26.497 35.499 28.497 37.499" fill="#fff" stroke="#147391"/>
+</svg>

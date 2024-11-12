@@ -1,0 +1,362 @@
+.aw-ckeditor-document {
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: text;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #FFFFFF;
+  word-wrap: break-word;
+}
+
+.aw-ckeditor-document .cke_widget_wrapper:hover>.cke_widget_element,
+.aw-ckeditor-document .cke_widget_wrapper:hover .cke_widget_editable,
+.aw-ckeditor-document .cke_widget_wrapper .cke_widget_editable.cke_widget_editable_focused{
+  outline: none;
+}
+
+.aw-ckeditor-document .cke_widget_wrapper:hover {
+    outline: 1px solid #dcdcdc;
+  }
+
+.aw-ckeditor-document div[contenteditable="true"]:hover,
+.aw-ckeditor-document span[contenteditable="true"]:hover,
+.aw-ckeditor-document h3[contenteditable="true"]:hover{
+  outline: 2px solid #daecf0;
+}
+
+.aw-ckeditor-document div[contenteditable="true"]:focus,
+.aw-ckeditor-document span[contenteditable="true"]:focus,
+.aw-ckeditor-document h3[contenteditable="true"]:focus{
+  outline: 2px solid #afd7e1;
+}
+
+.aw-ckeditor-document.aw-ckeditor-documentWidePanelPaper div[contenteditable="true"]:hover,
+.aw-ckeditor-document.aw-ckeditor-documentWidePanelPaper span[contenteditable="true"]:hover,
+.aw-ckeditor-document.aw-ckeditor-documentWidePanelPaper h3[contenteditable="true"]:hover{
+  outline: none;
+}
+
+.aw-ckeditor-document.aw-ckeditor-documentWidePanelPaper div[contenteditable="true"]:focus,
+.aw-ckeditor-document.aw-ckeditor-documentWidePanelPaper span[contenteditable="true"]:focus,
+.aw-ckeditor-document.aw-ckeditor-documentWidePanelPaper h3[contenteditable="true"]:focus{
+  outline: none;
+}
+
+.aw-ckeditor-document div[contenteditable="true"],
+.aw-ckeditor-document span[contenteditable="true"],
+.aw-ckeditor-document h3[contenteditable="true"]{
+   outline: none;
+   border: 0;
+}
+
+.aw-ckeditor-document .aw-requirement-content span[contenteditable="true"]{
+    outline: 2px solid #dcdcdc;
+}
+
+.aw-ckeditor-document img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.aw-ckeditor-document table img{
+    max-height: none;
+    max-width: none;
+}
+
+.aw-ckeditor-document p {
+    margin: 5px 0 5px 0;
+}
+
+.aw-ckeditor-document select {
+    vertical-align: middle;
+    margin: 2px 0;
+}
+
+.aw-ckeditor-document .requirement {
+  margin-bottom: 30px;
+}
+
+.aw-ckeditor-documentPaper {
+  max-width: 100%;
+  margin: 20px 40px 20px 40px;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: 1px solid #CCCCCC;
+  border-right: 2px solid #CCCCCC;
+  border-bottom: 2px solid #CCCCCC;
+}
+
+.aw-ckeditor-documentWidePanelPaper {
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.aw-ckeditor-a4SizePaper {
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 700px;
+    margin: auto;
+    border: 1px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+.aw-ckeditor-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.aw-ckeditor-marker {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width:16px;
+    max-height:16px;
+    margin-left:-65px;
+    float: left;
+}
+
+.aw-ckeditor-marker .aw-requirement-tracelinkCount {
+    margin-right: -30px;
+    margin-left: -4px;
+    position: relative;
+    top: 7px;
+    left: 20px;
+    font-size: 11px;
+    float: left;
+}
+
+.aw-requirement-header h3 {
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 1;
+}
+
+.aw-requirement-marker p {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.aw-requirement-marker img,
+.aw-requirement-marker svg,
+.aw-requirement-tocsettings svg {
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.cke_editable .aw-requirement-marker typeicon img {
+    cursor: auto;
+}
+
+.cke_editable .aw-requirement-marker img {
+    cursor: pointer;
+}
+
+.aw-requirement-content {
+    min-height: 1em;
+
+}
+
+.aw-ckeditor-propertyError {
+    background-image: url(miscErrorIndicatorProperty10.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 10px 10px;
+    padding-left: 10px;
+}
+
+.aw-requirement-properties{
+    font-size: 14px;
+    height: 100%;
+    padding: 2px;
+    -webkit-appearance: textfield;
+    cursor: text;
+    min-width: 100px;
+}
+
+.aw-requirement-bodytext{
+    font-size: 14px;
+    height: 100%;
+    padding: 2px;
+    -webkit-appearance: textfield;
+    cursor: text;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0;
+    display: inline-block;
+}
+
+.aw-requirement-bodytext table {
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.aw-requirement-bodytext .table {
+    max-width: 100%;
+    margin: 1em auto;
+    display: table;
+}
+
+/* important is required to override inline style added by ckeditor */
+.aw-requirement-bodytext table,
+.aw-requirement-bodytext .table,
+.aw-requirement-bodytext .table table {
+    width: auto !important;
+}
+
+.aw-requirement-bodytext .table table,
+.aw-requirement-bodytext .table td,
+.aw-requirement-bodytext .table tr {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.aw-requirement-bodytext table td,
+.aw-requirement-bodytext table th {
+    min-width: 2em;
+    padding: 0.4em;
+}
+
+.aw-requirement-headerSelected , .aw-requirement-headerNonEditable:hover
+{
+    background-color: #cde6eb;
+    /* fill: #464646; */
+ }
+
+ .aw-requirement-headerNonEditable{
+    cursor:pointer;
+    /* background-color:#f0f0f0; */
+ }
+
+ .aw-requirement-properties{
+    cursor:text;
+ }
+
+html {
+  margin: 0px;
+  padding: 0px;
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: text;
+}
+.aw-ckeditor-document pre{
+    white-space: pre-wrap;
+}
+.aw-requirements-readOnly {
+    border-style: dotted;
+    border-color: #8c8c8c;
+    border-width: 0;
+    border-left-width: 5px;
+    margin-left: -40px;
+    height: 100%;
+    position: absolute;
+}
+
+.aw-requirements-masterChanged {
+    border: dashed;
+    border-color: #eb780a;  /* Can not use outside color css inside ckeditor frame */
+    margin-left: -40px;
+    height: 100%;
+    position: absolute;
+}
+
+.aw-requirements-editable {
+    border-style: outset;
+    border-color: #FFB900;
+    border-width: 0;
+    border-left-width: 5px;
+    margin-left: -40px;
+    height: 100%;
+    position: absolute;
+}
+
+.aw-requirements-frozenToLatest {
+    border-left-width: 5px;
+    margin-left: -40px;
+    height: 100%;
+    position: absolute;
+    border: dashed;
+    border-color: #50bed7;
+}
+.aw-requirement-tocFont{
+    font-style:italic;
+    margin-top: 40px
+}
+.aw-requirement-tocUnderlineOnHover:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.aw-requirement-paramToReqUnderline {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0000EE;
+}
+.aw-requirement-tocsettings{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 16px;
+    max-height: 16px;
+    float: left;
+    margin-left: -68px;
+    cursor: pointer;
+}
+.aw-requirement-tocOl {
+    list-style-type: none;
+    margin-block-start: auto;
+    font-size: inherit;
+    padding-left: 0px;
+    overflow: unset;
+}
+.aw-requirement-toconHover:hover {
+    background-color: #f0f0f0;
+}
+
+.aw-ckeditor-invalidQualityRule {
+    color: #dc0000;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.aw-ckeditor-indicator svg {
+    cursor: default;
+}
+
+.aw-requirement-crossRefLink img {
+    padding: 2px 4px 2px 0;
+    width: 16px;
+    height: 16px;
+}
+
+.aw-requirement-crossRefLink span {
+    cursor:pointer;
+    color:#0000EE;
+    text-decoration:underline;
+}
+
+a {
+    cursor: pointer;
+}
+
+.cke_dialog_container {
+    z-index: 999999 !important; /* important is required as ck-editor is adding inline z-index to the pop-up*/
+}

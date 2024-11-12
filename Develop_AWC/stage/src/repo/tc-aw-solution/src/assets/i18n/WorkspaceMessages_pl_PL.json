@@ -1,0 +1,8 @@
+{
+    "defaultWorkspaceName": "Domyślne",
+    "tcAuthorWorkspaceName": "Autor",
+    "tcConsumerWorkspaceName": "Odbiorca",
+    "tcActiveAdminWorkspaceName": "Aktywny administrator",
+    "tcActiveArchitectWorkspaceName": "Aktywny architekt",
+    "mbmWorkspaceName":"Menedżer MBOM"
+}

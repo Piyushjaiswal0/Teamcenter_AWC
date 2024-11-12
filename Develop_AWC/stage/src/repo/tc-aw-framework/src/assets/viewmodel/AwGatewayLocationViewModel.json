@@ -1,0 +1,33 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [],
+    "lifecycleHooks": {
+        "onMount": "initialize",
+        "onUnmount": "cleanup"
+    },
+    "actions": {
+        "initialize": {
+            "actionType": "JSFunctionAsync",
+            "method": "initializePage",
+            "inputData": {},
+            "outputData": {
+                "headerTitle": "headerTitle"
+            },
+            "deps": "js/AwGatewayLocationService"
+        },
+        "cleanup": {
+            "actionType": "JSFunction",
+            "method": "cleanupPage",
+            "inputData": {},
+            "deps": "js/AwGatewayLocationService"
+        }
+    },
+    "data": {
+        "showsearchbox": {
+            "dbValue": true,
+            "type": "BOOLEAN",
+            "isRequired": "false",
+            "isEditable": "true"
+        }
+    }
+}

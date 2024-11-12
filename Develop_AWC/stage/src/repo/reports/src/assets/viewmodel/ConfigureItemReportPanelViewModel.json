@@ -1,0 +1,235 @@
+
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-command-panel-section.directive",
+        "js/aw-list.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-tree.directive",
+        "js/aw-label.directive"
+    ],
+
+    "data": {
+        "rootClassCommands": "rb0_rootClassCommands",
+        "rootClassSampleCommands": "rb0_rootClassSampleCommands",
+        "segmentCommands": "rb0_segmentCommands",
+        "layoutCommands": "rb0_layoutCommands",
+        "rootClass": [],
+        "rootClassSample": [],
+        "dataforSegmentTree": [ {}],
+        "recreateSegementsPanel": false,
+        "chart1LabelTxt":{
+            "displayName": "{{i18n.chart1Label}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValues": ["{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartPropName}}"],
+            "displayValues": ["{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartPropName}}"],
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1.ChartPropName}}"
+        },
+        "chart2LabelTxt":{
+            "displayName": "{{i18n.chart2Label}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValues": ["{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartPropName}}"],
+            "displayValues": ["{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartPropName}}"],
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2.ChartPropName}}"
+        },
+        "chart3LabelTxt":{
+            "displayName": "{{i18n.chart3Label}}",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "true",
+            "dbValues": ["{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartPropName}}"],
+            "displayValues": ["{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartPropName}}"],
+            "dispValue": "{{ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3.ChartPropName}}"
+        }
+    },
+
+    "dataProviders": {
+        "rootClassProvider":
+        {
+            "action": "getselectedClassObject",
+            "response": "{{data.rootClassObject}}",
+            "totalFound": "{{data.totalClsObj}}",
+            "selectionModelMode": "single",
+            "noResultsFound": "",
+            "commandsAnchor": "reportclass_cell_commands"
+        },
+        "rootClassSampleProvider":{
+            "action": "getselectedSampleObject",
+            "response": "{{data.rootClassSample}}",
+            "totalFound": "{{data.rootClassSample.length}}",
+            "selectionModelMode": "single",
+            "noResultsFound": "",
+            "commandsAnchor": "reportsample_cell_commands"
+        }
+    },
+
+    "actions": {
+        "updateDataTypeSelectList":{
+            "actionType": "dataProvider",
+            "method": "rootClassProvider"
+        },
+        "initSampleUpdate":{
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "updateSelectedSampleObjectList"
+                }
+            ]
+        },
+        "initSearchStateAndPanelDisplay":{
+            "actionType": "batchJob",
+            "steps": [ {
+                    "action": "initiateItemReportPanelDisplay"
+                }, {
+                    "action": "initializeRepSearchState"
+                }
+            ]
+        },
+        "initializeRepSearchState":{
+            "actionType": "JSFunction",
+            "deps": "js/configureReportService",
+            "method": "initializeRepSearchState",
+            "inputData": {
+                "searchState": "{{subPanelContext.searchState}}"
+            },
+            "outputData": {
+                "searchState": ""
+            }
+        },
+        "updateSelectedSampleObjectList":{
+            "actionType": "dataProvider",
+            "method": "rootClassSampleProvider"
+        },
+        "initiateItemReportPanelDisplay":{
+            "actionType": "JSFunction",
+            "method": "setupConfigureItemRepPanel",
+            "inputData": {
+                "data": "{{data}}",
+                "ctx": "{{ctx}}",
+                "subPnlCtx": "{{subPanelContext}}",
+                "i18nData":"{{i18n}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "updateConfigItemProps":{
+            "actionType": "JSFunction",
+            "method": "updateConfigItemProps",
+            "inputData": {
+                "data": "{{data}}",
+                "ctx": "{{ctx}}"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "getselectedClassObject":{
+            "actionType": "JSFunction",
+            "method": "getselectedClassObject",
+            "inputData": {
+                "data": "{{subPanelContext.reportsContext}}"
+            },
+            "outputData":{
+                "rootClassObject": "results",
+                "totalFound": "totalFound"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "getselectedSampleObject":{
+            "actionType": "JSFunction",
+            "method": "getselectedSampleObject",
+            "inputData": {
+                "repContext": "{{subPanelContext.reportsContext}}",
+                "i18nData":"{{i18n}}"
+            },
+            "outputData":{
+                "rootClassSample": "results",
+                "totalFound": "totalFound",
+                "subPanelContext.reportsContext.segmentTree": "tree"
+            },
+            "deps": "js/configureItemReportService"
+        },
+        "updateActiveView":{
+            "actionType": "JSFunction",
+            "method": "resetActiveView",
+            "inputData": {
+                "stateName": "activeState",
+                "destPanelId": "ConfigureItemReportPanel"
+            },
+            "outputData": {
+                "activeState": "activeState"
+            },
+            "deps": "js/addObjectUtils"
+        }
+    },
+    "lifecycleHooks": {
+        "onUpdate": [ {
+            "action": "updateDataTypeSelectList",
+            "observers": [ "props.subPanelContext.reportsContext.rootClassObject" ]
+        }, {
+            "action": "initSampleUpdate",
+            "observers": [ "props.subPanelContext.reportsContext.rootClassSampleObject" ]
+        } ],
+        "onMount": "initSearchStateAndPanelDisplay"
+    },
+    "onEvent":
+    [
+        {
+            "eventId": "awPanel.navigate",
+            "action": "updateConfigItemProps",
+            "criteria": {"destPanelId": "ConfigureItemReportPanel"}
+        }
+    ],
+
+    "conditions":
+    {
+        "canShowChart1LabelTxt":{
+            "expression": "ctx.ReportsContext.reportParameters.ReportDefProps && ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart1"
+        },
+        "canShowChart2LabelTxt":{
+            "expression": "ctx.ReportsContext.reportParameters.ReportDefProps && ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart2"
+        },
+        "canShowChart3LabelTxt":{
+            "expression": "ctx.ReportsContext.reportParameters.ReportDefProps && ctx.ReportsContext.reportParameters.ReportDefProps.ReportChart3"
+        }
+    },
+    "ctx": {
+        "state": {
+            "type": "object"
+        },
+        "ReportsContext": {
+            "type": "object"
+        }
+    },
+
+    "messages": {
+        "showSampleObjectMissingMessage": {
+            "messageType": "INFO",
+            "messageText": "{{i18n.showSampleObjectMissingMessageTxt}}",
+            "messageTextParams": [
+                "{{ctx.state.params.title}}"
+            ]
+        }
+    },
+
+    "i18n": {
+        "showSampleObjectMissingMessageTxt":["ReportChartMessages"],
+        "selectSample":["ReportChartMessages"],
+        "parentSource":["ReportChartMessages"],
+        "chart1Label": ["ReportChartMessages"],
+        "chart2Label": ["ReportChartMessages"],
+        "chart3Label": ["ReportChartMessages"],
+        "layout": ["ReportChartMessages"],
+        "segments":["ReportChartMessages"],
+        "forClass":["ReportChartMessages"],
+        "sampleSource":["ReportChartMessages"],
+        "removeClassConfirm":["ReportChartMessages"],
+        "CancelButtonLabel":["FileVersionsMessages"],
+        "ConfirmButtonLabel":["FileVersionsMessages"],
+        "Save":["SearchMessages"],
+        "segment":["ReportChartMessages"],
+        "structure": ["ReportChartMessages"]
+    }
+}
+

@@ -1,0 +1,18 @@
+{
+  "typeProperties": {
+    "Dataset": {
+      "additionalProperties": [
+        {
+          "name": "fnd0IsCheckOutForSign"
+        }
+      ]
+    },
+    "DocumentRevision": {
+      "additionalProperties": [
+        {
+          "name": "fnd0SimplifiedDocumentDS"
+        }
+      ]
+    }
+  }
+}

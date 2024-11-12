@@ -1,0 +1,6 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <circle cx="5" cy="3" r="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <circle cx="14" cy="3" r="1" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M16.5,0H2.5A2.5,2.5,0,0,0,0,2.5v13A2.5,2.5,0,0,0,2.5,18H9V17H7V14H9V13H7V10h7V9H13V6h5V8h1V2.5A2.5,2.5,0,0,0,16.5,0ZM1,6H6V9H1V6ZM6,17H2.5A1.5,1.5,0,0,1,1,15.5V14H6v3Zm0-4H1V10H6v3Zm6-4H7V6h5V9ZM1,5V2.5A1.5,1.5,0,0,1,2.5,1h14A1.5,1.5,0,0,1,18,2.5V5H1Z" class="aw-theme-iconOutline" fill="#464646"/>
+  <path d="M23.743,12.688l-6-3.339a0.5,0.5,0,0,0-.491,0l-6,3.429a0.5,0.5,0,0,0-.252.434v6.857a0.5,0.5,0,0,0,.252.434l6,3.429a0.5,0.5,0,0,0,.5,0l6-3.429A0.5,0.5,0,0,0,24,20.071V13.125A0.5,0.5,0,0,0,23.743,12.688ZM17.5,10.36l4.983,2.773L17.5,16.018l-4.98-2.809ZM12,14.066l5,2.82v5.753l-5-2.857V14.066Zm6,8.573V16.882l5-2.891v5.79Z" class="aw-theme-iconOutline" fill="#464646"/>
+</svg>

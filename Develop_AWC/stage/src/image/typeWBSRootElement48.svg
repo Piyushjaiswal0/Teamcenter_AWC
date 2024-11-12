@@ -1,0 +1,36 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="1.75" y1="5.25" x2="30.25" y2="33.75" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.305" stop-color="#fbfbfb"/>
+      <stop offset="0.584" stop-color="#f0f0f0"/>
+      <stop offset="0.852" stop-color="#dedede"/>
+      <stop offset="1" stop-color="#d0d0d0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="23.5" y1="23.5" x2="47.5" y2="47.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="24.612" y1="36.612" x2="30.612" y2="30.612" gradientTransform="translate(7.888 -5.112)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8c8c8"/>
+      <stop offset="0.175" stop-color="#c3c3c3"/>
+      <stop offset="0.457" stop-color="#b5b5b5"/>
+      <stop offset="0.809" stop-color="#9f9f9f"/>
+      <stop offset="1" stop-color="#919191"/>
+    </linearGradient>
+  <polygon points="6.5 0.5 6.5 3.5 3.5 3.5 3.5 6.5 0.5 6.5 0.5 40.5 23.5 40.5 23.5 23.5 33.5 23.5 33.5 0.5 6.5 0.5" fill="url(#linear-gradient)"/>
+  <rect x="3.5" y="9.5" width="8" height="8" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="10 11 7 16 5 14" fill="none" stroke="#919191" stroke-linejoin="round"/>
+  <rect x="3.5" y="19.499" width="8" height="8" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="10 20.999 7 25.999 5 23.999" fill="none" stroke="#919191" stroke-linejoin="round"/>
+  <rect x="3.5" y="29.5" width="8" height="8" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+    <polyline points="10 31 7 36 5 34" fill="none" stroke="#919191" stroke-linejoin="round"/>
+  <line x1="14" y1="12.5" x2="25" y2="12.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="14" y1="23.5" x2="23" y2="23.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <line x1="14" y1="34.5" x2="23" y2="34.5" fill="none" stroke="#919191" stroke-miterlimit="10"/>
+  <rect x="23.5" y="23.5" width="24" height="24" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient-2)"/>
+  <line x1="35.5" y1="31.5" x2="35.5" y2="35.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <polyline points="41.5 39.5 41.5 35.5 29.5 35.5 29.5 39.5" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="38.5" y="39.5" width="6" height="6" transform="translate(84 1) rotate(90)" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="26.5" y="39.5" width="6" height="6" transform="translate(72 13) rotate(90)" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <rect x="32.5" y="25.5" width="6" height="6" transform="translate(64 -7) rotate(90)" stroke="#919191" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+  <polyline points="3.5 6.5 27.5 6.5 27.5 23.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="30.5 23.5 30.5 3.5 6.5 3.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <polyline points="33.5 23.5 33.5 0.5 6.5 0.5 6.5 3.5 3.5 3.5 3.5 6.5 0.5 6.5 0.5 40.5 23.5 40.5" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

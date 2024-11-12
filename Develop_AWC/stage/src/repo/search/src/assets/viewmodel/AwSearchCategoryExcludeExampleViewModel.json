@@ -1,0 +1,163 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "searchState": {
+            "initialValues": {
+                "categories": [
+                    {
+                        "internalName": "Categorization.category",
+                        "displayName": "Category",
+                        "defaultFilterValueDisplayCount": 5,
+                        "index": 0,
+                        "showExpand": true,
+                        "currentCategory": "Categorization.category",
+                        "showEnabled": true,
+                        "type": "StringFilter",
+                        "filterCount": 3,
+                        "filterValues": [
+                            {
+                                "categoryName": "Categorization.category",
+                                "internalName": "Category Two",
+                                "dispValue": "Category Two",
+                                "name": "Category Two",
+                                "count": 1,
+                                "selected": {
+                                    "name": "selected",
+                                    "value": false,
+                                    "checked": false,
+                                    "touched": "false",
+                                    "label": "Category Two",
+                                    "displayName": "Category Two",
+                                    "typex": "BOOLEAN",
+                                    "required": false,
+                                    "disabled": false
+                                },
+                                "showCount": 1,
+                                "showSuffixIcon": false
+                            },
+                            {
+                                "categoryName": "Categorization.category",
+                                "internalName": "Files",
+                                "name": "Files",
+                                "count": 1,
+                                "selected": {
+                                    "name": "selected",
+                                    "value": false,
+                                    "checked": false,
+                                    "touched": "false",
+                                    "label": "Files",
+                                    "displayName": "Files",
+                                    "typex": "BOOLEAN",
+                                    "required": false,
+                                    "disabled": false
+                                },
+                                "showCount": 1,
+                                "showSuffixIcon": false
+                            },
+                            {
+                                "categoryName": "Categorization.category",
+                                "internalName": "TableProperty",
+                                "name": "TableProperty",
+                                "count": 1,
+                                "selected": {
+                                    "name": "selected",
+                                    "value": false,
+                                    "checked": false,
+                                    "touched": "false",
+                                    "label": "TableProperty",
+                                    "displayName": "TableProperty",
+                                    "typex": "BOOLEAN",
+                                    "required": false,
+                                    "disabled": false
+                                },
+                                "showCount": 1,
+                                "showSuffixIcon": false
+                            }
+                        ],
+                        "expand": true,
+                        "filterLimitForCategory": 50,
+
+                        "isSelected": false,
+                        "isPopulated": true,
+                        "isExcludeCategorySupported": true
+                    },
+                    {
+                        "internalName": "WorkspaceObject.object_type",
+                        "displayName": "Type",
+                        "defaultFilterValueDisplayCount": 5,
+                        "index": 1,
+                        "showExpand": true,
+                        "currentCategory": "",
+                        "showEnabled": false,
+                        "type": "StringFilter",
+                        "filterCount": 2,
+                        "filterValues": [
+                            {
+                                "categoryName": "WorkspaceObject.object_type",
+                                "internalName": "ItemRevision",
+                                "name": "Item Revision",
+                                "count": 63,
+                                "selected": {
+                                    "name": "selected",
+                                    "value": false,
+                                    "checked": false,
+                                    "touched": "false",
+                                    "label": "Item Revision",
+                                    "displayName": "Item Revision",
+                                    "typex": "BOOLEAN",
+                                    "required": false,
+                                    "disabled": false
+                                },
+                                "showCount": 63,
+                                "showSuffixIcon": false
+                            },
+                            {
+                                "categoryName": "WorkspaceObject.object_type",
+                                "internalName": "Awb0SavedBookmark",
+                                "name": "Saved Working Context",
+                                "count": 8,
+                                "selected": {
+                                    "name": "selected",
+                                    "value": false,
+                                    "checked": false,
+                                    "touched": "false",
+                                    "label": "Saved Working Context",
+                                    "displayName": "Saved Working Context",
+                                    "typex": "BOOLEAN",
+                                    "required": false,
+                                    "disabled": false
+                                },
+                                "showCount": 8,
+                                "showSuffixIcon": false
+                            }
+                        ],
+                        "expand": true,
+                        "filterLimitForCategory": 50,
+                        "isSelected": false,
+                        "isPopulated": true,
+                        "isExcludeCategorySupported": true
+                    }
+                ],
+                "allCategoriesVisible": "undefined",
+                "categoriesToShowCount" : 10
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        },
+        "sideNavRightData": {
+            "slide": "PUSH",
+            "direction": "LEFT_TO_RIGHT",
+            "animation": false,
+            "width": "STANDARD",
+            "height": "FULL"
+        }
+    }
+}

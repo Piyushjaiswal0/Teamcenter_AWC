@@ -1,0 +1,11 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "iconId": "AW_In_App_icon_32px.svg"
+    },
+    "actions": {},
+    "onEvent": [],
+    "i18n": {},
+    "messages": {},
+    "conditions": {}
+}

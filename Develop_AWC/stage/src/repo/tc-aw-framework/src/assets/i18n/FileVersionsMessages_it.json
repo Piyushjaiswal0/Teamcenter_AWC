@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "Versioni",
+    "FileVersionsPanelHeader": "Versioni del set di dati",
+    "DownloadVersionButton": "Scarica versione",
+    "RestoreVersionButton": "Ripristina versione",
+    "RestoreFailureMessage": "Impossibile ripristinare la precedente versione del set di dati.",
+    "UnsavedEditWarning": "{0} presenta modifiche non salvate. Ripristinando una versione precedente del set di dati, le modifiche in corso verranno rimosse.",
+    "ConfirmButtonLabel": "Continua",
+    "CancelButtonLabel": "Annulla"
+}

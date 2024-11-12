@@ -1,0 +1,69 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="-0.957" y1="2.542" x2="31.957" y2="35.457" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient" x1="9.843" y1="15.843" x2="21.157" y2="27.156" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8cc3d2"/>
+      <stop offset="0.079" stop-color="#93c7d5"/>
+      <stop offset="0.458" stop-color="#b3d8e1"/>
+      <stop offset="0.779" stop-color="#c6e2e8"/>
+      <stop offset="1" stop-color="#cde6eb"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="10.073" y1="18.527" x2="19.927" y2="28.381" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="34.5" y1="35.499" x2="34.5" y2="26.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0.01" stop-color="#999"/>
+      <stop offset="0.062" stop-color="#a2a2a2"/>
+      <stop offset="0.221" stop-color="#b9b9b9"/>
+      <stop offset="0.37" stop-color="#c7c7c7"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="1" stop-color="#f2f2f2"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad-2" x1="25" y1="32" x2="44" y2="51" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="front_-45" data-name="front -45" x1="37.823" y1="30.775" x2="39.61" y2="32.562" gradientTransform="translate(33.733 -18.101) rotate(45.001)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="0.5" stop-color="#ccc"/>
+      <stop offset="0.63" stop-color="#c7c7c7"/>
+      <stop offset="0.779" stop-color="#b9b9b9"/>
+      <stop offset="0.938" stop-color="#a2a2a2"/>
+      <stop offset="0.99" stop-color="#999"/>
+    </linearGradient>
+    <linearGradient id="front_-45-2" x1="37.211" y1="24.858" x2="45.567" y2="33.214" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#front_-45"/>
+    <linearGradient id="front_-45-3" x1="24.976" y1="25.08" x2="36.744" y2="36.847" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#front_-45"/>
+    <linearGradient id="front_-45-4" x1="34.091" y1="33.388" x2="36.982" y2="36.279" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" xlink:href="#front_-45"/>
+  <line x1="4" y1="37.999" x2="8" y2="37.999" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="2"/>
+  <rect x="0.5" y="0.499" width="30" height="37" rx="1" ry="1" stroke="#464646" stroke-miterlimit="10" stroke-width="0.966" fill="url(#paper_gradient)"/>
+  <line x1="1" y1="6.499" x2="30" y2="6.499" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <line x1="22" y1="4.499" x2="23" y2="4.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="20" y1="4.499" x2="21" y2="4.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="18" y1="4.499" x2="19" y2="4.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="22" y1="2.499" x2="23" y2="2.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="20" y1="2.499" x2="21" y2="2.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="18" y1="2.499" x2="19" y2="2.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <line x1="4" y1="2.499" x2="10" y2="2.499" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <circle cx="15.5" cy="21.499" r="8" fill="url(#linear-gradient)"/>
+  <path d="M18.521,20.966c-3.023,0-3.023,2.133-6.046,2.133-2.6,0-2.968-1.583-4.954-2.02-.007.14-.021.278-.021.42a8,8,0,0,0,15.861,1.458C21.477,22.484,21.074,20.966,18.521,20.966Z" fill="url(#Dark_Blue_Grad)"/>
+  <path d="M23.361,22.957c-1.884-.473-2.287-1.991-4.84-1.991-3.023,0-3.023,2.133-6.046,2.133-2.6,0-2.968-1.583-4.954-2.02" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <circle cx="15.5" cy="21.499" r="11" fill="none" stroke="#6e6e6e" stroke-miterlimit="10"/>
+  <circle cx="15.5" cy="21.499" r="8" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="21.5" y="26.5" width="26" height="9" fill="url(#linear-gradient-2)"/>
+  <rect x="24.5" y="2.499" width="4" height="2" fill="none" stroke="#a0a0a0" stroke-miterlimit="10"/>
+  <polygon points="39.201 26.848 40.394 25.654 41.134 26.411 39.94 27.604 39.201 26.848" fill="#709b97" opacity="0.8"/>
+  <rect x="21.5" y="35.5" width="26" height="12" fill="url(#Dark_Blue_Grad-2)"/>
+  <polyline points="36.5 41 36.5 39.5 32.5 39.5 32.5 41" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+  <rect x="21.5" y="26.5" width="26" height="21" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+  <rect x="37.216" y="30.404" width="3.001" height="2.528" transform="translate(-11.053 36.653) rotate(-45.001)" stroke="#464646" fill="url(#front_-45)"/>
+  <path d="M41.19,26.45l-.8-.8v-.8L39.2,23.665a.563.563,0,0,0-.8,0l-1.194,1.194a.563.563,0,0,0,0,.8l1.194,1.194h.8l.8.8L38.8,29.633l1.989,1.989s2.3-1.687,3.183-.8,0,3.183,0,3.183l.4.4c2.278-3.265.4-5.172.4-5.172L41.986,26.45A.563.563,0,0,0,41.19,26.45Z" stroke="#464646" stroke-linejoin="round" fill="url(#front_-45-2)"/>
+  <path d="M27.309,31.222a3.77,3.77,0,0,0,1.185-.207c0,.005,0,.011,0,.016L32.863,35.5H38.09l-7.1-7.1-.011,0A3.76,3.76,0,0,0,27.309,23.6a3.812,3.812,0,0,0-.986.13l2.143,2.143-.544,2.149-2.149.544L23.63,26.427a3.81,3.81,0,0,0,3.68,4.8Z" stroke="#464646" stroke-linejoin="round" fill="url(#front_-45-3)"/>
+  <path d="M37.761,35.5l.846-1.184a.538.538,0,0,0-.057-.693l-1.787-1.787a.538.538,0,0,0-.693-.057l-1.251.894a.537.537,0,0,0-.068.057L31.979,35.5Z" stroke="#464646" fill="url(#front_-45-4)"/>
+  <line x1="22" y1="35.5" x2="47" y2="35.5" fill="none" stroke="#147391" stroke-miterlimit="10"/>
+</svg>

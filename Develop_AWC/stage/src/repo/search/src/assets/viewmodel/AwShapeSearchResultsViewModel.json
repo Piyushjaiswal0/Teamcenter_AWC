@@ -1,0 +1,113 @@
+{
+    "schemaVersion" : "1.0.0",
+    "lifecycleHooks": {
+        "onMount": "initializeShapeSearch",
+        "onUpdate": {
+            "action": "openCloseFilterPanelAction",
+            "observers": [
+                "viewModel.searchState.categories"
+            ]
+        }
+    },
+    "data":{
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "search",
+                "vm" : "AwShapeSearchBreadcrumb",
+                "noUpdate": true,
+                "popuplist": "/html/defaultbreadcrumblist.html" ,
+                "overflowIndex": 0
+            },
+            "clientScopeURI": "Awp0SearchResults",
+            "nameToken": "com.siemens.splm.client.search:ShapeSearchResultsSubLocation",
+            "context": {
+                "search": {
+                    "provider": "SS1ShapeSearchDataProvider",
+                    "chartTitle": {
+                        "source": "/i18n/SearchMessages",
+                        "key": "SearchResultsChartTitle"
+                    },
+                    "criteria": {
+                        "forceThreshold": "false",
+                        "searchFromLocation": "global",
+                        "dcpSortByDataProvider": "true"
+                    },
+                    "showLoadingText": true,
+                    "showChartColorBars": true,
+                    "selectFirstObjectPreference": "AWC_select_firstobject_inSearchLocation",
+                    "showNoCriteriaMessage": true,
+                    "skipFiltersForClearAll": [ "SS1partShapeFilter", "SS1shapeBeginFilter", "SS1shapeEndFilter" ]
+                }
+            },
+            "viewBase": "AwShapeSearchResults"
+        },
+        "searchState": {
+            "initialValues": {
+                "pwaSelection": []
+            },
+            "meta": {
+                "categories": [ {
+                    "filterValues": [ {
+                        "selected": {
+                            "field": "true",
+                            "type": "BOOLEAN"
+                        }
+                    } ]
+                } ]
+            }
+        }
+
+    },
+    "actions":
+    {
+        "activateShapesPanelAction": {
+            "actionType": "activateCommandPanel",
+            "inputData": {
+                "commandId": "SS1ShapeSearchInShapeLocation",
+                "location": "aw_navigation"
+            }
+        },
+        "initializeShapeSearch":{
+            "actionType": "batchJob",
+            "steps": [
+                {
+                    "action": "validateCriteriaAndInitiateSearch"
+                },
+                {
+                    "action": "activateSearchFilterAction",
+                    "condition": "data.autoOpenFilterPanel"
+                },
+                {
+                    "action": "activateShapesPanelAction",
+                    "condition": "!data.autoOpenFilterPanel"
+                }
+            ]
+        },
+        "validateCriteriaAndInitiateSearch":{
+            "actionType": "JSFunction",
+            "method": "validateCriteriaAndInitiateSearch",
+            "inputData": {
+            },
+            "outputData": {
+                "autoOpenFilterPanel": ""
+            },
+            "deps": "js/Awp0ShapeSearchService"
+        },
+        "activateSearchFilterAction": {
+            "actionType": "activateCommandPanel",
+            "inputData": {
+                "commandId": "Awp0SearchFilter",
+                "location": "aw_navigation"
+            }
+        },
+        "openCloseFilterPanelAction": {
+            "actionType": "JSFunction",
+            "method": "openCloseFilterPanelAction",
+            "inputData": {
+                "searchState": "{{data.searchState}}"
+            },
+            "deps": "js/awSearchLocationFilterPanelService"
+        }
+    },
+    "conditions": {}
+}

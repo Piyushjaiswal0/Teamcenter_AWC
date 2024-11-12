@@ -1,0 +1,15 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<path class="aw-theme-iconOutline" fill="#464646" d="M17.5,24c-3.6,0-6.5-2.9-6.5-6.5s2.9-6.5,6.5-6.5s6.5,2.9,6.5,6.5S21.1,24,17.5,24z M17.5,12
+	c-3,0-5.5,2.5-5.5,5.5s2.5,5.5,5.5,5.5s5.5-2.5,5.5-5.5S20.5,12,17.5,12z"/>
+<polygon class="aw-theme-iconOutline" fill="#464646" points="21,17 18,17 18,14 17,14 17,17 14,17 14,18 17,18 17,21 18,21 18,18 21,18 "/>
+<g>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M7.637,2.232l1.766,3.709h-3.72L7.637,2.232 M7.682,0L4.026,6.941h6.96L7.682,0L7.682,0z"/>
+</g>
+<g>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M3.611,9.978l1.766,3.709h-3.72L3.611,9.978 M3.656,7.746L0,14.687h6.96L3.656,7.746L3.656,7.746z"
+		/>
+</g>
+<path class="aw-theme-iconOutline" fill="#464646" d="M10.563,13.589H9.446l1.787-3.392l0.693,1.456c0.262-0.284,0.537-0.556,0.833-0.804l-1.476-3.102
+	l-3.656,6.941h2.463C10.224,14.309,10.38,13.942,10.563,13.589z"/>
+</svg>

@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\"이(가) 개체 집합 \"{1}\"에 대해 유효한 파일이 아닙니다. 새로 생성된 개체는 개체 집합에 나타나지 않습니다.",
+    "addedObjectIsNotUnique": "\"ID = {1}\"이(가) 고유하지 않으므로 개체 \"{1}-{0}\"이(가) 저장되지 않습니다.",
+    "fileSizeException": "\"{0}\"이(가) 추가되지 않았습니다. 파일 크기가 최대 한계를 초과했습니다.",
+    "userNotAuthorized": "\"{0}\"이(가) 추가되지 않았습니다. 현재 사용자가 인증되지 않았습니다.",
+    "addACopy": "복사본 추가",
+    "cancel": "취소",
+    "sourceObject": "소스",
+    "chooseFromSystem": "시스템에서 파일 선택",
+    "chooseFromDrive": "드라이브에서 선택",
+    "fileNameExceedsLengthLimit": "\"{0}\"이(가) 추가되지 않았습니다. 파일 이름 길이가 최대 한계를 초과했습니다."
+}

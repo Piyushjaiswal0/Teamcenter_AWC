@@ -1,0 +1,18 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	
+		<rect x="33.287" y="5.502" transform="matrix(0.7071 -0.7071 0.7071 0.7071 6.515 30.8159)" fill="#969696" width="14.337" height="4.084"/>
+	
+		<rect x="-0.651" y="39.44" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -27.4282 16.7561)" fill="#969696" width="14.327" height="4.094"/>
+</g>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="4.1436" y1="24.5376" x2="42.8564" y2="24.5376">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.2214" style="stop-color:#F8F8F8"/>
+	<stop  offset="0.5415" style="stop-color:#E5E5E5"/>
+	<stop  offset="0.92" style="stop-color:#C6C6C6"/>
+	<stop  offset="1" style="stop-color:#BEBEBE"/>
+</linearGradient>
+<polygon fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" points="23.5,43.894 4.144,24.538 23.5,5.181 
+	42.856,24.538 "/>
+</svg>

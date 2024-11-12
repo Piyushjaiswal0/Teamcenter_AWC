@@ -1,0 +1,163 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":[],
+
+    "actions":
+    {
+
+        "callDataProvider":
+        {
+            "actionType": "dataProvider",
+            "method": "getAttachedLicense"
+        },
+
+        "getLicense":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-Security-2017-12-AwLicensing",
+            "method": "getLicensesWithTypes",
+            "inputData":
+            {
+                "licenseInputs":
+                {
+                    "selectedObjects": "{{function:getAdaptedObjects}}",
+                    "paginationInfo":
+                    {
+                        "startIndex": "{{data.dataProviders.availableLicenses.startIndex}}",
+                        "maxToReturn": 50
+                    },
+                    "filterInfo": {
+                      "licenseId" : "{{data.filterBox.dbValue}}",
+                      "licenseType": "{{data.licenseType.dbValue.internalValue}}"
+                    },
+                    "isAceContext": false,
+                    "isAssigned": true
+                }
+            },
+
+            "outputData":
+            {
+                "searchResults": "licensesOutput.commonAssignedLicenseList",
+                "totalFound": "totalFound",
+                "endIndex": "endIndex",
+                "licenses.searchResults": "licensesOutput.commonAssignedLicenseList",
+                "licenses.totalFound": "totalFound",
+                "licenses.endIndex": "endIndex",
+                "licenses.applyToRawList": "licenseOptions.ApplyTo",
+                "licenses.levelRawList": "licenseOptions.Level",
+                "licenses.entireBOM": "licenseOptions.EntireBOM"
+            },
+
+            "events":
+            {
+                "success":
+                [
+                    {
+                        "name": "awSecurity.updateSharedData",
+
+                        "eventData":
+                        {
+                            "refresh" : true
+                        }
+
+                    }
+                ]
+            },
+
+            "deps": "js/licenseMgmtService",
+
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "ITAR_License",
+                        "properties":
+                        [
+                            {
+                                "name": "ead_paragraph"
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        },
+
+        "updateLicenses":
+        {
+            "actionType": "JSFunction",
+            "method": "updateLicenses",
+            "inputData":
+            {
+                "data" : "{{data}}",
+                "adaptedObjects": "{{subPanelContext.license.adaptedObjects}}"
+            },
+            "deps": "js/licenseMgmtService"
+        },
+
+        "updateSharedData": {
+            "actionType": "JSFunction",
+            "method": "updateSharedDataState",
+            "inputData": {
+                "state": "{{subPanelContext.sharedData}}",
+                "newValue": {
+                    "activeView": "Awp0AttachLicensesSub",
+                    "licenses": "{{data.licenses}}"
+                }
+            },
+            "deps": "js/licenseMgmtService"
+        }
+
+    },
+
+    "functions": {
+        "getAdaptedObjects": {
+            "functionName": "getAdaptedObjects",
+            "parameters": [
+                "{{ctx.mselected}}"
+            ]
+        }
+    },
+
+    "onEvent":
+    [
+        {
+            "eventId": "getAttachedLicense.modelObjectsUpdated",
+            "action": "updateLicenses",
+            "cacheEventData": true
+        },
+        {
+            "eventId": "awSecurity.updateSharedData",
+            "action": "updateSharedData",
+            "cacheEventData": true
+        }
+    ],
+    "lifecycleHooks": {
+        "onMount": "callDataProvider"
+    },
+    "data":
+    {
+        "awp0_attachLicensesCommandAnchor" : "awp0_attachLicensesCommands",
+        "licenses":""
+    },
+
+    "dataProviders":
+    {
+        "getAttachedLicense":
+        {
+            "action": "getLicense",
+            "selectionModelMode": "single",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.searchResults.length}}"
+        }
+    },
+
+    "i18n":
+    {
+        "Attached": ["SecurityMessages"],
+        "AttachLicense": ["SecurityMessages"],
+        "DetachLicense": ["SecurityMessages"],
+        "Licenses": ["SecurityMessages"]
+    }
+}

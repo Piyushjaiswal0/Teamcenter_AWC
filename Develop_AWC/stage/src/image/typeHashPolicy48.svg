@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="linear-gradient" x1="1.75" y1="45.75" x2="40.25" y2="7.25" gradientTransform="matrix(1, 0, 0, -1, 0, 48)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.232" stop-color="#fafafa"/>
+      <stop offset="0.496" stop-color="#ededed"/>
+      <stop offset="0.775" stop-color="#d6d6d6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="22.124" y1="18.268" x2="43.877" y2="40.022" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+  <rect x="3.5" y="0.5" width="35" height="42" stroke="#464646" stroke-miterlimit="10" fill="url(#linear-gradient)"/>
+  <line x1="9" y1="7.5" x2="33" y2="7.5" fill="none" stroke="#5a5a5a"/>
+      <path d="M46.931,21.892a26.672,26.672,0,0,1-13.613-4.164l-.325-.228-.325.228a26.672,26.672,0,0,1-13.613,4.164H18.5V27.76C18.5,42.49,31.826,47.5,33,47.5s14.5-5,14.5-19.74V21.892Z" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" fill="url(#Dark_Blue_Grad)"/>
+  <line x1="9" y1="12.5" x2="33" y2="12.5" fill="none" stroke="#5a5a5a"/>
+  <line x1="9" y1="17.5" x2="26" y2="17.5" fill="none" stroke="#5a5a5a"/>
+    <path d="M33.42,40.091l.691-2.591H30.22l-.9,3.363-2.9-.771.691-2.591H24.5v-3h3.414l1.066-4H26.5v-3h3.28l.9-3.368,2.9.773-.692,2.6H36.78l.9-3.368,2.9.773-.692,2.6H42.5v3H39.087l-1.066,4H40.5v3H37.22l-.9,3.363ZM34.914,34.5l1.066-4H32.086l-1.066,4Z" fill="#fff"/>
+    <path d="M38.032,24.744l1.936.516L39.237,28H42v2H38.7L37.37,35H40v2H36.836l-.868,3.252-1.936-.515L34.763,37H29.836l-.868,3.252-1.936-.515L27.763,37H25V35h3.3l1.333-5H27V28h3.164l.868-3.256,1.936.516L32.237,28h4.927l.868-3.256M30.368,35H35.3l1.333-5H31.7l-1.333,5m6.955-11.48-.258.966L36.4,27H33.539l.4-1.483.258-.966-.967-.257-1.936-.516-.966-.257-.258.966L29.4,27H26v4h2.33l-.8,3H24v4h2.461l-.395,1.479-.258.967.967.257,1.936.515.965.257.258-.965L30.6,38h2.857l-.395,1.479-.258.967.967.257,1.936.515.965.257.258-.965L37.6,38H41V34H38.672l.8-3H43V27H40.539l.4-1.483.258-.966-.967-.257-1.936-.516-.966-.257ZM32.47,31h2.86l-.8,3H31.67l.8-3Z" fill="#147391"/>
+</svg>

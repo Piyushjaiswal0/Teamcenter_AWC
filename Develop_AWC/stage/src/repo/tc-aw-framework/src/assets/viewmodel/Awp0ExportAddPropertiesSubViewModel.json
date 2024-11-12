@@ -1,0 +1,92 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports": [
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-i18n.directive",
+        "js/aw-checkbox.directive",
+        "js/aw-list.directive"
+    ],
+
+    "actions": {
+        "reveal": {
+            "actionType": "JSFunction",
+            "method": "setColumns",
+            "outputData": {
+                "allColumns": "result.allColumns"
+            },
+            "deps": "js/exportToFile"
+        },
+        "addNewPropertiesAsColumn":{
+            "actionType": "JSFunction",
+            "method": "addColumns",
+            "deps": "js/exportToFile"
+        },
+        "updateAllColumnsAfterColumnsCheckedOrUnchecked":{
+            "actionType": "JSFunction",
+            "method": "updateAllColumns",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "allColumns": "result.allColumns"
+            },
+            "deps": "js/exportToFile"
+        },
+        "updateColumnList": {
+            "actionType": "JSFunction",
+            "method": "updateColumnList",
+            "inputData": {
+                "data": "{{data}}"
+            },
+            "outputData": {
+                "exportColumns" : "result.exportColumns"
+            },
+            "events": {
+                "success": [ {
+                    "name": "exportExcel.refreshColumnList"
+                } ]
+            },
+            "deps": "js/exportToFile"
+        }
+    },
+
+    "data": {
+        "allColumns":"",
+        "itemOptions_listWithCheckbox": {
+            "applySelection": false
+        }
+    },
+
+    "dataProviders": {},
+
+    "onEvent": [
+        {
+            "eventId": "awPanel.reveal",
+            "action": "reveal"
+        },
+        {
+            "eventId": "exportExcel.updatedColumnList",
+            "action": "updateColumnList"
+        }
+    ],
+
+    "conditions": {
+
+    },
+
+    "i18n": {
+        "Add": [
+            "Awp0ExportToExcelMessages"
+        ]
+    },
+
+    "lifecycleHooks": {},
+    "props": {
+        "item": {
+            "type": "object"
+        }
+    }
+}

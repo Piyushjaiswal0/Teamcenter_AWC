@@ -1,0 +1,10 @@
+{
+    "VersionsSectionHeader": "Verze",
+    "FileVersionsPanelHeader": "Verze datasetu",
+    "DownloadVersionButton": "Stáhnout verzi",
+    "RestoreVersionButton": "Obnovit verzi",
+    "RestoreFailureMessage": "Nepodařilo se obnovit předchozí verzi datasetu.",
+    "UnsavedEditWarning": "{0} má neuložené změny. Obnovení předchozí verze datasetu odebere právě probíhající změny.",
+    "ConfirmButtonLabel": "Pokračovat",
+    "CancelButtonLabel": "Storno"
+}

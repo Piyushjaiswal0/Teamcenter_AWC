@@ -1,0 +1,12 @@
+{
+    "invalidObjectWarning": "\"{0}\" n'est pas un fichier valable pour l'ensemble d'objets \"{1}\". L'objet qui vient d'être créé n'apparaîtra pas dans l'ensemble d'objets.",
+    "addedObjectIsNotUnique": "L'objet \"{1}-{0}\" n'a pas été sauvegardé car \"ID = {1}\" n'est pas unique.",
+    "fileSizeException": "\"{0}\" n'a pas été ajouté. La taille du fichier dépasse la limite maxi.",
+    "userNotAuthorized": "\"{0}\" n'a pas été ajouté. L'utilisateur actuel n'est pas autorisé.",
+    "addACopy": "Ajouter une copie",
+    "cancel": "Annuler",
+    "sourceObject": "Source",
+    "chooseFromSystem": "Choisir le fichier dans le système",
+    "chooseFromDrive": "Choisir sur le disque",
+    "fileNameExceedsLengthLimit": "\"{0}\" n'a pas été ajouté. La longueur de nom du fichier dépasse la limite maxi."
+}

@@ -1,0 +1,68 @@
+/*
+   @<COPYRIGHT>@
+   ==================================================
+   Copyright 2016.
+   Siemens Product Lifecycle Management Software Inc.
+   All Rights Reserved.
+   ==================================================
+   @<COPYRIGHT>@
+*/
+
+/* follow */
+.aw-subscription-unReadCellTitle{
+    .sw-property-name{
+        font-weight: bold;
+    }
+    .sw-defaultCell-properties{
+        font-weight: bold;
+    }
+}
+
+.aw-notificationAlert-popupbody {
+    max-width: rem-calc(280);
+    padding: rem-calc(15);
+}
+
+.aw-notificationAlert-subjectLink{
+    overflow: hidden ;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: $base_font_size;
+    font-weight: 400;
+    width: rem-calc(278);
+    cursor: pointer;
+    border:none;
+}
+
+li.aw-notification-cellListItem{
+    padding-left: $padding_xsmall;
+    padding-top: rem-calc(6);
+    padding-bottom: rem-calc(6);
+}
+.aw-notificationAlert-appHeader{
+    font-size: $fontsize_large;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    word-break:keep-all;
+    border:none;
+}
+
+.aw-notificationAlert-cellHeaderLabel{
+    overflow: hidden ;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    width: rem-calc(278);
+    font-size: $fontsize_large;
+}
+
+.aw-notificationAlert-propertyCellLabel,
+.aw-notificationAlert-propertyCellValue{
+    font-size: $base_font_size;
+}
+
+.aw-notificationAlert-noNotificationMessageLabel{
+    font-size: $fontsize_large;
+}
+
+

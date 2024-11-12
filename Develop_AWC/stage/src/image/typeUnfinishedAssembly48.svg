@@ -1,0 +1,118 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="_3_Generic_-_Top_Blend_2" data-name="3 Generic - Top Blend 2" x1="21.75" y1="34.75" x2="29.25" y2="42.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="1" stop-color="#cdcdcd"/>
+    </linearGradient>
+    <linearGradient id="_3_Generic_-_Top_Blend_2-2" x1="31.75" y1="28.75" x2="39.25" y2="36.25" xlink:href="#_3_Generic_-_Top_Blend_2"/>
+    <linearGradient id="_3_Generic_-_Top_Blend_2-3" x1="21.75" y1="11.75" x2="29.25" y2="19.25" xlink:href="#_3_Generic_-_Top_Blend_2"/>
+    <linearGradient id="_3_Generic_-_Top_Blend_2-4" x1="11.75" y1="17.75" x2="19.25" y2="25.25" xlink:href="#_3_Generic_-_Top_Blend_2"/>
+    <linearGradient id="linear-gradient" x1="-4" y1="17.5" x2="23" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.2954" stop-color="#fbfbfb"/>
+      <stop offset="0.5832" stop-color="#f0eff0"/>
+      <stop offset="0.867" stop-color="#dddcdd"/>
+      <stop offset="1" stop-color="#d1d0d1"/>
+    </linearGradient>
+  </defs>
+  <polygon points="20.5 36 20.5 47 30.5 41 30.5 30 20.5 36" fill="url(#_3_Generic_-_Top_Blend_2)"/>
+  <polygon points="30.5 30 30.5 41 40.5 35 40.5 24 30.5 30" fill="url(#_3_Generic_-_Top_Blend_2-2)"/>
+  <polygon points="20.5 13 20.5 24 30.5 18 30.5 7 20.5 13" fill="url(#_3_Generic_-_Top_Blend_2-3)"/>
+  <polygon points="10.5 19 10.5 30 20.5 24 20.5 13 10.5 19" fill="url(#_3_Generic_-_Top_Blend_2-4)"/>
+  <g>
+    <line x1="30.5" y1="30" x2="30.5" y2="30" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="30.5" y1="31.8333" x2="30.5" y2="40.0833" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.8333"/>
+    <line x1="30.5" y1="41" x2="30.5" y2="41" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="20.5" y1="24" x2="20.5" y2="24" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="20.5" y1="22.1667" x2="20.5" y2="13.9167" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.8333"/>
+    <line x1="20.5" y1="13" x2="20.5" y2="13" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <polygon points="30.5 18 20.5 24 10.5 30 20.5 36 30.5 30 40.5 24 30.5 18" fill="#fff"/>
+  <polygon points="10.5 30 10.5 19 0.5 13 0.5 35 20.5 47 20.5 36 10.5 30" fill="url(#linear-gradient)"/>
+  <g>
+    <line x1="20.5" y1="36" x2="20.5" y2="36" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="20.5" y1="37.8333" x2="20.5" y2="46.0833" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.8333"/>
+    <line x1="20.5" y1="47" x2="20.5" y2="47" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="10.5" y1="41" x2="10.5" y2="41" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="10.5" y1="39" x2="10.5" y2="20" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 2"/>
+    <line x1="10.5" y1="19" x2="10.5" y2="19" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <polygon points="20.5 1 10.5 7 0.5 13 10.5 19 20.5 13 30.5 7 20.5 1" fill="#fff"/>
+  <g>
+    <line x1="20.5" y1="13" x2="20.5" y2="13" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="18.8333" y1="14" x2="11.3333" y2="18.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="10.5" y1="19" x2="10.5" y2="19" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="8.8333" y1="18" x2="1.3333" y2="13.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="0.5" y1="13" x2="0.5" y2="13" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="30.5" y1="30" x2="30.5" y2="30" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="28.8333" y1="31" x2="21.3333" y2="35.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="20.5" y1="36" x2="20.5" y2="36" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="20.5" y1="36" x2="20.5" y2="36" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="18.8381" y1="35.0029" x2="13.0216" y2="31.5129" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9381"/>
+    <line x1="12.1906" y1="31.0144" x2="12.1906" y2="31.0144" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="30.5" y1="7" x2="30.5" y2="7" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="28.8333" y1="8" x2="21.3333" y2="12.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="20.5" y1="13" x2="20.5" y2="13" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="18.8333" y1="12" x2="11.3333" y2="7.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="10.5" y1="7" x2="10.5" y2="7" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="40.5" y1="24" x2="40.5" y2="24" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="38.8333" y1="25" x2="31.3333" y2="29.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="30.5" y1="30" x2="30.5" y2="30" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="28.8333" y1="29" x2="21.3333" y2="24.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="20.5" y1="24" x2="20.5" y2="24" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="22.1667" y1="23" x2="29.6667" y2="18.5" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="30.5" y1="18" x2="30.5" y2="18" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="0.5" y1="13" x2="0.5" y2="13" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="0.5" y1="15" x2="0.5" y2="34" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 2"/>
+    <line x1="0.5" y1="35" x2="0.5" y2="35" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="2.1667" y1="36" x2="19.6667" y2="46.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="20.5" y1="47" x2="20.5" y2="47" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="22.1667" y1="46" x2="39.6667" y2="35.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="40.5" y1="35" x2="40.5" y2="35" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="40.5" y1="33.1667" x2="40.5" y2="24.9167" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.8333"/>
+    <line x1="40.5" y1="24" x2="40.5" y2="24" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="38.8333" y1="23" x2="31.3333" y2="18.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="30.5" y1="18" x2="30.5" y2="18" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="30.5" y1="16.1667" x2="30.5" y2="7.9167" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.8333"/>
+    <line x1="30.5" y1="7" x2="30.5" y2="7" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="28.8333" y1="6" x2="21.3333" y2="1.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+    <line x1="20.5" y1="1" x2="20.5" y2="1" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="18.8333" y1="2" x2="1.3333" y2="12.5" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9437"/>
+  </g>
+  <g>
+    <path d="M45.75,40.995a12.9259,12.9259,0,0,0,0-12.99L34.5,34.5Z" fill="#b1d1da"/>
+    <path d="M45.75,40.995,34.5,34.5v13A12.9844,12.9844,0,0,0,45.75,40.995Z" fill="#8ab9c8"/>
+    <path d="M23.25,40.995A12.9844,12.9844,0,0,0,34.5,47.5v-13Z" fill="#63a2b6"/>
+    <path d="M23.25,28.005a12.9259,12.9259,0,0,0,0,12.99L34.5,34.5Z" fill="#3c8ba4"/>
+    <path d="M23.25,28.005,34.5,34.5v-13A12.9844,12.9844,0,0,0,23.25,28.005Z" fill="#147391"/>
+    <path d="M45.75,28.005A12.9844,12.9844,0,0,0,34.5,21.5v13Z" fill="#d8e8ed"/>
+  </g>
+  <g>
+    <line x1="8.8094" y1="28.9856" x2="8.8094" y2="28.9856" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="7.1519" y1="27.9911" x2="3.0082" y2="25.5049" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9329"/>
+    <line x1="2.1795" y1="25.0077" x2="2.1795" y2="25.0077" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <line x1="12.1906" y1="28.9856" x2="12.1906" y2="28.9856" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="13.8525" y1="27.9885" x2="19.6691" y2="24.4986" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0 1.9381"/>
+    <line x1="20.5" y1="24" x2="20.5" y2="24" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <line x1="34.5" y1="21.5" x2="34.5" y2="47.5" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="23.2417" y1="28" x2="45.7583" y2="41" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="23.2417" y1="41" x2="45.7583" y2="28" fill="none" stroke="#147391" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="34.5" cy="34.5" r="13" fill="none" stroke="#464646" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

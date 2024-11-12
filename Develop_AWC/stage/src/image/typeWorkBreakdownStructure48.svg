@@ -1,0 +1,46 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="13.0008" y1="3" x2="45.0008" y2="35">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.3045" style="stop-color:#FBFBFB"/>
+	<stop  offset="0.5835" style="stop-color:#F0F0F0"/>
+	<stop  offset="0.8518" style="stop-color:#DEDEDE"/>
+	<stop  offset="1" style="stop-color:#D0D0D0"/>
+</linearGradient>
+<rect x="14.501" y="1.5" fill="url(#SVGID_1_)" stroke="#464646" stroke-miterlimit="10" width="29" height="35"/>
+<rect x="17.501" y="3.5" fill="none" stroke="#464646" stroke-miterlimit="10" width="9" height="9"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="38.001" y1="7.5" x2="40.001" y2="7.5"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="38.001" y1="18.5" x2="40.001" y2="18.5"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="38.001" y1="29.5" x2="40.001" y2="29.5"/>
+<polyline fill="none" stroke="#919191" stroke-linejoin="round" stroke-miterlimit="10" points="19.5,8.5 21.5,10.5 24.5,5.5 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="8.0004" y1="8.0003" x2="40.0004" y2="40.0003">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.3045" style="stop-color:#FBFBFB"/>
+	<stop  offset="0.5835" style="stop-color:#F0F0F0"/>
+	<stop  offset="0.8518" style="stop-color:#DEDEDE"/>
+	<stop  offset="1" style="stop-color:#D0D0D0"/>
+</linearGradient>
+<rect x="9.5" y="6.5" fill="url(#SVGID_2_)" stroke="#464646" stroke-miterlimit="10" width="29" height="35"/>
+<rect x="12.501" y="8.5" fill="none" stroke="#464646" stroke-miterlimit="10" width="9" height="9"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="33.001" y1="12.5" x2="35" y2="12.5"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="33.001" y1="23.5" x2="35" y2="23.5"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="33.001" y1="34.5" x2="35" y2="34.5"/>
+<polyline fill="none" stroke="#919191" stroke-linejoin="round" stroke-miterlimit="10" points="14.5,13.5 16.5,15.5 19.5,10.5 "/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="3.0001" y1="13.0006" x2="35.0001" y2="45.0006">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.3045" style="stop-color:#FBFBFB"/>
+	<stop  offset="0.5835" style="stop-color:#F0F0F0"/>
+	<stop  offset="0.8518" style="stop-color:#DEDEDE"/>
+	<stop  offset="1" style="stop-color:#D0D0D0"/>
+</linearGradient>
+<rect x="4.5" y="11.501" fill="url(#SVGID_3_)" stroke="#464646" stroke-miterlimit="10" width="29" height="35"/>
+<rect x="7.5" y="13.501" fill="none" stroke="#464646" stroke-miterlimit="10" width="9" height="9"/>
+<rect x="7.5" y="24.501" fill="none" stroke="#464646" stroke-miterlimit="10" width="9" height="9"/>
+<rect x="7.5" y="35.501" fill="none" stroke="#464646" stroke-miterlimit="10" width="9" height="9"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="19" y1="17.501" x2="30" y2="17.501"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="19" y1="28.501" x2="30" y2="28.501"/>
+<line fill="none" stroke="#919191" stroke-miterlimit="10" x1="19" y1="39.501" x2="30" y2="39.501"/>
+<polyline fill="none" stroke="#919191" stroke-linejoin="round" stroke-miterlimit="10" points="9.5,18.5 11.5,20.5 14.5,15.5 "/>
+<polyline fill="none" stroke="#919191" stroke-linejoin="round" stroke-miterlimit="10" points="9.5,29.5 11.5,31.5 14.5,26.5 "/>
+<polyline fill="none" stroke="#919191" stroke-linejoin="round" stroke-miterlimit="10" points="9.5,40.5 11.5,42.5 14.5,37.5 "/>
+</svg>

@@ -1,0 +1,37 @@
+[
+  {
+    "type": {
+      "names": [
+        "ImanSubscription"
+      ],
+      "prop": {
+        "names": [
+          "target"
+        ],
+        "type": {
+          "names": [
+            "BusinessObject"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": {
+      "names": [
+        "Fnd0Message"
+      ],
+      "prop": {
+        "names": [
+          "fnd0TargetObject"
+        ],
+        "type": {
+          "names": [
+            "BusinessObject"
+          ]
+        }
+      }
+    },
+    "priority": 0
+  }
+]

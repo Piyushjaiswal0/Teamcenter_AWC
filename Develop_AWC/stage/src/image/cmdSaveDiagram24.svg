@@ -1,0 +1,9 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<path class="aw-theme-iconOutline" fill="#464646" d="M11,5v3H9V3H7V0H0v7h7V4h1v9H7v-3H0v7h7v-3h2V9h2h0.5H12V6h5v3h1V5H11z M6,6H1V1h5V6z M6,16H1v-5h5V16z"/>
+	<rect x="15" y="18" class="aw-theme-iconOutline" fill="#464646" width="4" height="1"/>
+	<rect x="15" y="20" class="aw-theme-iconOutline" fill="#464646" width="4" height="1"/>
+	<path class="aw-theme-iconOutline" fill="#464646" d="M20.7,10H10v14h2h1h8h1h2V13.3L20.7,10z M17,11v2h1v-2h1v3h-4v-3H17z M13,23v-5.5c0-0.3,0.2-0.5,0.5-0.5h7
+		c0.3,0,0.5,0.2,0.5,0.5V23H13z M23,23h-1v-5.5c0-0.8-0.7-1.5-1.5-1.5h-7c-0.8,0-1.5,0.7-1.5,1.5V23h-1V11h3v4h6v-4h0.3l2.7,2.7V23z
+		"/>
+</svg>

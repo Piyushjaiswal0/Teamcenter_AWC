@@ -1,0 +1,52 @@
+
+<aw-panel-body>
+        <aw-panel-section visible-when="conditions.isPropertyDisplayName">
+        <aw-title-link prop="data.subscribedObjectType" action="goToTypeSelection"></aw-title-link>
+        </aw-panel-section>
+        <aw-panel-section show-when="conditions.isSubscribedObjectTitleVisible">
+            <aw-title-link prop="data.subscribedObject" action="goToListSubscriptions"></aw-title-link>
+        </aw-panel-section>
+        <aw-panel-section visible-when="conditions.isMultiObjectSelected" caption="i18n.multiObjectSelected">
+        </aw-panel-section>
+    <aw-panel-section>
+            <aw-row height = "2f" visible-when="conditions.isCheckboxandEditbtnVisible">
+                <aw-column  width="fill">
+                    <aw-checkbox prop="data.multiEventCheckbox" action="multiEventDisplay"></aw-checkbox>
+                </aw-column>
+                <aw-column>
+                    <aw-icon-button button-type="button" command="data.editEventConfigurationCommand"></aw-icon-button>
+                </aw-column>
+            </aw-row>
+            <aw-row height = "5f">
+                <aw-column width="fill">
+                    <aw-listbox prop="data.eventType" list="props.subPanelContext.sharedData.subscriptionCtx.eventTypeList" action="addEventTypeToList" title={{data.eventType.uiValue}}></aw-listbox>
+                </aw-column>
+            </aw-row>
+        </aw-panel-section>
+         <!-- View changes based on getSubscriptionViewAndViewModel response-->
+         <aw-panel-section>
+            <aw-textbox prop="data.name" visible-when="!conditions.isMultiObjectSelected"></aw-textbox>
+            <div visible-when="conditions.isAssignStatusFollow">
+                <aw-listbox prop="data.operator" list="data.operators"></aw-listbox>
+                <aw-listbox prop="data.releaseStatus" list="data.releaseStatuses"></aw-listbox>
+            </div>
+            <div visible-when="conditions.isAttachFollow">
+                <aw-listbox prop="data.relationType" list="data.relationTypes"></aw-listbox>
+                <aw-listbox prop="data.attachmentType" ></aw-listbox>
+            </div>
+            <aw-listbox prop="data.frequency" list="data.frequencies"></aw-listbox>
+            <aw-listbox prop="data.priority" list="data.priorities"></aw-listbox>
+            <aw-checkbox prop="data.isItemRevisions" visible-when="conditions.isItemRevisionCheckBoxVisible"></aw-checkbox>
+            <aw-checkbox prop="data.isBaselineRevisions" visible-when="conditions.isBaseRevisionCheckBoxVisible"></aw-checkbox>
+
+        </aw-panel-section>
+        <aw-command-panel-section caption="i18n.followersXRTTitle" anchor="data.addFollowersCommand" context="{...subPanelContext}" visible-when="data.data.activeView!='Sub0AddFollowerSub'">
+            <aw-list dataprovider="data.dataProviders.followers_provider">
+                <aw-default-cell vmo="item"></aw-default-cell>
+            </aw-list>
+        </aw-command-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="createSubscriptions"><aw-i18n>i18n.followCommandTitle</aw-i18n></aw-button>
+</aw-panel-footer>
+

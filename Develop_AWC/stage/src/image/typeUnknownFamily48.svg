@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="Generic_-_Top_Blend" data-name="Generic - Top Blend" x1="21.5622" y1="16.0004" x2="30.9999" y2="16.0004" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f1f1"/>
+      <stop offset="1" stop-color="#cdcdcd"/>
+    </linearGradient>
+    <linearGradient id="Generic_-_Top_Blend-2" data-name="Generic - Top Blend" x1="1.0001" y1="16.0004" x2="10.4377" y2="16.0004" xlink:href="#Generic_-_Top_Blend"/>
+  </defs>
+  <g>
+    <path d="m20.6248,2l5.4621.0008c2.1611,0,3.913,1.7519,3.913,3.913v20.1738c0,2.1611-1.7519,3.913-3.913,3.913l-5.4621-.0008" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="4"/>
+    <path d="m11.3751,29.9999l-5.462.0008c-2.1611,0-3.913-1.7519-3.913-3.913V5.9139c0-2.1611,1.7519-3.913,3.913-3.913l5.462-.0008" fill="none" stroke="#464646" stroke-miterlimit="10" stroke-width="4"/>
+    <g>
+      <path d="m21.5624,2l4.5245.0008c2.1611,0,3.913,1.7519,3.913,3.913v20.1738c0,2.1611-1.7519,3.913-3.913,3.913l-4.5245-.0008" fill="none" stroke="url(#Generic_-_Top_Blend)" stroke-miterlimit="10" stroke-width="2"/>
+      <path d="m10.4375,29.9999l-4.5244.0008c-2.1611,0-3.913-1.7519-3.913-3.913V5.9139c0-2.1611,1.7519-3.913,3.913-3.913l4.5244-.0008" fill="none" stroke="url(#Generic_-_Top_Blend-2)" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+  <g>
+    <rect x="23.814" y="23.814" width="20.372" height="20.372" rx="2.1853" ry="2.1853" transform="translate(34 -14.0833) rotate(45)" fill="#3c91af" stroke="#464646" stroke-miterlimit="10"/>
+    <path d="m34.0051,38.1615v-1.5894c0-1.0384.598-1.9861,1.5406-2.4219,1.4454-.6684,2.3829-2.2483,2.075-4.0021-.2594-1.4776-1.4719-2.6901-2.9497-2.9494-2.3226-.4076-4.3401,1.3682-4.3401,3.6153" fill="none" stroke="#147391" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.5"/>
+    <path d="m34.0051,38.1615v-1.5894c0-1.0384.598-1.9861,1.5406-2.4219,1.4454-.6684,2.3829-2.2483,2.075-4.0021-.2594-1.4776-1.4719-2.6901-2.9497-2.9494-2.3226-.4076-4.3401,1.3682-4.3401,3.6153" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+    <g>
+      <circle cx="34.0049" cy="41.835" r="1.75" fill="#fff"/>
+      <path d="m34.0051,40.5855c.6904,0,1.25.5596,1.25,1.25s-.5596,1.25-1.25,1.25-1.25-.5596-1.25-1.25.5596-1.25,1.25-1.25m0-1c-1.2406,0-2.25,1.0093-2.25,2.25s1.0094,2.25,2.25,2.25,2.25-1.0093,2.25-2.25-1.0094-2.25-2.25-2.25h0Z" fill="#147391"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<aw-panel-body>
+    <aw-panel-section>
+        <aw-scrollpanel>
+            <div aw-repeat="item:data.allProperties">
+               <aw-checkbox prop="item" action = "changeColumnSelectionForProperties"></aw-checkbox>
+            </div>
+        </aw-scrollpanel>
+    </aw-panel-section>
+</aw-panel-body>
+<aw-panel-footer>
+    <aw-button action="addNewPropertiesAsColumn" visible-when="!data.areAllPropertiesDeselected">
+        <aw-i18n>i18n.addPanelTitle</aw-i18n>
+    </aw-button>
+</aw-panel-footer>
+

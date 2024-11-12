@@ -1,0 +1,222 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <linearGradient id="New_Gradient_Swatch_1" data-name="New Gradient Swatch 1" x1="21.5" y1="21.5" x2="25.5" y2="25.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cde6eb"/>
+      <stop offset="0.221" stop-color="#c6e2e8"/>
+      <stop offset="0.542" stop-color="#b3d8e1"/>
+      <stop offset="0.921" stop-color="#93c7d5"/>
+      <stop offset="1" stop-color="#8cc3d2"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4" data-name="New Gradient Swatch 4" x1="21.5" y1="17.5" x2="25.5" y2="21.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="0.159" stop-color="#a4d0dc"/>
+      <stop offset="0.706" stop-color="#80bcce"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4-2" x1="21.5" y1="13.5" x2="25.5" y2="17.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-3" x1="21.5" y1="9.5" x2="25.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="Dark_Blue_Grad" data-name="Dark Blue Grad" x1="21.5" y1="5.5" x2="25.5" y2="9.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#73b4c8"/>
+      <stop offset="0.175" stop-color="#6aaec3"/>
+      <stop offset="0.457" stop-color="#529eb5"/>
+      <stop offset="0.809" stop-color="#2c839f"/>
+      <stop offset="1" stop-color="#147391"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_1-2" x1="25.5" y1="17.5" x2="29.5" y2="21.5" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="Light_Blue_Grad" data-name="Light Blue Grad" x1="25.5" y1="13.5" x2="29.5" y2="17.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#afd7e1"/>
+      <stop offset="1" stop-color="#73b4c8"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4-4" x1="25.5" y1="9.5" x2="29.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-5" x1="25.5" y1="5.5" x2="29.5" y2="9.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_1-3" x1="29.5" y1="13.5" x2="33.5" y2="17.5" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="Dark_Blue_Grad-2" x1="29.5" y1="9.5" x2="33.5" y2="13.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="New_Gradient_Swatch_4-6" x1="29.5" y1="5.5" x2="33.5" y2="9.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_1-4" x1="33.5" y1="13.5" x2="37.5" y2="17.5" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="New_Gradient_Swatch_4-7" x1="33.5" y1="9.5" x2="37.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-8" x1="33.5" y1="5.5" x2="37.5" y2="9.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-9" x1="37.5" y1="17.5" x2="41.5" y2="21.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="Dark_Blue_Grad-3" x1="37.5" y1="13.5" x2="41.5" y2="17.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="New_Gradient_Swatch_4-10" x1="37.5" y1="9.5" x2="41.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="paper_gradient" data-name="paper gradient" x1="1.5" y1="25.5" x2="5.5" y2="29.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.221" stop-color="#f8f8f8"/>
+      <stop offset="0.541" stop-color="#e5e5e5"/>
+      <stop offset="0.92" stop-color="#c6c6c6"/>
+      <stop offset="1" stop-color="#bebebe"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_4-11" x1="5.5" y1="21.5" x2="9.5" y2="25.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-12" x1="5.5" y1="17.5" x2="9.5" y2="21.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-13" x1="5.5" y1="13.5" x2="9.5" y2="17.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-14" x1="5.5" y1="9.5" x2="9.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_1-5" x1="9.5" x2="13.5" y2="25.5" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="New_Gradient_Swatch_1-6" x1="9.5" y1="17.5" x2="13.5" y2="21.5" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="Dark_Blue_Grad-4" x1="9.5" y1="13.5" x2="13.5" y2="17.5" xlink:href="#Dark_Blue_Grad"/>
+    <linearGradient id="New_Gradient_Swatch_4-15" x1="9.5" y1="9.5" x2="13.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-16" x1="9.5" y1="5.5" x2="13.5" y2="9.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-17" x1="13.5" y1="17.5" x2="17.5" y2="21.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-18" x1="13.5" y1="13.5" x2="17.5" y2="17.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_1-7" x1="13.5" y1="9.5" x2="17.5" y2="13.5" xlink:href="#New_Gradient_Swatch_1"/>
+    <linearGradient id="New_Gradient_Swatch_4-19" x1="13.5" y1="5.5" x2="17.5" y2="9.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-20" x1="17.5" y1="13.5" x2="21.5" y2="17.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-21" x1="17.5" y1="9.5" x2="21.5" y2="13.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="New_Gradient_Swatch_4-22" x1="17.5" y1="5.5" x2="21.5" y2="9.5" xlink:href="#New_Gradient_Swatch_4"/>
+    <linearGradient id="paper_gradient-2" x1="1.5" y1="17.5" x2="5.5" y2="21.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-3" x1="1.5" y1="13.5" x2="5.5" y2="17.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-4" x1="1.5" y1="9.5" x2="5.5" y2="13.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-5" x1="5.5" y1="5.5" x2="9.5" y2="9.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-6" x1="9.5" y1="1.5" x2="13.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-7" x1="13.5" y1="1.5" x2="17.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-8" x1="17.5" y1="1.5" x2="21.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-9" x1="21.5" y1="1.5" x2="25.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-10" x1="25.5" y1="1.5" x2="29.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-11" x1="29.5" y1="1.5" x2="33.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-12" x1="33.5" y1="1.5" x2="37.5" y2="5.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-13" x1="37.5" y1="5.5" x2="41.5" y2="9.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-14" x1="1.5" y1="29.5" x2="5.5" y2="33.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-15" x1="1.5" y1="33.5" x2="5.5" y2="37.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-16" x1="5.5" y1="33.5" x2="9.5" y2="37.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-17" x1="5.5" y1="37.5" x2="9.5" y2="41.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-18" x1="9.5" y1="37.5" x2="13.5" y2="41.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-19" x1="33.5" y1="37.5" x2="37.5" y2="41.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-20" x1="37.5" y1="37.5" x2="41.5" y2="41.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-21" x1="37.5" y1="33.5" x2="41.5" y2="37.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-22" x1="41.5" y1="33.5" x2="45.5" y2="37.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-23" x1="41.5" y1="29.5" x2="45.5" y2="33.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-24" x1="41.5" y1="25.5" x2="45.5" y2="29.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-25" x1="41.5" y1="21.5" x2="45.5" y2="25.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-26" x1="41.5" y1="17.5" x2="45.5" y2="21.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-27" x1="41.5" y1="13.5" x2="45.5" y2="17.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-28" x1="41.5" y1="9.5" x2="45.5" y2="13.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-29" x1="9.5" y1="41.5" x2="13.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-30" x1="13.5" y1="41.5" x2="17.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-31" x1="17.5" y1="41.5" x2="21.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-32" x1="21.5" y1="41.5" x2="25.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-33" x1="25.5" y1="41.5" x2="29.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-34" x1="29.5" y1="41.5" x2="33.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-35" x1="33.5" y1="41.5" x2="37.5" y2="45.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-36" x1="21.5" y1="29.5" x2="25.5" y2="33.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-37" x1="17.5" y1="21.5" x2="21.5" y2="25.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-38" x1="17.5" y1="17.5" x2="21.5" y2="21.5" xlink:href="#paper_gradient"/>
+    <linearGradient id="paper_gradient-39" x1="21.5" y1="33.5" x2="25.5" y2="37.5" xlink:href="#paper_gradient"/>
+    <rect x="21.5" y="21.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1)"/>
+    <rect x="21.5" y="17.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4)"/>
+    <rect x="21.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-2)"/>
+    <rect x="21.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-3)"/>
+    <rect x="21.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad)"/>
+    <rect x="25.5" y="17.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-2)"/>
+    <rect x="25.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#Light_Blue_Grad)"/>
+    <rect x="25.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-4)"/>
+    <rect x="25.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-5)"/>
+    <rect x="29.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-3)"/>
+    <rect x="29.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-2)"/>
+    <rect x="29.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-6)"/>
+    <rect x="33.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-4)"/>
+    <rect x="33.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-7)"/>
+    <rect x="33.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-8)"/>
+    <rect x="37.5" y="17.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-9)"/>
+    <rect x="37.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-3)"/>
+    <rect x="37.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-10)"/>
+    <rect x="1.5" y="25.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient)"/>
+    <rect x="5.5" y="21.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-11)"/>
+    <rect x="5.5" y="17.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-12)"/>
+    <rect x="5.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-13)"/>
+    <rect x="5.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-14)"/>
+    <rect x="9.5" y="21.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-5)"/>
+    <rect x="9.5" y="17.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-6)"/>
+    <rect x="9.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#Dark_Blue_Grad-4)"/>
+    <rect x="9.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-15)"/>
+    <rect x="9.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-16)"/>
+    <rect x="13.5" y="17.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-17)"/>
+    <rect x="13.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-18)"/>
+    <rect x="13.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_1-7)"/>
+    <rect x="13.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-19)"/>
+    <rect x="17.5" y="13.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-20)"/>
+    <rect x="17.5" y="9.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-21)"/>
+    <rect x="17.5" y="5.5" width="4" height="4" stroke="#147391" stroke-miterlimit="10" fill="url(#New_Gradient_Swatch_4-22)"/>
+  <circle cx="3.5" cy="27.5" r="1" fill="#464646"/>
+  <rect x="1.5" y="17.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-2)"/>
+  <circle cx="3.5" cy="19.5" r="1" fill="#464646"/>
+  <rect x="1.5" y="13.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-3)"/>
+  <circle cx="3.5" cy="15.5" r="1" fill="#464646"/>
+  <rect x="1.5" y="9.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-4)"/>
+  <circle cx="3.5" cy="11.5" r="1" fill="#464646"/>
+  <rect x="5.5" y="5.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-5)"/>
+  <circle cx="7.5" cy="7.5" r="1" fill="#464646"/>
+  <rect x="9.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-6)"/>
+  <circle cx="11.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="13.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-7)"/>
+  <circle cx="15.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="17.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-8)"/>
+  <circle cx="19.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="21.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-9)"/>
+  <circle cx="23.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="25.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-10)"/>
+  <circle cx="27.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="29.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-11)"/>
+  <circle cx="31.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="33.5" y="1.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-12)"/>
+  <circle cx="35.5" cy="3.5" r="1" fill="#464646"/>
+  <rect x="37.5" y="5.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-13)"/>
+  <circle cx="39.5" cy="7.5" r="1" fill="#464646"/>
+  <rect x="1.5" y="29.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-14)"/>
+  <circle cx="3.5" cy="31.5" r="1" fill="#464646"/>
+  <rect x="1.5" y="33.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-15)"/>
+  <circle cx="3.5" cy="35.5" r="1" fill="#464646"/>
+  <rect x="5.5" y="33.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-16)"/>
+  <circle cx="7.5" cy="35.5" r="1" fill="#464646"/>
+  <rect x="5.5" y="37.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-17)"/>
+  <circle cx="7.5" cy="39.5" r="1" fill="#464646"/>
+  <rect x="9.5" y="37.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-18)"/>
+  <circle cx="11.5" cy="39.5" r="1" fill="#464646"/>
+  <rect x="33.5" y="37.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-19)"/>
+  <circle cx="35.5" cy="39.5" r="1" fill="#464646"/>
+  <rect x="37.5" y="37.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-20)"/>
+  <circle cx="39.5" cy="39.5" r="1" fill="#464646"/>
+  <rect x="37.5" y="33.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-21)"/>
+  <circle cx="39.5" cy="35.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="33.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-22)"/>
+  <circle cx="43.5" cy="35.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="29.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-23)"/>
+  <circle cx="43.5" cy="31.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="25.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-24)"/>
+  <circle cx="43.5" cy="27.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="21.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-25)"/>
+  <circle cx="43.5" cy="23.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="17.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-26)"/>
+  <circle cx="43.5" cy="19.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="13.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-27)"/>
+  <circle cx="43.5" cy="15.5" r="1" fill="#464646"/>
+  <rect x="41.5" y="9.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-28)"/>
+  <circle cx="43.5" cy="11.5" r="1" fill="#464646"/>
+  <rect x="9.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-29)"/>
+  <circle cx="11.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="13.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-30)"/>
+  <circle cx="15.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="17.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-31)"/>
+  <circle cx="19.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="21.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-32)"/>
+  <circle cx="23.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="25.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-33)"/>
+  <circle cx="27.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="29.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-34)"/>
+  <circle cx="31.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="33.5" y="41.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-35)"/>
+  <circle cx="35.5" cy="43.5" r="1" fill="#464646"/>
+  <rect x="21.5" y="29.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-36)"/>
+  <circle cx="23.5" cy="31.5" r="1" fill="#464646"/>
+  <rect x="17.5" y="21.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-37)"/>
+  <circle cx="19.5" cy="23.5" r="1" fill="#464646"/>
+  <circle cx="23.5" cy="23.5" r="1" fill="#147391"/>
+  <circle cx="27.5" cy="19.5" r="1" fill="#147391"/>
+  <circle cx="15.5" cy="11.5" r="1" fill="#147391"/>
+  <circle cx="11.5" cy="19.5" r="1" fill="#147391"/>
+  <circle cx="11.5" cy="23.5" r="1" fill="#147391"/>
+  <circle cx="35.5" cy="15.5" r="1" fill="#147391"/>
+  <circle cx="31.5" cy="15.5" r="1" fill="#147391"/>
+  <circle cx="27.5" cy="15.5" r="1" fill="#147391"/>
+  <rect x="17.5" y="17.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-38)"/>
+  <circle cx="19.5" cy="19.5" r="1" fill="#464646"/>
+  <rect x="21.5" y="33.5" width="4" height="4" stroke="#464646" stroke-miterlimit="10" fill="url(#paper_gradient-39)"/>
+  <circle cx="23.5" cy="35.5" r="1" fill="#464646"/>
+  <circle cx="23.5" cy="23.5" r="23" fill="none" stroke="#464646" stroke-miterlimit="10"/>
+</svg>

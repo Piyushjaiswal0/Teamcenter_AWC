@@ -1,0 +1,49 @@
+<aw-panel>
+    <aw-panel-header class="sw-row">
+        <aw-property-label class='sw-column aw-reports-templateTitle' prop="data.sharedWithTitleLabel"></aw-property-label>
+        <aw-radiobutton class='sw-column' prop="data.sharedWith" list="data.sharedWithValues.dbValue"></aw-radiobutton>
+    </aw-panel-header>
+    <aw-panel-body class="h-12" enable-when="data.sharedWith.dbValue==='custom'">
+        <div class="aw-search-searchFolderSharingTab">
+            <div class="aw-layout-flexColumn">
+                <div aw-class="[{ 'sw-column h-12': conditions.isMobileMode },{ 'sw-row': !conditions.isMobileMode }]" class="aw-layout-flexRowContainer w-12">
+                    <div aw-class="[{ 'sw-row w-12 h-6': conditions.isMobileMode },{ 'sw-column w-6 h-12': !conditions.isMobileMode }]" class="aw-search-searchFolderAvailableTable">
+                        <aw-panel-section caption="i18n.availableTable">
+                            <aw-radiobutton prop="data.searchFolderShareRuleOption"></aw-radiobutton>
+                            <rb0-report-template-share-rule-projects-table
+                                aw-class="[{ 'aw-reports-heightForShareList': conditions.isMobileMode }]"
+                                exist-when="!data.searchFolderShareRuleOption.dbValue"
+                                share-report-state="data.shareReportState">
+                            </rb0-report-template-share-rule-projects-table>
+                            <awp0-search-folder-share-rule-organization
+                                aw-class="[{ 'aw-reports-heightForShareList': conditions.isMobileMode }]"
+                                exist-when="data.searchFolderShareRuleOption.dbValue"
+                                search-folder-share-rule-state="data.shareReportState">
+                            </awp0-search-folder-share-rule-organization>
+                        </aw-panel-section>
+                    </div>
+
+                    <aw-command-bar class="aw-search-searchFolderAccessor" anchor="aw_reportsShareAccessorToolbar" alignment="VERTICAL" context="{shareReportState: data.shareReportState, reportsState: props.rb0ShareState}" exist-when="!conditions.isMobileMode"></aw-command-bar>
+
+                    <aw-command-bar class="aw-reports-shareCmdBar" anchor="aw_reportsShareAccessorToolbarMobile" alignment="HORIZONTAL" context="{shareReportState: data.shareReportState, reportsState: props.rb0ShareState}" exist-when="conditions.isMobileMode"></aw-command-bar>
+
+                    <div aw-class="[{ 'sw-row w-12 aw-reports-heightForShareList': conditions.isMobileMode },{ 'sw-column w-6 h-12': !conditions.isMobileMode }]" class="aw-search-searchFolderSharedWithTable">
+                        <aw-panel-section caption="i18n.sharedWithTable">
+                            <shared-with-panel-section
+                                share-report-state="data.shareReportState"
+                                shared-with="{{data.sharedWith.dbValue}}"
+                                reports-state="props.rb0ShareState"
+                                sub-panel-context="props.subPanelContext">
+                            </shared-with-panel-section>
+                        </aw-panel-section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aw-panel-body>
+    <aw-panel-footer>
+        <aw-button action="initiateCreateRelations" enable-when="conditions.enableSaveButton" size="auto">
+            <aw-i18n>i18n.saveReport</aw-i18n>
+        </aw-button>
+    </aw-panel-footer>
+</aw-panel>

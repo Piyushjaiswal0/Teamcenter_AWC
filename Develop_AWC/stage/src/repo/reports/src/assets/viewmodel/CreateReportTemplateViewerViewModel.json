@@ -1,0 +1,65 @@
+{
+    "schemaVersion": "1.0.0",
+    "data": {
+        "_provider": {
+            "breadcrumbConfig": {
+                "type" : "board",
+                "noBreadCrumb": true
+            },
+            "priority": 0,
+            "label": {
+                "source": "/i18n/ReportChartMessages",
+                "key": "addReport"
+            },
+            "clientScopeURI": "Awp0ReportBuilder",
+            "nameToken": "com.siemens.splm.reports:createReportTemplate",
+            "viewModes": {
+                "ImageView": {
+                    "primaryWorkArea": "image",
+                    "secondaryWorkArea": false
+                }
+            },
+            "viewBase": "createReportTemplate",
+            "context": {
+                "search":{
+                    "hideInContentSearchBox":true
+                }
+            },
+            "useAutoBookmark": true,
+            "requestPref": {
+                "savedSessionMode": "ignore",
+                "showMarkup": [ "false" ]
+            },
+            "headerPreference": {
+                "hideGlobalSearch": true,
+                "hideLogo": true
+            },
+            "awSubLocationPref": {
+                "hideNavigationArea": true,
+                "hideRightWall": true,
+                "hideFooter": true,
+                "orientation": "HORIZONTAL"
+            }
+        },
+        "reportsState": {
+            "initialValues": {
+                "initRepDisp": true,
+                "reportParameters": {},
+                "rootClassSampleObject": [],
+                "segments": []
+            },
+            "meta": {
+                "segments":[{
+                    "type": "viewModelObject",
+                    "field": true
+                }]
+            }
+        },
+        "occContext": {
+            "initialValues": {
+                "transientRequestPref": {}
+            },
+            "meta": {}
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<aw-panel-body>
+    <aw-panel-section exist-when="!conditions.isAllowToCreateUser && data.modelPropGroup.props!=null" action="getStyleSheetrCreateGroupSubGroup">
+        <!-- Model property of group object -->
+                <aw-textbox prop="data.name"></aw-textbox>
+                <aw-widget prop="data.modelPropGroup.props.description"></aw-widget>
+                <aw-widget prop="data.modelPropGroup.props.security"></aw-widget>
+                <aw-widget prop="data.modelPropGroup.props.parent"></aw-widget>
+                <aw-widget prop="data.modelPropGroup.props.privilege"></aw-widget>
+                <aw-widget prop="data.modelPropGroup.props.volume"></aw-widget>
+                <aw-widget prop="data.modelPropGroup.props.local_volume"></aw-widget>
+    </aw-panel-section>
+</aw-panel-body>
+
+<aw-panel-footer>
+    <aw-button action="add" visible-when="conditions.isValidToAddAdminObjects">
+        <aw-i18n>i18n.AddButton</aw-i18n>
+    </aw-button>
+</aw-panel-footer>

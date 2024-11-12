@@ -1,0 +1,316 @@
+{
+    "schemaVersion": "1.0.0",
+    "imports":
+    [
+        "js/aw-command-panel.directive",
+        "js/aw-panel-body.directive",
+        "js/aw-panel-section.directive",
+        "js/aw-panel-footer.directive",
+        "js/aw-button.directive",
+        "js/aw-label.directive",
+        "js/aw-i18n.directive",
+        "js/visible-when.directive",
+        "js/aw-list-filter.directive",
+        "js/aw-command-panel-section.directive",
+        "js/aw-default-cell.directive",
+        "js/aw-row.directive",
+        "js/aw-scrollpanel.directive"
+    ],
+
+    "actions":
+    {
+        "searchAction":
+        {
+            "actionType": "dataProvider",
+            "method": "performSearch"
+        },
+
+        "searchOr":
+        {
+            "actionType": "TcSoaService",
+            "serviceName": "Internal-AWS2-2023-06-Finder",
+            "method": "performSearchViewModel5",
+            "inputData": {
+                "searchInput": {
+                    "attributesToInflate": [],
+                    "maxToLoad": 25,
+                    "maxToReturn": 25,
+                    "providerName": "Awp0SavedQuerySearchProvider",
+                    "searchCriteria": "{{function:getSearchCriteria}}",
+                    "searchFilterFieldSortType": "Alphabetical",
+                    "startIndex": "{{data.dataProviders.performSearch.startIndex}}",
+                    "searchFilterMap6": "",
+                    "searchSortCriteria": [ {
+                        "fieldName": "object_name",
+                        "sortDirection": "ASC"
+                    } ]
+                },
+                "inflateProperties": false
+            },
+            "policy":
+            {
+                "types":
+                [
+                    {
+                        "name": "CompanyLocation",
+                        "properties":
+                        [
+                            {
+                                "name": "fnd0LocationCode"
+                            }
+                        ]
+
+
+                    }
+                ]
+            },
+
+            "outputData":
+            {
+                "totalFound": "totalFound",
+                "totalLoaded": "totalLoaded",
+                "lastEndIndex":"endIndex",
+                "searchResults": "{{json:searchResultsJSON}}",
+                "foundCompLocObjs": "{{json:searchResultsJSON}}"
+            },
+
+            "actionMessages":
+            {
+                "success":
+                [
+                    {
+                        "condition": "data.filterBox.dbValue != '' && data.totalFound == 0 && (ctx.locationCode.suggestiveLocationCodeConstValue === 'true')",
+                        "message": "confirmNewLocCode"
+                    },
+                    {
+                         "condition":"data.filterBox.dbValue != '' && data.totalFound == 0 && (ctx.locationCode.suggestiveLocationCodeConstValue === 'false')",
+                         "message": "invalidNewLocCode"
+                    }
+                ]
+            },
+            "deps": "js/Awp0SetOrClearLocationCodeService"
+        },
+
+
+
+        "setBtn":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionState",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "fnd0LocationCode",
+                        "value": "{{data.dataProviders.performSearch.selectedObjects[0].props.fnd0LocationCode.dbValue}}"
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+        "overwrite":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionState",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "fnd0LocationCode",
+                        "value": "{{data.filterBox.dbValue}}"
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        },
+
+        "removeExistingCode":
+        {
+            "actionType": "JSFunction",
+            "method": "setUserSessionState",
+            "inputData":
+            {
+                "pairs":
+                [
+                    {
+                        "name": "fnd0LocationCode",
+                        "value": ""
+                    }
+                ]
+            },
+
+            "deps": "soa/sessionService"
+        }
+    },
+
+    "data":
+    {
+        "currentSessionLocCode":
+        {
+            "displayName": "",
+            "type": "STRING",
+            "isRequired": "false",
+            "isEditable": "false",
+            "dbValue": "{{ctx.userSession.props.fnd0LocationCode.dbValues[0]}}",
+            "dispValue": "{{ctx.userSession.props.fnd0LocationCode.dbValues[0]}}"
+        },
+        "securityCmdPanelCommands": "awp0_securityCmdPanelCommands",
+        "filterBox":
+        {
+            "displayName": "",
+            "type": "STRING"
+        }
+    },
+
+    "dataProviders":
+    {
+        "performSearch":
+        {
+            "action": "searchOr",
+            "response": "{{data.foundCompLocObjs}}",
+            "totalFound": "{{data.totalFound}}",
+            "totalLoaded": "{{data.totalLoaded}}"
+        }
+    },
+
+    "onEvent":
+    [
+
+        {
+            "eventId": "awp0RemoveExsistingCodeCmdEvent",
+            "action": "removeExistingCode"
+        }
+    ],
+
+    "messages":
+    {
+        "confirmNewLocCode":
+        {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.CreateUserLocCode}}",
+            "messageTextParams":
+            [
+                "{{data.filterBox.dbValue}}"
+            ],
+
+            "navigationOptions":
+            [
+                {
+                    "option": "Cancel",
+                    "text": "{{i18n.CancelText}}",
+                    "action": ""
+                },
+
+                {
+                    "option": "Set",
+                    "text": "{{i18n.SetBtn}}",
+                    "action": "overwrite"
+                }
+            ]
+        },
+        "invalidNewLocCode":
+        {
+            "messageType": "WARNING",
+            "messageText": "{{i18n.InvalidUserLocCode}}",
+            "messageTextParams":
+            [
+                "{{data.filterBox.dbValue}}"
+            ],
+
+            "navigationOptions":
+            [
+                {
+                    "option": "OK",
+                    "text": "{{i18n.OkText}}",
+                    "action": ""
+                }
+
+            ]
+        }
+
+    },
+
+    "conditions":
+    {
+        "isValidToShowSet":
+        {
+            "expression": "data.dataProviders.performSearch.selectedObjects[0].props.fnd0LocationCode"
+        },
+
+        "shouldShowClear":
+        {
+            "expression": "data.currentSessionLocCode.dbValue"
+        }
+    },
+
+    "functions":
+    {
+        "getSearchCriteria": {
+
+            "functionName": "getSearchCriteria",
+            "parameters": [
+                "{{data}}",
+                "{{data.dataProviders.performSearch.startIndex}}"
+            ]
+        }
+    },
+
+    "i18n":
+    {
+        "SetOrClearLocationCodePanel":
+        [
+            "SecurityMessages"
+        ],
+
+        "SessionLocCodeSectionName":
+        [
+            "SecurityMessages"
+        ],
+
+        "AvailableLocationsSectionName":
+        [
+            "SecurityMessages"
+        ],
+
+        "SetBtn":
+        [
+            "SecurityMessages"
+        ],
+
+        "CancelText":
+        [
+            "SecurityMessages"
+        ],
+
+        "NoCurrentLocationCode":
+        [
+            "SecurityMessages"
+        ],
+
+        "CreateUserLocCode":
+        [
+            "SecurityMessages"
+        ],
+        "InvalidUserLocCode":
+        [
+            "SecurityMessages"
+        ],
+        "OkText":
+        [
+            "SecurityMessages"
+        ],
+
+        "filter":
+        [
+            "SecurityMessages"
+        ]
+    },
+    "lifecycleHooks": {
+        "onMount": "searchAction"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "peopleTitle": "Pessoas",
+    "organizationTitle": "Organização",
+    "groupTitle": "Grupos",
+    "roleTitle": "Papéis",
+    "userTitle": "Usuários",
+    "RevokeConsentTitle": "Remover consentimento",
+    "revokeGDPRConsentLabel": "Remover consentimento do usuário",
+    "revokeConsentConfirmationMessage": "Remover seu consentimento fará você sair do Teamcenter",
+    "Group": "Grupo",
+    "DefaultRole":  "Papel padrão",
+    "DefaultGroup": "Grupo padrão",
+    "cancel": "Cancelar",
+    "revoke": "Remover",
+    "group": "Grupo",
+    "role": "Papel",
+    "userMembershipTitle":"Associações de usuários",
+    "userCalendarNotExits":"Nenhum Calendário de Usuário",
+    "addButtonText": "Adicionar"
+}

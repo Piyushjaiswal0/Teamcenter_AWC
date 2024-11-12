@@ -1,0 +1,15 @@
+{
+    "TeamcenterTitle": "Teamcenter",
+    "fullHomeBrowserSubTitle": "Folder osobisty",
+    "pinObjectCommandTitle": "Przypnij do folderu osobistego",
+    "unPinObjectCommandTitle": "Odepnij od folderu osobistego",
+    "pinObjectFailed": "Błąd przypinania.",
+    "unPinObjectFailed": "Operacja wypinania zakończyła się niepowodzeniem.",
+    "tileUpdateFailedMsg": "Aktualizacja kafelka nie powiodła się.",
+    "pinObjectFailedNoGateway": "Wystąpił problem z dostępem do strony startowej.",
+    "pinObjectMultipleObjectError": "Jednocześnie można przypiąć tylko jeden element. Elementy dodatkowe zostaną zignorowane.",
+    "unpinTileFailed": "Operacja wypinania zakończyła się niepowodzeniem.",
+    "homeFolderTitle": "Foldery",
+    "Awp0ShowHomeFolderDesc": "Otwórz folder osobisty.",
+    "Awp0PinObjectDesc": "Dodaj wybór do strony startowej jako kafelek."
+}

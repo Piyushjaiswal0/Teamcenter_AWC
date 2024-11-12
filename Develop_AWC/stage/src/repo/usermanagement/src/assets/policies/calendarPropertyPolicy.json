@@ -1,0 +1,106 @@
+{
+    "types": [ {
+            "name": "TCCalendar",
+            "properties": [ {
+                    "name": "sun_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "mon_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "tue_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "wed_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "thu_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "fri_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "sat_ranges",
+                    "modifiers": [ {
+                        "name": "withProperties",
+                        "Value": "true"
+                    } ]
+                },
+                {
+                    "name": "time_zone"
+                },
+                {
+                    "name": "object_string"
+                },
+                {
+                    "name": "tccal_type"
+                },
+                {
+                    "name": "tccal_desc"
+                }
+            ]
+        },
+        {
+            "name": "Range",
+            "properties": [ {
+                    "name": "range_end"
+                },
+                {
+                    "name": "range_start"
+                }
+            ]
+        },
+        {
+            "name": "TCCalendarEvent",
+            "properties": [ {
+                    "name": "tccalendar_tag"
+                },
+                {
+                    "name": "recur_interval"
+                },
+                {
+                    "name": "recur_month"
+                },
+                {
+                    "name": "recur_weeks_of_month"
+                },
+                {
+                    "name": "recur_days_of_week"
+                },
+                {
+                    "name": "timestamp"
+                },
+                {
+                    "name": "owning_site"
+                },
+                {
+                    "name": "pid"
+                }
+            ]
+        }
+    ]
+}
