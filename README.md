@@ -1,6 +1,6 @@
-Git commands
-Open cmd on a desire location
-git clone <your git hub repo link> -->clone a repository
-git add .  --> Add git into your local system
-git commit -m "<message while committing the changes >" --> for commit your changes
-git push origin main --> push committed changes
+# Git commands
+1. Open cmd on a desire location <br>
+2. git clone <your git hub repo link> -->clone a repository <br>
+3. git add .  --> Add git into your local system <br>
+4. git commit -m "<message while committing the changes >" --> for commit your changes <br>
+5. git push origin main --> push committed changes <br>
