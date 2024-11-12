@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Import>
+
+  <Client abbreviation="AWClient" name="AWClient">
+    <ClientScope hostingClientName="" name="Advanced Search" uri="Awp0AdvancedSearch">
+      <ColumnConfig columnConfigId="advancedSearchResultsColConfig" sortBy="1" sortDirection="Descending" wrapText="false">
+        <ColumnDef columnName="object_name" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="object_name" width="300"/>
+        <ColumnDef columnName="owning_user" filterable="true" hidden="false" objectType="POM_application_object" propertyName="owning_user" width="300"/>
+        <ColumnDef columnName="item_id" filterable="true" hidden="false" objectType="Item" propertyName="item_id" width="100"/>
+        <ColumnDef columnName="item_revision_id" filterable="true" hidden="false" objectType="ItemRevision" propertyName="item_revision_id" width="100"/>
+      </ColumnConfig>
+    </ClientScope>
+  </Client>
+
+</Import>

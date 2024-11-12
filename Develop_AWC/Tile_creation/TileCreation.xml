@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<ActiveWorkspaceGateway version="1.0">
+
+	<!-- Tile Template definitions begins here -->
+	<TileTemplate templateId="myTileTemplate">
+		<ThemeIndex index="1" />
+		<Icon>homefolder</Icon>
+		<Action>myAction1</Action>
+		<ActionType type="3" />
+	</TileTemplate>
+	
+	<!-- Tile definitions begins here -->
+	<Tile tileId="myTile" templateId="myTileTemplate">
+		<Name>My Custom Tile</Name>
+	</Tile>
+	
+	<!-- Tile collection definitions begins here -->
+	<TileCollection>
+		<WorkspaceScope id="myCustomizerWorkspace" />
+		<CollectionTiles tileId="myTile" groupName="main" size="0" ></CollectionTiles>
+	</TileCollection>
+	
+</ActiveWorkspaceGateway>

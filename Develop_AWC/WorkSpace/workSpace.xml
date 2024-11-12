@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Import>
+
+  <Workspace id="TcAuthorWorkspace">
+    <WorkspaceMapping group="dba" role="DBA"/>
+  </Workspace>
+
+  <Workspace id="TcActiveArchitectWorkspace">
+    <WorkspaceMapping group="dba" role="DBA"/>
+  </Workspace>
+
+  <Workspace id="TcActiveAdminWorkspace">
+    <WorkspaceMapping group="dba" role="DBA"/>
+  </Workspace>
+  
+  <Workspace id="Develop">
+    <WorkspaceMapping default="true" group="dba" role="DBA"/>
+  </Workspace>
+
+  <Workspace id="TcConsumerWorkspace"/>
+
+  <Workspace id="TCAWWorkspace"/>
+
+</Import>

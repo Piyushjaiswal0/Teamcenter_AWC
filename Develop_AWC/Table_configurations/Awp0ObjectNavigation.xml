@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Import>
+
+  <Client abbreviation="AWClient" name="AWClient">
+    <ClientScope hostingClientName="" name="Navigate" uri="Awp0ObjectNavigation">
+      <ColumnConfig columnConfigId="objectNavigationColConfig" sortBy="-1" sortDirection="" wrapText="false">
+        <ColumnDef columnName="object_name" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="object_name" width="300"/>
+        <ColumnDef columnName="object_desc" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="object_desc" width="300"/>
+        <ColumnDef columnName="release_status_list" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="release_status_list" width="250"/>
+        <ColumnDef columnName="checked_out" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="checked_out" width="250"/>
+        <ColumnDef columnName="awp0Item_item_id" filterable="true" hidden="false" objectType="ItemRevision" propertyName="awp0Item_item_id" width="250"/>
+        <ColumnDef columnName="item_revision_id" filterable="true" hidden="false" objectType="ItemRevision" propertyName="item_revision_id" width="250"/>
+        <ColumnDef columnName="fnd0InProcess" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="fnd0InProcess" width="250"/>
+        <ColumnDef columnName="ics_subclass_name" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="ics_subclass_name" width="250"/>
+        <ColumnDef columnName="checked_out_user" filterable="true" hidden="false" objectType="WorkspaceObject" propertyName="checked_out_user" width="100"/>
+        <ColumnDef columnName="po_object_name" filterable="true" hidden="false" objectType="PublishedObject" propertyName="po_object_name" width="250"/>
+        <ColumnDef columnName="po_group_id" filterable="true" hidden="false" objectType="PublishedObject" propertyName="po_group_id" width="250"/>
+        <ColumnDef columnName="po_object_creation_date" filterable="true" hidden="false" objectType="PublishedObject" propertyName="po_object_creation_date" width="250"/>
+        <ColumnDef columnName="po_object_type" filterable="true" hidden="false" objectType="PublishedObject" propertyName="po_object_type" width="250"/>
+        <ColumnDef columnName="awp0AliasID" filterable="true" hidden="true" objectType="Item" propertyName="awp0AliasID" width="250"/>
+        <ColumnDef columnName="awp0AlternateID" filterable="true" hidden="true" objectType="Item" propertyName="awp0AlternateID" width="250"/>
+        <ColumnDef columnName="awp0AliasID" filterable="true" hidden="true" objectType="ItemRevision" propertyName="awp0AliasID" width="250"/>
+        <ColumnDef columnName="awp0AlternateID" filterable="true" hidden="true" objectType="ItemRevision" propertyName="awp0AlternateID" width="250"/>
+        <ColumnDef columnName="awp0IsShared" filterable="true" hidden="true" objectType="Awp0SearchFolder" propertyName="awp0IsShared" width="100"/>
+      </ColumnConfig>
+    </ClientScope>
+  </Client>
+
+</Import>
