@@ -3,7 +3,6 @@
     "description": "",
     "modules": [
         "Develop_Module",
-        "Panels",
         "mysamplemodule",
         "tc-aw-solution"
     ],
