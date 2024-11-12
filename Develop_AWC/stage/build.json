@@ -1,0 +1,12 @@
+{
+    "srcPaths": [
+        "node_modules/@swf/@(core|charts|uibuilder|jit-view-compiler)/src",
+        "node_modules/afx-graph/src",
+        "node_modules/afx-vis-viewer/src/vis-web-viewer",
+        "src"
+    ],
+    "schemaPaths": [ "xsd/*.xsd" ],
+    "imageDir": "src/image",
+    "siteOutDir": "out/site",
+    "genSchema": "build/js/genSchema.js"
+}

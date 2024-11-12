@@ -1,0 +1,13 @@
+<declUI:schema xmlns:declUI="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified"  xmlns:xsB="decl-schema-common" >
+  <declUI:import namespace="decl-schema-common" schemaLocation="decl-schema-common.xsd"/>
+  <declUI:element name="aw-widget">
+    <declUI:complexType mixed="true">
+      <declUI:group ref="xsB:addElement"/>
+      <declUI:attribute name="prop" type="declUI:string" use="required"/>
+      <declUI:attribute name="modifiable" type="declUI:string" use="optional"/>
+      <declUI:attribute name="hint" type="declUI:string" use="optional"/>
+      <declUI:attribute name="labeldisplay" type="declUI:string" use="optional"/>
+      <declUI:attribute name="max-row-count" type="declUI:string" use="optional"/>
+    </declUI:complexType>
+  </declUI:element>
+</declUI:schema>
