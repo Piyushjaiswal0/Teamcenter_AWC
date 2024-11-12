@@ -1,0 +1,25 @@
+{
+    "antiPatterns": {
+        "\\.js$": {
+            "$wnd.$\\(": "Don't use global reference to JQuery via '$'! Use $wnd._app.$ instead",
+            "$wnd._app\\(": "Don't use global reference to App module! Use $wnd._jsniInjector.* instead"
+        }
+    },
+    "attributeAllowdInElements": {
+        "complete": [
+            "class",
+            "depend-on",
+            "id",
+            "enable-when",
+            "exist-when",
+            "on-file-change",
+            "on-change",
+            "scrollable",
+            "visible-when",
+            "align-content"
+        ],
+        "startsWith": [
+            "aw-"
+        ]
+    }
+}

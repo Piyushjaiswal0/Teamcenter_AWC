@@ -1,0 +1,221 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema for validating View Models where SPLM Table is used. The Apollo audit check validates all View Model JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "definitions": {
+        "columnProviderDef": {
+            "additionalProperties": true,
+            "type": "object",
+            "properties": {
+                "frozenColumnIndex": {
+                    "type": "number"
+                },
+                "sortCriteria": {
+                    "type": [ "array", "string" ]
+                },
+                "columns": {
+                    "additionalProperties": false,
+                    "type": [ "array", "string" ],
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "cellRenderers": {
+                                "type": "object"
+                            },
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "dataType": {
+                                "type": "string"
+                            },
+                            "enableColumnHiding": {
+                                "type": "boolean"
+                            },
+                            "enableColumnMenu": {
+                                "type": "boolean"
+                            },
+                            "enableColumnMoving": {
+                                "type": "boolean"
+                            },
+                            "enableColumnResizing": {
+                                "type": "boolean"
+                            },
+                            "enableSorting": {
+                                "type": "boolean"
+                            },
+                            "headerTooltip": {
+                                "type": "boolean"
+                            },
+                            "hiddenFlag": {
+                                "type": "boolean"
+                            },
+                            "isFilteringEnabled": {
+                                "type": "boolean"
+                            },
+                            "isTableCommand": {
+                                "type": "boolean"
+                            },
+                            "isTreeNavigation": {
+                                "type": "boolean"
+                            },
+                            "minWidth": {
+                                "type": "number"
+                            },
+                            "maxWidth": {
+                                "type": "number"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "pinnedLeft": {
+                                "type": "boolean"
+                            },
+                            "propertyName": {
+                                "type": "string"
+                            },
+                            "renderingHint": {
+                                "type": "string"
+                            },
+                            "typeName": {
+                                "type": "string"
+                            },
+                            "visible": {
+                                "type": "boolean"
+                            },
+                            "width": {
+                                "type": "number"
+                            }
+                        }
+                    }
+
+                }
+            }
+        },
+        "gridDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "dataProvider"
+            ],
+            "properties": {
+                "addIconColumn": {
+                    "type": "boolean"
+                },
+                "columnProvider": {
+                    "type": "string"
+                },
+                "dataProvider": {
+                    "type": "string"
+                },
+                "deps": {
+                    "type": "string"
+                },
+                "enableArrangeMenu": {
+                    "type": "boolean"
+                },
+                "pinIconColumn": {
+                    "type": "boolean"
+                },
+                "propertyProvider": {
+                    "type": "string"
+                },
+                "gridOptions": {
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                        "enableCellHeaderSelection": {
+                            "type": "boolean"
+                        },
+                        "enableColumnSelection": {
+                            "type": "boolean"
+                        },
+                        "enableExpandAndPaginationInEdit": {
+                            "type": "boolean"
+                        },
+                        "enableExpansionStateCaching": {
+                            "type": "boolean"
+                        },
+                        "enableDragAndDrop": {
+                            "type": "boolean"
+                        },
+                        "enableDynamicRowHeight": {
+                            "type": "boolean"
+                        },
+                        "enableGridMenu": {
+                            "type": "boolean"
+                        },
+                        "enableHeaderIcon": {
+                            "type": "boolean"
+                        },
+                        "enablePinning": {
+                            "type": [ "boolean", "string" ]
+                        },
+                        "enableSaveSortCriteria": {
+                            "type": "boolean"
+                        },
+                        "enableSorting": {
+                            "type": "boolean"
+                        },
+                        "forceAutoSave": {
+                            "type": "boolean"
+                        },
+                        "headerHeight": {
+                            "type": [ "string", "number" ]
+                        },
+                        "isFilteringEnabled": {
+                            "type": [ "boolean", "string" ]
+                        },
+                        "maxRowsToShow": {
+                            "type": "number"
+                        },
+                        "rowHeight": {
+                            "type": "string"
+                        },
+                        "showContextMenu": {
+                            "type": "boolean"
+                        },
+                        "textBundle": {
+                            "type": "object",
+                            "properties": {
+                                "TwistieTooltipCollapsed": {
+                                    "type": "string"
+                                },
+                                "TwistieTooltipExpanded": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "transpose": {
+                            "type": "boolean"
+                        },
+                        "useStaticFirstCol": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+        "columnProviders": {
+            "type": "object",
+            "patternProperties": {
+                "\\b[a-z]+[A-Z]*([A-Z]*[a-z]*[0-9]*)*\\b": {
+                    "type": "object",
+                    "$ref": "#/definitions/columnProviderDef"
+                }
+            }
+        },
+        "grids": {
+            "type": "object",
+            "patternProperties": {
+                "\\b[a-z]+[A-Z]*([A-Z]*[a-z]*[0-9]*)*\\b": {
+                    "type": "object",
+                    "$ref": "#/definitions/gridDef"
+                }
+            }
+        }
+    }
+}

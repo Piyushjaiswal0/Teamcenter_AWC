@@ -1,0 +1,185 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative View Model (in JSON format) must adhere to. The Apollo audit check validates all View Model JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "definitions": {
+        "eventTypeDef": {
+            "description": "An event object can have event name and eventData OR a message and a condition statement which would evaluate to boolean",
+            "oneOf": [ {
+                    "type": "array",
+                    "items": {
+                        "required": [
+                            "message"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "condition": {
+                                "type": "string",
+                                "description": "A condition statement which would evaluate to boolean."
+                            },
+                            "message": {
+                                "type": "string",
+                                "description": "The message string that would be passed with event, if above condition evaluates to true."
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the event. The name is used by interested listeners."
+                            },
+                            "eventData": {
+                                "type": "object",
+                                "description": "Event data is a JSON object for data to provide on the event. The structure of the eventData is specific to a given event type."
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ]
+                    }
+                }
+            ]
+        },
+        "actionMessagesDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "Actions can send array of events/actionMessages in case of success and failure of the action.",
+            "properties": {
+                "success": {
+                    "$ref": "#/definitions/eventTypeDef"
+                },
+                "failure": {
+                    "$ref": "#/definitions/eventTypeDef"
+                }
+            }
+        },
+        "dataParsersDef": {
+            "type": "array",
+            "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "responseObjs": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "responseObjs"
+                ]
+            }
+        },
+        "actionDef": {
+            "type": "object",
+            "description": "Actions can be of different actionType (REST, JSFunction, JSFunctionAsync, Event or TcSoaService). All actions have inputData which specifies the JSON input for the action and outputData for mapping the output response.",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "description": "This is a mandatory property in action object. The allowed values are - 'TcSoaService', dataProvider', 'JSFunction', 'Event', 'RESTService', 'JSFunctionAsync', 'Copy', 'Navigate', 'popup'",
+                    "not":{"const":"batchJob"}
+                },
+                "serviceName": {
+                    "type": "string",
+                    "description": "Used with actionType 'TcSoaService'. Name of the SOA service that should be invoked."
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "methods": {
+                    "type": "array",
+                    "description": "Used with actionType 'dataProvider'. Array of dataProviders that should be invoked as part of this action."
+                },
+                "options": {
+                    "type": "object",
+                    "description": "Used with actionType 'Navigate'. Can be used to specify the 'top', 'left', 'height', 'width' for the 'newWindow'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "object",
+                    "description": "Used with actionType 'TcSoaService'. This is a definition of property policy provided with SOA",
+                    "items": {
+                        "type": "array",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "$ref": "#/definitions/policyPropertiesDef"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "properties"
+                        ]
+                    }
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "dataParsers" : {
+                    "$ref": "#/definitions/dataParsersDef",
+                    "description": "Data parser accepts the response data and converts them to 'afx objects' each containing ViewModelProperties."
+                }
+            }
+        },
+        "policyPropertiesDef": {
+            "type": "object",
+            "items": {
+                "type":"array",
+                "additionalProperties": false,
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "modifiers": {
+                        "type": "array"
+                    }
+                }
+            }
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "actions": {
+            "type": "object",
+            "description": "In the View Model, actions are declaratively defined. Actions can be of different 'actionType' (REST, JSFunction, JSFunctionAsync, Event or TcSoaService ). All actions have 'inputData' which specifies the JSON input for the action and 'outputData' for mapping the output response. Actions can be used in dataProviders or UI elements such as an aw-button.",
+            "patternProperties": {
+                "\\b[a-z]+[A-Z]*([A-Z]*[a-z]*[0-9]*)*\\b": {
+                    "$ref": "#/definitions/actionDef"
+                }
+            }
+        }
+    }
+}

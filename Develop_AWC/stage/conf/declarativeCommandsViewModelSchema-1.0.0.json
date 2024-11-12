@@ -1,0 +1,2616 @@
+{
+
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "This is the schema the declarative Commands View Model (in JSON format) must adhere to. The Apollo audit check validates all Commands View Model JSON files against this schema. For explanation of the keywords of this schema, please visit https://ajv.js.org/keywords.html",
+    "definitions": {
+        "eventTypeDef": {
+            "description": "An event object can have event name and eventData OR a message and a condition statement which would evaluate to boolean",
+            "oneOf": [ {
+                    "type": "array",
+                    "items": {
+                        "required": [
+                            "message"
+                        ],
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "condition": {
+                                "type": "string",
+                                "description": "A condition statement which would evaluate to boolean."
+                            },
+                            "message": {
+                                "type": "string",
+                                "description": "The message string that would be passed with event, if above condition evaluates to true."
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the event. The name is used by interested listeners."
+                            },
+                            "eventData": {
+                                "type": "object",
+                                "description": "Event data is a JSON object for data to provide on the event. The structure of the eventData is specific to a given event type."
+                            },
+                            "condition": {
+                                "type": [ "object", "string", "boolean" ],
+                                "description": "A condition statement which would evaluate to boolean."
+                            },
+                            "excludeLocalDataCtx": {
+                                "type": "boolean",
+                                "description": "Excludes the local ctx from event data"
+                            },
+                            "refreshLocationFlag": {
+                                "type": "boolean",
+                                "description": "A boolean value which describes the refresh Location value"
+                            }
+                        },
+                        "required": [
+                            "name"
+                        ]
+                    }
+                }
+            ]
+        },
+        "actionMessagesDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "Actions can send array of events/actionMessages in case of success and failure of the action.",
+            "properties": {
+                "success": {
+                    "$ref": "#/definitions/eventTypeDef"
+                },
+                "failure": {
+                    "$ref": "#/definitions/eventTypeDef"
+                }
+            }
+        },
+        "actionDef": {
+            "description": "Actions can be of different actionType (REST, JSFunction, JSFunctionAsync, Event or TcSoaService). All actions have inputData which specifies the JSON input for the action and outputData for mapping the output response.",
+            "oneOf": [ {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "TcSoaService"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/TcSoaServiceDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "dataProvider"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/dataProviderDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "Event"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/EventDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "RESTService"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/RESTServiceDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "Copy"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/CopyDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "Navigate"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/NavigateDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "popup"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/popupDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "dialog"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/dialogDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "JSFunctionAsync"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/JSFunctionAsyncDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "JSFunction"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/JSFunctionDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "Edit"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/EditDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "batchJob"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/batchJobDef"
+                    },
+                    "else": false
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "GraphQL"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/GraphQLDef"
+                    },
+                    "else": false
+                }, {
+                    "if": {
+                        "properties": {
+                            "actionType": {
+                                "const": "Sync"
+                            }
+                        }
+                    },
+                    "then": {
+                        "$ref": "#/definitions/SyncDef"
+                    },
+                    "else": false
+                }
+            ]
+        },
+        "TcSoaServiceDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "TcSoaService"
+                },
+                "serviceName": {
+                    "type": "string",
+                    "description": "Used with actionType 'TcSoaService'. Name of the SOA service that should be invoked."
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "object",
+                    "description": "Used with actionType 'TcSoaService'. This is a definition of property policy provided with SOA",
+                    "items": {
+                        "type": "array",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "$ref": "#/definitions/policyPropertiesDef"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "properties"
+                        ]
+                    }
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "dataProviderDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "dataProvider"
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "methods": {
+                    "type": "array",
+                    "description": "Used with actionType 'dataProvider'. Array of dataProviders that should be invoked as part of this action."
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "EventDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "Event"
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "policy": {
+                    "type": "object",
+                    "description": "Used with actionType 'TcSoaService'. This is a definition of property policy provided with SOA",
+                    "items": {
+                        "type": "array",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "$ref": "#/definitions/policyPropertiesDef"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "properties"
+                        ]
+                    }
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+
+            }
+        },
+        "RESTServiceDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "RESTService"
+                },
+                "serviceName": {
+                    "type": "string",
+                    "description": "Used with actionType. Name of the  service that should be invoked."
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "GraphQLInputDataDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "JSON data for GraphQL input, which needs endPoint and request.",
+            "properties": {
+                "endPoint": {
+                    "type": "string"
+                },
+                "request": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                }
+            }
+        },
+        "GraphQLDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "GraphQL"
+                },
+                "serviceName": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "$ref": "#/definitions/GraphQLInputDataDef",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "SyncInputDataDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "JSON data for GraphQL input, which needs endPoint and request.",
+            "properties": {
+                "port": {
+                    "type": "string"
+                },
+                "syncObject": {
+                    "type": [ "object", "string" ],
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                }
+            },
+            "required": [
+                "port"
+            ]
+        },
+        "SyncDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "Sync"
+                },
+                "inputData": {
+                    "$ref": "#/definitions/SyncInputDataDef",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "CopyDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "Copy"
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+
+            }
+        },
+        "NavigateDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "Navigate"
+                },
+                "navigationParams": {
+                    "type": [ "object", "string" ],
+                    "description": "Used with actionType 'Navigate'. Specifies the parameters to be passed while navigating to the state"
+                },
+                "navigateIn": {
+                    "type": "string",
+                    "description": "Used with actionType 'Navigate'. Specifies if the new url should be opened in 'newTab' or 'newWindow'"
+                },
+                "navigateTo": {
+                    "type": "string",
+                    "description": "Used with actionType 'Navigate'. Specifies the state to navigate to"
+                },
+                "options": {
+                    "type": "object",
+                    "description": "Used with actionType 'Navigate'. Can be used to specify the 'top', 'left', 'height', 'width' for the 'newWindow'"
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "popupDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "popup"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'popup'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                }
+            }
+        },
+        "dialogDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "dialog"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'dialog'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                }
+            }
+        },
+        "JSFunctionAsyncDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "JSFunctionAsync"
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "object",
+                    "description": "Used with actionType 'TcSoaService'. This is a definition of property policy provided with SOA",
+                    "items": {
+                        "type": "array",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "$ref": "#/definitions/policyPropertiesDef"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "properties"
+                        ]
+                    }
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+
+            }
+        },
+        "JSFunctionDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "JSFunction"
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "inputData": {
+                    "type": "object",
+                    "description": "JSON data for the action input. For ex. 'request' header can be the inputData in case of 'RESTService' actionType with method 'Get'."
+                },
+                "deps": {
+                    "type": "string",
+                    "description": "Dependent files needed by the action. For ex. In case of actionType 'JSFunction', you would need to add a deps on some js file path."
+                },
+                "parameters": {
+                    "type": "object"
+                },
+                "policy": {
+                    "type": "object",
+                    "description": "Used with actionType 'TcSoaService'. This is a definition of property policy provided with SOA",
+                    "items": {
+                        "type": "array",
+                        "additionalProperties": false,
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "$ref": "#/definitions/policyPropertiesDef"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "properties"
+                        ]
+                    }
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+        "EditDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+                "actionType": {
+                    "type": "string",
+                    "const": "Edit"
+                },
+                "method": {
+                    "type": "string",
+                    "description": "Used with actionType 'JSFunction' or 'JSFunctionAsync'. Points to the method name that should be invoked from the js file specified in 'deps'"
+                },
+                "outputData": {
+                    "type": "object",
+                    "description": "JSON data for the action output. As part of this, the result of the action is mapped to view model data."
+                },
+                "events": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "Events can be fired and listened/handled in declarative View Models. They are a means of a View Model communicating with other View Models or UI elements. 'Actions' can fire events."
+                },
+                "actionMessages": {
+                    "$ref": "#/definitions/actionMessagesDef",
+                    "description": "User messages. It can be made condition based"
+                },
+                "dataParsers": {
+                    "type": "array",
+                    "description": "In the View Model, an action can have an optional 'dataParsers' construct. It is an array of objects, each having an 'id: specifying which dataParseDefinition to use' & a 'responseObjs: path to the response object(s) to convert.'. The 'responseObjs' can be an array of objects, or a single one. properties below. The dataParsers accepts the response data and converts them to 'afx objects' each containing ViewModelProperties. These afx objects are directly consumable by the widgets provided by afx.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "responseObjs": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "responseObjs"
+                        ]
+                    }
+                }
+            }
+        },
+
+        "batchJobDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "actionType"
+            ],
+            "properties": {
+
+                "actionType": {
+                    "type": "string",
+                    "const": "batchJob"
+                },
+
+                "steps": {
+                    "type": "array",
+                    "description": "Collection of actions that has to executed one after another",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "action": {
+                                "type": "string"
+                            },
+                            "outputArg": {
+                                "type": "array",
+                                "description": "Array of object given to subsequent next action."
+                            },
+                            "inputArg": {
+                                "type": "object",
+                                "description": "Input from previous action and mapped to parameters of action."
+                            },
+                            "condition": {
+                                "type": "string",
+                                "description": "A condition statement which would evaluate to boolean."
+                            }
+                        },
+                        "required": [
+                            "action"
+                        ]
+                    }
+
+                }
+            }
+
+        },
+
+        "policyPropertiesDef": {
+            "type": "object",
+            "items": {
+                "required": [
+                    "name"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "modifiers": {
+                        "type": "array"
+                    }
+                }
+            }
+        },
+        "viewModelObjectDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uid": {
+                    "type": "string",
+                    "description": "Unique ID of the object"
+                },
+                "props": {
+                    "type": "object",
+                    "description": "View Model Properties of the object"
+                },
+                "selected": {
+                    "type": "boolean",
+                    "description": "For radio or check box properties , if true shows selected"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of the object"
+                }
+            }
+        },
+        "viewModelPropDef": {
+            "additionalProperties": false,
+            "type": [ "object", "array" ],
+            "properties": {
+
+                "displayName": {
+                    "oneOf": [ {
+                        "type": "string",
+                        "description": "Display name on the DOM"
+                    }, {
+                        "$ref": "#/definitions/paramLocalizationDef"
+                    } ]
+                },
+                "type": {
+                    "enum": [ "STRING", "BOOLEAN", "DATETIME", "", "String", "INTEGER", "DOUBLE", "DATE" ],
+                    "description": "PreDefine type of the object. Valid type must be from above list"
+                },
+                "isRequired": {
+                    "enum": [ "true", "false" ],
+                    "description": "If isRequired is true , it should be compulsory property to fill by user"
+                },
+                "requiredText": {
+                    "oneOf": [ {
+                        "type": "string",
+                        "description": "Hint text to the user"
+                    }, {
+                        "$ref": "#/definitions/paramLocalizationDef"
+                    } ]
+                },
+                "propertyRadioTrueText": {
+                    "oneOf": [ {
+                        "type": "string",
+                        "description": "String displayed on the radio box of the radio is selected"
+                    }, {
+                        "$ref": "#/definitions/paramLocalizationDef"
+                    } ]
+                },
+                "propertyRadioFalseText": {
+                    "oneOf": [ {
+                        "type": "string",
+                        "description": "String displayed on the radio box of the radio is not selected"
+                    }, {
+                        "$ref": "#/definitions/paramLocalizationDef"
+                    } ]
+                },
+                "hasLov": {
+                    "type": "boolean",
+                    "description": "If the object has more than one object to hold , this value can be true"
+                },
+                "numberOfLines": {
+                    "type": "integer",
+                    "description": "Indicate the number of lines the widget can hold"
+                },
+                "dbValue": {
+                    "$ref": "#/definitions/propDbValueDef"
+                },
+                "maxLength": {
+                    "type": "integer",
+                    "description": "maximum length of the object"
+                },
+                "labelPosition": {
+                    "enum": [ "PROPERTY_LABEL_AT_TOP", "PROPERTY_LABEL_AT_SIDE", "PROPERTY_LABEL_AT_RIGHT" ],
+                    "description": "Decide the postion of the label on the panel"
+                },
+                "isEditable": {
+                    "type": [ "boolean", "string" ],
+                    "description": "If it is set , user can edit the property"
+                },
+                "isArray": {
+                    "type": [ "boolean", "string" ],
+                    "description": "the property can hold the multiple data "
+                },
+                "dispValue": {
+                    "oneOf": [ {
+                        "type": "string",
+                        "description": "display value of the view model proeprty"
+                    }, {
+                        "$ref": "#/definitions/paramLocalizationDef"
+                    } ]
+                },
+                "displayValue": {
+                    "oneOf": [ {
+                        "type": "string",
+                        "description": "display value of the view model proeprty"
+                    }, {
+                        "$ref": "#/definitions/paramLocalizationDef"
+                    } ]
+                },
+                "defaultValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "default value of the view model property"
+                    }
+                },
+                "uiValue": {
+                    "$ref": "#/definitions/propDbValueDef"
+                },
+                "vertical": {
+                    "type": "boolean",
+                    "description": "Vertical postioning of the radio buttons"
+                },
+                "validationCriteria": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "condition",
+                            "value"
+                        ],
+                        "properties": {
+                            "condition": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "iconName": {
+                    "type": "string",
+                    "description": "name of the icon of command"
+                },
+                "tooltip": {
+                    "type": "string",
+                    "description": "name of the tooltip of command"
+                },
+                "view": {
+                    "type": "string",
+                    "description": "view name of the extended tooltip"
+                },
+                "extendedTooltipContent": {
+                    "type": "string",
+                    "description": "Text content of the tooltip which want ballon popup layout"
+                },
+                "commandType": {
+                    "type": "string",
+                    "description": "command type of the command"
+                },
+                "destPanelId": {
+                    "type": "string",
+                    "description": "In navigation , refers to the destination panel id"
+                },
+                "recreatePanel": {
+                    "type": "boolean",
+                    "description": "In navigation , it decide to recreate the panel after navigation"
+                },
+                "patterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "preferredPattern": {
+                    "type": "string"
+                },
+                "isRichText": {
+                    "type": "boolean"
+                },
+                "isModifiable": {
+                    "type": [ "boolean", "string" ],
+                    "description": " true if the user should have the ability to change the property's value. false if the value is read-only."
+                },
+                "isAutoAssignable": {
+                    "type": [ "boolean", "string" ],
+                    "description": "   true if the property's value can/should be assigned automatically by server.   flse if the property's value is not normally assigned/controlled by server."
+                },
+                "isSelectOnly": {
+                    "type": [ "boolean", "string" ],
+                    "description": "'isSelectOnly' state of ViewModelProperty.This property allows the selected lov entry to be select only, i.e, user cannot type in the widget after   selecting the lov entry. This change is to support isSelectOnly in aw-widget used as a list box."
+                },
+                "referenceTypeName": {
+                    "type": "string",
+                    "description": "name of typed reference property"
+                },
+                "oldValue": {
+                    "type": "string"
+                },
+                "oldValues": {
+                    "type": "array"
+                },
+                "value": {
+                    "$ref": "#/definitions/propDbValueDef"
+                },
+                "dataProvider": {
+                    "type": "string"
+                },
+                "isEnabled": {
+                    "type": [ "boolean", "string" ],
+                    "description": "If isEnabled is true, the property available for modify and default value is true."
+                },
+                "maxArraySize": {
+                    "type": "integer",
+                    "description": "maximum array length for that property"
+                },
+                "renderingHint": {
+                    "type": "string",
+                    "description": "depending on the type, this string indicates some variation in how the   property's value should be displayed (e.g. For 'BOOLEAN' type, valid values   include 'radiobutton','togglebutton', 'checkbox'. For 'STRING' type, valid   values include 'label', 'textbox','textfield', 'textarea', 'longtext')"
+                },
+                "autofocus": {
+                    "type": [ "boolean", "string" ],
+                    "description": "defines whether the widget needs to be autofocused or not"
+                },
+                "condition": {
+                    "type": "string",
+                    "description": "the name of the condition in validation criteria."
+                }
+
+            }
+        },
+        "propDbValueDef": {
+            "oneOf": [ {
+                "oneOf": [ {
+                    "type": "string"
+                }, {
+                    "$ref": "#/definitions/paramLocalizationDef"
+                } ]
+            }, {
+                "type": "boolean"
+            }, {
+                "type": "array"
+            } ]
+        },
+        "propDbValueDefForDataMapper": {
+            "oneOf": [ {
+                "type": "string"
+            }, {
+                "type": "boolean"
+            }, {
+                "type": "array"
+            } ]
+        },
+        "functionDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "Js function support for the view model",
+            "properties": {
+                "functionName": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "functionName"
+            ]
+        },
+        "messageDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "Messages displayed on the page/panel",
+            "properties": {
+                "messageType": {
+                    "type": "string",
+                    "description": "Type of the messages it can either INFO ,WARNING, ERROR"
+                },
+                "messageText": {
+                    "type": "string",
+                    "description": "Message text on the messages"
+                },
+                "messageKey": {
+                    "type": "string",
+                    "description": "Unique key of the messages"
+                },
+                "messageTextParams": {
+                    "type": "array",
+                    "description": "any runtime variable that can be added messages",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "messageData": {
+                    "type": "object",
+                    "description": "Any runtime string on messages"
+                },
+                "expression": {
+                    "type": "object",
+                    "description": "Regular expression form for the condition"
+                },
+                "navigationOptions": {
+                    "type": "array",
+                    "description": "Navigation parameters on routing URL",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "text"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "option": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            },
+                            "action": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "message": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "messageType"
+            ]
+        },
+        "conditionDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "description": "Expressions can be defined as simple strings or object.",
+            "properties": {
+                "expression": {
+                    "$ref": "#/definitions/expressionStringOrObjectDef"
+                }
+            },
+            "required": [
+                "expression"
+            ]
+        },
+        "dataParseDef": {
+            "oneOf": [ {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "path": {
+                            "type": "string"
+                        },
+                        "dataInput": {
+                            "type": "string"
+                        },
+                        "outputFormatType": {
+                            "type": "string"
+                        },
+                        "operationType": {
+                            "type": "string"
+                        },
+                        "dataFilter": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "condition": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "condition"
+                                ]
+                            }
+                        },
+                        "viewModelPropValues": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "condition": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "condition",
+                                            "value"
+                                        ]
+                                    }
+                                },
+                                "displayName": {
+                                    "type": "string"
+                                },
+                                "dbValue": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "condition": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "condition",
+                                            "value"
+                                        ]
+                                    }
+                                },
+                                "propMisc": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "propName": {
+                                                "type": "string"
+                                            },
+                                            "value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "propName",
+                                            "value"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "displayName",
+                                "dbValue",
+                                "propMisc"
+                            ]
+                        },
+
+                        "outputFormat": {
+                            "type": "array",
+                            "items": {
+                                "anyOf": [ {
+                                    "$ref": "#/definitions/fieldDef"
+                                }, {
+                                    "$ref": "#/definitions/structDef"
+                                } ]
+                            }
+                        },
+                        "filterOtherData": {
+                            "type": "object",
+                            "properties": {
+                                "path": {
+                                    "type": "string"
+                                },
+                                "dataFilter": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "condition": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "condition"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "path",
+                                "dataFilter"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                        "props": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                                    "$ref": "#/definitions/dataMapperEachPropDef"
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "props"
+                    ]
+                }
+            ]
+        },
+        "structDef": {
+            "type": "object",
+            "properties": {
+                "structName": {
+                    "type": "string"
+                },
+                "structValue": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/fieldDef"
+                    }
+                }
+            },
+            "required": [
+                "structName",
+                "structValue"
+            ]
+        },
+        "fieldDef": {
+            "type": "object",
+            "properties": {
+                "fieldName": {
+                    "type": "string"
+                },
+                "fieldValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fieldName",
+                "fieldValue"
+            ]
+        },
+        "paramLocalizationDef": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "params": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "text",
+                "params"
+            ]
+        },
+        "dataProvidersDef": {
+            "anyOf": [ {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "action": {
+                        "type": "string"
+                    },
+                    "initializeAction": {
+                        "type": "string"
+                    },
+                    "nextAction": {
+                        "type": "string"
+                    },
+                    "previousAction": {
+                        "type": "string"
+                    },
+                    "focusAction": {
+                        "type": "string"
+                    },
+                    "expandAction": {
+                        "type": "string"
+                    },
+                    "commands": {
+                        "type": "object",
+                        "items": {
+                            "$ref": "#/definitions/commandDef"
+                        }
+                    },
+                    "editContext": {
+                        "type": "string"
+                    },
+                    "response": {
+                        "type": "string"
+                    },
+                    "totalFound": {
+                        "type": "string"
+                    },
+                    "totalLoaded": {
+                        "type": "string"
+                    },
+                    "uidInResponse": {
+                        "type": "string"
+                    },
+                    "preSelection": {
+                        "type": "boolean"
+                    },
+                    "selectionModelMode": {
+                        "type": "string",
+                        "enum": [ "multiple", "single" ]
+                    }
+                },
+                "required": [
+                    "action"
+                ]
+            }, {
+                "type": "object",
+                "items": {
+                    "type": "array",
+                    "additionalProperties": false,
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "displayName": {
+                            "type": "string"
+                        },
+                        "minWidth": {
+                            "type": "integer"
+                        },
+                        "maxWidth": {
+                            "type": "integer"
+                        },
+                        "width": {
+                            "type": "integer"
+                        },
+                        "enableColumnMoving": {
+                            "type": "boolean"
+                        },
+                        "enableColumnMenu": {
+                            "type": "boolean"
+                        },
+                        "enableColumnResizing": {
+                            "type": "boolean"
+                        },
+                        "enableFiltering": {
+                            "type": "boolean"
+                        },
+                        "isFilteringEnabled": {
+                            "type": "boolean"
+                        },
+                        "enableHiding": {
+                            "type": "boolean"
+                        },
+                        "enablePinning": {
+                            "type": "boolean"
+                        },
+                        "enableSorting": {
+                            "type": "boolean"
+                        },
+                        "headerTooltip": {
+                            "type": "boolean"
+                        },
+                        "pinnedLeft": {
+                            "type": "boolean"
+                        },
+                        "pinnedRight": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            } ]
+
+        },
+        "dataMapperEachPropDef": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of property."
+                },
+                "displayValue": {
+                    "type": "string",
+                    "description": "display value of the view model property"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Display name on the DOM"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "PreDefine type of the object. Valid type must be from above list"
+                },
+                "isRequired": {
+                    "type": [ "boolean", "string" ],
+                    "description": "If isRequired is true , it should be compulsory property to fill by user"
+                },
+                "isModifiable": {
+                    "type": [ "boolean", "string" ],
+                    "description": " true if the user should have the ability to change the property's value. false if the value is read-only."
+                },
+                "isAutoAssignable": {
+                    "type": [ "boolean", "string" ],
+                    "description": "   true if the property's value can/should be assigned automatically by server.   flse if the property's value is not normally assigned/controlled by server."
+                },
+                "isSelectOnly": {
+                    "type": [ "boolean", "string" ],
+                    "description": "'isSelectOnly' state of ViewModelProperty.This property allows the selected lov entry to be select only, i.e, user cannot type in the widget after   selecting the lov entry. This change is to support isSelectOnly in aw-widget used as a list box."
+                },
+                "referenceTypeName": {
+                    "type": "string",
+                    "description": "name of typed reference property"
+                },
+                "oldValue": {
+                    "type": "string"
+                },
+                "oldValues": {
+                    "type": "array"
+                },
+                "value": {
+                    "$ref": "#/definitions/propDbValueDefForDataMapper"
+                },
+                "dataProvider": {
+                    "type": "string"
+                },
+                "isEnabled": {
+                    "type": [ "boolean", "string" ],
+                    "description": "If isEnabled is true, the property available for modify and default value is true."
+                },
+                "maxArraySize": {
+                    "type": "integer",
+                    "description": "maximum array length for that property"
+                },
+                "renderingHint": {
+                    "type": "string",
+                    "description": "depending on the type, this string indicates some variation in how the   property's value should be displayed (e.g. For 'BOOLEAN' type, valid values   include 'radiobutton','togglebutton', 'checkbox'. For 'STRING' type, valid   values include 'label', 'textbox','textfield', 'textarea', 'longtext')"
+                },
+                "autofocus": {
+                    "type": [ "boolean", "string" ],
+                    "description": "defines whether the widget needs to be autofocused or not"
+                },
+                "condition": {
+                    "type": "string",
+                    "description": "the name of the condition in validation criteria."
+                },
+                "requiredText": {
+                    "type": "string",
+                    "description": "Hint text to the user"
+                },
+                "propertyRadioTrueText": {
+                    "type": "string",
+                    "description": "String displayed on the radio box of the radio is selected"
+                },
+                "propertyRadioFalseText": {
+                    "type": "string",
+                    "description": "String displayed on the radio box of the radio is not selected"
+                },
+                "hasLov": {
+                    "type": "boolean",
+                    "description": "If the object has more than one object to hold , this value can be true"
+                },
+                "numberOfLines": {
+                    "type": "integer",
+                    "description": "Indicate the number of lines the widget can hold"
+                },
+                "dbValue": {
+                    "$ref": "#/definitions/propDbValueDefForDataMapper"
+                },
+                "maxLength": {
+                    "type": "integer",
+                    "description": "maximum length of the object"
+                },
+                "labelPosition": {
+                    "enum": [ "PROPERTY_LABEL_AT_TOP", "PROPERTY_LABEL_AT_SIDE", "PROPERTY_LABEL_AT_RIGHT" ],
+                    "description": "Decide the postion of the label on the panel"
+                },
+                "isEditable": {
+                    "type": [ "boolean", "string" ],
+                    "description": "If it is set , user can edit the property"
+                },
+                "isArray": {
+                    "type": [ "boolean", "string" ],
+                    "description": "the property can hold the multiple data "
+                },
+                "dispValue": {
+                    "type": "string",
+                    "description": "display value of the view model proeprty"
+                },
+                "vertical": {
+                    "type": "boolean",
+                    "description": "Vertical postioning of the radio buttons"
+                },
+                "validationCriteria": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "condition",
+                            "value"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "condition": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "patterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "preferredPattern": {
+                    "type": "string"
+                },
+                "isRichText": {
+                    "type": "boolean"
+                }
+
+            },
+            "required": [
+                "name",
+                "displayName",
+                "value",
+                "displayValue",
+                "type"
+            ]
+        },
+        "sourceStringOrObjectDef": {
+            "oneOf": [ {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "$adapt": {
+                            "type": "string",
+                            "description": "Indicates that the resulting source should be adapted before evaluating the query"
+                        }
+                    }
+                }
+            ]
+        },
+        "expressionStringOrObjectDef": {
+            "oneOf": [ {
+                    "type": "object",
+                    "description": "Expression can be defined as object with the support of below operators.",
+                    "additionalProperties": false,
+                    "properties": {
+                        "$source": {
+                            "$ref": "#/definitions/sourceStringOrObjectDef",
+                            "description": "Indicates the reference on data context node to be used as starting point for evaluation. For ex. 'ctx.selected'"
+                        },
+                        "$query": {
+                            "type": "object",
+                            "description": "Defines the query to be executed on the source"
+                        },
+                        "$and": {
+                            "type": "array",
+                            "description": "Indicates logical 'AND' of each query result"
+                        },
+                        "$or": {
+                            "type": "array",
+                            "description": "Indicates logical 'OR' of each query result"
+                        },
+                        "$all": {
+                            "type": "array",
+                            "description": "Indicates logical 'ALL' of each query result"
+                        },
+                        "$eventSource": {
+                            "type": "string",
+                            "description": "This operator lets user specify the viewId or viewName or 'self' to write a condition to enable the events to be filtered out based on whether or not it is triggered from the same viewModel."
+                        },
+                        "$not": {
+                            "type": "object",
+                            "description": "Indicates logical 'NOT' of a query result"
+                        }
+                    }
+                },
+                {
+                    "type": "string",
+                    "description": "Expression as simple string: 'expression': 'ctx.mselected && ctx.mselected.length > 1'"
+                }
+            ]
+        },
+        "conditionOrBoolDef": {
+            "oneOf": [ {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "condition": {
+                            "type": [ "string", "boolean" ],
+                            "description": "Condition expression that evaluates to : 'true','false',true or false"
+
+                        }
+                    }
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "commandDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "iconId": {
+                    "description": "The id of the command's icon. It refers to the SVG icon that is stored in the 'src/image' folder in the site location",
+                    "type": "string"
+                },
+                "hasDialog": {
+                    "description": "Indicates if command opens dialog. If action does not open dialog immediately but subsequently then this flag is set to true",
+                    "type": "boolean"
+                },
+                "isGroup": {
+                    "$ref": "#/definitions/conditionOrBoolDef",
+                    "description": "Should evaluate to true if a group command, false otherwise"
+                },
+                "title": {
+                    "oneOf": [ {
+                        "description": "The title to display on the tooltip of the command. It should be either an i18n key or as just a non-18n string. Even though schema doesn't enforces it, title is required, which could be either string or object, so that functionality can work properly",
+                        "type": "string"
+                    }, {
+                        "description": "The title to display on the tooltip of the command. It should be parametrized i18n key along with its params",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "text": {
+                                "type": "string"
+                            },
+                            "params": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    } ]
+                },
+                "description": {
+                    "oneOf": [ {
+                        "description": "The description of the command to be specified here. It should be either an i18n key or as just a non-18n string. Even though schema doesn't enforces it, title is required, which could be either string or object, so that functionality can work properly",
+                        "type": "string"
+                    }, {
+                        "description": "The description of the command to be specified here. It should be parametrized i18n key along with its params",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "text": {
+                                "type": "string"
+                            },
+                            "params": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    } ]
+                },
+                "extendedTooltip": {
+                    "oneOf": [ {
+                        "description": "The advanced title to display on the tooltip of the command. It will have the view as key where it will have the template that can be shown in the tooltip box.",
+                        "type": "object",
+                        "properties": {
+                            "view": {
+                                "type": "string"
+                            }
+                        }
+                    } ]
+                },
+                "template": {
+                    "oneOf": [ {
+                        "type": "object",
+                        "description": "It denotes the template for the command.",
+                        "additionalProperties": false,
+                        "properties": {
+                            "text": {
+                                "description": "The text to display for this template.",
+                                "type": "string"
+                            },
+                            "visibleWhen": {
+                                "description": "The name of the declarative condition which will determine when the associated template isVisible.",
+                                "$ref": "#/definitions/conditionOrBoolDef"
+                            },
+                            "class": {
+                                "description": "The css class to be used on this template.",
+                                "type": "string"
+                            }
+                        }
+                    }, {
+                        "description": "It denotes the template for the command.",
+                        "type": "string"
+
+                    } ]
+                },
+                "isShuttle": {
+                    "type": "boolean",
+                    "description": "It provides a way to group related commands under a single command. The icon and title of selected command from group is reflected at the group level. It overrides isGroup value."
+                },
+                "isRibbon": {
+                    "type": "boolean",
+                    "description": "It provides a way to group related commands under a single command. The visibility is independent of commands in the group. It overrides isGroup and isShuttle value."
+                },
+                "isToggle": {
+                    "type": "boolean",
+                    "description": "It determine the toggle behavior of the specified command."
+                },
+                "selected": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "iconId": {
+                            "description": "The id of the command's icon. It refers to the SVG icon that is stored in the 'src/image' folder in the site location",
+                            "type": "string"
+                        },
+                        "title": {
+                            "oneOf": [ {
+                                "description": "The title to display on the tooltip of the command. It should be either an i18n key or as just a non-18n string. Even though schema doesn't enforces it, title is required, which could be either string or object, so that functionality can work properly",
+                                "type": "string"
+                            }, {
+                                "description": "The title to display on the tooltip of the command. It should be parametrized i18n key along with its params",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "params": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            } ]
+                        },
+                        "description": {
+                            "oneOf": [ {
+                                "description": "The description of the command to be specified here. It should be either an i18n key or as just a non-18n string. Even though schema doesn't enforces it, title is required, which could be either string or object, so that functionality can work properly",
+                                "type": "string"
+                            }, {
+                                "description": "The description of the command to be specified here. It should be parametrized i18n key along with its params",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "params": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            } ]
+                        },
+                        "extendedTooltip": {
+                            "oneOf": [ {
+                                "description": "The advanced title to display on the tooltip of the command. It will have the view as key where it will have the template that can be shown in the tooltip box.",
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "view": {
+                                        "type": "string"
+                                    }
+                                }
+                            } ]
+                        }
+                    }
+                }
+            },
+            "required": [
+
+            ]
+        },
+        "commandHandlersDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "description": "The command Id for which the handler is associated.",
+                    "type": "string"
+                },
+                "action": {
+                    "description": "The name of the declarative action (REST,SOA,Event or JSFunction) to be executed.",
+                    "type": "string"
+                },
+                "activeWhen": {
+                    "$ref": "#/definitions/conditionOrBoolDef",
+                    "description": "The name of the declarative condition which will determine when this command handler is active for the associated command."
+                },
+                "visibleWhen": {
+                    "$ref": "#/definitions/conditionOrBoolDef",
+                    "description": "The name of the declarative condition which will determine when the associated command isVisible. This condition is only evaluated if this command handler is active."
+                },
+                "selectWhen": {
+                    "$ref": "#/definitions/conditionOrBoolDef",
+                    "description": "The name of the declarative condition which will determine whether a command will be in selected or unselected state. This condition is only evaluated if this command handler is active."
+                },
+                "enableWhen": {
+                    "$ref": "#/definitions/conditionOrBoolDef",
+                    "description": "The name of the declarative condition which will determine whether a command will be in enabled or disabled state. This condition is only evaluated if this command handler is active."
+                },
+                "openWhen": {
+                    "type": "boolean",
+                    "description": "It determine the value openWhen property of the specified command."
+                }
+
+            },
+            "required": [
+                "id",
+                "activeWhen"
+            ]
+        },
+        "commandPlacementsDef": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "description": "The command Id for which the placement is associated.",
+                    "type": "string"
+                },
+                "parentGroupId": {
+                    "description": "It denotes the group the command belongs to. Multiple command can have same 'parentGroupId'",
+                    "type": "string"
+                },
+                "uiAnchor": {
+                    "description": "A well known name for a given  element.  Anchors could be created where needed by Solutions.",
+                    "type": "string"
+                },
+                "priority": {
+                    "description": "The relative priority ​order to render commands in ascending order unless the command bar has reverse alignment. Even though schema doesn't enforces it, title is required so that functionality can work properly.",
+                    "type": "number"
+                },
+                "relativeTo": {
+                    "description": "The command id of this command will be placed relative to.  Priority as defined in the 'priority' property will be applied relative to the command.  In other words, if multiple commands are placed 'relativeTo' the same command, they will be placed in ascending sorted priority order relative to the specified command. Negative priority means that this command will be inserted before the 'relativeTo' command. Positive priority means the command will be appended after the 'relativeTo' command.",
+                    "type": "string"
+                },
+                "showGroupSelected": {
+                    "type": "boolean",
+                    "description": "The boolean value which handle the default selected state of the group command."
+                },
+                "showChevron": {
+                    "type": "boolean",
+                    "description": "It provides a way to disable the arrow chevron icon for group commands"
+                },
+                "isOverflow": {
+                    "type": "boolean",
+                    "description": "It provides a way to customize the command overflow for a command bar"
+                },
+                "cellDisplay": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "hover": {
+                            "type": "boolean",
+                            "description": "The property which enable or disable hover behavior."
+                        },
+                        "position": {
+                            "type": "string",
+                            "description": "It describes the cell display position."
+                        },
+                        "selected": {
+                            "type": "boolean",
+                            "description": "The boolean value which handle the default selected state of the 'cellDisplay'."
+                        }
+                    }
+                },
+                "areas": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "description": "Name of the area to be specified in array"
+                    }
+                },
+                "isIcon": {
+                    "type": "boolean",
+                    "description": "The boolean value which determines isIcon property of specified command."
+                },
+                "displayOption": {
+                    "enum": [ "ON_HOVER", "ON_HOVER_AND_SELECTION", "ON_SELECTION", "ALWAYS" ],
+                    "description": "It describes the cell display option should be one of the (ON_HOVER, ON_HOVER_AND_SELECTION, ON_SELECTION, ALWAYS)."
+                },
+                "isSelected": {
+                    "type": "boolean",
+                    "description": "The boolean value which determines Whether the command is currently selected."
+                },
+                "position": {
+                    "type": "string",
+                    "description": "It determines the position"
+                },
+                "style":{
+                    "enum": [ "base", "primary"],
+                    "description": "This determines command display style. 'base' and 'primary' are the supported display styles."
+                },
+                "showTitle":{
+                    "enum": [ "always", "never"],
+                    "description": "This determines whether or not to show command label. 'always' and 'never' are the supported values. If not defined then Command label will be based on global label setting"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "schemaVersion": {
+            "description": "Version of the schema it complies with",
+            "type": [ "string", "integer" ]
+        },
+        "actions": {
+            "type": "object",
+            "description": "In the View Model, actions are declaratively defined. Actions can be of different 'actionType' (REST, JSFunction, JSFunctionAsync, Event or TcSoaService). All actions have 'inputData' which specifies the JSON input for the action and 'outputData' for mapping the output response. Actions can be used in dataProviders or UI elements such as an aw-button.",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/actionDef"
+                }
+            }
+        },
+        "data": {
+            "type": "object",
+            "description": "The View can refer to data and view state, defined in the View Model data section. The braces '{{  }}' allow declarative binding to the live data.",
+            "anyOf": [ {
+                "properties": {
+                    "objects": {
+                        "type": "object",
+                        "patternProperties": {
+                            "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                                "$ref": "#/definitions/viewModelObjectDef"
+                            }
+                        }
+                    }
+                }
+            }, {
+                "type": "object",
+                "patternProperties": {
+                    "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                        "$ref": "#/definitions/viewModelPropDef"
+                    }
+                }
+            } ]
+        },
+        "preferences": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+        },
+        "functions": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/functionDef"
+                }
+            }
+        },
+        "messages": {
+            "type": "object",
+            "description": "Messages are declaratively defined in the View Model. Messages are launched by events and actions. They cover information, warning, error notifications. They give the user more deeper customization options. They are localized. They can fire some actions. They can even leverage view model data and conditions.",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/messageDef"
+                }
+            }
+        },
+        "conditions": {
+            "type": "object",
+            "description": "Conditions provide live logic evaluation. They can evaluate to true/false. They can be used in visible-when clauses and can be used for event handling (onEvent handler). The data value can be live evaluated by condition. The conditions can refer to view model state and can update view model state. They can leverage Boolean condition expressions like '&&', '||', '==', '!='",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/conditionDef"
+                }
+            }
+        },
+        "i18n": {
+            "type": "object",
+            "description": "All user facing text should be localized unless a web client solution supports only one language. The View refers to localizations defined in the 'i18n' section of the View Model. You can specify the actual string to be displayed (however, it would not be localized) OR the name of JSON bundle which holds the localized text to be shown.",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "type": [ "array", "string" ],
+                    "items": {
+                        "type": "string",
+                        "description": "Name of the i18n bundle file to be specified in array"
+                    }
+                }
+            }
+        },
+        "onEvent": {
+            "type": "array",
+            "description": "The View Model can register to react to events by declaring an onEvent section. It can then conditionally execute a declarative action.",
+            "required": [
+                "eventId",
+                "action"
+            ],
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "eventId": {
+                        "type": "string",
+                        "description": "The id of an event that the viewModel is interested to listen to."
+                    },
+                    "criteria": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "patternProperties": {
+                            "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                                "type": [ "number", "string", "boolean" ]
+                            }
+                        },
+                        "properties": {
+                            "panelId": {
+                                "type": "string"
+                            },
+                            "destPanelId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "eventSource": {
+                        "type": "string",
+                        "description": "(Optional) set it to 'current' to make event listeners only listen to events fired by the current view model"
+                    },
+                    "action": {
+                        "type": "string",
+                        "description": "An action that is defined in the actions section of the viewModel which would be executed only if the specified condition evaluates to true."
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "inputArgs": {
+                        "type": "object"
+                    },
+                    "cacheEventData": {
+                        "type": "boolean"
+                    },
+                    "condition": {
+                        "type": "string"
+                    },
+                    "eventData": {
+                        "type": "object"
+                    }
+                }
+            }
+        },
+        "dataParseDefinitions": {
+            "type": "object",
+            "description": "It contains the parser definitions. Each parser definition must define a 'props'. Each prop, which is of a specific JSON structure, is converted to a ViewModelProperty.",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/dataParseDef"
+                }
+            }
+        },
+        "dataProviders": {
+            "type": "object",
+            "description": "Data Provider, as the name suggests, is a single placeholder wherein we configure different ways to fetch/paginate data and pass the same data to underlying component. It is basically an abstraction layer for components which fulfils component's demand to load/paginate data from the server. In Apollo, data-provider is used with 'aw-list' & 'aw-table (including tree)' to meet their data requirements.",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "type": "object",
+                    "$ref": "#/definitions/dataProvidersDef"
+                }
+            }
+        },
+        "commands": {
+            "type": "object",
+            "description": "Decalarative commands provide a graphical means for the user to work with their data. You can define a Command including ID, Icon, Title (aka: tooltip), placement in UI, visibility condition and  execution as either a REST invocation, JavaScript function or SOA invocation",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/commandDef"
+                }
+            }
+        },
+        "commandHandlers": {
+            "type": "object",
+            "description": "A command can have many Command Handlers.  However at any given time, there may at most be only one active commandHandler for a command.  A declarative 'activeWhen' condition which evaluates a boolean expression controls whether a handler is currently active.  If more than one handler for a given command evaluates to true, then the more 'specfic' condition (i.e. the condition with longer expression) is chosen to be active.  By being active, the command handler will determine command visiblity and What a command will do when executed.",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/commandHandlersDef"
+                }
+            }
+        },
+        "commandPlacements": {
+            "type": "object",
+            "description": "A command can have many placements. A placement is the actual visual rendering of the display of the command.",
+            "patternProperties": {
+                "^[a-zA-Z_]+[a-zA-Z0-9_]*$": {
+                    "$ref": "#/definitions/commandPlacementsDef"
+                }
+            }
+        },
+        "ctx": {
+            "type": "object"
+        }
+    }
+}
