@@ -1,0 +1,53 @@
+{
+    "schemaVersion": "1.0.0",
+    "actions": {
+        "buttonAction": {
+            "actionType": "JSFunction",
+            "method": "alert",
+            "inputData": {
+                "data": "Button has been clicked"
+            },
+            "deps": "js/generateXMLPopUpService"
+        },
+        "closePopupWindow": {
+            "actionType": "JSFunction",
+            "method": "hide",
+            "inputData": {
+                "popupId": "{{data.popupId}}"
+            },
+            "deps": "js/popupService"
+        },
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "performSearch"
+        },
+        "search": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "GET",
+            "inputData": {
+                "request": {
+                    "method": "GET",
+                    "url": "src/AshishTask/src/Data/Data.json"
+                }
+            },
+            "outputData": {
+                "totalFound": "data.totalResults",
+                "searchResults": "data.Search"
+            }
+        }
+    },
+    "dataProviders": {
+        "performSearch": {
+            "action": "search",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}"
+        }
+    },
+    "i18n": {
+        "createAccount": "Create My Account",
+        "closeMe": "Close Me!",
+        "Add": "Add",
+        "Remove": "Remove"
+    }
+}

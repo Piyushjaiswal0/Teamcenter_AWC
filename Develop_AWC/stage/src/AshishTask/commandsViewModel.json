@@ -1,0 +1,37 @@
+{
+    "commands": {
+        "popupCloseCommand": {
+            "iconId": "cmdClosePanel",
+            "isGroup": false,
+            "title": "Close"
+        }
+    },
+    "commandHandlers": {
+        "popupCloseCommandHandler": {
+            "id": "popupCloseCommand",
+            "action": "popupCloseAction",
+            "activeWhen": true,
+            "visibleWhen": true
+        }
+    },
+    "commandPlacements": {
+        "popupCloseCommandPlacement": {
+            "id": "popupCloseCommand",
+            "uiAnchor": "closePopupAnchor",
+            "priority": 300
+        }
+    },
+    "actions": {
+        "popupCloseAction": {
+            "actionType": "Event",
+            "method": "Event",
+            "inputData": {
+                "events": [
+                    {
+                        "name": "showcaseApp.closePopup"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<aw-panel>
+    <aw-panel-body>
+        <aw-panel-section>
+            <aw-flex-row height="20f">
+
+                <aw-flex-column width="fill" >
+                    <aw-list dataprovider="data.dataProviders.performSearch">
+                        <aw-omdb-cell vmo="item"></aw-omdb-cell>
+                    </aw-list>
+                </aw-flex-column>
+
+                <aw-separator is-vertical="true"></aw-separator>
+                
+                <aw-flex-column justify="center" width="2">
+                    <aw-button button-type="base" action="closePopupWindow" size="3" edit-when="">{{i18n.Add}}</aw-button>
+                    <aw-break> </aw-break>
+                    <aw-button action="buttonAction" size="3"edit-when="">{{i18n.Remove}}</aw-button>
+                </aw-flex-column>
+
+                <aw-separator is-vertical="true"></aw-separator>
+                
+                <aw-flex-column width="fill" color="blue">
+                </aw-flex-column>
+            </aw-flex-row>
+        </aw-panel-section>
+        <aw-panel-footer>
+            <aw-button button-type="base" action="closePopupWindow" size="auto">{{i18n.closeMe}}</aw-button>
+            <aw-button action="buttonAction" size="auto">{{i18n.createAccount}}</aw-button>
+        </aw-panel-footer>
+    </aw-panel-body>
+</aw-panel>

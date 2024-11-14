@@ -1,0 +1,11 @@
+{
+    "header": "Header",
+    "body": "Body",
+    "footer": "Footer",
+    "checkBoxName": "Enable the OK button in footer",
+    "save": "Ok",
+    "signUp": "Generate XML",
+    "textValue": "Contents here",
+    "generateXMLPopUpTitle": "generateXMLPopUp",
+    "generateXMLPopUpDescription": "generateXMLPopUpDescription"
+}

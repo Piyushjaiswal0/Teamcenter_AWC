@@ -2,6 +2,7 @@
     "name": "tc-aw-solution",
     "description": "",
     "modules": [
+        "AshishTask",
         "Develop_Module",
         "mysamplemodule",
         "tc-aw-solution"
