@@ -45,7 +45,7 @@
         }
     },
     "i18n": {
-        "createAccount": "Create My Account",
+        "createAccount": "Generate XML",
         "closeMe": "Close Me!",
         "Add": "Add",
         "Remove": "Remove"
