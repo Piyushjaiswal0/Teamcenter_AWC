@@ -4,9 +4,11 @@
             <aw-flex-row height="20f">
 
                 <aw-flex-column width="fill" >
-                    <aw-list dataprovider="data.dataProviders.performSearch">
-                        <aw-omdb-cell vmo="item"></aw-omdb-cell>
-                    </aw-list>
+                    <aw-scrollpanel>
+                        <aw-list dataprovider="data.dataProviders.performSearch">
+                            <aw-default-cell vmo="item"></aw-default-cell>
+                        </aw-list>
+                    </aw-scrollpanel>
                 </aw-flex-column>
 
                 <aw-separator is-vertical="true"></aw-separator>

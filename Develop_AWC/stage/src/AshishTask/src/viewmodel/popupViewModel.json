@@ -1,6 +1,32 @@
 {
     "schemaVersion": "1.0.0",
+    "dataProviders": {
+        "performSearch": {
+            "action": "search",
+            "response": "{{data.searchResults}}",
+            "totalFound": "{{data.totalFound}}"
+        }
+    },
     "actions": {
+        "reveal": {
+            "actionType": "dataProvider",
+            "method": "performSearch"
+        },
+        "search": {
+            "actionType": "RESTService",
+            "serviceName": "",
+            "method": "GET",
+            "inputData": {
+                "request": {
+                    "method": "GET",
+                    "url": "http://127.0.0.1:5501/src/AshishTask/src/Data/Data.json"
+                }
+            },
+            "outputData": {
+                "totalFound": "data.totalResults",
+                "searchResults": "data.Search"
+            }
+        },
         "buttonAction": {
             "actionType": "JSFunction",
             "method": "alert",
@@ -16,32 +42,6 @@
                 "popupId": "{{data.popupId}}"
             },
             "deps": "js/popupService"
-        },
-        "reveal": {
-            "actionType": "dataProvider",
-            "method": "performSearch"
-        },
-        "search": {
-            "actionType": "RESTService",
-            "serviceName": "",
-            "method": "GET",
-            "inputData": {
-                "request": {
-                    "method": "GET",
-                    "url": "src/AshishTask/src/Data/Data.json"
-                }
-            },
-            "outputData": {
-                "totalFound": "data.totalResults",
-                "searchResults": "data.Search"
-            }
-        }
-    },
-    "dataProviders": {
-        "performSearch": {
-            "action": "search",
-            "response": "{{data.searchResults}}",
-            "totalFound": "{{data.totalFound}}"
         }
     },
     "i18n": {

@@ -13,20 +13,29 @@
             "actionType": "popup",
             "inputData": {
                 "options": {
-                    "view": "popup",
-                    "isModal": false,
-                    "height": "389",
-                    "width": "550",
-                    "clickOutsideToClose": false,
-                    "draggable": true,
-                    "anchor": "closePopupAnchor",
+                    "preset": "modal",
                     "caption": "{{i18n.signUp}}",
-                    "preset": "modal"
+                    "view": "popup",
+                    "draggable": true,
+                    "resizable": true,
+                    "ignoreLimit": true,
+                    "width": "700",
+                    "height": "300",
+                    "anchor": "closePopupAnchor",
+                    "clickOutsideToClose": true
                 }
             },
             "outputData": {
                 "popupId": "id"
             }
+        },
+        "buttonActions": {
+            "actionType": "JSFunction",
+            "method": "alert",
+            "inputData": {
+                "data": "Button has been clicked"
+            },
+            "deps": "js/generateXMLPopUpService"
         }
     },
     "onEvent": [

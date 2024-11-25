@@ -2,28 +2,14 @@
     "totalResults": 2,
     "Search": [
         {
-            "Title": "The Matrix",
             "cellHeader1": "The Matrix header1",
-            "cellHeader2": "The Matrix header2",
-            "cellProperties": [
-                {
-                    "key": "Date of Release",
-                    "value": "17 Dec 2014"
-                }
-            ],
-            "hasThumbnail": false
+            "hasThumbnail": false,
+            "hasTypeIcon": false
         },
         {
-            "Title": "The Matrix Reloaded",
-            "cellHeader1": "The Matrix Reloaded header1",
-            "cellHeader2": "The Matrix Reloaded header2",
-            "cellProperties": [
-                {
-                    "key": "Date of Release",
-                    "value": "27 May 2009"
-                }
-            ],
-            "hasThumbnail": true
+            "cellHeader1": "The Reloaded",
+            "hasThumbnail": false,
+            "hasTypeIcon": false
         }
     ]
 }
