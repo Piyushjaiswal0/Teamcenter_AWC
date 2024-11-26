@@ -36,4 +36,6 @@ int main(){
     a = 60;
     cout << "Value of a after change: " << ref << endl; // Value of a after change: 60
     return 0;
+
+    // branch check
 }
