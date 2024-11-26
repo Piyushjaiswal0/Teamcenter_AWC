@@ -26,10 +26,10 @@ private:
     public:
     static Singleton * getInstance(){
         if (!object){
-            Singleton::object = new Singleton;
+            object = new Singleton;
         }
         else {
-            return Singleton::object;
+            return object;
         }
     }
 
