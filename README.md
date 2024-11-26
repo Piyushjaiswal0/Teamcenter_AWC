@@ -6,4 +6,4 @@
 5. git push origin main --> push committed changes <br>
 
 # Additional Information
-Use Your TC node_modules while use stage directory. 
+Use Your TC node_modules while accessing stage directory. 
