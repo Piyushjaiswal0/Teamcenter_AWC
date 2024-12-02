@@ -17,15 +17,15 @@ class SmartPrt{
             cout << "Destructor Called" << endl;
         }
 
-        int* usePtr(){
-            return ptr;
+        int& usePtr(){
+            return *ptr;
         }
 };
 
 int main(){
     {
         SmartPrt intPtr;
-        *intPtr.usePtr() = 20;
-        cout << "value :" << *intPtr.usePtr() << endl;
+        intPtr.usePtr() = 20;
+        cout << "value :" << intPtr.usePtr() << endl;
     }
 }
