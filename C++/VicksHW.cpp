@@ -10,6 +10,8 @@ int main() {
     
     for (int i = 0; i < length; i++) {
         char temp = mystr[i];
+
+        if(temp == ' ') continue;
         
         if (processed[temp]) {
             continue;
